@@ -1,0 +1,433 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7rem;
+  padding: 0 2rem;
+}
+
+.bgimage {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.nav-bar {
+  position: fixed;
+  grid-area: nav-bar;
+  display: grid;
+  left: 0;
+  top: 0;
+  width: 100%;
+  grid-template-columns: 250px 60% 40%;
+  grid-template-areas: "logo-container title-name dropdown";
+  background-color: #004883;
+  height: 50px;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  grid-area: logo-container;
+}
+
+.logo {
+  height: 50px;
+  width: 98px;
+  margin-left: 70px;
+  z-index: 10;
+  background-image: url("../images/hlogoxs.png");
+}
+
+.title-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  grid-area: title-name;
+}
+
+.tzu-logo {
+  width: 82px;
+  background: url("../images/tzuChiLogo.png");
+}
+.logo-name {
+  display: flex;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.logo-name span {
+  font-weight: 200;
+}
+
+.log-sign {
+  width: 150px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.log-sign a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.back-btn {
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  background: #004883;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  line-height: 1;
+
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.img {
+  display: flex;
+  justify-content: flex-end;
+}
+.img img {
+  width: 600px;
+  margin-right: 100px;
+  margin-top: 80px;
+}
+
+.login-container {
+  display: flex;
+  position: relative;
+  border-radius: 5%;
+  margin-top: 9%;
+  margin-bottom: 5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #00488344;
+  border: 2px solid #004883;
+  height: 112%;
+}
+
+.avatar {
+  width: 200px;
+}
+
+form {
+  width: 360px;
+}
+
+form h2 {
+  font-size: 2.9rem;
+  text-transform: uppercase;
+  margin: 15px 0;
+  color: #000000;
+}
+
+.input-div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 93%;
+  margin: 25px 0;
+  padding: 10px 0;
+  border-bottom: 2px solid #000000;
+}
+
+.input-div::after,
+.input-div:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #004883;
+  transition: 0.3s;
+}
+
+.input-div::after {
+  right: 50%;
+}
+
+.input-div::before {
+  left: 50%;
+}
+.input-div.focus .i i {
+  color: #004883;
+}
+
+.input-div.focus div h5 {
+  top: -5px;
+  font-size: 15px;
+}
+
+.input-div.focus:after,
+.input-div.focus:before {
+  width: 50%;
+}
+
+.input-div.one {
+  margin-top: 0;
+}
+
+.input-div.two {
+  margin-bottom: 4px;
+}
+
+.i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.i i {
+  color: #070707;
+  transition: 0.3s;
+}
+
+.input-div > div {
+  position: relative;
+  height: 45px;
+}
+
+.input-div > div h5 {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(5, 5, 5);
+  font-size: 18px;
+
+  transition: 0.3ss;
+}
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  columns: #000000;
+}
+
+.forgotpw a {
+  display: block;
+  position: relative;
+  top: 25px;
+
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #070707;
+}
+
+.input-div i {
+  /*visibility: hidden; */
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+.input-div.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.input-div.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.input-div small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.input-div.error small {
+  visibility: visible;
+}
+
+.btn {
+  display: block;
+  position: relative;
+  top: 2rem;
+  padding: 3%;
+  width: 100%;
+  height: 50%;
+  border-radius: 25px;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #004883, #1777af, #030e64);
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  background-size: 300%;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-position: right;
+}
+
+.form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #004883;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    grid-gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  form {
+    width: 290px;
+  }
+  form h2 {
+    font-size: 2.4rem;
+    margin: 8px 0;
+  }
+  .img img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .img {
+    display: none;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .wave {
+    display: none;
+  }
+
+  .nav-bar {
+    position: fixed;
+    grid-area: nav-bar;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 5fr 1fr;
+    grid-template-areas: " title-name logo-container ";
+    background-color: #004883;
+    height: 50px;
+    z-index: 10;
+  }
+
+  .back-btn {
+    width: 130px;
+    height: 35px;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .title-name {
+    display: flex;
+
+    width: 100%;
+    height: 50px;
+
+    grid-area: title-name;
+  }
+
+  .tzu-logo {
+    background: url(../images/tzuChiLogo.png);
+  }
+  .logo-name {
+    display: flex;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .logo-name span {
+    font-weight: 200;
+  }
+
+  .login-container {
+    display: flex;
+    position: relative;
+    border-radius: 5%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #00488344;
+    border: 2px solid #004883;
+    height: 112%;
+  }
+}
