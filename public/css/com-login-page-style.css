@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -97,13 +98,15 @@ body {
   position: relative;
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size: 1rem;
+  font-size: 1.7rem;
+  margin-left: 1rem;
   transition: 0.3s;
 }
 
 .back-btn {
   display: inline-block;
-  width: 130px;
+  position: relative;
+  width: 67px;
   height: 40px;
   background: #004883;
   padding: 0.5rem 0.8rem;
@@ -113,146 +116,77 @@ body {
   line-height: 1;
 
   transition: 0.3s;
-  text-transform: uppercase;
 }
 
 .img {
-  display: flex;
-  justify-content: flex-end;
-}
-.img img {
-  width: 600px;
-  margin-right: 100px;
-  margin-top: 80px;
-}
-
-.login-container {
-  display: flex;
-  position: relative;
-  border-radius: 5%;
-  margin-top: 9%;
-  margin-bottom: 5%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #00488344;
-  border: 2px solid #004883;
-  height: 112%;
+  height: 100px;
+  width: 130px;
 }
 
 .avatar {
-  width: 200px;
-}
-
-form {
-  width: 360px;
-}
-
-form h2 {
-  font-size: 2.9rem;
-  text-transform: uppercase;
-  margin: 15px 0;
-  color: #000000;
-}
-
-.input-div {
   position: relative;
-  display: grid;
-  grid-template-columns: 7% 93%;
-  margin: 25px 0;
-  padding: 10px 0;
-  border-bottom: 2px solid #000000;
+  width: 90px;
+  left: 12.5rem;
 }
 
-.input-div::after,
-.input-div:before {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background-color: #004883;
-  transition: 0.3s;
+.login {
+  width: 500px;
+  height: 32rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
 }
+.login h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.login form {
+  width: 360px;
 
-.input-div::after {
-  right: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
 }
-
-.input-div::before {
-  left: 50%;
-}
-.input-div.focus .i i {
-  color: #004883;
-}
-
-.input-div.focus div h5 {
-  top: -5px;
-  font-size: 15px;
-}
-
-.input-div.focus:after,
-.input-div.focus:before {
-  width: 50%;
-}
-
-.input-div.one {
-  margin-top: 0;
-}
-
-.input-div.two {
-  margin-bottom: 4px;
-}
-
-.i {
+.login form label {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.i i {
-  color: #070707;
-  transition: 0.3s;
-}
-
-.input-div > div {
   position: relative;
-  height: 45px;
+  left: 4rem;
+  width: 50px;
+  height: 50px;
+  background-color: #004883;
+  color: #ffffff;
+}
+.login form input[type="password"],
+.login form input[type="text"] {
+  position: relative;
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  left: 4rem;
+  padding: 0 15px;
 }
 
-.input-div > div h5 {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgb(5, 5, 5);
-  font-size: 18px;
-
-  transition: 0.3ss;
-}
-
-.input {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border: none;
-  outline: none;
-  background: none;
-  padding: 0.5rem 0.7rem;
-  font-size: 1.2rem;
-  font-family: "Poppins", sans-serif;
-  columns: #000000;
+.validation-error h1 {
+  position: relative;
+  left: 4rem;
+  font-size: 12px;
+  color: #e74c3c;
 }
 
 .forgotpw a {
   display: block;
   position: relative;
-  top: 25px;
-
+  left: 9.8rem;
+  top: 6rem;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(163, 152, 152);
   font-size: 0.9rem;
   transition: 0.3s;
 }
@@ -291,14 +225,15 @@ a:hover {
 }
 
 .btn {
-  display: block;
   position: relative;
+  left: 0.6rem;
   top: 2rem;
   padding: 3%;
-  width: 100%;
-  height: 50%;
+  width: 10rem;
+  height: 3rem;
+
   border-radius: 25px;
-  margin: 1rem 0;
+
   font-size: 1.2rem;
   outline: none;
   border: none;
@@ -337,36 +272,7 @@ a:hover {
   z-index: 1000;
 }
 
-@media screen and (max-width: 1050px) {
-  .container {
-    grid-gap: 5rem;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  form {
-    width: 290px;
-  }
-  form h2 {
-    font-size: 2.4rem;
-    margin: 8px 0;
-  }
-  .img img {
-    width: 400px;
-  }
-}
-
 @media screen and (max-width: 900px) {
-  .img {
-    display: none;
-  }
-  .container {
-    grid-template-columns: 1fr;
-  }
-  .wave {
-    display: none;
-  }
-
   .nav-bar {
     position: fixed;
     grid-area: nav-bar;
@@ -381,9 +287,10 @@ a:hover {
     z-index: 10;
   }
 
-  .back-btn {
-    width: 130px;
-    height: 35px;
+  .avatar {
+    position: relative;
+    width: 90px;
+    left: 5rem;
   }
 
   .logo-container {
@@ -392,7 +299,8 @@ a:hover {
 
   .title-name {
     display: flex;
-
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 50px;
 
@@ -400,6 +308,7 @@ a:hover {
   }
 
   .tzu-logo {
+    width: 82px;
     background: url(../images/tzuChiLogo.png);
   }
   .logo-name {
@@ -416,18 +325,117 @@ a:hover {
   .logo-name span {
     font-weight: 200;
   }
-
-  .login-container {
+  .log-sign {
+    width: 25px;
+    height: 48px;
     display: flex;
+    align-items: center;
     position: relative;
-    border-radius: 5%;
-    margin-top: 15%;
-    margin-bottom: 5%;
+  }
+
+  .log-sign a {
+    display: block;
+    position: relative;
+    right: 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    transition: 0.3s;
+  }
+
+  .back-btn {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    background: #004883;
+    padding: 0.5rem 0.8rem;
+    font-size: 5rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    line-height: 1;
+
+    transition: 0.3s;
+    text-transform: uppercase;
+  }
+
+  .login {
+    position: relative;
+    width: 250px;
+    height: 32rem;
+
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  }
+  .login h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 14px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+  }
+  .login form {
+    width: 360px;
+
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .login form label {
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: #00488344;
-    border: 2px solid #004883;
-    height: 112%;
+    position: relative;
+    left: 1rem;
+    width: 35px;
+    height: 35px;
+    background-color: #004883;
+    color: #ffffff;
+  }
+  .login form input[type="password"],
+  .login form input[type="text"] {
+    position: relative;
+    width: 10rem;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    left: 4rem;
+    bottom: 2.2rem;
+    padding: 0 15px;
+  }
+
+  .validation-error h1 {
+    position: absolute;
+    left: 7.3rem;
+    bottom: 18rem;
+    font-size: 8px;
+    color: #e74c3c;
+  }
+
+  .btn {
+    position: relative;
+    left: 4.3rem;
+    bottom: 1rem;
+    padding: 3%;
+    width: 7rem;
+    height: 3rem;
+
+    border-radius: 25px;
+
+    font-size: 0.8rem;
+  }
+
+  .forgotpw a {
+    display: block;
+    position: relative;
+    left: 4rem;
+    top: 7rem;
+    text-decoration: none;
+    color: rgb(163, 152, 152);
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  a:hover {
+    color: #070707;
   }
 }
