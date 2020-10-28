@@ -25,22 +25,27 @@
 /*------------------------------*/
 
 .main-container {
-  width: 100%;
-  height: auto;
-  overflow: auto;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 1fr 20fr 1fr;
+  grid-template-areas:
+    "nav-bar nav-bar"
+    "sidebar grid-container"
+    "sidebar footer";
 }
 
 .nav-bar {
   position: fixed;
   grid-area: nav-bar;
   display: grid;
-  width: 100%;
+  left: 0;
+  top: 0;
+  width: 100vw;
   grid-template-columns: 250px 60% 40%;
   grid-template-areas: "logo-container title-name dropdown";
   background-color: #004883;
   height: 50px;
   z-index: 10;
-  margin-right: 50px;
 }
 
 .logo-container {
@@ -97,6 +102,7 @@
 }
 
 .dropdown .dropbtn {
+  font-size: 17px;
   border: none;
   outline: none;
   color: white;
@@ -111,16 +117,15 @@
   position: absolute;
   top: 50px;
   background-color: #f9f9f9;
-  min-width: 200px;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
 
 .dropdown-content a {
-  font-size: 0.8rem;
   float: none;
   color: black;
-  padding: 0.8rem 0.8rem;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -140,22 +145,121 @@
   display: block;
 }
 
+.sidebar {
+  grid-area: sidebar;
+  position: fixed;
+  width: 250px;
+  height: 750px;
+  top: 48px;
+  left: 0px;
+  height: 100%;
+  overflow: auto;
+  background: #1b1b1b;
+  transition: left 0.4s ease;
+  z-index: 50;
+}
+
+.sidebar .text {
+  color: white;
+  font-size: 20px;
+  line-height: 40px;
+
+  text-align: center;
+  background: #004883;
+  border: 3px solid rgba(0, 162, 255, 0.993);
+  letter-spacing: 1px;
+}
+.sidebar ul {
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+.sidebar ul li {
+  line-height: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.sidebar ul li a {
+  position: relative;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 10px;
+  font-weight: 500;
+  display: block;
+
+  border-left: 3px solid transparent;
+}
+.sidebar ul li.active a {
+  color: rgba(0, 162, 255, 0.993);
+
+  background: #1e1e1e;
+  border-left-color: rgba(0, 162, 255, 0.993);
+}
+.sidebar ul li a:hover {
+  background: #1e1e1e;
+}
+.sidebar ul ul {
+  position: static;
+  display: none;
+}
+.sidebar ul .feat-show.show {
+  display: block;
+}
+.sidebar ul .serv-show.show1 {
+  display: block;
+}
+.sidebar ul ul li {
+  line-height: 42px;
+  border-top: none;
+}
+.sidebar ul ul li a {
+  font-size: 14px;
+  color: #e6e6e6;
+  padding-left: 15px;
+}
+.sidebar ul li.active ul li a {
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+}
+.sidebar ul ul li a:hover {
+  color: cyan !important;
+  background: #1e1e1e !important;
+}
+.sidebar ul li a span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  transition: transform 0.4s;
+}
+.sidebar ul li a span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
 .grid-container {
   grid-area: grid-container;
   position: absolute;
-  height: auto;
-  overflow-y: scroll;
   top: 50px;
   bottom: 50px;
-  width: 100%;
+  left: 250px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1.2fr 1.2fr 0.8fr;
+
+  width: 84%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 0.8fr;
   grid-template-areas:
-    " main main main"
-    " middle-content middle-content middle-content"
-    "content1 content2 content3"
-    " content1 content2 content3";
+    "breadcrum breadcrum breadcrum breadcrum"
+    "main main main main"
+    "content1 content1 content2 content3"
+    "content1 content1 content2 content3"
+    "foot-panel foot-panel foot-panel foot-panel";
   grid-gap: 0.2rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -164,14 +268,15 @@
   text-align: center;
 }
 
+#breadcrum {
+  background: #a7ffeb;
+  grid-area: breadcrum;
+  text-align: left;
+}
+
 main {
   background: #84ffff;
   grid-area: main;
-}
-#middle-content {
-  background: #84ffff;
-  grid-area: main;
-  height: 400px;
 }
 
 #content1 {
@@ -179,7 +284,6 @@ main {
   grid-area: content1;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
-  height: 600px;
 }
 
 #content2 {
@@ -187,7 +291,6 @@ main {
   grid-area: content2;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
-  height: 600px;
 }
 
 #content3 {
@@ -195,7 +298,6 @@ main {
   grid-area: content3;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
-  height: 600px;
 }
 
 footer {
@@ -208,7 +310,6 @@ footer {
 a {
   text-align: center;
   display: block;
-  font-size: 1rem;
   font-family: inherit;
   text-decoration: none;
   font-weight: bold;
@@ -236,6 +337,19 @@ a {
       "nav-bar "
       "grid-container"
       "footer";
+  }
+
+  .nav-bar {
+    position: fixed;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 100px 60% 15%;
+    grid-template-areas: "logo-container title-name dropdown";
+    background-color: #004883;
+    height: 50px;
+    z-index: 10;
   }
 
   .main-content {
@@ -286,9 +400,69 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    width: 100%;
     height: 50px;
     grid-area: logo-container;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0px;
+    width: 250px;
+    height: 100%;
+    background: #042331;
+    transition: all 0.5s ease;
+  }
+
+  #check {
+    display: none;
+  }
+  label #btn {
+    position: absolute;
+    background: #004883;
+    top: 10px;
+    border: solid 1px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  label #cancel {
+    position: absolute;
+    background: #ff3030;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+  label #btn {
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+    z-index: 20;
+  }
+  label #cancel {
+    z-index: 20;
+    left: 250px;
+    top: 50px;
+    font-size: 30px;
+    color: #fcfcfc;
+    padding: 4px 9px;
+    transition: all 0.5s ease;
+  }
+  #check:checked ~ .sidebar {
+    left: -250px;
+  }
+  #check:checked ~ label #btn {
+    left: 40px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #check:checked ~ label #cancel {
+    left: -195px;
+  }
+  #check:checked ~ section {
+    margin-left: 0px;
   }
 
   .logo {
@@ -299,14 +473,14 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20rem;
+    width: 100%;
     height: 50px;
 
     grid-area: title-name;
   }
 
   .tzu-logo {
-    width: 5rem;
+    width: 82px;
     background: url(../images/tzuChiLogo.png);
   }
   .logo-name {
@@ -329,17 +503,10 @@ a {
     justify-content: center;
     align-items: right;
     grid-area: dropdown;
-
     float: right;
     overflow: hidden;
   }
   .dropdown .dropbtn {
     font-size: 12px;
-  }
-
-  .dropdown-content {
-    min-width: 250px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 10;
   }
 }
