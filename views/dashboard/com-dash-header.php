@@ -88,12 +88,12 @@
           </h3>
         </div>
         <div class="dropdown">
-          <button class="dropbtn">Hi, User
+          <button class="dropbtn">Hi, <?= $_SESSION['name'] ?>
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
             <a href="#">Edit Profile</a>
-            <a href="#">Logout</a>
+            <a href="<?= URL ?>dashboard/logout">Logout</a>
 
           </div>
         </div>
@@ -106,7 +106,7 @@
 
 
       <div id="breadcrum">Home></div>
-      <main>Main</main>
+      <main>Main </main>
 
       <div id="content1">C ontent1</div>
       <div id="content2">Content2</div>

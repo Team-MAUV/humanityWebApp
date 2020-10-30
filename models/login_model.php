@@ -10,15 +10,17 @@ class Login_Model extends Model
 
     public function run()
     {
-        $st = $this->db->prepare("SELECT id FROM commissioner WHERE username= :login AND password = :password ");
+        $st = $this->db->prepare("SELECT id FROM commissioner WHERE username= :login AND password = MD5(:password)");
         $st->execute(array(
             ':login' => $_POST['username'],
             ':password' => $_POST['password']
+
         ));
 
         Session::init();
-        $username = $_POST["username"];
+
         $error = "Entered Username or Password is incorrect";
+        $_SESSION['name'] = $_POST['username'];
         $id = $_POST["id"];
 
         // $data = $st->fetchAll();
