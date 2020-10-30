@@ -248,18 +248,23 @@
   position: absolute;
   top: 50px;
   bottom: 50px;
-  left: 250px;
+  left: 260px;
   display: grid;
-
+  overflow: auto;
   width: 84%;
+
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 0.8fr;
+  grid-template-rows: 4fr 4fr 4fr 4fr 4fr 4fr 1.2fr;
   grid-template-areas:
     "breadcrum breadcrum breadcrum breadcrum"
     "main main main main"
     "content1 content1 content2 content3"
     "content1 content1 content2 content3"
-    "foot-panel foot-panel foot-panel foot-panel";
+    "content1 content1 content2 content3"
+    "content1 content1 content2 content3"
+    "content1 content1 content2 content3"
+    "content4 content4 content4 content4 ";
+
   grid-gap: 0.2rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -300,6 +305,13 @@ main {
   padding-top: var(--main-padding);
 }
 
+#content4 {
+  background: #73ffba;
+  grid-area: content4;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
 footer {
   grid-area: foot-panel;
   background: #1de9b6;
@@ -324,8 +336,8 @@ a {
   height: 50px;
   background-color: #004883;
   color: white;
-
   z-index: 10;
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {
@@ -364,7 +376,7 @@ a {
     bottom: 50px;
     left: 0;
     display: grid;
-
+    overflow: auto;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 0.8fr;

@@ -33,7 +33,7 @@ class Login_Model extends Model
             Session::set('name', $_POST['username']);
             Session::set('id', $id);
             Session::set('loggedIn', true);
-            header('location: ../dashboard');
+            header('location: ../Commissioner');
         } else {
             // show error
             Session::set('error', $error);
