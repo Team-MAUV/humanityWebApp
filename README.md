@@ -31,6 +31,6 @@ Create a table named commissioner
 or import SQL dump file from db dump file folder
 
 ```
-
-
+##Hashing technique
+  MD5 is being used. Have to check in with other Hashing techniques
 ```
