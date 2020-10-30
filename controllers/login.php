@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller
+class login extends Controller
 {
 
     function __construct()
@@ -10,7 +10,7 @@ class Login extends Controller
 
     function index()
     {
-        $this->view->rendor('login/com-login-page');
+        $this->view->rendor('login/com_login_page');
     }
 
     function run()
