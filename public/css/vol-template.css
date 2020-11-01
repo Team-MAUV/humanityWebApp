@@ -1,0 +1,25 @@
+* {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.vtgrid {
+    display: grid;
+    grid-template-rows: 7vh 86vh 7vh;
+    overflow: hidden;
+    row-gap: 0;
+}
+
+.vcontent {
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    column-gap: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100%;
+}
