@@ -1,0 +1,106 @@
+body {
+    background-color: #054b85;
+}
+
+h1 {
+    margin-top: 7vh;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 1000;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+form {
+    margin-top: 5vh;
+    margin-left: 10vw;
+    font-weight: 600;
+    line-height: 40vh;
+    font-size: larger;
+}
+
+.floatRight {
+    margin-top: 0;
+    float: right;
+    width: 45vw;
+    height: 55vh;
+}
+
+input {
+    border-radius: 5px;
+    padding: 4px 10px;
+    resize: vertical;
+}
+
+.btn {
+    background-color: dodgerblue;
+    color: rgb(253, 253, 253);
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: red;
+    color: black;
+}
+
+.formcss {
+    line-height: 10vh;
+}
+
+ul {
+    line-height: 20vh;
+    list-style: none;
+    display: inline-block;
+}
+
+.file {
+    background-color: #616665;
+    padding-left: 2vw;
+    padding-right: 0.5vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 0;
+}
+
+.file:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+    form {
+        font-size: 1rem;
+    }
+    img {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    .floatRight {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    .btn {
+        padding: 1px 1px;
+    }
+    .file {
+        float: left;
+    }
+    ul {
+        font-size: 1rem;
+        display: inline-block;
+        line-height: 12vh;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}

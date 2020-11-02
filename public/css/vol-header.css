@@ -1,0 +1,115 @@
+* {
+    color: black;
+}
+
+.vheader {
+    position: sticky;
+    background-color: #78cc5a;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo-container {
+    width: 94px;
+    height: 48px;
+    margin-left: 20vw;
+    align-items: center;
+    background: url(<../../../../../humanity/public/images/hlogoxs.png);
+}
+
+.logo-name {
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1rem;
+    font-style: italic;
+}
+
+.logo-name span {
+    font-weight: 300;
+}
+
+.back-btn {
+    display: inline-block;
+    width: 35%;
+    height: 40%;
+    background: #78cc5a;
+    padding: 0.5rem 1.3rem;
+    font-size: 1.3rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    line-height: 1;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #070707;
+}
+
+.back {
+    float: left;
+    margin-top: 0.6rem;
+    margin-left: 0;
+}
+
+ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 2.5vw;
+    margin-top: 0;
+}
+
+@media screen and (max-width: 850px) {
+    .logo-name {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-align: center;
+        font-size: small;
+        vertical-align: baseline;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 2vh;
+    }
+    .logo-container {
+        margin-left: 0;
+    }
+    ul li {
+        height: 20vh;
+        width: 3vw;
+        font-size: 1rem;
+    }
+    .back {
+        margin-left: 0;
+    }
+}
