@@ -20,10 +20,10 @@
             </div>
             <ul>
                 <li>
-                    <a href="http://localhost/humanity/volhome" target="_top" class="serv-btn"><i class="fas fa-home"> </i> Home</a>
+                    <a href="http://localhost/humanity/volunteer" target="_top" class="serv-btn"><i class="fas fa-home"> </i> Home</a>
                 </li>
                 <li>
-                    <a href="http://localhost/humanity/voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt"></i> Add new beneficiery
+                    <a href="http://localhost/humanity/volunteer/voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt"></i> Add new beneficiery
               </a>
 
                 </li>
@@ -42,10 +42,10 @@
             </div>
             <ul>
                 <li>
-                    <a href="http://localhost/humanity/volhome" target="_top" class="serv-btn"><i class="fas fa-home fa-4x"></i> </a>
+                    <a href="http://localhost/humanity/volunteer" target="_top" class="serv-btn"><i class="fas fa-home fa-4x"></i> </a>
                 </li>
                 <li>
-                    <a href="http://localhost/humanity/voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt fa-4x"></i>
+                    <a href="http://localhost/humanity/volunteer/voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt fa-4x"></i>
               </a>
                 </li>
                 <li class="active">

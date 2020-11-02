@@ -23,12 +23,12 @@
                     <a href="#"><i class="fas fa-home"> </i> Home</a>
                 </li>
                 <li>
-                    <a href="<?= URL ?>voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt"></i> Add new beneficiery
+                    <a href="<?= URL ?>volunteer/voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt"></i> Add new beneficiery
               </a>
 
                 </li>
                 <li>
-                    <a href="http://localhost/humanity/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize"></i> View New Activities
+                    <a href="<?=URL?>volunteer/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize"></i> View New Activities
                
               </a>
                 </li>
@@ -45,11 +45,11 @@
                     <a href="#"><i class="fas fa-home fa-4x"></i> </a>
                 </li>
                 <li>
-                    <a href="http://localhost/humanity/voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt fa-4x"></i>
+                    <a href="http://localhost/humanity/volunteer/voladdbene" class="feat-btn" target="_top"><i class="fas fa-file-alt fa-4x"></i>
               </a>
                 </li>
                 <li>
-                    <a href="http://localhost/humanity/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize fa-4x"></i>
+                    <a href="http://localhost/humanity/volunteer/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize fa-4x"></i>
                 
               </a>
                 </li>

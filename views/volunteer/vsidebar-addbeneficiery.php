@@ -20,7 +20,7 @@
             </div>
             <ul>
                 <li>
-                    <a href="http://localhost/humanity/volhome" class="feat-btn" target="_top"><i class="fas fa-home"> </i> Home</a>
+                    <a href="http://localhost/humanity/volunteer" class="feat-btn" target="_top"><i class="fas fa-home"> </i> Home</a>
                 </li>
                 <li class="active">
                     <a href="#"><i class="fas fa-file-alt"></i> Add new beneficiery
@@ -28,7 +28,7 @@
 
                 </li>
                 <li>
-                    <a href="http://localhost/humanity/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize"></i> View New Activities
+                    <a href="http://localhost/humanity/volunteer/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize"></i> View New Activities
                
               </a>
                 </li>
@@ -42,14 +42,14 @@
             </div>
             <ul>
                 <li>
-                    <a href="http://localhost/humanity/volhome" target="_top" class="feat-btn"><i class="fas fa-home fa-4x"></i> </a>
+                    <a href="http://localhost/humanity/volunteer" target="_top" class="feat-btn"><i class="fas fa-home fa-4x"></i> </a>
                 </li>
                 <li class="active">
                     <a href="#"><i class="fas fa-file-alt fa-4x"></i>
               </a>
                 </li>
                 <li>
-                    <a href="http://localhost/humanity/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize fa-4x"></i>
+                    <a href="http://localhost/humanity/volunteer/volviewevent" class="serv-btn" target="_top"><i class="far fa-window-maximize fa-4x"></i>
                 
               </a>
                 </li>

@@ -19,7 +19,7 @@
             <iframe src="http://localhost/humanity/views/volunteer/vheader.php" width="100%" height="100%" scrolling="no"></iframe>
         </div>
         <div class="vcontent">
-            <iframe src="http://localhost/humanity/views/volunteer/vsidebar-home.php" width="100%" height="100%" scrolling="no"></iframe>
+            <iframe src="<?= URL ?>views/volunteer/vsidebar-home.php" width="100%" height="100%" scrolling="no"></iframe>
             <iframe src="http://localhost/humanity/views/volunteer/vbg.php" width="100%" height="100%"></iframe>
         </div>
 
