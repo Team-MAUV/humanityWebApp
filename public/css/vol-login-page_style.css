@@ -382,8 +382,10 @@ hr {
 
   .login {
     position: relative;
+
+    justify-content: center;
     width: 250px;
-    height: 32rem;
+    height: 38rem;
 
     background-color: #ffffff;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
@@ -436,11 +438,11 @@ hr {
 
   .btn {
     position: relative;
-    left: 4.3rem;
-    bottom: 1rem;
-    padding: 3%;
     width: 7rem;
     height: 3rem;
+    left: 4.3rem;
+    bottom: 100rem;
+    padding: 3%;
 
     border-radius: 25px;
 
@@ -457,7 +459,23 @@ hr {
     font-size: 0.9rem;
     transition: 0.3s;
   }
-  a:hover {
-    color: #070707;
+
+  .register {
+    position: absolute;
+    margin: auto;
+    top: 32rem;
+    right: 4rem;
+  }
+
+  .register h4 {
+    position: relative;
+
+    font-size: 0.7rem;
+  }
+
+  .register .btn {
+    margin-bottom: auto;
+    margin-top: auto;
+    text-align: center;
   }
 }
