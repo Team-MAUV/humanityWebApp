@@ -3,7 +3,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    text-decoration: none;
 }
 
 body {
@@ -118,19 +117,20 @@ body {
 }
 
 .img {
-    height: 100px;
+    height: 10px;
     width: 130px;
 }
 
 .avatar {
     position: relative;
     width: 90px;
+    height: 10px;
     left: 12.5rem;
 }
 
 .login {
     width: 500px;
-    height: 36rem;
+    height: 48rem;
     background-color: #ffffff;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
@@ -138,7 +138,7 @@ body {
 
 .login h1 {
     text-align: center;
-    color: #5b6574;
+    color: #f1f1f1;
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
@@ -160,11 +160,12 @@ body {
     left: 4rem;
     width: 50px;
     height: 50px;
-    background-color: #78cc5a;
-    color: #ffffff;
+    background-color: #2caa0c;
+    color: #080808;
 }
 
-.login form input[type="password"],
+.login form input[type="date"],
+.login form select,
 .login form input[type="text"] {
     position: relative;
     width: 310px;
@@ -227,27 +228,31 @@ a:hover {
 }
 
 .btn {
-    position: relative;
-    left: 0.6rem;
-    top: 2rem;
-    padding: 3%;
-    width: 10rem;
-    height: 3rem;
+    display: block;
+    width: 100%;
+    height: 50px;
     border-radius: 25px;
+    margin: 1rem 0;
+    margin-left: 8rem;
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #009141, #17af5b, #39eb03);
-    cursor: pointer;
-    color: #fff;
+    background-image: linear-gradient(to right, #17e74b, #04c6f7, #32be8f);
+    color: rgb(22, 22, 22);
     text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    background-size: 300%;
-    transition: 0.5s;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-size: 200%;
+    transition: .5s;
+}
+
+.btnreg {
+    background-image: linear-gradient(to right, #0dddb0, #1d8b6a, #0d91dd);
 }
 
 .btn:hover {
     background-position: right;
+    cursor: pointer;
 }
 
 .form-control.success i.fa-check-circle {
@@ -258,28 +263,6 @@ a:hover {
 .form-control.error i.fa-exclamation-circle {
     color: #e74c3c;
     visibility: visible;
-}
-
-hr {
-    position: relative;
-    top: 5rem;
-}
-
-.register {
-    position: relative;
-    display: flex;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 6rem;
-}
-
-.register h4 {
-    position: relative;
-    left: 11rem;
-}
-
-.register a {
-    text-align: center;
 }
 
 .footer {
@@ -372,15 +355,14 @@ hr {
     }
     .login {
         position: relative;
-        justify-content: center;
         width: 250px;
-        height: 38rem;
+        height: 55rem;
         background-color: #ffffff;
         box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     }
     .login h1 {
         text-align: center;
-        color: #5b6574;
+        color: #f7dfdf;
         font-size: 14px;
         padding: 20px 0 20px 0;
         border-bottom: 1px solid #dee0e4;
@@ -400,10 +382,10 @@ hr {
         left: 1rem;
         width: 35px;
         height: 35px;
-        background-color: #78cc5a;
-        color: #ffffff;
     }
     .login form input[type="password"],
+    .login form select,
+    .login form input[type="date"],
     .login form input[type="text"] {
         position: relative;
         width: 10rem;
@@ -416,18 +398,18 @@ hr {
     }
     .validation-error h1 {
         position: absolute;
-        left: 2.5rem;
-        bottom: 10rem;
+        left: 7.3rem;
+        bottom: 18rem;
         font-size: 8px;
         color: #e74c3c;
     }
-    .btn {
+    .btnreg {
         position: relative;
-        width: 7rem;
-        height: 3rem;
-        left: 4.3rem;
-        bottom: 100rem;
+        right: 5rem;
+        bottom: 2rem;
         padding: 3%;
+        width: 10rem;
+        height: 3rem;
         border-radius: 25px;
         font-size: 0.8rem;
     }
@@ -441,18 +423,7 @@ hr {
         font-size: 0.9rem;
         transition: 0.3s;
     }
-    .register {
-        position: absolute;
-        margin: auto;
-        top: 32rem;
-    }
-    .register h4 {
-        position: relative;
-        font-size: 0.7rem;
-    }
-    .register .btn {
-        margin-bottom: auto;
-        margin-top: auto;
-        text-align: center;
+    a:hover {
+        color: #070707;
     }
 }
