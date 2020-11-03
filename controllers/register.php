@@ -22,4 +22,9 @@ class register extends Controller
   {
     $this->model->run_com();
   }
+  
+  function run_vol_reg()
+  {
+    $this->model->run_vol_reg();
+  }
 }
