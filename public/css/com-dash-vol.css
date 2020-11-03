@@ -1,0 +1,17 @@
+.tab-section ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+.tab-section ul li {
+}
+.tab-section ul li a {
+  padding: 10px;
+  background-color: #ccc;
+}
+.tab-section .active {
+  background-color: lightgreen;
+}

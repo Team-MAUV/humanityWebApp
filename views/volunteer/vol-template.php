@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>volunteer template</title>
-    <link rel="stylesheet" href="http://localhost/humanity/public/css/vol-template.css" />
+    <link rel="stylesheet" href="<?= URL ?>public/css/vol-template.css" />
     <link rel="stylesheet" type="text/css" href="http://localhost/humanity/public/css/vol-header.css" />
     <link rel="stylesheet" type="text/css" href="http://localhost/humanity/public/css/vol-footer.css" />
     <script src="https://kit.fontawesome.com/c0d2632e91.js" crossorigin="anonymous"></script>

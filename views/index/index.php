@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Humanity</title>
 
-  <link rel="stylesheet" href="<?= URL ?>public/css/layout_style.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/com-layout_style.css" />
   <script src="https://kit.fontawesome.com/c0d2632e91.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>

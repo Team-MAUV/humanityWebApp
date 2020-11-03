@@ -405,8 +405,8 @@ a:hover {
 
   .validation-error h1 {
     position: absolute;
-    left: 7.3rem;
-    bottom: 18rem;
+    left: 2.5rem;
+    bottom: 10rem;
     font-size: 8px;
     color: #e74c3c;
   }
