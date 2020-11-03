@@ -30,7 +30,8 @@ Create a table named commissioner
 
 or import SQL dump file from db dump file folder
 
-exported tables are in the dump file folder 
+Exported tables are in the dump file folder. 
+
 ```
 
 ```
