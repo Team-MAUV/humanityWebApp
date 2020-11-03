@@ -13,6 +13,11 @@ class login extends Controller
         $this->view->rendor('login/com_login_page');
     }
 
+    function vol_login()
+    {
+        $this->view->rendor('login/vol_login_page');
+    }
+
     function run_com()
     {
         $this->model->run_com();
