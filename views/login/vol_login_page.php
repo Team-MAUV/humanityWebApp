@@ -71,7 +71,7 @@
 
     <div class="register">
       <h4>Come & join with us!</h4>
-      <a href="<?= URL ?>register/vol_register" class="btn">Register</a>
+      <a href="<?= URL ?>register" class="btn">Register</a>
     </div>
 
 
@@ -83,6 +83,3 @@
 </body>
 
 </html>
-<?php
-unset($_SESSION["error"]);
-?>
