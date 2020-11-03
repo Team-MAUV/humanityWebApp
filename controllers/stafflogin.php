@@ -10,7 +10,7 @@ class stafflogin extends Controller
 
     function index()
     {
-        $this->view->rendor('login/stafflogin_page');
+        $this->view->rendor('stafflogin/stafflogin_page');
     }
 
     function run()
