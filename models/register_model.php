@@ -1,6 +1,6 @@
 <?php
 
-class Vol_Registration extends Model
+class register_model extends Model
 {
 
     public function __construct()
@@ -17,15 +17,15 @@ class Vol_Registration extends Model
 
         ));
 
-    
+
 
         $error = "Entered Username or Password is incorrect";
-       
+
         $count = $st->rowCount();
         if ($count > 0) {
             // login
 
-            
+
         } else {
             // show error
             set('error', $error);
