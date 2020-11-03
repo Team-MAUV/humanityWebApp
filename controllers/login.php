@@ -13,8 +13,8 @@ class login extends Controller
         $this->view->rendor('login/com_login_page');
     }
 
-    function run()
+    function run_com()
     {
-        $this->model->run();
+        $this->model->run_com();
     }
 }

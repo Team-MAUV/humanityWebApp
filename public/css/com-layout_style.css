@@ -260,7 +260,7 @@
   width: 100%;
   background: #a7ffeb;
   text-align: left;
-  z-index: 50;
+  z-index: 9;
 }
 
 .grid-body {

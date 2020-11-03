@@ -8,7 +8,7 @@ class Login_Model extends Model
         parent::__construct();
     }
 
-    public function run()
+    public function run_com()
     {
         $st = $this->db->prepare("SELECT id FROM commissioner WHERE username= :login AND password = MD5(:password)");
         $st->execute(array(
