@@ -30,8 +30,8 @@
 <script>
   /// Display container which has active class
   var id = $('.tab-section .active').attr('id');
-  $('.container').hide();
-  $('.container#' + id + 'C').show();
+  $('.tab-container').hide();
+  $('.tab-container#' + id + 'C').show();
 
   //// Change the tab when user clicks
   $('.tab-section a').click(function() {
@@ -41,8 +41,8 @@
 
       $('.tab-section a').removeClass('active');
       $(this).addClass('active');
-      $('.container').hide();
-      $('.container#' + this.id + 'C').show();
+      $('.tab-container').hide();
+      $('.tab-container#' + this.id + 'C').show();
     }
   });
 </script>

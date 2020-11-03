@@ -13,5 +13,6 @@
   background-color: #ccc;
 }
 .tab-section .active {
+  height: 0.5rem;
   background-color: lightgreen;
 }

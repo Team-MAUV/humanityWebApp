@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="<?= URL ?>public/css/com-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
 
-
 </head>
 
 <body>

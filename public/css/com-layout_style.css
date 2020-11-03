@@ -245,58 +245,27 @@
 
 .grid-container {
   position: absolute;
+  display: grid;
   top: 50px;
   bottom: 50px;
   left: 260px;
-  display: grid;
   overflow: auto;
   width: 84%;
 }
 
-#breadcrum {
-  position: relative;
+.breadcrum {
+  position: fixed;
+  grid-area: breadcum;
+  height: 2rem;
+  width: 100%;
   background: #a7ffeb;
   text-align: left;
+  z-index: 50;
 }
 
-main {
-  background: #84ffff;
-  grid-area: main;
-}
-
-#content1 {
-  background: #6fffd2;
-  grid-area: content1;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
-}
-
-#content2 {
-  background: #64ffda;
-  grid-area: content2;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
-}
-
-#content3 {
-  background: #73ffba;
-  grid-area: content3;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
-}
-
-#content4 {
-  background: #73ffba;
-  grid-area: content4;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
-}
-
-footer {
-  grid-area: foot-panel;
-  background: #1de9b6;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
+.grid-body {
+  position: relative;
+  top: 3rem;
 }
 
 a {
