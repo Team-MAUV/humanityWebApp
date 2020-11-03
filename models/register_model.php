@@ -1,6 +1,8 @@
 <?php
 
+
 class register_model extends Model
+
 {
 
     public function __construct()
@@ -8,28 +10,17 @@ class register_model extends Model
         parent::__construct();
     }
 
-    public function run_vol_reg()
+    public function check_volunteer($name,$nic,$email)
     {
-        $st = $this->db->prepare("SELECT id FROM commissioner WHERE username= :login AND password = MD5(:password)");
-        $st->execute(array(
-            ':login' => $_POST['username'],
-            ':password' => $_POST['password']
 
-        ));
+        $check_db=$this->db->prepare("SELECT * FROM 'volunteer' WHERE name='".$name."' OR email='".$email."' OR nic='".$nic."' ");
+        $count=count($check_db);
+        return $count;
+    }
+    public function insert_volunteer($data){
+        $this->db->insert('volunteer',$data);
 
+      
 
-
-        $error = "Entered Username or Password is incorrect";
-
-        $count = $st->rowCount();
-        if ($count > 0) {
-            // login
-
-
-        } else {
-            // show error
-            set('error', $error);
-            header('location: ../login');
-        }
     }
 }
