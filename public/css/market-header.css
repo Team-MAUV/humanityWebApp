@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+
+    
+}
+.back{
+    text-align: left;
+}
+.h-container nav{
+    flex: 1;
+    text-align: right;
+}
+.h-container nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+.h-container nav ul li{
+    display: inline-block;
+    margin-right: 10px;
+    
+}
+.h-container nav ul li:hover{
+    
+    
+}
+
+.h-container a{
+    text-decoration: none;
+    color: black;
+}
+.h-container a:hover{
+    color: white;
+}
+.h-container{
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: orangered;
+    position: sticky;
+
+  
+   
+}
+.body-con{
+    background-color: red;
+}
+.name{
+    
+    font-family: 'Sansita Swashed', cursive;
+}
+@media screen and (max-width: 600px){
+   .h-container  nav ul{
+        position: absolute;
+        width: 150px;
+        padding: 0;
+        margin-right:0;
+        margin-left: 10px;
+      
+        
+    }
+   .h-container  nav{
+        text-align: left;
+        
+    }
+    .back{
+        margin-top: 20px;
+        max-width: 30px;
+            
+    }
+    .btn-text{
+        display: none;
+    }
+    .logo img{
+        width: 100px;
+    }
+    .logo{
+        background-color:lightgreen;
+        
+        padding-top:5px;
+        padding-left: 3px;
+    }
+    .name{
+        font-size: 10px;
+        background-color: brown;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 2px;
+        padding-right: 5px;
+    }
+}   
