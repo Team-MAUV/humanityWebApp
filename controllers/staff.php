@@ -10,7 +10,7 @@ class Staff extends Controller
         $logged = Session::get('loggedIn');
         if ($logged == false) {
             Session::destroy();
-            header('location: ../login');
+            header('location: ../stafflogin');
             exit;
         }
     }
@@ -21,25 +21,22 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/index');
     }
 
-    function volunteer()
+    /*function Market_module()
     {
-        $this->view->rendor('staff/dashboard/volunteer');
+        $this->view->rendor('staff/dashboard/Market_module');
     }
+*/
+    function add_product()
+    {
+        $this->view->rendor('staff/dashboard/add_product');
+    }
+    function access_product()
+    {
+        $this->view->rendor('staff/dashboard/access_product');
+    }
+    
 
-    function staff()
-    {
-        $this->view->rendor('commissioner/dashboard/staff');
-    }
 
-    function buyer()
-    {
-        $this->view->rendor('commissioner/dashboard/buyer');
-    }
-
-    function donor()
-    {
-        $this->view->rendor('commissioner/dashboard/donor');
-    }
 
 
     function newVolActivity()
@@ -47,42 +44,35 @@ class Staff extends Controller
         $this->view->rendor('commissioner/dashboard/newVolActivity');
     }
 
-    function viewVolActivity()
+   
+
+    function Report()
     {
-        $this->view->rendor('commissioner/dashboard/viewVolActivity');
+        $this->view->rendor('staff/dashboard/Report');
     }
 
-    function projectReports()
+    function requestleave()
     {
-        $this->view->rendor('commissioner/dashboard/projectReports');
+        $this->view->rendor('staff/dashboard/requestleave');
     }
 
-    function leaveRequests()
-    {
-        $this->view->rendor('commissioner/dashboard/leaveRequests');
-    }
-
-    function sessionincharge()
-    {
-        $this->view->rendor('commissioner/dashboard/sessionincharge');
-    }
-
-    function beneficiaryCases()
-    {
-        $this->view->rendor('commissioner/dashboard/beneficiaryCases');
-    }
+  
+    
 
     function media()
     {
-        $this->view->rendor('commissioner/dashboard/media');
+        $this->view->rendor('staff/dashboard/media');
     }
 
-
+    function notification()
+    {
+        $this->view->rendor('staff/dashboard/notification');
+    }
 
     function logout()
     {
         Session::destroy();
-        header('location: ../login');
+        header('location: ../stafflogin');
         exit;
     }
 }

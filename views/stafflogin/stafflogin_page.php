@@ -49,8 +49,8 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Username</h5>
-           		   		<input type="text" class="input" id="username" required>
+           		   	
+           		   		<input type="text" class="input" name="username" id="username" placeholder="Username" required>
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -58,11 +58,9 @@
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
-           		    	<h5>Password</h5>
-           		    	<input type="password"  class="input" id="password" required>
-            	   </div>
-				</div>
-				<div class="validation-error">
+           		    	
+           		    	<input type="password"  class="input" name="password" id="password" placeholder="Password" required>
+						   <div class="validation-error">
                 <?php
                 session_start();
 
@@ -72,6 +70,10 @@
                 }
                 ?>
             </div>
+				  
+				   </div>
+				</div>
+				
 				<a href="#">Forgot Password?</a>
             	<input type="submit" class="btn" value="Login">
             </form>
