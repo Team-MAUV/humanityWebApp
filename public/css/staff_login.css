@@ -6,9 +6,99 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow: scroll;
 }
-
+.nav-bar {
+	position: fixed;
+	grid-area: nav-bar;
+	display: grid;
+	left: 0;
+	top: 0;
+	width: 100%;
+	grid-template-columns: 250px 60% 40%;
+	grid-template-areas: "logo-container title-name dropdown";
+	background-color: #3323be;
+	height: 50px;
+	z-index: 10;
+  }
+  
+  .logo-container {
+	display: flex;
+	width: 100%;
+	height: 50px;
+	grid-area: logo-container;
+  }
+  
+  .logo {
+	height: 50px;
+	width: 98px;
+	margin-left: 70px;
+	z-index: 10;
+	background-image: url("../images/hlogoxs.png");
+  }
+  
+  .title-name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+  
+	grid-area: title-name;
+  }
+  
+  .tzu-logo {
+	width: 82px;
+	background: url("../images/tzuChiLogo.png");
+  }
+  .logo-name {
+	display: flex;
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	line-height: 3rem;
+	text-align: center;
+  }
+  
+  .logo-name span {
+	font-weight: 200;
+  }
+  
+  .log-sign {
+	width: 150px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	position: relative;
+  }
+  
+  .log-sign a {
+	display: block;
+	position: relative;
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	font-size: 1.7rem;
+	margin-left: 1rem;
+	transition: 0.3s;
+  }
+  
+  .back-btn {
+	display: inline-block;
+	position: relative;
+	width: 67px;
+	height: 40px;
+	background: #004883;
+	padding: 0.5rem 0.8rem;
+	font-size: 1.2rem;
+	border: 2px solid #fff;
+	border-radius: 2rem;
+	line-height: 1;
+  
+	transition: 0.3s;
+  }
+  
 .wave{
 	position: fixed;
 	bottom: 0;
@@ -27,6 +117,9 @@ body{
 }
 
 .img{
+
+	
+
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -41,6 +134,7 @@ body{
 
 .img img{
 	width: 500px;
+	
 }
 
 form{
@@ -180,12 +274,35 @@ a:hover{
 .btn:hover{
 	background-position: right;
 }
-
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #3215d4;
+	color: white;
+	text-align: center;
+	z-index: 1000;
+  }
 
 @media screen and (max-width: 1050px){
 	.container{
 		grid-gap: 5rem;
 	}
+	.nav-bar {
+		position: fixed;
+		grid-area: nav-bar;
+		display: grid;
+		left: 0;
+		top: 0;
+		width: 100%;
+		grid-template-columns: 5fr 1fr;
+		grid-template-areas: " title-name logo-container ";
+		background-color: #004883;
+		height: 50px;
+		z-index: 10;
+	  }
 }
 
 @media screen and (max-width: 1000px){
