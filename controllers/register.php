@@ -15,8 +15,8 @@ class Register extends Controller
 
 
 
-  function register_vol()
+  function register()
   {
-    $this->model->register_vol();
+    $this->model->register();
   }
 }

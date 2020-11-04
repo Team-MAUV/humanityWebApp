@@ -56,7 +56,7 @@ body {
     width: 100%;
     grid-template-columns: 250px 60% 40%;
     grid-template-areas: "logo-container title-name dropdown";
-    background-color: #78cc5a;
+    background-color: orangered;
     height: 50px;
     z-index: 10;
 }
@@ -128,7 +128,7 @@ body {
     position: relative;
     width: 67px;
     height: 40px;
-    background: #78cc5a;
+    background: orangered;
     padding: 0.5rem 0.8rem;
     font-size: 1.2rem;
     border: 2px solid #fff;
@@ -159,7 +159,7 @@ body {
 
 .login h1 {
     text-align: center;
-    color: #f1f1f1;
+    color: #ffffff;
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
@@ -181,7 +181,7 @@ body {
     left: 4rem;
     width: 50px;
     height: 50px;
-    background-color: #2caa0c;
+    background-color: orangered;
     color: #080808;
 }
 
@@ -258,7 +258,8 @@ a:hover {
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #17e74b, #04c6f7, #32be8f);
+    border-color: #181717;
+    background-image: linear-gradient(to right, #f3d991, #dd830e, #333331);
     color: rgb(22, 22, 22);
     text-transform: uppercase;
     text-align: center;
@@ -268,12 +269,13 @@ a:hover {
 }
 
 .btnreg {
-    background-image: linear-gradient(to right, #0dddb0, #1d8b6a, #0d91dd);
+    background-image: linear-gradient(to right, #f3d991, #dd830e, #d30808);
 }
 
 .btn:hover {
     background-position: right;
     cursor: pointer;
+    color: white;
 }
 
 .form-control.success i.fa-check-circle {
@@ -292,7 +294,7 @@ a:hover {
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: #78cc5a;
+    background-color: orangered;
     color: white;
     text-align: center;
     z-index: 1000;
@@ -308,7 +310,7 @@ a:hover {
         width: 100%;
         grid-template-columns: 5fr 1fr;
         grid-template-areas: " title-name logo-container ";
-        background-color: #78cc5a;
+        background-color: orangered;
         height: 50px;
         z-index: 10;
     }
@@ -447,4 +449,29 @@ a:hover {
     a:hover {
         color: #070707;
     }
+    .wave {
+        visibility: hidden;
+    }
+}
+
+.wave {
+    position: fixed;
+    height: 90%;
+    width: 35%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+.img img {
+    width: 500px;
 }
