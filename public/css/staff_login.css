@@ -17,7 +17,7 @@ body{
 	width: 100%;
 	grid-template-columns: 250px 60% 40%;
 	grid-template-areas: "logo-container title-name dropdown";
-	background-color: #004883;
+	background-color: #3323be;
 	height: 50px;
 	z-index: 10;
   }
@@ -118,7 +118,7 @@ body{
 
 .img{
 
-	position:fixed;
+	
 
 	display: flex;
 	justify-content: flex-end;
@@ -134,7 +134,7 @@ body{
 
 .img img{
 	width: 500px;
-	position:fixed;
+	
 }
 
 form{
@@ -280,7 +280,7 @@ a:hover{
 	bottom: 0;
 	width: 100%;
 	height: 50px;
-	background-color: #004883;
+	background-color: #3215d4;
 	color: white;
 	text-align: center;
 	z-index: 1000;
