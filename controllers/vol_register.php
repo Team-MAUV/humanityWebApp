@@ -1,6 +1,6 @@
 <?php
 
-class Register extends Controller
+class Vol_Register extends Controller
 {
 
   function __construct()
@@ -14,9 +14,8 @@ class Register extends Controller
   }
 
 
-
-  function register()
+  function vol_register()
   {
-    $this->model->register();
+    $this->model->vol_register();
   }
 }
