@@ -17,6 +17,7 @@ class login extends Controller
     {
         $this->view->rendor('login/vol_login_page');
     }
+    
 
     function run_com()
     {

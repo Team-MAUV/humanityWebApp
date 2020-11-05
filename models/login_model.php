@@ -40,4 +40,7 @@ class Login_Model extends Model
             header('location: ../login');
         }
     }
+
+
+    
 }

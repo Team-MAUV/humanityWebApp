@@ -6,14 +6,19 @@ class Buyer extends Controller
         parent::__construct();
         
         }
+
     function index()
+    {
+        $this->view->rendor('buyer/home_market');
+    }    
+    function home_index()
     {
         $this->view->rendor('buyer/buy-index');
             
     }
     function b_login()
     {
-        $this->view->rendor('login/com_login_page');
+        $this->view->rendor('login/buy_login_page');
     }
     function help_sup()
     {
