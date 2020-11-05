@@ -29,31 +29,32 @@ body {
   top: 0;
   width: 100vw;
   background-color: #004883;
-  height: 50px;
+  height: 6vh;
   z-index: 10;
 }
 
 .logo-container {
   display: flex;
-  height: 50px;
+  height: 6vh;
 }
 
 .logo {
-  height: 50px;
-  width: 98px;
+  height: 6vh;
+  width: 4vw;
   z-index: 10;
+  margin-left: 2rem;
   background-image: url("../images/hlogoxs.png");
 }
 
 .title-name {
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 50px;
+  width: auto;
+  height: 6vh;
 }
 
 .tzu-logo {
-  width: 82px;
+  width: 4.5vw;
   background: url("../images/tzuChiLogo.png");
 }
 .logo-name {
@@ -61,7 +62,7 @@ body {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.4rem;
   text-transform: uppercase;
   line-height: 3rem;
   text-align: center;
@@ -72,8 +73,8 @@ body {
 }
 
 .log-sign {
-  width: 150px;
-  height: 48px;
+  width: auto;
+  height: 6vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -92,10 +93,11 @@ body {
 .back-btn {
   display: inline-block;
   position: relative;
-  width: 67px;
-  height: 40px;
+  width: 4vw;
+  height: auto;
+  margin: 2rem;
   background: #004883;
-  padding: 0.5rem 0.8rem;
+  padding: 0.4rem 0.7rem;
   font-size: 1.2rem;
   border: 2px solid #fff;
   border-radius: 2rem;
@@ -104,34 +106,32 @@ body {
   transition: 0.3s;
 }
 
-.img {
-  height: 100px;
-  width: 130px;
-}
-
 .avatar {
   position: relative;
-  width: 90px;
-  left: 12.5rem;
+  display: flex;
+  height: 5rem;
+  justify-items: center;
+  left: 14rem;
 }
 
 .login {
-  width: 500px;
-  height: 32rem;
+  position: relative;
+  width: 32vw;
+  align-items: center;
+  height: 60%;
   background-color: #ffffff;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-  margin: 100px auto;
+  margin: 5rem auto;
 }
 .login h1 {
   text-align: center;
   color: #5b6574;
-  font-size: 24px;
+  font-size: 200%;
   padding: 20px 0 20px 0;
   border-bottom: 1px solid #dee0e4;
 }
 .login form {
-  width: 360px;
-
+  width: 22vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -142,35 +142,40 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 4rem;
-  width: 50px;
-  height: 50px;
+  left: 5rem;
+  width: 3vw;
+  height: 6vh;
   background-color: #004883;
   color: #ffffff;
 }
 .login form input[type="password"],
 .login form input[type="text"] {
   position: relative;
-  width: 310px;
-  height: 50px;
+  width: 18vw;
+  height: 6vh;
   border: 1px solid #dee0e4;
   margin-bottom: 20px;
-  left: 4rem;
+  left: 5rem;
   padding: 0 15px;
 }
 
 .validation-error h1 {
+  display: block;
+  width: 18vw;
+  height: 5vh;
+  justify-content: center;
   position: relative;
-  left: 4rem;
+  text-align: center;
   font-size: 12px;
+  left: 6rem;
   color: #e74c3c;
 }
 
 .forgotpw a {
   display: block;
-  position: relative;
-  left: 9.8rem;
-  top: 6rem;
+  position: absolute;
+  text-align: center;
+  top: 22em;
   text-decoration: none;
   color: rgb(163, 152, 152);
   font-size: 0.9rem;
@@ -181,45 +186,14 @@ a:hover {
   color: #070707;
 }
 
-.input-div i {
-  /*visibility: hidden; */
-  position: absolute;
-  top: 30px;
-  right: 10px;
-}
-
-.input-div.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.input-div.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
-}
-
-.input-div small {
-  color: #e74c3c;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-}
-
-.input-div.error small {
-  visibility: visible;
-}
-
 .btn {
   position: relative;
-  left: 0.6rem;
-  top: 2rem;
-  padding: 3%;
-  width: 10rem;
-  height: 3rem;
-
+  display: block;
+  left: 6rem;
+  width: 7vw;
+  top: 4rem;
+  height: 5vh;
   border-radius: 25px;
-
   font-size: 1.2rem;
   outline: none;
   border: none;
@@ -251,7 +225,7 @@ a:hover {
   left: 0;
   bottom: 0;
   width: 100vw;
-  height: 50px;
+  height: 6vh;
   background-color: #004883;
   color: white;
   text-align: center;
@@ -403,8 +377,6 @@ a:hover {
     left: 4.3rem;
     bottom: 1rem;
     padding: 3%;
-    width: 7rem;
-    height: 3rem;
 
     border-radius: 25px;
 

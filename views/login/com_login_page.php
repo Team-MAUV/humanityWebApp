@@ -52,17 +52,19 @@
                 <i class="fas fa-lock"></i>
             </label>
             <input type="password" name="password" placeholder="Password" id="password" required>
+            <div class="forgotpw"><a href="#">Forgot Password?</a></div>
             <div class="validation-error">
                 <?php
                 session_start();
 
                 if (isset($_SESSION["error"])) {
                     $error = $_SESSION["error"];
-                    echo "<h1>$error</h1>";
+                    print "<h1>$error</h1>";
                 }
                 ?>
             </div>
-            <div class="forgotpw"><a href="#">Forgot Password?</a></div>
+            <br>
+
             <input type="submit" class="btn" value="Login" />
 
 
@@ -72,7 +74,7 @@
     </div>
 
     <footer>
-        <div class="footer">Powered by<h4>Humanity2020&copy;</div>
+        <div class="footer">Powered by<h5>Humanity2020&copy;</div>
     </footer>
 </body>
 
