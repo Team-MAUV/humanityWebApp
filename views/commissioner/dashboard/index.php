@@ -6,7 +6,7 @@ include "com_dash_header.php"; ?>
 
 
 
-  <div id="breadcrum">Home>
+  <div id="breadcrum">Home
   </div>
 
 </div>

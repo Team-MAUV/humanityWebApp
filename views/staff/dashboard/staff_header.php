@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Layouts</title>
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-layout_style.css" />
+  <title>header</title>
+  <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
 
 </head>
@@ -34,7 +34,7 @@
           </button>
           <div class="dropdown-content">
             <a href="#">Edit Profile</a>
-            <a href="<?= URL ?>Commissioner/logout">Logout</a>
+            <a href="<?= URL ?>Staff/logout">Logout</a>
 
           </div>
         </div>
@@ -51,7 +51,7 @@
 
       <div class="sidebar">
         <div class="text">
-          <h5>Staff Dashboard</h5>
+          <h5 style="background-color: blue;">Staff Dashboard</h5>
         </div>
         <ul>
           <li class="<?php if ($page == 'home') {
@@ -63,60 +63,42 @@
           <li class="<?php if ($page == 'Market_Module') {
                         echo 'active';
                       } ?>">
-            <a href="#" class="feat-btn"><i class="far fa-id-card"></i> Market Module
+            <a href="#" class="feat-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Market Module
               <span class="fas fa-caret-down first"></span>
             </a>
             <ul class="feat-show">
               <li class="<?php if ($page == 'add_product') {
                             echo 'active';
                           } ?>"><a href="<?= URL ?>staff/add_product">Add product  </a></li>
-              <li class="<?php if ($page == 'staff') {
+              <li class="<?php if ($page == 'access_product') {
                             echo 'active';
-                          } ?>"><a href="<?= URL ?>staff/access_product">Access_product</a></li>
+                          } ?>"><a href="<?= URL ?>staff/access_product">Access product</a></li>
               
             </ul>
           </li>
-          <li class="<?php if ($page == 'volunteerActivity') {
+          
+          <li class="<?php if ($page == 'Report') {
                         echo 'active';
                       } ?>">
-            <a href="#" class="serv-btn"><i class="fas fa-praying-hands"></i> Volunteer Activity
-              <span class="fas fa-caret-down second"></span>
-            </a>
-            <ul class="serv-show">
-              <li class="<?php if ($page == 'newVolActivity') {
-                            echo 'active';
-                          } ?>"><a href="<?= URL ?>Commissioner/newVolActivity">New Activity</a></li>
-              <li class="<?php if ($page == 'viewVolActivity') {
-                            echo 'active';
-                          } ?>"><a href="<?= URL ?>Commissioner/viewVolActivity">View Activity</a></li>
-            </ul>
+            <a href="<?= URL ?>staff/Report"><i class="fas fa-file-contract"></i> Reports</a>
           </li>
-          <li class="<?php if ($page == 'projectReports') {
+          <li class="<?php if ($page == 'requestleave') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>Commissioner/projectReports"><i class="fas fa-file-contract"></i> Project Reports</a>
+            <a href="<?= URL ?>staff/requestleave"><i class="fas fa-id-card-alt"></i> Request Leave</a>
           </li>
-          <li class="<?php if ($page == 'leaveRequests') {
-                        echo 'active';
-                      } ?>">
-            <a href="<?= URL ?>Commissioner/leaveRequests"><i class="fas fa-id-card-alt"></i> Leave Requests</a>
-          </li>
-          <li class="<?php if ($page == 'sessionIncharge') {
-                        echo 'active';
-                      } ?>">
-            <a href="<?= URL ?>Commissioner/sessionIncharge"><i class="fas fa-street-view"></i> Session In-charge</a>
-          </li>
-          <li class="<?php if ($page == 'beneficiaryCases') {
-                        echo 'active';
-                      } ?>">
-            <a href="<?= URL ?>Commissioner/beneficiaryCases"><i class="fas fa-hands-helping"></i> Beneficiary Cases</a>
-          </li>
+
           <li class="<?php if ($page == 'media') {
                         echo 'active';
                       } ?>">
             <a href="<?= URL ?>Commissioner/media"><i class="fas fa-photo-video"> </i> Media</a>
           </li>
-
+          <li class="<?php if ($page == 'notification') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>staff/notification"><i class="fa fa-bell" aria-hidden="true"></i> Notification</a>
+                    </li>
+        
 
         </ul>
       </div>

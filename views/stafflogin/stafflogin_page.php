@@ -41,7 +41,7 @@
 			<img src="<?= URL ?>public/images/bg.svg"/>
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+			<form action="login/run_com">
 				<img src="<?= URL ?>public/images/avat.svg"/>
 				<h2 class="title">Welcome to Staff Login</h2>
            		<div class="input-div one">
@@ -49,8 +49,8 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Username</h5>
-           		   		<input type="text" class="input">
+           		   	
+           		   		<input type="text" class="input" name="username" id="username" placeholder="Username" required>
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -58,11 +58,23 @@
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
-           		    	<h5>Password</h5>
-           		    	<input type="password" class="input">
-            	   </div>
-            	</div>
-            	<a href="#">Forgot Password?</a>
+           		    	
+           		    	<input type="password"  class="input" name="password" id="password" placeholder="Password" required>
+						   <div class="validation-error">
+                <?php
+                session_start();
+
+                if (isset($_SESSION["error"])) {
+                    $error = $_SESSION["error"];
+                    echo "<h1>$error</h1>";
+                }
+                ?>
+            </div>
+				  
+				   </div>
+				</div>
+				
+				<a href="#">Forgot Password?</a>
             	<input type="submit" class="btn" value="Login">
             </form>
         </div>
