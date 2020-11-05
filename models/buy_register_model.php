@@ -1,7 +1,7 @@
 <?php
 
 
-class register_model extends Model
+class buy_register_model extends Model
 
 {
 
@@ -10,22 +10,22 @@ class register_model extends Model
         parent::__construct();
     }
 
-    public function register()
+    public function buy_register()
     {
         echo "starting";
 
         if (!empty($_POST)) {
             // Post data not empty insert a new record
             // Set-up the variables that are going to be inserted, we must check if the POST variables exist if not we can default them to blank
-           // $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
-           //$id ="vol7";
+         
 
-           $base=$this->db->prepare("SELECT `name` FROM `volunteer` ");
-           $base->execute();
-            $count=$base->rowCount();
-            $count=$count+1;
-            $id="VOL/HB/".$count;
-           // mysqli_free_result($base);
+          $base3=$this->db->prepare("SELECT `name` FROM `buyer` ");
+           $base3->execute();
+            $count3=$base3->rowCount();
+            $count3=$count3+1;
+            $id="BUY/HB/".$count3;
+  
+
         
 
 
@@ -37,15 +37,16 @@ class register_model extends Model
             $nic = isset($_POST['nic']) ? $_POST['nic'] : '';
             $email = isset($_POST['email']) ? $_POST['email'] : '';
             $address = isset($_POST['address']) ? $_POST['address'] : '';
+            $username = isset($_POST['username']) ? $_POST['username'] : '';
+            $password = isset($_POST['password']) ? $_POST['password'] : '';
             $contact = isset($_POST['contact']) ? $_POST['contact'] : '';
-            $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
-            $prev_vol_exp = isset($_POST['prev_vol_exp']) ? $_POST['prev_vol_exp'] : '';
-            $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
-            $level = "temporary";
-         
-            $stmt = $this->db->prepare('INSERT INTO `volunteer` (`vol_id`, `name`,`nic`, `email`,`contact`, `address`,`dob`,`prev_vol_exp`,`gender`,`level`) VALUES (?, ?, ?,?, ?, ?,?,?,?,?)');
             
-            $stmt->execute([$id, $name,$nic, $email,$contact,$address, $dob, $prev_vol_exp,$gender, $level]);
+            
+            $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+            
+            $stmt = $this->db->prepare('INSERT INTO `buyer` (`buy_id`, `name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`) VALUES (?, ?, ?,?, ?, ?,?,?,?)');
+            
+            $stmt->execute([$id, $name,$nic, $email,$contact,$address, $username, $password,$gender]);
             
             // Output message
             echo 'Created Successfully!';

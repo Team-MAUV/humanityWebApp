@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Layouts</title>
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-layout_style.css" />
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
+  <link rel="stylesheet" href="http://localhost/humanity/public/css/vol-layout_style.css" />
+  <link rel="stylesheet" href="http://localhost/humanity/public/css/com-dash-vol.css" />
 
 </head>
 
@@ -51,7 +51,7 @@
 
       <div class="sidebar">
         <div class="text">
-          <h5>Commissioner Dashboard</h5>
+          <h5>Volunteer Dashboard</h5>
         </div>
         <ul>
           <li class="<?php if ($page == 'home') {

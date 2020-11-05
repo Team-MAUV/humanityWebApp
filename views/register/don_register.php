@@ -12,15 +12,15 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         body {
-            background-image: url('http://localhost/humanity/public/images/regbg2.jpg') ;
+            background-color: black ;
             
-            background-size: cover;
         }
     </style>
 </head>
 
 <body>
-<img class="wave " src="http://localhost/humanity/public/images/donreg.svg ">
+
+  <?php //  <img class="wave " src="http://localhost/humanity/public/images/donreg.svg ">?>
 
         <div class="img ">
         </div>
@@ -77,9 +77,9 @@
     <div class="login" style="background-image: url('http://localhost/humanity/public/images/regbg22.jpg') ;">
         <h1>Welcome to Donor Registration</h1>
         <div id="error"></div>
-        <form action="register" method="POST" id="form">
+        <form action="don_register\don_register" method="POST" id="form2">
 
-            <label for="fullname">
+        <label for="fullname">
                 <i class="fas fa-user"></i>
             </label>
             <input type="text" name="name" placeholder="Full Name" id="name" required>
@@ -103,32 +103,35 @@
             <div class="validation-error">
             </div>
 
+            <label for="username">
+                <i class="fa fa-address-book  "></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <div class="validation-error">
+            </div>
+
+            <label for="password">
+                <i class="fa fa-address-book  "></i>
+            </label>
+            <input type="text" name="password" placeholder="Password" id="password" required>
+            <div class="validation-error">
+            </div>
+
             <label for="contact">
                     <i class="fa fa-phone-square "></i>
                 </label>
             <input type="text" name="contact" placeholder="Contact Number" id="contact" required>
             <div class="validation-error">
             </div>
-            <label for="dob">
-                        <i class="fa fa-calendar "></i>
-                    </label>
-
-            <input type="date" name="dob" placeholder="Date of Birth" id="dob" required>
-            <div class="validation-error">
-            </div>
-            <label for="contact">
-                <i class="fa fa-info-circle "></i>
-            </label>
-            <input type="text" name="prev_vol_exp" placeholder="Previous Volunteer Experience" id="prev_vol_exp">
-            <div class="validation-error">
-            </div>
-            <label for="contact">
+            
+            
+            <label for="gender">
                 <div class="i " style="align-items: left; justify-content: flex-start; ">
                     &nbsp<i class="fa fa-male fa-2x "> </i>
                     </div>
                 </label>
             <select name="gender"> 
-                            
+
                 <option value="male ">Male</option> 
                 <option value="female " >Female</option> 
                 <option value="other ">Other</option> 
