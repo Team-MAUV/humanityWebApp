@@ -36,14 +36,6 @@ class Staff extends Controller
     }
     
 
-
-
-
-    function newVolActivity()
-    {
-        $this->view->rendor('commissioner/dashboard/newVolActivity');
-    }
-
    
 
     function Report()
