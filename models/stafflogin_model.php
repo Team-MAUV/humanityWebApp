@@ -37,7 +37,7 @@ class Stafflogin_Model extends Model
         } else {
             // show error
             Session::set('error', $error);
-            header('location: ../login');
+            header('location: ../stafflogin');
         }
     }
 }
