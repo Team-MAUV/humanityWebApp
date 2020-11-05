@@ -40,7 +40,7 @@ body {
 
 .logo {
   height: 6vh;
-  width: 4vw;
+  width: 6rem;
   z-index: 10;
   margin-left: 2rem;
   background-image: url("../images/hlogoxs.png");
@@ -54,18 +54,22 @@ body {
 }
 
 .tzu-logo {
-  width: 4.5vw;
+  position: relative;
+  right: 2rem;
+  width: 5rem;
   background: url("../images/tzuChiLogo.png");
+  z-index: 11;
 }
 .logo-name {
   display: flex;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.2vw;
   font-weight: 600;
   letter-spacing: 0.4rem;
   text-transform: uppercase;
   line-height: 3rem;
   text-align: center;
+  z-index: 10;
 }
 
 .logo-name span {
@@ -111,7 +115,7 @@ body {
   display: flex;
   height: 5rem;
   justify-items: center;
-  left: 14rem;
+  left: 14vw;
 }
 
 .login {
@@ -142,7 +146,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 5rem;
+  left: 5vw;
   width: 3vw;
   height: 6vh;
   background-color: #004883;
@@ -155,14 +159,14 @@ body {
   height: 6vh;
   border: 1px solid #dee0e4;
   margin-bottom: 20px;
-  left: 5rem;
+  left: 5vw;
   padding: 0 15px;
 }
 
 .validation-error h1 {
-  display: block;
-  width: 18vw;
-  height: 5vh;
+  display: flex;
+  width: 20rem;
+  height: auto;
   justify-content: center;
   position: relative;
   text-align: center;
@@ -173,9 +177,10 @@ body {
 
 .forgotpw a {
   display: block;
-  position: absolute;
+  position: relative;
   text-align: center;
-  top: 22em;
+  top: 9rem;
+  left: 10rem;
   text-decoration: none;
   color: rgb(163, 152, 152);
   font-size: 0.9rem;
@@ -189,10 +194,10 @@ a:hover {
 .btn {
   position: relative;
   display: block;
-  left: 6rem;
-  width: 7vw;
-  top: 4rem;
-  height: 5vh;
+  left: 3rem;
+  width: 7rem;
+  top: 3rem;
+  height: 3rem;
   border-radius: 25px;
   font-size: 1.2rem;
   outline: none;
