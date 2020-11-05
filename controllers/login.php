@@ -17,10 +17,15 @@ class login extends Controller
     {
         $this->view->rendor('login/vol_login_page');
     }
-    
+
 
     function run_com()
     {
         $this->model->run_com();
+    }
+
+    function run_vol()
+    {
+        $this->model->run_vol();
     }
 }

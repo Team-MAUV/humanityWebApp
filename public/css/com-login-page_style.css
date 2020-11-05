@@ -6,15 +6,10 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-}
-
-.container {
+  margin: 0;
   width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 7rem;
-  padding: 0 2rem;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .bgimage {
@@ -29,12 +24,10 @@ body {
 .nav-bar {
   position: fixed;
   grid-area: nav-bar;
-  display: grid;
-  left: 0;
+  display: flex;
+  justify-content: space-between;
   top: 0;
-  width: 100%;
-  grid-template-columns: 250px 60% 40%;
-  grid-template-areas: "logo-container title-name dropdown";
+  width: 100vw;
   background-color: #004883;
   height: 50px;
   z-index: 10;
@@ -42,15 +35,12 @@ body {
 
 .logo-container {
   display: flex;
-  width: 100%;
   height: 50px;
-  grid-area: logo-container;
 }
 
 .logo {
   height: 50px;
   width: 98px;
-  margin-left: 70px;
   z-index: 10;
   background-image: url("../images/hlogoxs.png");
 }
@@ -58,11 +48,8 @@ body {
 .title-name {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: 50px;
-
-  grid-area: title-name;
 }
 
 .tzu-logo {
@@ -263,7 +250,7 @@ a:hover {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 50px;
   background-color: #004883;
   color: white;
