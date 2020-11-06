@@ -42,7 +42,7 @@
   <div class="login">
     <h1>Welcome to Commissioner Login</h1>
     <img class="avatar" src="<?= URL ?>public/images/Commissioner.png" />
-    <form action="login/run_vol" method="post">
+    <form action="#" method="post">
 
       <label for="username">
         <i class="fas fa-user"></i>
