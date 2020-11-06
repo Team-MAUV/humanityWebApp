@@ -34,9 +34,9 @@ class Staff extends Controller
     {
         $this->view->rendor('staff/dashboard/access_product');
     }
-    
 
-   
+
+
 
     function Report()
     {
@@ -48,8 +48,8 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/requestleave');
     }
 
-  
-    
+
+
 
     function media()
     {
@@ -64,7 +64,7 @@ class Staff extends Controller
     function logout()
     {
         Session::destroy();
-        header('location: ../stafflogin');
+        header('location: ../login');
         exit;
     }
 }

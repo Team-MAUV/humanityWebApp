@@ -10,7 +10,7 @@ class login extends Controller
 
     function index()
     {
-        $this->view->rendor('login/com_login_page');
+        $this->view->rendor('login/user_login');
     }
 
     function vol_login()

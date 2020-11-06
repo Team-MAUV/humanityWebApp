@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Commissioner Login</title>
+    <title>Humanity User Login</title>
     <link rel="stylesheet" href="<?= URL ?>public/css/com-login-page_style.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
@@ -40,7 +40,7 @@
 
     </header>
     <div class="login">
-        <h1>Welcome to Commissioner Login</h1>
+        <h1>Welcome to Humanity User Login!</h1>
         <img class="avatar" src="<?= URL ?>public/images/Commissioner.png" />
         <form action="login/run_com" method="post">
 
@@ -52,17 +52,18 @@
                 <i class="fas fa-lock"></i>
             </label>
             <input type="password" name="password" placeholder="Password" id="password" required>
+            <div class="forgotpw"><a href="#">Forgot Password?</a></div>
             <div class="validation-error">
                 <?php
                 session_start();
-
                 if (isset($_SESSION["error"])) {
-                    $error = $_SESSION["error"];
-                    echo "<h1>$error</h1>";
+                    // $error = $_SESSION["error"];
+                    print "<h1>Incorrect Username  or Password !</h1>";
                 }
                 ?>
             </div>
-            <div class="forgotpw"><a href="#">Forgot Password?</a></div>
+
+
             <input type="submit" class="btn" value="Login" />
 
 
@@ -72,7 +73,7 @@
     </div>
 
     <footer>
-        <div class="footer">Powered by<h4>Humanity2020&copy;</div>
+        <div class="footer">Powered by<h5>Humanity2020&copy;</div>
     </footer>
 </body>
 

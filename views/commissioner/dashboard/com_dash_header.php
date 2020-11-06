@@ -7,6 +7,7 @@
   <title>Simple Layouts</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/com-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/com-vol-profiles.css" />
 
 </head>
 

@@ -4,17 +4,15 @@ class Buyer extends Controller
     function __construct()
     {
         parent::__construct();
-        
-        }
+    }
 
     function index()
     {
-        $this->view->rendor('buyer/home_market');
-    }    
+        $this->view->rendor('buyer/dashboard/index');
+    }
     function home_index()
     {
         $this->view->rendor('buyer/buy-index');
-            
     }
     function b_login()
     {
@@ -27,5 +25,5 @@ class Buyer extends Controller
     function join_in()
     {
         $this->view->rendor('buyer/b_register');
-    }    
+    }
 }
