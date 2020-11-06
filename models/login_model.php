@@ -63,8 +63,6 @@ class login_Model extends Model
             if ($role == 'staff') {
                 header('location: ../Staff');
             }
-
-            // header('location: ../Commissioner');
         } else {
             // show error
             Session::set('error', $error);

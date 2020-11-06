@@ -123,6 +123,7 @@ body {
   width: 32vw;
   align-items: center;
   height: 60%;
+  top: 2em;
   background-color: #ffffff;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
   margin: 5rem auto;
@@ -136,6 +137,7 @@ body {
 }
 .login form {
   width: 22vw;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -163,15 +165,18 @@ body {
   padding: 0 15px;
 }
 
+.validation-error {
+  position: relative;
+  bottom: 3em;
+  width: 25em;
+  height: 1rem;
+  margin-left: 12rem;
+}
+
 .validation-error h1 {
   display: flex;
-  width: 20rem;
-  height: auto;
-  justify-content: center;
-  position: relative;
   text-align: center;
-  font-size: 12px;
-  left: 6rem;
+  font-size: 0.8rem;
   color: #e74c3c;
 }
 
@@ -179,8 +184,8 @@ body {
   display: block;
   position: relative;
   text-align: center;
-  top: 9rem;
-  left: 10rem;
+  top: 6rem;
+  left: 6.5rem;
   text-decoration: none;
   color: rgb(163, 152, 152);
   font-size: 0.9rem;
@@ -192,11 +197,11 @@ a:hover {
 }
 
 .btn {
-  position: relative;
-  display: block;
-  left: 3rem;
+  position: absolute;
+
+  margin-left: 35%;
+  margin-top: 30%;
   width: 7rem;
-  top: 3rem;
   height: 3rem;
   border-radius: 25px;
   font-size: 1.2rem;
@@ -213,16 +218,6 @@ a:hover {
 
 .btn:hover {
   background-position: right;
-}
-
-.form-control.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
 }
 
 .footer {
@@ -369,30 +364,35 @@ a:hover {
     padding: 0 15px;
   }
 
+  .validation-error {
+    position: relative;
+    bottom: 3em;
+    width: 10em;
+    height: 1rem;
+    margin-left: 4rem;
+  }
+
   .validation-error h1 {
-    position: absolute;
-    left: 2.5rem;
-    bottom: 10rem;
-    font-size: 8px;
+    display: flex;
+    text-align: center;
+    font-size: 0.6rem;
     color: #e74c3c;
   }
 
   .btn {
-    position: relative;
-    left: 4.3rem;
-    bottom: 1rem;
+    position: absolute;
+    margin-left: 30%;
+    margin-top: 1%;
     padding: 3%;
-
     border-radius: 25px;
-
     font-size: 0.8rem;
   }
 
   .forgotpw a {
     display: block;
-    position: relative;
-    left: 4rem;
-    top: 7rem;
+    position: absolute;
+    margin-right: 10em;
+    top: 32em;
     text-decoration: none;
     color: rgb(163, 152, 152);
     font-size: 0.9rem;
