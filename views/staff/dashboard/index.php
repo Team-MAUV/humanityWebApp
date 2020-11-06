@@ -54,6 +54,9 @@ include "staff_header.php"; ?>
         left: 60%;
         transform: translate(-50%, -50%);
         text-align: center;
+        width:300;
+         height:300 ;
+        overflow: scroll;
       }
       
       .centered img {
@@ -76,8 +79,8 @@ include "staff_header.php"; ?>
       
       <div class="split right">
         <div class="centered1">
-       <iframe src="calandar.html"  width="300" height="300" scrolling="yes"> </iframe>
-        </div>
+        <?php include "calandar.php"  ?>
+              </div>
       </div>
      
 
