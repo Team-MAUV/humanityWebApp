@@ -11,7 +11,7 @@ class Volunteer extends Controller
     
     function index()
     {
-        $this->view->rendor('volunteer/vol-template');
+        $this->view->rendor('volunteer/dashboard/index');
     }
     function voladdbene()
     {
@@ -23,5 +23,3 @@ class Volunteer extends Controller
     }
 
 }
-
-?>
