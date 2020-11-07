@@ -45,7 +45,7 @@
         </div>
 
     </header>
-    <div class="login" style="background-image: url('<?= URL ?>public/images/volbg222.jpg') ;background-size:cover">
+    <div class="login" style="background-color:darkblue">
         <h1>Welcome to Volunteer Registration</h1>
         <div id="error"></div>
         <form action="vol_register\vol_register" method="POST" id="form">

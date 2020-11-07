@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buyer Registration</title>
-    <link rel="stylesheet" href="http://localhost/humanity/public/css/don-register-page-style.css" />
+    <link rel="stylesheet" href="<?= URL ?>public/css/don-register-page-style.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
