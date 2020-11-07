@@ -1,17 +1,21 @@
-<?php $page = 'profiles';
+<?php $page = 'Profiles';
+
 include "com_dash_header.php"; ?>
 
 <div class="grid-container">
 
-  <div class="breadcrum">Home></div>
+
 
   <div class="grid-body">
 
-    <h1>Volunteer Profiles</h1>
+    <div class="pageTitle">
+      <h1>Volunteer Profiles</h1>
+    </div>
+
     <div class="tab-section">
       <ul>
-        <li><a id="tab1" href="#" class="active">Action Need</a></li>
-        <li><a id="tab2" href="#"> Accepted</a></li>
+        <li><a id="tab1" href="#" class="active">Registered</a></li>
+        <li><a id="tab2" href="#"> New Requests</a></li>
         <li><a id="tab3" href="#"> Rejected</a></li>
       </ul>
       <hr>
@@ -34,7 +38,7 @@ include "com_dash_header.php"; ?>
           </thead>
           <tbody>
 
-            <?php foreach ($vprofiles as $contact) : ?>
+            <?php foreach ($contacts as $contact) : ?>
               <tr>
                 <td><?= $contact['id'] ?></td>
                 <td><?= $contact['name'] ?></td>
@@ -51,11 +55,11 @@ include "com_dash_header.php"; ?>
           </tbody>
         </table>
         <div class="pagination">
-          <?php if ($page > 1) : ?>
-            <a href="read.php?page=<?= $page - 1 ?>"><i class="fas fa-angle-double-left fa-sm"></i></a>
+          <?php if ($page_no > 1) : ?>
+            <a href="volunteer?page=<?= $page_no - 1 ?>"><i class="fas fa-angle-double-left fa-sm"></i></a>
           <?php endif; ?>
-          <?php if ($page * $records_per_page < $page_count) : ?>
-            <a href="read.php?page=<?= $page + 1 ?>"><i class="fas fa-angle-double-right fa-sm"></i></a>
+          <?php if ($page_no * $records_per_page < $num_contacts) : ?>
+            <a href="volunteer?page=<?= $page_no + 1 ?>"><i class="fas fa-angle-double-right fa-sm"></i></a>
           <?php endif; ?>
         </div>
       </div>

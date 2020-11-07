@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Layouts</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/com-layout_style.css" />
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-vol-profiles.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-profiles-volunteer.css" />
+
 
 </head>
 
@@ -68,18 +68,10 @@
               <span class="fas fa-caret-down first"></span>
             </a>
             <ul class="feat-show">
-              <li class="<?php if ($page == 'volunteer') {
-                            echo 'active';
-                          } ?>"><a href="<?= URL ?>Commissioner/volunteer">Volunteer</a></li>
-              <li class="<?php if ($page == 'staff') {
-                            echo 'active';
-                          } ?>"><a href="<?= URL ?>Commissioner/staff">Staff</a></li>
-              <li class="<?php if ($page == 'buyer') {
-                            echo 'active';
-                          } ?>"><a href="<?= URL ?>Commissioner/buyer">Buyer</a></li>
-              <li class="<?php if ($page == 'donor') {
-                            echo 'active';
-                          } ?>"><a href="<?= URL ?>Commissioner/donor">Donor</a></li>
+              <li><a href="<?= URL ?>Commissioner/volunteer">Volunteer</a></li>
+              <li><a href="<?= URL ?>Commissioner/staff">Staff</a></li>
+              <li><a href="<?= URL ?>Commissioner/buyer">Buyer</a></li>
+              <li><a href="<?= URL ?>Commissioner/donor">Donor</a></li>
             </ul>
           </li>
           <li class="<?php if ($page == 'volunteerActivity') {

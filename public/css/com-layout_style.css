@@ -30,7 +30,7 @@
   grid-template-areas:
     "nav-bar nav-bar"
     "sidebar grid-container"
-    "sidebar footer";
+    "footer footer";
 }
 
 .nav-bar {
@@ -250,7 +250,7 @@
 .sidebar ul li a span {
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 5px;
   transform: translateY(-50%);
   font-size: 18px;
   transition: transform 0.4s;
@@ -262,21 +262,10 @@
 .grid-container {
   position: absolute;
   display: grid;
-  top: 50px;
-  bottom: 50px;
-  left: 260px;
+  top: 3rem;
+  left: 15rem;
   overflow: auto;
-  width: 80%;
-}
-
-.breadcrum {
-  position: fixed;
-  grid-area: breadcum;
-  height: 2rem;
-  width: 100%;
-  background: #a7ffeb;
-  text-align: left;
-  z-index: 9;
+  min-width: 82.5%;
 }
 
 .grid-body {
@@ -294,26 +283,20 @@ a {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
   height: 3rem;
   background-color: #004883;
   color: white;
-  z-index: 1;
   text-align: center;
 }
 
 @media screen and (max-width: 900px) {
   .main-container {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-rows: 1fr 20fr;
     grid-template-areas:
       "nav-bar "
-      "grid-container"
-      "footer";
+      "grid-container";
   }
 
   .nav-bar {
@@ -329,36 +312,32 @@ a {
     z-index: 1;
   }
 
-  .main-content {
-    background: #bd9292;
-    margin-top: 100px;
-  }
-
   .grid-container {
     grid-area: grid-container;
     position: absolute;
-    top: 50px;
-    bottom: 50px;
     left: 0;
+
     display: grid;
     overflow: auto;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 0.8fr;
+    grid-template-rows: 8fr 2fr;
     grid-template-areas:
-      "breadcrum breadcrum breadcrum breadcrum"
-      "main main main main"
-      "content1 content1 content2 content3"
-      "content1 content1 content2 content3"
-      "footer footer footer footer";
+      "grid-body"
+      "footer";
     grid-gap: 0.2rem;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 12px;
     color: #004d40;
     text-align: center;
   }
 
+  .grid-body {
+    grid-area: grid-body;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
   .nav-bar {
     position: fixed;
     grid-area: nav-bar;
@@ -518,5 +497,13 @@ a {
 
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+  .footer {
+    position: relative;
+    height: 3rem;
+    background-color: #004883;
+    color: white;
+    z-index: 100;
+    text-align: center;
   }
 }
