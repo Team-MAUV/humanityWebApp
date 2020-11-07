@@ -23,12 +23,7 @@ class Commissioner extends Controller
 
     function volunteer()
     {
-        // $data = $this->model->get_reg_vol_profiles();
-        // // $count = $this->model->get_reg_vol_profiles_page_count();
-        // $pageData = [
-        //     'vprofiles' => $data,
-        //     //   'page_count' => $count,
-        // ];
+
 
         $data = $this->model->get_reg_vol_profiles();
 
