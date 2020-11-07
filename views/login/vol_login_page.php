@@ -42,7 +42,7 @@
   <div class="login">
     <h1>Welcome to Commissioner Login</h1>
     <img class="avatar" src="<?= URL ?>public/images/Commissioner.png" />
-    <form action="#" method="post">
+    <form action="run_com" method="post">
 
       <label for="username">
         <i class="fas fa-user"></i>
@@ -71,7 +71,7 @@
 
     <div class="register">
       <h4>Come & join with us!</h4>
-      <a href="<?= URL ?>register" class="btn">Register</a>
+      <a href="<?= URL ?>vol_register" class="btn">Register</a>
     </div>
 
 
