@@ -20,11 +20,11 @@ class vol_register_model extends Model
            // $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
            //$id ="vol7";
 
-           $base=$this->db->prepare("SELECT `name` FROM `volunteer` ");
-           $base->execute();
-            $count=$base->rowCount();
-            $count=$count+1;
-            $id="VOL/HB/".$count;
+           //$base=$this->db->prepare("SELECT `name` FROM `volunteer` ");
+          // $base->execute();
+            //$count=$base->rowCount();
+           // $count=$count+1;
+           // $id="VOL/HB/".$count;
            // mysqli_free_result($base);
         
 
@@ -41,11 +41,11 @@ class vol_register_model extends Model
             $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
             $prev_vol_exp = isset($_POST['prev_vol_exp']) ? $_POST['prev_vol_exp'] : '';
             $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
-            $level = "temporary";
+          
          
-            $stmt = $this->db->prepare('INSERT INTO `volunteer` (`vol_id`, `name`,`nic`, `email`,`contact`, `address`,`dob`,`prev_vol_exp`,`gender`,`level`) VALUES (?, ?, ?,?, ?, ?,?,?,?,?)');
+            $stmt = $this->db->prepare('INSERT INTO `volunteer` (`name`,`nic`, `email`,`contact`, `address`,`dob`,`prev_vol_exp`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?,?)');
             
-            $stmt->execute([$id, $name,$nic, $email,$contact,$address, $dob, $prev_vol_exp,$gender, $level]);
+            $stmt->execute([ $name,$nic, $email,$contact,$address, $dob, $prev_vol_exp,$gender]);
             
             // Output message
             echo 'Created Successfully!';
