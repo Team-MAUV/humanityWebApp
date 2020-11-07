@@ -352,7 +352,7 @@ a {
 
   .sidebar {
     width: 15rem;
-    height: 100%;
+    height: auto;
   }
 
   #check {
@@ -361,7 +361,9 @@ a {
   label #btn {
     position: absolute;
     background: #004883;
-    top: 10px;
+    top: 3rem;
+    margin: 0;
+    left: 0;
     border: solid 1px;
     border-radius: 3px;
     cursor: pointer;
@@ -419,7 +421,6 @@ a {
 
   .tzu-logo {
     width: 60px;
-
     height: 2.3rem;
     background: url(../images/tzuChiLogo-s.png);
   }
@@ -430,11 +431,9 @@ a {
 
   .logo-name {
     display: flex;
-    color: #fff;
     font-size: 0.6rem;
     font-weight: 600;
     letter-spacing: 2px;
-    text-transform: uppercase;
     line-height: 3rem;
     text-align: center;
   }
@@ -459,40 +458,23 @@ a {
     width: 100%;
     border: none;
     outline: none;
-    color: white;
     padding: 1px 1px;
-    background-color: inherit;
-    font-family: inherit;
   }
 
   .dropdown-content {
     display: none;
     position: absolute;
     top: 3rem;
-    background-color: #f9f9f9;
+
     min-width: 10rem;
     margin-right: 2rem;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
     z-index: 1;
   }
 
   .dropdown-content a {
-    float: none;
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .dropdown:hover .dropbtn {
-    background-color: rgb(7, 112, 199);
-    color: white;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #004883;
-    color: rgb(255, 255, 255);
   }
 
   .dropdown:hover .dropdown-content {
@@ -501,8 +483,6 @@ a {
   .footer {
     position: relative;
     height: 3rem;
-    background-color: #004883;
-    color: white;
     z-index: 100;
     text-align: center;
   }

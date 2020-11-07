@@ -5,6 +5,9 @@
 .pageTitle h1 {
   font-size: 24px;
 }
+
+.tab-section {
+}
 .tab-section ul {
   display: flex;
   justify-content: flex-start;
@@ -15,12 +18,25 @@
 }
 
 .tab-section ul li a {
-  padding: 10px;
-  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  background-color: #004883;
+  width: 10rem;
+  height: 3rem;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 0.6rem;
+  padding-bottom: 1rem;
+  border-radius: 3px;
 }
 .tab-section .active {
-  height: 0.5rem;
-  background-color: lightgreen;
+  position: relative;
+}
+
+.tab-section .active a {
+  width: 10rem;
+  height: 3rem;
+  background-color: rgb(7, 112, 199);
 }
 
 .content {
@@ -44,9 +60,7 @@
   padding: 10px 15px;
   margin: 15px 0;
 }
-.read .create-contact:hover {
-  background-color: #32a367;
-}
+
 .read .pagination {
   display: flex;
   justify-content: flex-end;
@@ -54,14 +68,14 @@
 .read .pagination a {
   display: inline-block;
   text-decoration: none;
-  background-color: #a5a7a9;
+  background-color: #004883;
   font-weight: bold;
   color: #ffffff;
   padding: 5px 10px;
   margin: 15px 0 15px 5px;
 }
 .read .pagination a:hover {
-  background-color: #999b9d;
+  background-color: rgb(7, 112, 199);
 }
 .read table {
   width: 100%;
@@ -69,23 +83,23 @@
   border-collapse: collapse;
 }
 .read table thead {
-  background-color: #ebeef1;
+  background-color: #004883;
   border-bottom: 1px solid #d3dae0;
 }
 .read table thead td {
   padding: 10px;
   font-weight: bold;
-  color: #767779;
+  color: #ffffff;
   font-size: 14px;
 }
 .read table tbody tr {
   border-bottom: 1px solid #d3dae0;
 }
 .read table tbody tr:nth-child(even) {
-  background-color: #fbfcfc;
+  background-color: #00488311;
 }
 .read table tbody tr:hover {
-  background-color: #376ab7;
+  background-color: rgb(7, 112, 199);
 }
 .read table tbody tr:hover td {
   color: #ffffff;
