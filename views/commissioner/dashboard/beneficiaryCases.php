@@ -1,5 +1,7 @@
 <?php $page = 'beneficiaryCases';
-include "com_dash_header.php"; ?>
+$title = 'Beneficiary Cases';
+$style = 'com-dash-beneficiaryCases.css';
+include "com-dash-header.php"; ?>
 
 <div class="grid-container">
 
@@ -7,4 +9,4 @@ include "com_dash_header.php"; ?>
 
 </div>
 
-<?php include "com_dash_footer.php" ?>
+<?php include "com-dash-footer.php" ?>

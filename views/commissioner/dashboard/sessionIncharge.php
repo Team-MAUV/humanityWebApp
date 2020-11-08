@@ -1,6 +1,11 @@
 <?php $page = 'sessionIncharge';
 include "com_dash_header.php"; ?>
 
+<?php $page = 'sessionIncharge';
+$title = 'Session Incharge';
+$style = 'com-dash-sessionIncharge.css';
+include "com-dash-header.php"; ?>
+
 
 <div class="grid-container">
 
@@ -11,4 +16,4 @@ include "com_dash_header.php"; ?>
 </div>
 
 
-<?php include "com_dash_footer.php" ?>
+<?php include "com-dash-footer.php" ?>

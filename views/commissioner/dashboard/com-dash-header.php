@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Layouts</title>
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-layout_style.css" />
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-profiles-volunteer.css" />
+  <title><?php echo $title ?></title>
+  <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-header-footer.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/<?php echo $style ?>" />
 
 
 </head>

@@ -1,6 +1,7 @@
-<?php $page = 'Profiles';
-
-include "com_dash_header.php"; ?>
+<?php $page = 'home';
+$title = 'Volunteer Profiles';
+$style = 'com-dash-profiles-volunteer.css';
+include "com-dash-header.php"; ?>
 
 <div class="grid-container">
 
@@ -79,10 +80,4 @@ include "com_dash_header.php"; ?>
 
   </div>
 
-
-
-
-
-
-
-  <?php include "com_dash_footer.php" ?>
+  <?php include "com-dash-footer.php" ?>
