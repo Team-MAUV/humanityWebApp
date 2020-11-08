@@ -3,7 +3,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>market</title>
-        <link rel="stylesheet" href="<?= URL ?>" />
         <link rel="stylesheet" href="<?= URL ?>public/css/buy-market-index.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/c0d2632e91.js" crossorigin="anonymous"></script>
@@ -41,7 +40,7 @@
                 <div class="col-2">
                     <a href="#">Log-In</a>
                     <a href="<?= URL ?>register/buyRegForm">Sign-In</a>
-                    <a href="#">Help & Support</a>
+                    <a href="<?= URL ?>buyer/help_sup">Help & Support</a>
                     
                 </div>
                 <div class="col-2">

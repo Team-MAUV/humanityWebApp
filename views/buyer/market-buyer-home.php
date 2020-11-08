@@ -48,7 +48,7 @@
                         <input class="search" type="text" placeholder="Search..." value="search">
                         <button class="src-btn" type="submit"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
                         <a href="<?= URL ?>buyer/profile"><i class="fa fa-user fa-lg">Profile</i></a>
-                        <a href="#"><i class="fa fa-shopping-cart fa-lg">Cart</i></a>
+                        <a href="<?= URL ?>buyer/cart"><i class="fa fa-shopping-cart fa-lg">Cart</i></a>
                     </div>
 
                 </div>
