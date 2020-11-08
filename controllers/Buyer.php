@@ -8,10 +8,6 @@ class Buyer extends Controller
 
     function index()
     {
-        $this->view->rendor('buyer/dashboard/index');
-    }
-    function home_index()
-    {
         $this->view->rendor('buyer/buy-index');
     }
     function b_login()
