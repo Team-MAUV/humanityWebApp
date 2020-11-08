@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>header</title>
-  <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
+  <link rel="stylesheet" href="http://localhost/humanity/public/css/staff-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
 
 </head>

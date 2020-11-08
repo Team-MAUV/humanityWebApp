@@ -1,6 +1,6 @@
 <?php $page = 'home';
 include "staff_header.php"; ?>
-
+<link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
 
 <div class="grid-container">
 

@@ -37,7 +37,9 @@
                 <ul>
                     <li><a href="<?= URL ?>buyer/help_sup"><i class="fa fa-question-circle fa-lg"><span class="btn-text"> Help & Support</span></i></a></li>
                     <li><a href="<?= URL ?>buyer/b_login"><i class="fa fa-sign-in fa-lg" aria-hidden="true"> <span class="btn-text"> Log-in</span></i></a></li>
+
                     <li><a href="<?= URL ?>buyer/join_in"><i class="fa fa-user-plus fa-lg" aria-hidden="true"><span class="btn-text"> Join-us</span></i></a></li>
+
 
                 </ul>
             </nav>
@@ -52,8 +54,10 @@
                     <p>
                         this is tzu-chi-market log-in page. this is tzu-chi-market log-in page. this is tzu-chi-market log-in page.
                         this is tzu-chi-market log-in page. this is tzu-chi-market log-in page. this is tzu-chi-market log-in page.
+
                     </p>
                 </div>
+
 
 
                 <div class="mhome-button">
