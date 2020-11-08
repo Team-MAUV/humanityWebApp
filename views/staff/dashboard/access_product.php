@@ -16,9 +16,9 @@ include "staff_header.php"; ?>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Responsive Product Card HTML & CSS</title>
+	<title>Access product</title>
 
-    <script src="js/all.min.js"></script>
+	<link rel="stylesheet" href="<?= URL ?>public/css/access-product.css" />
     <script type="text/javascript" src="../../public/js/all.min.js"></script>
 
 
