@@ -19,11 +19,11 @@ class don_register_model extends Model
             // Set-up the variables that are going to be inserted, we must check if the POST variables exist if not we can default them to blank
          
 
-          $base2=$this->db->prepare("SELECT `name` FROM `donor` ");
-           $base2->execute();
-            $count2=$base2->rowCount();
-            $count2=$count2+1;
-            $id="DON/HB/".$count2;
+        //   $base2=$this->db->prepare("SELECT `name` FROM `donor` ");
+        //    $base2->execute();
+            // $count2=$base2->rowCount();
+            // $count2=$count2+1;
+            // $id="DON/HB/".$count2;
   
 
         
@@ -44,9 +44,9 @@ class don_register_model extends Model
             
             $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
             
-            $stmt = $this->db->prepare('INSERT INTO `donor` (`don_id`, `name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`) VALUES (?, ?, ?,?, ?, ?,?,?,?)');
+            $stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?,?)');
             
-            $stmt->execute([$id, $name,$nic, $email,$contact,$address, $username, $password,$gender]);
+            $stmt->execute([ $name,$nic, $email,$contact,$address, $username, $password,$gender]);
             
             // Output message
             echo 'Created Successfully!';

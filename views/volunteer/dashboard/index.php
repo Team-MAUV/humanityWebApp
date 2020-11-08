@@ -27,7 +27,7 @@ include "vol_dash_header.php"; ?>
     <ul class="voldata">
     <img src="http://localhost/humanity/public/images/img1.svg" class="floatRight">
         <li>
-            Name : &nbsp;Mr. A.K. Perera
+            Name : &nbsp;Mr. A.B. Perera
         </li>
 
         <li>

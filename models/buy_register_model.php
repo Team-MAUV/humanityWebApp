@@ -19,11 +19,11 @@ class buy_register_model extends Model
             // Set-up the variables that are going to be inserted, we must check if the POST variables exist if not we can default them to blank
          
 
-          $base3=$this->db->prepare("SELECT `name` FROM `buyer` ");
-           $base3->execute();
-            $count3=$base3->rowCount();
-            $count3=$count3+1;
-            $id="BUY/HB/".$count3;
+        //   $base3=$this->db->prepare("SELECT `name` FROM `buyer` ");
+        //    $base3->execute();
+            // $count3=$base3->rowCount();
+            // $count3=$count3+1;
+            // $id="BUY/HB/".$count3;
   
 
         
@@ -44,9 +44,9 @@ class buy_register_model extends Model
             
             $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
             
-            $stmt = $this->db->prepare('INSERT INTO `buyer` (`buy_id`, `name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`) VALUES (?, ?, ?,?, ?, ?,?,?,?)');
+            $stmt = $this->db->prepare('INSERT INTO `buyer` ( `name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?,?)');
             
-            $stmt->execute([$id, $name,$nic, $email,$contact,$address, $username, $password,$gender]);
+            $stmt->execute([$name,$nic, $email,$contact,$address, $username, $password,$gender]);
             
             // Output message
             echo 'Created Successfully!';
