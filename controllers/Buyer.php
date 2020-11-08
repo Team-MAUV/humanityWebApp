@@ -10,6 +10,7 @@ class Buyer extends Controller
     {
         $this->view->rendor('buyer/buy-index');
     }
+
     function b_login()
     {
         $this->view->rendor('login/buy_login_page');
