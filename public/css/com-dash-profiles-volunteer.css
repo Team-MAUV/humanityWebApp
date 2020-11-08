@@ -195,13 +195,8 @@
     font-size: 14px;
   }
 
-  .tab-section ul li a {
-    padding: 2px;
-    background-color: #ccc;
-  }
-  .tab-section .active {
-    height: 0.2rem;
-    background-color: lightgreen;
+  .tab-section {
+    display: flex-box;
   }
 
   .content {

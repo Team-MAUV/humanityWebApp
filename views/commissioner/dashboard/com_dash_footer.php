@@ -1,8 +1,8 @@
+</div>
+</div>
 <footer>
   <div class="footer">Powered by<h4>Humanity2020&copy;</div>
 </footer>
-</div>
-
 </body>
 
 <script src="https://kit.fontawesome.com/c0d2632e91.js" crossorigin="anonymous"></script>
