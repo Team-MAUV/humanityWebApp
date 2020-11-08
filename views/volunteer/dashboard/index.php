@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Layouts</title>
-
-  <link rel="stylesheet" href="<?= URL ?>public/css/vol-home.css" />
-
-
-</head>
 <?php $page = 'home';
 include "vol_dash_header.php"; ?>
 
-
+<link rel="stylesheet" href="<?= URL ?>public/css/vol-home.css" />
 <div class="grid-container">
-
-
-
- 
-
 
 
 <h1>Welcome to Volunteer Portal!</h1>
