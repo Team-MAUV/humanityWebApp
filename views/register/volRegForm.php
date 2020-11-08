@@ -1,8 +1,8 @@
 <?php $title = 'Volunteer Registration';
-$style = 'vol-RegForm.css';
+$style = 'register-volRegForm.css';
 include "regForm-header.php"; ?>
 
-<?php include "regForm-header.php"; ?>
+
 
 
 <div class="login">
