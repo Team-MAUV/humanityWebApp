@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Humanity User Login</title>
-    <link rel="stylesheet" href="<?= URL ?>public/css/com-login-page_style.css" />
+    <link rel="stylesheet" href="<?= URL ?>public/css/userLogin.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
