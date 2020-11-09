@@ -10,7 +10,7 @@ class Staff extends Controller
         $logged = Session::get('loggedIn');
         if ($logged == false) {
             Session::destroy();
-            header('location: ../stafflogin');
+            header('location: ../login');
             exit;
         }
     }
