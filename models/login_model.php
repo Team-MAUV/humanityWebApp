@@ -55,7 +55,7 @@ class login_Model extends Model
             }
 
             if ($role == 'buyer') {
-                header('location: ../Buyer');
+                header('location: ../Buyer/profile');
             }
 
             if ($role == 'staff') {

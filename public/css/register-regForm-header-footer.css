@@ -1,244 +1,248 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  user-select: none;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  scrollbar-width: thin;
-  scrollbar-color: #ffffff #000000;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #000000;
+}
+
+.swal-icon {
+    background-color: #78cc5a;
 }
 
 *::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #ffffff;
+    background: #ffffff;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #000000;
-  border-radius: 10px;
-  border: 1px solid #000000;
+    background-color: #000000;
+    border-radius: 10px;
+    border: 1px solid #000000;
 }
+
 
 /*------------------------------*/
 
 body {
-  font-family: "Poppins", sans-serif;
-  overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
 }
 
 .container {
-  width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 7rem;
-  padding: 0 2rem;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
 }
 
 .bgimage {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 .nav-bar {
-  position: fixed;
-  grid-area: nav-bar;
-  display: grid;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  grid-template-columns: 250px 60% 40%;
-  grid-template-areas: "logo-container title-name dropdown";
-  background-color: #78cc5a;
-  height: 50px;
-  z-index: 10;
-}
-
-.logo-container {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  grid-area: logo-container;
-}
-
-.logo {
-  height: 50px;
-  width: 98px;
-  margin-left: 70px;
-  z-index: 10;
-  background-image: url("../images/hlogoxs.png");
-}
-
-.title-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  grid-area: title-name;
-}
-
-.tzu-logo {
-  width: 82px;
-  background: url("../images/tzuChiLogo.png");
-}
-
-.logo-name {
-  display: flex;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  line-height: 3rem;
-  text-align: center;
-}
-
-.logo-name span {
-  font-weight: 200;
-}
-
-.log-sign {
-  width: 150px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.log-sign a {
-  display: block;
-  position: relative;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 1.7rem;
-  margin-left: 1rem;
-  transition: 0.3s;
-}
-
-.back-btn {
-  display: inline-block;
-  position: relative;
-  width: 67px;
-  height: 40px;
-  background: #78cc5a;
-  padding: 0.5rem 0.8rem;
-  font-size: 1.2rem;
-  border: 2px solid #fff;
-  border-radius: 2rem;
-  line-height: 1;
-  transition: 0.3s;
-}
-
-.img {
-  height: 10px;
-  width: 130px;
-}
-
-.avatar {
-  position: relative;
-  width: 90px;
-  height: 10px;
-  left: 12.5rem;
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #78cc5a;
-  color: white;
-  text-align: center;
-  z-index: 1000;
-}
-
-@media screen and (max-width: 900px) {
-  .nav-bar {
     position: fixed;
     grid-area: nav-bar;
     display: grid;
     left: 0;
     top: 0;
-    width: 100%;
-    grid-template-columns: 5fr 1fr;
-    grid-template-areas: " title-name logo-container ";
+    width: 100vw;
+    grid-template-columns: 250px 60% 40%;
+    grid-template-areas: "logo-container title-name dropdown";
     background-color: #78cc5a;
     height: 50px;
     z-index: 10;
-  }
-  .avatar {
-    position: relative;
-    width: 90px;
-    left: 5rem;
-  }
-  .logo-container {
-    display: none;
-  }
-  .title-name {
+}
+
+.logo-container {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    grid-area: logo-container;
+}
+
+.logo {
+    height: 50px;
+    width: 98px;
+    margin-left: 70px;
+    z-index: 10;
+    background-image: url("../images/hlogoxs.png");
+}
+
+.title-name {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 50px;
     grid-area: title-name;
-  }
-  .tzu-logo {
+}
+
+.tzu-logo {
     width: 82px;
-    background: url(../images/tzuChiLogo.png);
-  }
-  .logo-name {
+    background: url("../images/tzuChiLogo.png");
+}
+
+.logo-name {
     display: flex;
     color: #fff;
-    font-size: 0.6rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     line-height: 3rem;
     text-align: center;
-  }
-  .logo-name span {
+}
+
+.logo-name span {
     font-weight: 200;
-  }
-  .log-sign {
-    width: 25px;
+}
+
+.log-sign {
+    width: 150px;
     height: 48px;
     display: flex;
     align-items: center;
     position: relative;
-  }
-  .log-sign a {
+}
+
+.log-sign a {
     display: block;
     position: relative;
-    right: 1rem;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    margin-left: 1rem;
     transition: 0.3s;
-  }
-  .back-btn {
+}
+
+.back-btn {
     display: inline-block;
-    width: 60px;
+    position: relative;
+    width: 67px;
     height: 40px;
     background: #78cc5a;
     padding: 0.5rem 0.8rem;
-    font-size: 5rem;
+    font-size: 1.2rem;
     border: 2px solid #fff;
     border-radius: 2rem;
     line-height: 1;
     transition: 0.3s;
-    text-transform: uppercase;
-  }
+}
 
-  a:hover {
-    color: #070707;
-  }
+.img {
+    height: 10px;
+    width: 130px;
+}
+
+.avatar {
+    position: relative;
+    width: 90px;
+    height: 10px;
+    left: 12.5rem;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #78cc5a;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 900px) {
+    .nav-bar {
+        position: fixed;
+        grid-area: nav-bar;
+        display: grid;
+        left: 0;
+        top: 0;
+        width: 100%;
+        grid-template-columns: 5fr 1fr;
+        grid-template-areas: " title-name logo-container ";
+        background-color: #78cc5a;
+        height: 50px;
+        z-index: 10;
+    }
+    .avatar {
+        position: relative;
+        width: 90px;
+        left: 5rem;
+    }
+    .logo-container {
+        display: none;
+    }
+    .title-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        grid-area: title-name;
+    }
+    .tzu-logo {
+        width: 82px;
+        background: url(../images/tzuChiLogo.png);
+    }
+    .logo-name {
+        display: flex;
+        color: #fff;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        line-height: 3rem;
+        text-align: center;
+    }
+    .logo-name span {
+        font-weight: 200;
+    }
+    .log-sign {
+        width: 25px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .log-sign a {
+        display: block;
+        position: relative;
+        right: 1rem;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 1.5rem;
+        transition: 0.3s;
+    }
+    .back-btn {
+        display: inline-block;
+        width: 60px;
+        height: 40px;
+        background: #78cc5a;
+        padding: 0.5rem 0.8rem;
+        font-size: 5rem;
+        border: 2px solid #fff;
+        border-radius: 2rem;
+        line-height: 1;
+        transition: 0.3s;
+        text-transform: uppercase;
+    }
+    a:hover {
+        color: #070707;
+    }
 }
