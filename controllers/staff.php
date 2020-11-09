@@ -56,9 +56,9 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/staff_gallery');
     }
 
-    function notification()
+    function staff_notification()
     {
-        $this->view->rendor('staff/dashboard/notification');
+        $this->view->rendor('staff/dashboard/staff_notification');
     }
 
     function logout()

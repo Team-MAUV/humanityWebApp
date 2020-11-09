@@ -93,10 +93,10 @@
                       } ?>">
             <a href="<?= URL ?>Staff/staff_gallery"><i class="fas fa-photo-video"> </i> Media</a>
           </li>
-          <li class="<?php if ($page == 'notification') {
+          <li class="<?php if ($page == 'staff_notification') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>staff/notification"><i class="fa fa-bell" aria-hidden="true"></i> Notification</a>
+            <a href="<?= URL ?>staff/staff_notification"><i class="fa fa-bell" aria-hidden="true"></i> Notification</a>
                     </li>
         
 
