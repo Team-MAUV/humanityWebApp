@@ -3,7 +3,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>market</title>
-        <link rel="stylesheet" href="<?= URL ?>public/css/market-buyer-profile.css">
+        <link rel="stylesheet" href="<?= URL ?>public/css/buy-market-profile.css">
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        
     </head>
@@ -160,7 +161,7 @@
     </body>
     <footer>
         <i>
-            <div class="bfooter">Powered by
+            <div class="footer">Powered by
                 <h4>Humanity2020&copy;</h4>
             </div>
         </i>

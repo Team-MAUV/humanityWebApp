@@ -1,3 +1,52 @@
+.c-row{
+    display: flex;
+    align-items: flex-start;
+}
+
+.cat-col-2{
+    flex-basis: 50%;
+    padding: 20px;
+}
+.cat-col-2 img{
+    width: 100%;
+    max-width: 200px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.caqt-col-2 p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.cat-diss h4{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.cat-col-5{
+    flex-basis: 20%;
+    max-width: 200px;
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.cat-col-5 a img{
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+.cat-col-5 a img:hover{
+    opacity: 0.5;
+}
+.more{
+    margin-bottom: 100px
+}
+
+/*--------------------index---------------------*/
+
+
+
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {

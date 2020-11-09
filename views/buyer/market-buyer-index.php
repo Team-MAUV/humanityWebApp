@@ -56,7 +56,7 @@
             <div class="row">
                 <div class="cat-links">
                     <div class="col-7">
-                        <a href="#">Recycled Products</a>
+                        <a href="<?= URL ?>Buyer/category">Recycled Products</a>
                     </div>
                     <div class="col-7">
                         <a href="#">Recycled Products</a>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="row">    
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="<?= URL ?>Buyer/view_product"><img src="<?= URL ?>public/images/squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -261,7 +261,7 @@
     </body>
     <footer>
         <i>
-            <div class="bfooter">Powered by
+            <div class="footer">Powered by
                 <h4>Humanity2020&copy;</h4>
             </div>
         </i>

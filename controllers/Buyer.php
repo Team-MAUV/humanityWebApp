@@ -18,9 +18,14 @@ class Buyer extends Controller
         $this->view->rendor('buyer/market-buyer-profile');
     }
     function cart(){
-        $this->view->rendor('buyer/cart');
+        $this->view->rendor('buyer/market-cart');
     }
-    
+    function view_product(){
+        $this->view->rendor('buyer/market-product-view');
+    }
+    function category(){
+        $this->view->rendor('buyer/market-product-category');
+    }
 
     function b_login()
     {

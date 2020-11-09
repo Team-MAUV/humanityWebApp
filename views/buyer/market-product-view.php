@@ -3,9 +3,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>market</title>
-        <link rel="stylesheet" href="market.css" />
-        <link rel="stylesheet" href="product.css">
-         <link rel="stylesheet" href="m-header.css">
+        
+         <link rel="stylesheet" href="<?= URL ?>public/css/buy-product-view.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        
     </head>
@@ -77,9 +76,7 @@
                     <div class="col-7">
                         <a href="#">Recycled Products</a>
                     </div>
-                    <div class="col-7">
-                        <a href="#">Recycled Products</a>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -92,7 +89,7 @@
             <div class="pd-row">
                 <div class="pd-col-2">
                     <div class="p-img">
-                        <img src="squre.png">
+                        <img src="<?= URL ?>public/images/squre.png">
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -152,7 +149,7 @@
     </body>
     <footer>
         <i>
-            <div class="bfooter">Powered by
+            <div class="footer">Powered by
                 <h4>Humanity2020&copy;</h4>
             </div>
         </i>
