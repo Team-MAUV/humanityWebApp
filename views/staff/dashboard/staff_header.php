@@ -88,10 +88,10 @@
             <a href="<?= URL ?>staff/requestleave"><i class="fas fa-id-card-alt"></i> Request Leave</a>
           </li>
 
-          <li class="<?php if ($page == 'media') {
+          <li class="<?php if ($page == 'staff_gallery') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>Commissioner/media"><i class="fas fa-photo-video"> </i> Media</a>
+            <a href="<?= URL ?>Staff/staff_gallery"><i class="fas fa-photo-video"> </i> Media</a>
           </li>
           <li class="<?php if ($page == 'notification') {
                         echo 'active';

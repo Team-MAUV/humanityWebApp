@@ -51,9 +51,9 @@ class Staff extends Controller
 
 
 
-    function media()
+    function staff_gallery()
     {
-        $this->view->rendor('staff/dashboard/media');
+        $this->view->rendor('staff/dashboard/staff_gallery');
     }
 
     function notification()
