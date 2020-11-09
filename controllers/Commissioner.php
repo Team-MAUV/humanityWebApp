@@ -85,13 +85,14 @@ class Commissioner extends Controller
 
     function mediaUpload()
     {
-        $this->view->rendor('commissioner/dashboard/mediaUpload');
+        $data = $this->model->get_images_display();
+        $this->view->rendor('commissioner/dashboard/mediaUpload', $data, true);
     }
 
     function run_mediaUpload()
     {
-        $this->model->run_mediaUpload();
-        //  $this->view->rendor('commissioner/dashboard/mediaUpload', $msg_data, true);
+        $msg_data =  $this->model->run_mediaUpload();
+        $this->view->rendor('commissioner/dashboard/mediaUpload', $msg_data, true);
     }
 
 

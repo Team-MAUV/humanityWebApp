@@ -63,32 +63,38 @@ class commissioner_Model extends Model
     if (isset($_FILES['image'], $_POST['title'], $_POST['description'])) {
       // The folder where the images will be stored
 
-      $target_dir = 'images/';
+      $target_dir =  $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/media/images/';
+      $save_path = 'images/';
       // The path of the new uploaded image
-      $image_path = $target_dir . basename($_FILES['image']['name']);
+      $dest_path = $target_dir . basename($_FILES['image']['name']);
+
+      $image_path = $save_path . basename($_FILES['image']['name']);
       // Check to make sure the image is valid
       if (!empty($_FILES['image']['tmp_name']) && getimagesize($_FILES['image']['tmp_name'])) {
-        if (file_exists($image_path)) {
-          $msg = 'Image already exists, please choose another or rename that image.';
-          return ($msg);
+        if (file_exists($dest_path)) {
+          $msg = "Image already exists, please choose another or rename that image.";
         } else if ($_FILES['image']['size'] > 500000) {
-          $msg = 'Image file size too large, please choose an image less than 500kb.';
-          return ($msg);
+          $msg = "Image file size too large, please choose an image less than 500kb.";
         } else {
           // Everything checks out now we can move the uploaded image
-          move_uploaded_file($_FILES['image']['tmp_name'], $image_path);
+          move_uploaded_file($_FILES['image']['tmp_name'], $dest_path);
 
           // Insert image info into the database (title, description, image path, and date added)
           $stmt = $this->db->prepare('INSERT INTO images VALUES (NULL, ?, ?, ?, CURRENT_TIMESTAMP)');
           $stmt->execute([$_POST['title'], $_POST['description'], $image_path]);
 
-          $msg = 'Image uploaded successfully!';
-          return ($msg);
+          $msg = "Image uploaded successfully!";
         }
       } else {
         $msg = 'Please upload an image!';
-        return ($msg);
       }
+
+
+      $pageData = [
+
+        'msg' => $msg
+      ];
+      return $pageData;
     }
   }
 }

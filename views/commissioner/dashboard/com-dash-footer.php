@@ -1,4 +1,5 @@
 </div>
+
 </div>
 <footer>
   <div class="footer">Powered by<h4>Humanity2020&copy;</div>
@@ -10,5 +11,6 @@
 <script src="<?= URL ?>public/js/side-panel.js"></script>
 <script src="<?= URL ?>public/js/tab-changing.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 
 </html>
