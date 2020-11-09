@@ -50,7 +50,7 @@
       <i class="fas fa-times" id="cancel"></i>
     </label>
 
-    <div class="sidebar">
+    <!-- <div class="sidebar">
       <div class="text">
         <h5>Commissioner Dashboard</h5>
       </div>
@@ -117,4 +117,4 @@
 
 
       </ul>
-    </div>
+    </div> -->

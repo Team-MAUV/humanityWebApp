@@ -1,5 +1,4 @@
 <?php
-
 class login_Model extends Model
 {
 

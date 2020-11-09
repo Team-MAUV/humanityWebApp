@@ -1,7 +1,4 @@
 <?php $page = 'sessionIncharge';
-include "com_dash_header.php"; ?>
-
-<?php $page = 'sessionIncharge';
 $title = 'Session Incharge';
 $style = 'com-dash-sessionIncharge.css';
 include "com-dash-header.php"; ?>

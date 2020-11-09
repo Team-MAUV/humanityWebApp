@@ -272,7 +272,7 @@ body {
   width: 85.5%;
   display: grid;
   z-index: 1;
-  overflow: auto;
+
   left: 5rem;
 }
 

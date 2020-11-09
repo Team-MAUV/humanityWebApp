@@ -1,7 +1,4 @@
 <?php $page = 'projectReports';
-include "com_dash_header.php"; ?>
-
-<?php $page = 'projectReports';
 $title = 'Project Reports';
 $style = 'com-dash-projectReports.css';
 include "com-dash-header.php"; ?>
