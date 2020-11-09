@@ -44,7 +44,7 @@ include "regForm-header.php"; ?>
       <i class="fa fa-calendar "></i>
     </label>
 
-    <input type="date" name="dob" placeholder="Date of Birth" id="dob" required>
+    <input  name="dob" placeholder="Date of Birth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="dob" required>
     <div class="validation-error">
     </div>
     <label for="contact">
@@ -58,7 +58,7 @@ include "regForm-header.php"; ?>
         &nbsp<i class="fa fa-male fa-2x "> </i>
       </div>
     </label>
-    <select name="gender">
+    <select name="gender" id="gender">
 
       <option value="male ">Male</option>
       <option value="female ">Female</option>
@@ -67,7 +67,7 @@ include "regForm-header.php"; ?>
     <div class="validation-error ">
     </div>
 
-    <button class="btn btnreg " type="submit " name="register ">
+    <button class="btn btnreg " type="submit " name="register " onclick="validation();">
       <p style="font-weight: 800;"> Submit</p>
     </button>
 
@@ -76,6 +76,50 @@ include "regForm-header.php"; ?>
 
 
   </form>
+  
+  
 </div>
+<script>
+function validation() {
+    
+    var nic = document.getElementById("nic").value;
+    var email = document.getElementById("email").value;
+   
+    var contact = document.getElementById("contact").value;
+ 
+    var at = email.indexOf("@");
+    var dot = email.lastIndexOf(".");
 
+    if ((contact.length != 10) || (isNaN(contact))) {
+        swal({
+            title: "Registration Faied!",
+            text: "Please enter a valid Phone Number!",
+
+            icon: "error",
+
+        });
+
+    } else {
+        if (at < 1 || dot < at + 2 || dot + 2 > email.length) {
+            swal({
+                title: "Registration Failed",
+                text: "Please enter a valid Email!",
+
+                icon: "error",
+
+            });
+        } else {
+
+            swal({
+                title: "Registration Successful!",
+                text: "Please wait for the confirmation email, Thank you!",
+                icon: "success",
+
+            });
+
+        }
+    }
+
+}
+</script>
 <?php include "regForm-footer.php"; ?>

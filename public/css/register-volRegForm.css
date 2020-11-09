@@ -1,201 +1,201 @@
 .login {
-  width: 1000px;
-  height: 29rem;
-  background-color: #ffffff;
-  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-  margin: 100px auto;
+    width: 1000px;
+    height: 29rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
 }
 
 .login h1 {
-  text-align: center;
-  color: #f1f1f1;
-  font-size: 24px;
-  padding: 20px 0 20px 0;
-  border-bottom: 1px solid #dee0e4;
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
 }
 
 .login form {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 20px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
 }
 
 .login form label {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 50px;
-  height: 50px;
-  background-color: #2caa0c;
-  color: #080808;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #2caa0c;
+    color: #080808;
 }
 
 .login form input[type="date"],
 .login form select,
+.login form input[type="password"],
 .login form input[type="text"] {
-  position: relative;
-  width: 400px;
-  height: 50px;
-  border: 1px solid #dee0e4;
-  margin-bottom: 20px;
-  padding: 0 15px;
-  margin-right: 2vw;
+    position: relative;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    margin-right: 2vw;
 }
 
 .validation-error h1 {
-  position: relative;
-  left: 4rem;
-  font-size: 12px;
-  color: #e74c3c;
+    position: relative;
+    left: 4rem;
+    font-size: 12px;
+    color: #e74c3c;
 }
 
 .forgotpw a {
-  display: block;
-  position: relative;
-  left: 9.8rem;
-  top: 6rem;
-  text-decoration: none;
-  color: rgb(163, 152, 152);
-  font-size: 0.9rem;
-  transition: 0.3s;
+    display: block;
+    position: relative;
+    left: 9.8rem;
+    top: 6rem;
+    text-decoration: none;
+    color: rgb(163, 152, 152);
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
 a:hover {
-  color: #070707;
+    color: #070707;
 }
 
 .input-div i {
-  /*visibility: hidden; */
-  position: absolute;
-  top: 30px;
-  right: 10px;
+    /*visibility: hidden; */
+    position: absolute;
+    top: 30px;
+    right: 10px;
 }
 
 .input-div.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
+    color: #2ecc71;
+    visibility: visible;
 }
 
 .input-div.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
+    color: #e74c3c;
+    visibility: visible;
 }
 
 .input-div small {
-  color: #e74c3c;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
 }
 
 .input-div.error small {
-  visibility: visible;
+    visibility: visible;
 }
 
 .btn {
-  display: block;
-  width: 200px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 1rem 0;
-  font-size: 1.2rem;
-  outline: none;
-  border: none;
-  background-image: linear-gradient(to right, #17e74b, #04c6f7, #32be8f);
-  color: rgb(22, 22, 22);
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  background-size: 200%;
-  transition: 0.5s;
+    display: block;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #17e74b, #04c6f7, #32be8f);
+    color: rgb(22, 22, 22);
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    background-size: 200%;
+    transition: 0.5s;
 }
 
 .btnreg {
-  background-image: linear-gradient(to right, #0dddb0, #1d8b6a, #0d91dd);
+    background-image: linear-gradient(to right, #0dddb0, #1d8b6a, #0d91dd);
 }
 
 .btn:hover {
-  background-position: right;
-  cursor: pointer;
+    background-position: right;
+    cursor: pointer;
 }
 
 .form-control.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
+    color: #2ecc71;
+    visibility: visible;
 }
 
 .form-control.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
+    color: #e74c3c;
+    visibility: visible;
 }
 
 @media screen and (max-width: 900px) {
-  .login {
-    position: relative;
-    width: 250px;
-    height: 55rem;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-  }
-  .login h1 {
-    text-align: center;
-    color: #f7dfdf;
-    font-size: 14px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
-  }
-  .login form {
-    width: 360px;
-    display: block;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
-  }
-  .login form label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: 1rem;
-    width: 48px;
-    height: 35px;
-  }
-  .login form input[type="password"],
-  .login form select,
-  .login form input[type="date"],
-  .login form input[type="text"] {
-    position: relative;
-    width: 10rem;
-    height: 35px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    left: 4rem;
-    bottom: 2.2rem;
-    padding: 0 15px;
-  }
-  .validation-error h1 {
-    position: absolute;
-    left: 7.3rem;
-    bottom: 18rem;
-    font-size: 8px;
-    color: #e74c3c;
-  }
-  .btnreg {
-    position: relative;
-    right: 0;
-    left: 2rem;
-    bottom: 2rem;
-    padding: 3%;
-    width: 10rem;
-    height: 3rem;
-    border-radius: 25px;
-    font-size: 0.8rem;
-  }
-
-  a:hover {
-    color: #070707;
-  }
+    .login {
+        position: relative;
+        width: 250px;
+        height: 55rem;
+        background-color: #ffffff;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    }
+    .login h1 {
+        text-align: center;
+        color: #f7dfdf;
+        font-size: 14px;
+        padding: 20px 0 20px 0;
+        border-bottom: 1px solid #dee0e4;
+    }
+    .login form {
+        width: 360px;
+        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .login form label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 1rem;
+        width: 48px;
+        height: 35px;
+    }
+    .login form input[type="password"],
+    .login form select,
+    .login form input[type="date"],
+    .login form input[type="text"] {
+        position: relative;
+        width: 10rem;
+        height: 35px;
+        border: 1px solid #dee0e4;
+        margin-bottom: 20px;
+        left: 4rem;
+        bottom: 2.2rem;
+        padding: 0 15px;
+    }
+    .validation-error h1 {
+        position: absolute;
+        left: 7.3rem;
+        bottom: 18rem;
+        font-size: 8px;
+        color: #e74c3c;
+    }
+    .btnreg {
+        position: relative;
+        right: 0;
+        left: 2rem;
+        bottom: 2rem;
+        padding: 3%;
+        width: 10rem;
+        height: 3rem;
+        border-radius: 25px;
+        font-size: 0.8rem;
+    }
+    a:hover {
+        color: #070707;
+    }
 }
