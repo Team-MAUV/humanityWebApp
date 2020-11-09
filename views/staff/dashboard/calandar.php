@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="<?= URL ?>public/css/calender.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_calender.css" />
 
     <title> Calendar </title>
   </head>

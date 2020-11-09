@@ -8,17 +8,14 @@ include "staff_header.php"; ?>
 
   <div id="breadcrum">
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Responsive Product Card HTML & CSS</title>
+	<title>Access product</title>
 
-    <script src="js/all.min.js"></script>
+	<link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_access-product.css" />
     <script type="text/javascript" src="../../public/js/all.min.js"></script>
 
 

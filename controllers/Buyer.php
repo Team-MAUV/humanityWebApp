@@ -8,8 +8,19 @@ class Buyer extends Controller
 
     function index()
     {
-        $this->view->rendor('buyer/buy-index');
+        $this->view->rendor('buyer/market-buyer-index');
     }
+
+    function home(){
+        $this->view->rendor('buyer/market-buyer-home');
+    }
+    function profile(){
+        $this->view->rendor('buyer/market-buyer-profile');
+    }
+    function cart(){
+        $this->view->rendor('buyer/cart');
+    }
+    
 
     function b_login()
     {
