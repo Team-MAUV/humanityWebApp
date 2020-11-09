@@ -3,9 +3,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>market</title>
-        <link rel="stylesheet" href="market.css" />
-        <link rel="stylesheet" href="category.css">
-         <link rel="stylesheet" href="m-header.css">
+       
+         <link rel="stylesheet" href="<?= URL ?>public/css/buy-product-category.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        
     </head>
@@ -77,9 +76,7 @@
                     <div class="col-7">
                         <a href="#">Recycled Products</a>
                     </div>
-                    <div class="col-7">
-                        <a href="#">Recycled Products</a>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -88,7 +85,7 @@
             <h4>Category 01 Products</h4>
             <div class="c-row">
                 <div class="cat-col-2">
-                    <img src="squre.png">
+                    <img src="<?= URL ?>public/images/squre.png">
                 </div>
                 <div class="cat-col-2">
                     <p>
@@ -102,7 +99,7 @@
         <div class="more">
             <div class="row">
                 <div class="cat-col-5">
-                    <a href="#"><img src="squre.png"></a>
+                    <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
                     <ul>
                         <li>00000</li>
                         <li>Product Name</li>
@@ -112,7 +109,7 @@
                     </ul>
                 </div>
                 <div class="cat-col-5">
-                    <a href="#"><img src="squre.png"></a>
+                    <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
                     <ul>
                         <li>00000</li>
                         <li>Product Name</li>
@@ -122,7 +119,7 @@
                     </ul>
                 </div>
                 <div class="cat-col-5">
-                    <a href="#"><img src="squre.png"></a>
+                    <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
                     <ul>
                         <li>00000</li>
                         <li>Product Name</li>
@@ -132,7 +129,7 @@
                     </ul>
                 </div>
                 <div class="cat-col-5">
-                    <a href="#"><img src="squre.png"></a>
+                    <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
                     <ul>
                         <li>00000</li>
                         <li>Product Name</li>
@@ -142,7 +139,7 @@
                     </ul>
                 </div>
                 <div class="cat-col-5">
-                    <a href="#"><img src="squre.png"></a>
+                    <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
                     <ul>
                         <li>00000</li>
                         <li>Product Name</li>
@@ -152,7 +149,7 @@
                     </ul>
                 </div>
                 <div class="cat-col-5">
-                    <a href="#"><img src="squre.png"></a>
+                    <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
                     <ul>
                         <li>00000</li>
                         <li>Product Name</li>
@@ -171,7 +168,7 @@
     </body>
     <footer>
         <i>
-            <div class="bfooter">Powered by
+            <div class="footer">Powered by
                 <h4>Humanity2020&copy;</h4>
             </div>
         </i>
