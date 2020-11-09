@@ -77,10 +77,10 @@
             </ul>
           </li>
           
-          <li class="<?php if ($page == 'Report') {
+          <li class="<?php if ($page == 'staff_report') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>staff/Report"><i class="fas fa-file-contract"></i> Reports</a>
+            <a href="<?= URL ?>staff/staff_report"><i class="fas fa-file-contract"></i> Reports</a>
           </li>
           <li class="<?php if ($page == 'requestleave') {
                         echo 'active';
