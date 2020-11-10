@@ -3,16 +3,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>market</title>
-        <link rel="stylesheet" href="<?= URL ?>public/css/buy-market-index.css" />
+        <link rel="stylesheet" href="market.css" />
+        <link rel="stylesheet" href="m-header.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://kit.fontawesome.com/c0d2632e91.js" crossorigin="anonymous"></script>
+       
     </head>
 
     <body>
 
-    	<header>
-        
-            <div class="nav-bar">
+    	
+	        <div class="nav-bar">
 	            <div class="logo-container">
 
 
@@ -32,15 +32,19 @@
 	                <a href="<?= URL ?>index" class="back-btn" alt="Sun"><i class="fas fa-home"></i></a>
 	            </div>
 
-            </div>
-            
+	        </div>
 
-            <div class="top-nav">
+    	
+
+
+        <script type="text/javascript" src="js/countdown.js"></script>
+        
+        <div class="top-nav">
             <div class="row">
                 <div class="col-2">
                     <a href="#">Log-In</a>
-                    <a href="<?= URL ?>register/buyRegForm">Sign-In</a>
-                    <a href="<?= URL ?>buyer/help_sup">Help & Support</a>
+                    <a href="#">Sign-In</a>
+                    <a href="#">Help & Support</a>
                     
                 </div>
                 <div class="col-2">
@@ -56,9 +60,6 @@
             <div class="row">
                 <div class="cat-links">
                     <div class="col-7">
-                        <a href="<?= URL ?>Buyer/category">Recycled Products</a>
-                    </div>
-                    <div class="col-7">
                         <a href="#">Recycled Products</a>
                     </div>
                     <div class="col-7">
@@ -76,20 +77,16 @@
                     <div class="col-7">
                         <a href="#">Recycled Products</a>
                     </div>
-                    
+                    <div class="col-7">
+                        <a href="#">Recycled Products</a>
+                    </div>
+                    <div class="col-7">
+                        <a href="#">Recycled Products</a>
+                    </div>
                 </div>
             </div>
 
         </div>
-
-        
-        </header>
-    	
-
-
-        <script type="text/javascript" src="<?= URL ?>js/countdown.js"></script>
-        
-        
         <div class="welcome">
             <p>Welcome to the Tzu-Chi Market place. We provide you all kinds of recycled 
                 products. Register to the Tzu-Chi Market and place your bids for the products.</p>
@@ -107,7 +104,7 @@
                 </div>
                 <div class="row">    
                     <div class="col-5">
-                        <a href="<?= URL ?>Buyer/view_product"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -117,7 +114,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -127,7 +124,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -137,7 +134,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -147,7 +144,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -167,7 +164,7 @@
                 </div>
                 <div class="row">    
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -177,7 +174,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -187,7 +184,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -197,7 +194,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -207,7 +204,7 @@
                         </ul>
                     </div>
                     <div class="col-5">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <ul>
                             <li>00000</li>
                             <li>Product Name</li>
@@ -225,31 +222,31 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <h4>category 01</h4>
                     </div>
                     <div class="col-6">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
-                        <h4>category 01</h4>
-                    </div>
-                
-                    <div class="col-6">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <h4>category 01</h4>
                     </div>
                 
                     <div class="col-6">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
+                        <h4>category 01</h4>
+                    </div>
+                
+                    <div class="col-6">
+                        <a href="#"><img src="squre.png"></a>
                         <h4>category 01</h4>
                     </div>
                
                     <div class="col-6">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <h4>category 01</h4>
                     </div>
                
                     <div class="col-6">
-                        <a href="#"><img src="<?= URL ?>public/images/squre.png"></a>
+                        <a href="#"><img src="squre.png"></a>
                         <h4>category 01</h4>
                         
                     </div>
@@ -261,7 +258,7 @@
     </body>
     <footer>
         <i>
-            <div class="footer">Powered by
+            <div class="bfooter">Powered by
                 <h4>Humanity2020&copy;</h4>
             </div>
         </i>

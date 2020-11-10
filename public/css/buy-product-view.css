@@ -1,183 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    box-sizing: content-box;
-    
-}
-.pro-container{
-   
-   
-}
-.p-row{
-    padding-top: 50px;
-    padding: 20px;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: space-around; 
-}
-.p-row-2{
-   
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;   
-}
-.p-col-2{
-    flex-basis: 50%;
-    max-width: 50%;
-    margin-bottom: 30px;
-    align-items: center;
-    
-}
-.p-col-2-2{
-    flex-basis: 50%;
-    max-width: 150px;
-    margin-bottom: 10px;
-    align-items: center;
-    padding: 5px;
-    margin-right: 40px;
-    background-color: azure;
-}
-.p-col-2 img{
-    width: 100%;
-    
-    padding: 10px;
-    max-width: 200px;
-    border: black;
-}
-.p-col-2-2 img{
-    width: 100%;
-    
-    cursor: pointer;
-    max-width: 130px;
-    border: none;
-}
-.p-col-2-2 img:hover{
-    opacity: 0.3;
-   
-    
-    border: black;
-}
-
-.crt-link{
-    align-content: center;
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    margin-left: 50px;
-}
-.crt-link p{
-   font-size: 12px;
-}
-
-.crt-link p{
-    margin-left: 20px;
-}
-.footer{
-    padding: 50px;
-}
-.b-propic img{
-    border-radius: 50%;
-}
-
-.b-propic{
-    margin-left: 80px;
-    margin-bottom: 40px;
-}
-
-.b-details{
-    margin-left: 20px;
-    font-size: 16px;
-    margin-bottom: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-ul{
-    list-style-type: none;
-}
-.chng-details{
-    margin-left: 80px;
-    padding: 20px;
-}
-.chng-uname{
-    margin-left: 20px;
-    padding: 20px;
-}
-
-
-.chng-details a{
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: darkcyan;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-}
-
-.chng-uname a{
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: cyan;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-}
-.chng-details a:hover{
-    background-color: brown;
-    color: bisque;
-}
-.chng-uname a:hover{
-    background-color: brown;
-    color: white;
-}
-
-.favourites{
-    background-color: lightpink;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    
-   
-}
-.favourites h3{
-    margin-left: 20px;
-    margin-bottom: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: brown;
-    font-weight: bold;
-}
-.p-col-2-2 ul{
-   font-size: 12px;
-   font-weight: bold;
-}
-
-.b-pro{
-    padding-left: 70px;
-}
-
-@media screen and (max-width: 600px){
-    .p-col-2{
-        flex-basis: 100%;
-        max-width: 100%;
-    }
-    .b-pro{
-        padding-left: 20px;
-    }
-}
-
-
-
-
-
-/*-------------------buy-market-index.css----------*/
-
-
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {
@@ -472,7 +292,7 @@ a:hover {
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: orangered;
+    background-color: darkred;
     color: white;
     text-align: center;
     z-index: 1000;
@@ -888,4 +708,182 @@ ul li{
     .src-btn{
         width: 40px;
     }
+}
+
+
+
+
+/*-----------product----------*/
+
+
+.pd-row{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  
+}
+
+.pd-col-2{
+    flex-basis: 50%;
+    max-width: 50%;
+    margin-bottom: 30px;
+    
+    
+}
+.p-img{
+    display: inline-block;
+    margin-left: 30px;
+    
+}
+.p-img img{
+    max-width: 250px;
+    width: 100%;
+}
+.p-name h1{
+    padding: 20px;
+}
+.pd-col-2 p{
+    padding: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.bid-area h1{
+    padding: 20px;
+    color: red;
+    font-weight: bold;
+    font-size: 36px;
+}
+.bid-area{
+    padding: 10px;
+    background-color: pink;
+    margin-right: 20px;
+}
+
+.bid-area label{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+}
+.rupees{
+    max-width: 60px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.cents{
+    max-width: 30px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.bid-btn{
+    margin-left: 20px;
+    padding: 20px;
+    width: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.bid-btn:focus{
+    border: none;
+}
+
+.bid-btn:hover{
+    background-color: brown;
+}
+
+.bid-stats{
+   padding: 20px;
+}
+
+.bid-stats td{
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 100px;
+}
+.refresh-btn{
+    margin-left: 500px;
+    padding: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: lightblue;
+    font-weight: bold;
+}
+.refresh-btn:hover{
+    background-color: cornflowerblue;
+}
+.related-products{
+    padding: 20px;
+}
+.related-products h3{
+    padding: 20px;
+    margin-left: 70px;
+}
+
+.pd-col-4 img{
+    cursor: pointer;
+}
+
+.pd-col-4 img:hover{
+    opacity: 0.3;
+}
+@media screen and (max-width: 600px){
+    .pd-col-2{
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    .refresh-btn{
+        margin-left: 300px;
+    }
+    .pd-col-2 img{
+        margin-left: 70px;
+        height: 50%;
+        width: 50%;
+        padding: 10px;
+    }
+    .p-name h1{
+        font-size: 24px;
+    }
+    .pd-col-2 p{
+        margin-top: 0;
+        font-size: 12px;
+    }
+    .bid-area h1{
+        font-size: 24px;
+    }
+    .bid-area label{
+        font-size: 24px;
+        font-weight: bold;
+        padding: 20px;
+    }
+    .rupees{
+        max-width: 40px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .cents{
+        max-width: 20px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .bid-btn{
+        margin-left: 20px;
+        padding: 10px;
+        width: 30px;
+        font-size: 16px;
 }

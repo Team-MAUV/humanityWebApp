@@ -34,7 +34,7 @@
           </button>
           <div class="dropdown-content">
             <a href="#">Edit Profile</a>
-            <a href="<?= URL ?>Staff/logout">Logout</a>
+            <a href="<?= URL ?>Sessionincharge/logout">Logout</a>
 
           </div>
         </div>
@@ -51,7 +51,7 @@
 
       <div class="sidebar">
         <div class="text">
-          <h5 style="background-color: blue;">Staff Dashboard</h5>
+          <h5 style="background-color: blue;">Session Dashboard</h5>
         </div>
         <ul>
           <li class="<?php if ($page == 'home') {

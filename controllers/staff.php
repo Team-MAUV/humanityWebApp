@@ -10,7 +10,7 @@ class Staff extends Controller
         $logged = Session::get('loggedIn');
         if ($logged == false) {
             Session::destroy();
-            header('location: ../stafflogin');
+            header('location: ../login');
             exit;
         }
     }
@@ -38,9 +38,9 @@ class Staff extends Controller
 
 
 
-    function Report()
+    function staff_report()
     {
-        $this->view->rendor('staff/dashboard/Report');
+        $this->view->rendor('staff/dashboard/staff_report');
     }
 
     function requestleave()
@@ -51,14 +51,14 @@ class Staff extends Controller
 
 
 
-    function media()
+    function staff_gallery()
     {
-        $this->view->rendor('staff/dashboard/media');
+        $this->view->rendor('staff/dashboard/staff_gallery');
     }
 
-    function notification()
+    function staff_notification()
     {
-        $this->view->rendor('staff/dashboard/notification');
+        $this->view->rendor('staff/dashboard/staff_notification');
     }
 
     function logout()

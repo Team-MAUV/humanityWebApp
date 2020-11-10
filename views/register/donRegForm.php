@@ -1,80 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $title = 'Donor Registration';
+$style = 'register-donRegForm.css';
+include "regForm-header.php"; ?>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donor Registration</title>
-    <link rel="stylesheet" href="http://localhost/humanity/public/css/don-register-page-style.css" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <style>
-        body {
-            background-color: black;
-
-        }
-    </style>
-</head>
-
-<body>
-
-    <?php //  <img class="wave " src="http://localhost/humanity/public/images/donreg.svg ">
-    ?>
-
-    <div class="img ">
-    </div>
+   
 
 
-    <header>
-        <div class="nav-bar">
-            <div class="logo-container">
-
-
-                <div class="logo"></div>
-            </div>
-
-            <div class="title-name">
-
-                <h3 class="logo-name">
-                    <div class="tzu-logo"></div>
-                    Tzu Chi Foundation | <span> Hambantota</span>
-                </h3>
-            </div>
-
-            <div class="log-sign" style="--i: 1.8s;">
-
-                <a href="<?= URL ?>index" class="back-btn" alt="Sun"><i class="fas fa-home"></i></a>
-            </div>
-
-        </div>
-
-    </header>
-    <header>
-        <div class="nav-bar">
-            <div class="logo-container">
-
-
-                <div class="logo"></div>
-            </div>
-
-            <div class="title-name">
-
-                <h3 class="logo-name">
-                    <div class="tzu-logo"></div>
-                    Tzu Chi Foundation | <span> Hambantota</span>
-                </h3>
-            </div>
-
-            <div class="log-sign" style="--i: 1.8s;">
-
-                <a href="<?= URL ?>index" class="back-btn" alt="Sun"><i class="fas fa-home"></i></a>
-            </div>
-
-        </div>
-
-    </header>
+   
     <div class="login" style="background-image: url('http://localhost/humanity/public/images/regbg22.jpg') ;">
         <h1>Welcome to Donor Registration</h1>
         <div id="error"></div>
@@ -114,7 +45,7 @@
             <label for="password">
                 <i class="fa fa-address-book  "></i>
             </label>
-            <input type="text" name="password" placeholder="Password" id="password" required>
+            <input type="password" name="password" placeholder="Password" id="password" required>
             <div class="validation-error">
             </div>
 
@@ -140,7 +71,7 @@
             <div class="validation-error ">
             </div>
 
-            <button class="btn btnreg " type="submit " name="register ">
+            <button class="btn btnreg " type="submit " name="register " onclick="validation();">
                 <p style="font-weight: 800;"> Submit</p>
             </button>
 
@@ -150,12 +81,47 @@
 
         </form>
     </div>
+    <script>
+function validation() {
+    
+    var nic = document.getElementById("nic").value;
+    var email = document.getElementById("email").value;
+    
+    var contact = document.getElementById("contact").value;
+    
+    var at = email.indexOf("@");
+    var dot = email.lastIndexOf(".");
 
-    <footer>
-        <div class="footer">Powered by<h4>Humanity2020&copy;</h4>
-        </div>
-    </footer>
-    <script type="text/javascript" src="../../public/js/error.js"></script>
-</body>
+    if ((contact.length != 10) || (isNaN(contact))) {
+        swal({
+            title: "Registration Faied!",
+            text: "Please enter a valid Phone Number!",
 
-</html>
+            icon: "error",
+
+        });
+
+    } else {
+        if (at < 1 || dot < at + 2 || dot + 2 > email.length) {
+            swal({
+                title: "Registration Failed",
+                text: "Please enter a valid Email!",
+
+                icon: "error",
+
+            });
+        } else {
+
+            swal({
+                title: "Registration Successful!",
+                text: "Thank you for joining us!",
+                icon: "success",
+
+            });
+
+        }
+    }
+
+}
+</script>
+    <?php include "regForm-footer.php"; ?>
