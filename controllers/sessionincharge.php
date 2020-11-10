@@ -22,13 +22,13 @@ class Sessionincharge extends Controller
     }
 
     
-    function add_product()
+    function media_gallery()
     {
-        $this->view->rendor('session-incharge/dashboard/add_product');
+        $this->view->rendor('session-incharge/dashboard/media_gallery');
     }
-    function access_product()
+    function attendance_marking ()
     {
-        $this->view->rendor('session-incharge/dashboard/access_product');
+        $this->view->rendor('session-incharge/dashboard/attendance_marking');
     }
 
 

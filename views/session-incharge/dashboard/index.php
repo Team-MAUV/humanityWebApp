@@ -1,3 +1,16 @@
+<?php $page = 'home';
+include "staff_header.php"; ?>
+
+
+<div class="grid-container">
+
+
+
+  <div id="breadcrum">
+
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -50,3 +63,9 @@
         </div>
     </body>
 </html>
+
+
+</div>
+</div>
+
+<?php include "staff_footer.php" ?>

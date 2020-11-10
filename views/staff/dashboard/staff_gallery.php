@@ -60,11 +60,11 @@ include "staff_header.php"; ?>
             <h1 style="margin-top:70px;"> Image gallery </h1>
           
             <div id="jLightroom" class="jlr">
-<a href="public/images/discuss.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/discuss.jpg" class="jlr_img"/> </a>
-<a href="public/images/discuss.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/discuss.jpg" class="jlr_img"/> </a>
-<a href="public/images/plant.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/plant.jpg" class="jlr_img"/> </a>
-<a href="public/images/student.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/student.jpg" class="jlr_img"/> </a>
-<a href="public/images/dengue.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/dengue.jpg" class="jlr_img"/> </a>
+<a href="<?= URL ?>public/images/discuss.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/discuss.jpg" class="jlr_img"/> </a>
+<a href="<?= URL ?>public/images/discuss.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/discuss.jpg" class="jlr_img"/> </a>
+<a href="<?= URL ?>public/images/plant.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/plant.jpg" class="jlr_img"/> </a>
+<a href="<?= URL ?>public/images/student.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/student.jpg" class="jlr_img"/> </a>
+<a href="<?= URL ?>public/images/dengue.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/dengue.jpg" class="jlr_img"/> </a>
 
   </div>
       </div>

@@ -1,0 +1,56 @@
+
+body{
+    background: rgb(206, 206, 243);
+}
+
+
+.column {
+    float: left;
+    width: 50%;
+  
+  
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+ 
+  input[type=text], select, textarea {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid rgb(19, 16, 16);
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+ input[type=submit]{
+    background-color: #816bd1; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
