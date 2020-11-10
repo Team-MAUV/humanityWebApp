@@ -24,9 +24,9 @@ include "com-dash-header.php"; ?>
         </select></div>
       <br>
       <h3>Enter Session Incharge Credentials </h3>
-      <label for="tmp_username">Session Incharge Temporary Username</label>
+      <label for="tmp_username">Temporary Username</label>
       <input type="text" name="tmp_username" id="tmp_username">
-      <label for="p_count">Expected Participant Count</label>
+      <label for="p_count">Passcode</label>
       <input type="text" name="p_count" id="p_count">
 
       <input type="submit" value="Appoint">

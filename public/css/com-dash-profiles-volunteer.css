@@ -39,6 +39,32 @@
   background-color: rgb(7, 112, 199);
 }
 
+input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: 4px solid #004883;
+}
+
+.search-container {
+  position: relative;
+  left: 25%;
+}
+.search-container button {
+  position: relative;
+  padding: 6px 10px;
+
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
 .content {
   width: 100%;
   margin: 0 auto;

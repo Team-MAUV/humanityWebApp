@@ -12,5 +12,10 @@
 <script src="<?= URL ?>public/js/tab-changing.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+<script src="<?= URL ?>public/js/<?php echo $jsFile ?>"></script>
+
+
+
+
 
 </html>

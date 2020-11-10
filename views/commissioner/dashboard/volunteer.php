@@ -17,10 +17,19 @@ include "com-dash-header.php"; ?>
       <ul>
         <li><a id="tab1" href="#" class="active">Registered</a></li>
         <li><a id="tab2" href="#"> New Requests</a></li>
-        <li><a id="tab3" href="#"> Rejected</a></li>
+        <div class="search-container">
+          <form action="search_volunteer" method="POST">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
       </ul>
+
+
+
       <hr>
     </div>
+
 
     <div id="tab1C" class="tab-container">
       <div class="content read">
@@ -29,11 +38,11 @@ include "com-dash-header.php"; ?>
           <thead>
             <tr>
               <td>#</td>
+              <td>Volunteer ID</td>
               <td>Name</td>
-              <td>Email</td>
-              <td>Phone</td>
-              <td>Title</td>
-              <td>Created</td>
+              <td>Volunteer Level</td>
+              <td>Points</td>
+              <td>Joined Date</td>
               <td></td>
             </tr>
           </thead>
@@ -42,11 +51,11 @@ include "com-dash-header.php"; ?>
             <?php foreach ($contacts as $contact) : ?>
               <tr>
                 <td><?= $contact['id'] ?></td>
+                <td><?= $contact['vol_id'] ?></td>
                 <td><?= $contact['name'] ?></td>
-                <td><?= $contact['email'] ?></td>
-                <td><?= $contact['phone'] ?></td>
-                <td><?= $contact['title'] ?></td>
-                <td><?= $contact['created'] ?></td>
+                <td><?= $contact['level'] ?></td>
+                <td><?= $contact['vol_points'] ?></td>
+                <td><?= $contact['join_date'] ?></td>
                 <td class="actions">
                   <a href="update.php?id=<?= $contact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
                   <a href="delete.php?id=<?= $contact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>

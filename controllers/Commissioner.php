@@ -23,10 +23,13 @@ class Commissioner extends Controller
 
     function volunteer()
     {
-
-
         $data = $this->model->get_reg_vol_profiles();
+        $this->view->rendor('commissioner/dashboard/volunteer', $data, true);
+    }
 
+    function search_volunteer()
+    {
+        $data = $this->model->run_search_volunteer();
         $this->view->rendor('commissioner/dashboard/volunteer', $data, true);
     }
 
