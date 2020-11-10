@@ -1,0 +1,96 @@
+body{
+  margin:10px;
+  height:100vh;
+  background: rgb(196, 196, 221);
+
+}
+
+
+
+ .left {
+    width: 25%;
+  
+    background: rgb(68, 68, 221);
+    height: 100%;
+  }
+ .right1 {
+    width: 25%;
+ 
+  height: 100%;
+  }
+  .right {
+    width: 50%;
+ 
+  height: 100%;
+  }
+
+
+  input[type=text] ,[type=date]  {
+    border: 2px solid rgb(44, 3, 139);
+    border-radius: 4px;
+    width: 100%;
+  padding: 12px;
+  resize: vertical;
+  }
+  input[type=checkbox]{
+
+    border: 2px solid rgb(44, 3, 139);
+    border-radius: 4px;
+    padding: 12px;
+    resize: vertical;
+  }
+
+
+
+  input[type=submit],[type=reset]{
+    background-color:  rgb(65, 39, 218); 
+    border: none;
+    color: rgb(240, 240, 240);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  
+  }
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 70%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .new:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media screen and (max-width: 600px) {
+    .column  , .col-25, .col-75, input[type=submit]{
+      width: 100%;
+      margin-top: 0;
+    }
+  }

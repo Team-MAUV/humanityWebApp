@@ -59,7 +59,8 @@ include "staff_header.php"; ?>
 <div class="row">
     <div class="column">
         <form action="#">
-            <img src="images/form.png" width="200px" height="150px"> <br>
+        <img src="<?= URL ?>public/images/form.png" alt="img" width="200px" height="150px"/>
+         <br>
             <label for="event_Id">Event_Id: </label>
           <br>  <input type="text" id="eId" name="eId"><br><br>
         
