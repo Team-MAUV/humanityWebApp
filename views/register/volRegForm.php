@@ -5,7 +5,7 @@ include "regForm-header.php"; ?>
 
 
 
-<div class="login">
+<div class="login" style="background-image: url('<?= URL ?>public/images/bgreg1.svg') ;">
   <h1>Welcome to Volunteer Registration</h1>
   <div id="error"></div>
   <form action="register/run_vol_register" method="POST" id="form">
