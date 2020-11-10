@@ -47,7 +47,8 @@ include "staff_header.php"; ?>
         <h3 style="color: brown;">Select the Date for uploading report:</h3>
         <input type="date" id="myDate" value="2020-10-09"> <br> <br><br> <br>
         <div class="column"> <img src="<?= URL ?>public/images/report.png" alt="img" width="200px" height="150px"/>	
-        <h3 style="color: brown;"> To view Uploaded Reports: </h3> <a href="upload_reports.php" target="_blank">
+		<h3 style="color: brown;"> To view Uploaded Reports: </h3> 
+		<a href="<?URL ?> upload_reports.php" target="_blank" >
             Uploaded Reports </a>
         
         
