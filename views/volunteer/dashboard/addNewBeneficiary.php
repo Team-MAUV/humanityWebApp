@@ -19,24 +19,25 @@ include "vol_dash_header.php"; ?>
 
 
 <h1>New Beneficiery Case file</h1>
-    <form action="#">
-    <img src="http://localhost/humanity/public/images/upload.svg" class="floatRight">
+    <form action="addbeneficiery" method="POST" id="beneform" enctype="multipart/form-data">
+    <img src="<?=URL?>public/images/upload.svg" class="floatRight">
         <ul class="voldata">
         
-            <li>Beneficiery case number: <input tpe="text"></li>
+            
             <li>
-                Volunteer ID: <input type="text">
+                Volunteer ID: <input type="text" name="vol_id" id="vid" required>
             </li>
             <li>
                 <div class="formcss">
                     <p style="align-content: center;">Upload the file: </p>
-                    <input type="file" id="beneficierycase" name="casefile" class="file">
+                    <input type="file" id="beneficierycase" name="file" accept="file/*" class="file">
                     <input type="submit" class="btn" value="Upload"></div>
             </li>
         </ul>
 
 
     </form>
+    <p><?= $msg ?></p>
 
 
 
