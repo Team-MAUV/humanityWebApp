@@ -9,8 +9,24 @@
     scrollbar-color: #ffffff #000000;
 }
 
-.swal-icon {
-    background-color: #78cc5a;
+.swal-button {
+    margin-right: 11vw;
+    background-color: #000d55;
+    width: 10vw;
+}
+
+.swal-title {
+    color: #000000;
+    font-weight: 500;
+}
+
+.swal-text {
+    color: #000000;
+    font-weight: 500;
+}
+
+.swal-button:hover {
+    color: #000000;
 }
 
 *::-webkit-scrollbar {
