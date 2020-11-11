@@ -67,7 +67,11 @@
                       } ?>">
             <a href="<?= URL ?>session_incharge/media_gallary"><i class="fas fa-file-contract"></i> Media</a>
           </li>
-
+          <li class="<?php if ($page == 'confirm_participants') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>session_incharge/confirm_participants"><i class="fas fa-id-card-alt"></i> Confirm Participants</a>
+          </li>
 
           <li class="<?php if ($page == 'attendance_marking') {
                         echo 'active';

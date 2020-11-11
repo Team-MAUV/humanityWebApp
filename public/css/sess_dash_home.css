@@ -22,4 +22,9 @@
   .btn-group button:hover {
     background-color: #140488;
   }
-  
+  @media screen and (max-width: 600px) {
+    .column, .row {
+      width: 100%;
+      margin-top: 0;
+    }
+  }

@@ -44,7 +44,7 @@ include "sess_header.php"; ?>
 
     </head>
     <body>
-        <h2>    <b>    Welcome to Session Incharge page ! </b></h2>
+        <h1>    <b>    Welcome to Session Incharge page ! </b></h1>
 
         <div class="row">
           <div class="column" >
@@ -52,13 +52,9 @@ include "sess_header.php"; ?>
          
           </div>
           <div class="column">
-            <h2>You are now Session Incharge of <br> Tzu Chi Organization</h2>
+            <h1>You are now Session Incharge of <br> Tzu Chi Organization</h1>
 
-            <div class="btn-group">
-                <a href="<?= URL ?> media_gallary.php" >  <button>Image Portal  </button> </a>
-             <a href="<?= URL ?> attendance_marking.php" >   <button>Attendance Marking</button> </a>
-                
-              </div>
+            
             
           </div>
         </div>
