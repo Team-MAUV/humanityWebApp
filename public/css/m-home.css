@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+   
+    background-color: darksalmon;
+    width: 100vw;
+    height: 83vh;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;;
+}
+
+.col-2 img{
+    margin-top: 50px;
+    margin-left: 100px;
+    padding-left: 50px;
+    width: 400px;
+    height: 400px;
+}   
+
+.dis{
+    margin-top: 70px;
+    margin-left: 70px;
+    padding-bottom: 10px;
+    
+}
+.dis h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+}
+.join-in{
+    background-color:blue;
+    padding: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 200px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Lora', serif;
+
+}
+.join-in:hover{
+    background-color: darkblue;
+}
+
+.log-in{
+    background-color: green;
+    padding: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 200px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+.log-in:hover{
+    background-color: darkgreen;
+}
+
+.mhome-button{
+    padding: 20px;
+    background-color: antiquewhite;
+}
+.have-acc{
+    padding: 10px;
+    padding-bottom: 10px;
+    margin-left: 150px;
+    font-size: 16px;
+}
+.have-acc a{
+    color: blue;
+}
+.have-acc a:hover{
+    
+    color: red;
+}
+ 
+
+@media screen and (max-width: 600px){
+    .col-2{
+        width: 100%;
+
+    }
+    .col-2 img{
+        
+        display: none;
+    }
+    
+
+    .dis{
+        margin-top: 30px;
+        padding-bottom: 10px;
+        margin-left: 0;
+      
+    }
+    .dis h1{
+        font-size: 32px;
+    }
+    .join-in , .log-in{
+        margin-left: 40px;
+    }
+    .have-acc{
+        margin-left: 0;
+    }
+
+}

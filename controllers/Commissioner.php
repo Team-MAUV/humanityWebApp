@@ -23,7 +23,14 @@ class Commissioner extends Controller
 
     function volunteer()
     {
-        $this->view->rendor('commissioner/dashboard/volunteer');
+        $data = $this->model->get_reg_vol_profiles();
+        $this->view->rendor('commissioner/dashboard/volunteer', $data, true);
+    }
+
+    function search_volunteer()
+    {
+        $data = $this->model->run_search_volunteer();
+        $this->view->rendor('commissioner/dashboard/volunteer', $data, true);
     }
 
     function staff()
@@ -74,8 +81,23 @@ class Commissioner extends Controller
 
     function media()
     {
-        $this->view->rendor('commissioner/dashboard/media');
+        $data = $this->model->get_images_display();
+
+        $this->view->rendor('commissioner/dashboard/media', $data, true);
     }
+
+    function mediaUpload()
+    {
+        $data = $this->model->get_images_display();
+        $this->view->rendor('commissioner/dashboard/mediaUpload', $data, true);
+    }
+
+    function run_mediaUpload()
+    {
+        $msg_data =  $this->model->run_mediaUpload();
+        $this->view->rendor('commissioner/dashboard/mediaUpload', $msg_data, true);
+    }
+
 
 
 

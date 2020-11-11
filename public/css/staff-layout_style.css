@@ -1,0 +1,540 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #000000;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+
+
+/*------------------------------*/
+
+.main-container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-areas: "nav-bar nav-bar" "sidebar grid-container" "sidebar footer";
+}
+
+.nav-bar {
+    position: fixed;
+    grid-area: nav-bar;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    grid-template-columns: 250px 60% 40%;
+    grid-template-areas: "logo-container title-name dropdown";
+    background-color: #1632ce;
+    height: 50px;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    grid-area: logo-container;
+}
+
+.logo {
+    height: 50px;
+    width: 98px;
+    margin-left: 70px;
+    z-index: 10;
+    background-image: url("../images/hlogoxs.png");
+}
+
+.title-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    grid-area: title-name;
+}
+
+.tzu-logo {
+    width: 82px;
+    background: url(../images/tzuChiLogo.png);
+}
+
+.logo-name {
+    display: flex;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.logo-name span {
+    font-weight: 200;
+}
+
+.dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    grid-area: dropdown;
+    float: right;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(42, 7, 199);
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: #220b8a;
+    color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    position: fixed;
+    width: 250px;
+    height: 750px;
+    top: 48px;
+    left: 0px;
+    height: 100%;
+    overflow: auto;
+    background: #1b1b1b;
+    transition: left 0.4s ease;
+    z-index: 50;
+}
+
+.sidebar .text {
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    background: #004883;
+    border: 3px solid rgba(0, 162, 255, 0.993);
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    background: #1b1b1b;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li {
+    line-height: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar ul li a {
+    position: relative;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding-left: 10px;
+    font-weight: 500;
+    display: block;
+    border-left: 3px solid transparent;
+}
+
+.sidebar ul li.active a {
+    color: rgba(0, 162, 255, 0.993);
+    background: #1e1e1e;
+    border-left-color: rgba(0, 162, 255, 0.993);
+}
+
+.sidebar ul li a:hover {
+    background: #1e1e1e;
+}
+
+.sidebar ul ul {
+    position: static;
+    display: none;
+}
+
+.sidebar ul .feat-show.show {
+    display: block;
+}
+
+.sidebar ul .serv-show.show1 {
+    display: block;
+}
+
+.sidebar ul ul li {
+    line-height: 42px;
+    border-top: none;
+}
+
+.sidebar ul ul li a {
+    font-size: 14px;
+    color: #e6e6e6;
+    padding-left: 15px;
+}
+
+.sidebar ul li.active ul li a {
+    color: #e6e6e6;
+    background: #1b1b1b;
+    border-left-color: transparent;
+}
+
+.sidebar ul ul li a:hover {
+    color: cyan !important;
+    background: #1e1e1e !important;
+}
+
+.sidebar ul li a span {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: transform 0.4s;
+}
+
+.sidebar ul li a span.rotate {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.grid-container {
+    position: absolute;
+    display: grid;
+    top: 50px;
+    bottom: 50px;
+    left: 260px;
+    overflow: auto;
+    width: 84%;
+}
+
+.breadcrum {
+    position: fixed;
+    grid-area: breadcum;
+    height: 2rem;
+    width: 100%;
+    background: #a7ffeb;
+    text-align: left;
+    z-index: 9;
+}
+
+.grid-body {
+    position: relative;
+    top: 3rem;
+}
+
+a {
+    text-align: center;
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #004883;
+    color: white;
+    z-index: 10;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 20fr 1fr;
+        grid-template-areas: "nav-bar " "grid-container" "footer";
+    }
+    .nav-bar {
+        position: fixed;
+        display: grid;
+        left: 0;
+        top: 0;
+        width: 100%;
+        grid-template-columns: 100px 60% 15%;
+        grid-template-areas: "logo-container title-name dropdown";
+        background-color: #004883;
+        height: 50px;
+        z-index: 10;
+    }
+    .main-content {
+        background: #bd9292;
+        margin-top: 100px;
+    }
+    .grid-container {
+        grid-area: grid-container;
+        position: absolute;
+        top: 50px;
+        bottom: 50px;
+        left: 0;
+        display: grid;
+        overflow: auto;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 0.8fr;
+        grid-template-areas: "breadcrum breadcrum breadcrum breadcrum" "main main main main" "content1 content1 content2 content3" "content1 content1 content2 content3" "footer footer footer footer";
+        grid-gap: 0.2rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #004d40;
+        text-align: center;
+    }
+    .nav-bar {
+        position: fixed;
+        grid-area: nav-bar;
+        display: grid;
+        left: 0;
+        top: 0;
+        width: 100%;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas: "logo-container title-name dropdown";
+        background-color: #004883;
+        height: 50px;
+        z-index: 10;
+    }
+    .sidebar {
+        position: fixed;
+        left: 0px;
+        width: 250px;
+        height: 100%;
+        background: #042331;
+        transition: all 0.5s ease;
+    }
+    #check {
+        display: none;
+    }
+    label #btn {
+        position: absolute;
+        background: #004883;
+        top: 10px;
+        border: solid 1px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    label #cancel {
+        position: absolute;
+        background: #ff3030;
+        border-radius: 1px;
+        cursor: pointer;
+    }
+    label #btn {
+        font-size: 20px;
+        color: white;
+        padding: 5px 10px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s;
+        z-index: 20;
+    }
+    label #cancel {
+        z-index: 20;
+        left: 250px;
+        top: 50px;
+        font-size: 30px;
+        color: #fcfcfc;
+        padding: 4px 9px;
+        transition: all 0.5s ease;
+    }
+    #check:checked~.sidebar {
+        left: -250px;
+    }
+    #check:checked~label #btn {
+        left: 40px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    #check:checked~label #cancel {
+        left: -195px;
+    }
+    #check:checked~section {
+        margin-left: 0px;
+    }
+    .logo-container {
+        display: none;
+    }
+    .title-name {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 50px;
+    }
+    .tzu-logo {
+        width: 60px;
+        height: 37px;
+        background: url(../images/tzuChiLogo-s.png);
+    }
+    .logo {
+        display: none;
+    }
+    .logo-name {
+        display: flex;
+        color: #fff;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        line-height: 3rem;
+        text-align: center;
+    }
+    .logo-name span {
+        font-weight: 200;
+    }
+    .dropdown {
+        display: flex;
+        justify-content: center;
+        align-items: right;
+        grid-area: dropdown;
+        float: right;
+        overflow: hidden;
+    }
+    .dropdown .dropbtn {
+        font-size: 12px;
+    }
+}
+
+input[type=text],
+select,
+textarea,
+input[type=number],
+input[type=datetime-local] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit],
+input[type=reset] {
+    background-color: #050458;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=file] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    tab-size: 20;
+}
+
+input[type=submit]:hover {
+    background-color: #1506a0;
+}
+
+input[type=reset]:hover {
+    background-color: #1506a0;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #4d5bd8;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 400px) {
+    .col-25,
+    .col-75,
+    input[type=file] input[type=submit] input[type=reset] {
+        width: 100%;
+        margin-top: 0;
+    }
+}

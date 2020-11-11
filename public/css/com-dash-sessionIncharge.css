@@ -1,0 +1,53 @@
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+.content h2 {
+  margin: 0;
+  padding: 25px 0;
+  font-size: 22px;
+  border-bottom: 1px solid #ebebeb;
+  color: #666666;
+}
+
+.update form {
+  padding: 15px 0;
+  display: flex;
+  flex-flow: column;
+}
+.update form label {
+  display: inline-flex;
+  width: 400px;
+  padding: 10px 0;
+  margin-right: 25px;
+}
+.update form input {
+  padding: 10px;
+  width: 400px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+}
+.update form input[type="submit"] {
+  display: block;
+  background-color: #38b673;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  width: 200px;
+  margin-top: 15px;
+}
+.update form input[type="submit"]:hover {
+  background-color: #32a367;
+}
+
+select {
+  height: 2.5rem;
+}
+
+.select {
+  position: relative;
+  left: 5rem;
+}

@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #000000;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
+/*------------------------------*/
+
+.main-container {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 1fr 20fr 1fr;
+  grid-template-areas:
+    "nav-bar nav-bar"
+    "sidebar grid-container"
+    "sidebar footer";
+}
+
+.nav-bar {
+  position: fixed;
+  grid-area: nav-bar;
+  display: grid;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  grid-template-columns: 250px 60% 40%;
+  grid-template-areas: "logo-container title-name dropdown";
+  background-color: #004883;
+  height: 50px;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  grid-area: logo-container;
+}
+
+.logo {
+  height: 50px;
+  width: 98px;
+  margin-left: 70px;
+  z-index: 10;
+  background-image: url("../images/hlogoxs.png");
+}
+
+.title-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  grid-area: title-name;
+}
+
+.tzu-logo {
+  width: 82px;
+  background: url(../images/tzuChiLogo.png);
+}
+.logo-name {
+  display: flex;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.logo-name span {
+  font-weight: 200;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  grid-area: dropdown;
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(7, 112, 199);
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #004883;
+  color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.grid-container {
+  position: absolute;
+  display: grid;
+  top: 50px;
+  bottom: 50px;
+  left: 260px;
+  overflow: auto;
+  width: 84%;
+}
+
+.grid-container {
+  grid-area: grid-container;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 250px;
+  display: grid;
+
+  width: 84%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 0.8fr;
+  grid-template-areas:
+    "breadcrum breadcrum breadcrum breadcrum"
+    "main main main main"
+    "content1 content1 content2 content3"
+    "content1 content1 content2 content3"
+    "foot-panel foot-panel foot-panel foot-panel";
+  grid-gap: 0.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #004d40;
+  text-align: center;
+}
+
+#breadcrum {
+  background: #a7ffeb;
+  grid-area: breadcrum;
+  text-align: left;
+}
+
+main {
+  background: #84ffff;
+  grid-area: main;
+}
+
+#content1 {
+  background: #6fffd2;
+  grid-area: content1;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content2 {
+  background: #64ffda;
+  grid-area: content2;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content3 {
+  background: #73ffba;
+  grid-area: content3;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+a {
+  text-align: center;
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #004883;
+  color: white;
+  z-index: 10;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-areas:
+      "nav-bar "
+      "grid-container"
+      "footer";
+  }
+
+  .nav-bar {
+    position: fixed;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 100px 60% 15%;
+    grid-template-areas: "logo-container title-name dropdown";
+    background-color: #004883;
+    height: 50px;
+    z-index: 10;
+  }
+
+  .main-content {
+    background: #bd9292;
+    margin-top: 100px;
+  }
+
+  .grid-container {
+    grid-area: grid-container;
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 0;
+    display: grid;
+    overflow: auto;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 0.8fr;
+    grid-template-areas:
+      "breadcrum breadcrum breadcrum breadcrum"
+      "main main main main"
+      "content1 content1 content2 content3"
+      "content1 content1 content2 content3"
+      "footer footer footer footer";
+    grid-gap: 0.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+  }
+
+  .nav-bar {
+    position: fixed;
+    grid-area: nav-bar;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: "logo-container title-name dropdown";
+    background-color: #004883;
+    height: 50px;
+    z-index: 10;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .title-name {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+  }
+
+  .tzu-logo {
+    width: 60px;
+    height: 37px;
+    background: url(../images/tzuChiLogo-s.png);
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo-name {
+    display: flex;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .logo-name span {
+    font-weight: 200;
+  }
+
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    grid-area: dropdown;
+    float: right;
+    overflow: hidden;
+  }
+  .dropdown .dropbtn {
+    font-size: 12px;
+  }
+}
