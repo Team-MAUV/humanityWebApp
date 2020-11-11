@@ -19,7 +19,7 @@ include "regForm-header.php"; ?>
             <label for="nic">
                 <i class="fa fa-id-card "></i>
             </label>
-            <input type="text" name="nic" placeholder="National Id Number" id="nic" required>
+            <input type="text" name="nic" placeholder="National Id Number" id="nic" pattern="^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$"required>
 
             <label for="emailaddress">
                 <i class="fas fa-envelope"></i>
