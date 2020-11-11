@@ -60,7 +60,7 @@ body {
     width: 100%;
     grid-template-columns: 250px 60% 40%;
     grid-template-areas: "logo-container title-name dropdown";
-    background-color: orangered;
+    background-color: rgb(243, 19, 19);
     height: 50px;
     z-index: 10;
 }
@@ -132,7 +132,7 @@ body {
     position: relative;
     width: 67px;
     height: 40px;
-    background: orangered;
+    background: rgb(243, 19, 19);
     padding: 0.5rem 0.8rem;
     font-size: 1.2rem;
     border: 2px solid #fff;
@@ -183,7 +183,7 @@ body {
     position: relative;
     width: 50px;
     height: 50px;
-    background-color: orangered;
+    background-color: rgb(243, 19, 19);
     color: #080808;
 }
 
@@ -296,7 +296,7 @@ a:hover {
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: orangered;
+    background-color: rgb(243, 19, 19);
     color: white;
     text-align: center;
     z-index: 1000;

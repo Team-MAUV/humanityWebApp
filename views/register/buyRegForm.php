@@ -1,5 +1,5 @@
 <?php $title = 'Buyer Registration';
-$style = 'register-donRegForm.css';
+$style = 'register-buyRegForm.css';
 include "regForm-header.php"; ?>
 
 
