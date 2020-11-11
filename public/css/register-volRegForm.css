@@ -5,9 +5,11 @@
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
 }
+
 .swal-overlay {
     background-color: rgba(43, 165, 137, 0.45);
 }
+
 .login h1 {
     text-align: center;
     color: #ffffff;
