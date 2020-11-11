@@ -1,6 +1,6 @@
 <?php
 
-class Sessionincharge extends Controller
+class Session_incharge extends Controller
 {
 
     function __construct()
@@ -18,22 +18,26 @@ class Sessionincharge extends Controller
 
     function index()
     {
-        $this->view->rendor('session-incharge/dashboard/index');
+        $this->view->rendor('session_incharge/dashboard/index');
     }
 
     
-    function media_gallery()
+    function media_gallary()
     {
-        $this->view->rendor('session-incharge/dashboard/media_gallery');
+        $this->view->rendor('session_incharge/dashboard/media_gallary');
     }
+    function confirm_participants()
+    {
+        $this->view->rendor('session_incharge/dashboard/confirm_participants');
+    }
+
     function attendance_marking ()
     {
-        $this->view->rendor('session-incharge/dashboard/attendance_marking');
+        $this->view->rendor('session_incharge/dashboard/attendance_marking');
     }
 
 
-
-
+   
     
 
     function logout()

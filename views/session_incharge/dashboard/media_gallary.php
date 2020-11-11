@@ -1,5 +1,5 @@
 <?php $page = 'home';
-include "staff_header.php"; ?>
+include "sess_header.php"; ?>
 
 
 <div class="grid-container">
@@ -128,4 +128,4 @@ include "staff_header.php"; ?>
 </div>
 </div>
 
-<?php include "staff_footer.php" ?>
+<?php include "sess_footer.php" ?>
