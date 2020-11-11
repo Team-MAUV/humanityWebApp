@@ -89,7 +89,16 @@ function validation() {
  
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
+    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(dob==null ||dob=="")||(gender==null ||gender=="")){
+      swal({
+            title: "Registration Faied!",
+            text: "Please fill the required fields",
 
+            icon: "error",
+
+        });
+    }
+else{
     if ((contact.length != 10) || (isNaN(contact))) {
         swal({
             title: "Registration Faied!",
@@ -119,7 +128,7 @@ function validation() {
 
         }
     }
-
+  }
 }
 </script>
 <?php include "regForm-footer.php"; ?>
