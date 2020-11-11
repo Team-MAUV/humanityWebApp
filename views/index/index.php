@@ -13,60 +13,83 @@
 </head>
 
 <body>
-  <div class="main-container">
 
 
-    <div class="nav-bar">
-      <div class="logo-container">
+
+  <div class="nav-bar">
+    <div class="logo-container">
 
 
-        <div class="logo"></div>
-      </div>
-
-      <div class="title-name">
-
-        <h3 class="logo-name">
-          <div class="tzu-logo"></div>
-          Tzu Chi Foundation | <span> Hambantota</span>
-        </h3>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fas fa-users-cog"></i>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="<?= URL ?>login">Commissioner</a>
-          <a href="#">Staff</a>
-
-        </div>
-      </div>
+      <div class="logo"></div>
     </div>
 
+    <div class="title-name">
 
+      <h3 class="logo-name">
+        <div class="tzu-logo"></div>
+        Tzu Chi Foundation | <span> Hambantota</span>
+      </h3>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-users-cog"></i>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="<?= URL ?>login">Commissioner</a>
+        <a href="#">Staff</a>
 
-    <div class="grid-container">
-
-
-
-
-      <main>Main</main>
-      <div id="middle-content">Carousel</div>
-      <div id="content1">
-        <div class="top-btn">Topbtn</div>
       </div>
-      <div id="content2">Content2</div>
-      <div id="content3">Content3</div>
-
-
-
-
-
-
-      <div class="footer">Powered by<h4>Humanity2020&copy;</div>
-
-
     </div>
   </div>
+
+  <div class="carousel"></div>
+
+
+  <div id="myNav" class="overlay"></div>
+
+
+
+
+  <div class="platform-container">
+
+    <div class="pf v">
+      <div class="btn v"></div>
+      <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
+      </div>
+    </div>
+    <div class="pf d">
+      <div class="btn d"></div>
+      <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
+      </div>
+    </div>
+    <div class="pf m">
+      <div class="btn m"></div>
+      <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="footer">Powered by<h4>Humanity2020&copy;</div>
+
+
+
+
 
 
 
