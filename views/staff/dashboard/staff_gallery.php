@@ -9,83 +9,99 @@ include "staff_header.php"; ?>
   <div id="breadcrum">
 
 
-
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-<link href="css/font-awesome.min.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title> Image </title>
 <style>
-    body{
-    margin:0px;
-    height:100vh;
-    width: 100vw;
-    background: rgb(163, 163, 233);
+* {
+  box-sizing: border-box;
 }
 
-.
-    .jlr{
-        font-size: 0;
-    }
-    .jlr .jlr_item{
-        font-size: 1rem;
-        display: inline-block;
-        box-sizing: border-box;
-        padding: 6px;
-    }
-    .jlr img.jlr_img{
-        height:200px;
-        opacity: 0;
-    }
-    .jlr img.jlr_loaded {
-         -webkit-transition: opacity 1s ease-in;
-        -moz-transition: opacity 1s ease-in;
-        -o-transition: opacity 1s ease-in;
-        -ms-transition: opacity 1s ease-in;
-        transition: opacity 1s ease-in;
-        opacity: 1;
-     }
-    </style>
+body {
+  margin: 0;
+  font-family: Arial;
+}
 
-</head>
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
 <body>
- <center> 
-<h2>Image Upload </h2></center> 
 
+<!-- Header -->
+<div class="header">
+  <h1> Image Grid</h1>
+  <p> Tzu chi Organization Event image Gallary </p>
+</div>
 
-        <div class="container">
-            <h1 style="margin-top:70px;"> Image gallery </h1>
-          
-            <div id="jLightroom" class="jlr">
-<a href="<?= URL ?>public/images/discuss.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/discuss.jpg" class="jlr_img"/> </a>
-<a href="<?= URL ?>public/images/discuss.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/discuss.jpg" class="jlr_img"/> </a>
-<a href="<?= URL ?>public/images/plant.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/plant.jpg" class="jlr_img"/> </a>
-<a href="<?= URL ?>public/images/student.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/student.jpg" class="jlr_img"/> </a>
-<a href="<?= URL ?>public/images/dengue.jpg" data-lightbox="lb1" class="jlr_item"><img src="<?= URL ?>public/images/dengue.jpg" class="jlr_img"/> </a>
-
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+   
+    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
+    <a href="<?= URL ?>public/images/discuss.jpg"> <img src="<?= URL ?>public/images/discuss.jpg" style="width:100%" /> </a>
+    <a href="<?= URL ?>public/images/dengue.jpg"> <img src="<?= URL ?>public/images/dengue.jpg" style="width:100%" /> </a>
   </div>
-      </div>
-      <script type="text/javascript" src="../../public/js//jquery.min.js"></script>
-      <script type="text/javascript" src="../../public/js/imagesloaded.pkgd.min.js"></script>
-      <script type="text/javascript" src="../../public/js/lightbox.min.js"></script>
-      <script type="text/javascript" src="../../public/js/jquery.lightroom.js"></script>
-    
-      
-      <script type="text/javascript">
-          $("#jLightroom").lightroom({
-              image_container_selector: ".jlr_item",
-              img_selector: "img.jlr_img",
-              img_class_loaded: "jlr_loaded",
-              img_space: 5,
-              img_mode: 'min',
-              init_callback: function(elem){$(elem).removeClass("gray_out")}
-          }).init();
-      </script>
+  <div class="column">
+  <a href="<?= URL ?>public/images/plant.jpg"> <img src="<?= URL ?>public/images/plant.jpg" style="width:100%" /> </a>
+  <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
+  <a href="<?= URL ?>public/images/discuss.jpg"> <img src="<?= URL ?>public/images/discuss.jpg" style="width:100%" /> </a>
+  </div>  
+  <div class="column">
+  <a href="<?= URL ?>public/images/plant.jpg"> <img src="<?= URL ?>public/images/plant.jpg" style="width:100%" /> </a>
+    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
+    <a href="<?= URL ?>public/images/dengue.jpg"> <img src="<?= URL ?>public/images/dengue.jpg" style="width:100%" /> </a>
+  </div>
+  <div class="column">
+  <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
+    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
+    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
+  </div>
+</div>
+
 </body>
 </html>
+
 </div>
 </div>
 <?php include "staff_footer.php" ?>

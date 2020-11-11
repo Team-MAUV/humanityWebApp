@@ -77,6 +77,7 @@ include "sess_header.php"; ?>
             <h1 style="margin-top:70px;"> Image gallery </h1>
           
             <div id="jLightroom" class="jlr">
+            <img src="<?= URL ?>public/images/abc.jpg" class="jlr_img"/>
 <button class="btn"><i class="fa fa-trash"></i> Clear </button>
 <a href="<?= URL ?>public/images/abc.jpg" data-lightbox="lb1" class="jlr_item"> <img src="<?= URL ?>public/images/abc.jpg" class="jlr_img"/> </a><br>
 <button class="btn"><i class="fa fa-trash"></i> Clear </button>
