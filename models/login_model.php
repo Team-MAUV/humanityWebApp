@@ -60,6 +60,12 @@ class login_Model extends Model
             if ($role == 'staff') {
                 header('location: ../Staff');
             }
+            if ($role == 'session_incharge') {
+                header('location: ../Session_incharge');
+            }
+
+
+
         } else {
             // show error
             Session::set('error', $error);

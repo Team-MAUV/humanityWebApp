@@ -1,5 +1,5 @@
 <?php $page = 'home';
-include "staff_header.php"; ?>
+include "sess_header.php"; ?>
 
 
 <div class="grid-container">
@@ -18,8 +18,8 @@ include "staff_header.php"; ?>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title> Session Incharge Home</title>
-        <link rel="stylesheet" href="css/sess-home.css" />
-
+       
+        <link rel="stylesheet" href="<?= URL ?>public/css/sess_dash_home.css" />
         <style>
             * {
               box-sizing: border-box;
@@ -48,14 +48,15 @@ include "staff_header.php"; ?>
 
         <div class="row">
           <div class="column" >
-            <img src="images/undraw_events_2p66.svg" height="80%" weight="80%">
+          <img src="<?= URL ?>public/images//undraw_events_2p66.svg" alt="img" height="80%" weight="80%/>
+         
           </div>
           <div class="column">
             <h2>You are now Session Incharge of <br> Tzu Chi Organization</h2>
 
             <div class="btn-group">
-                <a href="image sample.html" target="frame2">  <button>Image Portal  </button> </a>
-             <a href="attendance.html" target="frame2">   <button>Attendance Marking</button> </a>
+                <a href="<?= URL ?> media_gallary.php" >  <button>Image Portal  </button> </a>
+             <a href="<?= URL ?> attendance_marking.php" >   <button>Attendance Marking</button> </a>
                 
               </div>
             
@@ -68,4 +69,4 @@ include "staff_header.php"; ?>
 </div>
 </div>
 
-<?php include "staff_footer.php" ?>
+<?php include "sess_footer.php" ?>

@@ -34,7 +34,7 @@
           </button>
           <div class="dropdown-content">
          
-            <a href="<?= URL ?>Sessionincharge/logout">Logout</a>
+            <a href="<?= URL ?>Session_incharge/logout">Logout</a>
 
           </div>
         </div>
@@ -57,7 +57,7 @@
           <li class="<?php if ($page == 'home') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>sessionincharge/index"><i class="fas fa-home"></i> Home</a>
+            <a href="<?= URL ?>session_incharge/index"><i class="fas fa-home"></i> Home</a>
           </li>
 
          
@@ -65,12 +65,14 @@
           <li class="<?php if ($page == 'media_gallary') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>sessionincharge/media_gallary"><i class="fas fa-file-contract"></i> Media</a>
+            <a href="<?= URL ?>session_incharge/media_gallary"><i class="fas fa-file-contract"></i> Media</a>
           </li>
+
+
           <li class="<?php if ($page == 'attendance_marking') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>sessionincharge/attendance_marking"><i class="fas fa-id-card-alt"></i> Attendance Marking</a>
+            <a href="<?= URL ?>session_incharge/attendance_marking"><i class="fas fa-id-card-alt"></i> Attendance Marking</a>
           </li>
 
         
