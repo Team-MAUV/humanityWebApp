@@ -48,22 +48,21 @@ class volunteer_Model extends Model
           ));
 
           $result = $get_volid->fetchAll();
+          $count = $get_volid->rowCount();
 
-          if ($result > 0) {
+
+          if ($count > 0) {
             foreach ($result as $tmp) :
               $id = $tmp['id'];
             endforeach;
-          }
 
-          //Inserting Fetched Volunteer id to beneficiary case table
-          $get_volid = $this->db->prepare('INSERT INTO beneficiery_case(vol_id,case_path) VALUES (:id,:path)');
-          $get_volid->execute(array(
-            ':id' => $id,
-            ':path' => $file_path
-          ));
-          $flag = $get_volid->execute();
+            //Inserting Fetched Volunteer id to beneficiary case table
+            $st = $this->db->prepare('INSERT INTO beneficiery_case(vol_id,case_path) VALUES (:id,:path)');
+            $st->execute(array(
+              ':id' => $id,
+              ':path' => $file_path
+            ));
 
-          if ($flag) {
             move_uploaded_file($_FILES['file']['tmp_name'], $dest_path);
             $msg = "File uploaded successfully!";
           } else {
