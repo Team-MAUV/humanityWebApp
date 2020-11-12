@@ -41,6 +41,7 @@ class volunteer_Model extends Model
           $msg = "File size is too large, please choose a file less than 500kb.";
         } else {
 
+          //Getting id from Volunteer table that is corresponding to entered volunteer ID
           $get_volid = $this->db->prepare("SELECT id FROM volunteer WHERE vol_id= :volid  ");
           $get_volid->execute(array(
             ':volid' => $_POST['vol_id']
@@ -54,6 +55,7 @@ class volunteer_Model extends Model
             endforeach;
           }
 
+          //Inserting Fetched Volunteer id to beneficiary case table
           $get_volid = $this->db->prepare('INSERT INTO beneficiery_case(vol_id,case_path) VALUES (:id,:path)');
           $get_volid->execute(array(
             ':id' => $id,
