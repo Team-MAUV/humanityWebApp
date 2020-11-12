@@ -111,4 +111,24 @@ class commissioner_Model extends Model
       return $pageData;
     }
   }
+
+
+  public function get_case(){
+
+
+    $st = $this->db->prepare('SELECT * FROM beneficiery_case ORDER BY id ');
+    $st->execute();
+    $contacts = $st->fetchAll();
+    $pageData = [
+      'contacts' => $contacts,
+ 
+    ];
+    return ($pageData);
+
+  
+  }
+
+
+
+
 }
