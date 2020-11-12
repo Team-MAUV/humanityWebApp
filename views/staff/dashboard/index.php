@@ -15,6 +15,7 @@ include "staff_header.php"; ?>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staff Home</title>
+    <link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_calender.css" />
     <style>
       body {
         font-family: Arial;
@@ -38,7 +39,7 @@ include "staff_header.php"; ?>
       
       .right {
         right: 0;
-        background-color: rgb(98, 108, 238);
+       
       }
       
       .centered {
@@ -54,8 +55,8 @@ include "staff_header.php"; ?>
         left: 60%;
         transform: translate(-50%, -50%);
         text-align: center;
-        width:300;
-         height:300 ;
+        width:500;
+         height:500 ;
         overflow: scroll;
       }
       
@@ -78,12 +79,14 @@ include "staff_header.php"; ?>
       </div>
       
       <div class="split right">
-        <div class="centered1">
-        <?php include "calandar.php"  ?>
-              </div>
+       
+      
+        <div id="calendar"></div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+            
       </div>
      
-
+      <script type="text/javascript" src="../../public/js/calendar-staf.js"></script>
 
     </body>
 

@@ -46,8 +46,30 @@ class Staff extends Controller
     function requestleave()
     {
         $this->view->rendor('staff/dashboard/requestleave');
+        $this->view->allrecords = $this->model->getAllrecords();
     }
-
+    function edit_submit_requestleave(){
+		
+		$action=$_POST['submit']; 
+		if ($action=='submit')
+		{
+			echo'$action';
+		$arg=$_POST['id'];
+		$data = array(
+        'id' =>null,
+        
+        'name' =>$_POST['name'],
+        'staff_id' =>$_POST['staff_id'],
+		'date' =>$_POST['date'],
+        'day_no' => $_POST['day_no'],
+        'msg' => $_POST['msg']
+		);
+		$this->model->submit_requestleave($data);
+		
+		}
+		header('location: ../requestleave');
+		}
+		
 
 
 
