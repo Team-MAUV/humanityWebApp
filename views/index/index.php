@@ -42,10 +42,30 @@
     </div>
   </div>
 
-  <div class="carousel"></div>
+  <div class="carousel">
+  <div class="slides">
+    
+    <img src="<?=URL?>\public\images\car1.png" style="width:100%">
+    
+  </div>
+  <div class="slides">
+    
+    <img src="<?=URL?>\public\images\containerbg.png" style="width:100%">
+    
+  </div>
+  <div class="slides">
+   
+    <img src="<?=URL?>\public\images\city.jpg" style="width:100%">
+    
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
 
 
-  <div id="myNav" class="overlay"></div>
+
+  <div id="myNav" class="overlay">blabla</div>
 
 
 
@@ -53,25 +73,29 @@
   <div class="platform-container">
 
     <div class="pf v">
-      <div class="btn v"> <a href="<?= URL ?>login">Volunteer Platform</a></div>
+      <div class="btn btnv"> <a href="<?= URL ?>login">Volunteer Platform</a></div>
+      <div class="colimg1"></div>
       <div class="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
+      
+      Volunteering with Tzu-Chi Organization provides you the benefits of helping our people who are in Sri Lanka. You will be rewarded with valuable certificates which add colours to your life. Join us today!
       </div>
-      <div class="btn v"><a href="<?= URL ?>register">Register</a></div>
+      <div class="btn btnv"><a href="<?= URL ?>register">Register</a></div>
     </div>
     <div class="pf d">
-      <div class="btn d"><a href="<?= URL ?>login">Donor Platform</a></div>
+      <div class="btn btnd"><a href="<?= URL ?>login">Donor Platform</a></div>
+      <div class="colimg2"></div>
       <div class="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
+      Your donations will make another person's life a miracle. Contribute to this great communtiy service with us. Be a symbol of hope for those who are waiting. Joing us today and be a great community service!
       </div>
-      <div class="btn d"><a href="<?= URL ?>register/donRegForm">Register</a></div>
+      <div class="btn btnd"><a href="<?= URL ?>register/donRegForm">Register</a></div>
     </div>
     <div class="pf m">
-      <div class="btn m"><a href="<?= URL ?>login">TzuChi Market</a></div>
+      <div class="btn btnm"><a href="<?= URL ?>login">TzuChi Market</a></div>
+      <div class="colimg3"></div>
       <div class="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
+      Tzu-Chi Market sells various recycling products and many other products which are valuable for everyone.Visit the place to buy something valuable for you while helping us. Quickly Grab your product!
       </div>
-      <div class="btn m"><a href="<?= URL ?>Buyer">Register</a></div>
+      <div class="btn btnm"><a href="<?= URL ?>Buyer">Register</a></div>
     </div>
   </div>
 
@@ -94,8 +118,7 @@
 
 
 
-
-
+  <script src="<?= URL ?>public/js/index.js"></script>
 </body>
 
 </html>
