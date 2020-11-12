@@ -33,22 +33,31 @@ width: fit-content;
 </style>
 </head>
 <body>
+<?php
+  $name=$this->leave_request[0]['name'];
+  $staff_id=$this->leave_request[0]['staff_id'];
+  $date=$this->leave_request[0]['date'];
+  $day_no=$this->leave_request[0]['day_no'];
+  $msg=$this->leave_request[0]['msg'];
+?>
 
 <div class="wrapper">
   <div class="title">
     <h1>Request Leave Application</h1>
   </div>
   <div class="form">
+  <form action="<?php echo URL; ?>staff/edit_submit_requestleave" method="post" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to submit the form?');">
     <div class="input-fields">
-      <input type="text" class="input" placeholder="Name">
-      <input type="text" class="input" placeholder="Staff-ID">
-      <input type="date" class="input" placeholder="Date">
-      <input type="number" class="input" placeholder="Number of Days">
+      <input type="text" class="input" placeholder="Name" name="name" id="name">
+      <input type="text" class="input" placeholder="Staff-ID" name="staff_id" id="staff_id">
+      <input type="date" class="input" placeholder="Date" name="date" id="date">
+      <input type="number" class="input" placeholder="Number of Days" name="day_no" id="day_no">
       
     </div>
     <div class="msg">
-      <textarea placeholder="Reason for the leave"></textarea>
-      <div class="btn">send</div>
+      <textarea placeholder="Reason for the leave" name="msg" id="msg"></textarea>
+     
+      <button type="submit" value="submit" name="submit" name="submit"> Send </button>
     </div>
   </div>
 </div>

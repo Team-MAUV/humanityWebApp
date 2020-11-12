@@ -1,18 +1,18 @@
-8html {
+html {
   font-family: sans-serif;
   font-size: 15px;
   line-height: 1.4;
-  color: #444;
+  color: rgb(59, 95, 212);
 }
 
 body {
   margin: 0;
-  background: #504f4f;
+  background: #5d74db;
   font-size: 1em;
 }
 
 .wrapper {
-  margin: 15px auto;
+  margin: 80px auto;
   max-width: 1100px;
 }
 
@@ -38,18 +38,19 @@ body {
 .table-calendar {
   border-collapse: collapse;
   width: 100%;
+  color: #00a2b7;
 }
 
 .table-calendar td, .table-calendar th {
   padding: 5px;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #0c0a0a;
   text-align: center;
   vertical-align: top;
 }
 
 .date-picker.selected {
   font-weight: bold;
-  outline: 1px dashed #00BCD4;
+  outline: 3px dashed #0a0c1f;
 }
 
 .date-picker.selected span {
@@ -61,7 +62,24 @@ body {
 color: red;
 }
 
-/* friday */
+.date-picker:nth-child(2) {
+  color: green;
+  }
+
+  .date-picker:nth-child(3) {
+    color: green;
+    }
+
+    .date-picker:nth-child(4) {
+      color: green;
+      }
+      .date-picker:nth-child(5) {
+        color: green;
+        }
+        .date-picker:nth-child(7) {
+          color: green;
+          }
+                    
 .date-picker:nth-child(6) {
 color: green;
 }
@@ -88,7 +106,7 @@ color: green;
 
 .footer-container-calendar {
   margin-top: 1em;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid #0f0779;
   padding: 10px 0;
 }
 
@@ -97,8 +115,8 @@ color: green;
   display: inline-block;
   zoom: 1;
   background: #ffffff;
-  color: #585858;
-  border: 1px solid #bfc5c5;
+  color: #080808;
+  border: 1px solid #439ee9;
   border-radius: 3px;
   padding: 5px 1em;
 }
