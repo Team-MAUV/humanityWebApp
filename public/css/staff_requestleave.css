@@ -81,7 +81,7 @@ body{
   color: #c5ecfd;
 }
 
-.btn {
+.button {
     background: #39b7dd;
     text-align: center;
     padding: 15px;
@@ -90,6 +90,9 @@ body{
     cursor: pointer;
     text-transform: uppercase;
 }
+
+
+
 .wrapper:after {
   content: "";
   display: table;

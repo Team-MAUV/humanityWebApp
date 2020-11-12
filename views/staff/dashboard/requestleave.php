@@ -34,11 +34,11 @@ width: fit-content;
 </head>
 <body>
 <?php
-  $name=$this->leaverequest[0]['name'];
-  $staff_id=$this->staff[0]['staff_id'];
-  $date=$this->staff[0]['date'];
-  $day_no=$this->staff[0]['day_no'];
-  $msg=$this->content[0]['msg'];
+  $name=$this->leave_request[0]['name'];
+  $staff_id=$this->leave_request[0]['staff_id'];
+  $date=$this->leave_request[0]['date'];
+  $day_no=$this->leave_request[0]['day_no'];
+  $msg=$this->leave_request[0]['msg'];
 ?>
 
 <div class="wrapper">
@@ -56,7 +56,8 @@ width: fit-content;
     </div>
     <div class="msg">
       <textarea placeholder="Reason for the leave" name="msg" id="msg"></textarea>
-      <div class="btn" value="submit" name="submit" name="submit">send</div>
+     
+      <button type="submit" value="submit" name="submit" name="submit"> Send </button>
     </div>
   </div>
 </div>

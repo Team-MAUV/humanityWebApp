@@ -54,9 +54,9 @@ class Staff extends Controller
 		if ($action=='submit')
 		{
 			echo'$action';
-		$arg=$_POST['id'];
+		$arg=$_POST['leave_id'];
 		$data = array(
-        'id' =>null,
+        'leave_id' =>null,
         
         'name' =>$_POST['name'],
         'staff_id' =>$_POST['staff_id'],
