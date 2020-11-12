@@ -36,7 +36,7 @@
       </button>
       <div class="dropdown-content">
         <a href="<?= URL ?>login">Commissioner</a>
-        <a href="#">Staff</a>
+        <a href="<?= URL ?>login">Staff</a>
 
       </div>
     </div>
@@ -53,22 +53,25 @@
   <div class="platform-container">
 
     <div class="pf v">
-      <div class="btn v"></div>
+      <div class="btn v"> <a href="<?= URL ?>login">Volunteer Platform</a></div>
       <div class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
       </div>
+      <div class="btn v"><a href="<?= URL ?>register">Register</a></div>
     </div>
     <div class="pf d">
-      <div class="btn d"></div>
+      <div class="btn d"><a href="<?= URL ?>login">Donor Platform</a></div>
       <div class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
       </div>
+      <div class="btn d"><a href="<?= URL ?>register/donRegForm">Register</a></div>
     </div>
     <div class="pf m">
-      <div class="btn m"></div>
+      <div class="btn m"><a href="<?= URL ?>login">TzuChi Market</a></div>
       <div class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam voluptas expedita itaque obcaecati mollitia delectus quod vitae similique molestias facilis, cupiditate aspernatur rem. Officiis aliquam beatae amet tempore delectus.
       </div>
+      <div class="btn m"><a href="<?= URL ?>Buyer">Register</a></div>
     </div>
   </div>
 
