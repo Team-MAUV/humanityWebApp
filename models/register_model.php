@@ -76,27 +76,50 @@ class Register_model extends Model
       $username = isset($_POST['username']) ? $_POST['username'] : '';
       $password = isset($_POST['password']) ? $_POST['password'] : '';
       $contact = isset($_POST['contact']) ? $_POST['contact'] : '';
-     // $role="donor";
+      $role="donor";
       $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
 
-     /* $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
-      $stmt2->execute([$username, $password, $role]);
+      $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`,`email`) VALUES ( ?,?,?,?)');
+      $stmt2->execute([$username, $password, $role,$email]);
 
-      $userlogin_id = $this->db->prepare("SELECT `id` FROM `user` WHERE `username`=$username ");
-      $userlogin_id->execute();
-     / $login_id=$userlogin_id->fetchAll();
-      print_r($login_id);*/
+      $get_volid = $this->db->prepare("SELECT id FROM user WHERE username= :uname  ");
+      $get_volid->execute(array(
+        ':uname' => $_POST['username']
+      ));
 
-      //$stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`,`userlogin_id`) VALUES ( ?, ?,?, ?, ?,?,?,?,?)');
-      $stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?,?)');
-     // $stmt->execute([$name, $nic, $email, $contact, $address, $username, $password, $gender,$userlogin_id]);
-     $stmt->execute([$name, $nic, $email, $contact, $address, $username, $password, $gender]);
-      // Output message
-     // echo 'Created Successfully!';
+      $result = $get_volid->fetchAll();
+      $count = $get_volid->rowCount();
+
+
+      if ($count > 0) {
+        foreach ($result as $tmp) :
+          $id = $tmp['id'];
+        endforeach;
+
+      $stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :username,:password,:gender,:id)');
+      $stmt->execute(array(
+        ':name'=>$name,
+        ':nic'=>$nic,
+        ':email'=>$email,
+        ':contact'=>$contact,
+        ':address'=>$address,
+        ':username'=>$username,
+        ':password' =>$password,
+        ':gender'=>$gender,
+        ':id' => $id,
+       
+      ));
+     
+      echo 'Created Successfully!';
+    }
+    else{
+      echo 'failed';
     }
 
-    //echo "end";
+    echo "end";
   }
+
+}
 
   public function run_buy_register()
   {
@@ -121,18 +144,49 @@ class Register_model extends Model
       $username = isset($_POST['username']) ? $_POST['username'] : '';
       $password = isset($_POST['password']) ? $_POST['password'] : '';
       $contact = isset($_POST['contact']) ? $_POST['contact'] : '';
-
-
+      $role="buyer";
       $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
 
-      $stmt = $this->db->prepare('INSERT INTO `buyer` ( `name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?,?)');
+      $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`,`email`) VALUES ( ?,?,?,?)');
+      $stmt2->execute([$username, $password, $role,$email]);
 
-      $stmt->execute([$name, $nic, $email, $contact, $address, $username, $password, $gender]);
+      $get_volid = $this->db->prepare("SELECT id FROM user WHERE username= :uname ");
+      $get_volid->execute(array(
+        ':uname' => $_POST['username']
+      ));
 
-      // Output message
-      //echo 'Created Successfully!';
+      $result = $get_volid->fetchAll();
+      $count = $get_volid->rowCount();
+
+
+      if ($count > 0) {
+        foreach ($result as $tmp) :
+          $id = $tmp['id'];
+        endforeach;
+
+      $stmt = $this->db->prepare('INSERT INTO `buyer` (`name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :username,:password,:gender,:id)');
+      $stmt->execute(array(
+        ':name'=>$name,
+        ':nic'=>$nic,
+        ':email'=>$email,
+        ':contact'=>$contact,
+        ':address'=>$address,
+        ':username'=>$username,
+        ':password' =>$password,
+        ':gender'=>$gender,
+        ':id' => $id,
+       
+      ));
+     
+      echo 'Created Successfully!';
+    }
+    else{
+      echo 'failed';
     }
 
-   // echo "end";
+    echo "end";
   }
+
+}
+
 }

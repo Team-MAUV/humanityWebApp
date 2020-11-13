@@ -91,11 +91,10 @@ function validation() {
     
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
-    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||([password]==null ||password=="")||(gender==null ||gender=="")){
+    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(gender==null ||gender=="")){
       swal({
             title: "Registration Failed!",
             text: "Please fill the required fields",
-
             icon: "error",
 
         });

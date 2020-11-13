@@ -26,16 +26,21 @@ class Register extends Controller
 
   function run_don_register()
   {
+   
     $this->model->run_don_register();
+    $this->view->rendor('index/index');
   }
 
   function buyRegForm()
   {
+    
     $this->view->rendor('register/buyRegForm');
   }
 
   function run_buy_register()
   {
+    
     $this->model->run_buy_register();
+    $this->view->rendor('index/index');
   }
 }
