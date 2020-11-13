@@ -79,6 +79,23 @@ class Register_model extends Model
       $role="donor";
       $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
 
+      /*$usercheck=$this->db->prepare("SELECT id FROM user WHERE username= :checkun  ");
+      $usercheck->execute(array(
+        ':checkun' => $_POST['username']
+      ));
+      $count = $usercheck->rowCount();
+      if ($count > 0) {
+        header("location:".$_SERVER['HTTP_REFERER']);
+        echo "<script type='text/javascript'> 
+ alert('This username already exists!') 
+ </script>"; 
+ 
+      }*/
+      
+    //  else{
+
+
+
       $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`,`email`) VALUES ( ?,?,?,?)');
       $stmt2->execute([$username, $password, $role,$email]);
 
@@ -111,12 +128,14 @@ class Register_model extends Model
       ));
      
       echo 'Created Successfully!';
+      header('location: ../index');
     }
     else{
       echo 'failed';
     }
 
     echo "end";
+  //}
   }
 
 }
@@ -187,6 +206,25 @@ class Register_model extends Model
     echo "end";
   }
 
+}
+
+
+
+public function checkuser()
+{
+  $usercheck=$this->db->prepare("SELECT id FROM user WHERE username= :checkun  ");
+  $usercheck->execute(array(
+    ':checkun' => $_POST['username']
+  ));
+  $count = $usercheck->rowCount();
+  if ($count > 0) {
+    return false;
+
+  }
+  else{
+    
+    return true;
+  }
 }
 
 }
