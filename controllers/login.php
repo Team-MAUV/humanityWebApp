@@ -10,10 +10,23 @@ class login extends Controller
 
     function index()
     {
-        $this->view->rendor('login/userLogin');
+        $this->view->rendor('login/index');
     }
 
-    
+    function forgotPassword()
+    {
+        $this->view->rendor('login/forgotPassword');
+    }
+
+    function resetPassword()
+    {
+        $this->view->rendor('login/resetPassword');
+    }
+
+    function run_check_email(){
+        $this->model->run_check_email();
+    }
+
 
 
     function run_com()

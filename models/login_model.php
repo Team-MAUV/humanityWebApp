@@ -72,4 +72,9 @@ class login_Model extends Model
             header('location: ../login');
         }
     }
+
+    public function run_check_email(){
+        echo "In login model";
+
+    }
 }
