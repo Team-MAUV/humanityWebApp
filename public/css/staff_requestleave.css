@@ -9,7 +9,7 @@
 }
 
 body{
-    background: url('public/images/att.svg') no-repeat ;
+    background: url('public/images/leave.png') no-repeat ;
   background-color: #050b0e;
   overflow: hidden;
 }
@@ -38,7 +38,7 @@ body{
   
 .form{
   display: flex;
-  height: 100;
+  height: 80;
   
 }
 
@@ -49,12 +49,12 @@ body{
 }
 
 .input-fields,
-.msg{
-  width: 48%;
+.message{
+  width: 100%;
 }
 
 .input-fields .input,
-.msg textarea{
+.message textarea{
   margin: 10px 0;
   background: transparent;
   border: 0px;
@@ -64,7 +64,7 @@ body{
   width: 100%;
 }
 
-.msg textarea{
+.message textarea{
   height: 212px;
 }
 
@@ -81,7 +81,7 @@ body{
   color: #c5ecfd;
 }
 
-.button {
+input[type=submit]{
     background: #39b7dd;
     text-align: center;
     padding: 15px;
@@ -102,11 +102,11 @@ body{
   .contact-form{
     flex-direction: column;
   }
-  .msg textarea{
+  .message textarea{
     height: 80px;
   }
   .input-fields,
-  .msg{
+  .message{
     width: 100%;
   }
 }
