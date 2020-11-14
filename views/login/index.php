@@ -1,7 +1,7 @@
 
    <?php 
 $title = 'Humanity User Login';
-$style = 'userLogin-index.css';
+$style = 'userLogin-index';
 include "userLogin-header.php"; ?>
    
    
