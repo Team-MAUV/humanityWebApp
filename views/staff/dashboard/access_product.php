@@ -12,11 +12,11 @@ include "staff_header.php"; ?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Access product</title>
 
 	<link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_access-product.css" />
-    <script type="text/javascript" src="../../public/js/all.min.js"></script>
+    <script type="text/javascript" src="<?= URL ?>public/js/all.min.js"></script>
 
 
 </head>
