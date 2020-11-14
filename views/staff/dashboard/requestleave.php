@@ -25,39 +25,32 @@ include "staff_header.php"; ?>
   
   body{
    
-    background: url('public/images/att.svg') no-repeat ;
+    background: url('public/images/leave.png') no-repeat ;
     background-size: cover;
 height: 100vh;
 width: fit-content;
   }
 </style>
 </head>
-<body>
-<?php
-  $name=$this->leave_request[0]['name'];
-  $staff_id=$this->leave_request[0]['staff_id'];
-  $date=$this->leave_request[0]['date'];
-  $day_no=$this->leave_request[0]['day_no'];
-  $msg=$this->leave_request[0]['msg'];
-?>
+<body >
+
 
 <div class="wrapper">
   <div class="title">
     <h1>Request Leave Application</h1>
   </div>
   <div class="form">
-  <form action="<?php echo URL; ?>staff/edit_submit_requestleave" method="post" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to submit the form?');">
+  <form action="leave_request" method="post"  onsubmit="return confirm('Do you really want to submit the form?');">
     <div class="input-fields">
-      <input type="text" class="input" placeholder="Name" name="name" id="name">
+      <input type="text" class="input" placeholder="Name" name="stname" id="stname">
       <input type="text" class="input" placeholder="Staff-ID" name="staff_id" id="staff_id">
-      <input type="date" class="input" placeholder="Date" name="date" id="date">
+      <input type="date" class="input" placeholder="Date" name="stdate" id="stdate">
       <input type="number" class="input" placeholder="Number of Days" name="day_no" id="day_no">
       
     </div>
-    <div class="msg">
+    <div class="message">
       <textarea placeholder="Reason for the leave" name="msg" id="msg"></textarea>
-     
-      <button type="submit" value="submit" name="submit" name="submit"> Send </button>
+      <input type="submit" value="submit" name="submit" name="submit"> 
     </div>
   </div>
 </div>
