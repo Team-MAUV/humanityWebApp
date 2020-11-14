@@ -9,7 +9,7 @@ include "regForm-header.php"; ?>
     <div class="login" style="background-image: url('http://localhost/humanity/public/images/regbg22.jpg') ;">
         <h1>Welcome to Donor Registration</h1>
         <div id="error"></div>
-        <form action="run_don_register" method="POST" id="form2">
+        <form action="run_don_register" method="POST" id="form2" >
 
             <label for="fullname">
                 <i class="fas fa-user"></i>
@@ -86,16 +86,13 @@ function validation() {
     
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
-    
     var contact = document.getElementById("contact").value;
-    
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
-    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||([password]==null ||password=="")||(gender==null ||gender=="")){
+    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(gender==null ||gender=="")){
       swal({
             title: "Registration Failed!",
             text: "Please fill the required fields",
-
             icon: "error",
 
         });
