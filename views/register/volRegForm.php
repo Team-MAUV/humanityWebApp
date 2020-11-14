@@ -76,9 +76,9 @@ include "regForm-header.php"; ?>
 
 
   </form>
-  
-  
+
 </div>
+
 <script>
 function validation() {
     
