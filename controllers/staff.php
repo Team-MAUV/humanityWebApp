@@ -7,7 +7,7 @@ class Staff extends Controller
     {
         parent::__construct();
         Session::init();
-        $logged = Session::get('loggedIn');
+        $logged = Session::get('loggedIn-stf');
         if ($logged == false) {
             Session::destroy();
             header('location: ../login');

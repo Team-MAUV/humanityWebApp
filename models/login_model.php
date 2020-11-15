@@ -10,10 +10,14 @@ class login_Model extends Model
     public function run_com()
     {
 
-        $st = $this->db->prepare("SELECT * FROM user WHERE username= :login AND password = MD5(:password) ");
+        $pwd = $_POST['password'];
+        $hashPw = password_hash($pwd, PASSWORD_DEFAULT);
+
+        echo $pwd;
+        echo $hashPw;
+        $st = $this->db->prepare("SELECT * FROM user WHERE username= :login ");
         $st->execute(array(
-            ':login' => $_POST['username'],
-            ':password' => $_POST['password']
+            ':login' => $_POST['username']
         ));
 
         $user = $st->fetchAll();
@@ -22,7 +26,10 @@ class login_Model extends Model
 
         foreach ($user as $usr) :
             $role = $usr['role'];
+            $stored_pw = $usr['password'];
         endforeach;
+
+    
 
         Session::init();
 
@@ -30,41 +37,47 @@ class login_Model extends Model
         $_SESSION['name'] = $_POST['username'];
         $id = $_POST["id"];
 
-        $count = $st->rowCount();
-        if ($count > 0) {
-
-            Session::set('loggedIn', true);
+       
+        if (password_verify($_POST['password'],  $stored_pw))
+        {
+          /* The password is correct. */
+      
+           // Session::set('loggedIn', true);
             Session::set('name', $_POST['username']);
             Session::set('id', $id);
-            Session::set('loggedIn', true);
+          
 
             //Redirecting User Based on Role
             if ($role == 'commissioner') {
+                Session::set('loggedIn-com', true);
                 header('location: ../Commissioner');
             }
 
 
 
             if ($role == 'volunteer') {
+                Session::set('loggedIn-vol', true);
                 header('location: ../Volunteer');
             }
 
             if ($role == 'donor') {
+                Session::set('loggedIn-don', true);
                 header('location: ../Donor');
             }
 
             if ($role == 'buyer') {
+                Session::set('loggedIn-buy', true);
                 header('location: ../Buyer/profile');
             }
 
             if ($role == 'staff') {
+                Session::set('loggedIn-stf', true);
                 header('location: ../Staff');
             }
             if ($role == 'session_incharge') {
+                Session::set('loggedIn-sin', true);
                 header('location: ../Session_incharge');
             }
-
-
 
         } else {
             // show error
@@ -111,7 +124,9 @@ class login_Model extends Model
             $hashedToken = password_hash($token, PASSWORD_DEFAULT);
 
 
-            $url = "http://localhost/resetPW/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
+            $url = URL."login/resetPassword?selector=".$selector."&validator=".bin2hex($token);
+
+       
 
             $expires = date("U") + 1800;
 
@@ -146,7 +161,7 @@ class login_Model extends Model
             $message .='<br>Here is your password reset link: </br>';
             $message .= '<a href="'.$url.'">'.$url.'</a></p>';
 
-            $message .= '<h4>-------------------------------------------------------------------------Humanity Web App - Powered by Team MAUV-----------------------------------------------------------------------</h4>';
+            $message .= '<h4>***Humanity Web App - Powered by Team MAUV***</h4>';
 
             $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
             $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
@@ -164,5 +179,109 @@ class login_Model extends Model
             echo "Enter a valid Email!";
         }
 
+    
     }
+
+
+    public function run_resetPassword(){
+            echo "Reset password here";
+
+            if (isset($_POST["reset-password-submit"])){
+
+                $selector = $_POST["selector"];
+                $validator = $_POST["validator"];
+                $password = $_POST["pwd"];
+                $passwordRepeat = $_POST["pwd-repeat"];
+              
+              
+                if(empty($password) || empty($passwordRepeat)){
+              
+                  header("Location: ../login/resetPassword?newpwd=empty" );
+                  exit();
+                }else if($password !=$passwordRepeat){
+                    header("Location: ../login/resetPassword?newpwd=pwdnotsame" );
+                    exit();
+                }
+
+                $currentDate = date("U");
+                echo $currentDate;
+
+                $st = $this->db->prepare("SELECT * FROM pwdReset WHERE pwdResetSelector=:selector AND pwdResetExpires >= :pwdExpire");
+
+                $st->execute(array(
+                    ':selector' => $selector,
+                    ':pwdExpire' => $currentDate
+                ));
+
+                $row_count = $st->rowCount();
+         
+
+
+                if($row_count >0){
+                    $pwdReset_details =$st->fetchAll();
+                    foreach ($pwdReset_details as $tmp) :
+                        $reset_email = $tmp['pwdResetEmail'];
+                        $pwdResetToken = $tmp['pwdResetToken'];
+                      
+                    endforeach;
+
+                    echo $reset_email;
+                    echo $pwdResetToken;
+
+                    $tokenBin = hex2bin($validator);
+                    $tokenCheck = password_verify($tokenBin,$pwdResetToken);
+
+                    if($tokenCheck ===false){
+                        echo "You need to re-submit your reset request";
+                        exit();
+                      }elseif($tokenCheck === true){
+                        
+
+                        $st= $this->db->prepare("SELECT * FROM volunteer WHERE email=:email" );
+
+                        $st->execute(array(
+                            ':email' => $reset_email
+                        ));
+        
+                        $count = $st->rowCount();
+                       
+
+                        
+                        if($count >0){
+                            $user_details =$st->fetchAll();
+                            foreach ($user_details as $tmp) :
+                                $userlogin_id = $tmp['userlogin_id'];
+                            endforeach;
+                            $newPwdHash = password_hash($password, PASSWORD_DEFAULT);
+
+                            $st= $this->db->prepare("UPDATE user SET password=:newPassword WHERE id=:id" );
+
+                            $st->execute(array(
+                                ':id' => $userlogin_id,
+                                ':newPassword' => $newPwdHash
+                            ));
+                         
+
+                            header("Location: ../login/pwUpdateSuccess?newpwd=passwordupdated");
+                        }else{
+                            echo "There was an error!";
+                            exit();
+                        }
+
+                      }
+
+                }else{
+                    echo "You need to re-submit your request";
+                    exit();
+                }
+
+    }
+
+
+
+
+}
+
+
+
 }
