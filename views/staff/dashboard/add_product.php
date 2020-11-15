@@ -15,7 +15,9 @@ include "staff_header.php"; ?>
 * {
   box-sizing: border-box;
 }
-
+body{
+  overflow: hidden;
+}
 input[type=text], select, textarea ,input[type=number],input[type=datetime-local]{
   width: 100%;
   padding: 12px;
@@ -133,7 +135,7 @@ input[type=reset]:hover {
         <label for="subject">Description:</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something about product..." style="height:200px"></textarea>
+        <textarea id="subject" name="subject" placeholder="Write something about product..." style="height:150px"></textarea>
       </div>
     </div>
     <div class="row">

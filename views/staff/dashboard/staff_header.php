@@ -84,6 +84,12 @@
                       } ?>">
             <a href="<?= URL ?>staff/staff_report"><i class="fas fa-file-contract"></i> Reports</a>
           </li>
+
+          <li class="<?php if ($page == 'upload_reports') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>staff/upload_reports"><i class="fas fa-file-contract"></i> Uploaded Reports</a>
+          </li>
           <li class="<?php if ($page == 'requestleave') {
                         echo 'active';
                       } ?>">

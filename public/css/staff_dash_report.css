@@ -10,9 +10,12 @@
 
 body{
 	background: #8178d3;
-	color: #63686e;
+	color: #181a1b;
 }
-
+.row_{
+	position: absolute;
+	top:50%;
+}
 .wrapper{
 	position: absolute;
 	top: 50%;
@@ -23,7 +26,7 @@ width:500px;
 }
 
 .title{
-	background: #f3f4f8;
+	background: #a2a3a7;
 	padding: 15px;
 	font-size: 18px;
 	text-align: center;
@@ -36,7 +39,7 @@ width:500px;
     padding: 15px 20px;
 }
 .file_item .format{
-	background: #8178d3;	border-radius: 10px;
+	background: #2e20b1;	border-radius: 10px;
 	width: 45px;
 	height: 40px;
 	line-height: 40px;
@@ -75,14 +78,14 @@ width:500px;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #58e380;
+	background: #0e6b28;
 }
 .file_item .file_size_wrap .file_size{
 	margin-right: 15px;
 }
 .file_item .file_size_wrap .file_close{
-	border: 1px solid #8178d3;
-	color: #8178d3;
+	border: 1px solid #0c016e;
+	color: #5046a8;
 	width: 20px;
 	height: 20px;
 	line-height: 18px;
@@ -94,13 +97,13 @@ width:500px;
 }
 
 .file_item .file_size_wrap .file_close:hover{
-	background: #8178d3;
+	background: #e02909;
 	color: #fff;
 }
 
 .choose_file label{
 	display: block;
-	border: 2px dashed #8178d3;
+	border: 2px dashed #1a182b;
 	padding: 15px;
 	width: calc(100% - 20px);
 	margin: 10px;
@@ -114,9 +117,15 @@ width:500px;
 }
 .choose_file span{
 	font-size: 14px;
-	color: #8178d3;
+	color: #362f6d;
 }
 
 .choose_file label:hover span{
 	text-decoration: underline;
 }
+@media only screen and (max-width:500px) {
+	/* For mobile phones: */
+	.row, .column,.wrapper  {
+	  width: 100%;
+	}
+  }

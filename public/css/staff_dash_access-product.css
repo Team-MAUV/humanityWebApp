@@ -126,3 +126,9 @@ button:hover{
 	margin: 20px 0;
 	text-align: center;
 }
+@media only screen and (max-width:500px) {
+	/* For mobile phones: */
+	.card, .imgBox, .details {
+	  width: 100%;
+	}
+  }
