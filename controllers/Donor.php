@@ -15,6 +15,6 @@ class Donor extends Controller
 
     function index()
     {
-        $this->view->rendor('donor/donor-index');
+        $this->view->rendor('donor/donorHome-index');
     }
 }
