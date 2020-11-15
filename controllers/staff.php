@@ -42,7 +42,10 @@ class Staff extends Controller
     {
         $this->view->rendor('staff/dashboard/staff_report');
     }
-    
+    function upload_reports()
+    {
+        $this->view->rendor('staff/dashboard/upload_reports');
+    }
     function requestleave()
     {
       
