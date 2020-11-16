@@ -18,13 +18,16 @@ include "staff_header.php"; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uploaded Reports</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/upload-reports.css">
+    
+    <link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_uploadreport.css" />
     <script src="https://kit.fontawesome.com/c0d2632e91.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         body {
           font-family: Arial;
+          width: 100vw;
+          height:100vh;
         }
         
         * {
@@ -66,7 +69,7 @@ include "staff_header.php"; ?>
 
 
 <body>
-    <h1>Reports</h1>
+    <h1>Uploaded Reports</h1>
     <button onclick="viewlist()" class="grid">
         <i class="fa fa-bars"></i> List
     </button>
@@ -82,31 +85,31 @@ include "staff_header.php"; ?>
 
     <div class="row">
         <div class="column">
-            <h2>Blood Donation.pdf <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h2>
+            <h4>Blood Donation.pdf <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h4>
 
         </div>
         <div class="column">
-            <h2>Annual Report.zip <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h2>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="column">
-            <h2> Tree Planting.docx <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h2>
-
-        </div>
-        <div class="column">
-            <h2>March_Report.pdf<button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h2>
+            <h4>Annual Report.zip <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h4>
 
         </div>
     </div>
     <div class="row">
         <div class="column">
-            <h2> April_Report.pdf <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h2>
+            <h4> Tree Planting.docx <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h4>
 
         </div>
         <div class="column">
-            <h2> CleaningCampaign.pdf <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h2>
+            <h4>March_Report.pdf<button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h4>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h4> April_Report.pdf <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h4>
+
+        </div>
+        <div class="column">
+            <h4> CleaningCampaign.pdf <button type="button" class="btn" onclick="remove()">Remove</button><button type=" button " class="btn " onclick="viewReport()">View Report</button></h4>
 
         </div>
         
@@ -114,7 +117,7 @@ include "staff_header.php"; ?>
     </div>
 
 
-    <script type="text/javascript" src="../../public/js/grid-list.js"></script>
+    <script type="text/javascript" src="<?= URL ?>public/js/grid-list.js"></script>
 
     <script>
         function myFunction() {

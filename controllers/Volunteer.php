@@ -7,7 +7,7 @@ class Volunteer extends Controller
     {
         parent::__construct();
         Session::init();
-        $logged = Session::get('loggedIn');
+        $logged = Session::get('loggedIn-vol');
         if ($logged == false) {
             Session::destroy();
             header('location: ../login');

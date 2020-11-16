@@ -7,7 +7,7 @@ class Staff extends Controller
     {
         parent::__construct();
         Session::init();
-        $logged = Session::get('loggedIn');
+        $logged = Session::get('loggedIn-stf');
         if ($logged == false) {
             Session::destroy();
             header('location: ../login');
@@ -42,7 +42,10 @@ class Staff extends Controller
     {
         $this->view->rendor('staff/dashboard/staff_report');
     }
-    
+    function upload_reports()
+    {
+        $this->view->rendor('staff/dashboard/upload_reports');
+    }
     function requestleave()
     {
       

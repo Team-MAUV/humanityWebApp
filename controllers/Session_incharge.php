@@ -7,7 +7,7 @@ class Session_incharge extends Controller
     {
         parent::__construct();
         Session::init();
-        $logged = Session::get('loggedIn');
+        $logged = Session::get('loggedIn-sin');
         if ($logged == false) {
             Session::destroy();
             header('location: ../login');
