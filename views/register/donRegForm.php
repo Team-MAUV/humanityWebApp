@@ -86,13 +86,20 @@ function validation() {
     
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
+    var address = document.getElementById("address").value;
+    var name = document.getElementById("name").value;
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+    var gender = document.getElementById("gender").value;
     var contact = document.getElementById("contact").value;
+ 
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
     if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(gender==null ||gender=="")){
       swal({
             title: "Registration Failed!",
             text: "Please fill the required fields",
+
             icon: "error",
 
         });
@@ -120,14 +127,14 @@ else{
 
             swal({
                 title: "Registration Successful!",
-                text: "Thank you for joining us!",
+                text: "Please wait for the confirmation email, Thank you!",
                 icon: "success",
 
             });
 
         }
     }
-}
+  }
 }
 </script>
     <?php include "regForm-footer.php"; ?>
