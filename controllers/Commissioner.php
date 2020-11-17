@@ -57,7 +57,13 @@ class Commissioner extends Controller
 
     function viewVolActivity()
     {
-        $this->view->rendor('commissioner/dashboard/viewVolActivity');
+        $data = $this->model->get_vol_activity_list();
+        $this->view->rendor('commissioner/dashboard/viewVolActivitylist', $data, true);
+    }
+    function search_volunteer_activity()
+    {
+        $data = $this->model->run_search_volunteer_activity();
+        $this->view->rendor('commissioner/dashboard/viewVolActivitylist', $data, true);
     }
 
     function projectReports()
