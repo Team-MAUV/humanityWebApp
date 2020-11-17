@@ -87,7 +87,7 @@
       <div class="content">
       Your donations will make another person's life a miracle. Contribute to this great communtiy service with us. Be a symbol of hope for those who are waiting. Joing us today and be a great community service!
       </div>
-      <div class="btn btnd"><a href="<?= URL ?>register/donRegForm">Register</a></div>
+      <div class="btn btnd"><a href="<?= URL ?>homePage">Register</a></div>
     </div>
     <div class="pf m">
       <div class="btn btnm"><a href="<?= URL ?>login">TzuChi Market</a></div>
