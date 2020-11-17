@@ -13,13 +13,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" href="path/to/sweet-alert.css" />
-  <style>
-    body {
 
-      background-color: black;
-
-    }
-  </style>
 </head>
 
 <body>

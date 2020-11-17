@@ -10,9 +10,7 @@ class commissioner_Model extends Model
 
 
 
-  public function get_reg_vol_profiles()
-  {
-
+  public function get_reg_vol_profiles() {
         //Volunteer Profiles
         $st = $this->db->prepare('SELECT * FROM volunteer ORDER BY id LIMIT :current_page, :record_per_page');
         // Get the page via GET request (URL param: page), if non exists default the page to 1
@@ -27,45 +25,109 @@ class commissioner_Model extends Model
         $num_contacts = $this->db->query('SELECT COUNT(*) FROM volunteer')->fetchColumn();
         $contacts = $st->fetchAll();
 
-
-
         //Volunteer Requests
         $stmt = $this->db->prepare('SELECT * FROM volunteer WHERE status=0 ORDER BY join_date ');        
         $stmt->execute();
         $newReq = $stmt->fetchAll();
 
-    //All the data that has to be return from this functon is added to an associative array
-    $pageData = [
-      'page_no' => $page_no,
-      'records_per_page' => $records_per_page,
-      'contacts' => $contacts,
-      'num_contacts' => $num_contacts,
-      'newReq'=> $newReq
-    ];
-    return ($pageData);
+        //All the data that has to be return from this functon is added to an associative array
+        $pageData = [
+          'page_no' => $page_no,
+          'records_per_page' => $records_per_page,
+          'contacts' => $contacts,
+          'num_contacts' => $num_contacts,
+          'newReq'=> $newReq
+        ];
+        return ($pageData);
   }
 
-  public function run_search_volunteer()
-  {
+  public function run_search_volunteer(){
 
-    $st = $this->db->prepare("SELECT * FROM volunteer WHERE vol_id= :vol_id");
+        $st = $this->db->prepare("SELECT * FROM volunteer WHERE vol_id= :vol_id");
 
-    $st->execute(array(
-      ':vol_id' => $_POST['search']
-    ));
-    $page_no = 1;
-    $records_per_page = 1;
-    $num_contacts = 1;
+        $st->execute(array(
+          ':vol_id' => $_POST['search']
+        ));
+        $page_no = 1;
+        $records_per_page = 1;
+        $num_contacts = 1;
 
-    $contacts = $st->fetchAll();
-    $pageData = [
-      'page_no' => $page_no,
-      'records_per_page' => $records_per_page,
-      'contacts' => $contacts,
-      'num_contacts' => $num_contacts
-    ];
-    return ($pageData);
+        $contacts = $st->fetchAll();
+        $pageData = [
+          'page_no' => $page_no,
+          'records_per_page' => $records_per_page,
+          'contacts' => $contacts,
+          'num_contacts' => $num_contacts
+        ];
+        return ($pageData);
   }
+
+
+  public function run_accept_vol_request(){
+          
+                  //Generate Vol ID from the parameters passed from URL
+                  if(strlen($_GET['id'])==1 && strlen($_GET['id'])>0){
+                    $vol_id ="VOL/HB/00".$_GET['id'];
+                  }else if(strlen($_GET['id'])==2 && strlen($_GET['id'])>0){
+                    $vol_id ="VOL/HB/0".$_GET['id'];
+                  }else if(strlen($_GET['id'])>0){
+                    $vol_id ="VOL/HB/".$_GET['id'];
+                  };
+
+                  echo $vol_id;
+
+         
+                  //Generate a random string for the Password
+                  function generateRandomString($length = 10) {
+                    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+                  }
+
+
+                 //Insert Data into User table
+                  $tmp_pw = password_hash(generateRandomString(), PASSWORD_DEFAULT);
+                  $role = "volunteer";
+
+                  echo $tmp_pw;
+
+                  $stmt = $this->db->prepare("INSERT INTO user(username,password,role) VALUES(?,?,?)");
+
+                  $stmt->execute([$vol_id, $tmp_pw, $role]);
+
+                
+                  //Get the id corresponding to username from user table
+                  $st = $this->db->prepare("SELECT id FROM user WHERE username=:username");
+                  $st->execute(array(
+                    ':username' => $vol_id
+                  ));
+                  $user_id = $st->fetchAll();
+
+                          
+                  foreach ($user_id as $usr) :
+                    $userlogin_id = $usr['id'];
+                  endforeach;
+                  echo $userlogin_id;
+
+                  $level = "Temporary Volunteer";
+                  $vol_points = 0;
+                  $status = 1;
+                  $id_vol_table = $_GET['id'];
+
+                  $st = $this->db->prepare("UPDATE volunteer SET vol_id=:vol_id, userlogin_id=:userlogin_id, level=:level, vol_points=:vol_points, status=:status WHERE id=:id_vol_table" );
+                  $st->execute(array(
+                    ':vol_id' => $vol_id,
+                     ':userlogin_id' => $userlogin_id,
+                     ':level'=> $level,
+                     ':vol_points'=>  $vol_points,
+                     ':status'=>  $status,
+                     ':id_vol_table' => $id_vol_table
+                  ));
+                 
+                  echo "Updated successfully!";
+  }
+
+
+
+
 
   public function get_images_display()
   {
