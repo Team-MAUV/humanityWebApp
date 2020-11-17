@@ -96,8 +96,8 @@ class Register_model extends Model
 
 
 
-      $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`,`email`) VALUES ( ?,?,?,?)');
-      $stmt2->execute([$username, $password, $role,$email]);
+      $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
+      $stmt2->execute([$username, $password, $role]);
 
       $get_volid = $this->db->prepare("SELECT id FROM user WHERE username= :uname  ");
       $get_volid->execute(array(
@@ -113,15 +113,13 @@ class Register_model extends Model
           $id = $tmp['id'];
         endforeach;
 
-      $stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :username,:password,:gender,:id)');
+      $stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :gender,:id)');
       $stmt->execute(array(
         ':name'=>$name,
         ':nic'=>$nic,
         ':email'=>$email,
         ':contact'=>$contact,
         ':address'=>$address,
-        ':username'=>$username,
-        ':password' =>$password,
         ':gender'=>$gender,
         ':id' => $id,
        
@@ -166,8 +164,8 @@ class Register_model extends Model
       $role="buyer";
       $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
 
-      $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`,`email`) VALUES ( ?,?,?,?)');
-      $stmt2->execute([$username, $password, $role,$email]);
+      $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
+      $stmt2->execute([$username, $password, $role]);
 
       $get_volid = $this->db->prepare("SELECT id FROM user WHERE username= :uname ");
       $get_volid->execute(array(
@@ -183,15 +181,13 @@ class Register_model extends Model
           $id = $tmp['id'];
         endforeach;
 
-      $stmt = $this->db->prepare('INSERT INTO `buyer` (`name`,`nic`, `email`,`contact`, `address`,`username`,`password`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :username,:password,:gender,:id)');
+      $stmt = $this->db->prepare('INSERT INTO `buyer` (`name`,`nic`, `email`,`contact`, `address`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :gender,:id)');
       $stmt->execute(array(
         ':name'=>$name,
         ':nic'=>$nic,
         ':email'=>$email,
         ':contact'=>$contact,
         ':address'=>$address,
-        ':username'=>$username,
-        ':password' =>$password,
         ':gender'=>$gender,
         ':id' => $id,
        
