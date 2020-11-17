@@ -95,7 +95,7 @@ input[type=reset]:hover {
 
 
 <div class="container">
-  <form action="#">
+  <form action="#"  onsubmit="return confirm('Do you really want to submit the form?')";>
     <div class="row">
       <div class="col-25">
         <label for="name">Product Name:</label>
