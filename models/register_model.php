@@ -24,7 +24,7 @@ public function run_vol_register(){
 
                 if($row_count>0){
                   $msg = "User already Exist!";
-                  exit();
+                 
                 }else{
 
 
