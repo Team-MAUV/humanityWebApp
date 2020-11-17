@@ -16,14 +16,11 @@ include "com-dash-header.php"; ?>
 
     <div class="tab-section">
       <ul>
-        <li><a id="tab1" href="#" class="active">Registered</a></li>
-        <li><a id="tab2" href="#"> New Requests</a></li>
-        <div class="search-container">
-          <form action="search_volunteer" method="POST">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
+        <li><a id="tab1" href="?registered" class="active">Registered </a></li>
+        <li><a id="tab2" href="#"> New Requests <span>(<?php echo $newReq_Count ?>) </span></a></li>
+     
+          
+        
       </ul>
 
 
@@ -34,7 +31,13 @@ include "com-dash-header.php"; ?>
     <div id="tab1C" class="tab-container">
   
           <div class="content read">
-
+          
+        <div class="search-container">
+          <form action="search_volunteer" method="POST">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          </div>
             <table>
               <thead>
               <tr>

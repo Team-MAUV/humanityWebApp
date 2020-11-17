@@ -11,7 +11,6 @@ class Register_model extends Model
 public function run_vol_register(){
     if (!empty($_POST)) {
 
-      
           //Check whether user already exist
           $nic_check = $_POST['nic'];
 

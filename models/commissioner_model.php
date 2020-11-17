@@ -29,6 +29,7 @@ class commissioner_Model extends Model
         $stmt = $this->db->prepare('SELECT * FROM volunteer WHERE status=0 ORDER BY join_date ');        
         $stmt->execute();
         $newReq = $stmt->fetchAll();
+        $newReq_Count = $stmt->rowCount();
 
         //All the data that has to be return from this functon is added to an associative array
         $pageData = [
@@ -36,7 +37,8 @@ class commissioner_Model extends Model
           'records_per_page' => $records_per_page,
           'contacts' => $contacts,
           'num_contacts' => $num_contacts,
-          'newReq'=> $newReq
+          'newReq'=> $newReq,
+          'newReq_Count' => $newReq_Count
         ];
         return ($pageData);
   }
@@ -74,20 +76,18 @@ class commissioner_Model extends Model
                     $vol_id ="VOL/HB/".$_GET['id'];
                   };
 
-                  echo $vol_id;
-
-         
+                  
                   //Generate a random string for the Password
                   function generateRandomString($length = 10) {
                     return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
                   }
 
-
                  //Insert Data into User table
-                  $tmp_pw = password_hash(generateRandomString(), PASSWORD_DEFAULT);
+                  $pwd  = generateRandomString();
+                  $tmp_pw = password_hash($pwd, PASSWORD_DEFAULT);
                   $role = "volunteer";
 
-                  echo $tmp_pw;
+
 
                   $stmt = $this->db->prepare("INSERT INTO user(username,password,role) VALUES(?,?,?)");
 
@@ -105,7 +105,7 @@ class commissioner_Model extends Model
                   foreach ($user_id as $usr) :
                     $userlogin_id = $usr['id'];
                   endforeach;
-                  echo $userlogin_id;
+              
 
                   $level = "Temporary Volunteer";
                   $vol_points = 0;
@@ -123,6 +123,52 @@ class commissioner_Model extends Model
                   ));
                  
                   echo "Updated successfully!";
+                  header('location: ../Commissioner/volunteer');
+
+                //Sending Email To the Volunteer
+
+                $st = $this->db->prepare("SELECT name,email FROM volunteer WHERE vol_id=:vol_id");
+                $st->execute(array(
+                  ':vol_id' => $vol_id
+                ));
+                $vol_details = $st->fetchAll();
+
+                foreach ($vol_details as $usr) :
+                  $vol_email = $usr['email'];
+                  $vol_name = $usr['name'];
+
+                endforeach;
+              
+                $url = URL."login";
+
+                  $to = $vol_email;
+                  $subject = 'Activate Your User Profile!';
+                  $rec_name = $vol_name;
+      
+                 
+      
+                  $message = '<h5> Hello '.$rec_name.', </h5>
+                  <p> We are delighted to inform you that, you\'ve been accepted as a Volunteer of Tzu Chi Foundation. Join with us on our journey of spreading kindness and compassion all over the world. Happy Volunteering! </p>';
+      
+                  $message .='<br>Here is your Volunteer Profile Credentials: </br>';
+                  $message .='<br>Username : '.$vol_id.' </br>';
+                  $message .='<br>Password : '.$pwd.' </br>';
+                  $message .= '<br> <a href="'.$url.'">'.$url.'</a></p>';
+      
+                  $message .= '<h4>***Humanity Web App - Powered by Team MAUV***</h4>';
+      
+                  $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+                  $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+                  $headers .= "Content-type: text/html\r\n";
+      
+                  Email::email_send($to,$rec_name, $subject, $message, $headers);
+
+
+
+
+
+
+
   }
 
 
