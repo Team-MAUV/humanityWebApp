@@ -30,22 +30,10 @@ class Register extends Controller
 
   function run_don_register()
   {
-   if($this->model->checkuser()){
-    $this->model->run_don_register();
-    $this->view->rendor('index/index');
-   }
-   else{
-    echo "<script type='text/javascript'> 
-    swal({
-      title: 'Registration Failed!',
-      text: 'This username already exsists!',
-
-      icon: 'error',
-
-  });
-    </script>";
-    
-  }
+   
+    $data=$this->model->run_don_register();
+    $this->view->rendor('register/donRegForm', $data, true);
+ 
   }
   function buyRegForm()
   {
@@ -56,7 +44,7 @@ class Register extends Controller
   function run_buy_register()
   {
     
-    $this->model->run_buy_register();
-    $this->view->rendor('index/index');
+    $data=$this->model->run_buy_register();
+    $this->view->rendor('register/buyRegForm', $data, true);
   }
 }

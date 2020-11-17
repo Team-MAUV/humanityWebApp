@@ -78,7 +78,6 @@ include "regForm-header.php"; ?>
 
 <script>
 function validation() {
-    
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
     var address = document.getElementById("address").value;
