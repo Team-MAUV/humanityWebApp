@@ -37,12 +37,7 @@ include "regForm-header.php"; ?>
       </div>
 
 
-      <label for="contact">
-        <i class="fa fa-phone-square "></i>
-      </label>
-      <input type="text" name="contact" placeholder="Contact Number" id="contact" required>
-      <div class="validation-error">
-      </div>
+     
 
 
       <label for="username">
@@ -60,7 +55,13 @@ include "regForm-header.php"; ?>
       <div class="validation-error">
       </div>
 
-
+      <label for="contact">
+        <i class="fa fa-phone-square "></i>
+      </label>
+      <input type="text" name="contact" placeholder="Contact Number" id="contact" required>
+      <div class="validation-error">
+      </div>
+      
       <label for="gender">
         <div class="i " style="align-items: left; justify-content: flex-start; ">
           &nbsp<i class="fa fa-male fa-2x "> </i>
@@ -84,6 +85,7 @@ include "regForm-header.php"; ?>
 
 
     </form>
+    <div class="messages">Error Message : <?php echo $msg ?></div>
   </div>
     <script>
 function validation() {
