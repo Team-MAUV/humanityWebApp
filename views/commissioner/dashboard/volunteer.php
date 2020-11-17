@@ -32,7 +32,7 @@ include "com-dash-header.php"; ?>
 
 
     <div id="tab1C" class="tab-container">
-
+  
           <div class="content read">
 
             <table>
@@ -74,8 +74,11 @@ include "com-dash-header.php"; ?>
               <?php if ($page_no * $records_per_page < $num_contacts) : ?>
                 <a href="volunteer?page=<?= $page_no + 1 ?>"><i class="fas fa-angle-double-right fa-sm"></i></a>
               <?php endif; ?>
+
+           
             </div>
           </div>
+
 
     </div>
 
@@ -87,7 +90,7 @@ include "com-dash-header.php"; ?>
             <tr>
               <td>Requested On</td>
               <td>Name</td>
-              <td>Joined Date</td>
+              <td>Email</td>
               <td></td>
             </tr>
           </thead>
@@ -97,12 +100,14 @@ include "com-dash-header.php"; ?>
               <tr>
                  
                 <td><?= $req['join_date'] ?></td>
-                <td><?= $req['vol_id'] ?></td>
                 <td><?= $req['name'] ?></td>
+                <td><?= $req['email'] ?></td>
              
                 <td class="actions">
-                  <a href="update.php?id=<?= $req['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
-                  <a href="delete.php?id=<?= $req['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                  <a href="run_accept_vol_request?id=<?= $req['id'] ?>" class="edit">Accept</i></a>
+                  <a href="update.php?id=<?= $req['id'] ?>" class="edit">View Profile</i></a>
+                  <a href="update.php?id=<?= $req['id'] ?>" class="edit">Decline</i></a>
+                 
                 </td>
               </tr>
             <?php endforeach; ?>

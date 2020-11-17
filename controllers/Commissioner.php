@@ -33,6 +33,10 @@ class Commissioner extends Controller
         $this->view->rendor('commissioner/dashboard/volunteer', $data, true);
     }
 
+    function run_accept_vol_request(){
+        $this->model->run_accept_vol_request();
+    }
+
     function staff()
     {
         $this->view->rendor('commissioner/dashboard/staff');

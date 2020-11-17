@@ -15,8 +15,12 @@ class Register extends Controller
 
   function run_vol_register()
   {
-    $this->view->rendor('index/index');
-    $this->model->run_vol_register();
+
+   $data= $this->model->run_vol_register();
+
+   $this->view->rendor('register/volRegForm', $data, true);
+
+   
   }
 
   function donRegForm()

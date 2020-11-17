@@ -1,6 +1,5 @@
 <?php
 
-
 class Register_model extends Model
 {
 
@@ -9,49 +8,55 @@ class Register_model extends Model
     parent::__construct();
   }
 
-  public function run_vol_register()
-  {
-    //echo "starting";
-
+public function run_vol_register(){
     if (!empty($_POST)) {
-      // Post data not empty insert a new record
-      // Set-up the variables that are going to be inserted, we must check if the POST variables exist if not we can default them to blank
-      // $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
-      //$id ="vol7";
 
-     /* $base = $this->db->prepare("SELECT `name` FROM `volunteer` ");
-      $base->execute();
-      $count = $base->rowCount();
-      $count = $count + 1;
-      $id = "VOL/HB/" . $count;
-      mysqli_free_result($base);*/
+      
+          //Check whether user already exist
+          $nic_check = $_POST['nic'];
 
+          $st = $this->db->prepare("SELECT * FROM volunteer WHERE nic=:nic");
 
+          $st->execute(array(
+            ':nic' => $nic_check
+          ));
+          $row_count = $st->rowCount();
 
-
-
-
-      // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
-      $name = isset($_POST['name']) ? $_POST['name'] : '';
-      $nic = isset($_POST['nic']) ? $_POST['nic'] : '';
-      $email = isset($_POST['email']) ? $_POST['email'] : '';
-      $address = isset($_POST['address']) ? $_POST['address'] : '';
-      $contact = isset($_POST['contact']) ? $_POST['contact'] : '';
-      $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
-      $prev_vol_exp = isset($_POST['prev_vol_exp']) ? $_POST['prev_vol_exp'] : '';
-      $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+                if($row_count>0){
+                  $msg = "User already Exist!";
+                  exit();
+                }else{
 
 
-      $stmt = $this->db->prepare('INSERT INTO `volunteer` (`name`,`nic`, `email`,`contact`, `address`,`dob`,`prev_vol_exp`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?,?)');
+                    // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
+                    $name = $_POST['name'];
+                    $nic = $_POST['nic'];
+                    $email = $_POST['email'];
+                    $address = $_POST['address'];
+                    $contact = $_POST['contact'];
+                    $dob = $_POST['dob'];
+                    $prev_vol_exp = $_POST['prev_vol_exp'];
+                    $gender = $_POST['gender'];
 
-      $stmt->execute([$name, $nic, $email, $contact, $address, $dob, $prev_vol_exp, $gender]);
 
-      // Output message
-     // echo 'Created Successfully!';
+                    $stmt = $this->db->prepare('INSERT INTO `volunteer` (`name`,`nic`, `email`,`contact`, `address`,`dob`,`prev_vol_exp`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?,?)');
+
+                    $stmt->execute([$name, $nic, $email, $contact, $address, $dob, $prev_vol_exp, $gender]);
+                    
+                    $msg = "Form data submitter successfully!";
+                    header('location: ../register');
+                }
+    }else{
+      $msg = "Data fields are empty";
     }
 
-  // echo "end";
-  }
+    $pageData = [
+       'msg' => $msg
+      
+     ];
+  
+    return ($pageData);
+}
 
   public function run_don_register()
   {

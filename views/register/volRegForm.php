@@ -71,13 +71,10 @@ include "regForm-header.php"; ?>
       <p style="font-weight: 800;"> Submit</p>
     </button>
 
-
-
-
-
   </form>
 
-</div>
+  <div class="messages">Error Message : <?php echo $msg ?></div>
+
 
 <script>
 function validation() {
