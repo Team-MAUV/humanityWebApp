@@ -207,6 +207,7 @@ a{
       margin-bottom: 10px;
       margin-left: 5px;
       font-size: 20px;
+      font-family: 'Mukta', sans-serif;
   }
   .cust-amount , .donate-for , .dedicate-donation , .payment , .donate{
       padding: 5px;
@@ -217,6 +218,7 @@ a{
       font-size: 20px;
       font-weight: bold;
       margin-left: 5px;
+      font-family: 'Mukta', sans-serif;
   }
   .cust-amount input[type="text"]{
       padding: 5px;
