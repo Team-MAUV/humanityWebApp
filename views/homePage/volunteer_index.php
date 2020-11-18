@@ -101,7 +101,40 @@
                             assumenda facere a.</p>
                     </div>
                     <div class="images" id="image-page" style="display: none;">
-                        this is images
+                        <div class="view-img">
+                            <span onclick="this.parentElement.style.display='none'" class="close-btn">&times;</span>
+                            <img id="bigImg" style="width:100%">
+                            <div id="img-data"></div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy1.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy2.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy3.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy1.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy2.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)" >
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy1.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy1.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy3.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                            <div class="column">
+                                <img src="<?= URL ?>public/images/recy2.jpg" alt="Collecting recycled products. 2020-04-31" onclick="galleryViewImg(this)">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 

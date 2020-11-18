@@ -28,3 +28,11 @@ function showAbout() {
         y.style.display = "none";
     }
   }
+  function galleryViewImg(img){
+    var viewBigImg = document.getElementById("bigImg");
+    var imgData = document.getElementById("img-data");
+    viewBigImg.src = img.src;
+    imgData.innerHTML = img.alt;
+    viewBigImg.parentElement.style.display = "block";
+
+  }
