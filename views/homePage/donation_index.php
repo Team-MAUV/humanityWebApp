@@ -42,50 +42,12 @@ body {
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
   overflow: hidden;
-  background-color:orange;
+  background-color:lightsalmon;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
 }
 
-/* Style the navigation bar links */
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Active/current link */
-.navbar a.active {
-  background-color: #666;
-  color: white;
-}
-
-/* Column container */
-.row {  
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
 .side {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
@@ -96,31 +58,24 @@ body {
   justify-content: center;
   background: #262626;
 }
-
-/* Main column */
-.main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 400px; /* Should be removed. Only for demonstration */
 }
 
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-
 /* Footer */
-
+#more {display: none;}
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
+
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
@@ -167,36 +122,69 @@ body {
 
 </div>
 
-<div class="row">
-  <div class="side">
+<div class="side">
   <ul>
-<li><i class="fab fa-facebook-f"></i></li>
-<li><i class="fab fa-twitter"></i></li>
-<li><i class="fab fa-instagram"></i></li>
-<li><i class="fab fa-linkedin-in"></i></li>
-<li><i class="fab fa-youtube"></i></li>
+  <li><a href="#"><i class="fab fa-facebook-f"> </i></a></li>
+<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 </ul>
+</div>
 
-    <div class="fakeimg" style="height:200px;"></div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
+<div class="row">
+  <div class="column" style="background-color:orange">
+    <h2>Who We are? </h2>
+    <p>We are the Buddhist Tzu Chi foundation,
+  an international humanitarian organization whose mission is to releive the suffering of those 
+in need while creating a better world for all through compassion, love and hope.For 30 years, Tzu Chi, USA has provided relief with compassion and 
+love to those needing it most. From victims of hurricanes, wildfires and flooding to those who fall below the poverty line, our volunteers help provide relief 
+that includes shelter, food, cash cards… and it all comes with our love and compassion with hope to build a better world.Tzu Chi’s compassion transcends the 
+boundaries of race, nation, language, color and religion. Combing social ministry with spiritual ministry, Tzu Chi spread the universal value of compassion, 
+and bring the humanistic spirit heritage rooted in Chinese culture to its highest point. The current missions are called “The Four Great Missions”, 
+which include charity, medical care, education and humanities. Moreover, Tzu Chi is also devoted to international disaster relief, bone marrow donation, 
+community volunteering and environmental protection.
+ Together they are called the “Eight Dharma Seals”.Support prosperity and love for all.<span id="dots">...</span><span id="more">
+Your generous donation will help Tzu Chi provide emergency relief when disaster strikes, distribute food to ease hunger,
+ offer medical care to those who can’t afford it, support students, and more. Being able to help others is a true blessing,
+  and giving can become a way of life once you discover the joy of improving someone’s situation or bringing hope to replace despair.
+   Giving on a regular basis ignites the compassion we all have within us, allowing us to pass on that torch to the people we meet each and every day. 
+   Together, we’re unstoppable in our power to ease suffering and change the world for the better. </span> <button onclick="myFunction()" id="myBtn">Read more</button>
+Donate today and ignite the fire within!</p>
   </div>
-  <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Column 2</h2>
     <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
   </div>
 </div>
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
