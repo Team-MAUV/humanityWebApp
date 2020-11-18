@@ -7,7 +7,7 @@ class volindex extends Controller {
     }
 
     function index() {
-        $this->view->rendor('homePage/volunteer_index');
+        $this->view->rendor('homePage/buy_market_index');
     }
 
 

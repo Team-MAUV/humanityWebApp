@@ -55,9 +55,9 @@
                 
                 <div class="media-container">
                     <div class="selection-panal">
-                        <button onclick="showAbout()">About us</button>  
-                        <button onclick="showAct()">Volunteering Activities</button>   
-                        <button onclick="showImg()">Images</button>
+                        <button class="h-btn" onclick="showAbout()">About us</button>  
+                        <button class="h-btn" onclick="showAct()">Volunteering Activities</button>   
+                        <button class="h-btn" onclick="showImg()">Images</button>
                         
                     </div>
                     <div class="about-us" id="aboutUs" style="display: block">

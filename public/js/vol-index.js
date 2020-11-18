@@ -36,3 +36,4 @@ function showAbout() {
     viewBigImg.parentElement.style.display = "block";
 
   }
+  

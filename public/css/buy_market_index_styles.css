@@ -29,7 +29,7 @@ body {
   justify-content: space-between;
   top: 0;
   width: 100vw;
-  background-color: #78cc5a;
+  background-color:red;
   height: 7vh;
   z-index: 10;
 }
@@ -101,7 +101,7 @@ body {
   width: 4vw;
   height: auto;
   margin: 2rem;
-  background: #78cc5a;
+  background: red;
   padding: 0.4rem 0.7rem;
   font-size: 1.2rem;
   border: 2px solid #fff;
@@ -114,13 +114,13 @@ body {
 .container {
     display: grid;
     
-    grid-template-rows: 6vh 88vh 10vh;
+    grid-template-rows: 6vh 88vh 6vh;
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll;
+    
     grid-gap: 1px;
-    background-color: #ccff99;
-   
+    background-color: lightpink;
+    overflow-y: scroll;
    
 }
 
@@ -134,13 +134,11 @@ body {
   grid-row: 1;
  
 }
-.page-body{
-  padding-bottom: 50px;
-}
 
 
 ul{
   list-style: none;
+  
 }
 li{
   padding: 3px;
@@ -149,8 +147,9 @@ li{
 a{
   text-decoration: none;
 }
-/*----------------body---container---------------*/
 
+
+/*--------------------------------------market-index-body-----------------------*/
 .background{
   width: 100vw;
   
@@ -189,22 +188,21 @@ a{
 }
 
 .log{
-  background-color:green;
+  background-color:orangered;
 
 }
 .reg{
-  background-color: blue;
+  background-color: darkgoldenrod;
 }
 .btns a:hover{
   background-color: red;
 }
-
 .selection-panal{
   margin-left: 10px ;
 }
 .selection-panal button{
   background-color: transparent;
-  color: #004883;
+  color: red;
   border: none;
   padding: 5px;
   outline: none;
@@ -213,74 +211,34 @@ a{
   transition: 0.25s;
 }
 .selection-panal button:hover{
-  color: darkgreen;
+  color: darkred;
   margin-left: 10px;
   margin-right: 10px;
   transform: scale(1.2);
 }
-
-p{
+p , .about-products ul{
+  
   padding: 10px;
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 30px;
 }
-.about-us h4 , .vol-activities h4{
+
+
+.about-products h4 , .bid-sessions h4{
   margin-left: 30px;
   padding: 5px;
   border-style: solid;
   border-bottom:none;
- color: #004883;
-}
-.media-container{
-  padding-bottom: 50px;
+  color: red;
+  
 }
 
-/*--------------image - gallery--------------------------*/
 
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-}
-.column img {
-  opacity: 0.8; 
-  cursor: pointer; 
-  width: 100%;
-  height: 225px;
-}
 
-.column img:hover {
-  opacity: 1;
-}
-.row::after{
-  content: "";
-  display: table;
-  clear: both;
-}
-.view-img{
-  position: relative;
-  display: none;
-}
-.view-img img{
-  padding: 10px;
-}
-.close-btn{
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
 
-}
-#img-data{
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  font-size: 24px;
-}
+
+
 
 /*-------footer-------------*/
 .footer {
@@ -289,7 +247,7 @@ p{
     bottom: 0;
     width: 100vw;
     height: 6vh;
-    background-color:  #78cc5a;
+    background-color: red;
     color: white;
     text-align: center;
     z-index: 1000;
@@ -305,7 +263,7 @@ p{
       width: 100%;
       grid-template-columns: 5fr 1fr;
       grid-template-areas: " title-name logo-container ";
-      background-color:#78cc5a;
+      background-color: lightpink;
       height: 50px;
       z-index: 10;
     }
@@ -378,11 +336,16 @@ p{
        
         
       }
+
+/*========================================page head===============*/s
       .pg-name h2{
         font-size: 24px;
       }
       .btns a{
         font-size: 18px;
+      }
+      .selection-panal{
+        padding-right: 10px;
       }
       .selection-panal button{
         font-size: 15px;
@@ -396,15 +359,10 @@ p{
      .about-us h4 , .vol-activities h4{
        font-size: 15px;
      }
-      /*==============img gallery=============*/
-      #img-data{
-        font-size: 15px;
-        bottom: 20px;
-        left: 20px;
-      }
-      .column img{
-        height: 80px;
-      }
+      
+     
+      
+      
 
       
     }
