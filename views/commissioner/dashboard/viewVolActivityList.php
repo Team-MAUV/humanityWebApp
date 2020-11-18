@@ -105,7 +105,7 @@ include "com-dash-header.php"; ?>
             <?php foreach ($newReq as $req) : ?>
               <tr>
                  
-              <td><?= $contact['id'] ?></td>
+              <td><?= $req['id'] ?></td>
                     <td><?= $req['activity_id'] ?></td>
                     <td><?= $req['name'] ?></td>
                     <td><?= $req['venue'] ?></td>

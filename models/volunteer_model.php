@@ -64,6 +64,30 @@ class volunteer_Model extends Model
             ));
 
             move_uploaded_file($_FILES['file']['tmp_name'], $dest_path);
+            //Generating custom id
+            $custom_id=$this->db->prepare("SELECT id FROM beneficiery_case WHERE case_path=:case_path");
+      $custom_id->execute(array(
+        ':case_path' => $file_path,
+      ));
+      $cid_result = $custom_id->fetchAll();
+      $count2 = $custom_id->rowCount();
+      if ($count2 > 0) {
+        foreach ($cid_result as $cidtmp) :
+          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+            $customid ="BCASE/HB/00".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+            $customid ="BCASE/HB/0".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])>0){
+            $customid ="BCASE/HB/".$cidtmp['id'];
+          };
+        endforeach;
+
+      $cidstmt = $this->db->prepare('UPDATE `beneficiery_case` SET beneficiery_id=:customid WHERE case_path=:case_path');
+      $cidstmt->execute(array(
+        ':case_path' => $file_path,
+        ':customid'=>$customid,
+      ));
+    }
             $msg = "File uploaded successfully!";
           } else {
             $msg = "File upload  Failed!";

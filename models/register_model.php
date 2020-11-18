@@ -127,7 +127,14 @@ public function run_vol_register(){
       $count = $custom_id->rowCount();
       if ($count > 0) {
         foreach ($cid_result as $cidtmp) :
-          $cid ="DON/HB/".$cidtmp['id'];
+          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+            $cid ="DON/HB/00".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+            $cid ="DON/HB/0".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])>0){
+            $cid ="DON/HB/".$cidtmp['id'];
+          };
+          
         endforeach;
 
       $cidstmt = $this->db->prepare('UPDATE `donor` SET don_id=:cid WHERE nic=:nic');
@@ -223,7 +230,13 @@ public function run_vol_register(){
       $count = $custom_id->rowCount();
       if ($count > 0) {
         foreach ($cid_result as $cidtmp) :
-          $cid ="BUY/HB/".$cidtmp['id'];
+          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+            $cid ="BUY/HB/00".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+            $cid ="BUY/HB/0".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])>0){
+            $cid ="BUY/HB/".$cidtmp['id'];
+          };
         endforeach;
 
       $cidstmt = $this->db->prepare('UPDATE `buyer` SET buy_id=:cid WHERE nic=:nic');
