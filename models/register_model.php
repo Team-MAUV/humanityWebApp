@@ -118,6 +118,25 @@ public function run_vol_register(){
         ':id' => $id,
        
       ));
+
+      $custom_id=$this->db->prepare("SELECT id FROM donor WHERE nic=:nic");
+      $custom_id->execute(array(
+        ':nic' => $_POST['nic'],
+      ));
+      $cid_result = $custom_id->fetchAll();
+      $count = $custom_id->rowCount();
+      if ($count > 0) {
+        foreach ($cid_result as $cidtmp) :
+          $cid ="DON/HB/".$cidtmp['id'];
+        endforeach;
+
+      $cidstmt = $this->db->prepare('UPDATE `donor` SET don_id=:cid WHERE nic=:nic');
+      $cidstmt->execute(array(
+        ':nic' => $_POST['nic'],
+        ':cid'=>$cid,
+      ));
+    }
+
      
       $msg = "Form data submitter successfully!";
                     header('location: ../register/donRegForm');
@@ -196,7 +215,23 @@ public function run_vol_register(){
         ':id' => $id,
        
       ));
-     
+      $custom_id=$this->db->prepare("SELECT id FROM buyer WHERE nic=:nic");
+      $custom_id->execute(array(
+        ':nic' => $_POST['nic'],
+      ));
+      $cid_result = $custom_id->fetchAll();
+      $count = $custom_id->rowCount();
+      if ($count > 0) {
+        foreach ($cid_result as $cidtmp) :
+          $cid ="BUY/HB/".$cidtmp['id'];
+        endforeach;
+
+      $cidstmt = $this->db->prepare('UPDATE `buyer` SET buy_id=:cid WHERE nic=:nic');
+      $cidstmt->execute(array(
+        ':nic' => $_POST['nic'],
+        ':cid'=>$cid,
+      ));
+    }
       $msg = "Form data submitter successfully!";
                     header('location: ../register/buyRegForm');
                 }
