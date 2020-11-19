@@ -26,8 +26,9 @@ class volunteer_Model extends Model
 
   public function addbeneficiery()
   {
-    $msg = '';
+   
     if (isset($_FILES['file'], $_POST['vol_id'])) {
+      $msg = "Please Upload a file";
       $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/beneficiery_case/';
       $save_path = 'beneficiery_case/';
 
@@ -74,11 +75,11 @@ class volunteer_Model extends Model
       if ($count2 > 0) {
         foreach ($cid_result as $cidtmp) :
           if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
-            $customid ="BCASE/HB/00".$cidtmp['id'];
+            $customid ="BCASEHB00".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
-            $customid ="BCASE/HB/0".$cidtmp['id'];
+            $customid ="BCASEHB0".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])>0){
-            $customid ="BCASE/HB/".$cidtmp['id'];
+            $customid ="BCASEHB".$cidtmp['id'];
           };
         endforeach;
 
