@@ -87,11 +87,11 @@ public function run_vol_register(){
       $contact = $_POST['contact'];
       $role="donor";
       $gender =$_POST['gender'];
-
+      $pw = password_hash($password, PASSWORD_DEFAULT);
 
 
       $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
-      $stmt2->execute([$username, $password, $role]);
+      $stmt2->execute([$username, $pw, $role]);
 
       $get_volid = $this->db->prepare("SELECT id FROM user WHERE username= :uname  ");
       $get_volid->execute(array(
@@ -128,11 +128,11 @@ public function run_vol_register(){
       if ($count > 0) {
         foreach ($cid_result as $cidtmp) :
           if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
-            $cid ="DON/HB/00".$cidtmp['id'];
+            $cid ="DONHB00".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
-            $cid ="DON/HB/0".$cidtmp['id'];
+            $cid ="DONHB0".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])>0){
-            $cid ="DON/HB/".$cidtmp['id'];
+            $cid ="DONHB".$cidtmp['id'];
           };
           
         endforeach;
@@ -193,9 +193,9 @@ public function run_vol_register(){
       $contact = $_POST['contact'];
       $role="buyer";
       $gender =$_POST['gender'];
-
+      $pw = password_hash($password, PASSWORD_DEFAULT);
       $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
-      $stmt2->execute([$username, $password, $role]);
+      $stmt2->execute([$username, $pw, $role]);
 
       $get_volid = $this->db->prepare("SELECT id FROM user WHERE username= :uname ");
       $get_volid->execute(array(
@@ -231,11 +231,11 @@ public function run_vol_register(){
       if ($count > 0) {
         foreach ($cid_result as $cidtmp) :
           if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
-            $cid ="BUY/HB/00".$cidtmp['id'];
+            $cid ="BUYHB00".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
-            $cid ="BUY/HB/0".$cidtmp['id'];
+            $cid ="BUYHB0".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])>0){
-            $cid ="BUY/HB/".$cidtmp['id'];
+            $cid ="BUYHB".$cidtmp['id'];
           };
         endforeach;
 

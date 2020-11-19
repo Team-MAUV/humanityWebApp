@@ -69,11 +69,11 @@ class commissioner_Model extends Model
           
                   //Generate Vol ID from the parameters passed from URL
                   if(strlen($_GET['id'])==1 && strlen($_GET['id'])>0){
-                    $vol_id ="VOL/HB/00".$_GET['id'];
+                    $vol_id ="VOLHB00".$_GET['id'];
                   }else if(strlen($_GET['id'])==2 && strlen($_GET['id'])>0){
-                    $vol_id ="VOL/HB/0".$_GET['id'];
+                    $vol_id ="VOLHB0".$_GET['id'];
                   }else if(strlen($_GET['id'])>0){
-                    $vol_id ="VOL/HB/".$_GET['id'];
+                    $vol_id ="VOLHB".$_GET['id'];
                   };
 
                   
@@ -304,11 +304,11 @@ return ($pageData);
       if ($count2 > 0) {
         foreach ($cid_result as $cidtmp) :
           if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
-            $customid ="VACT/HB/00".$cidtmp['id'];
+            $customid ="VACTHB00".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
-            $customid ="VACT/HB/0".$cidtmp['id'];
+            $customid ="VACTHB0".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])>0){
-            $customid ="VACT/HB/".$cidtmp['id'];
+            $customid ="VACTHB".$cidtmp['id'];
           };
         endforeach;
 

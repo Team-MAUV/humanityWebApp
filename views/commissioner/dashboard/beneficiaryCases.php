@@ -48,11 +48,11 @@ include "com-dash-header.php"; ?>
     <p>
 
     <?php if(strlen($current['vol_id'])==1 && strlen($current['vol_id'])>0){
-      $ccustomid ="VOL/HB/00".$current['vol_id'];
+      $ccustomid ="VOLHB00".$current['vol_id'];
     }else if(strlen($current['vol_id'])==2 && strlen($current['vol_id'])>0){
-      $ccustomid ="VOL/HB/0".$current['vol_id'];
+      $ccustomid ="VOLHB0".$current['vol_id'];
     }else if(strlen($current['vol_id'])>0){
-      $ccustomid ="VOL/HB/".$current['vol_id'];
+      $ccustomid ="VOLHB".$current['vol_id'];
     };
     ?>
     <div class="subby">Submitted By:</br><?= $ccustomid ?></div>
@@ -75,11 +75,11 @@ include "com-dash-header.php"; ?>
     <p>
 
     <?php if(strlen($finish['vol_id'])==1 && strlen($finish['vol_id'])>0){
-      $customid ="VOL/HB/00".$finish['vol_id'];
+      $customid ="VOLHB00".$finish['vol_id'];
     }else if(strlen($finish['vol_id'])==2 && strlen($finish['vol_id'])>0){
-      $customid ="VOL/HB/0".$finish['vol_id'];
+      $customid ="VOLHB0".$finish['vol_id'];
     }else if(strlen($finish['vol_id'])>0){
-      $customid ="VOL/HB/".$finish['vol_id'];
+      $customid ="VOLHB".$finish['vol_id'];
     };
     ?>
     <div class="subby">Submitted By:</br><?= $customid ?></div>

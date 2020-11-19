@@ -74,11 +74,11 @@ class volunteer_Model extends Model
       if ($count2 > 0) {
         foreach ($cid_result as $cidtmp) :
           if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
-            $customid ="BCASE/HB/00".$cidtmp['id'];
+            $customid ="BCASEHB00".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
-            $customid ="BCASE/HB/0".$cidtmp['id'];
+            $customid ="BCASEHB0".$cidtmp['id'];
           }else if(strlen($cidtmp['id'])>0){
-            $customid ="BCASE/HB/".$cidtmp['id'];
+            $customid ="BCASEHB".$cidtmp['id'];
           };
         endforeach;
 
