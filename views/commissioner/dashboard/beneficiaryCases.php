@@ -17,19 +17,21 @@ include "com-dash-header.php"; ?>
 
     <div class="split left">
   
-  <h1>Beneficary Cases</h1></br>
-  <?php foreach ($contacts as $contact) : ?>
-  <button type="button" class="readmore"><?= $contact['beneficiery_id'] ?></button>
+  <h1>New Beneficary Cases</h1></br>
+  <?php foreach ($upcomings as $upcoming) : ?>
+  <button type="button" class="readmore"><?= $upcoming['beneficiery_id'] ?></button>
   <div class="content">
     <p>
 
 
       <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline <input type="radio" id="decline" name="confirmreq" value="decline"><br>
         <button type="button" class="btn" name="submit">Submit</button> </div>
-      <button class="btn"><a href="<?= $contact['case_path'] ?>" download="<?= $contact['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+      <button class="dbtn"><a href="<?= $upcoming['case_path'] ?>" download="<?= $upcoming['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
 
     </p>
   </div>
+  
+  
   <?php endforeach; ?>
   
 </div>
@@ -39,16 +41,23 @@ include "com-dash-header.php"; ?>
 
     <div class="split left">
   
-  <h1>Beneficary Cases</h1></br>
-  <?php foreach ($contacts as $contact) : ?>
-  <button type="button" class="readmore"><?= $contact['beneficiery_id'] ?></button>
+  <h1>Ongoing Beneficary Cases</h1></br>
+  <?php foreach ($currents as $current) : ?>
+  <button type="button" class="readmore"><?= $current['beneficiery_id'] ?></button>
   <div class="content">
     <p>
 
-
-      <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-      <button class="btn"><a href="<?= $contact['case_path'] ?>" download="<?= $contact['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+    <?php if(strlen($current['vol_id'])==1 && strlen($current['vol_id'])>0){
+      $ccustomid ="VOL/HB/00".$current['vol_id'];
+    }else if(strlen($current['vol_id'])==2 && strlen($current['vol_id'])>0){
+      $ccustomid ="VOL/HB/0".$current['vol_id'];
+    }else if(strlen($current['vol_id'])>0){
+      $ccustomid ="VOL/HB/".$current['vol_id'];
+    };
+    ?>
+    <div class="subby">Submitted By:</br><?= $ccustomid ?></div>
+      
+      <button class="dbtn"><a href="<?= $current['case_path'] ?>" download="<?= $current['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
 
     </p>
   </div>
@@ -59,16 +68,22 @@ include "com-dash-header.php"; ?>
     <div id="finished" class="tabcontent">
     <div class="split left">
   
-  <h1>Beneficary Cases</h1></br>
-  <?php foreach ($contacts as $contact) : ?>
-  <button type="button" class="readmore"><?= $contact['beneficiery_id'] ?></button>
+  <h1>Closed Beneficary Cases</h1></br>
+  <?php foreach ($finishs as $finish) : ?>
+  <button type="button" class="readmore"><?= $finish['beneficiery_id'] ?></button>
   <div class="content">
     <p>
 
-
-      <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-      <button class="btn"><a href="<?= $contact['case_path'] ?>" download="<?= $contact['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+    <?php if(strlen($finish['vol_id'])==1 && strlen($finish['vol_id'])>0){
+      $customid ="VOL/HB/00".$finish['vol_id'];
+    }else if(strlen($finish['vol_id'])==2 && strlen($finish['vol_id'])>0){
+      $customid ="VOL/HB/0".$finish['vol_id'];
+    }else if(strlen($finish['vol_id'])>0){
+      $customid ="VOL/HB/".$finish['vol_id'];
+    };
+    ?>
+    <div class="subby">Submitted By:</br><?= $customid ?></div>
+      <button class="dbtn"><a href="<?= $finish['case_path'] ?>" download="<?= $finish['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
 
     </p>
   </div>
@@ -94,7 +109,7 @@ include "com-dash-header.php"; ?>
 
 
 
-    <script src="<?= URL ?>public/js/benecase.js"></script>
+    <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 
 </div>
 

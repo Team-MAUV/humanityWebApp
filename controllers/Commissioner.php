@@ -87,7 +87,7 @@ class Commissioner extends Controller
 
     function beneficiaryCases()
     {
-        $data = $this->model->get_case();
+        $data = $this->model->get_beneficiary_case();
         $this->view->rendor('commissioner/dashboard/beneficiaryCases', $data, true);
     }
 

@@ -232,17 +232,32 @@ class commissioner_Model extends Model
   }
 
 
-  public function get_case(){
+  public function get_beneficiary_case(){
 
 
-    $st = $this->db->prepare('SELECT * FROM beneficiery_case ORDER BY id ');
+    //Pending cases
+    $st = $this->db->prepare('SELECT * FROM beneficiery_case WHERE status="pending" ORDER BY id ');
     $st->execute();
-    $contacts = $st->fetchAll();
-    $pageData = [
-      'contacts' => $contacts,
- 
-    ];
-    return ($pageData);
+    $upcomings = $st->fetchAll();
+
+//Current cases
+$stmt2 = $this->db->prepare('SELECT * FROM beneficiery_case WHERE status="current" ORDER BY id ');        
+$stmt2->execute();
+$currents = $stmt2->fetchAll();
+
+    //Finished cases
+    $stmt = $this->db->prepare('SELECT * FROM beneficiery_case WHERE status="finished" ORDER BY id ');        
+    $stmt->execute();
+    $finishs = $stmt->fetchAll();
+
+    
+//All the data that has to be return from this functon is added to an associative array
+$pageData = [
+  'currents' => $currents,
+  'upcomings' => $upcomings,
+  'finishs'=> $finishs
+];
+return ($pageData);
 
   
   }
@@ -279,19 +294,37 @@ class commissioner_Model extends Model
           ':p_count'=>$p_count,
           ':id' => $cid
         ));
+      $custom_id=$this->db->prepare("SELECT id FROM vol_activity WHERE (name=:name AND start_date_time=:start)");
+      $custom_id->execute(array(
+        ':name' => $_POST['name'],
+        ':start' => $_POST['started'],
+      ));
+      $cid_result = $custom_id->fetchAll();
+      $count2 = $custom_id->rowCount();
+      if ($count2 > 0) {
+        foreach ($cid_result as $cidtmp) :
+          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+            $customid ="VACT/HB/00".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+            $customid ="VACT/HB/0".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])>0){
+            $customid ="VACT/HB/".$cidtmp['id'];
+          };
+        endforeach;
 
-
-
-
-
-
+      $cidstmt = $this->db->prepare('UPDATE `vol_activity` SET activity_id=:customid WHERE (name=:name AND start_date_time=:start)');
+      $cidstmt->execute(array(
+        ':name' => $_POST['name'],
+        ':start' => $_POST['started'],
+        ':customid'=>$customid,
+      ));
     }
 
 
+
+
+      }
   }
-
-
-
   }
 
 
