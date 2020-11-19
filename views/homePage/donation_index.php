@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>donation Home </title>
     <link rel="stylesheet" href="<?= URL ?>public/css/donation_home_header.css" />
     <link rel="stylesheet" href="<?= URL ?>public/css/homepage_donation.css" />
@@ -11,85 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  overflow: scroll;
-}
-
-/* Header/logo Title */
-.head {
-  padding: 80px;
-  text-align: center;
-  background: #EC460C;
-  color: white;
-}
-
-/* Increase the font size of the heading */
-.head h1 {
-  font-size: 40px;
-}
-
-/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
-.navbar {
-  overflow: hidden;
-  background-color:lightsalmon;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
-
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background: #262626;
-}
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 400px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.responsive {
-  width: 100%;
-  height: auto;
-}
-
-/* Footer */
-#more {display: none;}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
+ 
 </head>
 
 <body>
@@ -117,50 +44,131 @@ body {
         </div>
 
     </header>
-    <div class="head">
-  <h1>Welcome to Tzu-chi Donation module </h1>
-  <p> Your donations will make another person's life a miracle.</p>
-</div>
+    
 
-<div class="navbar">
-<marquee behavior="scroll" direction="left">Joing us today and be a great community service!</marquee>
+<div class="wrapper">
+        
 
-</div>
+        <!-- LANDING PAGE -->
 
-<div class="side">
-  <ul>
-  <li><a href="#"><i class="fab fa-facebook-f"> </i></a></li>
-<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-</ul>
-</div>
+        <div class="landing">
+            <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Welcome to Tzuchi Donation Module <span style="color:#e0501b;font-size: 4vw">Spread Love & hope.</span> </h1>
+                <h3> Your donations will make another person's life a miracle. <br>  Donate today and ignite the fire within!</h3>
+                <div class="btn">
+                    <a href="#">Register</a>
+                </div>
+            </div>
+            <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
+                <img src="<?= URL ?>public/images/bg.png" alt="">
+            </div>
+        </div>
 
-<div class="row">
-  <div class="column" style="background-color:orange">
-    <h2>Who We are? </h2>
-    <p>We are the Buddhist Tzu Chi foundation,
-  an international humanitarian organization whose mission is to releive the suffering of those 
-in need while creating a better world for all through compassion, love and hope.For 30 years, Tzu Chi, USA has provided relief with compassion and 
-love to those needing it most. From victims of hurricanes, wildfires and flooding to those who fall below the poverty line, our volunteers help provide relief 
-that includes shelter, food, cash cards… and it all comes with our love and compassion with hope to build a better world.Tzu Chi’s compassion transcends the 
-boundaries of race, nation, language, color and religion. Combing social ministry with spiritual ministry, Tzu Chi spread the universal value of compassion, 
-and bring the humanistic spirit heritage rooted in Chinese culture to its highest point. The current missions are called “The Four Great Missions”, 
-which include charity, medical care, education and humanities. Moreover, Tzu Chi is also devoted to international disaster relief, bone marrow donation, 
-community volunteering and environmental protection.
- Together they are called the “Eight Dharma Seals”.Support prosperity and love for all.<span id="dots">...</span><span id="more">
-Your generous donation will help Tzu Chi provide emergency relief when disaster strikes, distribute food to ease hunger,
- offer medical care to those who can’t afford it, support students, and more. Being able to help others is a true blessing,
-  and giving can become a way of life once you discover the joy of improving someone’s situation or bringing hope to replace despair.
-   Giving on a regular basis ignites the compassion we all have within us, allowing us to pass on that torch to the people we meet each and every day. 
-   Together, we’re unstoppable in our power to ease suffering and change the world for the better. </span> <button onclick="myFunction()" id="myBtn">Read more</button>
-Donate today and ignite the fire within!</p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-  <img src="<?= URL ?>public/images/donateSri.jpg" alt="img" class="responsive"/>
-  </div>
-</div>
+        <!-- ABOUT SECTION -->
+
+        <div class="about">
+            <div class="aboutText" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Why is it important that <br> <span style="color:#2f8be0;font-size:3vw">You Stay Home?</span> </h1>
+                <img src="<?= URL ?>public/images/doctor-woman-400px.png" alt="">
+            </div>
+            <div class="aboutList" data-aos="fade-left" data-aos-duration="1000">
+                <ol>
+                    <li> 
+                        <span>01</span>
+                         <p>Covid-19, which is now a fast growing global pandemic. The number of confirmed cases worldwide has exceeded 25,65,000 due to rapid spreading of the virus.</p>
+                    </li>
+                    <li> 
+                        <span>02</span>
+                         <p>Covid-19, spreads very easily, much easier than many other regular illnesses we deal with on a regular basis. That's what makes it so dangerous.</p>
+                    </li>
+                    <li> 
+                        <span>03</span>
+                         <p>The best course of action is to stay at home prevent the spread of the disease as well as hospitals getting overwhelmed with patients who simply shoudn't be there.</p>
+                    </li>
+                    <li> 
+                        <span>04</span>
+                         <p>As of today, there is no know cure and no approved vaccine for Covid-19</p>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+
+        <!-- INFO SECTION -->
+
+        <div class="infoSection">
+            <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Things you could do during the <br> <span style="color:#e0501b">Coronavirus Quarantine.</span> </h1>
+            </div>
+            <div class="infoCards">
+                <div class="card one" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="img/movie.png" class="cardoneImg" alt="" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Binge Watch</h2>
+                        <p>Binge-watch all your favorite TV Shows or Movies during this Quarantine!</p>
+                        <a href="#">
+                            <div class="cardBtn">
+                                <img src="<?= URL ?>public/images/next.png" alt="" class="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card two" data-aos="fade-up" data-aos-duration="1300">
+                    <img src="<?= URL ?>public/images/learn.png" class="cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="cardbgtwo"></div>
+                    <div class="cardContent">
+                        <h2>Learn a New Skill</h2>
+                        <p>Try a new recipe, Write a blog or Learn a new language this Quarantine!</p>
+                        <a href="#">
+                            <div class="cardBtn">
+                                <img src="<?= URL ?>public/images/next.png" alt="" class="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card three" data-aos="fade-up" data-aos-duration="1600">
+                    <img src="<?= URL ?>public/images/videocall.png" class="cardthreeImg" alt="" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Video Call</h2>
+                        <p>Have fun video calling your friends or family this Quarantine!</p>
+                        <a href="#">
+                            <div class="cardBtn">
+                                <img src="<?= URL ?>public/images/next.png" alt="" class="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- BANNER AND FOOTER -->
+
+        <div class="banner">
+            <div class="bannerText" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Download the HealthCare App Today. <br> <span style="font-size:1.6vw;font-weight:normal"  class="bannerInnerText">
+                    Stay Updated and get all your medical needs taken care of!
+                </span> </h1>
+                <a href="#"> <img src="<?= URL ?>public/images/AndroidPNG.png" alt=""> </a>
+                <a href="#"> <img src="<?= URL ?>public/images/iosPNG.png" alt=""> </a>
+            </div>
+            <div class="bannerImg" data-aos="fade-up" data-aos-duration="1000">
+                <img src="<?= URL ?>public/images/MobileApp.png" alt="">
+            </div>
+        </div>
+
+        <div class="footer">Powered by<h4>Humanity2020&copy;</div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+            AOS.init();
+    </script>
+
+</body>
+</html>
 
 
 
@@ -168,27 +176,3 @@ Donate today and ignite the fire within!</p>
 
 
 
-
-
-
-
-
-
-
-<script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
-}
-</script>
