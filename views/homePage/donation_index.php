@@ -71,6 +71,11 @@ body {
   display: table;
   clear: both;
 }
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 /* Footer */
 #more {display: none;}
 
@@ -153,8 +158,7 @@ Your generous donation will help Tzu Chi provide emergency relief when disaster 
 Donate today and ignite the fire within!</p>
   </div>
   <div class="column" style="background-color:#bbb;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
+  <img src="<?= URL ?>public/images/donateSri.jpg" alt="img" class="responsive"/>
   </div>
 </div>
 

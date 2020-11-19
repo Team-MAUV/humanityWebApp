@@ -79,7 +79,7 @@
       
       Volunteering with Tzu-Chi Organization provides you the benefits of helping our people who are in Sri Lanka. You will be rewarded with valuable certificates which add colours to your life. Join us today!
       </div>
-      <div class="btn btnv"><a href="<?= URL ?>register">Register</a></div>
+      <div class="btn btnv"><a href="<?= URL ?>homePage\volunteering">Register</a></div>
     </div>
     <div class="pf d">
       <div class="btn btnd"><a href="<?= URL ?>login">Donor Platform</a></div>
@@ -87,7 +87,7 @@
       <div class="content">
       Your donations will make another person's life a miracle. Contribute to this great communtiy service with us. Be a symbol of hope for those who are waiting. Joing us today and be a great community service!
       </div>
-      <div class="btn btnd"><a href="<?= URL ?>homePage">Register</a></div>
+      <div class="btn btnd"><a href="<?= URL ?>homePage\index">Register</a></div>
     </div>
     <div class="pf m">
       <div class="btn btnm"><a href="<?= URL ?>login">TzuChi Market</a></div>
@@ -95,7 +95,7 @@
       <div class="content">
       Tzu-Chi Market sells various recycling products and many other products which are valuable for everyone.Visit the place to buy something valuable for you while helping us. Quickly Grab your product!
       </div>
-      <div class="btn btnm"><a href="<?= URL ?>Buyer">Register</a></div>
+      <div class="btn btnm"><a href="<?= URL ?>homePage\market">Register</a></div>
     </div>
   </div>
 
