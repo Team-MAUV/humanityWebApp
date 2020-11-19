@@ -38,14 +38,7 @@ include "vol_dash_header.php"; ?>
 
 
     </form>
-    <script>
-    swal({
-                title: "Registration Failed",
-                text: <p><?= $msg ?></p>,
-                icon: "error",
-
-            });
-    </script>
+    <p><?= $msg ?></p>
 
 
 

@@ -26,8 +26,9 @@ class volunteer_Model extends Model
 
   public function addbeneficiery()
   {
-    $msg = '';
+   
     if (isset($_FILES['file'], $_POST['vol_id'])) {
+      $msg = "Please Upload a file";
       $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/beneficiery_case/';
       $save_path = 'beneficiery_case/';
 

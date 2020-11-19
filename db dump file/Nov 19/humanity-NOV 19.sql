@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2020 at 03:51 AM
+-- Generation Time: Nov 19, 2020 at 12:06 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -35,7 +35,7 @@ CREATE TABLE `beneficiery_case` (
   `start_date` date DEFAULT NULL,
   `closed_date` date DEFAULT NULL,
   `case_path` varchar(200) DEFAULT NULL,
-  `status` varchar(10) DEFAULT NULL
+  `status` varchar(10) DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -43,10 +43,13 @@ CREATE TABLE `beneficiery_case` (
 --
 
 INSERT INTO `beneficiery_case` (`id`, `beneficiery_id`, `vol_id`, `com_id`, `start_date`, `closed_date`, `case_path`, `status`) VALUES
-(1, 'BCASE/HB/1', 1, NULL, NULL, NULL, 'beneficiery_case/Enola Holmes (2020) [720p] [WEBRip] [YTS.MX].torrent', NULL),
-(2, 'BCASE/HB/2', 1, NULL, NULL, NULL, 'beneficiery_case/Get Out (2017) [720p] [BluRay] [YTS.MX].torrent', NULL),
-(3, 'BCASE/HB/3', 1, NULL, NULL, NULL, 'beneficiery_case/28 Weeks Later (2007) [720p] [BluRay] [YTS.MX].torrent', NULL),
-(4, NULL, 1, NULL, NULL, NULL, 'beneficiery_case/Troy (2004) [720p] [BluRay] [YTS.MX].torrent', NULL);
+(1, 'BCASEHB001', 1, 2, '2019-06-07', '2019-07-07', 'beneficiery_case/Group Project I - Proposal Evaluation Criteria Grid.pdf', 'finished'),
+(2, 'BCASEHB002', 2, 3, '2020-06-07', NULL, 'beneficiery_case/Second Year Group Project Guide 2020.pdf', 'current'),
+(3, 'BCASEHB003', 5, 3, '2019-01-07', '2019-10-07', 'beneficiery_case/Harry-Potter-and-the-Chamber-of-Secrets-2002.SinhalaSubs.Baiscopelk.zip', 'finished'),
+(4, 'BCASEHB004', 3, 2, '2019-06-07', NULL, 'beneficiery_case/harry-potter-and-the-prisoner-of-azkaban-yify-english.srt', 'current'),
+(5, 'BCASEHB005', 1, NULL, NULL, NULL, 'beneficiery_case/harry-potter-and-the-order-of-the-phoenix-yify-english.srt', 'pending'),
+(6, 'BCASEHB006', 4, NULL, NULL, NULL, 'beneficiery_case/harry-potter-and-the-half-blood-prince-yify-english.srt', 'pending'),
+(7, 'BCASEHB007', 2, NULL, NULL, NULL, 'beneficiery_case/harry-potter-and-the-deathly-hallows-part-2-yify-english.srt', 'pending');
 
 -- --------------------------------------------------------
 
@@ -94,8 +97,6 @@ CREATE TABLE `buyer` (
   `address` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `contact` varchar(10) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
   `gender` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -103,8 +104,10 @@ CREATE TABLE `buyer` (
 -- Dumping data for table `buyer`
 --
 
-INSERT INTO `buyer` (`id`, `buy_id`, `userlogin_id`, `name`, `nic`, `address`, `email`, `contact`, `username`, `password`, `gender`) VALUES
-(1, 'BUY/HB/1', 4, 'Mrs. S.N. Nimali', '745813121V', 'Colombo', 'nimali@gmail.com', '0714894561', 'buy1', '202cb962ac59075b964b07152d234b70', 'female ');
+INSERT INTO `buyer` (`id`, `buy_id`, `userlogin_id`, `name`, `nic`, `address`, `email`, `contact`, `gender`) VALUES
+(1, 'BUYHB001', 12, 'S.D. Sarada', '896450470V', 'Malabe', 'vigaravi98@gmail.com', '0112888456', 'female '),
+(2, 'BUYHB002', 19, 'S.M. Chandrasekara', '892450190V', 'Hambantota', 'ahmdodampe@hotmail.com', '0112444786', 'male '),
+(3, 'BUYHB003', 21, 'J.E. Silva', '973498468V', 'Matara', 'anjana.malitha@gmail.com', '0112888451', 'female ');
 
 -- --------------------------------------------------------
 
@@ -121,17 +124,18 @@ CREATE TABLE `commissioner` (
   `address` varchar(200) NOT NULL,
   `email` varchar(50) NOT NULL,
   `contact` varchar(10) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `gender` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `commissioner`
 --
 
-INSERT INTO `commissioner` (`id`, `com_id`, `com_nic`, `userlogin_id`, `name`, `address`, `email`, `contact`, `gender`, `username`, `password`) VALUES
-(1, 'COM/HB/1', '687653576V', 2, 'Mr. P.J. Fernando', 'Hambantota', 'fernando@gmail.com', '0712894561', 'male ', 'com1', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `commissioner` (`id`, `com_id`, `com_nic`, `userlogin_id`, `name`, `address`, `email`, `contact`, `gender`) VALUES
+(1, 'COMHB001', '687653576V', 1, 'P.R. Perera', 'Hambantota', 'manuli1998@gmail.com', '0112333244', 'male '),
+(2, 'COMHB002', '651237865V', 2, 'A.M. Wanigarathna', 'Hambantota', 'thavinu2003@gmail.com', '0712894562', 'female'),
+(3, 'COMHB003', '627653576V', 3, 'N.M. Jayalath', 'Hambantota', 'uthpalakasun1997@gmail.com', '0714894561', 'male '),
+(4, 'COMHB004', '761237865V', 4, 'J.K. Silva', 'Hambantota', 'merce177x@gmail.com', '0712894534', 'female');
 
 -- --------------------------------------------------------
 
@@ -232,9 +236,7 @@ CREATE TABLE `donor` (
   `nic` varchar(20) NOT NULL,
   `contact` varchar(10) NOT NULL,
   `gender` varchar(10) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(40) NOT NULL,
-  `contribution` float DEFAULT NULL,
+  `contribution` float DEFAULT 0,
   `email` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -243,8 +245,10 @@ CREATE TABLE `donor` (
 -- Dumping data for table `donor`
 --
 
-INSERT INTO `donor` (`id`, `don_id`, `userlogin_id`, `name`, `nic`, `contact`, `gender`, `username`, `password`, `contribution`, `email`, `address`) VALUES
-(1, 'DON/HB/1', 3, 'Mr. D.P. Samarasinghe', '667223621V', '0112555123', 'male ', 'don1', '202cb962ac59075b964b07152d234b70', 1300, 'dp123@gmail.com', 'Colombo');
+INSERT INTO `donor` (`id`, `don_id`, `userlogin_id`, `name`, `nic`, `contact`, `gender`, `contribution`, `email`, `address`) VALUES
+(1, 'DONHB001', 11, 'A.P. Nishshanka', '986250470V', '0112555288', 'male ', 1000, 'manuli1998@gmail.com', 'Colombo'),
+(2, 'DONHB002', 18, 'A.K.Perera', '926130470V', '0112555124', 'female ', 0, 'merce177x@gmail.com', 'Malabe'),
+(3, 'DONHB003', 20, 'M.C. Withana', '821250460V', '0112534877', 'female ', 0, 'anjana.malitha@gmail.com', 'Galle');
 
 -- --------------------------------------------------------
 
@@ -339,6 +343,7 @@ CREATE TABLE `marking_attendance` (
   `staff_id` int(11) NOT NULL,
   `activity_id` int(11) NOT NULL,
   `vol_id` int(11) NOT NULL,
+  `activity_point` int(11) DEFAULT 0,
   `date` date NOT NULL,
   `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -396,6 +401,31 @@ CREATE TABLE `project_report` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pwdreset`
+--
+
+CREATE TABLE `pwdreset` (
+  `pwdResetId` int(11) NOT NULL,
+  `pwdResetEmail` text NOT NULL,
+  `pwdResetSelector` text NOT NULL,
+  `pwdResetToken` longtext NOT NULL,
+  `pwdResetExpires` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pwdreset`
+--
+
+INSERT INTO `pwdreset` (`pwdResetId`, `pwdResetEmail`, `pwdResetSelector`, `pwdResetToken`, `pwdResetExpires`) VALUES
+(11, 'ahmdodampe@hotmail.com', '20b8fe06410f51c8', '$2y$10$oYEkT0462lBouMdrRt7ZnOf.SF2jf3tB5u6.oO5SEkSj7U1Cfwt7u', '1605382085'),
+(19, 'akperera@gmail.com', '03bf00eeeac236cc', '$2y$10$VTVQVlQB5ncnI70GTMzCUOFOpB.5ppaI5uY0wJJw/4XlJdg2syIgq', '1605382688'),
+(31, 'dilankaperera27@gmail.com', 'c2e918f9490731f2', '$2y$10$egZ83kp5KZ8zHxW2AOaebOhDUcZsQ1p1lxA1xn1XXc1sw6eD9u26C', '1605386528'),
+(41, 'ahmdodampe96@gmail.com', '5b2340246a35ec70', '$2y$10$aK2HyG.1BIaXz0fuZNboQOxxYOZlGQQZFjxS0KOgzNrIcW3Ah6c6u', '1605454237'),
+(42, 'manuli1998@gmail.com', 'ad931460cab3d981', '$2y$10$8m/IZAsFT65jjQ/7mYiS2.vhFx1OKUQLdvt7qS0y49pxXptux5DHC', '1605534325');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `session_incharge`
 --
 
@@ -425,8 +455,6 @@ CREATE TABLE `staff` (
   `gender` varchar(10) NOT NULL,
   `joined_year` date NOT NULL,
   `contact` varchar(10) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
   `com_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -434,8 +462,13 @@ CREATE TABLE `staff` (
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`id`, `staff_id`, `userlogin_id`, `name`, `nic`, `address`, `dob`, `email`, `gender`, `joined_year`, `contact`, `username`, `password`, `com_id`) VALUES
-(1, 'STF/HB/1', 5, 'Mrs. P.L. Perera', '698712362V', 'Hambantota', '1969-11-17', 'plperera@gmail.com', 'female ', '2019-10-13', '0762555123', 'stf1', '202cb962ac59075b964b07152d234b70', 1);
+INSERT INTO `staff` (`id`, `staff_id`, `userlogin_id`, `name`, `nic`, `address`, `dob`, `email`, `gender`, `joined_year`, `contact`, `com_id`) VALUES
+(1, 'STFHB001', 5, 'A.S. Nimali', '916289470V', 'Hambantota', '1991-02-12', 'manuli1998@gmail.com', 'female ', '2016-10-13', '0112333211', 1),
+(2, 'STFHB002', 6, 'H.J. Amal', '832345786V', 'Hambantota', '1983-11-04', 'thavinu2003@gmail.com', 'male', '2017-11-03', '0712894523', 3),
+(3, 'STFHB003', 7, 'D.R. Amasha', '667223621V', 'Hambantota', '1966-06-22', 'vigaucsc2019@gmail.com', 'female ', '2017-12-15', '0112333456', 2),
+(4, 'STFHB004', 8, 'S.E. Perera', '792345786V', 'Hambantota', '1979-11-03', 'ahmdodampe@hotmail.com', 'male', '2018-10-13', '0712894451', 4),
+(5, 'STFHB005', 9, 'T.P. Fernando', '787223621V', 'Hambanotota', '1978-11-10', 'anjana.malitha@gmail.com', 'male ', '2018-11-03', '0112333221', 2),
+(6, 'STFHB006', 10, 'F.R. Wijenayaka', '892345786V', 'Hambantota', '1989-07-20', 'vigaravi98@gmail.com', 'female', '2019-10-13', '0712894451', 1);
 
 -- --------------------------------------------------------
 
@@ -459,21 +492,36 @@ CREATE TABLE `staff_application` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `role` varchar(50) NOT NULL,
-  `email` varchar(100) DEFAULT NULL
+  `password` varchar(250) NOT NULL,
+  `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `role`, `email`) VALUES
-(1, 'vol1', '202cb962ac59075b964b07152d234b70', 'volunteer', NULL),
-(2, 'com1', '202cb962ac59075b964b07152d234b70', 'commissioner', NULL),
-(3, 'don1', '202cb962ac59075b964b07152d234b70', 'donor', NULL),
-(4, 'buy1', '202cb962ac59075b964b07152d234b70', 'buyer', NULL),
-(5, 'stf1', '202cb962ac59075b964b07152d234b70', 'staff', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
+(1, 'COMHB001', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'commissioner'),
+(2, 'COMHB002', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'commissioner'),
+(3, 'COMHB003', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'commissioner'),
+(4, 'COMHB004', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'commissioner'),
+(5, 'STFHB001', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'staff'),
+(6, 'STFHB002', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'staff'),
+(7, 'STFHB003', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'staff'),
+(8, 'STFHB004', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'staff'),
+(9, 'STFHB005', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'staff'),
+(10, 'STFHB006', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'staff'),
+(11, 'don1', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'donor'),
+(12, 'buy1', '$2y$10$JVc5uuOr62OH.k0YoRcKL.HQVdU3APohwi6KELI6TJ5UKD7Ck69Xy', 'buyer'),
+(13, 'VOLHB001', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'volunteer'),
+(14, 'VOLHB002', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'volunteer'),
+(15, 'VOLHB003', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'volunteer'),
+(16, 'VOLHB004', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'volunteer'),
+(17, 'VOLHB005', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'volunteer'),
+(18, 'don2', '$2y$10$Qit9Er.64jblcD/DbaRMBuA.ThE85bARLiWmg/Q0mtSpdGay.bBpe', 'donor'),
+(19, 'buy2', '$2y$10$x10F5fYkMmX/4U4VNdnGDefxdcJDPbFVEbx7GgeHHIGyc9VuqouZy', 'buyer'),
+(20, 'don3', '$2y$10$w6p6oCHOVomwgXhaDPm2re57GXHAjCuqFEAF9wtCLUAU6KRKhtz3K', 'donor'),
+(21, 'buy3', '$2y$10$xS564.4o5Hw1L4i1KirQW.eQRI.cRQ1v3PUWZhxyvHTJMq12xkw2e', 'buyer');
 
 -- --------------------------------------------------------
 
@@ -494,19 +542,24 @@ CREATE TABLE `volunteer` (
   `contact` varchar(15) NOT NULL,
   `level` text DEFAULT NULL,
   `vol_points` int(11) DEFAULT NULL,
-  `username` varchar(50) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
   `prev_vol_exp` varchar(200) DEFAULT NULL,
   `join_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status` tinyint(1) DEFAULT NULL
+  `status` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `volunteer`
 --
 
-INSERT INTO `volunteer` (`id`, `vol_id`, `userlogin_id`, `name`, `nic`, `address`, `gender`, `dob`, `email`, `contact`, `level`, `vol_points`, `username`, `password`, `prev_vol_exp`, `join_date`, `status`) VALUES
-(1, 'VOL/HB/1', 1, 'Mr. A.K. Perera', '787250470V', 'Hambantota', 'male ', '2020-07-08', 'akperera@gmail.com', '0112333244', 'permanent', 1023, 'vol1', '202cb962ac59075b964b', 'Nothing', '2018-05-09 06:14:41', 1);
+INSERT INTO `volunteer` (`id`, `vol_id`, `userlogin_id`, `name`, `nic`, `address`, `gender`, `dob`, `email`, `contact`, `level`, `vol_points`, `prev_vol_exp`, `join_date`, `status`) VALUES
+(1, 'VOLHB001', 13, 'A.C. Wikramasinghe', '887250470V', 'Hambantota', 'male ', '1988-11-11', 'manuli1998@gmail.com', '0112555288', 'Permanent Volunteer', 100, 'University Volunteering', '2020-11-19 10:07:58', 1),
+(2, 'VOLHB002', 14, 'J.K. Edirisinghe', '892450470V', 'Malabe', 'female ', '1989-07-13', 'ahmdodampe@hotmail.com', '0112555121', 'Permanent Volunteer', 200, 'Nothing', '2020-11-19 10:08:28', 1),
+(3, 'VOLHB003', 15, 'F.A. Silva', '816450470V', 'Hambantota', 'male ', '1981-11-25', 'silva@gmail.com', '0112888456', 'Temporary Volunteer', 0, 'Nothing', '2020-11-19 10:05:57', 1),
+(4, 'VOLHB004', 16, 'A.R. Thisera', '926450490V', 'Hambantota', 'female ', '1992-03-23', 'vigaravi98@gmail.com', '0112555221', 'Temporary Volunteer', 0, 'Nothing', '2020-11-19 10:07:13', 1),
+(5, 'VOLHB005', 17, 'J.W. Perera', '936450490V', 'Hambantota', 'female ', '1993-07-21', 'merce177x@gmail.com', '0112555122', 'Temporary Volunteer', 0, 'Nothing', '2020-11-19 10:10:53', 1),
+(6, NULL, NULL, 'G.H. Hewage', '852150470V', 'Hambantota', 'male ', '1985-09-23', 'kasunuthpalak@gmail.com', '0112555123', NULL, NULL, 'Nothing', '2020-11-19 10:11:11', 0),
+(7, NULL, NULL, 'S.W. Bandara', '946310490V', 'Hambantota', 'female ', '1994-12-02', 'uthpalakasun1997@gmail.com', '0112566459', NULL, NULL, 'Nothing', '2020-11-19 10:12:14', 0),
+(8, NULL, NULL, 'H.R. Ramasha', '936253470V', 'Colombo', 'male ', '1993-09-21', 'anjana.malitha@gmail.com', '0762355287', NULL, NULL, 'Nothing', '2020-11-19 10:21:00', 0);
 
 -- --------------------------------------------------------
 
@@ -516,15 +569,27 @@ INSERT INTO `volunteer` (`id`, `vol_id`, `userlogin_id`, `name`, `nic`, `address
 
 CREATE TABLE `vol_activity` (
   `id` int(11) NOT NULL,
-  `activity_id` varchar(50) NOT NULL,
+  `activity_id` varchar(50) DEFAULT NULL,
   `name` varchar(100) NOT NULL,
   `venue` varchar(200) NOT NULL,
-  `date` date NOT NULL,
+  `start_date_time` datetime NOT NULL,
+  `end_date_time` datetime NOT NULL,
   `participant_count` int(11) DEFAULT NULL,
-  `invitation_path` varchar(100) NOT NULL,
-  `confirm_participant_count` int(11) DEFAULT NULL,
-  `com_id` int(11) DEFAULT NULL
+  `confirm_participant_count` int(11) DEFAULT 0,
+  `com_id` int(11) DEFAULT NULL,
+  `status` varchar(10) NOT NULL DEFAULT 'upcoming'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vol_activity`
+--
+
+INSERT INTO `vol_activity` (`id`, `activity_id`, `name`, `venue`, `start_date_time`, `end_date_time`, `participant_count`, `confirm_participant_count`, `com_id`, `status`) VALUES
+(1, 'VACTHB001', 'Tree planting campaign', 'Kandy', '2020-12-19 11:30:00', '2020-11-19 13:30:00', 200, 195, 1, 'finished'),
+(2, 'VACTHB002', 'Blood Donation Camp', 'Community Hall', '2020-08-10 10:00:00', '2020-08-10 16:00:34', 300, 231, 3, 'finished'),
+(3, 'VACTHB003', 'Beach Cleaning camp', 'Galle', '2019-10-15 14:03:34', '2019-10-15 18:03:34', 400, 320, 2, 'finished'),
+(4, 'VACTHB004', 'Blood Donation Camp', 'Main branch', '2021-01-19 10:30:00', '2021-01-19 16:30:00', 350, 0, 2, 'upcoming'),
+(5, 'VACTHB005', 'Book donation camp', 'Community Hall', '2021-03-10 11:37:00', '2021-03-10 03:37:00', 300, 0, 4, 'upcoming');
 
 --
 -- Indexes for dumped tables
@@ -562,7 +627,6 @@ ALTER TABLE `buyer`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nic` (`nic`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `buy_id` (`buy_id`),
   ADD KEY `userlogin_id` (`userlogin_id`);
 
@@ -571,7 +635,6 @@ ALTER TABLE `buyer`
 --
 ALTER TABLE `commissioner`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `com_id` (`com_id`),
   ADD UNIQUE KEY `com_nic` (`com_nic`),
@@ -611,7 +674,6 @@ ALTER TABLE `donation`
 ALTER TABLE `donor`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nic` (`nic`),
-  ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `don_id` (`don_id`),
   ADD KEY `userlogin_id` (`userlogin_id`);
@@ -644,8 +706,8 @@ ALTER TABLE `images`
 --
 ALTER TABLE `incharge_appoints`
   ADD PRIMARY KEY (`com_id`,`activity_id`,`incharge_id`),
-  ADD KEY `activity_id` (`activity_id`),
-  ADD KEY `incharge_id` (`incharge_id`);
+  ADD KEY `incharge_id` (`incharge_id`),
+  ADD KEY `activity_id` (`activity_id`);
 
 --
 -- Indexes for table `leave_request`
@@ -692,6 +754,12 @@ ALTER TABLE `project_report`
   ADD KEY `staff_id` (`staff_id`);
 
 --
+-- Indexes for table `pwdreset`
+--
+ALTER TABLE `pwdreset`
+  ADD PRIMARY KEY (`pwdResetId`);
+
+--
 -- Indexes for table `session_incharge`
 --
 ALTER TABLE `session_incharge`
@@ -708,7 +776,6 @@ ALTER TABLE `staff`
   ADD UNIQUE KEY `staff_id` (`staff_id`),
   ADD UNIQUE KEY `nic` (`nic`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `username` (`username`),
   ADD KEY `com_id` (`com_id`),
   ADD KEY `userlogin_id` (`userlogin_id`);
 
@@ -724,7 +791,8 @@ ALTER TABLE `staff_application`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `volunteer`
@@ -733,7 +801,6 @@ ALTER TABLE `volunteer`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nic` (`nic`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `vol_id` (`vol_id`),
   ADD KEY `userlogin_id` (`userlogin_id`);
 
@@ -743,8 +810,7 @@ ALTER TABLE `volunteer`
 ALTER TABLE `vol_activity`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `activity_id` (`activity_id`),
-  ADD UNIQUE KEY `invitation_path` (`invitation_path`),
-  ADD UNIQUE KEY `com_nic` (`com_id`);
+  ADD KEY `vol_activity_ibfk_1` (`com_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -754,7 +820,7 @@ ALTER TABLE `vol_activity`
 -- AUTO_INCREMENT for table `beneficiery_case`
 --
 ALTER TABLE `beneficiery_case`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `bid_session`
@@ -766,13 +832,13 @@ ALTER TABLE `bid_session`
 -- AUTO_INCREMENT for table `buyer`
 --
 ALTER TABLE `buyer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `commissioner`
 --
 ALTER TABLE `commissioner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `contacts`
@@ -829,6 +895,12 @@ ALTER TABLE `project_report`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `pwdreset`
+--
+ALTER TABLE `pwdreset`
+  MODIFY `pwdResetId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
 -- AUTO_INCREMENT for table `session_incharge`
 --
 ALTER TABLE `session_incharge`
@@ -838,19 +910,25 @@ ALTER TABLE `session_incharge`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `volunteer`
 --
 ALTER TABLE `volunteer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `vol_activity`
+--
+ALTER TABLE `vol_activity`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -860,8 +938,8 @@ ALTER TABLE `volunteer`
 -- Constraints for table `beneficiery_case`
 --
 ALTER TABLE `beneficiery_case`
-  ADD CONSTRAINT `beneficiery_case_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `beneficiery_case_ibfk_2` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `beneficiery_case_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `beneficiery_case_ibfk_2` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `bid`
@@ -881,13 +959,13 @@ ALTER TABLE `bid_session`
 -- Constraints for table `buyer`
 --
 ALTER TABLE `buyer`
-  ADD CONSTRAINT `buyer_ibfk_1` FOREIGN KEY (`userlogin_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `buyer_ibfk_1` FOREIGN KEY (`userlogin_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `commissioner`
 --
 ALTER TABLE `commissioner`
-  ADD CONSTRAINT `commissioner_ibfk_1` FOREIGN KEY (`userlogin_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `commissioner_ibfk_1` FOREIGN KEY (`userlogin_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `com_access_media`
@@ -918,23 +996,23 @@ ALTER TABLE `donor`
 -- Constraints for table `home_visit`
 --
 ALTER TABLE `home_visit`
-  ADD CONSTRAINT `home_visit_ibfk_1` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `home_visit_ibfk_1` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `home_visit_assign`
 --
 ALTER TABLE `home_visit_assign`
-  ADD CONSTRAINT `home_visit_assign_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `home_visit_assign_ibfk_2` FOREIGN KEY (`beneficiery_id`) REFERENCES `beneficiery_case` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `home_visit_assign_ibfk_3` FOREIGN KEY (`visit_id`) REFERENCES `home_visit` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `home_visit_assign_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `home_visit_assign_ibfk_2` FOREIGN KEY (`beneficiery_id`) REFERENCES `beneficiery_case` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `home_visit_assign_ibfk_3` FOREIGN KEY (`visit_id`) REFERENCES `home_visit` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `incharge_appoints`
 --
 ALTER TABLE `incharge_appoints`
   ADD CONSTRAINT `incharge_appoints_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `incharge_appoints_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `incharge_appoints_ibfk_3` FOREIGN KEY (`incharge_id`) REFERENCES `session_incharge` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `incharge_appoints_ibfk_3` FOREIGN KEY (`incharge_id`) REFERENCES `session_incharge` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `incharge_appoints_ibfk_4` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`);
 
 --
 -- Constraints for table `leave_request`
@@ -949,18 +1027,17 @@ ALTER TABLE `leave_request`
 ALTER TABLE `marking_attendance`
   ADD CONSTRAINT `marking_attendance_ibfk_1` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `marking_attendance_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `marking_attendance_ibfk_3` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `marking_attendance_ibfk_4` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `marking_attendance_ibfk_5` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `marking_attendance_ibfk_6` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `marking_attendance_ibfk_7` FOREIGN KEY (`incharge_id`) REFERENCES `session_incharge` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `marking_attendance_ibfk_7` FOREIGN KEY (`incharge_id`) REFERENCES `session_incharge` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `marking_attendance_ibfk_8` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`);
 
 --
 -- Constraints for table `media`
 --
 ALTER TABLE `media`
   ADD CONSTRAINT `media_ibfk_1` FOREIGN KEY (`incharge_id`) REFERENCES `session_incharge` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `media_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `media_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`);
 
 --
 -- Constraints for table `product`
@@ -1005,7 +1082,7 @@ ALTER TABLE `volunteer`
 -- Constraints for table `vol_activity`
 --
 ALTER TABLE `vol_activity`
-  ADD CONSTRAINT `vol_activity_ibfk_2` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `vol_activity_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
