@@ -7,61 +7,61 @@ class staff_Model extends Model
   {
     parent::__construct();
   }
-/*
-  public function newVolActivity(){
+
+  public function requestleave(){
     if (!empty($_POST)) {
       $name = isset($_POST['name']) ? $_POST['name'] : '';
-      $venue = isset($_POST['venue']) ? $_POST['venue'] : '';
-      $p_count = isset($_POST['p_count']) ? $_POST['p_count'] : '';
-      $started = isset($_POST['started']) ? $_POST['started'] : '';
-      $finished = isset($_POST['finished']) ? $_POST['finished'] : '';
+      $date = isset($_POST['date']) ? $_POST['date'] : '';
+      $day_no = isset($_POST['day_no']) ? $_POST['day_no'] : '';
+      $reason = isset($_POST['reason']) ? $_POST['reason'] : '';
+     
 
-      $get_comid = $this->db->prepare("SELECT id FROM commissioner WHERE com_id= :comid ");
-      $get_comid->execute(array(
-        ':comid' => $_POST['id']
+      $get_staff_id = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :staff_id ");
+      $get_staff_id->execute(array(
+        ':staff_id' => $_POST['id']
       ));
 
-      $result = $get_comid->fetchAll();
-      $count = $get_comid->rowCount();
+      $result = $get_staff_id->fetchAll();
+      $count = $get_staff_id->rowCount();
 
 
       if ($count > 0) {
         foreach ($result as $tmp) :
-          $cid = $tmp['id'];
+          $sid = $tmp['id'];
         endforeach;
       
 
-        $st = $this->db->prepare('INSERT INTO vol_activity(name,venue,start_date_time,end_date_time,participant_count,com_id) VALUES (:name,:venue,:start,:end,:p_count,:id)');
+        $st = $this->db->prepare('INSERT INTO leave_request(name,date,day_no,reason,staff_id) VALUES (:name,:date,:day_no,:reason,:id)');
         $st->execute(array(
           ':name'=>$name,
-          ':venue'=>$venue,
-          ':start'=>$started,
-          ':end'=>$finished,
-          ':p_count'=>$p_count,
-          ':id' => $cid
+          ':date'=>$date,
+          ':day_no'=>$day_no,
+          ':reason'=>$reason,
+         
+          ':id' => $sid
         ));
-      $custom_id=$this->db->prepare("SELECT id FROM vol_activity WHERE (name=:name AND start_date_time=:start)");
+      $custom_id=$this->db->prepare("SELECT leave_id FROM leave_request WHERE (staff_id=:staff_id AND date=:date)");
       $custom_id->execute(array(
-        ':name' => $_POST['name'],
-        ':start' => $_POST['started'],
+        ':staff_id' => $_POST['staff_id'],
+        ':date' => $_POST['date'],
       ));
-      $cid_result = $custom_id->fetchAll();
+      $sid_result = $custom_id->fetchAll();
       $count2 = $custom_id->rowCount();
       if ($count2 > 0) {
-        foreach ($cid_result as $cidtmp) :
-          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
-            $customid ="VACTHB00".$cidtmp['id'];
-          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
-            $customid ="VACTHB0".$cidtmp['id'];
-          }else if(strlen($cidtmp['id'])>0){
-            $customid ="VACTHB".$cidtmp['id'];
+        foreach ($sid_result as $sidtmp) :
+          if(strlen($sidtmp['id'])==1 && strlen($sidtmp['id'])>0){
+            $customid ="LR00".$sidtmp['id'];
+          }else if(strlen($sidtmp['id'])==2 && strlen($sidtmp['id'])>0){
+            $customid ="LR0".$sidtmp['id'];
+          }else if(strlen($sidtmp['id'])>0){
+            $customid ="LR".$sidtmp['id'];
           };
         endforeach;
 
-      $cidstmt = $this->db->prepare('UPDATE `vol_activity` SET activity_id=:customid WHERE (name=:name AND start_date_time=:start)');
-      $cidstmt->execute(array(
-        ':name' => $_POST['name'],
-        ':start' => $_POST['started'],
+      $sidstmt = $this->db->prepare('UPDATE `leave_request` SET leave_id=:customid WHERE (staff_id=:staff_id AND date=:date)');
+      $sidstmt->execute(array(
+        ':staff_id' => $_POST['staff_id'],
+        ':date' => $_POST['date'],
         ':customid'=>$customid,
       ));
     }
@@ -73,7 +73,7 @@ class staff_Model extends Model
   }
   }
 
-*/
+
 
     }
 
