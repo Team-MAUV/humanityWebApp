@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tzu-chi-market</title>
         <link rel="stylesheet" href="<?= URL?>public/css/buy-pages.css" />
-
+        
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
+        <script src="<?= URL ?>public/js/buyer.js"></script>
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
@@ -40,43 +42,52 @@
 
 
         <div class="container">
-
-
-
             <div class="side-panal">
                 
-                <div class="next-bid">
-                    <h4>Next bid session : </br> 2020.11.30</h4>
-                </div>
-                
-                <div class="profile">
-                    <div class="pro-pic">
-                        <img src="<?= URL?>public/images/avatar.png">
+               <div class="view-home" id="viewHome" style="display: block;">
+                    <div class="next-bid">
+                        <h4>Next bid session : </br> 2020.11.30</h4>
                     </div>
-                    <div class="pro-details">
-                        <ul>
-                            <li>A.B.C.Perera</li>
-                            <li>No-12 , Main Rd, Colombo 04</li>
-                            <li>0715428963</li>
-                            <li>abc@mail.com</li>
-                        </ul>
-                    </div>
-                    <div class="pro-update">
-                        <a href="<?= URL?>">Update details</a>
-                    </div>
-                    <div class="cart">
-                        <a href="<?= URL?>">View Recepts</a>
-                    </div>
-                    <div class="log-out">
-                        <a href="<?= URL?>">Log-out</a>
-                    </div>
+                    
+                    <div class="profile">
+                        <div class="pro-pic">
+                            <img src="<?= URL?>public/images/avatar.png">
+                        </div>
+                        <div class="pro-details">
+                            <ul>
+                                <li>A.B.C.Perera</li>
+                                <li>No-12 , Main Rd, Colombo 04</li>
+                                <li>0715428963</li>
+                                <li>abc@mail.com</li>
+                            </ul>
+                        </div>
+                        <div class="pro-update">
+                            <a href="<?= URL?>">Update details</a>
+                        </div>
+                        <div class="cart">
+                            <a onclick="viewRecypts()">View Recepts</a>
+                        </div>
+                        <div class="log-out">
+                            <a href="<?= URL?>">Log-out</a>
+                        </div>
 
-                    <div class="more-details">
-                        <h4>Help & Suport</h4>
-                        <a href="<?= URL?>">read more about us</a>
+                        <div class="more-details">
+                            <h4>Help & Suport</h4>
+                            <a href="<?= URL?>">read more about us</a>
+                        </div>
                     </div>
-                </div>
+                    
 
+               </div>
+               <div class="view-recypt" id="viewRecypt" style="display: none;">
+                   
+                    <span onclick="closeRecypts()" class="close-btn">&times;</span>
+                    <ul>
+                        <li><a href="#"><img class="download-img" src="<?= URL?>public/images/down-arrow.png">2020-10-21-prd201002</a></li>
+                        <li><a href="#"><img class="download-img" src="<?= URL?>public/images/down-arrow.png">2020-10-21-prd201002</a></li>
+                        <li><a href="#"><img class="download-img" src="<?= URL?>public/images/down-arrow.png">2020-10-21-prd201002</a></li>
+                    </ul>
+                </div>
            </div>
 
 
