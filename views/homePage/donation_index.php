@@ -12,10 +12,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<style>
+  .column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
 
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #FFA500;
+}
+</style>
  
 </head>
 
@@ -67,96 +101,196 @@
         <!-- ABOUT SECTION -->
 
         <div class="about">
-            <div class="aboutText" data-aos="fade-up" data-aos-duration="1000">
-                <h1>Why is it important that <br> <span style="color:#2f8be0;font-size:3vw">You Stay Home?</span> </h1>
-                <img src="<?= URL ?>public/images/doctor-woman-400px.png" alt="">
-            </div>
-            <div class="aboutList" data-aos="fade-left" data-aos-duration="1000">
-                <ol>
-                    <li> 
-                        <span>01</span>
-                         <p>Covid-19, which is now a fast growing global pandemic. The number of confirmed cases worldwide has exceeded 25,65,000 due to rapid spreading of the virus.</p>
-                    </li>
-                    <li> 
-                        <span>02</span>
-                         <p>Covid-19, spreads very easily, much easier than many other regular illnesses we deal with on a regular basis. That's what makes it so dangerous.</p>
-                    </li>
-                    <li> 
-                        <span>03</span>
-                         <p>The best course of action is to stay at home prevent the spread of the disease as well as hospitals getting overwhelmed with patients who simply shoudn't be there.</p>
-                    </li>
-                    <li> 
-                        <span>04</span>
-                         <p>As of today, there is no know cure and no approved vaccine for Covid-19</p>
-                    </li>
+        <div class="img-slider">
+      <div class="slide active">
+        <img src="<?= URL ?>public/images/don1.jpg" alt="">
+        <div class="info">
+          <h2>Slide 01</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="<?= URL ?>public/images/d.jpg" alt="">
+        <div class="info">
+          <h2>Slide 02</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="<?= URL ?>public/images/don3.jpg" alt="">
+        <div class="info">
+          <h2>Slide 03</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="4.jpg" alt="">
+        <div class="info">
+          <h2>Slide 04</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="5.jpg" alt="">
+        <div class="info">
+          <h2>Slide 05</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
 
-                </ol>
-            </div>
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
+
         </div>
 
         <!-- INFO SECTION -->
 
         <div class="infoSection">
-            <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
-                <h1>Things you could do during the <br> <span style="color:#e0501b">Coronavirus Quarantine.</span> </h1>
-            </div>
-            <div class="infoCards">
-                <div class="card one" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="img/movie.png" class="cardoneImg" alt="" data-aos="fade-up" data-aos-duration="1100">
-                    <div class="cardbgone"></div>
-                    <div class="cardContent">
-                        <h2>Binge Watch</h2>
-                        <p>Binge-watch all your favorite TV Shows or Movies during this Quarantine!</p>
-                        <a href="#">
-                            <div class="cardBtn">
-                                <img src="<?= URL ?>public/images/next.png" alt="" class="cardIcon">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card two" data-aos="fade-up" data-aos-duration="1300">
-                    <img src="<?= URL ?>public/images/learn.png" class="cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200">
-                    <div class="cardbgtwo"></div>
-                    <div class="cardContent">
-                        <h2>Learn a New Skill</h2>
-                        <p>Try a new recipe, Write a blog or Learn a new language this Quarantine!</p>
-                        <a href="#">
-                            <div class="cardBtn">
-                                <img src="<?= URL ?>public/images/next.png" alt="" class="cardIcon">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card three" data-aos="fade-up" data-aos-duration="1600">
-                    <img src="<?= URL ?>public/images/videocall.png" class="cardthreeImg" alt="" data-aos="fade-up" data-aos-duration="1300">
-                    <div class="cardbgone"></div>
-                    <div class="cardContent">
-                        <h2>Video Call</h2>
-                        <p>Have fun video calling your friends or family this Quarantine!</p>
-                        <a href="#">
-                            <div class="cardBtn">
-                                <img src="<?= URL ?>public/images/next.png" alt="" class="cardIcon">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Blood Donation</h3>
+      <p style="color: #B22222;">Give Blood </p>
+      <p style="color: #B22222;">Save life </p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>Non Profit donation </h3>
+      <p style="color:#000080;" >Use PAYPAL</p>
+      <p>Donate atleast RS1.00</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Donate Recycle Products</h3>
+      <p style="color:#2E8B57;">Be a part of the solution! </p>
+      <p style="color:#2E8B57;">Not a part of the pollution!</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Donate basic needs</h3>
+      <p>Share your extras! </p>
+      <p>Spread equality!</p>
+    </div>
+  </div>
+</div>
+<br> <br> <br> 
+<h3 style="color:#D2691E;">
+We are the Buddhist Tzu Chi foundation,
+  an international humanitarian organization whose mission is to releive the suffering of those 
+in need while creating a better world for all through compassion, love and hope.For 30 years, Tzu Chi, SriLanka 
+has provided relief with compassion and love to those needing it most. 
+From victims of hurricanes, wildfires and flooding to those who fall below the poverty line, our volunteers help provide relief 
+that includes shelter, food, cash cards… and it all comes with our love and compassion with hope to build a better world.
+Tzu Chi’s compassion transcends the boundaries of race, nation, language, color and religion. Combing social ministry with spiritual ministry,
+u Chi spread the universal value of compassion, and bring the humanistic spirit heritage rooted in Chinese culture to its highest point. 
+The current missions are called “The Four Great Missions”, which include charity, medical care, education and humanities. 
+Moreover, Tzu Chi is also devoted to international disaster relief, bone marrow donation, community volunteering and environmental protection.
+Together they are called the “Eight Dharma Seals”.</span>
+</h2></div>
+<div class="main">
+ <center><h1>Recent Donation projects</h1></center> 
+  <ul class="cards">
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="<?= URL ?>public/images/blood.jpg" alt="img></div>
+        <div class="card_content">
+          <h2 class="card_title">Blood Donation</h2>
+          <p class="card_text">Visit Organiation and Donate on 20.12.2020 </p>
+        
         </div>
+      </div>
+    </li>
+
+   
+   
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="<?= URL ?>public/images/covid.jfif" alt="img""></div>
+        <div class="card_content">
+          <h2 class="card_title">Corana Quarantine Donation</h2>
+          <p class="card_text">Donate through Paypal! </p>
+        
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+     
 
 
         <!-- BANNER AND FOOTER -->
 
         <div class="banner">
-            <div class="bannerText" data-aos="fade-right" data-aos-duration="1000">
-                <h1>Download the HealthCare App Today. <br> <span style="font-size:1.6vw;font-weight:normal"  class="bannerInnerText">
-                    Stay Updated and get all your medical needs taken care of!
-                </span> </h1>
-                <a href="#"> <img src="<?= URL ?>public/images/AndroidPNG.png" alt=""> </a>
-                <a href="#"> <img src="<?= URL ?>public/images/iosPNG.png" alt=""> </a>
-            </div>
-            <div class="bannerImg" data-aos="fade-up" data-aos-duration="1000">
-                <img src="<?= URL ?>public/images/MobileApp.png" alt="">
-            </div>
+       
         </div>
 
         <div class="footer">Powered by<h4>Humanity2020&copy;</div>
