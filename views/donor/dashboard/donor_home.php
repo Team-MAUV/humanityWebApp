@@ -8,7 +8,7 @@ include "don_dash_header.php"; ?>
                 <div class="donate-here">
                     <img class="background-img" src="<?= URL ?>public/images/donation1.jpg">
                     <div class="add-donation">
-                       <div class="view1" id="donateView" style="display:none;">
+                       <div class="view1" id="donateView" style="display:block;">
                             <h4>Select an amount</h4>
                             <ul class="select-value">
                                 <li><button type="button" class="don-value">Rs:50.00</button> </li>
@@ -43,9 +43,14 @@ include "don_dash_header.php"; ?>
                             </div>
                             <div class="donate">
                                 <button class="donate-btn">Donate</button>
+                                
                             </div>
+                            <div class="prv-d">
+                                <button class="prv-don-btn" onclick="viewPriviousDonations()">Previous Donations</button>
+                            </div>
+                            
                        </div>
-                       <div class="view2" id="viewDonations" style="bisplay:block;">
+                       <div class="view2" id="viewDonations" style="display: none;">
                         <span onclick="closeMyDonations()" class="close-btn">&times;</span>
                            your donations
                        </div>

@@ -13,3 +13,10 @@ function closeMyDonations(){
     y.style.display = "none";
     x.style.display = "block";
 }
+function viewPriviousDonations(){
+    var x = document.getElementById("donateView");
+    var y = document.getElementById("viewDonations");
+    x.style.display = "none";
+    y.style.display = "block";
+   
+}

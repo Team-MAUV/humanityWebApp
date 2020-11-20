@@ -122,6 +122,14 @@ input[type=reset]:hover {
     </div>
     <div class="row">
       <div class="col-25">
+        <label for="volume">Starting Bid:</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="startingbid" name="startingbid">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
         <label for="Bidding Date">Bidding Date:</label>
       </div>
       <div class="col-75">
