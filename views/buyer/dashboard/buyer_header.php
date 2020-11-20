@@ -89,39 +89,3 @@
                     </ul>
                 </div>
            </div>
-
-
-            
-            <div class="sm-container">
-                <div class="prd">
-                    <h4>Plastic</h4>
-                    <a href="<?= URL?>buyer/view_product"><img src="<?= URL?>public/images/p-plastic.jpg"></a>
-                </div>
-                <div class="prd">
-                    <h4>Paper</h4>
-                    <a href="<?= URL?>"><img src="<?= URL?>public/images/p-paper.jpg"></a>
-                </div>
-                
-                <div class="prd">
-                    <h4>Glass</h4>
-                    <a href="<?= URL?>"><img src="<?= URL?>public/images/p-glass.jpg"></a>
-                </div>
-                <div class="prd">
-                    <h4>Electronic</h4>
-                    <a href="<?= URL?>"><img src="<?= URL?>public/images/ewaste.jpeg"></a>
-                </div>
-            </div>
-            <div class="ft"></div>
-
-        </div>
-
-
-
-
-        <footer>
-            <div class="footer">Powered by<h5>Humanity2020&copy;</div>
-        </footer>    
-    </body>
-
-    
-</html>

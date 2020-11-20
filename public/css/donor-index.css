@@ -155,7 +155,13 @@ a{
   text-decoration: none;
 }
 
-
+.close-btn{
+  margin-left: 800px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 2;
+}
 /*------------------------donation - container-----------------*/
 
 

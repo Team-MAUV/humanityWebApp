@@ -67,7 +67,7 @@ class login_Model extends Model
 
             if ($role == 'buyer') {
                 Session::set('loggedIn-buy', true);
-                header('location: ../Buyer/profile');
+                header('location: ../Buyer');
             }
 
             if ($role == 'staff') {

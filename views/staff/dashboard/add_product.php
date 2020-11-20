@@ -95,7 +95,7 @@ input[type=reset]:hover {
 
 
 <div class="container">
-  <form action="#"  onsubmit="return confirm('Do you really want to submit the form?')";>
+  <form action="addNewProduct" method="post" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to submit the form?')";>
     <div class="row">
       <div class="col-25">
         <label for="name">Product Name:</label>
@@ -125,7 +125,7 @@ input[type=reset]:hover {
         <label for="Bidding Date">Bidding Date:</label>
       </div>
       <div class="col-75">
-        <input type="datetime-local" id="Bidding Date" name="Bidding Date">
+        <input type="datetime-local" id="Bidding Date" name="Bidding_Date">
 
       </div>
     </div>
