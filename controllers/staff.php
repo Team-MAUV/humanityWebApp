@@ -29,7 +29,7 @@ class Staff extends Controller
     function add_product()
     {
         $this->view->rendor('staff/dashboard/add_product');
-        $this->model->adddNewProduct();
+        $this->model->add_product();
     }
     function access_product()
     {
