@@ -1,477 +1,473 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    scrollbar-width: thin;
-    scrollbar-color: #ffffff #000000;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #000000;
 }
 
 *::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-track {
-    background: #ffffff;
+  background: #ffffff;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border-radius: 10px;
-    border: 1px solid #000000;
+  background-color: #000000;
+  border-radius: 10px;
+  border: 1px solid #000000;
 }
-
 
 /*------------------------------*/
 
 body {
-    display: grid;
-    flex-direction: row;
+  display: grid;
+  flex-direction: row;
 }
 
 .nav-bar {
-    position: fixed;
-    grid-area: nav-bar;
-    display: flex;
-    justify-content: space-between;
-    top: 0;
-    width: 100%;
-    background-color: #004883;
-    height: 3rem;
-    z-index: 10;
+  position: fixed;
+  grid-area: nav-bar;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  background-color: #228b22;
+  height: 3rem;
+  z-index: 10;
 }
 
 .logo-container {
-    display: flex;
-    height: 3rem;
+  display: flex;
+  height: 3rem;
 }
 
 .logo {
-    height: 3rem;
-    width: 6rem;
-    z-index: 10;
-    margin-left: 2rem;
-    background-image: url("../images/hlogoxs.png");
+  height: 3rem;
+  width: 6rem;
+  z-index: 10;
+  margin-left: 2rem;
+  background-image: url("../images/hlogoxs.png");
 }
 
 .title-name {
-    display: flex;
-    justify-content: center;
-    width: auto;
-    height: 3rem;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 3rem;
 }
 
 .tzu-logo {
-    position: relative;
-    right: 2rem;
-    width: 5rem;
-    background: url("../images/tzuChiLogo.png");
-    z-index: 11;
+  position: relative;
+  right: 2rem;
+  width: 5rem;
+  background: url("../images/tzuChiLogo.png");
+  z-index: 11;
 }
 
 .logo-name {
-    display: flex;
-    color: #fff;
-    font-size: 1.2vw;
-    font-weight: 600;
-    letter-spacing: 0.4rem;
-    text-transform: uppercase;
-    line-height: 3rem;
-    text-align: center;
-    z-index: 10;
+  display: flex;
+  color: #fff;
+  font-size: 1.2vw;
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  line-height: 3rem;
+  text-align: center;
+  z-index: 10;
 }
 
 .logo-name span {
-    font-weight: 200;
+  font-weight: 200;
 }
 
 .log-sign {
-    width: auto;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    position: relative;
+  width: auto;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .log-sign a {
-    display: block;
-    position: relative;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-size: 1.7rem;
-    margin-left: 1rem;
-    transition: 0.3s;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.7rem;
+  margin-left: 1rem;
+  transition: 0.3s;
 }
 
 .dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  grid-area: dropdown;
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0.5rem;
+  top: 3rem;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(7, 112, 199);
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #228b22;
+  color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+a {
+  text-align: center;
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1rem;
+  font-weight: 1000;
+  color: #000000;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+.carousel {
+  position: relative;
+  top: 3rem;
+  width: 100%;
+  height: 26rem;
+  background-color: #6abeb0;
+}
+
+img {
+  height: 26rem;
+  position: relative;
+  top: 0%;
+  vertical-align: middle;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(5, 5, 5);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: relative;
+  height: 8rem;
+  width: 100%;
+  position: relative;
+  background-color: rgba(20, 19, 19, 0.404);
+}
+
+.platform-container {
+  position: relative;
+  background: url(../images/containerbg.png);
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 50rem;
+}
+
+.pf {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #004d40;
+  width: 30%;
+  height: 75%;
+  top: 1rem;
+  z-index: 1;
+}
+
+.d {
+  background: rgba(255, 236, 206, 0.8);
+  border: 5px solid #ed7d31;
+}
+
+.v {
+  background: rgba(160, 236, 135, 0.8);
+  border: 5px solid #56a106;
+}
+
+.m {
+  background: rgba(143, 207, 255, 0.8);
+  border: 5px solid #0070c0;
+}
+
+.btn {
+  position: relative;
+  width: 50%;
+  height: 4rem;
+  top: 3%;
+  border-radius: 1rem;
+  z-index: 2;
+  font-size: 16px;
+  align-items: center;
+  text-align: center;
+  padding-top: 0%;
+}
+
+.btnv {
+  border: 5px solid #56a106;
+}
+
+.btnv:hover {
+  background: rgba(6, 48, 16, 0.8);
+}
+
+.btnd {
+  border: 5px solid #ed7d31;
+}
+
+.btnd:hover {
+  background: rgba(110, 41, 8, 0.8);
+}
+
+.btnm {
+  border: 5px solid #0070c0;
+}
+
+.btnm:hover {
+  background: rgba(6, 16, 48, 0.8);
+}
+
+.colimg1 {
+  position: absolute;
+  width: 217px;
+  height: 217px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 6rem;
+  background: url(../images/vol.png);
+}
+
+.colimg2 {
+  position: absolute;
+  width: 217px;
+  height: 217px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 6rem;
+  background: url(../images/don.png);
+}
+
+.colimg3 {
+  position: absolute;
+  width: 217px;
+  height: 217px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 6rem;
+  background: url(../images/tzu.png);
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  width: 80%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 17rem;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #228b22;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-areas: "nav-bar " "grid-container" "footer";
+  }
+  .nav-bar {
+    position: fixed;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 100px 60% 15%;
+    grid-template-areas: "logo-container title-name dropdown";
+    background-color: #228b22;
+    height: 3rem;
+    z-index: 10;
+  }
+  .logo-container {
+    display: none;
+  }
+  .title-name {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+  }
+  .tzu-logo {
+    width: 60px;
+    height: 37px;
+    background: url(../images/tzuChiLogo-s.png);
+  }
+  .logo {
+    display: none;
+  }
+  .logo-name {
+    display: flex;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+    text-align: center;
+  }
+  .logo-name span {
+    font-weight: 200;
+  }
+  .dropdown {
     display: flex;
     justify-content: center;
     align-items: right;
     grid-area: dropdown;
     float: right;
     overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 17px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0.5rem;
-    top: 3rem;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 10;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: rgb(7, 112, 199);
-    color: white;
-}
-
-.dropdown-content a:hover {
-    background-color: #004883;
-    color: rgb(255, 255, 255);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-a {
-    text-align: center;
-    display: block;
-    font-family: inherit;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 1rem;
-    font-weight: 1000;
-    color: #000000;
-}
-
-a:hover {
-    color: #ffffff;
-}
-
-.carousel {
+  }
+  .dropdown .dropbtn {
+    font-size: 12px;
+  }
+  .platform-container {
     position: relative;
-    top: 3rem;
-    width: 100%;
-    height: 26rem;
-    background-color: #6abeb0;
-}
-
-img {
-    height: 26rem;
-    position: relative;
-    top: 0%;
-    vertical-align: middle;
-}
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: rgb(5, 5, 5);
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
-.overlay {
-    position: relative;
-    height: 8rem;
-    width: 100%;
-    position: relative;
-    background-color: rgba(20, 19, 19, 0.404);
-}
-
-.platform-container {
-    position: relative;
-    background: url(../images/containerbg.png);
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    height: 50rem;
-}
-
-.pf {
+    width: auto;
+    height: auto;
+  }
+  .pf {
     position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: #004d40;
-    width: 30%;
-    height: 75%;
+    width: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 3rem;
+    height: auto;
     top: 1rem;
     z-index: 1;
-}
-
-.d {
-    background: rgba(255, 236, 206, 0.8);
-    border: 5px solid #ed7d31;
-}
-
-.v {
-    background: rgba(160, 236, 135, 0.8);
-    border: 5px solid #56a106;
-}
-
-.m {
-    background: rgba(143, 207, 255, 0.8);
-    border: 5px solid #0070c0;
-}
-
-.btn {
+  }
+  .btn {
     position: relative;
     width: 50%;
     height: 4rem;
-    top: 3%;
-    border-radius: 1rem;
+    margin-bottom: 2rem;
+    top: 1rem;
     z-index: 2;
-    font-size: 16px;
-    align-items: center;
-    text-align: center;
-    padding-top: 0%;
-}
-
-.btnv {
-    border: 5px solid #56a106;
-    ;
-}
-
-.btnv:hover {
-    background: rgba(6, 48, 16, 0.8);
-}
-
-.btnd {
-    border: 5px solid #ed7d31;
-    ;
-}
-
-.btnd:hover {
-    background: rgba(110, 41, 8, 0.8);
-}
-
-.btnm {
-    border: 5px solid #0070c0;
-    ;
-}
-
-.btnm:hover {
-    background: rgba(6, 16, 48, 0.8);
-}
-
-.colimg1 {
-    position: absolute;
-    width: 217px;
-    height: 217px;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 6rem;
-    background: url(../images/vol.png);
-}
-
-.colimg2 {
-    position: absolute;
-    width: 217px;
-    height: 217px;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 6rem;
-    background: url(../images/don.png);
-}
-
-.colimg3 {
-    position: absolute;
-    width: 217px;
-    height: 217px;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 6rem;
-    background: url(../images/tzu.png);
-}
-
-.content {
-    position: relative;
-    text-align: center;
-    width: 80%;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 17rem;
-}
-
-.footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3rem;
-    background-color: #004883;
-    color: white;
-    text-align: center;
-    z-index: 1;
-}
-
-@media screen and (max-width: 900px) {
-    .main-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 20fr 1fr;
-        grid-template-areas: "nav-bar " "grid-container" "footer";
-    }
-    .nav-bar {
-        position: fixed;
-        display: grid;
-        left: 0;
-        top: 0;
-        width: 100%;
-        grid-template-columns: 100px 60% 15%;
-        grid-template-areas: "logo-container title-name dropdown";
-        background-color: #004883;
-        height: 3rem;
-        z-index: 10;
-    }
-    .logo-container {
-        display: none;
-    }
-    .title-name {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 3rem;
-    }
-    .tzu-logo {
-        width: 60px;
-        height: 37px;
-        background: url(../images/tzuChiLogo-s.png);
-    }
-    .logo {
-        display: none;
-    }
-    .logo-name {
-        display: flex;
-        color: #fff;
-        font-size: 0.6rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        line-height: 3rem;
-        text-align: center;
-    }
-    .logo-name span {
-        font-weight: 200;
-    }
-    .dropdown {
-        display: flex;
-        justify-content: center;
-        align-items: right;
-        grid-area: dropdown;
-        float: right;
-        overflow: hidden;
-        z-index: 10;
-    }
-    .dropdown .dropbtn {
-        font-size: 12px;
-    }
-    .platform-container {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background-size: cover;
-        flex-wrap: wrap;
-        width: auto;
-        height: auto;
-    }
-    .pf {
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-        width: auto;
-        margin-left: 2rem;
-        margin-right: 2rem;
-        margin-bottom: 3rem;
-        height: auto;
-        top: 1rem;
-        z-index: 1;
-    }
-    .btn {
-        position: relative;
-        width: 50%;
-        height: 4rem;
-        margin-bottom: 2rem;
-        top: 1rem;
-        z-index: 2;
-    }
+  }
 }
