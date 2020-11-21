@@ -10,6 +10,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .bgimage {
@@ -28,7 +29,7 @@ body {
   justify-content: space-between;
   top: 0;
   width: 100vw;
-  background-color: red;
+  background-color:red;
   height: 7vh;
   z-index: 10;
 }
@@ -149,10 +150,10 @@ body {
     grid-column: 2;
     grid-row: 2 / span 3;
     padding: 10px;
-   
+    color: white;
     text-align: center;
-    padding-top: 10vh;
-    background-color: cadetblue;
+    padding-top: 5vh;
+    background-color: darkred;
 }
 
 .hd{
@@ -170,6 +171,7 @@ a img{
 }
 a img:hover{
     opacity: 0.5;
+
 }
 .prd h4{
   padding: 10px;
@@ -234,6 +236,8 @@ a{
   margin-bottom: 20px;
   font-size: 20px;
   background-color: hotpink;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
   border-radius: 5px;
 }
 .more-details{
@@ -286,6 +290,40 @@ a{
 .log-out a:hover{
   background-color: darkcyan;
 }
+/*---------------------view-recypts----------------------*/
+.close-btn{
+  margin-left: 200px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 2;
+}
+.download-img{
+  color: white;
+  border-style: none;
+  max-width: 25px;
+  max-height: 25px;
+  padding: 2px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.view-recypt ul li{
+  padding: 10px;
+  background-color: #2196F3;
+  margin: 10px;
+  transition: 0.5ms;
+  cursor: pointer;
+}
+.view-recypt ul li:hover{
+  background-color: #004883;
+}
+.view-recypt ul li a{
+  color: black;
+}
+.view-recypt ul li a:hover{
+  color: white;
+}
+
 /*--------------product--------------*/
 
 .product-container{
