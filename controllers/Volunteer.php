@@ -8,6 +8,8 @@ class Volunteer extends Controller
         parent::__construct();
         Session::init();
         $logged = Session::get('loggedIn-vol');
+        Session::get('level');
+        Session::get('vol_points');
         if ($logged == false) {
             Session::destroy();
             header('location: ../login');

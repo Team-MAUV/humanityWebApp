@@ -73,8 +73,8 @@ include "staff_header.php"; ?>
        <div class="centered">
          
           <img src="<?= URL ?>public/images/img_avatar.png" alt="staff"/>
-          <h2>MR.H.Perera</h2>
-          <p> St56</p>
+          <h2><?= $_SESSION['name'] ?></h2>
+          <p> <?= $_SESSION['id'] ?></p>
         </div> 
       </div>
       
