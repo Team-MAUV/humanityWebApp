@@ -15,7 +15,8 @@ include "staff_header.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Report Upload </title>
     
     <link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_report.css" />
@@ -25,7 +26,9 @@ include "staff_header.php"; ?>
 	* {
   box-sizing: border-box;
 }
-
+body{
+	overflow: hidden;
+}
 
  .column {
   float: left;
@@ -39,18 +42,18 @@ include "staff_header.php"; ?>
   content: "";
   display: table;
   clear: both;
+
 }
 </style>
 </head>
 <body>
     <div class="row">
-        <h3 style="color: brown;">Select the Date for uploading report:</h3>
-        <input type="date" id="myDate" value="2020-10-09"> <br> <br><br> <br>
-        <div class="column"> <img src="<?= URL ?>public/images/report.png" alt="img" width="200px" height="150px"/>	
-		<h3 style="color: brown;"> To view Uploaded Reports: </h3> 
-		<a href="<?URL ?> upload_reports.php" target="_blank" >
-            Uploaded Reports </a>
-        
+<br> 
+        <h3 style="color: brown;">Select the Date:</h3>
+        <input type="date" id="myDate" value="2020-10-09"> 
+      
+		
+	
         
         </div>
         

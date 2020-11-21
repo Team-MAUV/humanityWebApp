@@ -7,7 +7,7 @@ class Volunteer extends Controller
     {
         parent::__construct();
         Session::init();
-        $logged = Session::get('loggedIn');
+        $logged = Session::get('loggedIn-vol');
         if ($logged == false) {
             Session::destroy();
             header('location: ../login');
@@ -22,6 +22,10 @@ class Volunteer extends Controller
     function voladdbene()
     {
         $this->view->rendor('volunteer/dashboard/addNewBeneficiary');
+    }
+    function addbeneficiery(){
+        $msg_data=$this->model->addbeneficiery();
+        $this->view->rendor('volunteer/dashboard/addNewBeneficiary', $msg_data, true);
     }
     function volviewevent()
     {

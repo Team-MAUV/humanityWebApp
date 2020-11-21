@@ -7,7 +7,7 @@ class Commissioner extends Controller
     {
         parent::__construct();
         Session::init();
-        $logged = Session::get('loggedIn');
+        $logged = Session::get('loggedIn-com');
         if ($logged == false) {
             Session::destroy();
             header('location: ../login');
@@ -33,6 +33,10 @@ class Commissioner extends Controller
         $this->view->rendor('commissioner/dashboard/volunteer', $data, true);
     }
 
+    function run_accept_vol_request(){
+        $this->model->run_accept_vol_request();
+    }
+
     function staff()
     {
         $this->view->rendor('commissioner/dashboard/staff');
@@ -52,11 +56,18 @@ class Commissioner extends Controller
     function newVolActivity()
     {
         $this->view->rendor('commissioner/dashboard/newVolActivity');
+        $this->model->newVolActivity();
     }
 
     function viewVolActivity()
     {
-        $this->view->rendor('commissioner/dashboard/viewVolActivity');
+        $data = $this->model->get_vol_activity_list();
+        $this->view->rendor('commissioner/dashboard/viewVolActivitylist', $data, true);
+    }
+    function search_volunteer_activity()
+    {
+        $data = $this->model->run_search_volunteer_activity();
+        $this->view->rendor('commissioner/dashboard/viewVolActivitylist', $data, true);
     }
 
     function projectReports()
@@ -76,7 +87,8 @@ class Commissioner extends Controller
 
     function beneficiaryCases()
     {
-        $this->view->rendor('commissioner/dashboard/beneficiaryCases');
+        $data = $this->model->get_beneficiary_case();
+        $this->view->rendor('commissioner/dashboard/beneficiaryCases', $data, true);
     }
 
     function media()

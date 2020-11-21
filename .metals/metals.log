@@ -1,0 +1,20 @@
+2020.11.12 13:49:16 INFO  Started: Metals version 0.9.5 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.11.12 13:49:19 INFO  time: initialize in 2.99s
+2020.11.12 13:49:20 WARN  Build server is not auto-connectable.
+2020.11.12 13:49:20 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.12 15:35:30 INFO  shutting down Metals
+2020.11.13 22:36:46 INFO  Started: Metals version 0.9.5 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.11.13 22:36:49 INFO  time: initialize in 2.35s
+2020.11.13 22:36:52 WARN  Build server is not auto-connectable.
+2020.11.13 22:36:52 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.13 22:37:25 INFO  shutting down Metals
+2020.11.14 20:30:06 INFO  Started: Metals version 0.9.5 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.11.14 20:30:08 INFO  time: initialize in 2.17s
+2020.11.14 20:30:10 WARN  Build server is not auto-connectable.
+2020.11.14 20:30:10 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.14 20:58:40 INFO  shutting down Metals
+2020.11.18 17:04:40 INFO  Started: Metals version 0.9.5 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.11.18 17:04:42 INFO  time: initialize in 2.45s
+2020.11.18 17:04:44 WARN  Build server is not auto-connectable.
+2020.11.18 17:04:44 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.18 17:10:42 INFO  shutting down Metals

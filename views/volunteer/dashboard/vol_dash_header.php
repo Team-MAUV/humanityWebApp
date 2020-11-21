@@ -61,21 +61,21 @@
             <a href="<?= URL ?>Volunteer/index"><i class="fas fa-home"></i> Home</a>
           </li>
 
-          
+
           <li class="<?php if ($page == 'viewevent') {
                         echo 'active';
                       } ?>">
             <a href="<?= URL ?>Volunteer/volviewevent" class="serv-btn"><i class="fas fa-praying-hands"></i> Volunteer Activity
-              
+
             </a>
-            
+
           </li>
           <li class="<?php if ($page == 'addnewbene') {
                         echo 'active';
                       } ?>">
             <a href="<?= URL ?>Volunteer/voladdbene"><i class="fas fa-file-contract"></i> Add New Beneficiary</a>
           </li>
-          
+
 
 
         </ul>
@@ -83,4 +83,5 @@
     </div>
   </div>
 </body>
+
 </html>

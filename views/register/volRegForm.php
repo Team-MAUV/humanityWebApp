@@ -18,7 +18,7 @@ include "regForm-header.php"; ?>
     <label for="nic">
       <i class="fa fa-id-card "></i>
     </label>
-    <input type="text" name="nic" placeholder="National Id Number" id="nic" required>
+    <input type="text" name="nic" placeholder="National Id Number" id="nic" pattern="^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$" required>
 
     <label for="emailaddress">
       <i class="fas fa-envelope"></i>
@@ -71,28 +71,36 @@ include "regForm-header.php"; ?>
       <p style="font-weight: 800;"> Submit</p>
     </button>
 
-
-
-
-
   </form>
-  
-  
-</div>
+
+  <div class="messages">Error Message : <?php echo $msg ?></div>
+
+
 <script>
 function validation() {
-    
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
-   
+    var address = document.getElementById("address").value;
+    var name = document.getElementById("name").value;
+    var dob= document.getElementById("dob").value;
+    var gender = document.getElementById("gender").value;
     var contact = document.getElementById("contact").value;
  
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
+    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(dob==null ||dob=="")||(gender==null ||gender=="")){
+      swal({
+            title: "Registration Failed!",
+            text: "Please fill the required fields",
 
+            icon: "error",
+
+        });
+    }
+else{
     if ((contact.length != 10) || (isNaN(contact))) {
         swal({
-            title: "Registration Faied!",
+            title: "Registration Failed!",
             text: "Please enter a valid Phone Number!",
 
             icon: "error",
@@ -119,7 +127,7 @@ function validation() {
 
         }
     }
-
+  }
 }
 </script>
 <?php include "regForm-footer.php"; ?>

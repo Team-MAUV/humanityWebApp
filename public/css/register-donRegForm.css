@@ -9,6 +9,10 @@
     scrollbar-color: #ffffff #000000;
 }
 
+.swal-overlay {
+    background-color: rgba(80, 78, 78, 0.45);
+}
+
 *::-webkit-scrollbar {
     width: 5px;
 }

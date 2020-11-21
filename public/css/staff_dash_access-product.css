@@ -65,23 +65,8 @@ h3{
 	right: 0;
 	font-size: 30px;
 }
-h4{
-	font-size: 18px;
-	margin-top: 15px;
-	padding: 10px 0;
-	font-weight: bold;
-	color: #555;
-}
-ul{
-	display: flex;
-}
-ul li{
-	list-style: none;
-	width: 15px;
-	height: 15px;
-	margin: 5px;
-	cursor: pointer;
-}
+
+
 
 button{
 	width: 100%;
@@ -141,3 +126,9 @@ button:hover{
 	margin: 20px 0;
 	text-align: center;
 }
+@media only screen and (max-width:500px) {
+	/* For mobile phones: */
+	.card, .imgBox, .details {
+	  width: 100%;
+	}
+  }

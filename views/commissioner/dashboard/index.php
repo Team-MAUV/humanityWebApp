@@ -14,6 +14,8 @@ include "com-dash-header.php"; ?>
 </div>
 
 Home
+<div class="userId"> <h1> <?= $_SESSION['id'] ?> </h1> 
+<h3> <?= $_SESSION['address'] ?> </h3> 
 
 </div>
 

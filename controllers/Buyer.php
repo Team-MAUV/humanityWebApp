@@ -4,39 +4,25 @@ class Buyer extends Controller
     function __construct()
     {
         parent::__construct();
+        Session::init();
+        $logged = Session::get('loggedIn-buy');
+        if ($logged == false) {
+            Session::destroy();
+            header('location: ../login');
+            exit;
+        }
     }
 
     function index()
     {
-        $this->view->rendor('buyer/market-buyer-index');
+        $this->view->rendor('buyer/dashboard/buyer_home');
     }
 
-    function home(){
-        $this->view->rendor('buyer/market-buyer-home');
-    }
-    function profile(){
-        $this->view->rendor('buyer/market-buyer-profile');
-    }
-    function cart(){
-        $this->view->rendor('buyer/market-cart');
-    }
+    
+    
     function view_product(){
-        $this->view->rendor('buyer/market-product-view');
+        $this->view->rendor('buyer/dashboard/product');
     }
-    function category(){
-        $this->view->rendor('buyer/market-product-category');
-    }
-
-    function b_login()
-    {
-        $this->view->rendor('login/buy_login_page');
-    }
-    function help_sup()
-    {
-        $this->view->rendor('buyer/contact_us');
-    }
-    function join_in()
-    {
-        $this->view->rendor('buyer/b_register');
-    }
+    
+    
 }

@@ -7,7 +7,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>header</title>
-  <link rel="stylesheet" href="http://localhost/humanity/public/css/staff-layout_style.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
 
 </head>
@@ -83,6 +83,12 @@
                         echo 'active';
                       } ?>">
             <a href="<?= URL ?>staff/staff_report"><i class="fas fa-file-contract"></i> Reports</a>
+          </li>
+
+          <li class="<?php if ($page == 'upload_reports') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>staff/upload_reports"><i class="fas fa-file-contract"></i> Uploaded Reports</a>
           </li>
           <li class="<?php if ($page == 'requestleave') {
                         echo 'active';

@@ -9,7 +9,7 @@ include "regForm-header.php"; ?>
     <div class="login" style="background-image: url('http://localhost/humanity/public/images/regbg22.jpg') ;">
         <h1>Welcome to Donor Registration</h1>
         <div id="error"></div>
-        <form action="run_don_register" method="POST" id="form2">
+        <form action="run_don_register" method="POST" id="form2" >
 
             <label for="fullname">
                 <i class="fas fa-user"></i>
@@ -19,7 +19,7 @@ include "regForm-header.php"; ?>
             <label for="nic">
                 <i class="fa fa-id-card "></i>
             </label>
-            <input type="text" name="nic" placeholder="National Id Number" id="nic" required>
+            <input type="text" name="nic" placeholder="National Id Number" id="nic" pattern="^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$"required>
 
             <label for="emailaddress">
                 <i class="fas fa-envelope"></i>
@@ -80,21 +80,36 @@ include "regForm-header.php"; ?>
 
 
         </form>
+        <div class="messages">Error Message : <?php echo $msg ?></div>
     </div>
+
     <script>
 function validation() {
     
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
-    
+    var address = document.getElementById("address").value;
+    var name = document.getElementById("name").value;
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+    var gender = document.getElementById("gender").value;
     var contact = document.getElementById("contact").value;
-    
+ 
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
+    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(gender==null ||gender=="")){
+      swal({
+            title: "Registration Failed!",
+            text: "Please fill the required fields",
 
+            icon: "error",
+
+        });
+    }
+else{
     if ((contact.length != 10) || (isNaN(contact))) {
         swal({
-            title: "Registration Faied!",
+            title: "Registration Failed!",
             text: "Please enter a valid Phone Number!",
 
             icon: "error",
@@ -114,14 +129,14 @@ function validation() {
 
             swal({
                 title: "Registration Successful!",
-                text: "Thank you for joining us!",
+                text: "Please wait for the confirmation email, Thank you!",
                 icon: "success",
 
             });
 
         }
     }
-
+  }
 }
 </script>
     <?php include "regForm-footer.php"; ?>
