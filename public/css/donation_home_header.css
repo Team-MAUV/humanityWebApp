@@ -9,7 +9,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .bgimage {
@@ -152,7 +152,7 @@ a:hover {
   bottom: 0;
   width: 100vw;
   height: 6vh;
-  background-color: #573203;
+  background-color: #bb3f05;
   color: white;
   text-align: center;
   z-index: 1000;
