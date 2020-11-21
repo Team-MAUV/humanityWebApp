@@ -169,6 +169,28 @@ class login_Model extends Model
   
             }
             if ($role == 'session_incharge') {
+
+                $st = $this->db->prepare("SELECT * FROM staff WHERE staff_id= :id ");
+                $st->execute(array(
+                    ':id' => $_POST['username']
+                ));
+                $user = $st->fetchAll();
+                foreach ($user as $usr) :
+                    $id = $usr['staff_id'];
+                    $name =  $usr['name'];
+                endforeach;
+
+                if($id==$_POST['username']){
+                    Session::set('loggedIn-stf', true);
+                    Session::set('id', $id);
+                    Session::set('name', $name);
+                    header('location: ../Staff');
+              
+                }
+
+
+
+
                 Session::set('loggedIn-sin', true);
                 header('location: ../Session_incharge');
             }

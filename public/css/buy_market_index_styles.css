@@ -10,7 +10,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .bgimage {
@@ -29,7 +29,7 @@ body {
   justify-content: space-between;
   top: 0;
   width: 100vw;
-  background-color:red;
+  background-color: #254d35;
   height: 7vh;
   z-index: 10;
 }
@@ -101,7 +101,7 @@ body {
   width: 4vw;
   height: auto;
   margin: 2rem;
-  background: red;
+  background: #254d35;
   padding: 0.4rem 0.7rem;
   font-size: 1.2rem;
   border: 2px solid #fff;
@@ -112,71 +112,60 @@ body {
 }
 /*-------------body-----------*/
 .container {
-    display: grid;
-    
-    grid-template-rows: 6vh 88vh 6vh;
-    width: 100vw;
-    height: 100vh;
-    
-    grid-gap: 1px;
-    background-color: lightpink;
-    overflow-y: scroll;
-   
+  display: grid;
+
+  grid-template-rows: 6vh 88vh 6vh;
+  width: 100vw;
+  height: 100vh;
+
+  grid-gap: 1px;
+  background-color: lightpink;
+  overflow-y: scroll;
 }
 
-.container > div{
-    
-
+.container > div {
 }
 
-.
-.hd{
+. .hd {
   grid-row: 1;
- 
 }
 
-
-ul{
+ul {
   list-style: none;
-  
 }
-li{
+li {
   padding: 3px;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-
 /*--------------------------------------market-index-body-----------------------*/
-.background{
+.background {
   width: 100vw;
-  
 }
-.img-container{
+.img-container {
   position: relative;
   width: 99vw;
 }
-.pg-name{
+.pg-name {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  
 }
-.pg-name h2{
+.pg-name h2 {
   color: white;
   font-size: 48px;
   font-weight: bold;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
-.btns{
+.btns {
   position: absolute;
   right: 0;
   bottom: 15px;
-  
 }
-.btns a{
+.btns a {
   font-size: 32px;
   padding: 10px;
   color: white;
@@ -187,22 +176,21 @@ a{
   transition: 0.5s;
 }
 
-.log{
-  background-color:orangered;
-
+.log {
+  background-color: orange#254d35;
 }
-.reg{
+.reg {
   background-color: darkgoldenrod;
 }
-.btns a:hover{
-  background-color: red;
+.btns a:hover {
+  background-color: #254d35;
 }
-.selection-panal{
-  margin-left: 10px ;
+.selection-panal {
+  margin-left: 10px;
 }
-.selection-panal button{
+.selection-panal button {
   background-color: transparent;
-  color: red;
+  color: #254d35;
   border: none;
   padding: 5px;
   outline: none;
@@ -210,159 +198,144 @@ a{
   cursor: pointer;
   transition: 0.25s;
 }
-.selection-panal button:hover{
-  color: darkred;
+.selection-panal button:hover {
+  color: dark#254d35;
   margin-left: 10px;
   margin-right: 10px;
   transform: scale(1.2);
 }
-p , .about-products ul{
-  
+p,
+.about-products ul {
   padding: 10px;
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 30px;
 }
 
-
-.about-products h4 , .bid-sessions h4{
+.about-products h4,
+.bid-sessions h4 {
   margin-left: 30px;
   padding: 5px;
   border-style: solid;
-  border-bottom:none;
-  color: red;
-  
+  border-bottom: none;
+  color: #254d35;
 }
-
-
-
-
-
-
 
 /*-------footer-------------*/
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 6vh;
+  background-color: #254d35;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-bar {
     position: fixed;
+    grid-area: nav-bar;
+    display: grid;
     left: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 6vh;
-    background-color: red;
-    color: white;
-    text-align: center;
-    z-index: 1000;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 5fr 1fr;
+    grid-template-areas: " title-name logo-container ";
+    background-color: lightpink;
+    height: 50px;
+    z-index: 10;
   }
-  
-  @media screen and (max-width: 900px) {
-    .nav-bar {
-      position: fixed;
-      grid-area: nav-bar;
-      display: grid;
-      left: 0;
-      top: 0;
-      width: 100%;
-      grid-template-columns: 5fr 1fr;
-      grid-template-areas: " title-name logo-container ";
-      background-color: lightpink;
-      height: 50px;
-      z-index: 10;
-    }
-    .logo-container {
-        display: none;
-      }
-    
-      .title-name {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 50px;
-    
-        grid-area: title-name;
-      }
-    
-      .tzu-logo {
-        width: 82px;
-        background: url(../images/tzuChiLogo.png);
-      }
-      .logo-name {
-        display: flex;
-        color: #fff;
-        font-size: 0.6rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        line-height: 3rem;
-        text-align: center;
-      }
-    
-      .logo-name span {
-        font-weight: 200;
-      }
-      .log-sign {
-        width: 25px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        position: relative;
-      }
-    
-      .log-sign a {
-        display: block;
-        position: relative;
-        right: 1rem;
-        text-decoration: none;
-        color: rgb(255, 255, 255);
-        font-size: 1.5rem;
-        transition: 0.3s;
-      }
-    
-      .back-btn {
-        display: inline-block;
-        width: 60px;
-        height: 40px;
-        background: #004883;
-        padding: 0.5rem 0.8rem;
-        font-size: 5rem;
-        border: 2px solid #fff;
-        border-radius: 2rem;
-        line-height: 1;
-    
-        transition: 0.3s;
-        text-transform: uppercase;
-      }
-      .container{
-        
-       
-        
-      }
+  .logo-container {
+    display: none;
+  }
 
-/*========================================page head===============*/s
-      .pg-name h2{
-        font-size: 24px;
-      }
-      .btns a{
-        font-size: 18px;
-      }
-      .selection-panal{
-        padding-right: 10px;
-      }
-      .selection-panal button{
-        font-size: 15px;
-      }
-      .selection-panal button:hover{
-        font-size: 16px;
-      }
-     p{
-       font-size: 13px;
-     }
-     .about-us h4 , .vol-activities h4{
-       font-size: 15px;
-     }
-      
-     
-      
-      
+  .title-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
 
-      
-    }
+    grid-area: title-name;
+  }
+
+  .tzu-logo {
+    width: 82px;
+    background: url(../images/tzuChiLogo.png);
+  }
+  .logo-name {
+    display: flex;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .logo-name span {
+    font-weight: 200;
+  }
+  .log-sign {
+    width: 25px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .log-sign a {
+    display: block;
+    position: relative;
+    right: 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    transition: 0.3s;
+  }
+
+  .back-btn {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    background: #004883;
+    padding: 0.5rem 0.8rem;
+    font-size: 5rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    line-height: 1;
+
+    transition: 0.3s;
+    text-transform: uppercase;
+  }
+  .container {
+  }
+
+  /*========================================page head===============*/
+  s .pg-name h2 {
+    font-size: 24px;
+  }
+  .btns a {
+    font-size: 18px;
+  }
+  .selection-panal {
+    padding-right: 10px;
+  }
+  .selection-panal button {
+    font-size: 15px;
+  }
+  .selection-panal button:hover {
+    font-size: 16px;
+  }
+  p {
+    font-size: 13px;
+  }
+  .about-us h4,
+  .vol-activities h4 {
+    font-size: 15px;
+  }
+}
