@@ -51,7 +51,7 @@ class Staff extends Controller
     {
       
         $this->view->rendor('staff/dashboard/requestleave');
-    
+        $this->model->requestleave();
     }
     
     function staff_gallery()

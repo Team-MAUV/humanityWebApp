@@ -42,14 +42,14 @@ width: fit-content;
   <div class="form">
   <form action="leave_request" method="post"  onsubmit="return confirm('Do you really want to submit the form?');">
     <div class="input-fields">
-      <input type="text" class="input" placeholder="Name" name="stname" id="stname">
+      <input type="text" class="input" placeholder="Name" name="name" id="name">
       <input type="text" class="input" placeholder="Staff-ID" name="staff_id" id="staff_id">
-      <input type="date" class="input" placeholder="Date" name="stdate" id="stdate">
+      <input type="date" class="input" placeholder="Date" name="date" id="date">
       <input type="number" class="input" placeholder="Number of Days" name="day_no" id="day_no">
       
     </div>
     <div class="message">
-      <textarea placeholder="Reason for the leave" name="msg" id="msg"></textarea>
+      <textarea placeholder="Reason for the leave" name="reason" id="reason"></textarea>
       <input type="submit" value="submit" name="submit" name="submit"> 
     </div>
   </div>

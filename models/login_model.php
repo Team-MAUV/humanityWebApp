@@ -34,45 +34,133 @@ class login_Model extends Model
         Session::init();
 
         $error = "Invalid Username or Password!";
-        $_SESSION['name'] = $_POST['username'];
-        $id = $_POST["id"];
+        // $_SESSION['name'] = $_POST['username'];
+        // $id = $_POST["id"];
 
        
         if (password_verify($_POST['password'],  $stored_pw))
         {
           /* The password is correct. */
       
-           // Session::set('loggedIn', true);
-            Session::set('name', $_POST['username']);
-            Session::set('id', $id);
+           
           
 
             //Redirecting User Based on Role
             if ($role == 'commissioner') {
-                Session::set('loggedIn-com', true);
-                header('location: ../Commissioner');
+                $st = $this->db->prepare("SELECT * FROM commissioner WHERE com_id= :id ");
+                $st->execute(array(
+                    ':id' => $_POST['username']
+                ));
+        
+                $user = $st->fetchAll();
+
+                foreach ($user as $usr) :
+                    $id = $usr['com_id'];
+                    $name =  $usr['name'];
+                endforeach;
+
+                if($id==$_POST['username']){
+                    Session::set('loggedIn-com', true);
+                    Session::set('id', $id);
+                    Session::set('name', $name);
+                    header('location: ../Commissioner');
+                }
+                
             }
 
 
 
             if ($role == 'volunteer') {
-                Session::set('loggedIn-vol', true);
-                header('location: ../Volunteer');
+                //Pick the id from volunteer table
+                $st = $this->db->prepare("SELECT * FROM volunteer WHERE vol_id= :id ");
+                $st->execute(array(
+                    ':id' => $_POST['username']
+                ));
+                $user = $st->fetchAll();
+                foreach ($user as $usr) :
+                    $id = $usr['vol_id'];
+                    $name =  $usr['name'];
+                endforeach;
+
+                if($id==$_POST['username']){
+                    Session::set('loggedIn-vol', true);
+                    Session::set('id', $id);
+                    Session::set('name', $name);
+                    header('location: ../Volunteer');
+              
+                }
+
+               
             }
 
             if ($role == 'donor') {
-                Session::set('loggedIn-don', true);
-                header('location: ../Donor');
+
+                $st = $this->db->prepare("SELECT * FROM donor WHERE don_id= :id ");
+                $st->execute(array(
+                    ':id' => $_POST['username']
+                ));
+                $user = $st->fetchAll();
+                foreach ($user as $usr) :
+                    $id = $usr['don_id'];
+                    $name =  $usr['name'];
+                endforeach;
+
+                if($id==$_POST['username']){
+                    Session::set('loggedIn-don', true);
+                    Session::set('id', $id);
+                    Session::set('name', $name);
+                    header('location: ../Donor');
+              
+                }
+
             }
 
             if ($role == 'buyer') {
-                Session::set('loggedIn-buy', true);
-                header('location: ../Buyer');
+
+
+                $st = $this->db->prepare("SELECT * FROM buyer WHERE buy_id= :id ");
+                $st->execute(array(
+                    ':id' => $_POST['username']
+                ));
+                $user = $st->fetchAll();
+                foreach ($user as $usr) :
+                    $id = $usr['buy_id'];
+                    $name =  $usr['name'];
+                endforeach;
+
+                if($id==$_POST['username']){
+                    Session::set('loggedIn-buy', true);
+                    Session::set('id', $id);
+                    Session::set('name', $name);
+                    header('location: ../Buyer/home');
+              
+                }
+
+               
+               
+
             }
 
             if ($role == 'staff') {
-                Session::set('loggedIn-stf', true);
-                header('location: ../Staff');
+
+                $st = $this->db->prepare("SELECT * FROM staff WHERE staff_id= :id ");
+                $st->execute(array(
+                    ':id' => $_POST['username']
+                ));
+                $user = $st->fetchAll();
+                foreach ($user as $usr) :
+                    $id = $usr['staff_id'];
+                    $name =  $usr['name'];
+                endforeach;
+
+                if($id==$_POST['username']){
+                    Session::set('loggedIn-stf', true);
+                    Session::set('id', $id);
+                    Session::set('name', $name);
+                    header('location: ../Staff');
+              
+                }
+  
             }
             if ($role == 'session_incharge') {
                 Session::set('loggedIn-sin', true);
