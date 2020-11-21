@@ -7,3 +7,16 @@ function showDedicateDonation() {
         x.style.display = "none";
     }
 }
+function closeMyDonations(){
+    var x = document.getElementById("donateView");
+    var y = document.getElementById("viewDonations");
+    y.style.display = "none";
+    x.style.display = "block";
+}
+function viewPriviousDonations(){
+    var x = document.getElementById("donateView");
+    var y = document.getElementById("viewDonations");
+    x.style.display = "none";
+    y.style.display = "block";
+   
+}

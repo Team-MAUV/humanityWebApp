@@ -117,6 +117,7 @@ class login_Model extends Model
 
             if ($role == 'buyer') {
 
+
                 $st = $this->db->prepare("SELECT * FROM buyer WHERE buy_id= :id ");
                 $st->execute(array(
                     ':id' => $_POST['username']
@@ -137,6 +138,7 @@ class login_Model extends Model
 
                
                
+
             }
 
             if ($role == 'staff') {

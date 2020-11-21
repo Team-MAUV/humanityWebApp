@@ -155,7 +155,13 @@ a{
   text-decoration: none;
 }
 
-
+.close-btn{
+  margin-left: 700px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 2;
+}
 /*------------------------donation - container-----------------*/
 
 
@@ -182,6 +188,7 @@ a{
 
   .select-value li{
       display: inline;
+      outline: none;
   }
   .don-value{
       background-color: blue;
@@ -209,7 +216,7 @@ a{
       font-size: 20px;
       font-family: 'Mukta', sans-serif;
   }
-  .cust-amount , .donate-for , .dedicate-donation , .payment , .donate{
+  .cust-amount , .donate-for , .dedicate-donation , .payment , .donate ,.prv-d{
       padding: 5px;
       margin-top: 30px;
   }
@@ -224,7 +231,7 @@ a{
       padding: 5px;
       border-radius: 5px;
       margin-left: 70px;
-      
+      outline: none;
       border: none;
   }
   input[type="checkbox"]{
@@ -256,6 +263,7 @@ a{
       border-radius: 5px;
       border: none;
       cursor: pointer;
+      outline: none;
   }
   .payment-method img{
       margin-top: 30px;
@@ -282,6 +290,19 @@ a{
       background-color: #2196F3;
       color: white;
     
+  }
+  .prv-don-btn{
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      border: none;
+      width: 200px;
+      height: 70px;
+      cursor: pointer;
+      transition: 0.5s;
+      background-color: cornflowerblue;
+      font-weight: bold;
+      font-size: 20px;
   }
 
 /*----------------profile - container------------*/
