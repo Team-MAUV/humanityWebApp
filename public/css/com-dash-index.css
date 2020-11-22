@@ -309,7 +309,8 @@ body {
 .card {
 	background: var(--main-bg-color);
 	color: var(--main-color);
-	border-radius: 10px;
+	border-radius: 20px;
+	border-color: #0c434b;
 	margin-bottom: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
