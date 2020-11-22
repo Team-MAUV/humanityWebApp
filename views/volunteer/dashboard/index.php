@@ -10,27 +10,25 @@ include "vol_dash_header.php"; ?>
     
     <ul class="voldata">
     <img src="http://localhost/humanity/public/images/img1.svg" class="floatRight">
+    <li>
+            Volunteer ID : &nbsp;<?= $_SESSION['id'] ?>
+        </li>
         <li>
-            Name : &nbsp;Mr. A.B. Perera
+            Name : &nbsp;<?= $_SESSION['name'] ?>
         </li>
 
         <li>
-            Level : &nbsp;<i class="fas fa-user-shield fa-2x"></i>&nbsp;&nbsp; <input type="submit" class="btn" value="Apply for Staff">
+            Level : &nbsp;<?= $_SESSION['level'] ?>&nbsp;&nbsp; <input type="submit" class="btn" value="Apply for Staff">
 
         </li>
         <li>
             Volunteer points : </li>
         <div class="bar">
-            <div class="progress vol-points">55%</div>
+            <div class="progress vol-points"><?= $_SESSION['vol_points'] ?>%</div>
         </div>
 
 
-        <li>
-            Contribution :
-        </li>
-        <div>
-            <textarea id="Contribution" name="Contribution"></textarea>
-        </div>
+        
     </ul>
 
 </div>

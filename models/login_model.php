@@ -82,12 +82,16 @@ class login_Model extends Model
                 foreach ($user as $usr) :
                     $id = $usr['vol_id'];
                     $name =  $usr['name'];
+                    $level = $usr['level'];
+                    $vol_points =$usr['vol_points'];
                 endforeach;
 
                 if($id==$_POST['username']){
                     Session::set('loggedIn-vol', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
+                    Session::set('level', $level);
+                    Session::set('vol_points', $vol_points);
                     header('location: ../Volunteer');
               
                 }
@@ -165,6 +169,28 @@ class login_Model extends Model
   
             }
             if ($role == 'session_incharge') {
+
+                $st = $this->db->prepare("SELECT * FROM staff WHERE staff_id= :id ");
+                $st->execute(array(
+                    ':id' => $_POST['username']
+                ));
+                $user = $st->fetchAll();
+                foreach ($user as $usr) :
+                    $id = $usr['staff_id'];
+                    $name =  $usr['name'];
+                endforeach;
+
+                if($id==$_POST['username']){
+                    Session::set('loggedIn-stf', true);
+                    Session::set('id', $id);
+                    Session::set('name', $name);
+                    header('location: ../Staff');
+              
+                }
+
+
+
+
                 Session::set('loggedIn-sin', true);
                 header('location: ../Session_incharge');
             }
