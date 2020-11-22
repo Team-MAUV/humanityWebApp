@@ -57,8 +57,7 @@ body {
 
 
 .wrapper {
-	padding: 10px;
-	
+	padding: 5px;
 	padding-top: 75px;
 	background: var(--second-bg-color);
 	transition: margin-left .5s;
@@ -76,7 +75,7 @@ body {
 }
 
 [class*="col-"] {
-	padding: 10px;
+	padding: 5px;
 }
 
 /* Extra small devices <= 600px */
@@ -193,8 +192,8 @@ body {
   }
 
  
-  .wrapper {
-	margin: 15px auto;
+  .wrap {
+	margin: 5px auto;
 	max-width: 1100px;
   }
   
@@ -305,3 +304,12 @@ body {
 	border-radius: 3px;
 	padding: 5px 1em;
   }
+
+
+.card {
+	background: var(--main-bg-color);
+	color: var(--main-color);
+	border-radius: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

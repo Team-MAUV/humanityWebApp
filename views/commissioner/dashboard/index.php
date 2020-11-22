@@ -24,16 +24,16 @@ include "com-dash-header.php"; ?>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  
+
 	
-	<script src="<?= URL ?>public/js/com-index.js" type="text/javascript"></script>
-	<script src="<?= URL ?>public/js/calendar.js" type="text/javascript"></script>
 
 	<!-- End import lib -->
 
 	
 </head>
 <body class="overlay-scrollbar">
-
+<script src="<?= URL ?>public/js/com-index.js" type="text/javascript"></script>
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
@@ -86,7 +86,7 @@ include "com-dash-header.php"; ?>
 		<div class="row">
 			<div class="col-12 col-m-12 col-sm-12">
 
-			<div class="wrapper">
+			<div class="wrap">
    <center>   <h2 style="color:black" > Calendar </h2></center> 
       <div class="container-calendar">
           <h3 id="monthAndYear"></h3>
@@ -120,10 +120,21 @@ include "com-dash-header.php"; ?>
           </div>
       </div>
     </div>
-			</div>
+      </div>
+      <script src="<?= URL ?>public/js/calendar.js" type="text/javascript"></script>
 		</div>
-
-<div>abc</div>
+    <div class="row">
+			<div class="col-8 col-m-12 col-sm-12">
+				<div class="card">
+          hello
+				</div>
+      </div>
+      <div class="col-4 col-m-12 col-sm-12">
+				<div class="card">
+          hi
+        </div>
+      </div>
+    </div>
 
 
 </body>
@@ -140,4 +151,3 @@ include "com-dash-header.php"; ?>
 </div>
 
 </html>
-<?php include "com-dash-footer.php" ?>
