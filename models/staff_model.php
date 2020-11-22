@@ -7,6 +7,7 @@ class staff_Model extends Model
   {
     parent::__construct();
   }
+ /*
   public function add_product(){
     if(!empty($_POST)){
       $name = isset($_POST['name']) ? $_POST['name'] : '';
@@ -57,22 +58,13 @@ class staff_Model extends Model
         ':cid'=>$cid,
         ));
       }
-    }
-  }
+ 
 
 
 
 
-<<<<<<< HEAD
-
-
-}
-
-
-
-
-=======
-      $stmt2=$this->db->prepare('INSERT INTO `product` (`name`,`type`,`date`,`description`,`starting_bid`,`volume`) VALUES ( :name. :type, :date, :description, :starting_bid, :volume)');
+      $stmt2=$this->db->prepare('INSERT INTO `product` (`name`,`type`,`date`,`description`,`starting_bid`,`volume`) 
+      VALUES ( :name. :type, :date, :description, :starting_bid, :volume)');
       $stmt2->execute(array(
         ':name'=>$name,
         ':type'=>$category,
@@ -82,6 +74,8 @@ class staff_Model extends Model
         ':volume'=>$volume,
        
       ));
->>>>>>> 294e30ac753638d976407c24c952824708b3fd08
 
-    }}}
+    }
+  } 
+  */
+}
