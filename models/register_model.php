@@ -42,7 +42,7 @@ public function run_vol_register(){
 
                     $stmt->execute([$name, $nic, $email, $contact, $address, $dob, $prev_vol_exp, $gender]);
                     
-                    $msg = "Form data submitter successfully!";
+                    $msg = "Form data submitted successfully!";
                     header('location: ../register');
                 }
     }else{
@@ -145,7 +145,7 @@ public function run_vol_register(){
     }
 
      
-      $msg = "Form data submitter successfully!";
+      $msg = "Form data submitted successfully!";
                     header('location: ../register/donRegForm');
                 }
     }
@@ -245,7 +245,7 @@ public function run_vol_register(){
         ':cid'=>$cid,
       ));
     }
-      $msg = "Form data submitter successfully!";
+      $msg = "Form data submitted successfully!";
                     header('location: ../register/buyRegForm');
                 }
     }

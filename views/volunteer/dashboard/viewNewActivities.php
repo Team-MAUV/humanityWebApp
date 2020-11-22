@@ -142,7 +142,7 @@ include "vol_dash_header.php"; ?>
 
                                 <li>Time : 8.00 a.m. - 3.00 p.m.</li>
                             </ul>
-                            <button type="button" class="btn">View Details Form</button>
+                            
 
                             <button type="button" class="btn">View Media</button> </div>
 
@@ -169,7 +169,7 @@ include "vol_dash_header.php"; ?>
                                 <li> Time : 8.00 a.m. - 3.00 p.m.</li>
 
                             </ul>
-                            <button type="button" class="btn">View Details Form</button>
+                           
 
                             <button type="button" class="btn">View Media</button> </div>
 
@@ -192,7 +192,7 @@ include "vol_dash_header.php"; ?>
                                 <li> Time : 8.00 a.m. - 3.00 p.m.</li>
 
                             </ul>
-                            <button type="button" class="btn">View Details Form</button>
+                           
 
                             <button type="button" class="btn">View Media</button> </div>
 
