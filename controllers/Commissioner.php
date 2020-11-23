@@ -18,9 +18,18 @@ class Commissioner extends Controller
 
     function index()
     {
-        $this->view->rendor('commissioner/dashboard/index');
-    }
+        $msg="hi";
+        $pageData = [
 
+            'msg' => $msg
+          ];
+          $this->view->rendor('commissioner/dashboard/index', $pageData , true);
+       
+    }
+    function run_add_com(){
+        $data = $this->model->run_add_com();
+        $this->view->rendor('commissioner/dashboard/index', $data, true);
+    }
     function volunteer()
     {
         $data = $this->model->get_reg_vol_profiles();
@@ -52,6 +61,7 @@ class Commissioner extends Controller
         $this->view->rendor('commissioner/dashboard/donor');
     }
 
+    
 
     function newVolActivity()
     {

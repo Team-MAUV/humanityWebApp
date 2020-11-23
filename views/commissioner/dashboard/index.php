@@ -147,48 +147,49 @@ tr:nth-child(even){background-color: #f2f2f2}
         <h2>
 Commissioner Registration Form</h2>
 <div class="form-conteniar">
-            <form>
+            <form action="run_add_com" method="POST" id="formcom">
                 <div class="input-name">
                     <i class="fa fa-user lock"></i>
-                    <input type="text" placeholder=" Name" class="name">
+                    <input type="text" placeholder=" Name" class="name" name="name">
                     <span class="last">
                     <i class="fa fa-user lock"></i>
-                    <input type="text" placeholder="NIC" class="name">
+                    <input type="text" placeholder="NIC" class="name" name="nic">
                     </span>
                 </div>
                      <div class="input-name">
                         <i class="fa fa-envelope email"></i>
-                        <input type="email" placeholder="Email" required class="text-name">
+                        <input type="email" placeholder="Email" required class="text-name" name="email">
                 </div>
  <div class="input-name">
  <i class="fa fa-user lock"></i>
-                        <input type="text" placeholder="contact no" required class="text-name">
+                        <input type="text" placeholder="contact no" required class="text-name" name="contact">
                 </div>
 <div class="input-name">
-                    <i class="fa fa-user lock"></i>
-                    <input type="text" placeholder="username" class="text-name">
+                    <i class="fa fa-home lock"></i>
+                    <input type="text" placeholder="address" class="text-name" name="address">
                 </div>
 <div class="input-name">
                     <i class="fa fa-lock lock"></i>
-                    <input type="password" placeholder="Assign Password" class="text-name">
+                    <input type="password" placeholder="Assign Password" class="text-name" name="password">
                 </div>
 <div class="input-name">
-                    <input type="radio" name="radiogroup1" id="gen"class="radio-button">
+                    <input type="radio"  id="gen" class="radio-button" name="gender" value="male">
                     <label for="gen" class="gender">Male</label>
-                    <input type="radio" name="radiogroup1" id="gen1" class="radio-button">
+                    <input type="radio" id="gen1" class="radio-button" name="gender" value="female"> 
                     <label for="gen1" class="gender">Female</label>
                 </div>
 
 </div>
 <div class="input-name">
-                        <input type="checkbox" id="cb1" class="chack-button">
+                        <input type="checkbox" id="cb1" class="chack-button" name="check">
                       <label for="cb1" class="chack">I confirm that above details are true</label>
                     </div>
 
 <div class="input-name">
-                        <input class="button" type="submit" value="Register" />
+                        <input class="button" type="submit" value="Register" name="submit"/>
                     </div>
 </form>
+<p><?= $msg ?></p>
 </div>
 </div>
      
