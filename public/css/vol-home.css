@@ -1,7 +1,4 @@
-body {
-    background-color: #118999;
-}
-
+/*
 .voldata {
     margin-left: 2vw;
     list-style: none;
@@ -66,6 +63,8 @@ h1 {
     color: black;
 }
 
+
+
 @media screen and (max-width: 650px) {
     .floatRight {
         visibility: hidden;
@@ -79,4 +78,205 @@ h1 {
     h1 {
         font-size: 1.5rem;
     }
+}
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+.blog-card{
+  position: relative;
+  height: 80vh;
+  width: 90vw;
+  max-width: 850px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 25px;
+  background: rgb(134, 221, 94);
+  box-shadow: 0px 10px 50px rgba(252,56,56,.3);
+}
+.inner-part{
+  position: absolute;
+  display: flex;
+  height: 360px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+}
+#imgTap:checked ~ .inner-part {
+  padding: 0;
+  transition: .1s ease-in;
+}
+.inner-part .img{
+  height: 260px;
+  width: 260px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 2px 3px 15px rgba(252,56,56,.1);
+}
+#imgTap:checked ~ .inner-part .img{
+  height: 370px;
+  width: 850px;
+  z-index: 99;
+  margin-top: 10px;
+  transition: .3s .2s ease-in;
+}
+.img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0;
+  transition: .6s;
+}
+#tap-1:checked ~ .inner-part .img-1,
+#tap-2:checked ~ .inner-part .img-2,
+#tap-3:checked ~ .inner-part .img-3{
+  opacity: 1;
+  transition-delay: .2s;
+}
+.content{
+  padding: 0 20px 0 35px;
+  width: 530px;
+  margin-left: 50px;
+  opacity: 0;
+  transition: .6s;
+}
+#imgTap:checked ~ .inner-part .content{
+  display: none;
+}
+#tap-1:checked ~ .inner-part .content-1,
+#tap-2:checked ~ .inner-part .content-2,
+#tap-3:checked ~ .inner-part .content-3{
+  opacity: 1;
+  margin-left: 0px;
+  z-index: 100;
+  transition-delay: .3s;
+}
+.content span{
+  display: block;
+  color: #7b7992;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 500
+}
+.content .title{
+  font-size: 30px;
+  font-weight: 700;
+  color: #0d0925;
+  margin-bottom: 20px;
+}
+.content .text{
+  color: #4e4a67;
+  font-size: 19px;
+  margin-bottom: 30px;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+.voldata {
+    margin-left: 2vw;
+    list-style: none;
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: black;
+    display: inline-block;
+}
+
+li {
+    line-height: 12vh;
+}
+
+.floatRight {
+    float: right;
+    width: 45vw;
+    height: 55vh;
+    margin-left: 2rem;
+}
+
+
+
+
+
+
+.content button{
+  display: inline-flex;
+  padding: 15px 20px;
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff0e6;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #fd3535;
+  background: linear-gradient(147deg, #fe8a39  0%, #fd3838 74%);
+}
+.content button:hover{
+  background: linear-gradient(147deg, #fe791b 0%, #fd1c1c 74%);
+}
+.sliders{
+  position: absolute;
+  bottom: 25px;
+  left: 65%;
+  transform: translateX(-50%);
+  z-index: 12;
+}
+#imgTap:checked ~ .sliders{
+  display: none;
+}
+.sliders .tap{
+  position: relative;
+  height: 10px;
+  width: 50px;
+  background: #d9d9d9;
+  border-radius: 5px;
+  display: inline-flex;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.sliders .tap:hover{
+  background: #cccccc;
+}
+.sliders .tap:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: -100%;
+  background: linear-gradient(147deg,#f6b323 0%, #f23b26 74%);
+  border-radius: 10px;
+  transform: scaleX(0);
+  transition: transform .6s;
+  transform-origin: left;
+}
+input[type="radio"],
+input[type="checkbox"]{
+  display: none;
+}
+#tap-1:checked ~ .sliders .tap-1:before,
+#tap-2:checked ~ .sliders .tap-2:before,
+#tap-3:checked ~ .sliders .tap-3:before{
+  transform: scaleX(1);
+  width: 100%;
+}
+
+
+@media (max-width: 480px) {
+    blog-card {
+        top: 50%; /* IMPORTANT */
+        left: 50%; /* IMPORTANT */
+        display: block;
+        position: absolute;
+     
+        width: 750px;
+        height: 417px;
+
+        margin-top: -208.5px; /* HALF OF THE HEIGHT */
+        margin-left: -375px; /* HALF OF THE WIDTH */
+    }
+
 }
