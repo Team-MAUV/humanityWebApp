@@ -95,7 +95,7 @@ input[type=reset]:hover {
 
 
 <div class="container">
-  <form action="add_product" method="post" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to submit the form?')";>
+  <form action="run_add_product" method="POST" enctype="multipart/form-data" >
     <div class="row">
       <div class="col-25">
         <label for="name">Product Name:</label>
@@ -109,7 +109,7 @@ input[type=reset]:hover {
         <label for="Category">Category:</label>
       </div>
       <div class="col-75">
-        <input type="text" id="Category" name="Category">
+        <input type="text" id="category" name="category">
       </div>
     </div>
     <div class="row">
@@ -125,7 +125,7 @@ input[type=reset]:hover {
         <label for="volume">Starting Bid (Rs):</label>
       </div>
       <div class="col-75">
-        <input type="number" id="startingbid" name="startingbid">
+        <input type="number" id="startingbid" name="starting_bid">
       </div>
     </div>
     <div class="row">
@@ -133,7 +133,7 @@ input[type=reset]:hover {
         <label for="Bidding Date">Bidding Date:</label>
       </div>
       <div class="col-75">
-        <input type="datetime-local" id="Bidding Date" name="Bidding_Date">
+        <input type="datetime-local" id="Bidding Date" name="bidding_date">
 
       </div>
     </div>
@@ -143,12 +143,13 @@ input[type=reset]:hover {
         <label for="subject">Description:</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something about product..." style="height:150px"></textarea>
+        <textarea id="subject" name="description" placeholder="Write something about product..." style="height:150px"></textarea>
       </div>
     </div>
     <div class="row">
         <div class="col-25"> 
-        <input type="file" id="myFile" name="filename">
+        <label for="image">Choose Image</label>
+      <input type="file" name="product_image" accept="image/*" id="proimage">
         
         </div>
     </div>
@@ -162,6 +163,8 @@ input[type=reset]:hover {
     <div class="row">
   <br>  <input type="submit" value="Submit"> </div>
   </form>
+  <p><?= $msg ?></p>
+
 </div>
 
 </body>
