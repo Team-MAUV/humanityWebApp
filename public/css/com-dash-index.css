@@ -290,7 +290,7 @@ body {
   
   .footer-container-calendar {
 	margin-top: 1em;
-	border-top: 1px solid #4152e7;
+	border-top: 1px solid #004883;
 	padding: 10px 0;
   }
   
@@ -311,6 +311,214 @@ body {
 	color: var(--main-color);
 	border-radius: 20px;
 	border-color: #0c434b;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+.outer {
+    background-color: #fff;
+    width:500px;
+    padding: 25px;
+    margin: 50px auto 0;
+    border-top: 5px solid  #004883;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    
+}
+.outer h2{
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.input-name{
+    width: 90%;
+    position: relative;
+    margin: 20px auto;
+    
+}
+.lock{
+    padding:8px 11px;
+}
+
+.name{
+    width: 45%;
+    padding:8px 0 8px 40px;
+}
+.input-name span{
+    margin-left: 35px;
+}
+.text-name{
+    width: 100%;
+    padding:8px 0 8px 40px;
+}
+.input-name i{
+    position: absolute;
+    font-size: 18px;
+    border-right: 1px solid #cccccc;
+}
+.email{
+    padding: 8px;
+}
+.phone-square{
+	padding:8px ;
+}
+.text-name, .name{
+    border: 1px solid #cccccc;
+    outline: none;
+    -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      transition: all 0.30s ease-in-out;
+}
+.text-name:hover, .name:hover{
+    background-color: #fafafa;
+}
+.text-name:focus, .name:focus{
+    -webkit-box-shadow: 0 0 2px 1px rgba(0, 68, 255, 0.5);
+      -moz-box-shadow: 0 0 2px 1px rgba(0, 68, 255, 0.5);
+      box-shadow: 0 0 2px 1px rgba(0, 68, 255, 0.5);
+      border: 1px solid #004883;
+      background: #fafafa;
+}
+.radio-button{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+ .gender {
+    margin-right: 1em;
+}
+.gender:before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.5em;
+    border-radius: 100%;
+    vertical-align: -3px;
+    border: 2px solid #cccccc;
+    padding: 0.15em;
+    background-color: transparent;
+    background-clip: content-box;
+    transition: all 0.2s ease;
+  }
+
+  .radio-button:hover + .gender:before {
+    border-color: #000;
+  }
+  .radio-button:checked + .gender:before {
+    background-color:#000;
+    border-color: #000;
+  }
+
+.chack{
+    margin-right: 1em;
+        position: relative;
+}
+.chack::before{
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.5em;
+    vertical-align: -2px;
+    border: 2px solid #cccccc;
+    padding: 0.12em;
+    background-color: transparent;
+    background-clip: content-box;
+    transition: all 0.2s ease;
+}
+.chack::after{
+    border-right: 2px solid #000;
+          border-top: 2px solid #0000;
+          content: "";
+          height: 20px;
+          left: 2px;
+          position: absolute;
+          top: 7px;
+          transform: scaleX(-1) rotate(135deg);
+          transform-origin: left top;
+          width: 7px;
+          display: none;
+}
+.chack-button{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.chack-button:hover +.chack::before{
+    border-color: #000;
+}
+.chack-button:checked +.chack::before{
+    border-color: #000;
+}
+.chack-button:checked +.chack::after{
+    -moz-animation: check 0.8s ease 0s running;
+        -webkit-animation: check 0.8s ease 0s running;
+        animation: check 0.8s ease 0s running;
+        display: block;
+        width: 7px;
+        height: 20px;
+        border-color: #000;
+}
+@-webkit-keyframes check {
+    0% { height: 0; width: 0; }
+    25% { height: 0; width: 7px; }
+    50% { height: 20px; width: 7px; }
+  }
+  
+  @keyframes check {
+    0% { height: 0; width: 0; }
+    25% { height: 0; width: 7px; }
+    50% { height: 20px; width: 7px; }
+  }
+  .button{
+    background: #004883;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    
+  }
+  .button:hover{
+      background-color:  #208de6;
+  }
+  .button:hover{
+      background-color:  #208de6;
+  }
+
+
+
+  @media (max-width: 480px) {
+      .outer{
+          width: 100%;
+      }
+      .input-name{
+          margin-bottom: -10px;
+      }
+      .name{
+          width: 100%;
+          padding:8px 0 8px 40px;
+          margin-bottom: 10px;
+      }
+      .input-name span{
+          padding: 0;
+          margin:0;
+      }
+  }
+
+

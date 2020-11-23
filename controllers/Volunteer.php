@@ -23,11 +23,16 @@ class Volunteer extends Controller
     }
     function voladdbene()
     {
-        $this->view->rendor('volunteer/dashboard/addNewBeneficiary');
+        $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+        $this->view->rendor('volunteer/dashboard/addNewBeneficiary', $pageData , true);
     }
     function addbeneficiery(){
         $msg_data=$this->model->addbeneficiery();
-        $this->view->rendor('volunteer/dashboard/addNewBeneficiary', $msg_data, true);
+        $this->view->rendor('volunteer/dashboard/addNewBeneficiary', $msg_data , true);
     }
     function volviewevent()
     {

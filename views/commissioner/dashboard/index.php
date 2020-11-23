@@ -25,6 +25,7 @@ include "com-dash-header.php"; ?>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   
+  
   <style>
 table {
   border-collapse: collapse;
@@ -56,6 +57,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 	   <center></i> <p >Staff</p></center>
 	   <p>50</p>
     </div>
+   
     <div class="counter-back">
       <p>Back Side</p>
     </div>
@@ -140,65 +142,57 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="row">
 			<div class="col-8 col-m-12 col-sm-12">
 				<div class="card">
-        <div class="form_wrapper">
-        <div class="form_container">
-    <div class="title_container">
-      <h2>Responsive Registration Form</h2>
+       <h3 style="font-size:2vw;">Add new commissioner </h3>
+        <div class="outer">
+        <h2>
+Commissioner Registration Form</h2>
+<div class="form-conteniar">
+            <form>
+                <div class="input-name">
+                    <i class="fa fa-user lock"></i>
+                    <input type="text" placeholder=" Name" class="name">
+                    <span class="last">
+                    <i class="fa fa-user lock"></i>
+                    <input type="text" placeholder="NIC" class="name">
+                    </span>
+                </div>
+                     <div class="input-name">
+                        <i class="fa fa-envelope email"></i>
+                        <input type="email" placeholder="Email" required class="text-name">
+                </div>
+ <div class="input-name">
+ <i class="fa fa-user lock"></i>
+                        <input type="text" placeholder="contact no" required class="text-name">
+                </div>
+<div class="input-name">
+                    <i class="fa fa-user lock"></i>
+                    <input type="text" placeholder="username" class="text-name">
+                </div>
+<div class="input-name">
+                    <i class="fa fa-lock lock"></i>
+                    <input type="password" placeholder="Assign Password" class="text-name">
+                </div>
+<div class="input-name">
+                    <input type="radio" name="radiogroup1" id="gen"class="radio-button">
+                    <label for="gen" class="gender">Male</label>
+                    <input type="radio" name="radiogroup1" id="gen1" class="radio-button">
+                    <label for="gen1" class="gender">Female</label>
+                </div>
+
+</div>
+<div class="input-name">
+                        <input type="checkbox" id="cb1" class="chack-button">
+                      <label for="cb1" class="chack">I confirm that above details are true</label>
+                    </div>
+
+<div class="input-name">
+                        <input class="button" type="submit" value="Register" />
+                    </div>
+</form>
+</div>
+</div>
+     
     </div>
-    <div class="row clearfix">
-      <div class="">
-        <form>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-            <input type="email" name="email" placeholder="Email" required />
-          </div>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-            <input type="password" name="password" placeholder="Password" required />
-          </div>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-            <input type="password" name="password" placeholder="Re-type Password" required />
-          </div>
-          <div class="row clearfix">
-            <div class="col_half">
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                <input type="text" name="name" placeholder="First Name" />
-              </div>
-            </div>
-            <div class="col_half">
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                <input type="text" name="name" placeholder="Last Name" required />
-              </div>
-            </div>
-          </div>
-            	<div class="input_field radio_option">
-              <input type="radio" name="radiogroup1" id="rd1">
-              <label for="rd1">Male</label>
-              <input type="radio" name="radiogroup1" id="rd2">
-              <label for="rd2">Female</label>
-              </div>
-              <div class="input_field select_option">
-                <select>
-                  <option>Select a country</option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                </select>
-                <div class="select_arrow"></div>
-              </div>
-            <div class="input_field checkbox_option">
-            	<input type="checkbox" id="cb1">
-    			<label for="cb1">I agree with terms and conditions</label>
-            </div>
-            <div class="input_field checkbox_option">
-            	<input type="checkbox" id="cb2">
-    			<label for="cb2">I want to receive the newsletter</label>
-            </div>
-          <input class="button" type="submit" value="Register" />
-        </form>
-      </div>
-    </div>
-  </div>
-        </div>
-				</div>
-      </div>
       <div class="col-4 col-m-12 col-sm-12">
 				<div class="card">
         <div style="overflow-x:auto;">
@@ -225,6 +219,26 @@ tr:nth-child(even){background-color: #f2f2f2}
     <tr>
     <td>Perera</td>
       <td>COMHB005</td>
+    </tr>
+    <tr>
+    <td>Jill</td>
+      <td>COMHB006</td>
+    </tr>
+    <tr>
+    <td>Jill</td>
+      <td>COMHB006</td>
+    </tr>
+    <tr>
+    <td>Jill</td>
+      <td>COMHB006</td>
+    </tr>
+    <tr>
+    <td>Jill</td>
+      <td>COMHB006</td>
+    </tr>
+    <tr>
+    <td>Jill</td>
+      <td>COMHB006</td>
     </tr>
     <tr>
     <td>Jill</td>

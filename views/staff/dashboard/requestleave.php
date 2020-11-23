@@ -40,7 +40,7 @@ width: fit-content;
     <h1>Request Leave Application</h1>
   </div>
   <div class="form">
-  <form action="leave_request" method="post"  onsubmit="return confirm('Do you really want to submit the form?');">
+  <form action="run_requestleave" method="post"  onsubmit="return confirm('Do you really want to submit the form?');">
     <div class="input-fields">
       <input type="text" class="input" placeholder="Name" name="name" id="name">
       <input type="text" class="input" placeholder="Staff-ID" name="staff_id" id="staff_id">
@@ -52,9 +52,12 @@ width: fit-content;
       <textarea placeholder="Reason for the leave" name="reason" id="reason"></textarea>
       <input type="submit" value="submit" name="submit" name="submit"> 
     </div>
+  </form>
+
+
   </div>
 </div>
-	
+<p><?= $msg ?></p>
 </body>
 </html>
 

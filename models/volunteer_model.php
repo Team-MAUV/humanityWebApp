@@ -28,6 +28,7 @@ class volunteer_Model extends Model
   {
    
     if (isset($_FILES['file'], $_POST['vol_id'])) {
+      if($_POST['vol_id']==$_SESSION['id']){
       $msg = "Please Upload a file";
       $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/beneficiery_case/';
       $save_path = 'beneficiery_case/';
@@ -98,7 +99,11 @@ class volunteer_Model extends Model
         $msg = 'Please upload a file!';
       }
     }
-
+    else{
+      $msg = "Volunteer ID does not match!";
+    }
+  }
+  
     $pageData = [
 
       'msg' => $msg

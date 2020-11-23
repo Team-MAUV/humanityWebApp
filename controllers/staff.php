@@ -26,11 +26,24 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/Market_module');
     }
 */
+
     function add_product()
     {
-        $this->view->rendor('staff/dashboard/add_product');
-        $this->model->add_product();
+        $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+        $this->view->rendor('staff/dashboard/add_product', $pageData , true);
     }
+    function run_add_product()
+    {
+        $msg_data=$this->model->add_product();
+        $this->view->rendor('staff/dashboard/add_product', $msg_data , true);
+    }
+
+
+
     function access_product()
     {
         $this->view->rendor('staff/dashboard/access_product');
@@ -49,10 +62,21 @@ class Staff extends Controller
     }
     function requestleave()
     {
-      
-        $this->view->rendor('staff/dashboard/requestleave');
-        $this->model->requestleave();
+        $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+        $this->view->rendor('staff/dashboard/requestleave', $pageData , true);
+        
     }
+    
+    function run_requestleave()
+    {
+        $msg_data=$this->model->requestleave();
+        $this->view->rendor('staff/dashboard/requestleave',$msg_data , true);
+    }
+
     
     function staff_gallery()
     {
