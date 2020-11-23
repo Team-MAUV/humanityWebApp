@@ -1,8 +1,14 @@
 
+
+
+ 
+  </div>
+ 
 </div>
-<footer>
-  <div class="footer">Powered by<h4>Humanity2020&copy;</div>
-</footer>
+
+
+
+<div class="footer">Powered by<h4>Humanity2020&copy;</div>
 </body>
 
 <script src="https://kit.fontawesome.com/c0d2632e91.js" crossorigin="anonymous"></script>
@@ -12,6 +18,9 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <script src="<?= URL ?>public/js/<?php echo $jsFile ?>.js"></script>
+
+<script src="<?= URL ?>public/js/jquery.min.js"></script>    
+<script src="<?= URL ?>public/js/jquery-ui.js"></script>
 
 
 
