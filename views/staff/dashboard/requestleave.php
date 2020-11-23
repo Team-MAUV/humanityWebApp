@@ -54,10 +54,11 @@ width: fit-content;
     </div>
   </form>
 
-
+ 
   </div>
+  <p><?= $msg ?></p>
 </div>
-<p><?= $msg ?></p>
+
 </body>
 </html>
 
