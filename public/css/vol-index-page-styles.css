@@ -400,6 +400,13 @@ a {
 
 
 /*======selection pannel =========*/
+.media-container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    padding-bottom: 50px;
+  }
 
 .selection-panal {
    
@@ -437,7 +444,8 @@ a {
 }
 .about-img-text img{
     padding: 20px;
-    margin-left: 50px;
+    margin: auto;
+    display: block;
     width: 50vw;
 }
 
@@ -462,18 +470,13 @@ a {
 .media-con-img{
     width: 40vw;
     padding: 20px;
-    margin-left:100px ;
+    margin: auto;
+    display: block;
     
 }
 
 
-.media-container {
-    margin-top: 20px;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    width: 60vw;
-    padding-bottom: 50px;
-}
+
 /*==============vol-activities-===========*/
 
 .vol-activities h4{
