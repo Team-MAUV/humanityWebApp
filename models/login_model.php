@@ -65,7 +65,7 @@ class login_Model extends Model
                     Session::set('id', $id);
                     Session::set('name', $name);
                     Session::set('address', $address);
-                    header('location: ../Commissioner');
+                    header('location: ../Commissioner/index');
                 }
                 
             }

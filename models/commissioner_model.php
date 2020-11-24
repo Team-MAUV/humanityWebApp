@@ -387,6 +387,102 @@ return ($pageData);
     return ($pageData);
   }
 
+  
+  
+
+
+  public function run_add_com()
+  {
+   // echo "starting";
+
+   if (!empty($_POST)) {
+                                                               
+      $name = $_POST['name'];
+      $nic = $_POST['nic'];
+      $email = $_POST['email'];
+      $address =$_POST['address'];
+      $password = $_POST['password'];
+      $contact = $_POST['contact'];
+      $role="commissioner";
+      $gender =$_POST['gender'];
+      $pw = password_hash($password, PASSWORD_DEFAULT);
+      
+      $stmt = $this->db->prepare('INSERT INTO `commissioner` (`name`,`com_nic`, `email`,`contact`, `address`,`gender`) VALUES ( :name, :nic,:email,:contact, :address, :gender)');
+      $stmt->execute(array(
+        ':name'=>$name,
+        ':nic'=>$nic,
+        ':email'=>$email,
+        ':contact'=>$contact,
+        ':address'=>$address,
+        ':gender'=>$gender,
+       
+      ));
+      
+      $custom_id=$this->db->prepare("SELECT id FROM commissioner WHERE com_nic=:nic");
+      $custom_id->execute(array(
+        ':nic' => $_POST['nic'],
+      ));
+      $cid_result = $custom_id->fetchAll();
+      $count = $custom_id->rowCount();
+      if ($count > 0) {
+        foreach ($cid_result as $cidtmp) :
+          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+            $cid ="COMHB00".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+            $cid ="COMHB0".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])>0){
+            $cid ="COMHB".$cidtmp['id'];
+          };
+          
+        endforeach;
+
+        $username=$cid;
+        $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
+      $stmt2->execute([$username, $pw, $role]);
+
+      $get_comid = $this->db->prepare("SELECT id FROM user WHERE username= :uname  ");
+      $get_comid->execute(array(
+        ':uname' => $username
+      ));
+
+      $result = $get_comid->fetchAll();
+      $count2 = $get_comid->rowCount();
+
+
+      if ($count2 > 0) {
+        foreach ($result as $tmp) :
+          $id = $tmp['id'];
+        endforeach;
+
+      $cidstmt = $this->db->prepare('UPDATE `commissioner` SET com_id =:cid, userlogin_id=:id WHERE com_nic=:nic');
+      $cidstmt->execute(array(
+        ':nic' => $_POST['nic'],
+        ':cid'=>$cid,
+        ':id'=>$id,
+      ));
+    }
+      
+      
+
+     
+      $msg = "Form data submitted successfully!";
+                   
+                }
+    
+  }
+  else{
+      $msg = "Data fields are empty";
+    }
+
+    $pageData = [
+       'msg' => $msg
+      
+     ];
+  
+    return ($pageData);
+}
+
+
 
   public function fetch_sessionIncharge_details()
   {
@@ -416,6 +512,7 @@ echo $output;
 
 
   }
+
 
 
 
