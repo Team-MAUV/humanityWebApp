@@ -465,13 +465,18 @@ return ($pageData);
   else{
       $msg = "Data fields are empty";
     }
+    $stmtc = $this->db->prepare('SELECT * FROM commissioner  ORDER BY id ');     
+    $stmtc->execute();
+    $contacts = $stmtc->fetchAll();
+    
 
+   //data that has to be return from this functon is added to an associative array
     $pageData = [
-       'msg' => $msg
-      
-     ];
-  
+      'contacts' => $contacts,
+      'msg' => $msg
+    ];
     return ($pageData);
+    
 }
 
 
@@ -498,32 +503,22 @@ return ($pageData);
             return ($pageData);
 
         }
-        
+      }
 
-
-
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public function get_view_com_list() {
+          
+          $stmt = $this->db->prepare('SELECT * FROM commissioner  ORDER BY id ');     
+          $stmt->execute();
+          $contacts = $stmt->fetchAll();
+          $msg="";
+  
+         //data that has to be return from this functon is added to an associative array
+          $pageData = [
+            'contacts' => $contacts,
+            'msg' => $msg
+          ];
+          return ($pageData);
+}
 
 
 }
