@@ -38,6 +38,19 @@ class Volunteer extends Controller
     {
         $this->view->rendor('volunteer/dashboard/viewNewActivities');
     }
+    function volleaderboard()
+    {
+        $this->view->rendor('volunteer/dashboard/vol_leaderboard');
+    }
+    function volpartcipate()
+    {
+        $this->view->rendor('volunteer/dashboard/vol_participate');
+    }
+
+
+
+
+
     function logout()
     {
         Session::destroy();

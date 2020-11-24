@@ -4,38 +4,7 @@ include "vol_dash_header.php"; ?>
 
 <link rel="stylesheet" href="<?= URL ?>public/css/vol-home.css" />
 <link rel="stylesheet" href="<?= URL ?>public/css/vol_dash_home.css" />
-<!--
-<div class="grid-container">
 
-
-<h1>Welcome to Volunteer Portal!</h1>
-    
-    <ul class="voldata">
-    
-    <li>
-            Volunteer ID : &nbsp; <?= $_SESSION['id'] ?>
-        </li>
-        <li>
-            Name : &nbsp;<?= $_SESSION['name'] ?>
-        </li>
-
-        <li>
-            Level : &nbsp;<?= $_SESSION['level'] ?>&nbsp;&nbsp; <input type="submit" class="btn" value="Apply for Staff">
-
-        </li>
-        <li>
-            Volunteer points : </li>
-            
-        <div class="bar">
-            <div class="progress vol-points"><?= $_SESSION['vol_points'] ?>%</div>
-        </div>
-
-
-        
-    </ul>
-
-</div>
--->
 <div class="grid-container">
 
 
@@ -110,7 +79,7 @@ include "vol_dash_header.php"; ?>
         </section>
         <section class="section">
           <header class="section__header">
-            <h2 class="section__title">Participated Activities </h2>
+            <h2 class="section__title">Participated recent  Activities </h2>
             <div class="section__control">
           
             </div>
@@ -215,9 +184,7 @@ include "vol_dash_header.php"; ?>
                   <img src="<?= URL ?>public/images/recy1.jpg" alt="img"/>
                   </div>
                   <div class="project__element project__inform">
-                    <span class="project__inform-name"
-                      >Collect Recycle products</span
-                    >
+                    <span class="project__inform-name">Collect Recycle products</span>
                   </div>
                  
                   <div class="project__element project__date">
@@ -329,7 +296,7 @@ include "vol_dash_header.php"; ?>
       </aside>
     </div>
   </body>
-</html>
+
 
     </div>
 

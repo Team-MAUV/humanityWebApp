@@ -400,6 +400,13 @@ a {
 
 
 /*======selection pannel =========*/
+.media-container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    padding-bottom: 50px;
+  }
 
 .selection-panal {
    
@@ -437,7 +444,8 @@ a {
 }
 .about-img-text img{
     padding: 20px;
-    margin-left: 50px;
+    margin: auto;
+    display: block;
     width: 50vw;
 }
 
@@ -462,18 +470,13 @@ a {
 .media-con-img{
     width: 40vw;
     padding: 20px;
-    margin-left:100px ;
+    margin: auto;
+    display: block;
     
 }
 
 
-.media-container {
-    margin-top: 20px;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    width: 60vw;
-    padding-bottom: 50px;
-}
+
 /*==============vol-activities-===========*/
 
 .vol-activities h4{
@@ -654,9 +657,7 @@ a {
 
 
     /*========selection pannel================*/
-    .media-container{
-        width: 60vw;
-    }
+    
     .selection-panal button {
         margin-left: 0;
         font-size: 13px;
@@ -704,11 +705,23 @@ a {
 
     /*==============img gallery=============*/
     #img-data {
-        font-size: 15px;
-        bottom: 20px;
-        left: 20px;
+        display: none;
+        font-size: 10px;
+        bottom: 2px;
+        left: 5px;
+    }
+
+    .images{
+    
+    }
+    .row{
+
+    }
+    .column{
+        width: 50%;
+        
     }
     .column img {
-        height: 50px;
+        height: 100px;
     }
 }
