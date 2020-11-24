@@ -704,11 +704,23 @@ a {
 
     /*==============img gallery=============*/
     #img-data {
-        font-size: 15px;
-        bottom: 20px;
-        left: 20px;
+        display: none;
+        font-size: 10px;
+        bottom: 2px;
+        left: 5px;
+    }
+
+    .images{
+    
+    }
+    .row{
+
+    }
+    .column{
+        width: 50%;
+        
     }
     .column img {
-        height: 50px;
+        height: 100px;
     }
 }
