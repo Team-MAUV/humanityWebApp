@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(10, 10, 10);
+   background: rgb(100, 230, 132);
     margin: 0;
     width: 100vw;
 }
@@ -108,7 +108,7 @@ h3 {
 }
 
 .btn {
-    background-color: rgb(132, 13, 148);
+    background-color: rgb(20, 175, 6);
     color: rgb(7, 7, 7);
     padding: 8px 10px;
     border-radius: 10px;
@@ -138,6 +138,11 @@ h3 {
 }
 
 @media screen and (max-width: 900px) {
+    .tab{
+width:10vw;
+font-size: 5px;
+
+    }
     .column {
         width: 80vw;
         display: block;
@@ -168,7 +173,10 @@ h3 {
     font-size: 17px;
     width: 25%;
     font-weight: 600;
-    border: none;
+
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
 }
 
 .tab:hover {
@@ -187,12 +195,12 @@ h3 {
 
 .tab-upcoming,
 #upcoming {
-    background-color: rgb(6, 33, 73);
+    background-color: rgb(100, 230, 132);
 }
 
 .tab-finished,
 #finished {
-    background-color: #042e33;
+    background-color:rgb(100, 230, 132);
 }
 
 * {
