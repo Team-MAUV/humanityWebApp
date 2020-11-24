@@ -163,15 +163,7 @@ class commissioner_Model extends Model
       
                   Email::email_send($to,$rec_name, $subject, $message, $headers);
 
-
-
-
-
-
-
   }
-
-
 
 
 
@@ -487,28 +479,29 @@ return ($pageData);
   public function fetch_sessionIncharge_details()
   {
       echo "In fetch model";
-      $query = "SELECT id, incharge_id FROM session_incharge";
-$statement = $this->db->prepare($query);
-$statement->execute();
-$result = $statement->fetchAll();
-$total_row = $statement->rowCount();
-$output = '
+      $query = "SELECT * FROM session_incharge";
+      $statement = $this->db->prepare($query);
+      $statement->execute();
+      $result = $statement->fetchAll();
+      $total_row = $statement->rowCount();
 
-';
-if($total_row > 0)
-{
-    
-}
-else
-{
-    $output .= '
-    <tr>
-        <td colspan="4" align="center">Data not found</td>
-    </tr>
-    ';
-}
-$output .= '</table>';
-echo $output;
+
+        if($total_row > 0)
+        {
+        
+          
+            $str = "In model";
+            $pageData = [
+              'result' => $result,
+              'str'=>$str
+            ];
+            return ($pageData);
+
+        }
+        
+
+
+
 
 
   }

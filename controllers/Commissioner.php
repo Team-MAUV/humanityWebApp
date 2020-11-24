@@ -92,14 +92,12 @@ class Commissioner extends Controller
 
     function sessionincharge()
     {
-        $this->view->rendor('commissioner/dashboard/sessionincharge');
+        $data = $this->model->fetch_sessionIncharge_details();
+        $this->view->rendor('commissioner/dashboard/sessionincharge',$data, true);
 
     }
 
-    function fetch_sessionIncharge_details(){
-        $this->model->fetch_sessionIncharge_details();
-
-    }
+  
 
     function beneficiaryCases()
     {
