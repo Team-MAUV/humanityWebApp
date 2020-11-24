@@ -478,34 +478,134 @@ return ($pageData);
 
   public function fetch_sessionIncharge_details()
   {
-      echo "In fetch model";
-      $query = "SELECT * FROM session_incharge";
-      $statement = $this->db->prepare($query);
-      $statement->execute();
-      $result = $statement->fetchAll();
-      $total_row = $statement->rowCount();
+
+     $getParam = $_GET['gen'];
+     $msg="Hello";
+     $tempUsername="";
+     $stf_id="";
+   
+
+          //Fetch staff ids for drop down list
+          $query = "SELECT * FROM staff";
+          $statement = $this->db->prepare($query);
+          $statement->execute();
+          $staff_info = $statement->fetchAll();
+
+
+
+
+    if($getParam ==1){
+  
+      if(isset($_POST['generateName']) && !empty($_POST['staff-id'])){
+
+        $stf_id=strtoupper($_POST['staff-id']);
+
+        foreach ($staff_info as $tmp) :
+
+          if($tmp['staff_id'] == $stf_id ){
+            $stf_id = $tmp['staff_id'];
+            $id_in_stf_tbl = $tmp['id'];
+          }
+         
+        endforeach;
+        
+            $str_stf_id= strval($id_in_stf_tbl);
+            $tempUsername= 'TMP'.$stf_id;
+         
+            //Generate a random string for the Password
+            function generateRandomString($length = 6) {
+              return substr(str_shuffle(str_repeat($x='0123456789', ceil($length/strlen($x)) )),1,$length);
+            }
+
+            //Insert Data into User table
+            $pwd  = generateRandomString();
+
+          
+        
+      }else{
+          $msg="Please select a Staff ID!";
+      }
+      
+    }
+
+   
+
+    if($getParam ==2){
+ 
+      //Insert temp username & passcode to usertable
+      $str_stf_id="Hu";
+        //Insert Data into User table
+        $tmpUser = $_POST['tmp_username'];
+        $pwd  = $_POST['pcode'];
+        $staff_id =$_POST['staff_id'];
+        $stf_tbl_id =$_POST['id_in_stf_tbl'];
+       
+        $role = "session_incharge";
+
+        // $msg =$staff_id ;
+        $msg =$_POST['id_in_stf_tbl'];
+
+ 
+        // $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,id_in_stf_tbl,username, passcode) VALUES(?,?,?,?)");
+        // $result1 = $stmt->execute([$tmpUser,$id_in_stf_tbl,$tmpUser, $pwd]);
+
+        
+        // $stmt = $this->db->prepare("INSERT INTO `session_incharge`(`incharge_id`, `staff_id`, `username`, `passcode`) VALUES (?,?,?,?)");
+
+        // $result=$stmt->execute([$tmpUser,$staff_id,$tmpUser, $pwd]);
+
+        // $stmt = $this->db->prepare("INSERT INTO user(username,password,role) VALUES(?,?,?)");
+        // $result2 = $stmt->execute([$tmpUser, $tmp_pw, $role]);
+
+        // $st = $this->db->prepare('INSERT INTO session_incharge(incharge_id,staff_id,username,passcode) VALUES (:inc_id,:stf_id,:username,:passcode)');
+        //  $st->execute(array(
+        //   ':inc_id'=>$tmpUser,
+        //   ':stf_id'=>$staff_id,
+        //   ':username'=>$tmpUser,
+        //   ':passcode'=>$pwd
+        // ));
+
+        // if($result1){
+        
+        //   $msg ="Session Incharge appointed Successfully!";
+          
+          
+        // }else{
+        //   $msg ="Error in data insertion to User table!";
+       
+        // }
+ 
+    }
+
+   
+
+
+      //Fetch Session Incharge details
+        $query = "SELECT * FROM session_incharge";
+        $statement = $this->db->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        $total_row = $statement->rowCount();
 
 
         if($total_row > 0)
         {
-        
-          
-            $str = "In model";
             $pageData = [
               'result' => $result,
-              'str'=>$str
+              'staff_info'=>$staff_info,
+              'msg'=>$msg,
+              'tempUsername'=>$tempUsername,
+              'pwd'=>$pwd,
+              'stf_id'=>$stf_id,
+              '$str_stf_id'=>$str_stf_id
             ];
             return ($pageData);
 
         }
-        
-
-
-
-
-
   }
 
+
+ 
 
 
 

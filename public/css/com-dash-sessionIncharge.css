@@ -52,11 +52,6 @@ select {
   left: 5rem;
 }
 
-button {
-  width: 8rem;
-  height: 3rem;
-}
-
 .read .create-contact {
   display: inline-block;
   text-decoration: none;
