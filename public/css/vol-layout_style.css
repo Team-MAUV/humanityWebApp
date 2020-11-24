@@ -67,12 +67,13 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height:35px;
     grid-area: title-name;
 }
 
 .tzu-logo {
     width: 82px;
+
     background: url(../images/tzuChiLogo.png);
 }
 
@@ -423,6 +424,7 @@ a {
         height: 50px;
     }
     .tzu-logo {
+        position: absolute;
         width: 60px;
         height: 37px;
         background: url(../images/tzuChiLogo-s.png);

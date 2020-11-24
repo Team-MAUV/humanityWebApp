@@ -138,11 +138,7 @@ h3 {
 }
 
 @media screen and (max-width: 900px) {
-    .tab{
-width:10vw;
-font-size: 5px;
-
-    }
+  
     .column {
         width: 80vw;
         display: block;
@@ -164,6 +160,7 @@ font-size: 5px;
 }
 
 .tab {
+    margin-top: 2px;
     background-color: rgb(0, 0, 0);
     color: white;
     float: left;

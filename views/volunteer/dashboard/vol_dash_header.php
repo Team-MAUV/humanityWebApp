@@ -76,8 +76,16 @@
             <a href="<?= URL ?>Volunteer/voladdbene"><i class="fas fa-file-contract"></i> Add New Beneficiary</a>
           </li>
 
-
-
+          <li class="<?php if ($page == 'volleaderboard') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>Volunteer/volleaderboard"><i class="fa fa-trophy" ></i>Leaderboard</a>
+          </li>
+          <li class="<?php if ($page == 'volpartcipate') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>Volunteer/volpartcipate"><i class="fa fa-star-half-o"></i>Partcipated Activities</a>
+          </li>
         </ul>
       </div>
     </div>
