@@ -386,4 +386,54 @@ return ($pageData);
     ];
     return ($pageData);
   }
+
+
+  public function fetch_sessionIncharge_details()
+  {
+      echo "In fetch model";
+      $query = "SELECT id, incharge_id FROM session_incharge";
+$statement = $this->db->prepare($query);
+$statement->execute();
+$result = $statement->fetchAll();
+$total_row = $statement->rowCount();
+$output = '
+
+';
+if($total_row > 0)
+{
+    
+}
+else
+{
+    $output .= '
+    <tr>
+        <td colspan="4" align="center">Data not found</td>
+    </tr>
+    ';
+}
+$output .= '</table>';
+echo $output;
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

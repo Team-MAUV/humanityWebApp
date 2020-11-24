@@ -51,3 +51,8 @@ select {
   position: relative;
   left: 5rem;
 }
+
+button {
+  width: 8rem;
+  height: 3rem;
+}
