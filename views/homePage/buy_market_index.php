@@ -41,36 +41,163 @@
 
 
         <div class="container">
+            
             <div class="hd"></div>
+            
+            
             <div class="page-body">
-                <div class="img-container">
-                    <img class="background" src="<?= URL ?>public/images/foodcrp.jpg">
-                    <div class="sssss id="test">
-                        <div class="pg-name" id="pg"><h2>Tzu-Chi Market</h2></div>
+                <div class="head-container">
+                    
+                    
+                    <div class="pg-name">
+                        <h2>Welcome to Tzu-Chi Market Module</h2>
                         <div class="btns">
                             <a class="log" href="#">Log-In</a>
                             <a class="reg" href="#">Register</a>
                         </div>
                     </div>
+                    <div class="home-img">
+                        <img src="<?= URL ?>public/images/online-auction.jpg">
+                    </div>
                 </div>
-                <div class="body-container">
+
+                <div class="about">
+                    <div class="img-slider">
+                        <div class="slide active">
+                            <img src="<?= URL ?>public/images/don1.jpg" alt="">
+                            <div class="info">
+                                <h2>Slide 01</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?= URL ?>public/images/d.jpg" alt="">
+                            <div class="info">
+                                <h2>Slide 02</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?= URL ?>public/images/don3.jpg" alt="">
+                            <div class="info">
+                                <h2>Slide 03</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="4.jpg" alt="">
+                            <div class="info">
+                                <h2>Slide 04</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="5.jpg" alt="">
+                            <div class="info">
+                                <h2>Slide 05</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="btn active"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                        </div>
+                    </div>
+
+            <script type="text/javascript">
+                var slides = document.querySelectorAll('.slide');
+                var btns = document.querySelectorAll('.btn');
+                let currentSlide = 1;
+
+                // Javascript for image slider manual navigation
+                var manualNav = function(manual){
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+
+                    btns.forEach((btn) => {
+                    btn.classList.remove('active');
+                    });
+                });
+
+                slides[manual].classList.add('active');
+                btns[manual].classList.add('active');
+                }
+
+                btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    manualNav(i);
+                    currentSlide = i;
+                });
+                });
+
+                // Javascript for image slider autoplay navigation
+                var repeat = function(activeClass){
+                let active = document.getElementsByClassName('active');
+                let i = 1;
+
+                var repeater = () => {
+                    setTimeout(function(){
+                    [...active].forEach((activeSlide) => {
+                        activeSlide.classList.remove('active');
+                    });
+
+                    slides[i].classList.add('active');
+                    btns[i].classList.add('active');
+                    i++;
+
+                    if(slides.length == i){
+                    i = 0;
+                    }
+                    if(i >= slides.length){
+                    return;
+                    }
+                    repeater();
+                }, 10000);
+                }
+                repeater();
+                }
+                repeat();
+            </script>
+
+                </div>
+
+
+
+
+                <div class="media-container">
                     <div class="selection-panal">
                         <button onclick="showAboutProducts()">Products</button>
                         <button onclick="showAboutBids()">Bidding Process</button>
                     </div>
                     <div class="about-products" id="about-products" style="display: block;">
                         
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, a eos 
-                        repudiandae voluptates praesentium inventore exercitationem consequuntur, quod ea consectetur del
-                        ectus vel illum dicta earum distinctio, quos tempora ab. Velit?</p>
+                       <div class="about-img-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, a eos 
+                            epudiandae voluptates praesentium inventore exercitationem consequuntur, quod ea consectetur del
+                            ectus vel illum dicta earum distinctio, quos tempora ab. Velit?</p>
+                       </div>
                         
                         <h4>product categories</h4>
-                        <ul>
-                            <li>Plastic</li>
-                            <li>Paper</li>
-                            <li>Glass</li>
-                            <li>Electronic Waste</li>
-                        </ul>
+                        <div class="images">
+                            <div class="row">
+                                
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-glass.jpg">
+                                </div>
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-paper.jpg">
+                                </div>
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-plastic.jpg">
+                                </div>
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-tronic.jpg">
+                                </div>
+                            </div>
+                        </div>
 
                         <h4>collecting & sorting process</h4>
                         
