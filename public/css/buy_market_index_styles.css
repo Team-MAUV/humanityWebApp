@@ -395,25 +395,28 @@ a {
 }
 
 .selection-panal {
-  margin-left: 10px;
+   
+  background-color: #78cc5a;
+  
 }
+
 .selection-panal button {
+  margin-left: 20px;
   background-color: transparent;
-  color: #254d35;
+  color: black;
   border: none;
   padding: 5px;
   outline: none;
   font-size: 24px;
   cursor: pointer;
-  transition: 0.25s;
+  transition: 0.25ms;
 }
+
 .selection-panal button:hover {
-  color: dark#254d35;
-  margin-left: 10px;
-  margin-right: 10px;
-  transform: scale(1.2);
+  color: white;
+  
+  
 }
-p,
 .about-products ul {
   padding: 10px;
   margin-left: 30px;
@@ -427,7 +430,47 @@ p,
   padding: 5px;
   border-style: solid;
   border-bottom: none;
-  color: #254d35;
+  color: darkblue;
+}
+.about-img-text p{
+  font-size: 20px;
+}
+.about-products p, .bid-sessions p{
+  padding: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+/*===========product cat=======*/
+
+.images{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  padding: 20px;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.column img {
+  opacity: 1;
+  margin: auto;
+  display: block;
+  width: 100%;
+  padding: 30px;
+  
+}
+
+
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /*-------footer-------------*/
@@ -556,26 +599,40 @@ p,
   }
 
   /*========================================page head===============*/
-  s .pg-name h2 {
-    font-size: 24px;
-  }
-  .btns a {
-    font-size: 18px;
-  }
-  .selection-panal {
-    padding-right: 10px;
-  }
   .selection-panal button {
-    font-size: 15px;
-  }
-  .selection-panal button:hover {
-    font-size: 16px;
-  }
-  p {
+    margin-left: 0;
     font-size: 13px;
   }
-  .about-us h4,
-  .vol-activities h4 {
-    font-size: 15px;
+  
+  
+  p{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 10px;
+  }
+  .about-products p, .bid-sessions p{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+.about-img-text p{
+    font-size: 12px;
+}
+  
+  .about-products h4, 
+  .bid-sessions h4 {
+    font-size: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .images{
+    margin-left: 5px;
+  }
+  .column{
+    width: 100%;
+    padding: 20px;
+  }
+  .column img{
+    padding: 0;
   }
 }

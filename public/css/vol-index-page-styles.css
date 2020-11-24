@@ -657,9 +657,7 @@ a {
 
 
     /*========selection pannel================*/
-    .media-container{
-        width: 60vw;
-    }
+    
     .selection-panal button {
         margin-left: 0;
         font-size: 13px;

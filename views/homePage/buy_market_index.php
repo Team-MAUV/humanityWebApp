@@ -174,17 +174,30 @@
                     </div>
                     <div class="about-products" id="about-products" style="display: block;">
                         
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, a eos 
-                        repudiandae voluptates praesentium inventore exercitationem consequuntur, quod ea consectetur del
-                        ectus vel illum dicta earum distinctio, quos tempora ab. Velit?</p>
+                       <div class="about-img-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, a eos 
+                            epudiandae voluptates praesentium inventore exercitationem consequuntur, quod ea consectetur del
+                            ectus vel illum dicta earum distinctio, quos tempora ab. Velit?</p>
+                       </div>
                         
                         <h4>product categories</h4>
-                        <ul>
-                            <li>Plastic</li>
-                            <li>Paper</li>
-                            <li>Glass</li>
-                            <li>Electronic Waste</li>
-                        </ul>
+                        <div class="images">
+                            <div class="row">
+                                
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-glass.jpg">
+                                </div>
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-paper.jpg">
+                                </div>
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-plastic.jpg">
+                                </div>
+                                <div class="column">
+                                    <img src="<?= URL ?>public/images/recycled-tronic.jpg">
+                                </div>
+                            </div>
+                        </div>
 
                         <h4>collecting & sorting process</h4>
                         
