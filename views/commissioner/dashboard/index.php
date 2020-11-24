@@ -49,7 +49,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 </head>
 <body class="overlay-scrollbar">
 <script src="<?= URL ?>public/js/com-index.js" type="text/javascript"></script>
-	<div class="wrapper">
+<div class="wrapper">
 		<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
 				<div class="counter bg-staff">
