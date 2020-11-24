@@ -198,53 +198,17 @@ Commissioner Registration Form</h2>
 				<div class="card">
         <div style="overflow-x:auto;">
   <table>
+  
     <tr>
       <th>Commissioner Name</th>
       <th>Com-ID</th>
       </tr>
-    <tr>
-    <td>Perera</td>
-      <td>COMHB001</td>
-    </tr>
-    <tr>
-    <td>Smith</td>
-      <td>COMHB002</td>
-    </tr>
-    <tr>
-    <td>Perera</td>
-      <td>COMHB003</td>
-    </tr> <tr>
-    <td>Perera</td>
-      <td>COMHB004</td>
-    </tr>
-    <tr>
-    <td>Perera</td>
-      <td>COMHB005</td>
-    </tr>
-    <tr>
-    <td>Jill</td>
-      <td>COMHB006</td>
-    </tr>
-    <tr>
-    <td>Jill</td>
-      <td>COMHB006</td>
-    </tr>
-    <tr>
-    <td>Jill</td>
-      <td>COMHB006</td>
-    </tr>
-    <tr>
-    <td>Jill</td>
-      <td>COMHB006</td>
-    </tr>
-    <tr>
-    <td>Jill</td>
-      <td>COMHB006</td>
-    </tr>
-    <tr>
-    <td>Jill</td>
-      <td>COMHB006</td>
-    </tr>
+      <?php foreach ($contacts as $contact) : ?>
+          <tr>
+          <td><?= $contact['name'] ?></td>
+          <td><?= $contact['com_id'] ?></td>
+          </tr>
+      <?php endforeach; ?>
     </table>
 </div>
         </div>
