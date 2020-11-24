@@ -615,20 +615,6 @@ return ($pageData);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public function get_view_com_list() {
           
           $stmt = $this->db->prepare('SELECT * FROM commissioner  ORDER BY id ');     
