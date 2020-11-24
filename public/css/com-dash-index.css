@@ -52,7 +52,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	background: var(--main-bg-color);
 	color: var(--main-color);
-	margin: 0;
+
 }
 
 
@@ -60,7 +60,7 @@ body {
 	padding: 5px;
 	padding-top: 75px;
 	background: var(--second-bg-color);
-	transition: margin-left .5s;
+	
 }
 
 
