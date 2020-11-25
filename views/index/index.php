@@ -87,9 +87,9 @@
 
 
   <div class="btn-container">
-      <div class="btnTop" id="btnv"> <a href="<?= URL ?>login">Volunteer Platform</a></div>
-      <div class="btnTop" id="btnd"><a href="<?= URL ?>login">Donor Platform</a></div>
-      <div class="btnTop" id="btnm"><a href="<?= URL ?>login">TzuChi Market</a></div>
+      <div class="btnTop" id="btnv"> <a href="<?= URL ?>login?pf=vol">Volunteer Platform</a></div>
+      <div class="btnTop" id="btnd"><a href="<?= URL ?>login?pf=don">Donor Platform</a></div>
+      <div class="btnTop" id="btnm"><a href="<?= URL ?>login?pf=buy">TzuChi Market</a></div>
   </div>
   <div class="platform-container">
   
