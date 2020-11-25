@@ -21,7 +21,10 @@ class Session_incharge extends Controller
         $this->view->rendor('session_incharge/dashboard/index');
     }
 
-    
+    function media_upload()
+    {
+        $this->view->rendor('session_incharge/dashboard/media_upload');
+    }
     function media_gallary()
     {
         $this->view->rendor('session_incharge/dashboard/media_gallary');

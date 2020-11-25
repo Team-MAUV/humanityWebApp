@@ -7,11 +7,6 @@ include "sess_header.php"; ?>
 
 
   <div id="breadcrum">
-
-
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,49 +15,23 @@ include "sess_header.php"; ?>
         <title> Session Incharge Home</title>
        
         <link rel="stylesheet" href="<?= URL ?>public/css/sess_dash_home.css" />
-        <style>
-            * {
-              box-sizing: border-box;
-            }
-            
-            /* Create two equal columns that floats next to each other */
-            .column {
-              float: left;
-              width: 50%;
-              padding: 10px;
-              height: 300px; /* Should be removed. Only for demonstration */
-            }
-            
-            /* Clear floats after the columns */
-            .row:after {
-              content: "";
-              display: table;
-              clear: both;
-            }
-            </style>
-            
+        </head>
+<body>
 
-    </head>
-    <body>
-        <h1>    <b>    Welcome to Session Incharge page ! </b></h1>
+<h1>Welcome to session in charge page </h1>
 
-        <div class="row">
-          <div class="column" >
-          <img src="<?= URL ?>public/images//undraw_events_2p66.svg" alt="img" height="80%" weight="80%/>
-         
-          </div>
-          <div class="column">
-            <h1>You are now Session Incharge of <br> Tzu Chi Organization</h1>
-
-            
-            
-          </div>
-        </div>
-    </body>
-</html>
-
+<div class="card">
+  <img src="<?= URL ?>public/images/sess.png" alt="img" alt="pic" style="width:100%">
+  <h4>Welcome </h4>
+ 
+  <p>You are now Session in charge of  </p><p> Tzu-chi organization </p>
+  
+</div>   
+        
+</body>
 
 </div>
 </div>
 
 <?php include "sess_footer.php" ?>
+</html>

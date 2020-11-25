@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>header</title>
-  <link rel="stylesheet" href="http://localhost/humanity/public/css/staff-layout_style.css" />
-  <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
 
 </head>
 
@@ -59,14 +58,20 @@
                       } ?>">
             <a href="<?= URL ?>session_incharge/index"><i class="fas fa-home"></i> Home</a>
           </li>
+          <li class="<?php if ($page == 'media_upload') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>session_incharge/media_upload"><i class="fas fa-file-contract"></i> Media upload</a>
+          </li>
 
          
           
           <li class="<?php if ($page == 'media_gallary') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/media_gallary"><i class="fas fa-file-contract"></i> Media</a>
+            <a href="<?= URL ?>session_incharge/media_gallary"><i class="fas fa-file-contract"></i> Gallery</a>
           </li>
+          
           <li class="<?php if ($page == 'confirm_participants') {
                         echo 'active';
                       } ?>">
@@ -78,7 +83,7 @@
                       } ?>">
             <a href="<?= URL ?>session_incharge/attendance_marking"><i class="fas fa-id-card-alt"></i> Attendance Marking</a>
           </li>
-
+          
         
         
 

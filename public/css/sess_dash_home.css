@@ -1,30 +1,23 @@
-.btn-group button {
-    background-color: #1131e9; /* Green background */
-    border: 3px solid rgb(3, 13, 100); /* Green border */
-    color: white; /* White text */
-    padding:20px 35px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
+
+body{
+    overflow: hidden;
+}
+
+
+h1{
+    color:  #3b5998;
+}
+
+.card {
+    align-items: center;
+    background-color: #3b5998;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    color:#0c0e11 ;
   }
   
-  .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
   
-  /* Clear floats (clearfix hack) */
-  .btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color: #140488;
-  }
-  @media screen and (max-width: 600px) {
-    .column, .row {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
+ 
