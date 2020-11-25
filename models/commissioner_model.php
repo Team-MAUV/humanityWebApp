@@ -483,11 +483,12 @@ return ($pageData);
 
   public function fetch_sessionIncharge_details()
   {
-
+    Session::init();
+   
      $getParam = $_GET['gen'];
      $msg="Hello";
      $tempUsername="";
-     $stf_id="";
+     $pwd="";
    
 
           //Fetch staff ids for drop down list
@@ -510,11 +511,15 @@ return ($pageData);
           if($tmp['staff_id'] == $stf_id ){
             $stf_id = $tmp['staff_id'];
             $id_in_stf_tbl = $tmp['id'];
+            $name = $tmp['name'];
           }
          
         endforeach;
+        Session::set('stf_tbl_id', $id_in_stf_tbl);
+        Session::set('staff_id', $stf_id);
+        Session::set('stf_name', $name);
         
-            $str_stf_id= strval($id_in_stf_tbl);
+
             $tempUsername= 'TMP'.$stf_id;
          
             //Generate a random string for the Password
@@ -538,21 +543,21 @@ return ($pageData);
     if($getParam ==2){
  
       //Insert temp username & passcode to usertable
-      $str_stf_id="Hu";
-        //Insert Data into User table
+    
+        
         $tmpUser = $_POST['tmp_username'];
         $pwd  = $_POST['pcode'];
-        $staff_id =$_POST['staff_id'];
-        $stf_tbl_id =$_POST['id_in_stf_tbl'];
+        $staff_id =Session::get('staff_id');
+        $stf_tbl_id = intval(Session::get('stf_tbl_id'));
+        $stf_name = Session::get('stf_name');
        
-        $role = "session_incharge";
-
-        // $msg =$staff_id ;
-        $msg =$_POST['id_in_stf_tbl'];
+        // $role = "session_incharge";
+     
+         
 
  
-        // $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,id_in_stf_tbl,username, passcode) VALUES(?,?,?,?)");
-        // $result1 = $stmt->execute([$tmpUser,$id_in_stf_tbl,$tmpUser, $pwd]);
+        $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,name,id_in_stf_tbl,username, passcode) VALUES(?,?,?,?,?)");
+        $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd]);
 
         
         // $stmt = $this->db->prepare("INSERT INTO `session_incharge`(`incharge_id`, `staff_id`, `username`, `passcode`) VALUES (?,?,?,?)");
@@ -570,20 +575,18 @@ return ($pageData);
         //   ':passcode'=>$pwd
         // ));
 
-        // if($result1){
+        if($result1){
         
-        //   $msg ="Session Incharge appointed Successfully!";
+          $msg ="Session Incharge appointed Successfully!";
+    
           
-          
-        // }else{
-        //   $msg ="Error in data insertion to User table!";
+        }else{
+         
+          $msg ="Error in data insertion to User table!";
        
-        // }
+        }
  
     }
-
-   
-
 
       //Fetch Session Incharge details
         $query = "SELECT * FROM session_incharge";
@@ -600,9 +603,8 @@ return ($pageData);
               'staff_info'=>$staff_info,
               'msg'=>$msg,
               'tempUsername'=>$tempUsername,
-              'pwd'=>$pwd,
-              'stf_id'=>$stf_id,
-              '$str_stf_id'=>$str_stf_id
+              'pwd'=>$pwd
+              
             ];
             return ($pageData);
 

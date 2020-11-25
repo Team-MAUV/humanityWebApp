@@ -37,8 +37,6 @@ include "com-dash-header.php"; ?>
     <form action="sessionIncharge?gen=2" method="post">
       <label for="tmp_username">Temporary Username</label>
       <input type="text" name="tmp_username" id="tmp_username" value="<?php echo $tempUsername; ?>" required>
-      <input type="hidden" name="staff_id" id="staff_id" value="<?php echo $stf_id; ?>" required>
-      <input type="hidden" name="id_in_stf_tbl" id="id_in_stf_tbl" value="<?php echo $str_stf_id; ?>" required>
       <label for="pcode">Passcode</label>
       <input type="text" name="pcode" id="pcode" value="<?php echo $pwd; ?>" required>
    
@@ -55,7 +53,7 @@ include "com-dash-header.php"; ?>
                         <tr>
                         <td>#</td>
                         <td>Session Incharge ID</td>
-                        <td>Staff ID</td>
+                        <td>Name</td>
                         <td>Session Start Time</td>
                         <td>Status</td>
                         <td>Session Closed Time</td>
@@ -68,7 +66,7 @@ include "com-dash-header.php"; ?>
                             <tr>
                               <td><?= $tmp['id'] ?></td>
                               <td><?= $tmp['incharge_id'] ?></td>
-                              <td><?= $tmp['id_in_stf_tbl'] ?></td>
+                              <td><?= $tmp['name'] ?></td>
                               <td><?= $tmp['session_start_time'] ?></td>
                               <td><?= $tmp['status'] ?></td>
                               <td><?= $tmp['session_closed_time'] ?></td>
