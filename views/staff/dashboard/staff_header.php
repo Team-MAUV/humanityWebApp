@@ -6,9 +6,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>header</title>
+  <title><?php echo $page?></title>
   <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/<?php echo $style ?>" />
 
 </head>
 
@@ -105,7 +106,13 @@
                         echo 'active';
                       } ?>">
             <a href="<?= URL ?>staff/staff_notification"><i class="fa fa-bell" aria-hidden="true"></i> Notification</a>
-                    </li>
+          </li>
+
+          <li class="<?php if ($page == 'Session Incharge Login') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>staff/sessionInchargeLogin"><i class="fa fa-bell" aria-hidden="true"></i> Session Incharge </a>
+          </li>
         
 
         </ul>

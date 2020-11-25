@@ -10,7 +10,7 @@ class Session_incharge extends Controller
         $logged = Session::get('loggedIn-sin');
         if ($logged == false) {
             Session::destroy();
-            header('location: ../login');
+            header('location: ../staff/sessionInchargeLogin');
             exit;
         }
     }
@@ -43,7 +43,7 @@ class Session_incharge extends Controller
     function logout()
     {
         Session::destroy();
-        header('location: ../login');
+        header('location: ../staff/sessionInchargeLogin');
         exit;
     }
 }

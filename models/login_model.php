@@ -13,8 +13,7 @@ class login_Model extends Model
         $pwd = $_POST['password'];
         $hashPw = password_hash($pwd, PASSWORD_DEFAULT);
 
-        echo $pwd;
-        echo $hashPw;
+        
         $st = $this->db->prepare("SELECT * FROM user WHERE username= :login ");
         $st->execute(array(
             ':login' => $_POST['username']
@@ -40,10 +39,6 @@ class login_Model extends Model
        
         if (password_verify($_POST['password'],  $stored_pw))
         {
-          /* The password is correct. */
-      
-           
-          
 
             //Redirecting User Based on Role
             if ($role == 'commissioner') {
@@ -186,32 +181,7 @@ class login_Model extends Model
                 }
   
             }
-            if ($role == 'session_incharge') {
-
-                // $st = $this->db->prepare("SELECT * FROM session_incharge WHERE username= :id ");
-                // $st->execute(array(
-                //     ':id' => $_POST['username']
-                // ));
-                // $user = $st->fetchAll();
-                // foreach ($user as $usr) :
-                //     $id = $usr['staff_id'];
-                //     $name =  $usr['name'];
-                // endforeach;
-
-                // if($id==$_POST['username']){
-                //     Session::set('loggedIn-sin', true);
-                //     Session::set('id', $id);
-                //     Session::set('name', $name);
-                //     header('location: ../Session_incharge');
-              
-                // }
-                Session::set('loggedIn-sin', true);
-                header('location: ../Session_incharge');
-
-
-               
-              
-            }
+           
 
         } else {
             // show error

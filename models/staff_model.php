@@ -194,5 +194,50 @@ $pageData = [
 
 return ($pageData);
   } 
+
+
+
+  public function run_sic_login(){
+
+echo "In staff Model";
+        Session::init();
+
+        $error = "Invalid Username or Password!";
+
+        $st = $this->db->prepare("SELECT * FROM session_incharge WHERE username= :id AND passcode= :passcode");
+        $st->execute(array(
+            ':id' => $_POST['username'],
+            ':passcode'=>$_POST['password']
+        ));
+        $user = $st->fetchAll();
+        $count = $st->rowCount();
+
+       
+        if($count>0){
+
+          foreach ($user as $usr) :
+            $id = $usr['username'];
+            $name =  $usr['name'];
+          endforeach;
+           
+              Session::set('loggedIn-sin', true);
+              Session::set('id', $id);
+              Session::set('name', $name);
+              header('location: ../Session_incharge');
+            
+           
+
+         } else {
+          // show error
+          Session::set('error', $error);
+          header('location: ../staff/sessionInchargeLogin');
+}
+
+
+
   
+
+
+  
+ }
 }

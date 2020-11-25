@@ -560,21 +560,6 @@ return ($pageData);
         $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd]);
 
         
-        // $stmt = $this->db->prepare("INSERT INTO `session_incharge`(`incharge_id`, `staff_id`, `username`, `passcode`) VALUES (?,?,?,?)");
-
-        // $result=$stmt->execute([$tmpUser,$staff_id,$tmpUser, $pwd]);
-
-        // $stmt = $this->db->prepare("INSERT INTO user(username,password,role) VALUES(?,?,?)");
-        // $result2 = $stmt->execute([$tmpUser, $tmp_pw, $role]);
-
-        // $st = $this->db->prepare('INSERT INTO session_incharge(incharge_id,staff_id,username,passcode) VALUES (:inc_id,:stf_id,:username,:passcode)');
-        //  $st->execute(array(
-        //   ':inc_id'=>$tmpUser,
-        //   ':stf_id'=>$staff_id,
-        //   ':username'=>$tmpUser,
-        //   ':passcode'=>$pwd
-        // ));
-
         if($result1){
         
           $msg ="Session Incharge appointed Successfully!";

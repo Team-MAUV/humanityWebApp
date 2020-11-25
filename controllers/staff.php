@@ -88,6 +88,19 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/staff_notification');
     }
 
+
+    
+    function sessionInchargeLogin()
+    {
+        $this->view->rendor('staff/dashboard/siclogin');
+    }
+
+   
+    function run_sic_login()
+    {
+        $this->model->run_sic_login();
+    }
+
     function logout()
     {
         Session::destroy();
