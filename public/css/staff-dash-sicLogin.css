@@ -1,0 +1,158 @@
+body {
+  overflow: hidden;
+}
+
+.login {
+  position: relative;
+  width: 32vw;
+  align-items: center;
+  height: 80%;
+
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 5rem auto;
+}
+
+.avatar {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  left: 12.5rem;
+}
+.login h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 200%;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.login form {
+  width: 22vw;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.login form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 5vw;
+  width: 3vw;
+  height: 6vh;
+  background-color: #004883;
+  color: #ffffff;
+}
+.login form input[type="password"],
+.login form input[type="text"] {
+  position: relative;
+  width: 18vw;
+  height: 6vh;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  left: 5vw;
+  padding: 0 15px;
+}
+
+.validation-error {
+  position: relative;
+  bottom: 2em;
+  width: 25em;
+  height: 1rem;
+  margin-left: 10rem;
+}
+
+.validation-error h1 {
+  display: flex;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #e74c3c;
+}
+
+input.btn {
+  position: relative;
+  left: 5rem;
+  top: 4rem;
+  width: 10rem;
+}
+
+@media screen and (max-width: 900px) {
+  .login {
+    position: relative;
+    width: 100%;
+    height: 32rem;
+    left: 3rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  }
+  .avatar {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    left: 0;
+  }
+  .login h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 14px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+  }
+  .login form {
+    position: relative;
+    width: 25rem;
+
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 6rem;
+    width: 35px;
+    height: 35px;
+    background-color: #004883;
+    color: #ffffff;
+  }
+  .login form input[type="password"],
+  .login form input[type="text"] {
+    position: relative;
+    width: 10rem;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    left: 2rem;
+    bottom: 2.2rem;
+    padding: 0 15px;
+  }
+
+  .validation-error {
+    position: relative;
+    bottom: 3em;
+    width: 10em;
+    height: 1rem;
+    left: 0rem;
+  }
+
+  .validation-error h1 {
+    display: flex;
+    text-align: center;
+    font-size: 0.6rem;
+    color: #e74c3c;
+  }
+
+  input.btn {
+    position: relative;
+    margin-right: 12rem;
+    margin-top: 1%;
+    padding: 3%;
+    border-radius: 25px;
+    font-size: 0.8rem;
+  }
+}
