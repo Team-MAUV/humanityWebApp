@@ -96,17 +96,26 @@ class login_Model extends Model
 
             if ($role == 'donor') {
 
-                $st = $this->db->prepare("SELECT * FROM donor WHERE don_id= :id ");
-                $st->execute(array(
-                    ':id' => $_POST['username']
+                $st1 = $this->db->prepare("SELECT * FROM user WHERE username= :un ");
+                $st1->execute(array(
+                    ':un' => $_POST['username']
                 ));
-                $user = $st->fetchAll();
+                $user1 = $st1->fetchAll();
+                $st2 = $this->db->prepare("SELECT * FROM donor WHERE userlogin_id= :id ");
+                $st2->execute(array(
+                    ':id' => $user1['id']
+                ));
+                $user = $st2->fetchAll();
                 foreach ($user as $usr) :
                     $id = $usr['don_id'];
                     $name =  $usr['name'];
                 endforeach;
+                foreach ($user1 as $usr1) :
+                    $un = $usr1['username'];
+                   
+                endforeach;
 
-                if($id==$_POST['username']){
+                if($un==$_POST['username']){
                     Session::set('loggedIn-don', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
@@ -119,21 +128,30 @@ class login_Model extends Model
             if ($role == 'buyer') {
 
 
-                $st = $this->db->prepare("SELECT * FROM buyer WHERE buy_id= :id ");
-                $st->execute(array(
-                    ':id' => $_POST['username']
+                $st1 = $this->db->prepare("SELECT * FROM user WHERE username= :un ");
+                $st1->execute(array(
+                    ':un' => $_POST['username']
                 ));
-                $user = $st->fetchAll();
+                $user1 = $st1->fetchAll();
+                $st2 = $this->db->prepare("SELECT * FROM buyer WHERE userlogin_id= :id ");
+                $st2->execute(array(
+                    ':id' => $user1['id']
+                ));
+                $user = $st2->fetchAll();
                 foreach ($user as $usr) :
                     $id = $usr['buy_id'];
                     $name =  $usr['name'];
                 endforeach;
+                foreach ($user1 as $usr1) :
+                    $un = $usr1['username'];
+                   
+                endforeach;
 
-                if($id==$_POST['username']){
+                if($un==$_POST['username']){
                     Session::set('loggedIn-buy', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
-                    header('location: ../Buyer/home');
+                    header('location: ../Buyer');
               
                 }
 
