@@ -21,7 +21,7 @@ include "vol_dash_header.php"; ?>
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-   
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -132,6 +132,7 @@ include "vol_dash_header.php"; ?>
                 </div>
               </a>
             </li>
+  
             <li class="project__item">
               <a href="#" class="project__link focus--box-shadow">
                 <div class="project__wrapper">
@@ -228,36 +229,82 @@ include "vol_dash_header.php"; ?>
       <aside class="aside">
         <section class="section">
           <div class="aside__control">
-            <button
-              class="aside__button focus--box-shadow"
-              type="button"
-              aria-label="Close profile settings"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                role="presentation"
-              >
-                <path
-                  d="M17,11H9.41l3.3-3.29a1,1,0,1,0-1.42-1.42l-5,5a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l5,5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L9.41,13H17a1,1,0,0,0,0-2Z"
-                />
-              </svg>
-            </button>
-            <button
-              class="aside__button aside__button--notification focus--box-shadow"
-              type="button"
-              aria-label="You have new feedback"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                role="presentation"
-              >
-                <path
-                  d="M18,13.18V10a6,6,0,0,0-5-5.91V3a1,1,0,0,0-2,0V4.09A6,6,0,0,0,6,10v3.18A3,3,0,0,0,4,16v2a1,1,0,0,0,1,1H8.14a4,4,0,0,0,7.72,0H19a1,1,0,0,0,1-1V16A3,3,0,0,0,18,13.18ZM8,10a4,4,0,0,1,8,0v3H8Zm4,10a2,2,0,0,1-1.72-1h3.44A2,2,0,0,1,12,20Zm6-3H6V16a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"
-                />
-              </svg>
-            </button>
+
+          <div class="notification_wrap">  
+          <div class="notification_icon">
+			<i class="fas fa-bell"></i><span style="color:red">4</span>
+		</div>
+    <div class="dropdown">
+    
+			<div class="notify_item">
+				<div class="notify_img">
+        <img src="<?= URL ?>public/images/badge1.jpg" alt="img" style="width: 50px"/>
+
+				</div>
+				<div class="notify_info">
+					<p>Approved as Permanent Volunteer<span>Commissioner</span></p>
+					<span class="notify_time">10 minutes ago</span>
+				</div>
+			</div>
+			<div class="notify_item">
+				<div class="notify_img">
+          <img src="<?= URL ?>public/images/badge1.jpg" alt="img" style="width: 50px"/>
+
+				</div>
+				<div class="notify_info">
+					<p>Activity added<span>Blood donation</span></p>
+					<span class="notify_time">55 minutes ago</span>
+				</div>
+			</div>
+			<div class="notify_item">
+				<div class="notify_img">
+          
+          <img src="<?= URL ?>public/images/badge1.jpg" alt="img" style="width: 50px"/>
+
+				</div>
+				<div class="notify_info">
+					<p>Your points reached<span>Congratulation!</span></p>
+					<span class="notify_time">2 day ago</span>
+				</div>
+			</div>
+			<div class="notify_item">
+				<div class="notify_img">
+          <img src="<?= URL ?>public/images/badge1.jpg" alt="img" style="width: 50px"/>
+				</div>
+				<div class="notify_info">
+					<p>Message<span>Private</span></p>
+					<span class="notify_time">6 days ago</span>
+				</div>
+			</div>
+		</div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
           <div class="profile-main">
             <button
@@ -270,7 +317,7 @@ include "vol_dash_header.php"; ?>
                 alt="Profile photo"
               />
             </button>
-            <h1 class="profile-main__name"<?= $_SESSION['name'] ?>></h1>
+            <h1 class="profile-main__name"><?= $_SESSION['name'] ?></h1>
           </div>
           <ul class="statistics">
             <li class="statistics__entry">
@@ -295,6 +342,13 @@ include "vol_dash_header.php"; ?>
         </section>
       </aside>
     </div>
+    <script>
+		$(document).ready(function(){
+			$(".notification_icon .fa-bell").click(function(){
+				$(".dropdown").toggleClass("active");
+			})
+		});
+	</script>
   </body>
 
 
