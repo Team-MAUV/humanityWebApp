@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
     </head>
 
     <body>
@@ -185,17 +186,45 @@
                             <div class="row">
                                 
                                 <div class="column">
-                                    <img src="<?= URL ?>public/images/recycled-glass.jpg">
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-glass.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Glass</h3></div>                                           
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                        </div>
+                                    </div>
                                 </div>
+                                
                                 <div class="column">
-                                    <img src="<?= URL ?>public/images/recycled-paper.jpg">
-                                </div>
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-paper.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Paper</h3></div>                                           
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                
                                 <div class="column">
-                                    <img src="<?= URL ?>public/images/recycled-plastic.jpg">
-                                </div>
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-plastic.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Plastic</h3></div>                                           
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                        </div>
+                                    </div>
+                                </div>    
+
                                 <div class="column">
-                                    <img src="<?= URL ?>public/images/recycled-tronic.jpg">
-                                </div>
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-tronic.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Electronics</h3></div>                                           
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                        </div>
+                                    </div>
+                                </div>    
+                                
                             </div>
                         </div>
 
