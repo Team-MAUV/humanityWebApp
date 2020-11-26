@@ -192,6 +192,8 @@ class login_Model extends Model
 
     public function run_check_email(){
         echo "In login model";
+
+        Session::init();
    
         if (!isset($_POST["reset"])){
 
@@ -276,14 +278,15 @@ class login_Model extends Model
 
 
            }else{
-               echo "Email address doesn't exist!";
+            $error = "Email address doesn't exist!";
            }
 
         }else{
-            echo "Enter a valid Email!";
+            $error = "Enter a valid Email!";
         }
 
-    
+        Session::set('msg', $error);
+        header('location: ../login/forgotPassword');
     }
 
 
