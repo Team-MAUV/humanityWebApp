@@ -15,25 +15,25 @@ include "sess_header.php"; ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Registration Form</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/sess_dash_imagesample.css" />
-  <link rel="stylesheet" href="<?= URL?> public/css/sess_dash_upload.css"/ >
+
 </head>
 <body>
-<div class="row">
-   
-        <form action="#">
-        <img src="<?= URL ?>public/images/form.png" alt="img" width="200px" height="150px"/>
-         <br>
-            <label for="event_Id">Event_Id: </label>
-          <br>  <input type="text" id="eId" name="eId"><br><br>
-        
-            <label for="event_name">EventName: </label>
-            <br>   <input type="text" id="ename" name="ename"><br><br>
+<div class="container">
+		<div class="contact-box">
+			<div class="left" > <img src="<?= URL ?>public/images/form.png" alt="img" width="500" height="500"/> </div>
+			<div class="right">
+				<h2>Upload Image </h2>
+				<input type="text" class="field" placeholder="Event ID:">
+				<input type="text" class="field" placeholder="Event Name:">
+        <input type="text" class="field" placeholder="Date:">
+        <input type="file" id="myFile" name="filename">
+			
+				<button class="btn">Submit</button>
+			</div>
+		</div>
+	</div>
 
-  <input type="submit" value="Submit"> <br>   <br>  <br> 
-  <button class="btn"><i class="fa fa-upload"></i> Upload </button>        
-            </form>
-        
-    </div>
+
 
 </body>
 

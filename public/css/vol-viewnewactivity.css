@@ -1,5 +1,5 @@
 body {
-   background: rgb(100, 230, 132);
+    background: rgb(100, 230, 132);
     margin: 0;
     width: 100vw;
 }
@@ -42,7 +42,7 @@ h2 {
     position: absolute;
     opacity: 0.3;
     margin-top: 14vh;
-    margin-left: 4.5vw;
+    margin-left: 7vw;
     color: rgb(10, 10, 10);
 }
 
@@ -54,8 +54,8 @@ h2 {
 
 h3 {
     font-size: 1.9vw;
-    margin-left: 2.5vw;
-    margin-right: 2vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
     position: absolute;
     color: rgb(0, 0, 0);
     margin-top: 3.5vh;
@@ -138,7 +138,6 @@ h3 {
 }
 
 @media screen and (max-width: 900px) {
-  
     .column {
         width: 80vw;
         display: block;
@@ -170,7 +169,6 @@ h3 {
     font-size: 17px;
     width: 25%;
     font-weight: 600;
-
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
@@ -197,7 +195,7 @@ h3 {
 
 .tab-finished,
 #finished {
-    background-color:rgb(100, 230, 132);
+    background-color: rgb(100, 230, 132);
 }
 
 * {

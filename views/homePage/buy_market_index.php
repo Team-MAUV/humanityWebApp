@@ -53,8 +53,8 @@
                     <div class="pg-name">
                         <h2>Welcome to Tzu-Chi Market Module</h2>
                         <div class="btns">
-                            <a class="log" href="#">Log-In</a>
-                            <a class="reg" href="#">Register</a>
+                            <a class="log" href="<?= URL ?>login/index">"Log-In</a>
+                            <a class="reg" href="<?= URL ?>register/buyRegForm">Register</a>
                         </div>
                     </div>
                     <div class="home-img">

@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'attendance_marking';
 include "sess_header.php"; ?>
 
 
