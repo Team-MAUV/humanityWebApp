@@ -211,7 +211,8 @@ a {
 /*------------------------donation - container-----------------*/
 
 .donation-container {
- 
+  grid-column: 2;
+  grid-row: 2;
   
 }
 .background-img {
@@ -220,12 +221,8 @@ a {
   width: 80vw;
 }
 
-.donate-here .add-donation {
-  position: absolute;
-  bottom: 6vh;
-  top: 6vh;
-  left: 35vw;
-  right: 20vw;
+.add-donation {
+  
   color: #e82563;
   background-color: white;
   padding: 20px;
@@ -499,7 +496,7 @@ input[type="checkbox"] {
     text-transform: uppercase;
   }
   .container {
-    grid-template-columns: 60vw 45vw;
+    grid-template-columns: 40vw 60vw;
   }
 
   .side-panal {
@@ -517,12 +514,8 @@ input[type="checkbox"] {
     padding: 2px;
     margin-bottom: 2px;
   }
-  .donate-here .add-donation {
-    position: absolute;
-    bottom: 6vh;
-    top: 6vh;
-    left: 0;
-    right: 38vw;
+  .add-donation {
+   
     background-color: #f0f8ff;
     color: black;
     padding: 20px;
