@@ -72,16 +72,16 @@
             <a href="<?= URL ?>session_incharge/media_gallary"><i class="fas fa-file-contract"></i> Gallery</a>
           </li>
           
-          <li class="<?php if ($page == 'confirm_participants') {
+          <li class="<?php if ($page == 'marking_attendance') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/confirm_participants"><i class="fas fa-id-card-alt"></i> Confirm Participants</a>
+            <a href="<?= URL ?>session_incharge/marking_attendance"><i class="fas fa-id-card-alt"></i> Marking attendance</a>
           </li>
 
-          <li class="<?php if ($page == 'attendance_marking') {
+          <li class="<?php if ($page == 'unconfirm_attendance') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/attendance_marking"><i class="fas fa-id-card-alt"></i> Attendance Marking</a>
+            <a href="<?= URL ?>session_incharge/unconfirm_attendance"><i class="fas fa-id-card-alt"></i> unconfirm attendance</a>
           </li>
           
         
