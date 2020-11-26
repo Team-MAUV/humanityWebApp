@@ -1,4 +1,4 @@
-<?php $page = 'confirm_participants';
+<?php $page = 'marking_attendance"';
 include "sess_header.php"; ?>
 
 
@@ -88,7 +88,7 @@ include "sess_header.php"; ?>
 
 <body>
 
-    <h1>Confirmed Participants</h1>
+    <h1>Confirmed Participants attendance marking</h1>
     <hr>
 
     <table>

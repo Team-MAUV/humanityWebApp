@@ -29,14 +29,14 @@ class Session_incharge extends Controller
     {
         $this->view->rendor('session_incharge/dashboard/media_gallary');
     }
-    function confirm_participants()
+    function marking_attendance()
     {
-        $this->view->rendor('session_incharge/dashboard/confirm_participants');
+        $this->view->rendor('session_incharge/dashboard/marking_attendance');
     }
 
-    function attendance_marking ()
+    function unconfirm_attendance()
     {
-        $this->view->rendor('session_incharge/dashboard/attendance_marking');
+        $this->view->rendor('session_incharge/dashboard/unconfirm_attendance');
     }
 
 
