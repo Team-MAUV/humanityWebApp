@@ -36,7 +36,9 @@ class Volunteer extends Controller
     }
     function volviewevent()
     {
-        $this->view->rendor('volunteer/dashboard/viewNewActivities');
+        $data = $this->model->get_vol_activity_list();
+        $this->view->rendor('volunteer/dashboard/viewNewActivities', $data, true);
+        
     }
     function volleaderboard()
     {

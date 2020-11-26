@@ -53,8 +53,8 @@
                     <div class="pg-name">
                         <h2>Welcome to Tzu-Chi Market Module</h2>
                         <div class="btns">
-                            <a class="log" href="#">Log-In</a>
-                            <a class="reg" href="#">Register</a>
+                            <a class="log" href="<?= URL ?>login/index">"Log-In</a>
+                            <a class="reg" href="<?= URL ?>register/buyRegForm">Register</a>
                         </div>
                     </div>
                     <div class="home-img">
@@ -191,6 +191,7 @@
                                         <div class="text-box">
                                             <div class="prd-name"><h3>Recycled Glass</h3></div>                                           
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, iusto libero quo sequi a dolores, tempora nostrum itaque dolore mollitia, aliquid magnam. Quis saepe amet id minima quod vitae corrupti!</p>
                                         </div>
                                     </div>
                                 </div>

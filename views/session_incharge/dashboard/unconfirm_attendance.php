@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'unconfirm_attendance';
 include "sess_header.php"; ?>
 
 
@@ -16,7 +16,7 @@ include "sess_header.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>mark attendance</title>
+	<title>uncinfirm attendance</title>
 
   <link rel="stylesheet" href="<?= URL ?>public/css/sess_dash_attendance.css" />
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@ include "sess_header.php"; ?>
 		<div class="contact-box">
 			<div class="left" > <img src="<?= URL ?>public/images/attend.png" alt="img" width="500" height="500"/> </div>
 			<div class="right">
-				<h2>Attendance Marking</h2>
+				<h2> Unconfirmed Attendance Marking</h2>
 				<input type="text" class="field" placeholder="Event ID:">
 				<input type="text" class="field" placeholder="Event Name:">
         <input type="text" class="field" placeholder="Date:">
