@@ -14,7 +14,7 @@ function openpage(pagename, element) {
         tab[i].style.backgroundColor = "";
     }
     document.getElementById(pagename).style.display = "block";
-    element.style.backgroundColor = ""
+    element.style.backgroundColor = "black"
 
 }
 document.getElementById("defaultOpen").click();
