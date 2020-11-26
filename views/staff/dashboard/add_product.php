@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'add_product';
 include "staff_header.php"; ?>
 
 

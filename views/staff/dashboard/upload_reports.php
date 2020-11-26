@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'upload_reports';
 include "staff_header.php"; ?>
 <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
 
@@ -40,14 +40,14 @@ include "staff_header.php"; ?>
           border: 1px solid grey;
           float: left;
           width: 80%;
-          background: #f1f1f1;
+          background: white;
         }
         
         form.example button {
           float: left;
           width: 20%;
           padding: 10px;
-          background: #2196F3;
+          background: #3b5998 ;
           color: white;
           font-size: 17px;
           border: 1px solid grey;
