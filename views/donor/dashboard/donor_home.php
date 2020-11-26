@@ -6,7 +6,7 @@ include "don_dash_header.php"; ?>
 
             <div class="donation-container">
                 <div class="donate-here">
-                    <img class="background-img" src="<?= URL ?>public/images/donation1.jpg">
+                    
                     <div class="add-donation">
                        <div class="view1" id="donateView" style="display:block;">
                             <h4>Select an amount</h4>

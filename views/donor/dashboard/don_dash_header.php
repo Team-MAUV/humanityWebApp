@@ -17,26 +17,25 @@
         <header>
             <div class="nav-bar">
                 <div class="logo-container">
-    
-    
                     <div class="logo"></div>
                 </div>
-    
                 <div class="title-name">
-    
                     <h3 class="logo-name">
                         <div class="tzu-logo"></div>
                         Tzu Chi Foundation | <span> Hambantota</span>
                     </h3>
                 </div>
-    
-                <div class="log-sign" style="--i: 1.8s;">
-    
-                    <a href="<?= URL ?>index" class="back-btn" alt="Sun"><i class="fas fa-home"></i></a>
-                </div>
-    
+                <div class="dropdown">
+                    <button class="dropbtn">Hi, <?= $_SESSION['name'] ?>
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="<?= URL ?>">Logout</a>
+                    </div>
+                </div>    
             </div>
-    
+     
         </header> 
 
 
