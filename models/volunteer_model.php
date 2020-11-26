@@ -110,4 +110,32 @@ class volunteer_Model extends Model
     ];
     return $pageData;
   }
+
+
+  public function get_vol_activity_list()
+  {
+
+        //Upcoming ACtivities
+        $st = $this->db->prepare('SELECT * FROM vol_activity WHERE status="upcoming" ORDER BY id ');
+        $st->execute();
+        $upcoming = $st->fetchAll();
+
+
+        //Finished Activities
+        $stmt = $this->db->prepare('SELECT * FROM vol_activity WHERE status="finished" ORDER BY id ');        
+        $stmt->execute();
+        $finished = $stmt->fetchAll();
+
+    //All the data that has to be return from this functon is added to an associative array
+    $pageData = [
+      'upcoming' => $upcoming,
+      'finished'=> $finished
+    ];
+    return ($pageData);
+  }
+
+
+
+
+
 }
