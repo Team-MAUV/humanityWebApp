@@ -458,10 +458,11 @@ a {
 }
 .prd-cat-img{
   position: relative;
+  cursor: pointer;
 }
 
 .text-box {
- 
+  opacity: 0;
   position: absolute;
   top: 0;
   width: 100%;
@@ -471,8 +472,11 @@ a {
   color: white;
   
   overflow-y: auto;
-  transition: 2s;
+  transition: 1s;
   
+}
+.prd-cat-img:hover .text-box{
+  opacity: 1;
 }
 .text-box p{
   color: lightgray;

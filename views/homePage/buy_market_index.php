@@ -191,6 +191,7 @@
                                         <div class="text-box">
                                             <div class="prd-name"><h3>Recycled Glass</h3></div>                                           
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, iusto libero quo sequi a dolores, tempora nostrum itaque dolore mollitia, aliquid magnam. Quis saepe amet id minima quod vitae corrupti!</p>
                                         </div>
                                     </div>
                                 </div>
