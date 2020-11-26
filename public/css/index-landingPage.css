@@ -1,0 +1,575 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scrollbar-width: thin;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, sans-serif;
+}
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #02a95c;
+  border-radius: 10px;
+  border: 1px solid #02a95c;
+}
+
+/*------------------------------*/
+
+body {
+  display: grid;
+  background-color: rgba(7, 7, 7, 0.829);
+}
+
+.nav-bar {
+  position: fixed;
+  grid-area: nav-bar;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  background-color: #02a95c;
+  height: 3rem;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  height: 3rem;
+}
+
+.logo {
+  height: 3rem;
+  width: 6rem;
+  z-index: 10;
+  margin-left: 2rem;
+  background-image: url("../images/hlogoxs.png");
+}
+
+.title-name {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 3rem;
+}
+
+.tzu-logo {
+  position: relative;
+  right: 2rem;
+  width: 5rem;
+  background: url("../images/tzuChiLogo.png");
+  z-index: 11;
+}
+
+.logo-name {
+  display: flex;
+  color: #fff;
+  font-size: 1.2vw;
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  line-height: 3rem;
+  text-align: center;
+  z-index: 10;
+}
+
+.logo-name span {
+  font-weight: 200;
+}
+
+.log-sign {
+  width: auto;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.log-sign a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.7rem;
+  margin-left: 1rem;
+  transition: 0.3s;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  grid-area: dropdown;
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0.5rem;
+  top: 3rem;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #004883;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #004883;
+  color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+a {
+  text-align: center;
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1rem;
+
+  color: #000000;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+.carousel {
+  position: relative;
+  top: 3rem;
+  width: 100%;
+  height: 26rem;
+  background-color: #6abeb0;
+}
+
+img {
+  height: 26rem;
+  position: relative;
+  top: 0%;
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  top: 3rem;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
+
+.overlay {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 2rem;
+  height: 9rem;
+  width: 100%;
+  position: relative;
+  background-image: url("../images/overlaybg.png");
+  z-index: 2;
+}
+
+.explorebtn {
+  position: relative;
+  width: 12rem;
+  height: 4rem;
+  top: 2rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 3px 7px;
+  z-index: 2;
+  font-size: 16px;
+  align-items: center;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #02a95c;
+}
+
+.platform-container {
+  position: relative;
+  background: url(../images/containerbg.png);
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 50rem;
+}
+
+.pf {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #004d40;
+  width: 30%;
+  height: 75%;
+  top: 1rem;
+  z-index: 1;
+}
+
+.d {
+  background: #e8256367;
+  border: 5px solid#e82563;
+}
+
+.v {
+  background: rgba(160, 236, 135, 0.493);
+  border: 5px solid #73d609;
+}
+
+.m {
+  background: #254d3546;
+  border: 5px solid #254d35;
+}
+
+.btn-container {
+  background-color: #ffffff;
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 9rem;
+  z-index: 1;
+}
+
+.btnTop {
+  position: relative;
+  display: flex;
+  width: 20rem;
+  height: 4rem;
+
+  border-radius: 1rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.btnTop a {
+  position: relative;
+
+  font-size: 1.5rem;
+}
+
+#btnv {
+  border: 5px solid#02a95c;
+}
+
+#btnv:hover {
+  background: #02a95c;
+}
+
+#btnd {
+  border: 5px solid#e82563;
+}
+
+#btnd:hover {
+  background: #e82563;
+}
+
+#btnm {
+  border: 5px solid #254d35;
+}
+
+#btnm:hover {
+  background: #254d35;
+}
+
+.btn {
+  position: absolute;
+  width: 50%;
+  height: 4rem;
+  bottom: 2rem;
+  border-radius: 1rem;
+  z-index: 2;
+  font-size: 16px;
+  align-items: center;
+  text-align: center;
+  padding-top: 0%;
+}
+
+.btnv {
+  border: 5px solid #56a106;
+}
+
+.btnv:hover {
+  background: #02a95c;
+}
+
+.btnd {
+  border: 5px solid #e82563;
+}
+
+.btnd:hover {
+  background: #e82563;
+}
+
+.btnm {
+  border: 5px solid #254d35;
+}
+
+.btnm:hover {
+  background: #254d35;
+}
+
+.colimg img {
+  position: relative;
+  margin-top: 2rem;
+  width: 200px;
+  height: 200px;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 16px;
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #02a95c;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-areas: "nav-bar " "grid-container" "footer";
+  }
+  .nav-bar {
+    position: fixed;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 100px 60% 15%;
+    grid-template-areas: "logo-container title-name dropdown";
+    background-color: #02a95c;
+    height: 3rem;
+    z-index: 10;
+  }
+  .logo-container {
+    display: none;
+  }
+  .title-name {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+  }
+  .tzu-logo {
+    width: 60px;
+    height: 37px;
+    background: url(../images/tzuChiLogo-s.png);
+  }
+  .logo {
+    display: none;
+  }
+  .logo-name {
+    display: flex;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+    text-align: center;
+  }
+  .logo-name span {
+    font-weight: 200;
+  }
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    grid-area: dropdown;
+    float: right;
+    overflow: hidden;
+    z-index: 10;
+  }
+  .dropdown .dropbtn {
+    font-size: 12px;
+  }
+
+  .btn-container {
+    height: 9rem;
+  }
+
+  .btnTop {
+    width: 10rem;
+    height: 4rem;
+  }
+
+  .btnTop a {
+    position: relative;
+
+    font-size: 0.8rem;
+  }
+
+  .platform-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+  }
+  .pf {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 3rem;
+    height: auto;
+    top: 1rem;
+    z-index: 1;
+  }
+  .btn {
+    position: relative;
+    width: 50%;
+    height: 4rem;
+    margin-bottom: 2rem;
+    top: 1rem;
+    z-index: 2;
+  }
+}

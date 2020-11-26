@@ -116,7 +116,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: 0vh 88vh 10vh;
+    grid-template-rows: 6vh 88vh 10vh;
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
@@ -179,16 +179,16 @@ a {
 }
 .pg-name h3{
     margin-left: 230px;
-    margin-top: 10px;
+    margin-top: 5px;
     color: green;
     font-size: 2vw;
     font-weight: bold;
     opacity: 1;
 }
 .pg-name h4{
-    padding: 10px;
-    margin: 40px;
-    font-size: 22px;
+   
+    margin: 10px;
+    font-size: 20px;
 }
 .home-img{
     width: 26vw;
@@ -557,7 +557,7 @@ a {
 /*=========scroll bar=========================*/
 /* width */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 5px;
 }
 
 /* Track */
@@ -653,7 +653,7 @@ a {
     
     .head-container {
        flex-direction: column-reverse;
-        height: 750px;
+        height: 80vh;
         align-items: center;
         justify-content: center;
         text-align: center;

@@ -39,3 +39,4 @@ INFO: Unsupported notification method: $/setTraceNotification
 2020.11.25 11:54:44 INFO  time: initialize in 2.08s
 2020.11.25 11:54:45 WARN  Build server is not auto-connectable.
 2020.11.25 11:54:45 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.25 15:40:30 INFO  shutting down Metals

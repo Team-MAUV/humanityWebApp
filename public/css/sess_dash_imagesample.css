@@ -1,11 +1,12 @@
 
 body{
     background: rgb(206, 206, 243);
+    overflow: hidden;
 }
 
 
 .column {
-    float: left;
+    float: right;
     width: 50%;
   
   
@@ -53,4 +54,3 @@ body{
     display: inline-block;
     font-size: 16px;
   }
-  
