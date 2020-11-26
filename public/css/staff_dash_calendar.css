@@ -22,6 +22,7 @@ body {
   max-width: 475px;
   margin: 0 auto;
   overflow: auto;
+  color: #0f0779;
 }
 
 .button-container-calendar button {
