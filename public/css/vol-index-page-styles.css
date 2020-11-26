@@ -29,7 +29,7 @@ body {
     justify-content: space-between;
     top: 0;
     width: 100vw;
-    background-color: #78cc5a;
+    background-color:#02a95c;
     height: 6vh;
     z-index: 10;
 }
@@ -102,7 +102,7 @@ body {
     width: 4vw;
     height: auto;
     margin: 2rem;
-    background: #78cc5a;
+    background: #02a95c;
     padding: 0.4rem 0.7rem;
     font-size: 1.2rem;
     border: 2px solid #fff;
@@ -409,7 +409,7 @@ a {
   }
 
 .selection-panal {
-   
+
     background-color: #78cc5a;
     
 }
@@ -474,22 +474,134 @@ a {
     display: block;
     
 }
+/*=======================vol-types===============*/
 
+.images{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+  }
+  .vol-type-column {
+   
+    float: left;
+    width: 50%;
+    padding: 5px;
+  }
+  .vol-cat-img{
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .text-box {
+   
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    opacity: 0;
+    overflow-y: auto;
+    transition: 1s;
+    
+  }
+  .vol-cat-img:hover .text-box{
+      opacity: 1;
+  }
+  .text-box p{
+    color: lightgray;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    
+  }
+  .vol-cat-name{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    
+    background: darkgreen;
+  }
+  
+  
+  
+  
+  .vol-type-column img {
+    opacity: 1;
+    margin: auto;
+    display: block;
+    width: 100%;
+    
+  }
+  
+  .jsy-type-column{
+    float: left;
+    width: 33%;
+    padding: 5px;
+  }
+  .jsy-type-column img{
+      margin: auto;
+      display: block;
+      width: 100%;
+    
+  }
+  
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 
 /*==============vol-activities-===========*/
-
+.
 .vol-activities h4{
     margin-bottom: 50px;
     margin-top: 50px;
 }
+
+.vol-act-list{
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+.vol-act-dis{
+    float: left;
+    width: 75%;
+    padding: 10px;
+}
+.vol-act-btns{
+    background: transparent;
+    background-color: green;
+    color: white;
+    outline: none;
+    padding: 10px;
+    width: 250px;
+    text-align: left;
+    cursor: pointer;
+
+}
+.vol-act-btns:hover{
+    background-color: darkgreen;
+}
+.vol-act-list ul li{
+    padding: 0;
+    margin: 0;
+}
+.vol-activities{
+    height: 100vh;
+    align-items: center;
+}
+
 /*--------------image - gallery--------------------------*/
 .images{
     margin-top: 100px;
     margin-bottom: 50px;
     padding: 20px;
 }
-.column {
+.column{
     float: left;
     width: 25%;
     padding: 10px;
@@ -547,7 +659,7 @@ a {
     bottom: 0;
     width: 100vw;
     height: 6vh;
-    background-color: #78cc5a;
+    background-color: #02a95c;
     color: white;
     text-align: center;
     z-index: 1000;
@@ -749,4 +861,28 @@ a {
     .column img {
         height: 100px;
     }
+    .vol-type-column {
+        width: 100%;
+    }
+    .vol-act-list{
+        width: 100%;
+        
+    }
+    .vol-act-list ul li{
+        display: inline;
+        font-size: 10px;
+        padding: 0;
+        margin: auto;
+
+    }
+    .vol-act-dis{
+        width: 100%;
+
+    }
+    .vol-act-btns{
+        width: 100px;
+        height: 60px;
+        padding: 10px;
+    }
+
 }
