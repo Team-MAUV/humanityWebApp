@@ -1,5 +1,5 @@
 body {
-    background: rgb(100, 230, 132);
+    background: rgb(2, 11, 41);
     margin: 0;
     width: 100vw;
 }
@@ -64,7 +64,7 @@ h3 {
 .column:hover h3 {
     top: 0px;
     opacity: 0.6;
-    color: rgb(52, 6, 56);
+    color: rgb(90, 9, 97);
 }
 
 .row:after {
@@ -108,8 +108,8 @@ h3 {
 }
 
 .btn {
-    background-color: rgb(20, 175, 6);
-    color: rgb(7, 7, 7);
+    background-color: rgb(2, 11, 41);
+    color: rgb(255, 255, 255);
     padding: 8px 10px;
     border-radius: 10px;
     cursor: pointer;
@@ -170,13 +170,13 @@ h3 {
     width: 25%;
     font-weight: 600;
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(0, 0, 0);
     background-color: #f1f1f1;
 }
 
 .tab:hover {
     background-color: rgb(14, 187, 135);
-    color: black;
+    color: rgb(52, 3, 185);
     font-weight: 1000;
 }
 
@@ -190,12 +190,12 @@ h3 {
 
 .tab-upcoming,
 #upcoming {
-    background-color: rgb(100, 230, 132);
+    background-color: rgb(2, 11, 41);
 }
 
 .tab-finished,
 #finished {
-    background-color: rgb(100, 230, 132);
+    background-color: rgb(2, 11, 41);
 }
 
 * {

@@ -89,7 +89,7 @@
           <li class="<?php if ($page == 'upload_reports') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>staff/upload_reports"><i class="fas fa-file-contract"></i> Uploaded Reports</a>
+            <a href="<?= URL ?>staff/upload_reports"><i class="fa fa-upload"></i> Uploaded Reports</a>
           </li>
           <li class="<?php if ($page == 'requestleave') {
                         echo 'active';
@@ -111,7 +111,7 @@
           <li class="<?php if ($page == 'Session Incharge Login') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>staff/sessionInchargeLogin"><i class="fa fa-bell" aria-hidden="true"></i> Session Incharge </a>
+            <a href="<?= URL ?>staff/sessionInchargeLogin"><i class="fa fa-tasks" aria-hidden="true"></i> Session Incharge </a>
           </li>
         
 
