@@ -42,14 +42,11 @@ include "userLogin-header.php"; ?>
              
 
 
-</div>
-
-
-
-
 
 
 <?php include "userLogin-footer.php" ?>
+
+
 
 <script>
 // Get the modal
@@ -119,9 +116,11 @@ window.onclick = function(event) {
                      }  
                 });  
            }  
+
       });   
  }
 
  );  
  </script>  
+
 
