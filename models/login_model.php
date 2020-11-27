@@ -193,8 +193,9 @@ class login_Model extends Model
     public function run_check_email(){
 
         $baseUrl = URL;
+        $msg="";
   
-
+    if(!empty($_POST["email"])){
            $st = $this->db->prepare("SELECT email,name,userlogin_id FROM volunteer WHERE email= :entered_email");
 
            $st->execute(array(
@@ -204,14 +205,14 @@ class login_Model extends Model
            $row_count = $st->rowCount();
            $user_details =$st->fetchAll();
 
-           if($row_count >0){
+        if($row_count >0){
 
                
-        foreach ($user_details as $usr) :
-            $userlogin_id = $usr['userlogin_id'];
-            $email = $usr['email'];
-            $name =  $usr['name'];
-        endforeach;
+            foreach ($user_details as $usr) :
+                $userlogin_id = $usr['userlogin_id'];
+                $email = $usr['email'];
+                $name =  $usr['name'];
+            endforeach;
 
             $selector = bin2hex(random_bytes(8));
             $token = random_bytes(32);
@@ -261,16 +262,20 @@ class login_Model extends Model
     
             Email::email_send($to,$rec_name, $subject, $message, $headers);
 
-            $msg =  "An email with a password reset link has been sent to your email! Check you inbox!";
+            $msg =  "An email with a password reset link has been sent to your email! Check your inbox!";
+            
                 
         }else{
             $msg =  "Email address doesn't exist!";
-       }
+        }
+            
+    }
 
-       
+  
 
        echo $msg;
-    }
+       
+}
 
 
     public function run_resetPassword(){
