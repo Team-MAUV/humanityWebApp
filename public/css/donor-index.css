@@ -167,7 +167,7 @@ body {
   width: 100vw;
   height: 100vh;
 
-  grid-gap: 1px;
+  
  
   overflow-y: scroll;
 }
@@ -178,10 +178,11 @@ body {
 .side-panal {
   grid-column: 1;
   grid-row: 2;
- 
+  height: 100vh;
   z-index: 1;
   text-align: center;
   padding-top: 7vh;
+  padding-bottom: 10vh;
   background-color: cadetblue;
 }
 
@@ -213,6 +214,7 @@ a {
 .donation-container {
   grid-column: 2;
   grid-row: 2;
+  height: 88vh;
   
 }
 .background-img {
