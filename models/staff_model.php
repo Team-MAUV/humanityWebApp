@@ -233,11 +233,95 @@ echo "In staff Model";
           header('location: ../staff/sessionInchargeLogin');
 }
 
+  }
+
+public function addreport()
+{
+ 
+  if (isset($_FILES['file'], $_POST['staff_id'])) {
+    if($_POST['staff_id']==$_SESSION['id']){
+    $msg = "Please Upload a file";
+    $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/project_report/';
+    $save_path = 'project_report/';
+
+    $dest_path = $target_dir . basename($_FILES['file']['name']);
+    $file_path = $save_path . basename($_FILES['file']['name']);
+
+    if (!empty($_FILES['file']['tmp_name']) && filesize($_FILES['file']['tmp_name'])) {
+      if (file_exists($dest_path)) {
+        $msg = "This File already exists, please choose another or rename that file.";
+      } else if ($_FILES['file']['size'] > 500000) {
+        $msg = "File size is too large, please choose a file less than 500kb.";
+      } else {
+
+        //Getting id from Volunteer table that is corresponding to entered volunteer ID
+        $get_stfid = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :stfid  ");
+        $get_stfid->execute(array(
+          ':stfid' => $_POST['staff_id']
+        ));
+
+        $result = $get_stfid->fetchAll();
+        $count = $get_stfid->rowCount();
 
 
-  
+        if ($count > 0) {
+          foreach ($result as $tmp) :
+            $id = $tmp['id'];
+          endforeach;
+
+          //Inserting Fetched Volunteer id to beneficiary case table
+          $st = $this->db->prepare('INSERT INTO project_report(staff_id,report_path) VALUES (:id,:path)');
+          $st->execute(array(
+            ':id' => $id,
+            ':path' => $file_path
+          ));
+
+          move_uploaded_file($_FILES['file']['tmp_name'], $dest_path);
+          //Generating custom id
+          $custom_id=$this->db->prepare("SELECT id FROM project_report WHERE report_path=:report_path");
+    $custom_id->execute(array(
+      ':report_path' => $file_path,
+    ));
+    $cid_result = $custom_id->fetchAll();
+    $count2 = $custom_id->rowCount();
+    if ($count2 > 0) {
+      foreach ($cid_result as $cidtmp) :
+        if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+          $customid ="RPTHB00".$cidtmp['id'];
+        }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+          $customid ="RPTHB0".$cidtmp['id'];
+        }else if(strlen($cidtmp['id'])>0){
+          $customid ="RPTHB".$cidtmp['id'];
+        };
+      endforeach;
+
+    $cidstmt = $this->db->prepare('UPDATE `project_report` SET report_id=:customid WHERE report_path=:report_path');
+    $cidstmt->execute(array(
+      ':report_path' => $file_path,
+      ':customid'=>$customid,
+    ));
+  }
+          $msg = "File uploaded successfully!";
+        } else {
+          $msg = "File upload  Failed!";
+        }
+      }
+    } else {
+      $msg = 'Please upload a file!';
+    }
+  }
+  else{
+    $msg = "Staff ID does not match!";
+  }
+}
+
+  $pageData = [
+
+    'msg' => $msg
+  ];
+  return $pageData;
+}
 
 
   
  }
-}
