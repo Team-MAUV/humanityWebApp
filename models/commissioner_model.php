@@ -618,4 +618,24 @@ public function get_view_com_list() {
 }
 
 
+
+public function get_leaveRequests(){
+
+
+  $st = $this->db->prepare('SELECT * FROM leave_request  ORDER BY leave_id ');
+  $st->execute();
+  $leaves = $st->fetchAll();
+
+  
+//All the data that has to be return from this functon is added to an associative array
+$pageData = [
+
+'leaves' => $leaves,
+
+];
+return ($pageData);
+
+
+}
+
 }

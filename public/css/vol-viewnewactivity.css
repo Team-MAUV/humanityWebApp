@@ -41,8 +41,8 @@ h2 {
     font-size: 114px;
     position: absolute;
     opacity: 0.3;
-    margin-top: 14vh;
-    margin-left: 7vw;
+    margin-top: 15vh;
+    margin-left: 7.5vw;
     color: rgb(10, 10, 10);
 }
 
@@ -52,7 +52,7 @@ h2 {
     color: black;
 }
 
-h3 {
+.head1 {
     font-size: 1.9vw;
     margin-left: 1vw;
     margin-right: 1vw;
