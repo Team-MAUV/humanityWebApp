@@ -4,7 +4,7 @@ $style = 'don-index.css';
 $jsFile = 'donor.js';
 include "don_dash_header.php"; ?>
 
-            <div class="donation-container">
+            <div class="donation-container" style="display:bloclk">
                 <div class="donate-here">
                     
                     <div class="add-donation">
@@ -16,6 +16,7 @@ include "don_dash_header.php"; ?>
                                 <li><button type="button" class="don-value">Rs:500.00</button> </li>
                                 <li><button type="button" class="don-value">Rs:1000.00</button> </li>
                                 <li><button type="button" class="don-value">Rs:5000.00</button> </li>
+                                <li><button type="button" class="don-value">Other</button> </li>
                                 
                             </ul>
                             <div class="cust-amount">
@@ -34,8 +35,8 @@ include "don_dash_header.php"; ?>
                                 <input type="checkbox" id="dedicate" onclick="showDedicateDonation()">
                                 <label for="dedicate"> Dedicate this to a loved one</label> 
                                 <div class="remark" id="dedication" style="display: none;">
-                                    <label for="donation-remark">Add dedication</label>
-                                    <textarea class="donation-remark" type="text"></textarea>
+                                    <label for="donation-remark"></label>
+                                    <textarea class="donation-remark" type="text" ></textarea>
                                 </div>
                             </div>
                             <div class="payment-method">
@@ -45,9 +46,7 @@ include "don_dash_header.php"; ?>
                                 <button class="donate-btn">Donate</button>
                                 
                             </div>
-                            <div class="prv-d">
-                                <button class="prv-don-btn" onclick="viewPriviousDonations()">Previous Donations</button>
-                            </div>
+                            
                             
                        </div>
                        <div class="view2" id="viewDonations" style="display: none;">

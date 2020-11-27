@@ -175,16 +175,7 @@ body {
 .container > div {
 }
 
-.side-panal {
-  grid-column: 1;
-  grid-row: 2;
-  height: 100vh;
-  z-index: 1;
-  text-align: center;
-  padding-top: 7vh;
-  padding-bottom: 10vh;
-  background-color: cadetblue;
-}
+
 
 .hd {
   grid-row: 1;
@@ -215,7 +206,6 @@ a {
   grid-column: 2;
   grid-row: 2;
   height: 88vh;
-  
 }
 .background-img {
   z-index: -1;
@@ -224,10 +214,12 @@ a {
 }
 
 .add-donation {
+  font-size: 26px;
+  font-family: "Mukta", sans-serif;
+  color: black;
   
-  color: #e82563;
-  background-color: white;
-  padding: 20px;
+  padding: 50px;
+  margin: auto;
   height: 100vh;
 }
 
@@ -236,13 +228,14 @@ a {
   outline: none;
 }
 .don-value {
-  background-color: blue;
+  font-size: 20px;
+  background-color:red;
   padding: 5px;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   margin-left: 5px;
-  width: 100px;
-  height: 30px;
+  width: 150px;
+  height: 50px;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -250,7 +243,7 @@ a {
 }
 
 .don-value:hover {
-  background-color: darkblue;
+  background-color: darkred;
 }
 
 .add-donation h4 {
@@ -258,8 +251,8 @@ a {
   margin-top: 20px;
   margin-bottom: 10px;
   margin-left: 5px;
-  font-size: 20px;
-  font-family: "Mukta", sans-serif;
+  
+  
 }
 .cust-amount,
 .donate-for,
@@ -270,29 +263,42 @@ a {
   padding: 5px;
   margin-top: 30px;
 }
+.dedicate-donation{
+  margin-left: 20px;
+}
 
 .add-donation label {
-  font-size: 20px;
+  
   font-weight: bold;
   margin-left: 5px;
   font-family: "Mukta", sans-serif;
 }
 .cust-amount input[type="text"] {
+  height: 30px;
+  width: 300px;
   padding: 5px;
   border-radius: 5px;
   margin-left: 70px;
-  outline: none;
+  font-size: 20px;
+ background-color:lightgray;
   border: none;
 }
 input[type="checkbox"] {
   cursor: pointer;
+  background-color:lightgray;
 }
-
+.dedicate-donation{
+  cursor: pointer;
+}
 .donate-for select {
   padding: 5px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  height: 30px;
+  width: 500px;
+  font-size: 20px;
+  background-color:lightgray;
 }
 .remark {
   display: flex;
@@ -308,12 +314,11 @@ input[type="checkbox"] {
   margin-left: 30px;
   margin-top: 10px;
   padding: 5px;
-  width: 350px;
+  width: 500px;
   height: 50px;
   border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  outline: none;
+  background-color:lightgray;
+  
 }
 .payment-method img {
   margin-top: 30px;
@@ -332,31 +337,47 @@ input[type="checkbox"] {
   height: 70px;
   cursor: pointer;
   transition: 0.5s;
-  background-color: cornflowerblue;
+  background-color: red;
   font-weight: bold;
   font-size: 32px;
 }
 .donate-btn:hover {
-  background-color: #2196f3;
+  background-color: darkred;
   color: white;
 }
-.prv-don-btn {
-  padding: 20px;
+
+/*======side-pannel=*/
+
+.side-panal {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100vh;
+  z-index: 1;
   text-align: center;
-  border-radius: 10px;
-  border: none;
-  width: 200px;
-  height: 70px;
-  cursor: pointer;
-  transition: 0.5s;
-  background-color: cornflowerblue;
-  font-weight: bold;
-  font-size: 20px;
+  padding-top: 7vh;
+  padding-bottom: 10vh;
+  background-color:	#6e0b1c;
+  color: white;
+}
+
+.view-more-btns{
+  width: 100%;
+  
+}
+.view-more-btns button{
+  width: 20vw;
+  padding: 20px;
+  font-size: 18px;
+  text-align: left;
 }
 
 /*----------------profile - container------------*/
+
 .profile {
   margin-top: 20px;
+  width: 20vw;
+  padding: 10px;
+  align-items: center;
 }
 .more-details {
   margin-top: 20px;
@@ -377,34 +398,55 @@ input[type="checkbox"] {
 .pro-details {
   font-size: 16px;
 }
-.pro-update {
+.pro-details ul{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.pro-details ul li{
+  font-size: 20px;
   padding: 5px;
-}
-.pro-update a {
-  color: blue;
-  transition: 0.5ms;
-  cursor: pointer;
-}
-.pro-update a:hover {
-  color: red;
 }
 
-.log-out {
+.pro-btns{
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.pro-btns a{
   padding: 10px;
-}
-.log-out a {
-  padding: 5px;
+  width: 10vw;
+  background-color: white;
   font-size: 20px;
-  color: black;
-  background-color: #2196f3;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.5s;
 }
-.log-out a:hover {
-  background-color: darkcyan;
+
+@media screen and (max-width: 900px) {
+  .profile{
+    width: 40vw;
+    margin-top: 20px;
+    padding: 0;
+  }
+  
+    
+  .side-panal {
+    padding-top: 7vh;
+  }
+  .view-more-btns button{
+    width: 40vw;
+    font-size: 16px;
+  }
+  .pro-details ul li{
+    font-size: 18px;
+   
+  }
+  .view-more-btns button{
+    padding: 10px;
+  }
+  .pro-btns a{
+    font-size: 16px;
+  }
+
+
 }
-/*--------------product--------------*/
 
 /*-------footer-------------*/
 .footer {
@@ -499,11 +541,12 @@ input[type="checkbox"] {
   }
   .container {
     grid-template-columns: 40vw 60vw;
+    
   }
+  
+  
 
-  .side-panal {
-    padding-top: 7vh;
-  }
+  
   .donation-container {
     flex-direction: column;
   }
@@ -517,20 +560,23 @@ input[type="checkbox"] {
     margin-bottom: 2px;
   }
   .add-donation {
-   
-    background-color: #f0f8ff;
     color: black;
-    padding: 20px;
+    font-size: 20px;
+    padding: 15px;
   }
   .don-value {
     margin-bottom: 2px;
+    width: 100px;
+    font-size: 14px;
   }
   .cust-amount input[type="text"] {
-    border: none;
+   width: 200px;
+   font-size: 16px;
     margin-left: 10px;
   }
   .add-donation h4 {
     margin-top: 10px;
+    font-size: 20px;
   }
   .cust-amount,
   .donate-for,
@@ -539,19 +585,23 @@ input[type="checkbox"] {
   .donate {
     margin-top: 10px;
   }
+  .donate-for{
+    margin-left: 5px;
+  }
   .donate-for select {
-    max-width: 200px;
+    width: 200px;
+    padding: 5px;
+    font-size: 14px;
   }
   .payment-method img {
     max-width: 100px;
     max-height: 50px;
     margin-top: 20px;
   }
-  .profile {
-    margin-top: 20px;
-  }
-  textarea {
-    max-width: 100px;
+  
+  .remark textarea {
+    width: 300px;
     margin-left: 0;
+    padding-left: 0;
   }
 }
