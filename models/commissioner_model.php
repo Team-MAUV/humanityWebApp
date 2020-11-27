@@ -724,4 +724,31 @@ return ($pageData);
 
 }
 
+
+public function projectReports(){
+
+
+  //Pending reports
+  $st = $this->db->prepare('SELECT * FROM project_report WHERE status="pending" ORDER BY id ');
+  $st->execute();
+  $pendings = $st->fetchAll();
+
+//Approved reports
+$stmt2 = $this->db->prepare('SELECT * FROM project_report WHERE status="approved" ORDER BY id ');        
+$stmt2->execute();
+$approved = $stmt2->fetchAll();
+
+
+  
+//All the data that has to be return from this functon is added to an associative array
+$pageData = [
+'approved' => $approved,
+'pendings' => $pendings,
+
+];
+return ($pageData);
+
+
+}
+
 }

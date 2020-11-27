@@ -89,9 +89,10 @@ class Commissioner extends Controller
 
     function projectReports()
     {
-        $this->view->rendor('commissioner/dashboard/projectReports');
+        $data = $this->model->projectReports();
+        $this->view->rendor('commissioner/dashboard/projectReports', $data, true);
+        
     }
-
     function leaveRequests()
     {
         $data = $this->model->get_leaveRequests();
