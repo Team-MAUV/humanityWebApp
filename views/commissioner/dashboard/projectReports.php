@@ -6,7 +6,7 @@ include "com-dash-header.php"; ?>
 
 <div class="grid-container">
 
- <h1>Beneficiery Reports</h1>
+ <h1>Project Reports</h1>
     <div class="row">
         <div class="column">
 

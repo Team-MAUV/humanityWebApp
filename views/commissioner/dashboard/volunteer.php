@@ -45,6 +45,8 @@ include "com-dash-header.php"; ?>
               <td>Volunteer ID</td>
               <td>Name</td>
               <td>Volunteer Level</td>
+              <td>Conact</td>
+              <td>Email</td>
               <td>Points</td>
               <td>Joined Date</td>
               <td></td>
@@ -58,6 +60,8 @@ include "com-dash-header.php"; ?>
                     <td><?= $contact['vol_id'] ?></td>
                     <td><?= $contact['name'] ?></td>
                     <td><?= $contact['level'] ?></td>
+                    <td><?= $contact['contact'] ?></td>
+                    <td><?= $contact['email'] ?></td>
                     <td><?= $contact['vol_points'] ?></td>
                     <td><?= $contact['join_date'] ?></td>
                     <td class="actions">
@@ -107,8 +111,9 @@ include "com-dash-header.php"; ?>
                 <td><?= $req['email'] ?></td>
              
                 <td class="actions">
+                <a href="update.php?id=<?= $req['id'] ?>" class="edit">View Application</i></a>
                   <a href="run_accept_vol_request?id=<?= $req['id'] ?>" class="edit">Accept</i></a>
-                  <a href="update.php?id=<?= $req['id'] ?>" class="edit">View Profile</i></a>
+                  
                   <a href="update.php?id=<?= $req['id'] ?>" class="edit">Decline</i></a>
                  
                 </td>
