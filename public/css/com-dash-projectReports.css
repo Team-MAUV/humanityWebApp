@@ -17,12 +17,13 @@ h1 {
 
 .column {
     margin-top: 10vh;
-    margin-left: 2.5vw;
+    margin-left: 1.5vw;
     margin-right: 1vw;
     float: left;
     width: 20vw;
     height: 45vh;
     border-style: solid;
+    border-color: black;
     background-color: rgb(161, 163, 165);
 }
 
@@ -31,7 +32,7 @@ h2 {
     position: absolute;
     opacity: 0.2;
     margin-top: 14vh;
-    margin-left: 6vw;
+    margin-left: 8vw;
 }
 
 .column:hover h2 {
@@ -46,7 +47,7 @@ h2 {
     margin-right: 2vw;
     position: absolute;
     color: rgb(111, 33, 172);
-    margin-top: 5vh;
+    margin-top: 3vh;
 }
 
 .column:hover h3 {
@@ -100,30 +101,27 @@ h2 {
 }
 
 .btn {
-    background-color: rgb(12, 231, 247);
-    color: rgb(7, 7, 7);
-    padding: 8px 10px;
+    background-color: rgb(17, 19, 117);
+    color: rgb(253, 253, 253);
+    padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
     font-size: medium;
-    font-weight: 800;
-    border-color: black;
-    margin-top: 7vh;
-    margin-right: 1vw;
+    margin-left: 0vw;
+    margin-bottom: 1vh;
+    margin-top: 4vh;
 }
 
 .dbtn {
-    float: right;
-    background-color: rgb(12, 55, 247);
-    color: rgb(7, 7, 7);
-    padding: 8px 10px;
+    background-color: dodgerblue;
+    color: rgb(253, 253, 253);
+    padding: 1px 3px;
     border-radius: 10px;
     cursor: pointer;
     font-size: medium;
-    font-weight: 800;
-    border-color: black;
-    margin-top: 7vh;
-    margin-right: 2vw;
+    margin-left: 0vw;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
 }
 
 .btn:hover {
@@ -140,11 +138,51 @@ h2 {
 
 .confirm {
     margin-top: 6vh;
-    margin-left: 1vw;
+    margin-left: 0vw;
     margin-right: 3vw;
     float: right;
     font-weight: 600;
     font-size: 1.3rem;
+}
+
+.tab {
+    margin-top: 0.2vh;
+    background-color: rgb(116, 113, 113);
+    color: white;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 16px;
+    font-size: 17px;
+    width: 25%;
+    font-weight: 600;
+    border: none;
+}
+
+.tabcontent {
+    margin-top: 0vh;
+    color: white;
+    display: none;
+    padding: 2vh 20px;
+    height: 90vh;
+    width: 100%;
+    border: none;
+    /* margin-bottom: 5vh; */
+}
+
+.subby {
+    margin-top: 3vh;
+}
+
+.subby li {
+    margin-left: 1vw;
+    float: left;
+    font-weight: 1000;
+    color: black;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-top: 1vh;
+    color: #230e4b;
 }
 
 @media screen and (max-width: 900px) {
