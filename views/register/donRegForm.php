@@ -34,7 +34,7 @@ include "regForm-header.php"; ?>
             <input type="text" name="address" placeholder="Permanent Address" id="address" required>
             <div class="validation-error">
             </div>
-
+            
             <label for="username">
                 <i class="fa fa-address-book  "></i>
             </label>
@@ -45,10 +45,15 @@ include "regForm-header.php"; ?>
             <label for="password">
                 <i class="fa fa-address-book  "></i>
             </label>
-            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input type="password" name="password" placeholder="Your Password" id="password" required>
             <div class="validation-error">
             </div>
-
+            <label for="repassword">
+                <i class="fa fa-address-book  "></i>
+            </label>
+            <input type="password" name="repassword" placeholder="Retype your Password" id="repassword" required>
+            <div class="validation-error">
+            </div>
             <label for="contact">
                 <i class="fa fa-phone-square "></i>
             </label>
@@ -62,7 +67,7 @@ include "regForm-header.php"; ?>
                     &nbsp<i class="fa fa-male fa-2x "> </i>
                 </div>
             </label>
-            <select name="gender">
+            <select name="gender" id="gender">
 
                 <option value="male ">Male</option>
                 <option value="female ">Female</option>
@@ -71,7 +76,8 @@ include "regForm-header.php"; ?>
             <div class="validation-error ">
             </div>
 
-            <button class="btn btnreg " type="submit " name="register " onclick="validation();">
+
+            <button class="btn btnreg " type="submit " name="register " onclick="validation(json_encode($pageData));">
                 <p style="font-weight: 800;"> Submit</p>
             </button>
 
@@ -79,25 +85,44 @@ include "regForm-header.php"; ?>
 
 
 
+
         </form>
-        <div class="messages">Error Message : <?php echo $msg ?></div>
+        <div class="messages"> <?= $msg ?></div> 
     </div>
 
     <script>
-function validation() {
-    
+function validation($pageData) {
+    var name = document.getElementById("name").value;
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
     var address = document.getElementById("address").value;
-    var name = document.getElementById("name").value;
-    var username=document.getElementById("username").value;
-    var password=document.getElementById("password").value;
-    var gender = document.getElementById("gender").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var repassword =document.getElementById("repassword").value;
     var contact = document.getElementById("contact").value;
- 
+    var gender = document.getElementById("gender").value;
+
+    <?php foreach ($result as $un) : ?>
+        if(usrename==$un){
+            $userex=1;
+        }
+        else{
+            $userex=0;
+        }
+    <?php endforeach; ?>
+    var userex=$userex;
+    if(userex==1){
+        swal({
+            title: "Registration Failed!",
+            text: "Username already exists",
+
+            icon: "error",
+
+        });
+    }
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
-    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(gender==null ||gender=="")){
+    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(repassword==null ||repassword=="")||(gender==null ||gender=="")){
       swal({
             title: "Registration Failed!",
             text: "Please fill the required fields",
@@ -133,6 +158,7 @@ else{
                 icon: "success",
 
             });
+            // window.location.href = "index.php";
 
         }
     }

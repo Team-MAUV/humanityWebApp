@@ -146,7 +146,6 @@ public function run_vol_register(){
 
      
       $msg = "Form data submitted successfully!";
-                    header('location: ../register/donRegForm');
                 }
     }
   }
@@ -261,5 +260,26 @@ public function run_vol_register(){
   
     return ($pageData);
 }
+
+public function run_check_user()
+{
+
+
+    $get_username = $this->db->prepare("SELECT username FROM user ");
+    
+
+    $result = $get_username->fetchAll();
+    $msg="hi";
+  $pageData = [
+     'result' => $result,
+     'msg' => $msg,
+    
+   ];
+
+  return ($pageData);
+}
+
+
+
 
 }

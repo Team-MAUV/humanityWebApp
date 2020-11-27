@@ -73,7 +73,7 @@ include "regForm-header.php"; ?>
 
   </form>
 
-  <div class="messages">Error Message : <?php echo $msg ?></div>
+  <div class="messages"><?php echo $msg ?></div>
 
 
 <script>
