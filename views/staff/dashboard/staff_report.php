@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'staff_report';
 include "staff_header.php"; ?>
 <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
 

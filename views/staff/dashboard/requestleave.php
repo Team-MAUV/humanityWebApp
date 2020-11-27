@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'requestleave';
 include "staff_header.php"; ?>
 
 

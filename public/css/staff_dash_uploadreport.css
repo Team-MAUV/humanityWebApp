@@ -3,14 +3,14 @@
 }
 
 body {
-    background-color: rgb(68, 68, 160);
+    background-color: rgb(211, 211, 238);
 }
 
 .column {
     float: left;
     width: 50%;
     padding: 5px;
-    background-color: rgba(223, 66, 79, 0.897);
+    background-color:#3b5998 ;
     border-color: black;
     border-style: solid;
 }
@@ -43,7 +43,7 @@ body {
 .btn {
     float: right;
     margin-right: 2vw;
-    background-color: rgb(12, 55, 247);
+    background-color: rgb(150, 11, 131);
     color: rgb(253, 253, 253);
     padding: 8px 10px;
     border-radius: 10px;
