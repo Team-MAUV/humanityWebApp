@@ -12,15 +12,24 @@ body{
 	background: #8178d3;
 	color: #181a1b;
 }
-.row_{
-	position: absolute;
-	top:50%;
-}
+.btn {
+	background-color: rgb(1, 5, 14);
+	border: none;
+	color: white;
+	padding: 12px 30px;
+	cursor: pointer;
+	font-size: 20px;
+  }
+  
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+	background-color: rgb(4, 41, 153);
+  }
 .wrapper{
 	position: absolute;
-	top: 50%;
-	left: 60%;
-	transform: translate(-50%,-50%);
+	
+	
 width:500px;
 	background: #fff;
 }

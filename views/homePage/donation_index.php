@@ -92,6 +92,7 @@
                 <div class="btn">
                     <a href="#">Register</a>
                 </div>
+                
             </div>
             <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
                 <img src="<?= URL ?>public/images/bg.png" alt="">
@@ -105,15 +106,15 @@
       <div class="slide active">
         <img src="<?= URL ?>public/images/don1.jpg" alt="">
         <div class="info">
-          <h2>Slide 01</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>image  01</h2>
+          <p>Volunteers & Staff working for the donation</p>
         </div>
       </div>
       <div class="slide">
-        <img src="<?= URL ?>public/images/d.jpg" alt="">
+        <img src="<?= URL ?>public/images/donateSri.jpg" alt="">
         <div class="info">
-          <h2>Slide 02</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Image 2</h2>
+          <p>Donate a patient</p>
         </div>
       </div>
       <div class="slide">
@@ -209,9 +210,9 @@
         <div class="row">
   <div class="column">
     <div class="card">
-      <h3>Blood Donation</h3>
-      <p style="color: #B22222;">Give Blood </p>
-      <p style="color: #B22222;">Save life </p>
+      <h3>Donors of our organization</h3>
+      <p > 120 </p>
+      <p >From 6 various countries </p>
     </div>
   </div>
 
@@ -225,17 +226,17 @@
   
   <div class="column">
     <div class="card">
-      <h3>Donate Recycle Products</h3>
-      <p style="color:#2E8B57;">Be a part of the solution! </p>
-      <p style="color:#2E8B57;">Not a part of the pollution!</p>
+      <h3>Donations Amount : </h3>
+      <p > We received RS, 846 985.00 until !</p>
+      <p style="color:#2E8B57;">Be a part of solution!</p>
     </div>
   </div>
   
   <div class="column">
     <div class="card">
-      <h3>Donate basic needs</h3>
-      <p>Share your extras! </p>
-      <p>Spread equality!</p>
+      <h3>Donation Count:</h3>
+      <p>We helped 2260 families </p>
+      <p>4 Orphanages </p>
     </div>
   </div>
 </div>
@@ -256,19 +257,7 @@ Together they are called the “Eight Dharma Seals”.</span>
 <div class="main">
  <center><h1>Recent Donation projects</h1></center> 
   <ul class="cards">
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="<?= URL ?>public/images/blood.jpg" alt="img></div>
-        <div class="card_content">
-          <h2 class="card_title">Blood Donation</h2>
-          <p class="card_text">Visit Organiation and Donate on 20.12.2020 </p>
-        
-        </div>
-      </div>
-    </li>
-
-   
-   
+  
     <li class="cards_item">
       <div class="card">
         <div class="card_image"><img src="<?= URL ?>public/images/covid.jfif" alt="img""></div>
@@ -282,14 +271,8 @@ Together they are called the “Eight Dharma Seals”.</span>
   </ul>
 </div>
 
-
-
-     
-
-
-        <!-- BANNER AND FOOTER -->
-
-        <div class="banner">
+    <div class="banner">
+       <h1>Thank you for being a part of us!</h1>
        
         </div>
 

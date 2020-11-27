@@ -32,9 +32,9 @@ body{
 
  .column {
   float: left;
-  width: 50%;
+  width: 40%;
   padding: 10px;
-  height: 300px;
+  height: 250px;
 }
 
 /* Clear floats after the columns */
@@ -48,15 +48,21 @@ body{
 </head>
 <body>
     <div class="row">
-<br> 
-        <h3 style="color: brown;">Select the Date:</h3>
+	<div class="column">
+
+        <h2 style="color: brown;">Select the Date:</h2>
         <input type="date" id="myDate" value="2020-10-09"> 
       
-		
+		<button class="btn"> Submit</button>
+
 	
         
         </div>
-        
+     <div class="column"></div>
+    </div>
+	 <div class="row">
+	 <div class="column"></div>
+
         <div class="column">
          
 <div class="wrapper">
@@ -160,6 +166,8 @@ body{
 	</div>
 </div>
 </div>
+
+</div>
 </div>
 <script>
     function myFunction() {
@@ -169,7 +177,8 @@ body{
     </script>
     
 </body>
-</html>
+
 
 
 <?php include "staff_footer.php" ?>
+</html>
