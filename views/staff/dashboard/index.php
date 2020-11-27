@@ -34,7 +34,8 @@ include "staff_header.php"; ?>
       
       .left {
         left: 0;
-        background-color:#0B6397;
+        background-color:white;
+        color:blue
       }
       
       .right {
