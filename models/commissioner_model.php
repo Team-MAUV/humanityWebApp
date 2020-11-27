@@ -64,6 +64,92 @@ class commissioner_Model extends Model
         return ($pageData);
   }
 
+  public function get_reg_staff_profiles() {
+    //Volunteer Profiles
+    $st = $this->db->prepare('SELECT * FROM staff WHERE status=1 ORDER BY id LIMIT :current_page, :record_per_page');
+    // Get the page via GET request (URL param: page), if non exists default the page to 1
+    $spage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+
+    // Number of records to show on each page
+    $records_per_page = 5;
+
+    $st->bindValue(':current_page', ($spage_no - 1) * $records_per_page, PDO::PARAM_INT);
+    $st->bindValue(':record_per_page', $records_per_page, PDO::PARAM_INT);
+    $st->execute();
+    $snum_contacts = $this->db->query('SELECT COUNT(*) FROM staff')->fetchColumn();
+    $scontacts = $st->fetchAll();
+
+    //Volunteer Requests
+    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status=0 ORDER BY join_date ');        
+    $stmt->execute();
+    $snewReq = $stmt->fetchAll();
+    $snewReq_Count = $stmt->rowCount();
+
+    //All the data that has to be return from this functon is added to an associative array
+    $pageData = [
+      'spage_no' => $spage_no,
+      'records_per_page' => $records_per_page,
+      'scontacts' => $scontacts,
+      'snum_contacts' => $snum_contacts,
+      'snewReq'=> $snewReq,
+      'snewReq_Count' => $snewReq_Count
+    ];
+    return ($pageData);
+}
+public function get_reg_buyer_profiles() {
+  //Volunteer Profiles
+  $st = $this->db->prepare('SELECT * FROM buyer ORDER BY id LIMIT :current_page, :record_per_page');
+  // Get the page via GET request (URL param: page), if non exists default the page to 1
+  $bpage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+
+  // Number of records to show on each page
+  $records_per_page = 5;
+
+  $st->bindValue(':current_page', ($bpage_no - 1) * $records_per_page, PDO::PARAM_INT);
+  $st->bindValue(':record_per_page', $records_per_page, PDO::PARAM_INT);
+  $st->execute();
+  $bnum_contacts = $this->db->query('SELECT COUNT(*) FROM buyer')->fetchColumn();
+  $bcontacts = $st->fetchAll();
+
+  
+
+  //All the data that has to be return from this functon is added to an associative array
+  $pageData = [
+    'bpage_no' => $bpage_no,
+    'records_per_page' => $records_per_page,
+    'bcontacts' => $bcontacts,
+    'bnum_contacts' => $bnum_contacts,
+    
+  ];
+  return ($pageData);
+}
+public function get_reg_donor_profiles() {
+  //Volunteer Profiles
+  $st = $this->db->prepare('SELECT * FROM donor  ORDER BY id LIMIT :current_page, :record_per_page');
+  // Get the page via GET request (URL param: page), if non exists default the page to 1
+  $dpage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+
+  // Number of records to show on each page
+  $records_per_page = 5;
+
+  $st->bindValue(':current_page', ($dpage_no - 1) * $records_per_page, PDO::PARAM_INT);
+  $st->bindValue(':record_per_page', $records_per_page, PDO::PARAM_INT);
+  $st->execute();
+  $dnum_contacts = $this->db->query('SELECT COUNT(*) FROM donor')->fetchColumn();
+  $dcontacts = $st->fetchAll();
+
+  
+
+  //All the data that has to be return from this functon is added to an associative array
+  $pageData = [
+    'dpage_no' => $dpage_no,
+    'records_per_page' => $records_per_page,
+    'dcontacts' => $dcontacts,
+    'dnum_contacts' => $dnum_contacts,
+    
+  ];
+  return ($pageData);
+}
 
   public function run_accept_vol_request(){
           
