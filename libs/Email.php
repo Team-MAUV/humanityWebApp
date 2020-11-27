@@ -3,8 +3,6 @@
 class Email {
 
   public static function email_send($to,$name, $subject, $message, $headers   ) {
-echo URL ;
-
 
     require "PHPMailer/src/PHPMailer.php";
     require "PHPMailer/src/OAuth.php";

@@ -191,13 +191,9 @@ class login_Model extends Model
     }
 
     public function run_check_email(){
-        echo "In login model";
-   
-        if (!isset($_POST["reset"])){
 
-        
-
-          
+        $baseUrl = URL;
+  
 
            $st = $this->db->prepare("SELECT email,name,userlogin_id FROM volunteer WHERE email= :entered_email");
 
@@ -208,10 +204,6 @@ class login_Model extends Model
            $row_count = $st->rowCount();
            $user_details =$st->fetchAll();
 
-        
-
-       
-
            if($row_count >0){
 
                
@@ -221,16 +213,11 @@ class login_Model extends Model
             $name =  $usr['name'];
         endforeach;
 
-        echo $name;
-        
             $selector = bin2hex(random_bytes(8));
             $token = random_bytes(32);
             $hashedToken = password_hash($token, PASSWORD_DEFAULT);
 
-
-            $url = URL."login/resetPassword?selector=".$selector."&validator=".bin2hex($token);
-
-       
+            $url = $baseUrl."login/resetPassword?selector=".$selector."&validator=".bin2hex($token);
 
             $expires = date("U") + 1800;
 
@@ -271,19 +258,18 @@ class login_Model extends Model
             $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
             $headers .= "Content-type: text/html\r\n";
 
+    
             Email::email_send($to,$rec_name, $subject, $message, $headers);
 
-
-
-           }else{
-               echo "Email address doesn't exist!";
-           }
-
+            $msg =  "An email with a password reset link has been sent to your email! Check you inbox!";
+                
         }else{
-            echo "Enter a valid Email!";
-        }
+            $msg =  "Email address doesn't exist!";
+       }
 
-    
+       
+
+       echo $msg;
     }
 
 

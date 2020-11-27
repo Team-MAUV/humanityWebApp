@@ -29,7 +29,7 @@ body {
   top: 0;
   width: 100vw;
   background-color: #004883;
-  height: 6vh;
+  height: 3rem;
   z-index: 10;
 }
 
@@ -101,12 +101,11 @@ body {
   height: auto;
   margin: 2rem;
   background: #004883;
-  padding: 0.4rem 0.7rem;
-  font-size: 1.2rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
   border: 2px solid #fff;
   border-radius: 2rem;
-  line-height: 1;
-
+  margin-top: 2.5rem;
   transition: 0.3s;
 }
 
