@@ -32,7 +32,7 @@ include "vol_dash_header.php"; ?>
                     <div class="flipbox-inner">
                         <div class="flipbox-front">
                             <h2><?= $coming['id'] ?></h2>
-                            <h3> <?= $coming['name'] ?> </h3>
+                            <h3 class="head1"> <?= $coming['name'] ?> </h3>
                         </div>
                         <div class="flipbox-back">
                             <ul class="event">
@@ -68,7 +68,7 @@ include "vol_dash_header.php"; ?>
                     <div class="flipbox-inner">
                         <div class="flipbox-front">
                             <h2><?= $finish['id'] ?></h2>
-                            <h3> <?= $finish['name'] ?> </h3>
+                            <h3 class="head1"> <?= $finish['name'] ?> </h3>
                         </div>
                         <div class="flipbox-back">
                             <ul class="event">
