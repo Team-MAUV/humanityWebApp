@@ -29,12 +29,12 @@ include "userLogin-header.php"; ?>
           <!-- The Modal -->
           <div id="myModal" class="modal">
 
-               Modal content
+               <!-- Modal content -->
                <div class="modal-content">
           
                  <div class><span id="error_message" class="error-msg"></span>  </div>
                  <div> <span id="success_message" class="success-msg"></span></span> </div>
-                 <div class="msg-nav"><span class="close">Ok</span></div> 
+                 <div class="msg-nav"><div class="close">Ok</div></div> 
                
                </div>
 
