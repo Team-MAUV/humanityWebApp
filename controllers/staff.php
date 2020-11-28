@@ -50,12 +50,22 @@ class Staff extends Controller
     }
 
 
-
+  
 
     function staff_report()
-    {
-        $this->view->rendor('staff/dashboard/staff_report');
+    {$msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+          $this->view->rendor('staff/dashboard/staff_report', $pageData , true);
     }
+    
+    function addreport(){
+        $msg_data=$this->model->addreport();
+        $this->view->rendor('staff/dashboard/staff_report', $msg_data , true);
+    }
+
     function upload_reports()
     {
         $this->view->rendor('staff/dashboard/upload_reports');
@@ -107,4 +117,6 @@ class Staff extends Controller
         header('location: ../login');
         exit;
     }
+
+
 }
