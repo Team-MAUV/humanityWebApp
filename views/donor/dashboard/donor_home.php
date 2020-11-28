@@ -50,7 +50,7 @@ include "don_dash_header.php"; ?>
                             
                        </div>
                        <div class="view2" id="viewDonations" style="display: none;">
-                        <span onclick="closeMyDonations()" class="close-btn">&times;</span>
+                        <span onclick="closeMyDonations()" class="close-btn">&times;aaaaa</span>
                            your donations
                        </div>
                     </div>
