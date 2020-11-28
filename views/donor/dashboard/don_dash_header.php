@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tzu-chi-market</title>
+        <title>Tzu-Chi-Donation-Module</title>
         <link rel="stylesheet" href="<?= URL ?>public/css/donor-index.css" />
         <script src="<?= URL ?>public/js/donor.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
@@ -50,23 +50,17 @@
                 </div>             
                 <div class="profile">
                     <div class="pro-pic">
-                        <img src="<?= URL ?>public/images/avatar.png">
+                        <img src="<?= URL ?>public/images/don-avatar.png">
                     </div>
                     <div class="pro-details">
                         <ul>
                             <li>A.B.C.Perera</li>
-                           
-                            <li>0715428963</li>
-                            <li>abc@mail.com</li>
+                            <li>ID : DONHB001</li>
                         </ul>
+                        
                     </div>
                    
-                    <div class="pro-btns">
-                        
-                        <a href="<?= URL?>">Update details</a>
-                        <a href="<?= URL?>">Log-out</a>
-                      
-                    </div>
+                    
                     <div class="more-details">
                         <h4>Help & Suport</h4>
                         <a href="<?= URL?>">read more about us</a>
