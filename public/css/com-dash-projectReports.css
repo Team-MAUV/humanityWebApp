@@ -136,6 +136,10 @@ h2 {
     color: white;
 }
 
+a:hover {
+    color: white;
+}
+
 .confirm {
     margin-top: 6vh;
     margin-left: 0vw;

@@ -65,7 +65,7 @@
                             <span style="font-weight: bold; font-size:2.3vw;"> </Br> –Martin Luther King, Jr.</span>
                         </h4>
                         <div class="btns">
-                            <a class="log" href="<?= URL ?>login/index">Log-In</a>
+                            <a class="log" href="<?= URL ?>login?pf=vol">Log-In</a>
                             <a class="reg" href="<?= URL ?>register/index">Register</a>                       
                         </div>
                     </div>

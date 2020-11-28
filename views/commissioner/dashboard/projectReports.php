@@ -53,7 +53,7 @@ include "com-dash-header.php"; ?>
                 <li>Report ID : <?= $report['report_id']  ?></li>
 
                 <?php if(strlen($report['staff_id'])==1 && strlen($report['staff_id'])>0){
-      $ccustomid ="STFB00".$report['staff_id'];
+      $ccustomid ="STFHB00".$report['staff_id'];
     }else if(strlen($report['staff_id'])==2 && strlen($report['staff_id'])>0){
       $ccustomid ="STFHB0".$report['staff_id'];
     }else if(strlen($report['staff_id'])>0){
