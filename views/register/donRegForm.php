@@ -34,7 +34,12 @@ include "regForm-header.php"; ?>
             <input type="text" name="address" placeholder="Permanent Address" id="address" required>
             <div class="validation-error">
             </div>
-            
+            <label for="contact">
+                <i class="fa fa-phone-square "></i>
+            </label>
+            <input type="text" name="contact" placeholder="Contact Number" id="contact" required>
+            <div class="validation-error">
+            </div>
             <label for="username">
                 <i class="fa fa-address-book  "></i>
             </label>
@@ -54,44 +59,19 @@ include "regForm-header.php"; ?>
             <input type="password" name="repassword" placeholder="Retype your Password" id="repassword" required>
             <div class="validation-error">
             </div>
-            <label for="contact">
-                <i class="fa fa-phone-square "></i>
-            </label>
-            <input type="text" name="contact" placeholder="Contact Number" id="contact" required>
-            <div class="validation-error">
-            </div>
+            
 
-
-            <label for="gender">
-                <div class="i " style="align-items: left; justify-content: flex-start; ">
-                    &nbsp<i class="fa fa-male fa-2x "> </i>
-                </div>
-            </label>
-            <select name="gender" id="gender">
-
-                <option value="male ">Male</option>
-                <option value="female ">Female</option>
-                <option value="other ">Other</option>
-            </select>
-            <div class="validation-error ">
-            </div>
-
-
-            <button class="btn btnreg " type="submit " name="register " onclick="validation(json_encode($pageData));">
+            <button class="btn btnreg " type="submit " name="register " onclick="validation();">
                 <p style="font-weight: 800;"> Submit</p>
             </button>
-
-
-
-
-
 
         </form>
         <div class="messages"> <?= $msg ?></div> 
     </div>
 
     <script>
-function validation($pageData) {
+
+function validation() {
     var name = document.getElementById("name").value;
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
@@ -100,29 +80,11 @@ function validation($pageData) {
     var password = document.getElementById("password").value;
     var repassword =document.getElementById("repassword").value;
     var contact = document.getElementById("contact").value;
-    var gender = document.getElementById("gender").value;
-
-    <?php foreach ($result as $un) : ?>
-        if(usrename==$un){
-            $userex=1;
-        }
-        else{
-            $userex=0;
-        }
-    <?php endforeach; ?>
-    var userex=$userex;
-    if(userex==1){
-        swal({
-            title: "Registration Failed!",
-            text: "Username already exists",
-
-            icon: "error",
-
-        });
-    }
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
-    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(repassword==null ||repassword=="")||(gender==null ||gender=="")){
+
+
+    if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(repassword==null ||repassword=="")){
       swal({
             title: "Registration Failed!",
             text: "Please fill the required fields",
@@ -151,18 +113,37 @@ else{
 
             });
         } else {
-
+          if (password!=repassword){
             swal({
+              
+              title: "Registration Failed",
+              text: "Passwords do not match",
+
+              icon: "error",
+
+          });
+          }
+          else {
+            if(nic.match(/^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$/)){
+                swal({
                 title: "Registration Successful!",
-                text: "Please wait for the confirmation email, Thank you!",
+                text: "Thank you for joining us!",
                 icon: "success",
 
             });
-            // window.location.href = "index.php";
+            }
+          else {
+            swal({
+                title: "Registration Failed",
+                text: "Invalid format in NIC",
+                icon: "error",
 
+            });
         }
     }
+    }
   }
+}
 }
 </script>
     <?php include "regForm-footer.php"; ?>

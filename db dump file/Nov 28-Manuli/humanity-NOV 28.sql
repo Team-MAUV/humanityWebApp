@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2020 at 08:28 PM
+-- Generation Time: Nov 28, 2020 at 07:09 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -106,18 +106,17 @@ CREATE TABLE `buyer` (
   `nic` varchar(20) NOT NULL,
   `address` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `contact` varchar(10) NOT NULL,
-  `gender` varchar(10) NOT NULL
+  `contact` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `buyer`
 --
 
-INSERT INTO `buyer` (`id`, `buy_id`, `userlogin_id`, `name`, `nic`, `address`, `email`, `contact`, `gender`) VALUES
-(1, 'BUYHB001', 12, 'S.D. Sarada', '896450470V', 'Malabe', 'vigaravi98@gmail.com', '0112888456', 'female '),
-(2, 'BUYHB002', 19, 'S.M. Chandrasekara', '892450190V', 'Hambantota', 'ahmdodampe@hotmail.com', '0112444786', 'male '),
-(3, 'BUYHB003', 21, 'J.E. Silva', '973498468V', 'Matara', 'anjana.malitha@gmail.com', '0112888451', 'female ');
+INSERT INTO `buyer` (`id`, `buy_id`, `userlogin_id`, `name`, `nic`, `address`, `email`, `contact`) VALUES
+(1, 'BUYHB001', 12, 'S.D. Sarada', '896450470V', 'Malabe', 'vigaravi98@gmail.com', '0112888456'),
+(2, 'BUYHB002', 19, 'S.M. Chandrasekara', '892450190V', 'Hambantota', 'ahmdodampe@hotmail.com', '0112444786'),
+(3, 'BUYHB003', 21, 'J.E. Silva', '973498468V', 'Matara', 'anjana.malitha@gmail.com', '0112888451');
 
 -- --------------------------------------------------------
 
@@ -247,7 +246,6 @@ CREATE TABLE `donor` (
   `name` varchar(100) NOT NULL,
   `nic` varchar(20) NOT NULL,
   `contact` varchar(10) NOT NULL,
-  `gender` varchar(10) NOT NULL,
   `contribution` float DEFAULT 0,
   `email` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL
@@ -257,10 +255,11 @@ CREATE TABLE `donor` (
 -- Dumping data for table `donor`
 --
 
-INSERT INTO `donor` (`id`, `don_id`, `userlogin_id`, `name`, `nic`, `contact`, `gender`, `contribution`, `email`, `address`) VALUES
-(1, 'DONHB001', 11, 'A.P. Nishshanka', '986250470V', '0112555288', 'male ', 1000, 'manuli1998@gmail.com', 'Colombo'),
-(2, 'DONHB002', 18, 'A.K.Perera', '926130470V', '0112555124', 'female ', 0, 'merce177x@gmail.com', 'Malabe'),
-(3, 'DONHB003', 20, 'M.C. Withana', '821250460V', '0112534877', 'female ', 0, 'anjana.malitha@gmail.com', 'Galle');
+INSERT INTO `donor` (`id`, `don_id`, `userlogin_id`, `name`, `nic`, `contact`, `contribution`, `email`, `address`) VALUES
+(1, 'DONHB001', 11, 'A.P. Nishshanka', '986250470V', '0112555288', 1000, 'manuli1998@gmail.com', 'Colombo'),
+(2, 'DONHB002', 18, 'A.K.Perera', '926130470V', '0112555124', 0, 'merce177x@gmail.com', 'Malabe'),
+(3, 'DONHB003', 20, 'M.C. Withana', '821250460V', '0112534877', 0, 'anjana.malitha@gmail.com', 'Galle'),
+(4, 'DONHB004', 24, 'I.P. Somarathna', '856450470V', '0112555276', 0, 'uthpalakasun@1997gmail.com', 'Colombo');
 
 -- --------------------------------------------------------
 
@@ -466,7 +465,7 @@ INSERT INTO `pwdreset` (`pwdResetId`, `pwdResetEmail`, `pwdResetSelector`, `pwdR
 (19, 'akperera@gmail.com', '03bf00eeeac236cc', '$2y$10$VTVQVlQB5ncnI70GTMzCUOFOpB.5ppaI5uY0wJJw/4XlJdg2syIgq', '1605382688'),
 (31, 'dilankaperera27@gmail.com', 'c2e918f9490731f2', '$2y$10$egZ83kp5KZ8zHxW2AOaebOhDUcZsQ1p1lxA1xn1XXc1sw6eD9u26C', '1605386528'),
 (41, 'ahmdodampe96@gmail.com', '5b2340246a35ec70', '$2y$10$aK2HyG.1BIaXz0fuZNboQOxxYOZlGQQZFjxS0KOgzNrIcW3Ah6c6u', '1605454237'),
-(42, 'manuli1998@gmail.com', 'ad931460cab3d981', '$2y$10$8m/IZAsFT65jjQ/7mYiS2.vhFx1OKUQLdvt7qS0y49pxXptux5DHC', '1605534325');
+(46, 'manuli1998@gmail.com', 'dd3f8ac6d5a1e765', '$2y$10$xwu5csZi.4MMGcpZAf3pK./0BU0c9gYcUl0ABGuOId1cU8fIfAtfS', '1606548703');
 
 -- --------------------------------------------------------
 
@@ -586,12 +585,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
 (21, 'buy3', '$2y$10$xS564.4o5Hw1L4i1KirQW.eQRI.cRQ1v3PUWZhxyvHTJMq12xkw2e', 'buyer'),
 (22, 'COMHB005', '$2y$10$emGVZF8RLlIXitlxw1o62eWKHegsUnmCXMv08CbsGDPuK3LeIH/Sm', 'commissioner'),
 (23, 'COMHB006', '$2y$10$PupxSJQWJd6zmXzRKlN10.1zWJtR/OrlxcuSgSY9E9UXrLF69VBYW', 'commissioner'),
-(24, 'com1', '$2y$10$vjXCmove8Nx7ZRhqutObpe1gbgx4BkEGYcdmNHRgjdB7XbE1Pzh1y', 'donor'),
-(25, 'com2', '$2y$10$ueNK6kaw7BKTMWBC0eYMQunT.DT.asIywSXQyelNxwFt5K9tV48Ai', 'donor'),
-(26, 'com3', '$2y$10$DCLfh7P6qyqnNKQmk/Dj9uizw.y3ZV82ok1UjrVFILGo7mUaRsCfq', 'donor'),
-(27, 'com4', '$2y$10$IZgvuwwJvrjRYL/xgqiPVuTtZpckLDrp5NrtcCce/p03x3bRBW2vy', 'donor'),
-(28, 'com5', '$2y$10$nDQ91gV5aHh9H/S28XNMm.Di47XABvD6mohRw6OlbXM/nZNuxg8NC', 'donor'),
-(29, 'com6', '$2y$10$lH2PYT/H.i2hDQAl5jQDmeRg7RT98baEreZeZ9myQVQSDcDfof95e', 'donor');
+(24, 'don4', '$2y$10$pnN64C3J0la6ZEmlbvd/pe.tV0d8qrKi/nykmuB8.ADWiv3CMdcFS', 'donor'),
+(25, 'buy4', '$2y$10$5fOrJXBJJo9nl6pktA/FNuAW/jXXxt/EedDmX9edQ8E5U1tuH43Ia', 'buyer');
 
 -- --------------------------------------------------------
 
@@ -627,9 +622,9 @@ INSERT INTO `volunteer` (`id`, `vol_id`, `userlogin_id`, `name`, `nic`, `address
 (3, 'VOLHB003', 15, 'F.A. Silva', '816450470V', 'Hambantota', 'male ', '1981-11-25', 'silva@gmail.com', '0112888456', 'Temporary Volunteer', 0, 'Nothing', '2020-11-19 10:05:57', 1),
 (4, 'VOLHB004', 16, 'A.R. Thisera', '926450490V', 'Hambantota', 'female ', '1992-03-23', 'vigaravi98@gmail.com', '0112555221', 'Temporary Volunteer', 0, 'Nothing', '2020-11-19 10:07:13', 1),
 (5, 'VOLHB005', 17, 'J.W. Perera', '936450490V', 'Hambantota', 'female ', '1993-07-21', 'merce177x@gmail.com', '0112555122', 'Temporary Volunteer', 0, 'Nothing', '2020-11-19 10:10:53', 1),
-(6, NULL, NULL, 'G.H. Hewage', '852150470V', 'Hambantota', 'male ', '1985-09-23', 'kasunuthpalak@gmail.com', '0112555123', NULL, NULL, 'Nothing', '2020-11-19 10:11:11', 0),
 (7, NULL, NULL, 'S.W. Bandara', '946310490V', 'Hambantota', 'female ', '1994-12-02', 'uthpalakasun1997@gmail.com', '0112566459', NULL, NULL, 'Nothing', '2020-11-19 10:12:14', 0),
-(8, NULL, NULL, 'H.R. Ramasha', '936253470V', 'Colombo', 'male ', '1993-09-21', 'anjana.malitha@gmail.com', '0762355287', NULL, NULL, 'Nothing', '2020-11-19 10:21:00', 0);
+(8, NULL, NULL, 'H.R. Ramasha', '936253470V', 'Colombo', 'male ', '1993-09-21', 'anjana.malitha@gmail.com', '0762355287', NULL, NULL, 'Nothing', '2020-11-19 10:21:00', 0),
+(9, NULL, NULL, ' J.L. Perera', '886230470V', 'Hambantota', 'female ', '1988-02-12', 'thavinu2003@gmail.com', '0112555222', NULL, NULL, 'Nothing', '2020-11-28 06:14:41', 0);
 
 -- --------------------------------------------------------
 
@@ -903,7 +898,7 @@ ALTER TABLE `bid_session`
 -- AUTO_INCREMENT for table `buyer`
 --
 ALTER TABLE `buyer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `commissioner`
@@ -927,7 +922,7 @@ ALTER TABLE `donation`
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `home_visit`
@@ -975,7 +970,7 @@ ALTER TABLE `project_report`
 -- AUTO_INCREMENT for table `pwdreset`
 --
 ALTER TABLE `pwdreset`
-  MODIFY `pwdResetId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `pwdResetId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `session_incharge`
@@ -993,13 +988,13 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `volunteer`
 --
 ALTER TABLE `volunteer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `vol_activity`

@@ -30,12 +30,11 @@ class Register extends Controller
 
   function donRegForm()
   {
-    // $msg="";
-    //     $pageData = [
+     $msg="";
+      $pageData = [
 
-    //         'msg' => $msg
-    //       ];
-    $pageData=$this->model->run_check_user();
+         'msg' => $msg
+          ];
     $this->view->rendor('register/donRegForm', $pageData , true);
   }
 
