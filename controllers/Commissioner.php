@@ -33,7 +33,12 @@ class Commissioner extends Controller
         $data2 = $this->model->get_view_com_list();
         $this->view->rendor('commissioner/dashboard/index', $data2, true);
     }
-
+    function edit_profile()
+    {
+        
+        $this->view->rendor('commissioner/dashboard/edit_profile'); 
+       
+    }
     function volunteer()
     {
         $data = $this->model->get_reg_vol_profiles();
