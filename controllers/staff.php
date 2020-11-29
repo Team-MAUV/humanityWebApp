@@ -48,7 +48,10 @@ class Staff extends Controller
     {
         $this->view->rendor('staff/dashboard/access_product');
     }
-
+    function manage_bidsession()
+    {
+        $this->view->rendor('staff/dashboard/manage_bidsession');
+    }
 
   
 
@@ -68,7 +71,8 @@ class Staff extends Controller
 
     function upload_reports()
     {
-        $this->view->rendor('staff/dashboard/upload_reports');
+        $msg_data=$this->model->upload_reports();
+        $this->view->rendor('staff/dashboard/upload_reports', $msg_data , true);
     }
     function requestleave()
     {

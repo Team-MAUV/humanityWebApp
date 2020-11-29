@@ -228,5 +228,4 @@ Commissioner Registration Form</h2>
 
 
 </div>
-
-</html>
+<?php include "com-dash-footer.php" ?>
