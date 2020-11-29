@@ -1,11 +1,13 @@
 <?php $page = 'buyerHome';
 $title = 'Market Home';
 $style = 'buy-pages.css';
+
+
 $jsFile = 'buyer.js';
 include "buyer_header.php"; ?>
 
 
-            
+   <!--         
             <div class="sm-container">
                 <div class="prd">
                     <h4>Plastic</h4>
@@ -28,8 +30,22 @@ include "buyer_header.php"; ?>
             <div class="ft"></div>
 
         </div>
+-->
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php include "buyer_footer.php" ?>
 
-
-       
