@@ -76,7 +76,9 @@
               <li class="<?php if ($page == 'access_product') {
                             echo 'active';
                           } ?>"><a href="<?= URL ?>staff/access_product">Access product</a></li>
-              
+                 <li class="<?php if ($page == 'manage_bidsession') {
+                            echo 'active';
+                          } ?>"><a href="<?= URL ?>staff/manage_bidsession">Manage Bidsession </a></li>
             </ul>
           </li>
           
