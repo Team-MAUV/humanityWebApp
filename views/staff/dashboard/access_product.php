@@ -26,7 +26,7 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/images/glass.jpg" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p>Bidding: 20.12.2020</p>
+				<p>bid session: 20.12.2020</p>
                 </div>
                 <div class="card__precis">
                  
@@ -48,7 +48,7 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/images/plastic.jpg" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p>Bidding: 10.01.2021</p>
+				<p>bid session: 10.01.2021</p>
                 </div>
                 <div class="card__precis">
                  
@@ -70,7 +70,7 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/images/glass.jpg" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p>Bidding: 20.12.2020</p>
+				<p>Bid session : 20.12.2020</p>
                 </div>
                 <div class="card__precis">
                  
@@ -92,7 +92,7 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/images/paper.jpg" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p>Bidding: 20.12.2020</p>
+				<p>bid session: 20.12.2020</p>
                 </div>
                 <div class="card__precis">
                  
