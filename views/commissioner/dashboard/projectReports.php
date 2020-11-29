@@ -53,15 +53,15 @@ include "com-dash-header.php"; ?>
                 <li>Report ID : <?= $report['report_id']  ?></li>
 
                 <?php if(strlen($report['staff_id'])==1 && strlen($report['staff_id'])>0){
-      $ccustomid ="STFHB00".$report['staff_id'];
+      $scustomid ="STFHB00".$report['staff_id'];
     }else if(strlen($report['staff_id'])==2 && strlen($report['staff_id'])>0){
-      $ccustomid ="STFHB0".$report['staff_id'];
+      $scustomid ="STFHB0".$report['staff_id'];
     }else if(strlen($report['staff_id'])>0){
-      $ccustomid ="STFHB".$report['staff_id'];
+      $scustomid ="STFHB".$report['staff_id'];
     };
     ?>
     
-        <li>Submitted By : <?= $ccustomid ?></li>
+        <li>Submitted By : <?= $scustomid ?></li>
 
 
     <?php if(strlen($report['com_id'])==1 && strlen($report['com_id'])>0){

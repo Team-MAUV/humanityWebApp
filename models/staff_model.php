@@ -323,5 +323,36 @@ public function addreport()
 }
 
 
+public function upload_reports(){
+
+
+  
+  $st = $this->db->prepare('SELECT * FROM project_report WHERE status="pending" ORDER BY id ');
+  $st->execute();
+  $pendings = $st->fetchAll();
+
+//Approved reports
+$stmt2 = $this->db->prepare('SELECT * FROM project_report WHERE status="approved" ORDER BY id ');        
+$stmt2->execute();
+$approved = $stmt2->fetchAll();
+
+//rejected reports
+$stmt3 = $this->db->prepare('SELECT * FROM project_report WHERE status="rejected" ORDER BY id ');
+$stmt3->execute();
+$rejects = $stmt3->fetchAll();
+
+  
+//All the data that has to be return from this functon is added to an associative array
+$pageData = [
+'approved' => $approved,
+'pendings' => $pendings,
+'rejects'=>$rejects,
+
+];
+return ($pageData);
+
+
+}
+
   
  }
