@@ -78,12 +78,12 @@
                 <span class="dot"></span> 
                 <span class="dot"></span> 
               </div>
+              <div class="explorebtn" onclick="scrollWin()">View More<i class="fas fa-angle-double-down"></i></a></button>
+</div>
 
-<!-- </div> -->
 
 
 
-  <div id="myNav" class="overlay"><button class="explorebtn" onclick="scrollWin()">Explore More</a></button></div>
 
 
   <div class="btn-container">

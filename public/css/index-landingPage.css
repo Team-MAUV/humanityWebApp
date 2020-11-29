@@ -38,7 +38,7 @@ img {
 
 body {
   display: grid;
-  background-color: rgba(7, 7, 7, 0.829);
+  background-color: rgba(7, 7, 7, 0.459);
 }
 
 .nav-bar {
@@ -200,10 +200,14 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%;
   position: relative;
   top: 3rem;
-  margin: auto;
+  height: 31.5rem;
+}
+
+.mySlides img {
+  height: 34rem;
 }
 
 /* Caption text */
@@ -288,23 +292,32 @@ img {
 
 .explorebtn {
   position: relative;
-  width: 12rem;
-  height: 4rem;
-  top: 2rem;
-  border-radius: 0.3rem;
-  border: 1px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  top: 0;
+  left: 42.8rem;
+  border: 2px solid #02a95b;
   cursor: pointer;
-  box-shadow: 3px 7px;
+
   z-index: 2;
-  font-size: 16px;
+  font-size: 24px;
   align-items: center;
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-color: #02a95c;
+
+  color: #000000;
+}
+
+.explorebtn:hover {
+  background: #02a95bb0;
+  top: 1rem;
 }
 
 .platform-container {
   position: relative;
+
   background: url(../images/containerbg.png);
   display: inline-flex;
   flex-wrap: wrap;
@@ -358,10 +371,10 @@ img {
 .btnTop {
   position: relative;
   display: flex;
-  width: 20rem;
-  height: 4rem;
+  width: 22rem;
+  height: 5rem;
 
-  border-radius: 1rem;
+  border-radius: 0.3rem;
 
   justify-content: center;
   align-items: center;
@@ -369,28 +382,30 @@ img {
 
 .btnTop a {
   position: relative;
-
+  color: #ffffff;
   font-size: 1.5rem;
 }
 
 #btnv {
-  border: 5px solid#02a95c;
+  background: #02a95c;
 }
 
 #btnv:hover {
-  background: #02a95c;
+  border: 6px solid#79ff0c;
 }
 
 #btnd {
   border: 5px solid#e82563;
+  background: #e82563;
 }
 
 #btnd:hover {
-  background: #e82563;
+  border: 6px solid#ff0ca2;
 }
 
 #btnm {
   border: 5px solid #254d35;
+  background: #254d35;
 }
 
 #btnm:hover {
