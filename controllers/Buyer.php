@@ -15,13 +15,13 @@ class Buyer extends Controller
 
     function index()
     {
-        $this->view->rendor('buyer/dashboard/buyer_home');
+        $this->view->rendor('buyer/dashboard/buyer_main');
     }
 
     
     
     function view_product(){
-        $this->view->rendor('buyer/dashboard/product');
+        $this->view->rendor('buyer/dashboard/view_product');
     }
     
     
