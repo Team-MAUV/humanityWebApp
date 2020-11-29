@@ -21,11 +21,12 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/index');
     }
 
-    /*function Market_module()
-    {
-        $this->view->rendor('staff/dashboard/Market_module');
-    }
-*/
+function edit_profile()
+{
+    
+    $this->view->rendor('staff/dashboard/edit_profile'); 
+   
+}
 
     function add_product()
     {
