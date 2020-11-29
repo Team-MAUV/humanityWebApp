@@ -46,9 +46,9 @@ include "staff_header.php"; ?>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 							Twiin Solo Knit Sweater
+ 						Plastic
  						</h3>
- 						<p class="product-cat">Coats , Dress</p>
+ 						<p class="product-cat">name</p>
  						<p class="product-price">$109.00</p>
  					</div>
  				</div>
@@ -77,9 +77,9 @@ include "staff_header.php"; ?>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 							Twiin Solo Knit Sweater
+ 							ewastes
  						</h3>
- 						<p class="product-cat">Coats , Dress</p>
+ 						<p class="product-cat">name</p>
  						<p class="product-price">$109.00</p>
  					</div>
  				</div>
@@ -89,7 +89,7 @@ include "staff_header.php"; ?>
  			<div class="item">
  				<div class="product">
  					<div class="product-thumb">
- 						 <img src="images/product-1.jpg" class="pro-thumb-img" alt="product">
+					 <img src=" <?= URL ?>public/images/papers1.png" class="pro-thumb-img" alt="product" style="background-color:#8e5248">
 
                          <div class="product-styles">
                          	
@@ -109,9 +109,9 @@ include "staff_header.php"; ?>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 							Twiin Solo Knit Sweater
+ 							glass
  						</h3>
- 						<p class="product-cat">Coats , Dress</p>
+ 						<p class="product-cat">name</p>
  						<p class="product-price">$109.00</p>
  					</div>
  				</div>
@@ -121,12 +121,9 @@ include "staff_header.php"; ?>
  			<div class="item">
  				<div class="product">
  					<div class="product-thumb">
- 						 <img src="images/product-1.jpg" class="pro-thumb-img" alt="product">
-
+					 <img src=" <?= URL ?>public/images/ewaste.jpeg" class="pro-thumb-img" alt="product" style="background-color:#8e5248">
                          <div class="product-styles">
-                         	<span class="active-style" data-image="images/product-1.jpg" style="background-color:#8e5248"></span>
-                         	<span class="" data-image="images/product-2.jpg" style="background-color:#5f89bb"></span>
-                         	<span class="" data-image="images/product-3.jpg" style="background-color:#b79b98"></span>
+                        
                          	</span>
                          </div>
 
@@ -144,9 +141,9 @@ include "staff_header.php"; ?>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 							Twiin Solo Knit Sweater
+ 							papers
  						</h3>
- 						<p class="product-cat">Coats , Dress</p>
+ 						<p class="product-cat">name</p>
  						<p class="product-price">$109.00</p>
  					</div>
  				</div>
