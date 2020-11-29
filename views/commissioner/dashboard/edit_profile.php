@@ -24,11 +24,11 @@ include "com-dash-header.php"; ?>
       <div class="left" > </div>  
       			<div class="right">
 				<h2>Edit Profile </h2>
-				<input type="text" class="field" placeholder="Your Name">
-				<input type="email" class="field" placeholder="Your Email">
-        <input type="text" class="field" placeholder="Phone">
+				<input type="text" class="field" placeholder="Your Name" name="name">
+				<input type="email" class="field" placeholder="Your Email" name="email">
+        <input type="text" class="field" placeholder="Phone" name="contact">
        
-				<textarea placeholder="Address" class="field"></textarea>
+				<textarea placeholder="Address" class="field" name="address"></textarea>
 				<button class="btn">Update</button>
 			</div>
 		</div>
