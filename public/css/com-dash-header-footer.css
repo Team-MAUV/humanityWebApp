@@ -182,7 +182,7 @@ body {
   overflow: auto;
   background: #1b1b1b;
   transition: left 0.4s ease;
-  z-index: 1;
+  z-index: 3;
 }
 
 .sidebar .text {
@@ -275,7 +275,7 @@ body {
   display: flex;
   left: 5rem;
   width: 85.5%;
-  height: 39.1rem;
+  height: 36 rem;
   display: grid;
   z-index: 1;
 }
@@ -296,7 +296,7 @@ a {
 }
 
 .footer {
-  position: relative;
+  position: fixed;
 
   grid-area: footer;
   height: 3rem;
@@ -306,6 +306,7 @@ a {
   width: 100%;
   left: 0;
   bottom: 0;
+  z-index: 2;
 }
 
 @media screen and (max-width: 900px) {
