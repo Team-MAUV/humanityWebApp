@@ -7,6 +7,8 @@ include "com-dash-header.php"; ?>
 <div class="grid-container">
 
 
+<div class="content update">
+
 <h1>Leave Requests</h1></br>
   <?php foreach ($leaves as $leave) : ?>
   <button type="button" class="readmore"><?= $leave['name'] ?></button>
@@ -21,8 +23,8 @@ include "com-dash-header.php"; ?>
       
 
     </p>
-
-  </div>
+   </div>
+</div>
   
   
   <?php endforeach; ?>
