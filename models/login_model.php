@@ -101,28 +101,31 @@ class login_Model extends Model
                     ':un' => $_POST['username']
                 ));
                 $user1 = $st1->fetchAll();
-                $uid=$user1['id'];
+
+                foreach ($user1 as $usr) :
+        
+                    $uid=$usr['id'];
+                endforeach;
+
+                
+
                 $st2 = $this->db->prepare("SELECT * FROM donor WHERE userlogin_id= :id ");
                 $st2->execute(array(
                     ':id' => $uid,
                 ));
                 $user = $st2->fetchAll();
+
                 foreach ($user as $usr) :
                     $id = $usr['don_id'];
                     $name =  $usr['name'];
                 endforeach;
-                foreach ($user1 as $usr1) :
-                    $un = $usr1['username'];
-                   
-                endforeach;
-
-                if($un==$_POST['username']){
+              
+              
                     Session::set('loggedIn-don', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
                     header('location: ../Donor');
               
-                }
 
             }
 
