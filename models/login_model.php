@@ -137,28 +137,31 @@ class login_Model extends Model
                     ':un' => $_POST['username']
                 ));
                 $user1 = $st1->fetchAll();
+
+                foreach ($user1 as $usr) :
+        
+                    $uid=$usr['id'];
+                endforeach;
+
+                
+
                 $st2 = $this->db->prepare("SELECT * FROM buyer WHERE userlogin_id= :id ");
                 $st2->execute(array(
-                    ':id' => $user1['id']
+                    ':id' => $uid,
                 ));
                 $user = $st2->fetchAll();
+
                 foreach ($user as $usr) :
                     $id = $usr['buy_id'];
                     $name =  $usr['name'];
                 endforeach;
-                foreach ($user1 as $usr1) :
-                    $un = $usr1['username'];
-                   
-                endforeach;
-
-                if($un==$_POST['username']){
+              
+              
                     Session::set('loggedIn-buy', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
                     header('location: ../Buyer');
               
-                }
-
                
                
 
