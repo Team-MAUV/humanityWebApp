@@ -572,7 +572,7 @@ return ($pageData);
     Session::init();
    
      $getParam = $_GET['gen'];
-     $msg="Hello";
+     $msg="";
      $tempUsername="";
      $pwd="";
    
