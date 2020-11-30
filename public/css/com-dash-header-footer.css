@@ -297,7 +297,6 @@ a {
 
 .footer {
   position: fixed;
-
   grid-area: footer;
   height: 3rem;
   background-color: #004883;
