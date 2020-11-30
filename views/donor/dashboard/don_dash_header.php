@@ -31,7 +31,7 @@
                     </button>
                     <div class="dropdown-content">
                         <a href="#">Edit Profile</a>
-                        <a href="<?= URL ?>">Logout</a>
+                        <a href="<?= URL ?>Donor/logout">Logout</a>
                     </div>
                 </div>    
             </div>

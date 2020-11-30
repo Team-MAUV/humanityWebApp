@@ -101,9 +101,10 @@ class login_Model extends Model
                     ':un' => $_POST['username']
                 ));
                 $user1 = $st1->fetchAll();
+                $uid=$user1['id'];
                 $st2 = $this->db->prepare("SELECT * FROM donor WHERE userlogin_id= :id ");
                 $st2->execute(array(
-                    ':id' => $user1['id']
+                    ':id' => $uid,
                 ));
                 $user = $st2->fetchAll();
                 foreach ($user as $usr) :

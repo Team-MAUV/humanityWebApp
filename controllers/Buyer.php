@@ -23,6 +23,11 @@ class Buyer extends Controller
     function view_product(){
         $this->view->rendor('buyer/dashboard/view_product');
     }
-    
+    function logout()
+    {
+        Session::destroy();
+        header('location: ../login');
+        exit;
+    }
     
 }

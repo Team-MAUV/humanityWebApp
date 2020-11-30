@@ -17,4 +17,11 @@ class Donor extends Controller
     {
         $this->view->rendor('donor/dashboard/donor_home');
     }
+
+    function logout()
+    {
+        Session::destroy();
+        header('location: ../login');
+        exit;
+    }
 }
