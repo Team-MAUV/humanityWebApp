@@ -34,22 +34,20 @@ include "staff_header.php"; ?>
 
  						 <div class="product-button">
  						 	<a href="#" title="Quick View">
- 						 		<i class="fa fa-eye"></i>
+ 						 		<p>12 bids</p>
  						 	</a>
  						 	<a href="#" title="Add To Cart">
- 						 		<i class="fa fa-shopping-cart"></i>
+ 						 	<p>10 buyer</p>
  						 	</a>
- 						 	<a href="#" title="Wishlist">
- 						 		<i class="fa fa-heart"></i>
- 						 	</a>
+ 					
  						 </div>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 						Plastic
+ 						Glass
  						</h3>
- 						<p class="product-cat">name</p>
- 						<p class="product-price">$109.00</p>
+ 						<p class="product-cat">Mr.N.M.Perera- Rs. 6500.00</p>
+ 						<p class="product-price"></p>
  					</div>
  				</div>
  			</div>
@@ -65,22 +63,20 @@ include "staff_header.php"; ?>
 
  						 <div class="product-button">
  						 	<a href="#" title="Quick View">
- 						 		<i class="fa fa-eye"></i>
+ 						 	<p>35 bids</p>
  						 	</a>
  						 	<a href="#" title="Add To Cart">
- 						 		<i class="fa fa-shopping-cart"></i>
+ 						 	<p>26 buyer</p>
  						 	</a>
- 						 	<a href="#" title="Wishlist">
- 						 		<i class="fa fa-heart"></i>
- 						 	</a>
+ 						 	
  						 </div>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 							ewastes
+ 							Plastic
  						</h3>
- 						<p class="product-cat">name</p>
- 						<p class="product-price">$109.00</p>
+ 						<p class="product-cat">Mrs. K.Kamala Haris -RS 9000.00 </p>
+ 						<p class="product-price"></p>
  					</div>
  				</div>
  			</div>
@@ -97,22 +93,20 @@ include "staff_header.php"; ?>
 
  						 <div class="product-button">
  						 	<a href="#" title="Quick View">
- 						 		<i class="fa fa-eye"></i>
+ 						 	<p></p>
  						 	</a>
  						 	<a href="#" title="Add To Cart">
- 						 		<i class="fa fa-shopping-cart"></i>
+ 						 	<p></p>
  						 	</a>
- 						 	<a href="#" title="Wishlist">
- 						 		<i class="fa fa-heart"></i>
- 						 	</a>
+ 						
  						 </div>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 							glass
+ 						Papers 
  						</h3>
- 						<p class="product-cat">name</p>
- 						<p class="product-price">$109.00</p>
+ 						<p class="product-cat">Not available now</p>
+ 						<p class="product-price"></p>
  					</div>
  				</div>
  			</div>
@@ -129,22 +123,20 @@ include "staff_header.php"; ?>
 
  						 <div class="product-button">
  						 	<a href="#" title="Quick View">
- 						 		<i class="fa fa-eye"></i>
+ 						 	<p>5 bids</p>
  						 	</a>
  						 	<a href="#" title="Add To Cart">
- 						 		<i class="fa fa-shopping-cart"></i>
+ 						 	<p>5 buyer</p>
  						 	</a>
- 						 	<a href="#" title="Wishlist">
- 						 		<i class="fa fa-heart"></i>
- 						 	</a>
+ 					
  						 </div>
  					</div>
  					<div class="product-info">
  						<h3 class="product-name">
- 							papers
+ 							E-wastes
  						</h3>
- 						<p class="product-cat">name</p>
- 						<p class="product-price">$109.00</p>
+ 						<p class="product-cat">Mrs.L.M.Terendo -Rs 2560.00 </p>
+ 						<p class="product-price"></p>
  					</div>
  				</div>
  			</div>

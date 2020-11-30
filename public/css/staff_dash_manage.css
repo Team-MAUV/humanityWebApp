@@ -3,7 +3,8 @@
 
 body{
 	margin:0;
-	font-family: 'Roboto';
+	font-family:serif;
+	overflow: hidden;
 }
 *{
 	box-sizing: border-box;
@@ -18,7 +19,7 @@ body{
 }
 .product-list{
 	padding:100px 15px;
-	min-height: 100px;
+	min-height: 200px;
 	background-color:#f2f3f3;
 }
 
@@ -26,7 +27,11 @@ body{
 	flex-basis: 25%;
 	max-width: 25%;
 	padding:0 15px;
-	margin-bottom: 50px; 
+	margin-bottom: 50px;
+	margin-right: 10px; 
+	background-color: cornflowerblue;
+	border-radius: 5px;
+	border-color: #111111;
 }
 .product-list .product .product-thumb img{
 	width: 100%;
@@ -54,8 +59,8 @@ body{
 }
 .product-list .product .product-thumb .product-button a{
 	display: inline-block;
-	height: 40px;
-	width: 40px;
+	height: 50px;
+	width: 50px;
 	border:1px solid #111111;
 	background-color: #ffffff;
 	text-align:center;
@@ -66,9 +71,7 @@ body{
 	color:#111111;
 	transition: all .5s ease;
 }
-.product-list .product .product-thumb .product-button a:hover{
-	background-color: #111111;
-}
+
 .product-list .product .product-thumb .product-button a:hover .fa{
 	color:#ffffff;
 }
