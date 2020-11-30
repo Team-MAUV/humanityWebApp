@@ -7,7 +7,7 @@ include "com-dash-header.php"; ?>
 <div class="grid-container">
 
 
-<div class="content update">
+<div class="content_update">
 
 <h1>Leave Requests</h1></br>
   <?php foreach ($leaves as $leave) : ?>
@@ -24,10 +24,11 @@ include "com-dash-header.php"; ?>
 
     </p>
    </div>
+   <?php endforeach; ?>
 </div>
   
   
-  <?php endforeach; ?>
+  
 
     <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 
