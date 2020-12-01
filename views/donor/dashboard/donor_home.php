@@ -1,6 +1,6 @@
 <?php $page = 'donorIndex';
 $title = 'Donor';
-$style = 'don-index.css';
+$style = 'donor_index.css';
 $jsFile = 'donor.js';
 include "don_dash_header.php"; ?>
 
@@ -8,7 +8,7 @@ include "don_dash_header.php"; ?>
                 <div class="donate-here">
                     
                     <div class="add-donation">
-                       <div class="view1" id="donateView" style="display:block;">
+                       <div class="view1" id="donateView" style="display: block;">
                             <h4>Select an amount</h4>
                             <ul class="select-value">
                                 <li><button type="button" class="don-value">Rs:50.00</button> </li>
@@ -48,12 +48,43 @@ include "don_dash_header.php"; ?>
                             </div>
                             
                             
-                       </div>
-                       <div class="view2" id="viewDonations" style="display: none;">
-                        <span onclick="closeMyDonations()" class="close-btn">&times;aaaaa</span>
-                           your donations
-                       </div>
-                    </div>
+                        </div>
+                        <div class="view2" id="viewDonations" style="display: none;">
+                            <span onclick="closeMyDonations()" class="close-btn">&times;</span>
+                            <div class="stats">
+                                <div class="my-donations">
+                                    <h2>Donor ID : DONHB001</h2>
+                                    <ul>
+                                        <li>Your Contribution(Rs) : 3550.00</li>
+                                        <li>Largest Contribution(Rs) : 500.00</li>
+                                        <li>Last Contribution on : 2020.10.10</li>
+                                    </ul>
+                            
+                                </div>
+                                <div class="don-stats">
+                                    <h2>Humanty Donation Stats</h2>
+                                    <ul>
+                                        <li>Total number of Donors : 251</li>
+                                        <li>Total Donations in last 30 days(Rs) : 12258.12</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="latest-donations">
+                                <h2>Your Latest Donations </h2>
+                               <div class="view-last-donation">
+                                    <p>Donated Rs 50.00 for Charity on 2020.10.10</p>
+                               </div>
+                               <div class="view-last-donation">
+                                    <p>Donated Rs 50.00 for Charity on 2020.10.10</p>
+                               </div>
+                               <div class="view-last-donation">
+                                    <p>Donated Rs 50.00 for Charity on 2020.10.10</p>
+                               </div>
+                                
+                            </div>
+                            
+                            </div>
+                        </div>
                 </div>
             </div>
 

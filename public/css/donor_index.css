@@ -190,14 +190,91 @@ li {
 a {
   text-decoration: none;
 }
-
+/*=============stats page -==============*/
 .close-btn {
-  margin-left: 700px;
+  margin-left: 60vw;
   color:black;
-  font-size: 35px;
+ 
+  font-weight: bolder;
   cursor: pointer;
   z-index: 2;
+  align-items: center;
+
 }
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: 5px;
+}
+.my-donations , .don-stats{
+  background-color: white;
+  height: 30vh;
+  width: 30vw;
+  border-radius: 10px;
+  padding: 5px;
+}
+.my-donations h2 , 
+.latest-donations h2{
+  color: red;
+}
+.don-stats{
+  
+}
+.don-stats h2{
+  color: green;
+}
+.my-donations ul , 
+.don-stats ul{
+  margin-left: 20px;
+}
+.my-donations ul li , 
+.don-stats ul li{
+  padding: 5px;
+}
+.latest-donations p{
+
+}
+.view-last-donation{
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: lightpink;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.view-last-donation:hover{
+  background-color: pink;
+}
+@media screen and (max-width: 900px) {
+  .close-btn{
+    margin-left: 45vw;
+  }
+  .stats{
+    flex-direction: column;
+    justify-content: left;
+  }
+  .my-donations h2 , 
+  .latest-donations h2,
+  .don-stats h2{
+    font-size: 20px;
+  }
+  .my-donations, .don-stats{
+    margin-left: 0;
+    width: 50vw;
+    height: 20vh;
+  }
+  .view-last-donation{
+    padding: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+
 /*------------------------donation - container-----------------*/
 
 .donation-container {
@@ -264,6 +341,9 @@ a {
 .prv-d {
   padding: 5px;
   margin-top: 30px;
+}
+.donate{
+  margin-left: 45vw;
 }
 .dedicate-donation{
   margin-left: 20px;
@@ -589,6 +669,7 @@ input[type="checkbox"] {
     color: black;
     font-size: 20px;
     padding: 15px;
+    height: 90vh;
   }
   .don-value {
     margin-bottom: 2px;
@@ -607,6 +688,9 @@ input[type="checkbox"] {
   .payment,
   .donate {
     margin-top: 10px;
+  }
+  .donate{
+    margin-left: 0;
   }
   .donate-for{
     margin-left: 5px;
