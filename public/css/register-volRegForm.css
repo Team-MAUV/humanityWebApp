@@ -1,15 +1,7 @@
-
-
-body{
-background: url("../images/") no-repeat center;
-
-	
-	z-index: -1;
+body {
+    background: url("../images/") no-repeat center;
+    z-index: -1;
 }
-
-
-
-
 
 .login {
     width: 1000px;
