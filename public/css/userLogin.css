@@ -169,7 +169,7 @@ a:hover {
     width: 100%;
     grid-template-columns: 5fr 1fr;
     grid-template-areas: " title-name logo-container ";
-    background-color: #004883;
+
     height: 50px;
     z-index: 10;
   }
@@ -200,7 +200,7 @@ a:hover {
   }
   .logo-name {
     display: flex;
-    color: #fff;
+
     font-size: 0.6rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -225,7 +225,7 @@ a:hover {
     position: relative;
     right: 1rem;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+
     font-size: 1.5rem;
     transition: 0.3s;
   }
@@ -234,10 +234,10 @@ a:hover {
     display: inline-block;
     width: 60px;
     height: 40px;
-    background: #004883;
+
     padding: 0.5rem 0.8rem;
     font-size: 5rem;
-    border: 2px solid #fff;
+
     border-radius: 2rem;
     line-height: 1;
 
