@@ -4,7 +4,7 @@
     padding: 0;
     user-select: none;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+ 
     scrollbar-width: thin;
     scrollbar-color: #ffffff #000000;
 }
@@ -156,6 +156,7 @@
     background: #1b1b1b;
     transition: left 0.4s ease;
     z-index: 50;
+    font-family:'roboto';
 }
 
 .sidebar .text {
@@ -230,12 +231,14 @@
     font-size: 14px;
     color: #e6e6e6;
     padding-left: 15px;
+    font-family: "Poppins", sans-serif ;
 }
 
 .sidebar ul li.active ul li a {
     color: #e6e6e6;
     background: #1b1b1b;
     border-left-color: transparent;
+  
 }
 
 .sidebar ul ul li a:hover {

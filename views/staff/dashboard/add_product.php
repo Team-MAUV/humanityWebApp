@@ -17,6 +17,7 @@ include "staff_header.php"; ?>
 }
 body{
   overflow: hidden;
+  
 }
 input[type=text], select, textarea ,input[type=number],input[type=datetime-local]{
   width: 100%;
@@ -56,8 +57,9 @@ input[type=reset]:hover {
 } 
 .container {
   border-radius: 5px;
-  background-color: #4d5bd8;
+  background-color: #6495ED;
   padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .col-25 {

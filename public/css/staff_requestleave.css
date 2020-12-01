@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', verdana;
 }
 
 body{
@@ -21,7 +21,7 @@ body{
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 450px;
-
+font-family: 'verdana';
 
   background: rgba(0,0,0,0.8);
   padding: 30px;

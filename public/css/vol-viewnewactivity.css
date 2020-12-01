@@ -1,5 +1,5 @@
 body {
-    background: rgb(2, 11, 41);
+    background: rgb(245, 245, 248);
     margin: 0;
     width: 100vw;
 }
@@ -14,7 +14,7 @@ body {
     margin-left: 2vw;
     float: left;
     font-weight: 1000;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
     text-align: center;
     font-weight: 1000;
     font-size: 2rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-family: 'serif';
 }
 
 .column {

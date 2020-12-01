@@ -13,7 +13,7 @@
 
 /*Tipografia responsive*/
 :root{
-    --body-font: 'Open Sans';
+    --body-font: 'sanserif';
     --h1-font-size: 1.5rem;
     --h3-font-size: 1rem;
     --normal-font-size: 0.938rem;
@@ -35,7 +35,8 @@ body{
     margin: 2rem 0 0 0;
     background-color: #fff;
     color: var(--dark-color);
-    font-family: var(--body-font);
+   
+
 }
 h1{
     font-size: var(--h1-font-size);
@@ -51,6 +52,7 @@ a{
 /*-- LAYAOUT --*/
 .main {
     padding: 2rem 0;
+    
 }
 .bd-grid{
     display: grid;
@@ -73,6 +75,7 @@ a{
     padding: 1.5rem 2rem;
     border-radius: 1rem;
     overflow: hidden;
+    font-family:'URW Chancery L, cursive';
 }
 article:nth-child(1){
     background-color: var(--first-color);
