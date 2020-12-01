@@ -228,10 +228,12 @@ a {
 .don-stats h2{
   color: green;
 }
-.my-donations ul , .don-stats ul{
+.my-donations ul , 
+.don-stats ul{
   margin-left: 20px;
 }
-.my-donations ul li , .don-stats ul li{
+.my-donations ul li , 
+.don-stats ul li{
   padding: 5px;
 }
 .latest-donations p{
@@ -243,10 +245,33 @@ a {
   margin-top: 20px;
   background-color: lightpink;
   border-radius: 5px;
+  cursor: pointer;
+}
+.view-last-donation:hover{
+  background-color: pink;
 }
 @media screen and (max-width: 900px) {
   .close-btn{
     margin-left: 45vw;
+  }
+  .stats{
+    flex-direction: column;
+    justify-content: left;
+  }
+  .my-donations h2 , 
+  .latest-donations h2,
+  .don-stats h2{
+    font-size: 20px;
+  }
+  .my-donations, .don-stats{
+    margin-left: 0;
+    width: 50vw;
+    height: 20vh;
+  }
+  .view-last-donation{
+    padding: 5px;
+    font-size: 16px;
+    margin-top: 5px;
   }
 }
 
@@ -644,6 +669,7 @@ input[type="checkbox"] {
     color: black;
     font-size: 20px;
     padding: 15px;
+    height: 90vh;
   }
   .don-value {
     margin-bottom: 2px;
