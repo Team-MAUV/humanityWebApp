@@ -8,7 +8,8 @@ include "com-dash-header.php"; ?>
 
 <div class="row">
 <button class="tab tab-upcoming" onclick="openpage('upcoming',this)" id="defaultOpen">New Reports</button>
-    <button class="tab tab-finished" onclick="openpage('finished',this)">Approved Reports</button></div>
+    <button class="tab tab-current" onclick="openpage('current',this)">Approved Reports</button>
+    <button class="tab tab-finished" onclick="openpage('finished',this)">Rejected Reports</button></div>
     <div id="upcoming" class="tabcontent">
         <form action="#">
  <h1>New Project Reports</h1>
@@ -35,7 +36,7 @@ include "com-dash-header.php"; ?>
     </div>
     </form>
     </div>
-    <div id="finished" class="tabcontent">
+    <div id="current" class="tabcontent">
         
         <h1>Approved Project Reports</h1>
     <div class="row">
@@ -85,7 +86,52 @@ include "com-dash-header.php"; ?>
     </div>
 
     </div>
+    <div id="finished" class="tabcontent">
+        <form action="#">
+ <h1>Rejected Project Reports</h1>
+    <div class="row">
+    <?php foreach ($rejects as $reject) : ?>
+        <div class="column">
 
+
+            <div class="flipbox-inner">
+                <div class="flipbox-front">
+                    <h2><?= $reject['id'] ?></h2>
+                    <h3 class="head1"><?= $reject['title'] ?> </h3>
+                </div>
+                <div class="flipbox-back">
+                
+                <?php if(strlen($reject['com_id'])==1 && strlen($reject['com_id'])>0){
+      $ccustomid ="COMHB00".$reject['com_id'];
+    }else if(strlen($reject['com_id'])==2 && strlen($reject['com_id'])>0){
+      $ccustomid ="COMHB0".$reject['com_id'];
+    }else if(strlen($reject['com_id'])>0){
+      $ccustomid ="COMHB".$reject['com_id'];
+    };
+    ?>
+     <ul class="subby">
+     <li>Report ID : <?= $reject['report_id']  ?></li>
+     <?php if(strlen($reject['staff_id'])==1 && strlen($reject['staff_id'])>0){
+      $scustomid ="STFHB00".$reject['staff_id'];
+    }else if(strlen($reject['staff_id'])==2 && strlen($reject['staff_id'])>0){
+      $scustomid ="STFHB0".$reject['staff_id'];
+    }else if(strlen($reject['staff_id'])>0){
+      $scustomid ="STFHB".$reject['staff_id'];
+    };
+    ?>
+    
+        <li>Submitted By : <?= $scustomid ?></li>
+    <li>Rejected By : <?= $ccustomid ?></li></ul>
+    <button class="dbtn"><a href="<?= $reject['report_path']  ?>" download="<?= $reject['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+                </div>
+            </div>
+
+        </div>
+        <?php endforeach; ?>
+        
+    </div>
+    </form>
+    </div>
 </div>
 
 <script src="<?= URL ?>public/js/vol-viewevents.js"></script>
