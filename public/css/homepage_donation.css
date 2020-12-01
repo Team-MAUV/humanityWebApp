@@ -87,6 +87,37 @@ body {
 .landingImage img {
   width: 28vw;
 }
+/*---------buttons from vol-----------*/
+.btns {
+  margin-top: 20px;
+  
+  bottom: 15px;
+}
+
+.btns a {
+  border-radius: 5px;
+  font-size: 32px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.log {
+  
+  background-color: green;
+}
+
+.reg {
+  background-color: blue;
+}
+
+.btns a:hover {
+  background-color: red;
+}
 
 /* ABOUT CSS */
 
@@ -260,7 +291,11 @@ body {
 
 .infoSection {
   height: 600px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 .infoHeader {
   text-align: center;

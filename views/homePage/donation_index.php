@@ -89,8 +89,12 @@
             <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
                 <h1>Welcome to Tzuchi Donation Module <span style="color:#e0501b;font-size: 4vw">Spread Love & hope.</span> </h1>
                 <h3> Your donations will make another person's life a miracle. <br>  Donate today and ignite the fire within!</h3>
-                <div class="btn">
+              <!-- <div class="btn">
                     <a href="#">Register</a>
+                </div> -->
+                <div class="btns">
+                    <a class="log" href="<?= URL ?>login?pf=buy">Log-In</a>
+                    <a class="reg" href="<?= URL ?>register/donRegForm">Register</a>
                 </div>
                 
             </div>
@@ -99,6 +103,7 @@
             </div>
         </div>
 
+      
         <!-- ABOUT SECTION -->
 
         <div class="about">
