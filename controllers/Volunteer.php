@@ -48,7 +48,16 @@ class Volunteer extends Controller
     {
         $this->view->rendor('volunteer/dashboard/vol_participate');
     }
-
+    function edit_profile()
+    {
+        $data=$this->model->run_viewtoedit_profile();
+        $this->view->rendor('volunteer/dashboard/edit_profile', $data, true);
+    }
+    function run_edit_profile()
+    {
+        $data=$this->model->run_edit_profile();
+        $this->view->rendor('volunteer/dashboard/edit_profile', $data, true);
+    }
 
 
 

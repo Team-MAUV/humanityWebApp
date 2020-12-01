@@ -34,7 +34,7 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">Edit Profile</a>
+            <a href="<?= URL ?>Volunteer/edit_profile">Edit Profile</a>
             <a href="<?= URL ?>Volunteer/logout">Logout</a>
 
           </div>
