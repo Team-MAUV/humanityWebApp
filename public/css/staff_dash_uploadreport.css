@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(53, 54, 54);
+    background-color:white;
 }
 
 ul {
@@ -8,7 +8,7 @@ ul {
 
 h1 {
     margin-top: 10vh;
-    color: white;
+    color: rgb(6, 15, 92);
     text-align: center;
     font-weight: 1000;
     font-size: 2rem;
@@ -23,8 +23,8 @@ h1 {
     width: 20vw;
     height: 45vh;
     border-style: solid;
-    border-color: black;
-    background-color: rgb(161, 163, 165);
+    border-color: rgb(14, 17, 13);
+    background-color: rgb(125, 134, 127);
 }
 
 h2 {
@@ -33,7 +33,7 @@ h2 {
     opacity: 0.2;
     margin-top: 14vh;
     margin-left: 7vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .column:hover h2 {
@@ -47,7 +47,7 @@ h2 {
     margin-left: 2vw;
     margin-right: 2vw;
     position: absolute;
-    color: rgb(111, 33, 172);
+    color: yellow;
     margin-top: 3vh;
 }
 
@@ -91,13 +91,13 @@ h2 {
 }
 
 .flipbox-front {
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(15, 104, 194);
     color: rgb(252, 249, 249);
 }
 
 .flipbox-back {
-    background-color: rgb(93, 93, 94);
-    color: rgb(5, 5, 5);
+    background-color: rgb(15, 104, 194);
+    color: yellow;
     transform: rotateY(180deg);
 }
 
@@ -114,8 +114,8 @@ h2 {
 }
 
 .dbtn {
-    background-color: dodgerblue;
-    color: rgb(253, 253, 253);
+    background-color: rgb(120, 181, 241);
+    color: rgb(19, 12, 12);
     padding: 1px 3px;
     border-radius: 10px;
     cursor: pointer;
@@ -152,7 +152,7 @@ a:hover {
 
 .tab {
     margin-top: 0.2vh;
-    background-color: rgb(116, 113, 113);
+    background-color: rgb(99, 114, 243);
     color: white;
     float: left;
     outline: none;
@@ -183,11 +183,12 @@ a:hover {
     margin-left: 1vw;
     float: left;
     font-weight: 1000;
-    color: black;
+
     font-weight: 800;
     font-size: 1.3rem;
     margin-top: 1vh;
-    color: #230e4b;
+    color: yellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media screen and (max-width: 900px) {
