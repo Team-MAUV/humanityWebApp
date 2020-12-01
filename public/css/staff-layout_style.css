@@ -4,7 +4,6 @@
     padding: 0;
     user-select: none;
     box-sizing: border-box;
-  
     scrollbar-width: thin;
     scrollbar-color: #ffffff #000000;
 }
@@ -42,7 +41,7 @@
     width: 100vw;
     grid-template-columns: 250px 60% 40%;
     grid-template-areas: "logo-container title-name dropdown";
-    background-color:  #3b5998 ;
+    background-color: #3b5998;
     height: 50px;
     z-index: 10;
 }
@@ -85,12 +84,11 @@
     text-transform: uppercase;
     line-height: 3rem;
     text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .logo-name span {
     font-weight: 200;
-
 }
 
 .dropdown {
@@ -158,7 +156,7 @@
     background: #1b1b1b;
     transition: left 0.4s ease;
     z-index: 50;
-    font-family:Roboto ;
+    font-family: Roboto;
 }
 
 .sidebar .text {
@@ -166,10 +164,10 @@
     font-size: 20px;
     line-height: 40px;
     text-align: center;
-    background: #3b5998 ;
+    background: #3b5998;
     border: 3px solid rgba(0, 162, 255, 0.993);
     letter-spacing: 1px;
-    font-family:Roboto;
+    font-family: Roboto;
 }
 
 .sidebar ul {
@@ -265,7 +263,7 @@
     bottom: 50px;
     left: 260px;
     overflow: auto;
-    width: 84%;
+    width: 80%;
 }
 
 .breadcrum {
@@ -298,7 +296,7 @@ a {
     left: 0;
     width: 100%;
     height: 50px;
-    background-color: #3b5998 ;
+    background-color: #3b5998;
     color: white;
     z-index: 10;
     text-align: center;
@@ -319,7 +317,7 @@ a {
         width: 100%;
         grid-template-columns: 100px 60% 15%;
         grid-template-areas: "logo-container title-name dropdown";
-        background-color:  #3b5998 ;
+        background-color: #3b5998;
         height: 50px;
         z-index: 10;
     }
@@ -355,7 +353,7 @@ a {
         width: 100%;
         grid-template-columns: 1fr 4fr 1fr;
         grid-template-areas: "logo-container title-name dropdown";
-        background-color:  #3b5998 ;
+        background-color: #3b5998;
         height: 50px;
         z-index: 10;
     }
@@ -372,7 +370,7 @@ a {
     }
     label #btn {
         position: absolute;
-        background:  #3b5998 ;
+        background: #3b5998;
         top: 10px;
         border: solid 1px;
         border-radius: 3px;
@@ -506,7 +504,7 @@ input[type=reset]:hover {
 
 .container {
     border-radius: 5px;
-    background-color: #3b5998 ;
+    background-color: #3b5998;
     padding: 20px;
 }
 

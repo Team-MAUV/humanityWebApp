@@ -81,7 +81,7 @@ include "vol_dash_header.php"; ?>
         </section>
         <section class="section">
           <header class="section__header">
-            <h2 class="section__title">Participated recent  Activities </h2>
+            <h2 class="section__title">Recent Participated  Activities </h2>
             <div class="section__control">
           
             </div>

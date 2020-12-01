@@ -26,6 +26,7 @@ include "staff_header.php"; ?>
 		<li class="line">
 			Staff ID: <input type="text" name="staff_id" id="sid" required>
 		</li>
+		<li> Title: <input type="text" name="title" id="tid" required>
 		<li>
 			<div class="formcss">
 				<p style="align-content: center;">Upload the Report: </p>

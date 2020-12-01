@@ -259,7 +259,7 @@ public function addreport()
         $get_stfid->execute(array(
           ':stfid' => $_POST['staff_id']
         ));
-
+        $title=$_POST['title'];
         $result = $get_stfid->fetchAll();
         $count = $get_stfid->rowCount();
 
@@ -270,9 +270,10 @@ public function addreport()
           endforeach;
 
           //Inserting Fetched Volunteer id to beneficiary case table
-          $st = $this->db->prepare('INSERT INTO project_report(staff_id,report_path) VALUES (:id,:path)');
+          $st = $this->db->prepare('INSERT INTO project_report(staff_id,title,report_path) VALUES (:id,:title,:path)');
           $st->execute(array(
             ':id' => $id,
+            ':title'=>$title,
             ':path' => $file_path
           ));
 
