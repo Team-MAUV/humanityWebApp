@@ -127,7 +127,7 @@ else{
             if(nic.match(/^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$/)){
                 swal({
                 title: "Registration Successful!",
-                text: "Thank you for joining us!",
+                text: "Please wait for the confirmation email!",
                 icon: "success",
 
             });
