@@ -23,15 +23,15 @@ include "staff_header.php"; ?>
 	<ul class="voldata">
 
 
-		<li class="line">
+		<li>
 			Staff ID: <input type="text" name="staff_id" id="sid" required>
 		</li>
 		<li> Title: <input type="text" name="title" id="tid" required>
 		<li>
 			<div class="formcss">
 				<p style="align-content: center;">Upload the Report: </p>
-				<input type="file" id="staffreport" name="file" accept="file/*" class="file">
-				<input type="submit" class="btn" value="Upload">
+				<li>	<input type="file" id="staffreport" name="file" accept="file/*" class="file"> </li>
+			<li>	<input type="submit" class="btn" value="Upload"></li>
 			</div>
 		</li>
 	</ul>

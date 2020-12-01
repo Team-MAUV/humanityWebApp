@@ -1,8 +1,8 @@
 
 
 body{
-background: url("../images/bag.svg") no-repeat center;
-background-size: cover;
+background: url("../images/") no-repeat center;
+
 	
 	z-index: -1;
 }
@@ -17,6 +17,8 @@ background-size: cover;
     background-color: #ffffff;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
+    border-radius: 15px;
+    border-color: #2caa0c;
 }
 
 .swal-overlay {

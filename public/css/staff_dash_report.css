@@ -35,7 +35,7 @@ input {
 }
 
 .btn {
-    background-color: #0cca15;
+    background-color: #4454ec;
     color: rgb(253, 253, 253);
     padding: 6px 10px;
     border-radius: 10px;
@@ -61,12 +61,13 @@ ul {
 }
 
 .file {
-    background-color: rgb(24, 110, 7);
+    background-color: rgb(12, 79, 202);
     padding-left: 2vw;
     padding-right: 0.5vw;
     padding-top: 2vh;
     padding-bottom: 2vh;
     margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .file:hover {
