@@ -199,7 +199,9 @@
                         
                         <h4>How to become a tzu-chi volunteer</h4>
                         
-                        <p style="color:green;">Fill up the registration form with your details.</p>
+                        <p style="color:green;">Fill up the registration form with your details. You will recieve an 
+                        e-mail containing your login details. It does not matter who you are or what you do as long 
+                        as you have a good hart. Let's make a world a better place.</p>
                        
                         
                         <h4>Volunteer types of Tzu-Chi Foundation</h4>
@@ -210,8 +212,13 @@
                                     <div class="vol-cat-img">
                                         <img src="<?= URL ?>public/images/vol-yellow.jpg">
                                         <div class="text-box">
-                                            <div class="vol-cat-name"><h3>Temporary Volunteers</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <div class="vol-cat-name"><h3>Temporary Volunteers</h3></div> 
+                                            <p>All the new volunteers are registered as temporary volunteers in the 
+                                            Tzu-Chi organization. They need to participate certan amount of volunteer activities
+                                            and get more than 1000 points to be a temporary volunteer of Tzu-Chi Organization.
+                                            </p>
+                                                                                      
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -219,9 +226,12 @@
                                     <div class="vol-cat-img">
                                         <img src="<?= URL ?>public/images/vol-gray.jpg">
                                         <div class="text-box">
-                                            <div class="vol-cat-name"><h3>Permanent Volunteers</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora beatae maxime obcaecati. Vel, beatae corrupti pariatur veniam voluptate odio, nisi tempore, laborum illum ut dolorem totam? Quod, officiis odio.</p>
+                                            <div class="vol-cat-name"><h3>Permanent Volunteers</h3></div>  
+                                            <p>By becoming a permanent volunteer of Tzu-Chi Organization you can do more and more volunteering work.
+                                             Permanent Volunteers can request for a staff position of the Tzu-Chi Organization. 
+                                             Whith good work you can promote volunteerisam amony the comunity.
+                                            </p>                                         
+                                            
                                         </div>
                                     </div>
                                 </div>
