@@ -18,7 +18,7 @@ include "staff_header.php"; ?>
     <link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_calendar.css" />
     <style>
       body {
-        font-family: Arial;
+        font-family:serif;
         color: white;
       }
       
@@ -71,18 +71,19 @@ include "staff_header.php"; ?>
 
     <body> 
       <div class="split left">
+     
        <div class="centered">
-         
+       <h1 style="color: blue; font-family:Roboto">Welcome to Staff Portal </h1>
           <img src="<?= URL ?>public/images/img_avatar.png" alt="staff"/>
-          <h2><?= $_SESSION['name'] ?></h2>
-          <p> <?= $_SESSION['id'] ?></p>
+          <h1><?= $_SESSION['name'] ?></h1>
+          <h5> <?= $_SESSION['id'] ?></h5>
         </div> 
       </div>
       
       <div class="split right">
       
       <div class="wrapper">
-   <center>   <h2 style="color:beige" > Calendar </h2></center> 
+   <center>   <h2 style="color:yellow" > Calendar </h2></center> 
       <div class="container-calendar">
           <h3 id="monthAndYear"></h3>
           <div class="button-container-calendar">

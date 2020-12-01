@@ -35,7 +35,7 @@ include "vol_dash_header.php"; ?>
                 <span class="profile__name"><?= $_SESSION['name'] ?></span>
                 <img
                   class="profile__img"
-                  src="<?= URL ?>public/images/img_lady.png"
+                  src="<?= URL ?>public/images/man.png"
                   alt="Profile picture"
                   loading="lazy"
                 />
@@ -70,7 +70,9 @@ include "vol_dash_header.php"; ?>
                 </div>
                 <div class="team__inform">
                   <p class="team__name">  <?= $_SESSION['vol_points'] ?></p>
-                
+                  <svg height="100" width="72">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="green" fill="50%"/>
+                  </svg>
 
                 </div>
               </a>
@@ -106,28 +108,8 @@ include "vol_dash_header.php"; ?>
                     <span class="status status--published">aaa</span>
                   </div>
                   <div class="project__element project__setting">
-                    <button
-                      class="setting setting--rotate focus--box-shadow"
-                      type="button"
-                    >
-                      <svg
-                        enable-background="new 0 0 515.555 515.555"
-                        height="512"
-                        viewBox="0 0 515.555 515.555"
-                        width="512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                        <path
-                          d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                        <path
-                          d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                      </svg>
-                    </button>
+               
+               <p>25</p>
                   </div>
                 </div>
               </a>
@@ -152,28 +134,7 @@ include "vol_dash_header.php"; ?>
                     <span class="status status--published">aaa</span>
                   </div>
                   <div class="project__element project__setting">
-                    <button
-                      class="setting setting--rotate focus--box-shadow"
-                      type="button"
-                    >
-                      <svg
-                        enable-background="new 0 0 515.555 515.555"
-                        height="512"
-                        viewBox="0 0 515.555 515.555"
-                        width="512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                        <path
-                          d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                        <path
-                          d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                      </svg>
-                    </button>
+                  <p>30</p>
                   </div>
                 </div>
               </a>
@@ -197,28 +158,7 @@ include "vol_dash_header.php"; ?>
                     <span class="status status--published">aaa</span>
                   </div>
                   <div class="project__element project__setting">
-                    <button
-                      class="setting setting--rotate focus--box-shadow"
-                      type="button"
-                    >
-                      <svg
-                        enable-background="new 0 0 515.555 515.555"
-                        height="512"
-                        viewBox="0 0 515.555 515.555"
-                        width="512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                        <path
-                          d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                        <path
-                          d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
-                        />
-                      </svg>
-                    </button>
+                  <p>35</p>
                   </div>
                 </div>
               </a>
@@ -281,30 +221,6 @@ include "vol_dash_header.php"; ?>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
           <div class="profile-main">
             <button
@@ -313,7 +229,7 @@ include "vol_dash_header.php"; ?>
             >
               <img
                 class="profile-main__photo"
-                src="<?= URL ?>public/images/img_lady.png" 
+                src="<?= URL ?>public/images/man.png" 
                 alt="Profile photo"
               />
             </button>
