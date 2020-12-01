@@ -20,8 +20,7 @@ body {
   bottom: 0;
   z-index: -1;
   background-size: cover;
-	filter: blur(10px);
-
+  filter: blur(10px);
 }
 
 .nav-bar {
@@ -31,7 +30,7 @@ body {
   justify-content: space-between;
   top: 0;
   width: 100vw;
-  background-color: #004883;
+  background-color: #02a95c;
   height: 3rem;
   z-index: 10;
 }
@@ -103,7 +102,7 @@ body {
   width: 4vw;
   height: auto;
   margin: 2rem;
-  background: #004883;
+  background: #02a95c;
   padding: 0.3rem 0.7rem;
   font-size: 1rem;
   border: 2px solid #fff;
@@ -135,7 +134,7 @@ a:hover {
   font-size: 1.2rem;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #004883, #1777af, #030e64);
+  background-image: linear-gradient(to right, #02a95c, #4ae09a, #65ce03);
   cursor: pointer;
   color: #fff;
   text-transform: uppercase;
@@ -154,7 +153,7 @@ a:hover {
   bottom: 0;
   width: 100vw;
   height: 6vh;
-  background-color: #004883;
+  background-color: #02a95c;
   color: white;
   text-align: center;
   z-index: 1000;
