@@ -14,6 +14,8 @@ include "com-dash-header.php"; ?>
 
   <div class="content update">
     <h2>Appoint a Session Incharge</h2>
+    <div class="message"><?php echo $msg; ?>
+    
     <form action="sessionIncharge?gen=1" method="post">
       <label for="venue">Select Staff ID</label>
       <div class="select"> 
@@ -41,10 +43,10 @@ include "com-dash-header.php"; ?>
       <input type="text" name="pcode" id="pcode" value="<?php echo $pwd; ?>" required>
    
 
-      <input type="submit" value="Appoint">
+      <input type="submit" value="Appoint">   </div>
     </form>
 
-    <div class="message"><?php echo $msg; ?> </div>
+
     <div class="content read" id="sessionIncharge_data">
 
 

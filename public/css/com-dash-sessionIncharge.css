@@ -139,3 +139,10 @@ select {
 .read table tbody tr td.actions .edit:hover {
   background-color: #319ca3;
 }
+
+.message {
+  color: #004883;
+  font-weight: bold;
+  font-family: serif;
+  font-size: 18px;
+}
