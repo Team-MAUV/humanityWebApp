@@ -17,7 +17,7 @@ include "com-dash-header.php"; ?>
 
     <div class="split left">
   
-  <h1>New Beneficary Cases</h1></br>
+  <h1><strong>Beneficary Cases</strong> </h1></br>
   <?php foreach ($upcomings as $upcoming) : ?>
   <button type="button" class="readmore"><?= $upcoming['beneficiery_id'] ?></button>
   <div class="content">

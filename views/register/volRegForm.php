@@ -23,7 +23,7 @@ include "regForm-header.php"; ?>
     <label for="emailaddress">
       <i class="fas fa-envelope"></i>
     </label>
-    <input type="email" name="email" placeholder="Email Address" id="email" required>
+    <input type="text" name="email" placeholder="Email Address" id="email" required>
     <div class="validation-error">
     </div>
 

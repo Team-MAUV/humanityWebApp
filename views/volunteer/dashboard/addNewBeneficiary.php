@@ -25,7 +25,7 @@ include "vol_dash_header.php"; ?>
 
 
             <li>
-                Volunteer ID: <input type="text" name="vol_id" id="vid" required>
+                Volunteer ID: <input type="text" name="vol_id" id="vid" value="<?= $_SESSION['id']?>" required>
             </li>
             <li>
                 <div class="formcss">

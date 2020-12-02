@@ -9,6 +9,7 @@ $title = 'Project Reports'; ?>
 	<link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_uploadreport.css" />
 
 </head>
+
 <div class="grid-container">
 
 <div class="row">
