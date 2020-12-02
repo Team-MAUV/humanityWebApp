@@ -59,7 +59,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     </div>
    
     <div class="counter-back">
-      <p>Back Side</p>
+      <p>Beneficiaries</p>
+      <p>25</p>
     </div>
 				</div>
 			</div>
@@ -71,6 +72,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     </div>
     <div class="counter-back">
       <p>Volunteering Activities</p>
+      <p>12</p>
     </div>
 				</div>
 			</div>
@@ -82,6 +84,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     </div>
     <div class="counter-back">
       <p>Donate amount</p>
+      <p>RS 65956.00</p>
     </div>
 				</div>
 			</div>
@@ -92,7 +95,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 				<p>50</p>
     </div>
     <div class="counter-back">
-      <p>Earning</p>
+      <p>Income from Bidding</p>
+      <p>Rs 65000.00</p>
     </div>
 				</div>
 			</div>
