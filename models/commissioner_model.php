@@ -66,7 +66,7 @@ class commissioner_Model extends Model
 
   public function get_reg_staff_profiles() {
     //Volunteer Profiles
-    $st = $this->db->prepare('SELECT * FROM staff WHERE status=1 ORDER BY id LIMIT :current_page, :record_per_page');
+    $st = $this->db->prepare('SELECT * FROM staff WHERE status="accepted" ORDER BY id LIMIT :current_page, :record_per_page');
     // Get the page via GET request (URL param: page), if non exists default the page to 1
     $spage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -80,7 +80,7 @@ class commissioner_Model extends Model
     $scontacts = $st->fetchAll();
 
     //Volunteer Requests
-    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status=0 ORDER BY join_date ');        
+    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status="pending" ORDER BY joined_year ');        
     $stmt->execute();
     $snewReq = $stmt->fetchAll();
     $snewReq_Count = $stmt->rowCount();
