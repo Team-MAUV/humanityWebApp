@@ -29,7 +29,7 @@ include "vol_dash_header.php"; ?>
             </li>
             <li>
                 <div class="formcss">
-                    <p style="align-content: center;">Upload the file: </p>
+                    <p style="align-content: center;">Upload the file: (Maximum file size uploadable : 500kB)</p>
                     <input type="file" id="beneficierycase" name="file" accept="file/*" class="file">
                     <input type="submit" class="btn" value="Upload">
                 </div>

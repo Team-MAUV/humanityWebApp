@@ -26,7 +26,7 @@ include "vol_dash_header.php"; ?>
         <tr id="header">
             <th> Activity Name </th>
             <th>Date</th>
-            <th> Count</th>
+            <th> Points</th>
             
         </tr>
         <tr>

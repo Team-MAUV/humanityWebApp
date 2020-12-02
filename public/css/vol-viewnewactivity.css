@@ -1,5 +1,5 @@
 body {
-    background: rgb(245, 245, 248);
+    background: white;
     margin: 0;
     width: 100vw;
 }
@@ -14,16 +14,16 @@ body {
     margin-left: 2vw;
     float: left;
     font-weight: 1000;
-    color: rgb(0, 0, 0);
+    color: yellow;
 }
 
 h1 {
     margin-top: 0vh;
-    color: rgb(255, 255, 255);
+    color: rgb(15, 12, 12);
     text-align: center;
     font-weight: 1000;
     font-size: 2rem;
-    font-family: 'serif';
+    font-family: 'roboto';
 }
 
 .column {
@@ -34,7 +34,7 @@ h1 {
     width: 20vw;
     height: 50vh;
     border-style: solid;
-    background-color: rgb(161, 163, 165);
+    background-color: rgb(109, 100, 100);
 }
 
 h2 {
@@ -57,7 +57,7 @@ h2 {
     margin-left: 1vw;
     margin-right: 1vw;
     position: absolute;
-    color: rgb(0, 0, 0);
+    color: yellow;
     margin-top: 3.5vh;
 }
 
@@ -97,18 +97,18 @@ h2 {
 }
 
 .flipbox-front {
-    background-color: rgba(78, 70, 70, 0.582);
+    background-color: rgba(0, 29, 190, 0.582);
     color: rgb(3, 3, 3);
 }
 
 .flipbox-back {
-    background-color: rgb(93, 93, 94);
+    background-color: rgba(0, 29, 190, 0.582);
     color: rgb(5, 5, 5);
     transform: rotateY(180deg);
 }
 
 .btn {
-    background-color: rgb(2, 11, 41);
+    background-color: rgb(98, 15, 206);
     color: rgb(255, 255, 255);
     padding: 8px 10px;
     border-radius: 10px;
@@ -134,7 +134,7 @@ h2 {
     float: right;
     font-weight: 800;
     font-size: 1rem;
-    color: black;
+    color: yellow;
 }
 
 @media screen and (max-width: 900px) {
@@ -160,8 +160,8 @@ h2 {
 
 .tab {
     margin-top: 2px;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: rgb(0, 226, 38);
+    color: rgb(139, 138, 138);
     float: left;
     outline: none;
     cursor: pointer;
@@ -171,17 +171,16 @@ h2 {
     font-weight: 600;
     overflow: hidden;
     border: 1px solid rgb(0, 0, 0);
-    background-color: #f1f1f1;
 }
 
 .tab:hover {
-    background-color: rgb(14, 187, 135);
-    color: rgb(52, 3, 185);
+    background-color: rgb(46, 11, 141);
+    color: rgb(228, 245, 243);
     font-weight: 1000;
 }
 
 .tabcontent {
-    color: white;
+    color: rgb(3, 88, 216);
     display: none;
     padding: 50px 10px;
     height: 100%;
@@ -190,12 +189,12 @@ h2 {
 
 .tab-upcoming,
 #upcoming {
-    background-color: rgb(2, 11, 41);
+    background-color: white;
 }
 
 .tab-finished,
 #finished {
-    background-color: rgb(2, 11, 41);
+    background-color: white;
 }
 
 * {
