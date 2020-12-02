@@ -109,38 +109,38 @@
         <div class="about">
         <div class="img-slider">
       <div class="slide active">
-        <img src="<?= URL ?>public/images/don1.jpg" alt="">
+        <img src="<?= URL ?>public/images/volac5.jpeg" alt="">
         <div class="info">
-          <h2>image  01</h2>
+          <h2>Spread Love</h2>
           <p>Volunteers & Staff working for the donation</p>
         </div>
       </div>
       <div class="slide">
         <img src="<?= URL ?>public/images/donateSri.jpg" alt="">
         <div class="info">
-          <h2>Image 2</h2>
+          <h2>Be Kind </h2>
           <p>Donate a patient</p>
         </div>
       </div>
       <div class="slide">
-        <img src="<?= URL ?>public/images/don3.jpg" alt="">
+        <img src="<?= URL ?>public/images/volac7.jpeg" alt="">
         <div class="info">
-          <h2>Slide 03</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Be Happy!</h2>
+          <p>All work friendly</p>
         </div>
       </div>
       <div class="slide">
-        <img src="4.jpg" alt="">
+      <img src="<?= URL ?>public/images/volac8.jpeg" alt="">
         <div class="info">
-          <h2>Slide 04</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Give atleast small !</h2>
+          <p>Donate the school children</p>
         </div>
       </div>
       <div class="slide">
-        <img src="5.jpg" alt="">
+      <img src="<?= URL ?>public/images/volac3.jpeg" alt="">
         <div class="info">
-          <h2>Slide 05</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Donate!</h2>
+          <p>Work in pandemic situation too</p>
         </div>
       </div>
       <div class="navigation">
