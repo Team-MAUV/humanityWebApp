@@ -57,7 +57,7 @@ $validator = $_GET["validator"];
       
         pwd: {
           required: true,
-          minlength: 8
+          minlength: 2
         },
         pwdrepeat: {
           required: true,
