@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(103, 175, 223);
+    background-color:white;
 }
 
 .column {
@@ -13,6 +13,8 @@ body {
 
 h1 {
     font-weight: 100;
+    font-family: 'roboto';
+    color:yellow;
 }
 
 .row:after {
@@ -22,8 +24,8 @@ h1 {
 }
 
 .readmore {
-    background-color: #383838;
-    color: white;
+    background-color: #043370;
+    color: yellow;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -51,7 +53,7 @@ a {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: rgb(43, 163, 179);
+    background-color: white;
     width: 100%;
     margin-left: 0vw;
     margin-right: 10vh;
@@ -70,7 +72,7 @@ a {
 }
 
 .btn {
-    background-color: rgb(17, 19, 117);
+    background-color: rgb(24, 28, 224);
     color: rgb(253, 253, 253);
     padding: 6px 10px;
     border-radius: 10px;
@@ -81,7 +83,7 @@ a {
 }
 
 .dbtn {
-    background-color: dodgerblue;
+    background-color: rgb(52, 121, 190);
     color: rgb(253, 253, 253);
     padding: 1px 3px;
     border-radius: 10px;
@@ -99,7 +101,7 @@ a {
 
 .btn:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background-color: red;
+    background-color: rgb(170, 154, 12);
 }
 
 .split {
@@ -129,7 +131,7 @@ a {
     font-weight: 600;
     font-size: 1.3rem;
     margin-top: 1vh;
-    color: #230e4b;
+    color: #1461a8;
 }
 
 .confirm {
@@ -166,18 +168,18 @@ a {
 
 .tab-upcoming,
 #upcoming {
-    background-color: rgb(6, 33, 73);
+    background-color: rgb(100, 152, 230);
     margin-top: 0%;
 }
 
 .tab-finished,
 #finished {
-    background-color: #0e444b;
+    background-color: rgb(100, 152, 230);
     margin-top: 0%;
 }
 
 .tab-current,
 #current {
-    background-color: rgb(27, 12, 61);
+    background-color: rgb(100, 152, 230);
     margin-top: 0%;
 }

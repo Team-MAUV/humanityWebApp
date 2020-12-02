@@ -30,7 +30,7 @@
 }
 .update form input[type="submit"] {
   display: block;
-  background-color: #38b673;
+  background-color: #505fe7;
   border: 0;
   font-weight: bold;
   font-size: 14px;
@@ -40,5 +40,5 @@
   margin-top: 15px;
 }
 .update form input[type="submit"]:hover {
-  background-color: #32a367;
+  background-color: #1e3992;
 }
