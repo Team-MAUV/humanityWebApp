@@ -38,7 +38,7 @@ img {
 
 body {
   display: grid;
-  background-color: rgba(7, 7, 7, 0.459);
+  background-color: rgb(255, 255, 255);
 }
 
 .nav-bar {
@@ -203,22 +203,25 @@ img {
   max-width: 100%;
   position: relative;
   top: 3rem;
-  height: 31.5rem;
+  height: 32rem;
 }
 
 .mySlides img {
-  height: 34rem;
+  height: auto;
 }
 
 /* Caption text */
 .text {
+  display: flex;
   color: #f2f2f2;
-  font-size: 15px;
+  font-size: 18px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
-  width: 100%;
+  bottom: 29rem;
+  width: 50%;
+  height: 3rem;
   text-align: center;
+  background-image: linear-gradient(to right, #00000083, #00000041, #ffffff00);
 }
 
 /* Number text (1/3 etc) */
@@ -294,25 +297,28 @@ img {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 10rem;
+  width: 100%;
   height: 3rem;
   top: 0;
-  left: 42.8rem;
-  border: 2px solid #02a95b;
-  cursor: pointer;
 
+  cursor: pointer;
+  background: #00000080;
   z-index: 2;
-  font-size: 24px;
+  font-size: 20px;
   align-items: center;
   text-align: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
-  color: #000000;
+  font-family: serif;
+  font-weight: 300;
+  color: #fdfdfd;
 }
 
 .explorebtn:hover {
-  background: #02a95bb0;
-  top: 1rem;
+  background: #02a95c;
+}
+
+.explorebtn i {
+  position: relative;
+  right: 47.5rem;
 }
 
 .platform-container {
@@ -356,7 +362,7 @@ img {
 }
 
 .btn-container {
-  background-color: #ffffff;
+  background-color: #272b28;
   position: relative;
   display: inline-flex;
   flex-wrap: wrap;
@@ -373,9 +379,17 @@ img {
   display: flex;
   width: 22rem;
   height: 5rem;
-
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #02a95c, #4ae09a, #65ce03);
+  cursor: pointer;
+  transition: 0.5s;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  background-size: 300%;
   border-radius: 0.3rem;
-
+  box-shadow: 20px #fff;
   justify-content: center;
   align-items: center;
 }
@@ -387,29 +401,27 @@ img {
 }
 
 #btnv {
-  background: #02a95c;
+  background-image: linear-gradient(to right, #02a95c, #4ae09a, #65ce03);
 }
 
 #btnv:hover {
-  border: 6px solid#79ff0c;
+  background-position: right;
 }
 
 #btnd {
-  border: 5px solid#e82563;
-  background: #e82563;
+  background-image: linear-gradient(to right, #e82563, #f5bbcd, #f10048);
 }
 
 #btnd:hover {
-  border: 6px solid#ff0ca2;
+  background-position: right;
 }
 
 #btnm {
-  border: 5px solid #254d35;
-  background: #254d35;
+  background-image: linear-gradient(to right, #254d35, #798a80, #246940);
 }
 
 #btnm:hover {
-  background: #254d35;
+  background-position: right;
 }
 
 .btn {
