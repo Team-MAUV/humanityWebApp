@@ -199,7 +199,9 @@
                         
                         <h4>How to become a tzu-chi volunteer</h4>
                         
-                        <p style="color:green;">Fill up the registration form with your details.</p>
+                        <p style="color:green;">Fill up the registration form with your details. You will recieve an 
+                        e-mail containing your login details. It does not matter who you are or what you do as long 
+                        as you have a good hart. Let's make a world a better place.</p>
                        
                         
                         <h4>Volunteer types of Tzu-Chi Foundation</h4>
@@ -261,9 +263,9 @@
                     <div class="vol-activities" id="volAct" style="display: none;">
                         <div class="about-img-text">
                         <p>we are conducting various volunteering activities through out the year.
-                            any volunteer can join to them.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                            assumenda facere a.
+                            any volunteer can join to them. By parcipating to them you can gain more and more volunteering points.
+                            Log in  to your volunteer profile to see upcomming event details. If you are interested, do not froget
+                             to conform your participation to the event.  
                         </p>
                        
                         </div>
@@ -285,45 +287,45 @@
                                     <div class="blod-donation" id="bold-donation" style="display:block;">
                                         <h4>Blod Donation Camp</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/don3.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                        Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                        assumenda facere a.</p>
+                                        <p style="color:green;">Tzu-CHi Hmbanthota branch organizses 4 blod donation camps anually. 
+                                        As volunteers you can help to organize those blod donation camps. 
+                                        Collecting blod will be done under the supervision of helth specialists and done by nurses and 
+                                        doctors. 
+                                        </p>
                                     </div>
                                     <div class="collecting-rcb" id="collecting-rcb" style="display:none;">
                                         <h4>Collecting Recyclables</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/recycling-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">People throw away recyclable items every day. As Tzu-Chi volunteers
+                                        we collect them from the houses and also from the cleaning camps. We sort those items to 4 main catagorys
+                                        such as glass, plastic, paper and electronic waste. </p>
 
                                     </div>
                                     <div class="health-camp" id="health-camp" style="display:none;">
                                                     
                                         <h4>Health Camps</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/health-camp-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">Tzu-CHi volunteers organize helth camps in various rural areas to help the people 
+                                        who need medical atention.</p>
                                     
                                     </div>
                                     <div class="tree-panting" id="tree-panting" style="display:none;">
                                         <h4>Tree Planting Campaign</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/tree-planting-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">Deforestration is one of the main problems world facing now. As Tzu-Chi volunteers 
+                                        we are conducting Tree planting campains to increase the green in our environment. Any volunteer can participate 
+                                        to these Tree Planting campaigns.</p>
                         
                                     </div>
                                     <div class="food-dis" id="food-dis" style="display:none;">
                                         <h4>Monthly Food Distributions</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/food-distribution-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">In our socity there are lots of people who cannot buy food. As Tzu-Chi volunteers 
+                                        we are helping those people with our Monthly Food Distributions.</p>
 
                                     </div>
                                     <div class="other-vol" id="other-vol" style="display:none;">
-                                        other vol actvities
+                                        <img class="media-con-img" src="<?= URL ?>public/images/other-vol.jpg">
                                     </div>
 
                                 </div>

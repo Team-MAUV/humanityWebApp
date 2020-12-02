@@ -53,7 +53,7 @@
                     <div class="pg-name">
                         <h2>Welcome to Tzu-Chi Market Module</h2>
                         <div class="btns">
-                            <a class="log" href="<?= URL ?>login?pf=buy">"Log-In</a>
+                            <a class="log" href="<?= URL ?>login?pf=buy">Log-In</a>
                             <a class="reg" href="<?= URL ?>register/buyRegForm">Register</a>
                         </div>
                     </div>
@@ -166,9 +166,7 @@
                     <div class="about-products" id="about-products" style="display: block;">
                         
                        <div class="about-img-text">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, a eos 
-                            epudiandae voluptates praesentium inventore exercitationem consequuntur, quod ea consectetur del
-                            ectus vel illum dicta earum distinctio, quos tempora ab. Velit?</p>
+                            <p>Tzu-Chi volunteers collects recyclable items and sort them in to four catagorys. </p>
                        </div>
                         
                         <h4>product categories</h4>
@@ -179,9 +177,11 @@
                                     <div class="prd-cat-img">
                                         <img src="<?= URL ?>public/images/recycled-glass.jpg">
                                         <div class="text-box">
-                                            <div class="prd-name"><h3>Recycled Glass</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, iusto libero quo sequi a dolores, tempora nostrum itaque dolore mollitia, aliquid magnam. Quis saepe amet id minima quod vitae corrupti!</p>
+                                            <div class="prd-name"><h3>Recycled Glass</h3></div>  
+                                            <p>These are the recyclable glass items Tzu-Chi volunteers collected. 
+                                            They are cleaned and sorted to get most value for them. These includes glass bottles, 
+                                            plain glases. Log in to your Tzu-Chi Market profile to see more about them.</p>                                         
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -190,8 +190,10 @@
                                     <div class="prd-cat-img">
                                         <img src="<?= URL ?>public/images/recycled-paper.jpg">
                                         <div class="text-box">
-                                            <div class="prd-name"><h3>Recycled Paper</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <div class="prd-name"><h3>Recycled Paper</h3></div> 
+                                            <p>These are recyclable paper items Tzu-Chi volunteers collected. They are cleaned and sorted. 
+                                            they are collected as bundles of papers.  Log in to your Tzu-Chi Market profile to see more about them. </p>                                          
+                                            
                                         </div>
                                     </div>
                                 </div> 
@@ -201,7 +203,8 @@
                                         <img src="<?= URL ?>public/images/recycled-plastic.jpg">
                                         <div class="text-box">
                                             <div class="prd-name"><h3>Recycled Plastic</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <p>These are recyclable plastic items collected by our Tzu-Chi volunteers. They are cleaned and sorted to get
+                                            more value. These includes mpstly plastic bottles, plastuc bags and cups.  Log in to your Tzu-Chi Market profile to see more about them. </p>
                                         </div>
                                     </div>
                                 </div>    
@@ -211,7 +214,8 @@
                                         <img src="<?= URL ?>public/images/recycled-tronic.jpg">
                                         <div class="text-box">
                                             <div class="prd-name"><h3>Recycled Electronics</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <p>These are recyclable plastic items collected by Tzu-Chi volunteers. They are cleaned and sorted to gain
+                                            more value. Log in to your Tzu-Chi Market profile to see more about them.  </p>
                                         </div>
                                     </div>
                                 </div>    
@@ -221,18 +225,11 @@
 
                         <h4>collecting & sorting process</h4>
                         
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
+                        <p>Tzu-Volunteers collect recyclable items every week.</p>
+                        <p>After collecting they are washed abd cleaned. Then all the items will be sorted in to their 
+                        respective catagorys.  </p>
+                        <p>After some considerable amount of recyclable products colleted Tzu-Chi hambanthota will add 
+                        them to the Tzu-Chi market.</p>
                         
                        
                         
