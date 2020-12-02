@@ -10,6 +10,7 @@ include "com-dash-header.php"; ?>
     <h2>Gallery </h2>
     <p>Welcome to the Humanity Gallery, Let's share Love & Compassion!</p>
     <a href="mediaUpload" class="upload-image">Upload Image</a>
+    <span>(Maximum file size uploadable : 500kB)</span>
     <div class="images">
       <?php foreach ($images as $image) : ?>
 

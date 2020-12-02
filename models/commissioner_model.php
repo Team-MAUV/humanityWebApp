@@ -66,7 +66,7 @@ class commissioner_Model extends Model
 
   public function get_reg_staff_profiles() {
     //Volunteer Profiles
-    $st = $this->db->prepare('SELECT * FROM staff WHERE status=1 ORDER BY id LIMIT :current_page, :record_per_page');
+    $st = $this->db->prepare('SELECT * FROM staff WHERE status="accepted" ORDER BY id LIMIT :current_page, :record_per_page');
     // Get the page via GET request (URL param: page), if non exists default the page to 1
     $spage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -80,7 +80,7 @@ class commissioner_Model extends Model
     $scontacts = $st->fetchAll();
 
     //Volunteer Requests
-    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status=0 ORDER BY join_date ');        
+    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status="pending" ORDER BY joined_year ');        
     $stmt->execute();
     $snewReq = $stmt->fetchAll();
     $snewReq_Count = $stmt->rowCount();
@@ -598,12 +598,14 @@ return ($pageData);
             $stf_id = $tmp['staff_id'];
             $id_in_stf_tbl = $tmp['id'];
             $name = $tmp['name'];
+            $email = $tmp['email'];
           }
          
         endforeach;
         Session::set('stf_tbl_id', $id_in_stf_tbl);
         Session::set('staff_id', $stf_id);
         Session::set('stf_name', $name);
+        Session::set('email', $email);
         
 
             $tempUsername= 'TMP'.$stf_id;
@@ -636,6 +638,7 @@ return ($pageData);
         $staff_id =Session::get('staff_id');
         $stf_tbl_id = intval(Session::get('stf_tbl_id'));
         $stf_name = Session::get('stf_name');
+        $email = Session::get('email');
        
         // $role = "session_incharge";
      
@@ -647,8 +650,32 @@ return ($pageData);
 
         
         if($result1){
+
+
         
           $msg ="Session Incharge appointed Successfully!";
+
+          $to = $email;
+          $subject = 'Activate Your User Profile!';
+          $rec_name =  $stf_name;
+
+         
+
+          $message = '<h5> Hello '.$rec_name.', </h5>
+          <p> You have been appointed as a Session Incharge! </p>';
+
+          $message .='<br>Here is your Credentials for the Session Incharge Login: </br>';
+          $message .='<br>Username : '.$tmpUser.' </br>';
+          $message .='<br>Password : '.$pwd.' </br>';
+     
+
+          $message .= '<h4>***Humanity Web App - Powered by Team MAUV***</h4>';
+
+          $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+          $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+          $headers .= "Content-type: text/html\r\n";
+
+          Email::email_send($to,$rec_name, $subject, $message, $headers);
     
           
         }else{

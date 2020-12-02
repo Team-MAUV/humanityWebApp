@@ -48,26 +48,32 @@
                 <div class="mySlides fade">
                   <div class="numbertext">1 / 4</div>
                   <img src="<?=URL?>\public\images\img2.png" style="width:100%">
-                  <div class="text">Caption Text</div>
+                  <div class="text"><h3>Let's lend our hand to help others!</h3></div>
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 4</div>
+                  <img src="<?=URL?>\public\images\img4.png" style="width:100%">
+                  <div class="text"><h3>The platform where TzuChi Unites!</h3></div>
                 </div>
 
                 <div class="mySlides fade">
                   <div class="numbertext">2 / 4</div>
-                  <img src="<?=URL?>\public\images\img4.png" style="width:100%">
-                  <div class="text">Caption Two</div>
+                  <img src="<?=URL?>\public\images\img5.png" style="width:100%">
+                  <div class="text"><h3>You are neither too young nor too old for Volunteering</h3></div>
                 </div>
 
                 <div class="mySlides fade">
                   <div class="numbertext">3 / 4</div>
                   <img src="<?=URL?>\public\images\img1.png" style="width:100%">
-                  <div class="text">Caption Three</div>
+                  <div class="text"><h3>Make the world a betterplace for everyone!</h3></div>
                 </div>
 
                 
                 <div class="mySlides fade">
                   <div class="numbertext">3 / 4</div>
-                  <img src="<?=URL?>\public\images\img3.png" style="width:100%">
-                  <div class="text">Caption Three</div>
+                  <img src="<?=URL?>\public\images\img6.png" style="width:100%">
+                  <div class="text"><h3>Spread Kindness & Compassion!</h3></div>
                 </div>
 
               </div>
@@ -77,8 +83,9 @@
                 <span class="dot"></span> 
                 <span class="dot"></span> 
                 <span class="dot"></span> 
+                <span class="dot"></span> 
               </div>
-              <div class="explorebtn" onclick="scrollWin()">View More<i class="fas fa-angle-double-down"></i></a></button>
+              <div class="explorebtn" onclick="scrollWin()"><marquee>Are you a new User? Click here to Explore More!</marquee><i class="fas fa-angle-double-down"></i></a></button>
 </div>
 
 
@@ -87,8 +94,8 @@
 
 
   <div class="btn-container">
-      <div class="btnTop" id="btnv"> <a href="<?= URL ?>login?pf=vol">Volunteer Platform</a></div>
-      <div class="btnTop" id="btnd"><a href="<?= URL ?>login?pf=don">Donor Platform</a></div>
+      <div class="btnTop" id="btnv"> <a href="<?= URL ?>login?pf=vol">Volunteer Login</a></div>
+      <div class="btnTop" id="btnd"><a href="<?= URL ?>login?pf=don">Donor Login</a></div>
       <div class="btnTop" id="btnm"><a href="<?= URL ?>login?pf=buy">TzuChi Market</a></div>
   </div>
   <div class="platform-container">
@@ -165,11 +172,11 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 4000); // Change image every 2 seconds
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 
 function scrollWin() {
-  window.scrollBy(0, 640);
+  window.scrollBy(0, 680);
 }
 </script>
 </html>

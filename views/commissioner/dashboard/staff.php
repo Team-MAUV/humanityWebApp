@@ -10,7 +10,7 @@ include "com-dash-header.php"; ?>
 <div class="grid-body">
 
     <div class="pageTitle">
-      <h1>Volunteer Profiles</h1>
+      <h1>Staff Profiles</h1>
     </div>
 
     <div class="tab-section">
@@ -54,11 +54,11 @@ include "com-dash-header.php"; ?>
                 <?php foreach ($scontacts as $scontact) : ?>
                   <tr>
                     <td><?= $scontact['id'] ?></td>
-                    <td><?= $scontact['vol_id'] ?></td>
+                    <td><?= $scontact['staff_id'] ?></td>
                     <td><?= $scontact['name'] ?></td>
-                    <td><?= $scontact['level'] ?></td>
-                    <td><?= $scontact['vol_points'] ?></td>
-                    <td><?= $scontact['join_date'] ?></td>
+                    <td><?= $scontact['email'] ?></td>
+                    <td><?= $scontact['address'] ?></td>
+                    <td><?= $scontact['joined_year'] ?></td>
                     <td class="actions">
                       <a href="update.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
                       <a href="delete.php?id=<?= $scontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
@@ -101,7 +101,7 @@ include "com-dash-header.php"; ?>
             <?php foreach ($snewReq as $sreq) : ?>
               <tr>
                  
-                <td><?= $sreq['join_date'] ?></td>
+                <td><?= $sreq['joined_year'] ?></td>
                 <td><?= $sreq['name'] ?></td>
                 <td><?= $sreq['email'] ?></td>
              
