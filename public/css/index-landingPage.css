@@ -536,6 +536,7 @@ img {
     text-transform: uppercase;
     line-height: 3rem;
     text-align: center;
+    font-size: 14px;
   }
   .logo-name span {
     font-weight: 200;
@@ -554,12 +555,17 @@ img {
   }
 
   .btn-container {
-    height: 9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: auto;
   }
 
   .btnTop {
+    margin-top: 2rem;
     width: 10rem;
     height: 4rem;
+    margin-bottom: 2rem;
   }
 
   .btnTop a {
@@ -598,5 +604,15 @@ img {
     margin-bottom: 2rem;
     top: 1rem;
     z-index: 2;
+  }
+
+  .slideshow-container {
+    height: 174px;
+  }
+
+  .explorebtn {
+    font-size: 16px;
+
+    font-weight: 300;
   }
 }
