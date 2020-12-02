@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Layouts</title>
+  <title>Volunteer</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/vol-layout_style.css" />
 
 
