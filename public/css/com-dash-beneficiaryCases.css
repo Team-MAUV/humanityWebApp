@@ -14,7 +14,7 @@ body {
 h1 {
     font-weight: 100;
     font-family: 'roboto';
-    color:yellow;
+    color:rgb(42, 15, 116);
 }
 
 .row:after {
@@ -168,18 +168,18 @@ a {
 
 .tab-upcoming,
 #upcoming {
-    background-color: rgb(100, 152, 230);
+    background-color: white;
     margin-top: 0%;
 }
 
 .tab-finished,
 #finished {
-    background-color: rgb(100, 152, 230);
+    background-color: white;
     margin-top: 0%;
 }
 
 .tab-current,
 #current {
-    background-color: rgb(100, 152, 230);
+    background-color: white;
     margin-top: 0%;
 }
