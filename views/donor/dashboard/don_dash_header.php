@@ -54,17 +54,13 @@
                     </div>
                     <div class="pro-details">
                         <ul>
-                            <li>A.B.C.Perera</li>
-                            <li>ID : DONHB001</li>
+                            <li><?=$_SESSION['name']?></li>
+                            <li>ID : <?=$_SESSION['id']?></li>
                         </ul>
                         
                     </div>
                    
                     
-                    <div class="more-details">
-                        <h4>Help & Suport</h4>
-                        <a href="<?= URL?>">read more about us</a>
-                    </div>
                 </div>
                 <div class="invitations" style="display: none;">
                     invitations

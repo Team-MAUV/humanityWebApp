@@ -42,7 +42,8 @@ include "buyer_header.php"; ?>
          <h1 style="font-size:60px;">Welcome to market Module!</h1>
             <div class="profile">
               <button class="profile__button">
-                <span class="profile__name">Ms.A.M.Selophia</span>
+                <span class="profile__name"><?=$_SESSION['name']?></span>
+
                 <img
                   class="profile__img"
                   src="<?= URL ?>public/images/3r1.png"
@@ -238,7 +239,8 @@ include "buyer_header.php"; ?>
                 alt="Profile photo"
               />
             </button>
-            <h1 class="profile-main__name">Ms.A.M.Selophia</h1>
+            <h1 class="profile-main__name"><?=$_SESSION['name']?></h1>
+            <h1 class="profile-main__name"><?=$_SESSION['id']?></h1>
 <h4> Next session : 15.12.2020 10.00 </h4>
           </div>
           <ul class="statistics">

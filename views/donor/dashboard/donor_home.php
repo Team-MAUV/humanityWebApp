@@ -53,7 +53,7 @@ include "don_dash_header.php"; ?>
                             <span onclick="closeMyDonations()" class="close-btn">&times;</span>
                             <div class="stats">
                                 <div class="my-donations">
-                                    <h2>Donor ID : DONHB001</h2>
+                                    <h2>Donor ID : <?=$_SESSION['id']?></h2>
                                     <ul>
                                         <li>Your Contribution(Rs) : 3550.00</li>
                                         <li>Largest Contribution(Rs) : 500.00</li>
