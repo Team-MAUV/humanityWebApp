@@ -65,46 +65,36 @@
                 <div class="about">
                     <div class="img-slider">
                         <div class="slide active">
-                            <img src="<?= URL ?>public/images/don1.jpg" alt="">
+                            <img src="<?= URL ?>public/images/recy1.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 01</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Reuse</h2>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="<?= URL ?>public/images/d.jpg" alt="">
+                            <img src="<?= URL ?>public/images/recy2.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 02</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2 style="color:black">Recycle </h2>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="<?= URL ?>public/images/don3.jpg" alt="">
+                            <img src="<?= URL ?>public/images/recy3.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 03</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Reduce </h2>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="4.jpg" alt="">
+                        <img src="<?= URL ?>public/images/recycling-temp.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 04</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Poster </h2>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="5.jpg" alt="">
-                            <div class="info">
-                                <h2>Slide 05</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
+                     
                         <div class="navigation">
                             <div class="btn active"></div>
                             <div class="btn"></div>
                             <div class="btn"></div>
                             <div class="btn"></div>
-                            <div class="btn"></div>
+                           
                         </div>
                     </div>
 

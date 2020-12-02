@@ -79,36 +79,36 @@
                         <div class="slide active">
                             <img src="<?= URL ?>public/images/don1.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 01</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Donation </h2>
+                                <p>Staff & Volunteers working together</p>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="<?= URL ?>public/images/d.jpg" alt="">
+                            <img src="<?= URL ?>public/images/volac3.jpeg" alt="">
                             <div class="info">
-                                <h2>Slide 02</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Team </h2>
+                                <p>Visit for volunteer activity </p>
                             </div>
                         </div>
                         <div class="slide">
                             <img src="<?= URL ?>public/images/don3.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 03</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Blood donation</h2>
+                                <p>Give the gift of life!</p>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="4.jpg" alt="">
+                            <img src="<?= URL ?>public/images/volac4.jpeg" alt="">
                             <div class="info">
-                                <h2>Slide 04</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Poster </h2>
+                                <p>Blood Donation </p>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="5.jpg" alt="">
+                            <img src="<?= URL ?>public/images/volac2.jpeg" alt="">
                             <div class="info">
-                                <h2>Slide 05</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2></h2>
+                                <p></p>
                             </div>
                         </div>
                         <div class="navigation">
@@ -211,7 +211,8 @@
                                         <img src="<?= URL ?>public/images/vol-yellow.jpg">
                                         <div class="text-box">
                                             <div class="vol-cat-name"><h3>Temporary Volunteers</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <p>All people who want to serve for the organization can register and login the volunteer portal.Through his/her working times he/she hast to work for the 
+                                                organization and earn points . </p>
                                         </div>
                                     </div>
                                 </div>
@@ -220,8 +221,9 @@
                                         <img src="<?= URL ?>public/images/vol-gray.jpg">
                                         <div class="text-box">
                                             <div class="vol-cat-name"><h3>Permanent Volunteers</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora beatae maxime obcaecati. Vel, beatae corrupti pariatur veniam voluptate odio, nisi tempore, laborum illum ut dolorem totam? Quod, officiis odio.</p>
+                                            <p>While working as the Temporary volunteer he/she earn the limited points which branch choose, temporary Volunteer will be promoted as the 
+                                                Permanent Volunteer. Permanant Volunteer can become staff if he/she works more for the Organization
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -270,7 +272,7 @@
                             <div class="vol-activities">
                                 <div class="vol-act-list">
                                     <ul>
-                                        <li><button class="vol-act-btns" onclick="displayBlodDonation()">Blod Donation </button></li>
+                                        <li><button class="vol-act-btns" onclick="displayBlodDonation()">Blood Donation </button></li>
                                         <li><button class="vol-act-btns" onclick="displayRecycing()">Collecting Recyclables </button></li>                                       
                                         <li><button class="vol-act-btns" onclick="displayHealthCamp()">Health Camps </button></li>
                                         <li><button class="vol-act-btns" onclick="displayTreePlanting()">Tree Planting Campaign </button></li>
