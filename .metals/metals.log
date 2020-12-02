@@ -96,3 +96,19 @@ INFO: Unsupported notification method: $/setTraceNotification
 2020.12.01 10:06:26 INFO  time: initialize in 3.33s
 2020.12.01 10:06:28 WARN  Build server is not auto-connectable.
 2020.12.01 10:06:28 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.01 11:19:44 INFO  shutting down Metals
+2020.12.01 13:40:47 INFO  Started: Metals version 0.9.7 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.12.01 13:40:50 INFO  time: initialize in 3.33s
+2020.12.01 13:40:52 WARN  Build server is not auto-connectable.
+2020.12.01 13:40:52 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.01 18:04:55 INFO  shutting down Metals
+2020.12.01 19:52:07 INFO  Started: Metals version 0.9.7 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.12.01 19:52:11 INFO  time: initialize in 3.71s
+2020.12.01 19:52:12 WARN  Build server is not auto-connectable.
+2020.12.01 19:52:12 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.01 23:00:04 INFO  shutting down Metals
+2020.12.01 23:12:10 INFO  Started: Metals version 0.9.7 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.12.01 23:12:12 INFO  time: initialize in 2s
+2020.12.01 23:12:13 WARN  Build server is not auto-connectable.
+2020.12.01 23:12:13 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.02 00:00:34 INFO  shutting down Metals

@@ -79,36 +79,36 @@
                         <div class="slide active">
                             <img src="<?= URL ?>public/images/don1.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 01</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Donation </h2>
+                                <p>Staff & Volunteers working together</p>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="<?= URL ?>public/images/d.jpg" alt="">
+                            <img src="<?= URL ?>public/images/volac3.jpeg" alt="">
                             <div class="info">
-                                <h2>Slide 02</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Team </h2>
+                                <p>Visit for volunteer activity </p>
                             </div>
                         </div>
                         <div class="slide">
                             <img src="<?= URL ?>public/images/don3.jpg" alt="">
                             <div class="info">
-                                <h2>Slide 03</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Blood donation</h2>
+                                <p>Give the gift of life!</p>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="4.jpg" alt="">
+                            <img src="<?= URL ?>public/images/volac4.jpeg" alt="">
                             <div class="info">
-                                <h2>Slide 04</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2>Poster </h2>
+                                <p>Blood Donation </p>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="5.jpg" alt="">
+                            <img src="<?= URL ?>public/images/volac2.jpeg" alt="">
                             <div class="info">
-                                <h2>Slide 05</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2></h2>
+                                <p></p>
                             </div>
                         </div>
                         <div class="navigation">
@@ -199,7 +199,9 @@
                         
                         <h4>How to become a tzu-chi volunteer</h4>
                         
-                        <p style="color:green;">Fill up the registration form with your details.</p>
+                        <p style="color:green;">Fill up the registration form with your details. You will recieve an 
+                        e-mail containing your login details. It does not matter who you are or what you do as long 
+                        as you have a good hart. Let's make a world a better place.</p>
                        
                         
                         <h4>Volunteer types of Tzu-Chi Foundation</h4>
@@ -211,7 +213,8 @@
                                         <img src="<?= URL ?>public/images/vol-yellow.jpg">
                                         <div class="text-box">
                                             <div class="vol-cat-name"><h3>Temporary Volunteers</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
+                                            <p>All people who want to serve for the organization can register and login the volunteer portal.Through his/her working times he/she hast to work for the 
+                                                organization and earn points . </p>
                                         </div>
                                     </div>
                                 </div>
@@ -220,8 +223,9 @@
                                         <img src="<?= URL ?>public/images/vol-gray.jpg">
                                         <div class="text-box">
                                             <div class="vol-cat-name"><h3>Permanent Volunteers</h3></div>                                           
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aperiam, commodi, ullam distinctio minus provident voluptas reprehenderit veniam nulla dolore atque! Voluptatum, sequi obcaecati quisquam facilis repellat ipsam fugit!</p>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora beatae maxime obcaecati. Vel, beatae corrupti pariatur veniam voluptate odio, nisi tempore, laborum illum ut dolorem totam? Quod, officiis odio.</p>
+                                            <p>While working as the Temporary volunteer he/she earn the limited points which branch choose, temporary Volunteer will be promoted as the 
+                                                Permanent Volunteer. Permanant Volunteer can become staff if he/she works more for the Organization
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -259,9 +263,9 @@
                     <div class="vol-activities" id="volAct" style="display: none;">
                         <div class="about-img-text">
                         <p>we are conducting various volunteering activities through out the year.
-                            any volunteer can join to them.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                            assumenda facere a.
+                            any volunteer can join to them. By parcipating to them you can gain more and more volunteering points.
+                            Log in  to your volunteer profile to see upcomming event details. If you are interested, do not froget
+                             to conform your participation to the event.  
                         </p>
                        
                         </div>
@@ -270,7 +274,7 @@
                             <div class="vol-activities">
                                 <div class="vol-act-list">
                                     <ul>
-                                        <li><button class="vol-act-btns" onclick="displayBlodDonation()">Blod Donation </button></li>
+                                        <li><button class="vol-act-btns" onclick="displayBlodDonation()">Blood Donation </button></li>
                                         <li><button class="vol-act-btns" onclick="displayRecycing()">Collecting Recyclables </button></li>                                       
                                         <li><button class="vol-act-btns" onclick="displayHealthCamp()">Health Camps </button></li>
                                         <li><button class="vol-act-btns" onclick="displayTreePlanting()">Tree Planting Campaign </button></li>
@@ -283,45 +287,45 @@
                                     <div class="blod-donation" id="bold-donation" style="display:block;">
                                         <h4>Blod Donation Camp</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/don3.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                        Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                        assumenda facere a.</p>
+                                        <p style="color:green;">Tzu-CHi Hmbanthota branch organizses 4 blod donation camps anually. 
+                                        As volunteers you can help to organize those blod donation camps. 
+                                        Collecting blod will be done under the supervision of helth specialists and done by nurses and 
+                                        doctors. 
+                                        </p>
                                     </div>
                                     <div class="collecting-rcb" id="collecting-rcb" style="display:none;">
                                         <h4>Collecting Recyclables</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/recycling-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">People throw away recyclable items every day. As Tzu-Chi volunteers
+                                        we collect them from the houses and also from the cleaning camps. We sort those items to 4 main catagorys
+                                        such as glass, plastic, paper and electronic waste. </p>
 
                                     </div>
                                     <div class="health-camp" id="health-camp" style="display:none;">
                                                     
                                         <h4>Health Camps</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/health-camp-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">Tzu-CHi volunteers organize helth camps in various rural areas to help the people 
+                                        who need medical atention.</p>
                                     
                                     </div>
                                     <div class="tree-panting" id="tree-panting" style="display:none;">
                                         <h4>Tree Planting Campaign</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/tree-planting-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">Deforestration is one of the main problems world facing now. As Tzu-Chi volunteers 
+                                        we are conducting Tree planting campains to increase the green in our environment. Any volunteer can participate 
+                                        to these Tree Planting campaigns.</p>
                         
                                     </div>
                                     <div class="food-dis" id="food-dis" style="display:none;">
                                         <h4>Monthly Food Distributions</h4>
                                         <img class="media-con-img" src="<?= URL ?>public/images/food-distribution-temp.jpg">
-                                        <p style="color:green;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic est magni fugit esse provident. 
-                                            Magnam quos labore tempore eum corporis animi! Facilis animi laudantium corrupti odio quisquam, 
-                                            assumenda facere a.</p>
+                                        <p style="color:green;">In our socity there are lots of people who cannot buy food. As Tzu-Chi volunteers 
+                                        we are helping those people with our Monthly Food Distributions.</p>
 
                                     </div>
                                     <div class="other-vol" id="other-vol" style="display:none;">
-                                        other vol actvities
+                                        <img class="media-con-img" src="<?= URL ?>public/images/other-vol.jpg">
                                     </div>
 
                                 </div>
