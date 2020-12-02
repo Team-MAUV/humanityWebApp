@@ -70,9 +70,8 @@ include "vol_dash_header.php"; ?>
                 </div>
                 <div class="team__inform">
                   <p class="team__name">  <?= $_SESSION['vol_points'] ?></p>
-                  <svg height="100" width="72">
-  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="green" fill="50%"/>
-                  </svg>
+                 
+                 
 
                 </div>
               </a>
