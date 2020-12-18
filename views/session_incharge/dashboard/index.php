@@ -7,6 +7,7 @@ include "sess_header.php"; ?>
 
 
   <div id="breadcrum">
+  <!--
 <!DOCTYPE html>
 <html>
     <head>
@@ -74,6 +75,80 @@ include "sess_header.php"; ?>
 
  
 </body>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS User Profile Card</title>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="<?= URL ?>public/css/sess_dash_home.css" />
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="left">
+       
+        <img src="<?= URL ?>public/images/sess.jpg"
+        alt="user" width="100">
+        <h2>WELCOME!</h2>
+        <h3>Alex William</h3>
+        
+        <hr>
+        <hr/>
+        <h4 style="color:black">Your Past-Lists </h4>
+         <p>Tree planting campaign</p>
+         <p>Beneficiary Home visit 05</p>
+         <p>Blood Donation</p>
+         
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>You are incharge of </h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Session</h4>
+                    <p>Blood Donation </p>
+                 </div>
+                 <div class="data">
+                   <h4>date</h4>
+                    <p>02.01.2021</p>
+              </div>
+            </div>
+        </div>
+      
+      <div class="projects">
+            <h3>Details</h3>
+            <div class="projects_data">
+                 <div class="data">
+                    <h4>Venue</h4>
+                    <p>Public Library </p>
+                 </div>
+                 <div class="data">
+                   <h4>Duration</h4>
+                    <p>8.00am to 5pm </p>
+              </div>
+            </div>
+        </div>
+      
+        <div class="social_media">
+           
+      </div>
+    </div>
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
 
 </div>
 </div>
