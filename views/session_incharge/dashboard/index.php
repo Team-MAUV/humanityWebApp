@@ -90,7 +90,7 @@ include "sess_header.php"; ?>
 <div class="wrapper">
     <div class="left">
        
-        <img src="<?= URL ?>public/images/sess.jpg"
+        <img src="<?= URL ?>public/images/eve.png"
         alt="user" width="100">
         <h2>WELCOME!</h2>
         <h3>Alex William</h3>
@@ -127,13 +127,62 @@ include "sess_header.php"; ?>
                  </div>
                  <div class="data">
                    <h4>Duration</h4>
-                    <p>8.00am to 5pm </p>
+                    <p>8.00am to 5.00pm </p>
               </div>
             </div>
         </div>
       
         <div class="social_media">
-           
+        <h3>Session will close </h3>
+        
+        <div class="count">
+          <div class="countd">
+            <span id="days">00</span>
+            DAYS
+          </div>
+
+          <div class="countd">
+            <span id="hours">00</span>
+            HRS
+          </div>
+
+          <div class="countd">
+            <span id="minutes">00</span>
+            MIN
+          </div>
+
+          <div class="countd">
+            <span id="seconds">00</span>
+            SEC
+          </div>
+        </div>
+
+</div>   
+       <script type="text/javascript">
+
+  var count = new Date("feb 25,2021 00:01:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var d = count - now;
+
+    var days = Math.floor(d/(1000*60*60*24));
+    var hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    var minutes = Math.floor((d%(1000*60*60))/(1000*60));
+    var seconds = Math.floor((d%(1000*60))/1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if(d <= 0){
+      clearInterval(x);
+    }
+  },1000);
+</script>
+
+ 
+        </div>
       </div>
     </div>
 </div>

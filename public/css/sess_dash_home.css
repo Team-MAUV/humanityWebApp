@@ -130,11 +130,13 @@ h1{
   .wrapper .right .projects_data{
     display: flex;
     justify-content: space-between;
+    font-size: larger;
   }
   
   .wrapper .right .info_data .data,
   .wrapper .right .projects_data .data{
     width: 45%;
+    font-size: large;
   }
   
   .wrapper .right .info_data .data h4,
@@ -169,3 +171,25 @@ h1{
     display: block;
     font-size: 18px;
   }
+  .count{
+    margin: 10px 0;
+    color: rgb(235, 8, 38);
+  }
+  .countd{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 3px solid;
+    
+    margin: 0 10px;
+ color: #051847;
+ background-color: #6389db;
+  }
+  .countd span{
+    display: block;
+    font-size: 26px;
+    margin-top: 14px;
+    color: black;
+    align-items: center;
+  }
+  
