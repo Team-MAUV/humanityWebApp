@@ -46,8 +46,9 @@ include "com-dash-header.php"; ?>
 <br>
 
 <div class="row">
+
   <div class="column" style="background-color:#aaa;">
- <h3>27.12.2020<span> </span> Already Approved :  5</h3> 
+ <h3><?= $request['from_date'] ?><span> </span> Already Approved :  <?= $request['id'] ?></h3> 
  <br> 
  <button type="button" class="readmore">
     <?= $leave['name'] ?>  </button>
