@@ -83,7 +83,7 @@ include "com-dash-header.php"; ?>
 
 
   <div class="column" style="background-color:#bbb;">
-  <h3>27.12.2020<span> </span> Already Approved :  5</h3> 
+  <h3>28.12.2020<span> </span> Already Approved :  2</h3> 
  <br> 
  <button type="button" class="readmore">
     <?= $leave['name'] ?>  </button>
