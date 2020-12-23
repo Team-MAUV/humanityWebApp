@@ -1,7 +1,7 @@
 body {
     background-color: white;
 }
-
+/*
 .column {
     float: left;
     width: 50%;
@@ -36,6 +36,12 @@ h1 {
     margin-right: 10vh;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+}
+.readmore table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  
 }
 
 a {
@@ -172,8 +178,9 @@ a {
     padding: 12vh 20px;
     height: 90vh;
     width: 100%;
-    /* margin-bottom: 5vh; */
 }
+    /* margin-bottom: 5vh; */
+/*
 
 .tab-upcoming,
 #upcoming {
@@ -192,3 +199,61 @@ a {
     background-color: rgb(27, 12, 61);
     margin-top: 0%;
 }
+
+*/
+
+/* new start*/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 70px;
+    border-radius: 10px;
+    border-color: #0e0e27;
+    
+  }
+ .column h3{
+     text-align: left;
+     top: 0%;
+     color: blue;
+     
+ }
+ .column h3 span{
+    border:3px;
+     border-style:solid; 
+     border-color:#FF0000; 
+     padding: 1em;
+ }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #2c2fe6;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .btn:hover {
+    background-color: rgb(14, 2, 58);
+  }
+  
+  .btn.active {
+    background-color: #2c2fe6;
+    color: white;
+  }
+  .btn.active:hover {
+    background-color: #0e0e27;
+    color: white;
+  }

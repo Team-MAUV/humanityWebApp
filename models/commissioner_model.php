@@ -735,7 +735,7 @@ public function get_view_com_list() {
 public function get_leaveRequests(){
 
 
-  $st = $this->db->prepare('SELECT * FROM leave_request  ORDER BY leave_id ');
+  $st = $this->db->prepare('SELECT * FROM leave_request  ORDER BY date ');
   $st->execute();
   $leaves = $st->fetchAll();
 
