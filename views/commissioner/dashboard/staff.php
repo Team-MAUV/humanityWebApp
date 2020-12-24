@@ -41,12 +41,12 @@ include "com-dash-header.php"; ?>
               <thead>
               <tr>
               <td>#</td>
-              <td>Volunteer ID</td>
+              <td>Staff ID</td>
               <td>Name</td>
-              <td>Volunteer Level</td>
-              <td>Points</td>
+              <td>Email</td>
+              <td>Address</td>
               <td>Joined Date</td>
-              <td></td>
+              <td>View Profile</td>
             </tr>
               </thead>
               <tbody>
@@ -60,7 +60,12 @@ include "com-dash-header.php"; ?>
                     <td><?= $scontact['address'] ?></td>
                     <td><?= $scontact['joined_year'] ?></td>
                     <td class="actions">
-                      <a href="update.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                     <!-- <a href="update.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
+                     <a href="staff_viewprofile.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+
+
+
+
                       <a href="delete.php?id=<?= $scontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                     </td>
                   </tr>

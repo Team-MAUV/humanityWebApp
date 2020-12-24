@@ -397,3 +397,125 @@ input [type=text]{
   border: 1px solid #ddd;
   display:none;
 }
+
+.container-calendar {
+	background: #ffffff;
+	color:black;
+	padding: 15px;
+	max-width: 475px;
+	margin: 0 auto;
+	overflow: auto;
+  }
+  
+  .button-container-calendar button {
+	cursor: pointer;
+	display: inline-block;
+	zoom: 1;
+	background: #00a2b7;
+	color: #fff;
+	border: 1px solid #0aa2b5;
+	border-radius: 4px;
+	padding: 5px 10px;
+  }
+  
+  .table-calendar {
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  .table-calendar td, .table-calendar th {
+	padding: 5px;
+	border: 1px solid #6b6666;
+	text-align: center;
+	vertical-align: top;
+  }
+  
+  .date-picker.selected {
+	font-weight: bold;
+	outline: 1px dashed #00BCD4;
+  }
+  
+  .date-picker.selected span {
+	border-bottom: 2px solid currentColor;
+  }
+  
+  /* sunday */
+  .date-picker:nth-child(1) {
+  color: red;
+  }
+  .date-picker:nth-child(2) {
+	color: green;
+	}
+  
+	.date-picker:nth-child(3) {
+	  color: green;
+	  }
+  
+	  .date-picker:nth-child(4) {
+		color: green;
+		}
+		.date-picker:nth-child(5) {
+		  color: green;
+		  }
+		  .date-picker:nth-child(7) {
+			color: green;
+			}
+					  
+  .date-picker:nth-child(6) {
+  color: green;
+  }
+  
+  
+  
+  #monthAndYear {
+	text-align: center;
+	margin-top: 0;
+	color: #161515;
+	background-color: #bfc5c5;
+  }
+  
+  .button-container-calendar {
+	position: relative;
+	margin-bottom: 1em;
+	overflow: hidden;
+	clear: both;
+  }
+  
+  #previous {
+	float: left;
+  }
+  
+  #next {
+	float: right;
+  }
+  
+  .footer-container-calendar {
+	margin-top: 1em;
+	border-top: 1px solid #004883;
+	padding: 10px 0;
+  }
+  
+  .footer-container-calendar select {
+	cursor: pointer;
+	display: inline-block;
+	zoom: 1;
+	background: #ffffff;
+	color: #161515;
+	border: 1px solid #bfc5c5;
+	border-radius: 3px;
+	padding: 5px 1em;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
