@@ -44,13 +44,38 @@ include "com-dash-header.php"; ?>
   
 </div>
 <br>
-
+<!--row start-->
 <div class="row">
 
-  <div class="column" style="background-color:#aaa;">
+      <div class="column" style="background-color:#aaa;">
  <h3>21.12.2020<span> </span> Already Approved :5 </h3> 
  <br> 
  <button type="button" class="readmore">Nimali 
+   </button>
+  <div class="content">
+    <p>
+    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
+      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
+  
+  
+          <input type="text" id="reason" placeholder="Reason to decline " name="reason">
+       <script>
+  function displayText(){
+  if(document.getElementById('decline').checked){
+     document.getElementById('reason').style.display = "block";
+     }
+  else {document.getElementById('accept').style.display ="none";}
+}
+               </script>
+
+        <button type="button" class="btn" name="submit">Submit</button> </div>
+  <p>Already taken: 2</p>
+        <button type="button" class="btn" onclick="viewform()">View Request Form</button>
+      
+
+    </p>
+   </div>
+   <button type="button" class="readmore">Perera 
    </button>
   <div class="content">
     <p>
@@ -76,10 +101,14 @@ include "com-dash-header.php"; ?>
 
     </p>
    </div>
-   <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
-</div>
-  <div class=column>
-<div class="container-calendar">
+   
+
+    </div>
+
+
+
+
+    <div class="container-calendar">
           <h3 id="monthAndYear"></h3>
           <div class="button-container-calendar">
               <button id="previous" onclick="previous()">&#8249;</button>
@@ -89,6 +118,10 @@ include "com-dash-header.php"; ?>
           <table class="table-calendar" id="calendar" data-lang="en">
               <thead id="thead-month"></thead>
               <tbody id="calendar-body"></tbody>
+
+
+
+              
           </table>
           
           <div class="footer-container-calendar">
@@ -111,17 +144,126 @@ include "com-dash-header.php"; ?>
           </div>
       </div>
     </div>
-      </div>
-      <script src="<?= URL ?>public/js/calendar.js" type="text/javascript"></script>
-		</div>
+    <script src="<?= URL ?>public/js/calendar.js" type="text/javascript"></script>
+   
 
-    </div>
+<!--next card start-->
+      <div class="row">
 
-</div>
+<div class="column" style="background-color:#aaa;">
 
-
+<h3>21.12.2020<span> </span> Already Approved :5 </h3> 
+ <br> 
+ <button type="button" class="readmore">Nimali 
+   </button>
+  <div class="content">
+    <p>
+    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
+      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
   
+  
+          <input type="text" id="reason" placeholder="Reason to decline " name="reason" onclick="displayText()">
+       <script>
+  function displayText(){
+  if(document.getElementById('decline').checked){
+     document.getElementById('reason').style.display = "block";
+     }
+  else {document.getElementById('accept').style.display ="none";}
+}
+               </script>
+
+        <button type="button" class="btn" name="submit">Submit</button> </div>
+  <p>Already taken: 2</p>
+        <button type="button" class="btn" onclick="viewform()">View Request Form</button>
+      
+
+    </p>
+   </div>
+   
+    </div>
+      </div>
+<!--next card start-->
+
+    <div class="row">
+
+<div class="column" style="background-color:#aaa;">
+<h3>21.12.2020<span> </span> Already Approved :5 </h3> 
+<br> 
+<button type="button" class="readmore">Nimali 
+</button>
+<div class="content">
+<p>
+<div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
+<input type="radio" id="decline" name="confirmreq" value="decline"><br>
+
+
+    <input type="text" id="reason" placeholder="Reason to decline " name="reason">
+ <script>
+function displayText(){
+if(document.getElementById('decline').checked){
+document.getElementById('reason').style.display = "block";
+}
+else {document.getElementById('accept').style.display ="none";}
+}
+         </script>
+
+  <button type="button" class="btn" name="submit">Submit</button> </div>
+<p>Already taken: 2</p>
+  <button type="button" class="btn" onclick="viewform()">View Request Form</button>
+
+
+</p>
 </div>
+<button type="button" class="readmore">Perera 
+</button>
+<div class="content">
+<p>
+
+
+<div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
+<input type="radio" id="decline" name="confirmreq" value="decline"><br>
+
+
+    <input type="text" id="reason" placeholder="Reason to decline " name="reason">
+<script>
+function displayText(){
+if(document.getElementById('decline').checked){
+document.getElementById('reason').style.display = "block";
+}
+else {document.getElementById('accept').style.display ="none";}
+}
+</script>
+  <button type="button" class="btn" name="submit">Submit</button> </div>
+<p>Already taken: 2</p>
+  <button type="button" class="btn" onclick="viewform()">View Request Form</button>
+
+
+</p>
+</div>
+
+<script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
+</div>
+    </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
 // Get the elements with class="column"

@@ -401,10 +401,13 @@ input [type=text]{
 .container-calendar {
 	background: #ffffff;
 	color:black;
-	padding: 15px;
-	max-width: 475px;
+	
+	max-width: 450px;
 	margin: 0 auto;
-	overflow: auto;
+    overflow: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
   
   .button-container-calendar button {
@@ -509,7 +512,7 @@ input [type=text]{
   table {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
+   
     border: 1px solid #ddd;
   }
   
