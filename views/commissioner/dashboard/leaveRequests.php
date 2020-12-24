@@ -48,7 +48,7 @@ include "com-dash-header.php"; ?>
 <div class="row">
 
   <div class="column" style="background-color:#aaa;">
- <h3><span> </span> Already Approved :5 </h3> 
+ <h3>21.12.2020<span> </span> Already Approved :5 </h3> 
  <br> 
  <button type="button" class="readmore">Nimali 
    </button>
