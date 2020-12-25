@@ -212,9 +212,11 @@ a {
   .column {
     float: left;
     width: 50%;
-    padding: 70px;
+    padding: 90px;
     border-radius: 10px;
     border-color: #0e0e27;
+    border-style: solid;
+   
     
   }
  .column h3{
@@ -320,9 +322,9 @@ a {
 
 .btn {
     background-color: rgb(17, 19, 117);
-    color: rgb(253, 253, 253);
-    padding: 6px 10px;
-    border-radius: 10px;
+    color: yellow;
+    padding: 13px 23px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: medium;
     margin-left: 4vw;
@@ -389,25 +391,25 @@ a {
     font-weight: 600;
     font-size: 1.3rem;
 }
-input [type=text]{
+input[type=text]{
     vertical-align: middle;
   margin: 5px 10px 5px 0;
   padding: 10px;
-  background-color: rgb(161, 144, 144);
+  background-color: white;
   border: 1px solid #ddd;
-  display:none;
+
 }
 
 .container-calendar {
-	background: #ffffff;
+	background: #eee8e8;
 	color:black;
-	
-	max-width: 450px;
-	margin: 0 auto;
-    overflow: auto;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+  max-width: 475px;
+ margin-left: 50%;
+ padding: 10px;
+border: #161515;
+border-radius: 5px;
+    position: fixed;
+
   }
   
   .button-container-calendar button {
@@ -418,7 +420,8 @@ input [type=text]{
 	color: #fff;
 	border: 1px solid #0aa2b5;
 	border-radius: 4px;
-	padding: 5px 10px;
+  padding: 5px 10px;
+ 
   }
   
   .table-calendar {

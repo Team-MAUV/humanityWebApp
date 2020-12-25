@@ -38,6 +38,7 @@ include "com-dash-header.php"; ?>
 </div>
 -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <h1>Leave Requests </h1>
 <div id="bttnContainer">
  
@@ -58,18 +59,11 @@ include "com-dash-header.php"; ?>
       <input type="radio" id="decline" name="confirmreq" value="decline"><br>
   
   
-          <input type="text" id="reason" placeholder="Reason to decline " name="reason">
-       <script>
-  function displayText(){
-  if(document.getElementById('decline').checked){
-     document.getElementById('reason').style.display = "block";
-     }
-  else {document.getElementById('accept').style.display ="none";}
-}
-               </script>
+          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
+     
 
         <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p>Already taken: 2</p>
+  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
         <button type="button" class="btn" onclick="viewform()">View Request Form</button>
       
 
@@ -80,20 +74,19 @@ include "com-dash-header.php"; ?>
   <div class="content">
     <p>
 
-
+ 
       <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
+      <input type="radio" id="decline" name="confirmreq" value="decline" ><br>
   
+ <input  style="display:none;" type="text" id="reason" placeholder="Reason to decline" name="reason"  >
   
-          <input type="text" id="reason" placeholder="Reason to decline " name="reason">
-  <script>
-  function displayText(){
-  if(document.getElementById('decline').checked){
-     document.getElementById('reason').style.display = "block";
-     }
-  else {document.getElementById('accept').style.display ="none";}
-}
-</script>
+
+   
+
+
+
+
+
         <button type="button" class="btn" name="submit">Submit</button> </div>
   <p>Already taken: 2</p>
         <button type="button" class="btn" onclick="viewform()">View Request Form</button>
@@ -152,9 +145,9 @@ include "com-dash-header.php"; ?>
 
 <div class="column" style="background-color:#aaa;">
 
-<h3>21.12.2020<span> </span> Already Approved :5 </h3> 
+<h3>23.12.2020<span> </span> Already Approved :1 </h3> 
  <br> 
- <button type="button" class="readmore">Nimali 
+ <button type="button" class="readmore">Kamal 
    </button>
   <div class="content">
     <p>
@@ -162,16 +155,8 @@ include "com-dash-header.php"; ?>
       <input type="radio" id="decline" name="confirmreq" value="decline"><br>
   
   
-          <input type="text" id="reason" placeholder="Reason to decline " name="reason" onclick="displayText()">
-       <script>
-  function displayText(){
-  if(document.getElementById('decline').checked){
-     document.getElementById('reason').style.display = "block";
-     }
-  else {document.getElementById('accept').style.display ="none";}
-}
-               </script>
-
+          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline" name="reason" >
+    
         <button type="button" class="btn" name="submit">Submit</button> </div>
   <p>Already taken: 2</p>
         <button type="button" class="btn" onclick="viewform()">View Request Form</button>
@@ -182,14 +167,20 @@ include "com-dash-header.php"; ?>
    
     </div>
       </div>
+
+    
+
+
+
+
 <!--next card start-->
 
     <div class="row">
 
 <div class="column" style="background-color:#aaa;">
-<h3>21.12.2020<span> </span> Already Approved :5 </h3> 
+<h3>24.12.2020<span> </span> Already Approved :2</h3> 
 <br> 
-<button type="button" class="readmore">Nimali 
+<button type="button" class="readmore"> H.Dias
 </button>
 <div class="content">
 <p>
@@ -197,15 +188,8 @@ include "com-dash-header.php"; ?>
 <input type="radio" id="decline" name="confirmreq" value="decline"><br>
 
 
-    <input type="text" id="reason" placeholder="Reason to decline " name="reason">
- <script>
-function displayText(){
-if(document.getElementById('decline').checked){
-document.getElementById('reason').style.display = "block";
-}
-else {document.getElementById('accept').style.display ="none";}
-}
-         </script>
+    <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
+ 
 
   <button type="button" class="btn" name="submit">Submit</button> </div>
 <p>Already taken: 2</p>
@@ -214,7 +198,7 @@ else {document.getElementById('accept').style.display ="none";}
 
 </p>
 </div>
-<button type="button" class="readmore">Perera 
+<button type="button" class="readmore">N.Kapila
 </button>
 <div class="content">
 <p>
@@ -224,15 +208,8 @@ else {document.getElementById('accept').style.display ="none";}
 <input type="radio" id="decline" name="confirmreq" value="decline"><br>
 
 
-    <input type="text" id="reason" placeholder="Reason to decline " name="reason">
-<script>
-function displayText(){
-if(document.getElementById('decline').checked){
-document.getElementById('reason').style.display = "block";
-}
-else {document.getElementById('accept').style.display ="none";}
-}
-</script>
+    <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
+
   <button type="button" class="btn" name="submit">Submit</button> </div>
 <p>Already taken: 2</p>
   <button type="button" class="btn" onclick="viewform()">View Request Form</button>
@@ -242,12 +219,24 @@ else {document.getElementById('accept').style.display ="none";}
 </div>
 
 <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
+<script>
+        $(document).ready(function() {
+            $("input[type='radio']").change(function() {
+                if ($(this).val() == "decline") {
+                    $("#reason").show();
+                } else {
+                    $("#reason").hide();
+                }
+            });
+        });
+    </script>
 </div>
+
     </div> 
 
 
 
-
+    
 
 
 
