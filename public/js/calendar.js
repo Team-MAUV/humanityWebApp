@@ -83,6 +83,12 @@ function showCalendar(month, year) {
               cellText = document.createTextNode("");
               cell.appendChild(cellText);
               row.appendChild(cell);
+
+
+
+
+
+              
           } else if (date > daysInMonth(month, year)) {
               break;
           } else {
