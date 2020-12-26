@@ -1,6 +1,7 @@
 <?php $page = 'profiles';
 $title = 'Staff Profiles';
 $style = 'com-dash-staff.css';
+$style = 'com_dash_staffviewprofile.css';
 $jsFile = 'tab-changing';
 $style = 'com-dash-profiles-volunteer.css';
 include "com-dash-header.php"; ?>
@@ -61,9 +62,12 @@ include "com-dash-header.php"; ?>
                     <td><?= $scontact['joined_year'] ?></td>
                     <td class="actions">
                      <!-- <a href="update.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
-                     <a href="staff_viewprofile.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                     <a href="<?= URL?>commissioner/staff_viewprofile" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                    
 
 
+
+                     
 
 
                       <a href="delete.php?id=<?= $scontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
