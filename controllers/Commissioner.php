@@ -60,7 +60,11 @@ class Commissioner extends Controller
         $data = $this->model->get_reg_staff_profiles();
         $this->view->rendor('commissioner/dashboard/staff', $data, true);
     }
-
+    function staff_viewprofile()
+    {
+     
+        $this->view->rendor('commissioner/dashboard/staff_viewprofile');
+    }
     function buyer()
     {
         $data = $this->model->get_reg_buyer_profiles();

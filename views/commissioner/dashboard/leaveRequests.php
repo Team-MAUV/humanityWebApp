@@ -139,7 +139,7 @@ include "com-dash-header.php"; ?>
     </div>
     <script src="<?= URL ?>public/js/calendar.js" type="text/javascript"></script>
    
-
+    <script src="<?= URL ?>public/js/calendar-demo.js" type="text/javascript"></script>
 <!--next card start-->
       <div class="row">
 
