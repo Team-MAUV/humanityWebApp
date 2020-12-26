@@ -119,6 +119,19 @@ include "buyer_header.php"; ?>
           </ul>
         </section>
         <section class="section">
+
+        <div class="available"> 
+           <h2>Available Products:</h2>
+           <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
+            Plastic
+            </button></a>  
+            <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
+           Glass
+            </button></a>  
+          
+        </div>
+
+
           <header class="section__header">
             <h2 class="section__title">Last Bid won</h2>
             
@@ -209,16 +222,7 @@ include "buyer_header.php"; ?>
               </a>
             </li>
           </ul>
-          <div class="available"> 
-           <h2>Available Products:</h2>
-           <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
-            Plastic
-            </button></a>  
-            <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
-           Glass
-            </button></a>  
           
-        </div>
     
         </section>
       </main>
