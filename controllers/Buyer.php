@@ -15,6 +15,7 @@ class Buyer extends Controller
 
     function index()
     {
+        
         $this->view->rendor('buyer/dashboard/buyer_main');
     }
 

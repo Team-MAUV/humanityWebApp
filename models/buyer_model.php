@@ -8,4 +8,5 @@ class buyer_model extends Model{
       
   }
 
+  
 }
