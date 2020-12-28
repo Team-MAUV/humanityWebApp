@@ -4,8 +4,17 @@ class buyer_model extends Model{
   {
     parent::__construct();
   }
-  public function viewProducts(){
-      
+
+
+  public function view_product(){
+    $st = $this->db->prepare('SELECT * FROM product WHERE type="Glass"');  
+    $st->execute();
+    $product = $st->fetchAll();
+    
+    $pagedata = [
+      'product' => $product
+    ];
+    return ($pagedata);
   }
 
   
