@@ -75,9 +75,10 @@ class staff_Model extends Model
         $count2 = $custom_id->rowCount();
         if ($count2 > 0) {
           foreach ($cid_result as $cidtmp) :
-            $st = $this->db->prepare('INSERT INTO bid_session(start_date_time,starting_bid,product_id) VALUES (:start_date_time,:starting_bid,:product_id)');
+            $st = $this->db->prepare('INSERT INTO bid_session(start_date_time,end_date_time,starting_bid,product_id) VALUES (:start_date_time,:end_date_time,:starting_bid,:product_id)');
               $st->execute(array(
                 ':start_date_time'=>$date,
+                ':end_date_time'=>$enddate,
                 ':starting_bid'=>$starting_bid,
                 ':product_id'=>$cidtmp['id'],
 
