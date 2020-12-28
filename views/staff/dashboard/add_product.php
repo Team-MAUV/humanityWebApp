@@ -111,7 +111,14 @@ input[type=reset]:hover {
         <label for="Category">Category:</label>
       </div>
       <div class="col-75">
-        <input type="text" id="category" name="category">
+        
+        <select name="category" id="category">
+          <option value="Plastic">Plastic</option>
+          <option value="Glass">Glass</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Paper">Paper</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
     </div>
     <div class="row">
@@ -132,7 +139,16 @@ input[type=reset]:hover {
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="Bidding Date">Bidding Date:</label>
+        <label for="Bidding Date">Bidding Start Time:</label>
+      </div>
+      <div class="col-75">
+        <input type="datetime-local" id="Bidding Date" name="bidding_date">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Bidding Date">Bidding End Time:</label>
       </div>
       <div class="col-75">
         <input type="datetime-local" id="Bidding Date" name="bidding_date">
