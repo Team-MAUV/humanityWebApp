@@ -47,7 +47,8 @@ include "buyer_header.php"; ?>
                         <h1 class="big">Glass </h1>
                         <span class="new">pd2020.1654</span>
                     </div>
-                    <h3 class="small">Bidding Date: 12.12.2020</h3>
+                    <h3 class="small">Bidding Start Time: 12.12.2020</h3>
+                    <h3 class="small">Bidding End Time: 12.12.2020</h3>
                 </div>
                 <div class="description">
                     <h3 class="title">Product Info</h3>
