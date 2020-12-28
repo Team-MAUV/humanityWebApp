@@ -15,7 +15,8 @@ class staff_Model extends Model
       $type=$_POST['category'];
       $volume=$_POST['volume'];
       $description=$_POST['description'];
-      $date=$_POST['bidding_date'];
+      $date=$_POST['bidding_start_date'];
+      $enddate=$_POST['bidding_end_date'];
       $starting_bid=$_POST['starting_bid'];
 
         $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/product_images/';
@@ -48,12 +49,13 @@ class staff_Model extends Model
               endforeach;
 
               //Inserting Fetched Volunteer id to beneficiary case table
-              $st = $this->db->prepare('INSERT INTO product(name,type,staff_id,date,description,starting_bid,product_path,volume) VALUES (:name,:type,:staff_id,:date,:description,:starting_bid,:product_path,:volume)');
+              $st = $this->db->prepare('INSERT INTO product(name,type,staff_id,date,bid_end_time,description,starting_bid,product_path,volume) VALUES (:name,:type,:staff_id,:date,:enddate,:description,:starting_bid,:product_path,:volume)');
               $st->execute(array(
                 ':name' => $name,
                 ':type' => $type,
                 ':staff_id'=>$sid,
                 ':date'=>$date,
+                ':enddate'=>$enddate,
                 ':description'=>$description,
                 ':starting_bid'=>$starting_bid,
                 ':product_path'=>$image_path,

@@ -142,7 +142,7 @@ input[type=reset]:hover {
         <label for="Bidding Date">Bidding Start Time:</label>
       </div>
       <div class="col-75">
-        <input type="datetime-local" id="Bidding Date" name="bidding_date">
+        <input type="datetime-local" id="Bidding Date" name="bidding_start_date">
 
       </div>
     </div>
@@ -151,7 +151,7 @@ input[type=reset]:hover {
         <label for="Bidding Date">Bidding End Time:</label>
       </div>
       <div class="col-75">
-        <input type="datetime-local" id="Bidding Date" name="bidding_date">
+        <input type="datetime-local" id="Bidding Date" name="bidding_end_date">
 
       </div>
     </div>
