@@ -8,6 +8,84 @@ include "com-dash-header.php"; ?>
 
 <div class="grid-container">
 
+<div id="breadcrum">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Saff Profile</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+</head>
+<style>
+
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+
+
+
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  top:100px;
+right:100px;
+  border: 3px solid blue;
+  z-index: 9;
+  text-align: left;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+  color:black;
+  
+}
+
+/* Full-width input fields */
+
+/* When the inputs get focus, do something */
+
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+<body>
+
+
+
 <div class="grid-body">
 
     <div class="pageTitle">
@@ -62,8 +140,43 @@ include "com-dash-header.php"; ?>
                     <td><?= $scontact['joined_year'] ?></td>
                     <td class="actions">
                      <!-- <a href="update.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
-                     <a href="<?= URL?>commissioner/staff_viewprofile" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                   <!--  <a href="<?= URL?>commissioner/staff_viewprofile" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
                     
+                   <button class="open-button" onclick="openForm()">View</button>
+
+<div class="form-popup" id="myForm">
+ <div class="form-container">
+    <h1>N.kamal <span> | </span> STFHB001</h1>
+    <h2>15 Events  <span> | </span> 340 points  </h2> 
+    <h2>Joined: 25.06.2010</h2>
+    <h2>Permanent Volunteer: From 25.03.2018</h2>
+
+   <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </div>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,6 +246,10 @@ include "com-dash-header.php"; ?>
   </div>
 
 </div>
+</body>
+</div>
+</div>
+</html>
 
 
 <?php include "com-dash-footer.php" ?>
