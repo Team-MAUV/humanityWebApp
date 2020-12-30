@@ -123,19 +123,19 @@ include "buyer_header.php"; ?>
 
         <div class="available"> 
            <h2>Available Products:</h2>
-           <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
+           <a href="<?= URL?>buyer/view_plastic"><button class="banner__button" type="button" >
           Recycled Plastic
             </button></a>  
-            <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_glass"><button class="banner__button" type="button" >
            Recycled Glass
             </button></a>  
-            <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_paper"><button class="banner__button" type="button" >
             Recycled Paper
             </button></a>
-            <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_electronic"><button class="banner__button" type="button" >
           Recycled Electronics
             </button></a>
-            <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_other"><button class="banner__button" type="button" >
            Other
             </button></a>
           
