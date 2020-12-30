@@ -27,6 +27,7 @@ include "buyer_header.php"; ?>
 <body>
     <div class="my">
         <div class="card">
+        <?php foreach ($product as $product) : ?>
             <div class="shoeBackground">
                 <div class="gradients">
                  
@@ -38,11 +39,11 @@ include "buyer_header.php"; ?>
              
 
           
-    <img src="<?= URL ?>public/images/glass1.jfif" alt="img"class="shoe show" />
+    <img src="<?= URL ?>public/<?= $product['product_path'] ?>" alt="img"class="shoe show" />
 
             </div>
             <div class="info">
-            <?php foreach ($product as $product) : ?>
+           
                 <div class="shoeName">
                     <div>
                         <h1 class="big"><?= $product['name'] ?> </h1>
@@ -83,8 +84,9 @@ include "buyer_header.php"; ?>
                 <a href="<?= URL?>buyer/index"><button class="abc" type="button" >
           Back 
             </button></a> 
-            <?php endforeach; ?> 
+           
             </div>
+            <?php endforeach; ?> 
         </div>
     </div>
 </body>
