@@ -6,7 +6,7 @@ $jsFile = 'tab-changing';
 $style = 'com-dash-profiles-volunteer.css';
 include "com-dash-header.php"; ?>
 
-<div class="grid-container">
+
 
 <div id="breadcrum">
 
@@ -55,12 +55,7 @@ right:100px;
   
 }
 
-/* Full-width input fields */
 
-/* When the inputs get focus, do something */
-
-
-/* Set a style for the submit/login button */
 .form-container .btn {
   background-color: #4CAF50;
   color: white;
