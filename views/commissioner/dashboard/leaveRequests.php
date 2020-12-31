@@ -48,10 +48,44 @@ include "com-dash-header.php"; ?>
 <!--row start-->
 <div class="row">
 
-      <div class="column" style="background-color:#aaa;">
- <h3>21.12.2020<span> </span> Already Approved :5 </h3> 
- <br> 
- <button type="button" class="readmore">Nimali 
+ <button type="button" class="readmore">Nimali <span>  &nbsp; &nbsp; &nbsp;</span> 20.01.2021</button>
+  <div class="content">
+    <p>
+    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
+      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
+  
+  
+          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
+     
+
+        <button type="button" class="btn" name="submit">Submit</button> </div>
+  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
+        <button type="button" class="btn" onclick="viewform()">View Request Form</button>
+    </p>
+   
+   </div>
+
+   <button type="button" class="readmore">Perera 
+   </button>
+  <div class="content">
+    <p>
+
+ 
+      <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
+      <input type="radio" id="decline" name="confirmreq" value="decline" ><br>
+  
+ <input  style="display:none;" type="text" id="reason" placeholder="Reason to decline" name="reason"  >
+  
+
+   
+        <button type="button" class="btn" name="submit">Submit</button> </div>
+  <p>Already taken: 2</p>
+        <button type="button" class="btn" onclick="viewform()">View Request Form</button>
+      
+
+    </p>
+   </div>
+   <button type="button" class="readmore">Nimali 
    </button>
   <div class="content">
     <p>
@@ -69,38 +103,43 @@ include "com-dash-header.php"; ?>
 
     </p>
    </div>
-   <button type="button" class="readmore">Perera 
+
+   <button type="button" class="readmore">Nimali 
    </button>
   <div class="content">
     <p>
-
- 
-      <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline" ><br>
+    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
+      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
   
- <input  style="display:none;" type="text" id="reason" placeholder="Reason to decline" name="reason"  >
   
-
-   
-
-
-
-
+          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
+     
 
         <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p>Already taken: 2</p>
+  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
         <button type="button" class="btn" onclick="viewform()">View Request Form</button>
       
 
     </p>
    </div>
-   
-
-    </div>
 
 
+   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!--calendar start-->
     <div class="container-calendar">
           <h3 id="monthAndYear"></h3>
           <div class="button-container-calendar">
@@ -136,87 +175,12 @@ include "com-dash-header.php"; ?>
               <select id="year" onchange="jump()"></select>       
           </div>
       </div>
-    </div>
+   
     <script src="<?= URL ?>public/js/calendar.js" type="text/javascript"></script>
    
     <script src="<?= URL ?>public/js/calendar-demo.js" type="text/javascript"></script>
 <!--next card start-->
-      <div class="row">
-
-<div class="column" style="background-color:#aaa;">
-
-<h3>23.12.2020<span> </span> Already Approved :1 </h3> 
- <br> 
- <button type="button" class="readmore">Kamal 
-   </button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline" name="reason" >
     
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p>Already taken: 2</p>
-        <button type="button" class="btn" onclick="viewform()">View Request Form</button>
-      
-
-    </p>
-   </div>
-   
-    </div>
-      </div>
-
-    
-
-
-
-
-<!--next card start-->
-
-    <div class="row">
-
-<div class="column" style="background-color:#aaa;">
-<h3>24.12.2020<span> </span> Already Approved :2</h3> 
-<br> 
-<button type="button" class="readmore"> H.Dias
-</button>
-<div class="content">
-<p>
-<div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-<input type="radio" id="decline" name="confirmreq" value="decline"><br>
-
-
-    <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
- 
-
-  <button type="button" class="btn" name="submit">Submit</button> </div>
-<p>Already taken: 2</p>
-  <button type="button" class="btn" onclick="viewform()">View Request Form</button>
-
-
-</p>
-</div>
-<button type="button" class="readmore">N.Kapila
-</button>
-<div class="content">
-<p>
-
-
-<div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-<input type="radio" id="decline" name="confirmreq" value="decline"><br>
-
-
-    <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-
-  <button type="button" class="btn" name="submit">Submit</button> </div>
-<p>Already taken: 2</p>
-  <button type="button" class="btn" onclick="viewform()">View Request Form</button>
-
-
-</p>
-</div>
 
 <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 <script>
