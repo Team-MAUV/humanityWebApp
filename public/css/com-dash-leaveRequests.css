@@ -268,7 +268,7 @@ a {
     color: yellow;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 50%;
     border-color: rgb(43, 39, 39);
     text-align: left;
     outline: none;
@@ -303,7 +303,7 @@ a {
     display: none;
     overflow: hidden;
     background-color: rgb(43, 163, 179);
-    width: 100%;
+    width: 50%;
     margin-left: 0vw;
     margin-right: 10vh;
     color: black;
