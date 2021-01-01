@@ -119,8 +119,20 @@ right:300px;
 <br>
 <!--row start-->
 <div class="row">
+<?php foreach ($contacts as $contact) : ?>
+  
 <!--one staff-->
- <button type="button" class="readmore">Nimali <span>&nbsp;&nbsp;</span> STFHB001 <span>  &nbsp; &nbsp; &nbsp;</span> 20.01.2021</button>
+ <button type="button" class="readmore"><?= $contact['name'] ?> <span>&nbsp;&nbsp;</span>
+ <?php if(strlen($contact['staff_id'])==1 && strlen($contact['staff_id'])>0){
+      $ccustomid ="STFHB00".$contact['staff_id'];
+    }else if(strlen($contact['staff_id'])==2 && strlen($contact['staff_id'])>0){
+      $ccustomid ="STFHB0".$contact['staff_id'];
+    }else if(strlen($$contact['staff_id'])>0){
+      $ccustomid ="STFHB".$contact['staff_id'];
+    };
+    ?>
+ 
+ <?= $ccustomid ?> <span>  &nbsp; &nbsp; &nbsp;</span> <?= $contact['from_date'] ?></button>
   <div class="content">
     <p>
     <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
@@ -131,300 +143,25 @@ right:300px;
      
 
         <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
+  <p style="color:white;font-family:sans-serif">
+
+  <?php foreach ($leaves as $leave) : ?>
+  <?php if($contact['staff_id']==$leave['id']){
+    $noleave=$leave['no_leave'];
+    
+  };
+  
+  ?>
+  <?php endforeach; ?>
+
+   Already taken=<?=$noleave?></p>
+
         <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
     </p>
    
    </div>
 
-<!--second  staff-->
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-
-<!--3 staff-->
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-<!--4  staff-->
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
-   
-   </div>
-
-
-   <button type="button" class="readmore">Kamal <span> &nbsp;&nbsp;</span> STFHB002  <span>  &nbsp; &nbsp; &nbsp;</span> 28.01.2021</button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-          <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-     
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">Already taken: 2</p>
-        <button type="open-button" class="btn" onclick="viewform()">View Request Form</button>
-    </p>
+   <?php endforeach; ?>
    
    </div>
 
@@ -453,11 +190,21 @@ right:300px;
    <!--popup form-->
    <div class="form-popup" id="myForm">
   <div class="form-container">
-    <h2>Nimali<span>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span>STFHB002</h2>
+    <h2><?= $contact['name'] ?><span>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span>
+    
+    <?php if(strlen($contact['staff_id'])==1 && strlen($contact['staff_id'])>0){
+      $ccustomid ="STFHB00".$contact['staff_id'];
+    }else if(strlen($contact['staff_id'])==2 && strlen($contact['staff_id'])>0){
+      $ccustomid ="STFHB0".$contact['staff_id'];
+    }else if(strlen($$contact['staff_id'])>0){
+      $ccustomid ="STFHB".$contact['staff_id'];
+    };
+    ?>
+    <?= $ccustomid ?></h2>
 <hr style="color:blue"> </hr>
-    <h3>From: 23.01.2021 </h3>
-    <h3>To : 23.01.2021 </h3>
-    <h4>Wedding to my friend </h4>
+    <h3>From: <?= $contact['from_date'] ?> </h3>
+    <h3>To : <?= $contact['to_date'] ?> </h3>
+    <h3>Reason : <?= $contact['reason'] ?></h3>
 
 
     

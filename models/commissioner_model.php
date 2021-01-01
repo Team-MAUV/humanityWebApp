@@ -735,24 +735,20 @@ public function get_view_com_list() {
 public function get_leaveRequests(){
 
 
-  $st = $this->db->prepare('SELECT * FROM leave_request WHERE status="pending" ORDER BY date ');
+
+  $st = $this->db->prepare('SELECT * FROM leave_request WHERE status="pending" ORDER BY from_date');
   $st->execute();
-  $leave_req = $st->fetchAll();
-  foreach ($leave_req as $req) :
-    $stmt2 = $this->db->prepare('SELECT * FROM staff WHERE id=:sid ');        
-    $stmt2->execute(array(
-      ':sid'=>$req['staff_id'],
-    ));
-    $leave_info = $stmt2->fetchAll();
-  endforeach;
- 
-    
-//All the data that has to be return from this functon is added to an associative array
+  $contacts = $st->fetchAll();
+
+  $st2=$this->db->prepare("SELECT * FROM staff");
+  $st2->execute();
+  $leaves= $st2->fetchAll();
+
+  
+
 $pageData = [
-
-'leave_req' => $leave_req,
-'leave_info'=>$leave_info,
-
+'contacts' => $contacts,
+'leaves' =>$leaves,
 ];
 return ($pageData);
 

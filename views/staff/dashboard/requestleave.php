@@ -44,8 +44,8 @@ width: fit-content;
     <div class="input-fields">
       <input type="text" class="input" placeholder="Name" name="name" id="name">
       <input type="text" class="input" placeholder="Staff-ID" name="staff_id" id="staff_id">
-      <input type="date" class="input" placeholder="Date" name="date" id="date">
-      <input type="number" class="input" placeholder="Number of Days" name="day_no" id="day_no">
+      <input type="date" class="input" placeholder="From Date" name="fdate" id="fdate">
+      <input type="date" class="input" placeholder="To Date" name="tdate" id="tdate">
       
     </div>
     <div class="message">
