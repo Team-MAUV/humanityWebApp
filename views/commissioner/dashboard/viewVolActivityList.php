@@ -6,8 +6,39 @@ include "com-dash-header.php"; ?>
 
 <div class="grid-container">
 
+<div id="breadcrum">
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+<style>
+.button {
+  border-radius: 4px;
+  background-color:  #4d79ff;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 16px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button:hover  {
+ background-color: #000000;
+}
 
 
+
+  </style>
+  </head>
+<body>
   <div class="grid-body">
 
     <div class="pageTitle">
@@ -63,8 +94,8 @@ include "com-dash-header.php"; ?>
                     <td><?= $contact['participant_count'] ?></td>
                     <td><?= $contact['confirm_participant_count'] ?></td>
                     <td class="actions">
-                      <a href="update.php?id=<?= $contact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
-                      <a href="delete.php?id=<?= $contact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                    <a href="update.php?id=<?= $contact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+<a href="delete.php?id=<?= $contact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -114,7 +145,10 @@ include "com-dash-header.php"; ?>
                     <td><?= $req['participant_count'] ?></td>
              
                 <td class="actions">
-                  <a href="update.php?id=<?= $req['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                 <!-- <a href="update.php?id=<?= $req['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
+                  <a href="#" ><button class="button">View Media</button></a>
+
+
                   <a href="delete.php?id=<?= $req['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                 </td>
               </tr>
@@ -127,5 +161,5 @@ include "com-dash-header.php"; ?>
     </div>
 
   </div>
-
+  </body>
   <?php include "com-dash-footer.php" ?>
