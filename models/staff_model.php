@@ -167,15 +167,15 @@ public function requestleave(){
               // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
               $name = $_POST['name'];
               $staff_id = $sid;
-              $day_no = $_POST['day_no'];
-              $date = $_POST['date'];
+              $tdate = $_POST['tdate'];
+              $fdate = $_POST['fdate'];
               $reason = $_POST['reason'];
 
               if($_POST['staff_id']==$_SESSION['id']){
 
-              $stmt = $this->db->prepare('INSERT INTO `leave_request` (`name`,`date`, `no_days`,`reason`, `staff_id`) VALUES ( ?, ?,?, ?, ?)');
+              $stmt = $this->db->prepare('INSERT INTO `leave_request` (`name`,`from_date`, `to_date`,`reason`, `staff_id`) VALUES ( ?, ?,?, ?, ?)');
 
-              $stmt->execute([$name, $date, $day_no, $reason, $staff_id]);
+              $stmt->execute([$name, $fdate, $tdate, $reason, $staff_id]);
 
               $msg = "Leave Request submitted successfully!";
 
