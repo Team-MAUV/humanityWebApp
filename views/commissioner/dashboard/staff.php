@@ -17,14 +17,14 @@ include "com-dash-header.php"; ?>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-</head>
+
 <style>
 
 * {box-sizing: border-box;}
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
+  background-color:  #4d79ff;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -41,17 +41,19 @@ include "com-dash-header.php"; ?>
   position: fixed;
   top:100px;
 right:100px;
-  border: 3px solid blue;
+border: 4px solid blue;
+  border-radius: 12px;
   z-index: 9;
   text-align: left;
+  color:#000033;
 }
 
 /* Add styles to the form container */
 .form-container {
   max-width: 500px;
   padding: 10px;
-  background-color: white;
-  color:black;
+  background-color:#ccccff;
+  color:#000033;
   
 }
 
@@ -77,6 +79,7 @@ right:100px;
   opacity: 1;
 }
 </style>
+</head>
 <body>
 
 
@@ -141,10 +144,10 @@ right:100px;
 
 <div class="form-popup" id="myForm">
  <div class="form-container">
-    <h1>N.kamal <span> | </span> STFHB001</h1>
-    <h2>15 Events  <span> | </span> 340 points  </h2> 
-    <h2>Joined: 25.06.2010</h2>
-    <h2>Permanent Volunteer: From 25.03.2018</h2>
+    <h1>N.Kamal <span>&nbsp; | &nbsp; </span> STFHB001</h1>
+    <h2>15 Events  <span> &nbsp;|&nbsp; </span> 340 points  </h2> 
+    <h2>Joined: &nbsp; 25.06.2010</h2>
+    <h2>Permanent Volunteer: &nbsp; From 25.03.2018</h2>
 
    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                 </div>
