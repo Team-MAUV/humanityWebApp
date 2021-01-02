@@ -42,7 +42,8 @@ class Volunteer extends Controller
     }
     function volleaderboard()
     {
-        $this->view->rendor('volunteer/dashboard/vol_leaderboard');
+        $data = $this->model->vol_leaderboard();
+        $this->view->rendor('volunteer/dashboard/vol_leaderboard', $data, true);
     }
     function volpartcipate()
     {

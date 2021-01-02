@@ -73,6 +73,7 @@ include "vol_dash_header.php"; ?>
       </div>
     </div>
     <div class="table_body">
+    <?php foreach ($contacts as $contact) : ?>
       <div class="item_wrap">
         <div class="item item_id item_id_1">
           <div class="checkbox_wrap">
@@ -80,142 +81,24 @@ include "vol_dash_header.php"; ?>
               <input type="checkbox" class="input" value="item_id_1">
               <span class="mark"></span>
            </label>
-          </div><p>021</p>
+          </div><p><?=$contact['vol_id']?></p>
         </div>
         <div class="item item_name">
-           <p>John Alex</p>
+           <p><?=$contact['name']?></p>
         </div>
         <div class="item item_status delivered">
-            <span>Permanent</span>
+            <span><?=$contact['level']?></span>
         </div>
         
         <div class="item item_cost">
            <div class="cost_wrap">
-            <div class="num">350</div>
+            <div class="num"><?=$contact['vol_points']?></div>
           
           </div>
         </div>
       </div>
+      <?php endforeach; ?>
       
-      <div class="item_wrap">
-        <div class="item item_id item_id_2">
-           <div class="checkbox_wrap">
-             <label class="checkbox">
-              <input type="checkbox" class="input" value="item_id_2">
-              <span class="mark"></span>
-           </label>
-          </div><p>005</p>
-        </div>
-        <div class="item item_name">
-           <p>Peter</p>
-        </div>
-        <div class="item item_status delivered">
-            <span>Permanent</span>
-        </div>
-        
-        <div class="item item_cost">
-           <div class="cost_wrap">
-            <div class="num">265</div>
-       
-          </div>
-        </div>
-      </div>
-      
-      <div class="item_wrap">
-        <div class="item item_id item_id_3">
-           <div class="checkbox_wrap">
-             <label class="checkbox">
-              <input type="checkbox" class="input" value="item_id_3">
-              <span class="mark"></span>
-           </label>
-          </div><p>004</p>
-        </div>
-        <div class="item item_name">
-           <p>Michael Bevan </p>
-        </div>
-        <div class="item item_status delivered">
-            <span>Permanent</span>
-        </div>
-       
-        <div class="item item_cost">
-          <div class="cost_wrap">
-            <div class="num">215</div>
-           
-          </div>
-        </div>
-      </div>
-      
-      <div class="item_wrap">
-        <div class="item item_id item_id_4">
-           <div class="checkbox_wrap">
-             <label class="checkbox">
-              <input type="checkbox" class="input" value="item_id_4">
-              <span class="mark"></span>
-           </label>
-          </div><p>001</p>
-        </div>
-        <div class="item item_name">
-           <p>Amy Hobson</p>
-        </div>
-        <div class="item item_status delivered">
-            <span>Permanent</span>
-        </div>
-       
-        <div class="item item_cost">
-          <div class="cost_wrap">
-            <div class="num">200</div>
-          
-          </div>
-        </div>
-      </div>
-      
-      <div class="item_wrap">
-        <div class="item item_id item_id_5">
-          <div class="checkbox_wrap">
-             <label class="checkbox">
-              <input type="checkbox" class="input" value="item_id_5">
-              <span class="mark"></span>
-           </label>
-          </div><p>035</p>
-        </div>
-        <div class="item item_name">
-           <p>John Alex</p>
-        </div>
-        <div class="item item_status error">
-            <span>temporary</span>
-        </div>
-        
-        <div class="item item_cost">
-           <div class="cost_wrap">
-            <div class="num">190</div>
-          
-          </div>
-        </div>
-      </div>
-      
-      <div class="item_wrap">
-        <div class="item item_id item_id_6">
-           <div class="checkbox_wrap">
-             <label class="checkbox">
-              <input type="checkbox" class="input" value="item_id_6">
-              <span class="mark"></span>
-           </label>
-          </div><p>039</p>
-        </div>
-        <div class="item item_name">
-           <p>Michael Bevan </p>
-        </div>
-        <div class="item item_status error">
-            <span>Temporary</span>
-        </div>
-     
-        <div class="item item_cost">
-          <div class="cost_wrap">
-            <div class="num">180</div>
-            
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

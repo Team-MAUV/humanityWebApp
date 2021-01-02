@@ -199,4 +199,18 @@ class volunteer_Model extends Model
 
 
     }
+
+    public function vol_leaderboard(){
+     
+      $stmt = $this->db->prepare('SELECT * FROM volunteer WHERE status="1"  ORDER BY vol_points DESC');        
+      $stmt->execute();
+      $contacts = $stmt->fetchAll();
+
+  //All the data that has to be return from this functon is added to an associative array
+  $pageData = [
+    'contacts'=> $contacts,
+  ];
+  return ($pageData);
+
+    }
 }
