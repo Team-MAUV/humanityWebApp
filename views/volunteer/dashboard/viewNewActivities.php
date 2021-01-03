@@ -41,6 +41,8 @@ include "vol_dash_header.php"; ?>
                                 <li>Ended   : <?= $coming['end_date_time'] ?> </li>
 
                                 <li>Venue   : <?= $coming['venue'] ?></li>
+
+                                <li>Activity Points   : <?= $coming['point'] ?></li>
                             </ul>
                             <button type="button" class="btn">View Invitation</button>
 
@@ -77,6 +79,8 @@ include "vol_dash_header.php"; ?>
                                 <li>End   : <?= $finish['end_date_time'] ?> </li>
 
                                 <li>Venue : <?= $finish['venue'] ?></li>
+
+                                <li>Activity Points   : <?= $finish['point'] ?></li>
                             </ul>
                             <button type="button" class="btn">View Invitation</button>
 
