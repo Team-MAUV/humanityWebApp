@@ -63,7 +63,7 @@ include "buyer_header.php"; ?>
             <li class="team__item">
               <a class="team__link focus--box-shadow" href="#">
                 <div class="team__header">
-                 Bidding 
+                 
                   <button
                     class="setting setting--absolute focus--box-shadow"
                     type="button"
@@ -82,8 +82,9 @@ include "buyer_header.php"; ?>
                   </button>
                 </div>
                 <div class="team__inform">
-                  <p class="team__name"> You  bid: 12</p>
-                  <p class="team__name">Your won bids: 2</p>
+                  <p class="team__name"> Total bids: <?=$_SESSION['totalbids']?></p>
+                  <p class="team__name"> Products Bid : 2</p>
+                  <p class="team__name"> Bids won : 2</p>
                   
                 </div>
               </a>
@@ -91,7 +92,7 @@ include "buyer_header.php"; ?>
             <li class="team__item">
               <a class="team__link focus--box-shadow" href="#">
                 <div class="team__header">
-              Current
+              
                   <button
                     class="setting setting--absolute focus--box-shadow"
                     type="button"
@@ -111,7 +112,7 @@ include "buyer_header.php"; ?>
                 </div>
                 <div class="team__inform">
                 <p class="team__name">    Products available now: </p>
-                  <p class="team__name"> 2 </p>
+                  <p class="team__name"> Recycled Glass </p>
                 </div>
               </a>
             </li>
@@ -119,6 +120,28 @@ include "buyer_header.php"; ?>
           </ul>
         </section>
         <section class="section">
+
+        <div class="available"> 
+           <h2>Available Products:</h2>
+           <a href="<?= URL?>buyer/view_plastic"><button class="banner__button" type="button" >
+          Recycled Plastic
+            </button></a>  
+            <a href="<?= URL?>buyer/view_glass"><button class="banner__button" type="button" >
+           Recycled Glass
+            </button></a>  
+            <a href="<?= URL?>buyer/view_paper"><button class="banner__button" type="button" >
+            Recycled Paper
+            </button></a>
+            <a href="<?= URL?>buyer/view_electronic"><button class="banner__button" type="button" >
+          Recycled Electronics
+            </button></a>
+            <a href="<?= URL?>buyer/view_other"><button class="banner__button" type="button" >
+           Other
+            </button></a>
+          
+        </div>
+
+
           <header class="section__header">
             <h2 class="section__title">Last Bid won</h2>
             
@@ -209,16 +232,7 @@ include "buyer_header.php"; ?>
               </a>
             </li>
           </ul>
-          <div class="available"> 
-           <h2>Available Products:</h2>
-           <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
-            Plastic
-            </button></a>  
-            <a href="<?= URL?>buyer/view_product"><button class="banner__button" type="button" >
-           Glass
-            </button></a>  
           
-        </div>
     
         </section>
       </main>

@@ -15,7 +15,8 @@ class staff_Model extends Model
       $type=$_POST['category'];
       $volume=$_POST['volume'];
       $description=$_POST['description'];
-      $date=$_POST['bidding_date'];
+      $date=$_POST['bidding_start_date'];
+      $enddate=$_POST['bidding_end_date'];
       $starting_bid=$_POST['starting_bid'];
 
         $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/product_images/';
@@ -48,12 +49,13 @@ class staff_Model extends Model
               endforeach;
 
               //Inserting Fetched Volunteer id to beneficiary case table
-              $st = $this->db->prepare('INSERT INTO product(name,type,staff_id,date,description,starting_bid,product_path,volume) VALUES (:name,:type,:staff_id,:date,:description,:starting_bid,:product_path,:volume)');
+              $st = $this->db->prepare('INSERT INTO product(name,type,staff_id,date,bid_end_time,description,starting_bid,product_path,volume) VALUES (:name,:type,:staff_id,:date,:enddate,:description,:starting_bid,:product_path,:volume)');
               $st->execute(array(
                 ':name' => $name,
                 ':type' => $type,
                 ':staff_id'=>$sid,
                 ':date'=>$date,
+                ':enddate'=>$enddate,
                 ':description'=>$description,
                 ':starting_bid'=>$starting_bid,
                 ':product_path'=>$image_path,
@@ -73,9 +75,10 @@ class staff_Model extends Model
         $count2 = $custom_id->rowCount();
         if ($count2 > 0) {
           foreach ($cid_result as $cidtmp) :
-            $st = $this->db->prepare('INSERT INTO bid_session(start_date_time,starting_bid,product_id) VALUES (:start_date_time,:starting_bid,:product_id)');
+            $st = $this->db->prepare('INSERT INTO bid_session(start_date_time,end_date_time,starting_bid,product_id) VALUES (:start_date_time,:end_date_time,:starting_bid,:product_id)');
               $st->execute(array(
                 ':start_date_time'=>$date,
+                ':end_date_time'=>$enddate,
                 ':starting_bid'=>$starting_bid,
                 ':product_id'=>$cidtmp['id'],
 
@@ -164,15 +167,15 @@ public function requestleave(){
               // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
               $name = $_POST['name'];
               $staff_id = $sid;
-              $day_no = $_POST['day_no'];
-              $date = $_POST['date'];
+              $tdate = $_POST['tdate'];
+              $fdate = $_POST['fdate'];
               $reason = $_POST['reason'];
 
               if($_POST['staff_id']==$_SESSION['id']){
 
-              $stmt = $this->db->prepare('INSERT INTO `leave_request` (`name`,`date`, `no_days`,`reason`, `staff_id`) VALUES ( ?, ?,?, ?, ?)');
+              $stmt = $this->db->prepare('INSERT INTO `leave_request` (`name`,`from_date`, `to_date`,`reason`, `staff_id`) VALUES ( ?, ?,?, ?, ?)');
 
-              $stmt->execute([$name, $date, $day_no, $reason, $staff_id]);
+              $stmt->execute([$name, $fdate, $tdate, $reason, $staff_id]);
 
               $msg = "Leave Request submitted successfully!";
 

@@ -112,3 +112,22 @@ INFO: Unsupported notification method: $/setTraceNotification
 2020.12.01 23:12:13 WARN  Build server is not auto-connectable.
 2020.12.01 23:12:13 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 2020.12.02 00:00:34 INFO  shutting down Metals
+2020.12.27 04:13:06 INFO  Started: Metals version 0.9.8 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.12.27 04:13:09 INFO  time: initialize in 2.81s
+2020.12.27 04:13:11 WARN  Build server is not auto-connectable.
+2020.12.27 04:13:11 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+Dec 27, 2020 4:16:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+2020.12.27 06:31:28 INFO  shutting down Metals
+2020.12.28 11:28:12 INFO  Started: Metals version 0.9.8 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.12.28 11:28:14 INFO  time: initialize in 2.1s
+2020.12.28 11:28:16 WARN  Build server is not auto-connectable.
+2020.12.28 11:28:16 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+Dec 28, 2020 11:57:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+2020.12.28 13:41:32 INFO  shutting down Metals
+2020.12.30 09:28:27 INFO  Started: Metals version 0.9.8 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2020.12.30 09:28:31 INFO  time: initialize in 4.07s
+2020.12.30 09:28:34 WARN  Build server is not auto-connectable.
+2020.12.30 09:28:34 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.30 09:41:27 INFO  shutting down Metals

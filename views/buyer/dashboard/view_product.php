@@ -27,6 +27,7 @@ include "buyer_header.php"; ?>
 <body>
     <div class="my">
         <div class="card">
+        <?php foreach ($product as $product) : ?>
             <div class="shoeBackground">
                 <div class="gradients">
                  
@@ -38,26 +39,28 @@ include "buyer_header.php"; ?>
              
 
           
-    <img src="<?= URL ?>public/images/glass1.jfif" alt="img"class="shoe show" />
+    <img src="<?= URL ?>public/<?= $product['product_path'] ?>" alt="img"class="shoe show" />
 
             </div>
             <div class="info">
+           
                 <div class="shoeName">
                     <div>
-                        <h1 class="big">Glass </h1>
-                        <span class="new">pd2020.1654</span>
+                        <h1 class="big"><?= $product['name'] ?> </h1>
+                        <span class="new"><?= $product['product_id'] ?></span>
                     </div>
-                    <h3 class="small">Bidding Date: 12.12.2020</h3>
+                    <h3 class="small">Bidding Start Time: <?= $product['date'] ?></h3>
+                    <h3 class="small">Bidding End Time: <?= $product['bid_end_time'] ?></h3>
                 </div>
                 <div class="description">
                     <h3 class="title">Product Info</h3>
-                    <p class="text">Collected from the volunteer's home</p>
+                    <p class="text"><?= $product['description'] ?></p>
                 </div>
                 <div class="color-my">
                     <h3 class="title">details</h3>
                     <div class="colors">
-                       <h4>20kg</h4> <span class="color" primary="#29b864" color="green"></span>
-                       <p> 8000.00 </p>
+                       <h4><?= $product['volume'] ?></h4> <span class="color" primary="#29b864" color="green"></span>
+                       <p><?= $product['starting_bid'] ?> </p>
                 </div>
                 <div class="size-my">
                     <h3 class="title">current maximum bid</h3>
@@ -80,8 +83,10 @@ include "buyer_header.php"; ?>
              
                 <a href="<?= URL?>buyer/index"><button class="abc" type="button" >
           Back 
-            </button></a>  
+            </button></a> 
+           
             </div>
+            <?php endforeach; ?> 
         </div>
     </div>
 </body>
