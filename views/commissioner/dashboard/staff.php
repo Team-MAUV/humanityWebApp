@@ -143,8 +143,9 @@ border: 4px solid blue;
                    <button class="open-button" onclick="openForm()">View</button>
 
 <div class="form-popup" id="myForm">
+
  <div class="form-container">
-    <h1>N.Kamal <span>&nbsp; | &nbsp; </span> STFHB001</h1>
+    <h1><?= $scontact['staff_id'] ?> <span>&nbsp; | &nbsp; </span> <?= $scontact['name'] ?></h1>
     <h2>15 Events  <span> &nbsp;|&nbsp; </span> 340 points  </h2> 
     <h2>Joined: &nbsp; 25.06.2010</h2>
     <h2>Permanent Volunteer: &nbsp; From 25.03.2018</h2>

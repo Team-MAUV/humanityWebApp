@@ -44,7 +44,7 @@ include "com-dash-header.php"; ?>
               <td>Email</td>
               <td>Contact</td>
               <td>NIC</td>
-              <td>Total Contricution</td>
+              <td>Total Contribution</td>
               <td></td>
             </tr>
               </thead>
@@ -60,7 +60,7 @@ include "com-dash-header.php"; ?>
                     <td><?= $dcontact['nic'] ?></td>
                     <td><?= $dcontact['contribution'] ?></td>
                     <td class="actions">
-                      <a href="update.php?id=<?= $dcontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                    
                       <a href="delete.php?id=<?= $dcontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                     </td>
                   </tr>
