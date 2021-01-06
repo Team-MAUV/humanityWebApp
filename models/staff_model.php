@@ -19,6 +19,17 @@ class staff_Model extends Model
       $enddate=$_POST['bidding_end_date'];
       $starting_bid=$_POST['starting_bid'];
 
+      $get_cat = $this->db->prepare("SELECT * From product Where type = :prdtype");
+      $get_cat->execute(array(
+        ':prdtype' => $type
+      ));
+      $prd_exist = $get_cat->fetchAll();
+      $prd_count = $get_cat->rowCount();
+      if($prd_count == 0){
+
+
+      
+
         $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/product_images/';
         $save_path = 'product_images/';
 
@@ -130,10 +141,14 @@ class staff_Model extends Model
               $msg = "Adding product  Failed!";
             }
           }
+
+
         } else {
           $msg = 'Please add a Product!';
         }
-
+      }else{
+        $msg = "Product category alredy exists";
+      }
 
 
       $pageData = [
