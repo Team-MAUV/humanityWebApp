@@ -5,6 +5,25 @@ class buyer_model extends Model{
     parent::__construct();
   }
 
+  public function view_buyerdash(){
+
+    $st = $this->db->prepare('SELECT * FROM product');
+    $st->execute();
+    $prd_list = $st->fetchAll();
+    $count = $st->rowCount();
+    if($count == 0){
+      $msg = "No available products. New products will add soon.!!!";
+    }
+
+    
+    $pageData = [
+      'prdlist' => $prd_list,
+      'msg' => $msg
+    ];
+    return ($pageData);
+}
+  
+
   public function view_product(){
     
     if($_GET['prd']=='Plastic'){

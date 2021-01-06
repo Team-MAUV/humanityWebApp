@@ -112,9 +112,10 @@ include "buyer_header.php"; ?>
                 </div>
                 <div class="team__inform">
                 <p class="team__name">    Products available now: </p>
-                
-                  <p class="team__name">Glass</p>
-                  
+                <?php foreach ($prdlist as $prd) : ?>
+                  <p class="team__name">------<?= $prd['type'] ?> </p>
+                  <?php endforeach; ?> 
+                  <p><?= $msg ?></p>
                 </div>
               </a>
             </li>
