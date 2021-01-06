@@ -24,9 +24,13 @@ class buyer_model extends Model{
       if($count == 0){
         $msg = "Product not available!!! Product will be available soon ";
       }
+
+      
+
       $pagedata = [
         'product' => $product,
-        'msg' => $msg
+        'msg' => $msg,
+        
       ];
       return ($pagedata);
     

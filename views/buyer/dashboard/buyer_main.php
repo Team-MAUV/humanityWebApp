@@ -112,7 +112,9 @@ include "buyer_header.php"; ?>
                 </div>
                 <div class="team__inform">
                 <p class="team__name">    Products available now: </p>
-                  <p class="team__name"> Recycled Glass </p>
+                
+                  <p class="team__name">Glass</p>
+                  
                 </div>
               </a>
             </li>

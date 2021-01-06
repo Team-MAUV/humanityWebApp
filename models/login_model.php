@@ -156,7 +156,7 @@ class login_Model extends Model
                     $name =  $usr['name'];
                 endforeach;
               
-                
+                //view total number of bids 
                 
                 $st3 = $this->db->prepare("SELECT COUNT AS total FROM bid WHERE buy_id= :id ");
                 $st3->execute(array(
@@ -167,13 +167,15 @@ class login_Model extends Model
                 foreach ($totalbids as $ttlbds) :
                     $ttl = $ttlbds['total'];
                 endforeach;
-                    
+                
+                
                 
                 
                     Session::set('loggedIn-buy', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
                     Session::set('totalbids', $ttl);
+                    
                     header('location: ../Buyer');
                 
                
