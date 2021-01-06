@@ -20,9 +20,13 @@ class buyer_model extends Model{
     }
     $st->execute();
       $product = $st->fetchAll();
-    
+      $count = $st->rowCount();
+      if($count == 0){
+        $msg = "Product not available!!! Product will be available soon ";
+      }
       $pagedata = [
-        'product' => $product
+        'product' => $product,
+        'msg' => $msg
       ];
       return ($pagedata);
     
