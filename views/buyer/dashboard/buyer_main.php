@@ -150,6 +150,7 @@ include "buyer_header.php"; ?>
             
           </header>
           <ul class="project">
+          <?php foreach ($winlist as $lst) : ?>
             <li class="project__item">
               <a href="#" class="project__link focus--box-shadow">
                 <div class="project__wrapper">
@@ -158,19 +159,19 @@ include "buyer_header.php"; ?>
                   </div>
                   <div class="project__element project__inform">
                     <span class="project__inform-name"
-                      >Mr.S.M.Haris Romio</span
+                      ><?= $list['name'] ?></span
                     >
                   </div>
                   <div class="project__element project__photo">
-                   <p> 5000.00</p>
+                   <p> <?= $list['highest_bid_amount'] ?></p>
                   </div>
                   <div class="project__element project__date">
                     <time class="date" datetime="2020-05-05T10:00:00"
-                      >05 May, 2020</time
+                      ><?= $list['end_date_time'] ?></time
                     >
                   </div>
                   <div class="project__element project__status">
-                    <span class="status status--published">Plastic</span>
+                    <span class="status status--published"><?= $list['prd_type'] ?></span>
                   </div>
                   <div class="project__element project__setting">
                     
@@ -178,62 +179,9 @@ include "buyer_header.php"; ?>
                 </div>
               </a>
             </li>
-            <li class="project__item">
-              <a href="#" class="project__link focus--box-shadow">
-                <div class="project__wrapper">
-                  <div class="project__element project__icon">
-                  <img  src="<?= URL ?>public/images/3r2.png" alt="img"/>
-
-                  </div>
-                  <div class="project__element project__inform">
-                    <span class="project__inform-name"> Ms.Selomi Ganesarasa</span>
-                  </div>
-                  <div class="project__element project__photo">
-                  <p> 7895.00</p>
-                  </div>
-                  <div class="project__element project__date">
-                    <time class="date" datetime="2020-05-05T10:00:00"
-                      >13 February, 2020</time
-                    >
-                  </div>
-                  <div class="project__element project__status">
-                    <span class="status status--published">Glass</span>
-                  </div>
-                  <div class="project__element project__setting">
-                  
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="project__item">
-              <a href="#" class="project__link focus--box-shadow">
-                <div class="project__wrapper">
-                  <div class="project__element project__icon">
-                  <img  src="<?= URL ?>public/images/3r2.png" alt="img"/>
-    
-                  </div>
-                  <div class="project__element project__inform">
-                    <span class="project__inform-name"
-                      >Mr.N.M.Torendo</span
-                    >
-                  </div>
-                  <div class="project__element project__photo">
-                  <p> 6980.00</p>
-                  </div>
-                  <div class="project__element project__date">
-                    <time class="date" datetime="2020-05-05T10:00:00"
-                      >01 February, 2020</time
-                    >
-                  </div>
-                  <div class="project__element project__status">
-                    <span class="status status--published">Papers</span>
-                  </div>
-                  <div class="project__element project__setting">
-                   
-                  </div>
-                </div>
-              </a>
-            </li>
+            <?php endforeach; ?> 
+            <p><?= $msgwinlist ?></p>
+            
           </ul>
           
     
