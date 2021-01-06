@@ -21,26 +21,12 @@ class Buyer extends Controller
 
     
     
-    function view_glass(){
-        $data = $this->model->view_glass();
+    
+    function view_product(){
+        $data = $this->model->view_product();
         $this->view->rendor('buyer/dashboard/view_product', $data ,true);
     }
-    function view_plastic(){
-        $data = $this->model->view_plastic();
-        $this->view->rendor('buyer/dashboard/view_product', $data ,true);
-    }
-    function view_paper(){
-        $data = $this->model->view_paper();
-        $this->view->rendor('buyer/dashboard/view_product', $data ,true);
-    }
-    function view_electronic(){
-        $data = $this->model->view_electronic();
-        $this->view->rendor('buyer/dashboard/view_product', $data ,true);
-    }
-    function view_other(){
-        $data = $this->model->view_other();
-        $this->view->rendor('buyer/dashboard/view_product', $data ,true);
-    }
+    
 
 
     function logout()

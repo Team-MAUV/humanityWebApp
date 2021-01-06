@@ -131,3 +131,17 @@ INFO: Unsupported notification method: $/setTraceNotification
 2020.12.30 09:28:34 WARN  Build server is not auto-connectable.
 2020.12.30 09:28:34 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 2020.12.30 09:41:27 INFO  shutting down Metals
+2021.01.05 09:30:05 INFO  Started: Metals version 0.9.8 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2021.01.05 09:30:07 INFO  time: initialize in 1.93s
+2021.01.05 09:30:08 WARN  Build server is not auto-connectable.
+2021.01.05 09:30:08 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2021.01.05 09:33:29 INFO  shutting down Metals
+2021.01.05 19:36:31 INFO  Started: Metals version 0.9.8 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2021.01.05 19:36:33 INFO  time: initialize in 2.05s
+2021.01.05 19:36:35 WARN  Build server is not auto-connectable.
+2021.01.05 19:36:35 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2021.01.05 21:19:58 INFO  shutting down Metals
+2021.01.06 12:07:23 INFO  Started: Metals version 0.9.8 in workspace 'C:\xampp\htdocs\humanity' for client vscode.
+2021.01.06 12:07:25 INFO  time: initialize in 1.54s
+2021.01.06 12:07:26 WARN  Build server is not auto-connectable.
+2021.01.06 12:07:26 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
