@@ -14,8 +14,8 @@ class buyer_model extends Model{
     if($count == 0){
       $msg = "No avilable products. New products will add soon.!!!";
     }
-
-    $st2 = $this->db->prepare('SELECT * FROM bid_session WHERE won_buy_id IS NOT NULL ORDER BY end_date_time DESC LIMIT 5');
+    $cr_time = date("Y-m-d H:i:s");
+    $st2 = $this->db->prepare('SELECT * FROM bid_session WHERE won_buy_id IS NOT NULL AND end_date_time < $cr_time ORDER BY end_date_time DESC LIMIT 5');
     $st2->execute();
     $winbid_list = $st2->fetchAll();
     $win_count = $st2->rowCount();
