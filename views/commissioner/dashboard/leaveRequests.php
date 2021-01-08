@@ -110,7 +110,7 @@ include "com-dash-header.php"; ?>
 
    Already taken=<?=$noleave?></p>
 
-        <button type="open-button" class="btn" id="<?$ccustomid?>" onclick="viewform()">View Request Form</button>
+        <button type="open-button" class="btn" id="<?$ccustomid?>" >View Request Form</button>
    
         </p>
    
@@ -147,20 +147,11 @@ include "com-dash-header.php"; ?>
 
 
     
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+   
   </div>
 </div>
 <?php endforeach; ?>
 
-<script>
-function viewform() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
 
 
 
@@ -168,7 +159,54 @@ function closeForm() {
 </div>
 -->
 
+<div class="content read">
+          <h1>Request Leaves </h1>
+          <div class="search-container">
+            <form action="search_volunteer" method="POST">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            </div>
+              <table>
+                <thead>
+                <tr>
+                <td>#</td>
+                <td>Staff ID</td>
+                <td>Name</td>
+                <td>From</td>
+                <td>To</td>
+                <td>Reason</td>
+                <td>Accept/Reject</td>
+                <td>Remark</td>
+                <td></td>
+              </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($contacts as $contact) : ?>
+                <tr>
+                <td></td>
+                <td><?php if(strlen($contact['staff_id'])==1 && strlen($contact['staff_id'])>0){
+      $ccustomid ="STFHB00".$contact['staff_id'];
+    }else if(strlen($contact['staff_id'])==2 && strlen($contact['staff_id'])>0){
+      $ccustomid ="STFHB0".$contact['staff_id'];
+    }else if(strlen($$contact['staff_id'])>0){
+      $ccustomid ="STFHB".$contact['staff_id'];
+    };
+    ?>  <?= $ccustomid ?> </td>
+                <td><?= $contact['name'] ?></td>
+                <td> <?= $contact['from_date'] ?></td>
+                <td><?= $contact['to_date'] ?></td>
+                <td><?= $contact['reason'] ?></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
 
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+              
+               
 
 
 
