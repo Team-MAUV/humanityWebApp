@@ -55,12 +55,12 @@ tr:nth-child(even){background-color: #f2f2f2}
 				<div class="counter bg-staff">
         <div class="counter-front">
 	   <center></i> <p >Staff</p></center>
-	   <p>50</p>
+	   <p><?=$stf?></p>
     </div>
    
     <div class="counter-back">
       <p>Beneficiaries</p>
-      <p>25</p>
+      <p><?=$bene?></p>
     </div>
 				</div>
 			</div>
@@ -68,11 +68,11 @@ tr:nth-child(even){background-color: #f2f2f2}
 				<div class="counter bg-warning">
         <div class="counter-front">
 	  <p>Volunteer </p>
-	  <p>50</p>
+	  <p><?=$vol?></p>
     </div>
     <div class="counter-back">
       <p>Volunteering Activities</p>
-      <p>12</p>
+      <p><?=$vact?></p>
     </div>
 				</div>
 			</div>
@@ -80,11 +80,11 @@ tr:nth-child(even){background-color: #f2f2f2}
 				<div class="counter bg-success">
 					 <div class="counter-front">
 				<center></i> <p >Donor</p></center>
-				<p>50</p>
+				<p><?=$don?></p>
     </div>
     <div class="counter-back">
       <p>Donate amount</p>
-      <p>RS 65956.00</p>
+      <p>RS <?=$damt?></p>
     </div>
 				</div>
 			</div>
@@ -92,11 +92,11 @@ tr:nth-child(even){background-color: #f2f2f2}
 				<div class="counter bg-danger">
 				<div class="counter-front">
 				<center></i> <p >Buyer</p></center>
-				<p>50</p>
+				<p><?=$buy?></p>
     </div>
     <div class="counter-back">
       <p>Income from Bidding</p>
-      <p>Rs 65000.00</p>
+      <p>Rs <?=$bid?></p>
     </div>
 				</div>
 			</div>
