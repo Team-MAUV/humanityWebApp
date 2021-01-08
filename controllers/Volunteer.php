@@ -19,7 +19,18 @@ class Volunteer extends Controller
     
     function index()
     {
-        $this->view->rendor('volunteer/dashboard/index');
+        $msg="hii";
+        $msg_data = [
+
+            'msg' => $msg
+          ];
+        $this->view->rendor('volunteer/dashboard/index', $msg_data , true);
+    }
+    
+    function reg_staff(){
+        
+        $msg_data=$this->model->reg_staff();
+        $this->view->rendor('volunteer/dashboard/index', $msg_data , true);
     }
     function voladdbene()
     {

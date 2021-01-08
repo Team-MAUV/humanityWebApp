@@ -24,6 +24,8 @@ include "vol_dash_header.php"; ?>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
+  <form action="reg_staff" method="POST" id="stfapply" >
+  <p><?= $msg ?></p>
     <div class="wrapper">
      
       <main class="main">
@@ -58,8 +60,9 @@ include "vol_dash_header.php"; ?>
                 </div>
                 <div class="team__inform">
                   <p class="team__name"> <?= $_SESSION['level'] ?></p>
-                 <input type="submit"class="btn" value="Apply for Staff">
- 
+                  
+                 <input type="submit" class="btn" value="Apply for Staff">
+                 
                 </div>
               </a>
             </li>
@@ -264,6 +267,7 @@ include "vol_dash_header.php"; ?>
 			})
 		});
 	</script>
+  </form>
   </body>
 
 
