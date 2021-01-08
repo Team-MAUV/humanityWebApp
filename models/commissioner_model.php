@@ -716,6 +716,15 @@ return ($pageData);
 
 
 public function get_view_com_list() {
+  $vol = $this->db->query('SELECT COUNT(*) FROM volunteer')->fetchColumn();
+  $stf = $this->db->query('SELECT COUNT(*) FROM staff')->fetchColumn();
+  $don = $this->db->query('SELECT COUNT(*) FROM donor')->fetchColumn();
+  $buy = $this->db->query('SELECT COUNT(*) FROM buyer')->fetchColumn();
+  $bene = $this->db->query('SELECT COUNT(*) FROM beneficiery_case WHERE (status!="pending") ')->fetchColumn();
+  $vact = $this->db->query('SELECT COUNT(*) FROM vol_activity')->fetchColumn();
+  $damt = $this->db->query('SELECT SUM(contribution) FROM donor')->fetchColumn();
+  $bid = $this->db->query('SELECT SUM(highest_bid_amount) FROM bid_session')->fetchColumn();
+  
           
           $stmt = $this->db->prepare('SELECT * FROM commissioner  ORDER BY id ');     
           $stmt->execute();
@@ -725,7 +734,15 @@ public function get_view_com_list() {
          //data that has to be return from this functon is added to an associative array
           $pageData = [
             'contacts' => $contacts,
-            'msg' => $msg
+            'msg' => $msg,
+            'vol'=>$vol,
+            'stf'=>$stf,
+            'don'=>$don,
+            'buy'=>$buy,
+            'bene'=>$bene,
+            'vact'=>$vact,
+            'damt'=>$damt,
+            'bid'=>$bid,
           ];
           return ($pageData);
 }
