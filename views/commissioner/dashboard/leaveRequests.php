@@ -162,29 +162,86 @@ include "com-dash-header.php"; ?>
 <div class="content read">
           <h1>Request Leaves </h1>
           <div class="search-container">
-            <form action="search_volunteer" method="POST">
+            <form action="#" method="POST">
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
             </div>
+
+<div class="date-wise">
+  <button type="button" class:"button" id:"approved" onclick="openForm()"> Approved Leaves </button>
+</div>
+<div class="form-popup" id="myForm">
+  <h2>Approved Leaves on date </h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Date</td>
+        <td>Approved</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> 02.02.2021 </td>
+        <td> 05</td>
+      </tr>
+      <tr>
+        <td> 02.02.2021 </td>
+        <td> 05</td>
+      </tr>
+      <tr>
+        <td> 02.02.2021 </td>
+        <td> 05</td>
+      </tr>
+      <tr>
+        <td> 02.02.2021 </td>
+        <td> 05</td>
+      </tr>
+      <tr>
+        <td> 02.02.2021 </td>
+        <td> 05</td>
+      </tr>
+      <tr>
+        <td> 02.02.2021 </td>
+        <td> 05</td>
+      </tr>
+    </tbody>
+  </table>
+    <button type="submit" class="button" onclick="closeForm()">Close</button>
+  
+</div>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+</script>
+
+
               <table>
                 <thead>
                 <tr>
                 <td>#</td>
                 <td>Staff ID</td>
                 <td>Name</td>
+                <td>Already taken</td>
                 <td>From</td>
                 <td>To</td>
                 <td>Reason</td>
-                <td>Accept/Reject</td>
+                
                 <td>Remark</td>
-                <td></td>
+                <td>Accept/Reject</td>
+            
               </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($contacts as $contact) : ?>
                 <tr>
-                <td></td>
+                <td><?= $contact['leave_id'] ?></td>
                 <td><?php if(strlen($contact['staff_id'])==1 && strlen($contact['staff_id'])>0){
       $ccustomid ="STFHB00".$contact['staff_id'];
     }else if(strlen($contact['staff_id'])==2 && strlen($contact['staff_id'])>0){
@@ -194,19 +251,31 @@ include "com-dash-header.php"; ?>
     };
     ?>  <?= $ccustomid ?> </td>
                 <td><?= $contact['name'] ?></td>
+                <td><?php foreach ($leaves as $leave) : ?>
+  <?php if($contact['staff_id']==$leave['id']){
+    $noleave=$leave['no_leave'];
+    
+  };
+  
+  ?>
+  <?php endforeach; ?>  <?=$noleave?></td>
                 <td> <?= $contact['from_date'] ?></td>
                 <td><?= $contact['to_date'] ?></td>
                 <td><?= $contact['reason'] ?></td>
-                <td></td>
-                <td></td>
-                <td></td>
+               
+                <td> <input type="text" id:"reason" name:"reason" value:"reason"> </td>
+                <td><button type:"button" class:"button" id:"accept">Accept</button> <button type:"button" class:"button" id:"reject">Reject</button></td>
                 </tr>
 
                 <?php endforeach; ?>
               </tbody>
             </table>
               
-               
+            <div class="pagination">
+             
+
+           
+            </div>    
 
 
 
