@@ -59,8 +59,8 @@ include "buyer_header.php"; ?>
                 <div class="color-my">
                     <h3 class="title">details</h3>
                     <div class="colors">
-                       <h4><?= $product['volume'] ?></h4> <span class="color" primary="#29b864" color="green"></span>
-                       <p><?= $product['starting_bid'] ?> </p>
+                       <h4>Quantity(kg) : <?= $product['volume'] ?></h4> <span class="color" primary="#29b864" color="green"></span>
+                       <p>Starting Bid(Rs) : <?= $product['starting_bid'] ?> </p>
                 </div>
                 <div class="size-my">
                     <h3 class="title">current maximum bid</h3>
@@ -87,6 +87,7 @@ include "buyer_header.php"; ?>
            
             </div>
             <?php endforeach; ?> 
+            <p><?= $msg ?></p>
         </div>
     </div>
 </body>

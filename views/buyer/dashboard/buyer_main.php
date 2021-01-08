@@ -112,7 +112,9 @@ include "buyer_header.php"; ?>
                 </div>
                 <div class="team__inform">
                 <p class="team__name">    Products available now: </p>
-                  <p class="team__name"> Recycled Glass </p>
+                
+                  <p class="team__name">Glass</p>
+                  
                 </div>
               </a>
             </li>
@@ -123,19 +125,19 @@ include "buyer_header.php"; ?>
 
         <div class="available"> 
            <h2>Available Products:</h2>
-           <a href="<?= URL?>buyer/view_plastic"><button class="banner__button" type="button" >
+           <a href="<?= URL?>buyer/view_product?prd=Plastic"><button class="banner__button" type="button" >
           Recycled Plastic
             </button></a>  
-            <a href="<?= URL?>buyer/view_glass"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_product?prd=Glass"><button class="banner__button" type="button" >
            Recycled Glass
             </button></a>  
-            <a href="<?= URL?>buyer/view_paper"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_product?prd=Paper"><button class="banner__button" type="button" >
             Recycled Paper
             </button></a>
-            <a href="<?= URL?>buyer/view_electronic"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_Product?prd=Electronic"><button class="banner__button" type="button" >
           Recycled Electronics
             </button></a>
-            <a href="<?= URL?>buyer/view_other"><button class="banner__button" type="button" >
+            <a href="<?= URL?>buyer/view_product?prd=Other"><button class="banner__button" type="button" >
            Other
             </button></a>
           
