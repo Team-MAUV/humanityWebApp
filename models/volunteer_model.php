@@ -134,7 +134,77 @@ class volunteer_Model extends Model
     return ($pageData);
   }
 
+  public function reg_staff()
+  {
 
+    $vid=Session::get('id');
+    $st = $this->db->prepare('SELECT * FROM volunteer WHERE vol_id=:vid ');
+    $st->execute(array(
+      ':vid'=>$vid,
+    ));
+    $result =  $st->fetchAll();
+    //Check whether user already exist
+    $nic_check = $result['nic'];
+
+    $st1 = $this->db->prepare("SELECT * FROM staff WHERE nic=:nic");
+
+    $st1->execute(array(
+      ':nic' => $nic_check
+    ));
+    $row_count = $st1->rowCount();
+
+          if($row_count>0){
+            $msg = "User already Exist!";
+           
+          }else{
+
+
+              // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
+              $name = $result['name'];
+              $nic = $result['nic'];
+              $email = $result['email'];
+              $address = $result['address'];
+              $contact = $result['contact'];
+              $dob = $result['dob'];
+              $gender = $result['gender'];
+
+
+              $stmt = $this->db->prepare('INSERT INTO `staff` (`name`,`nic`, `email`,`contact`, `address`,`dob`,`gender`) VALUES ( ?, ?,?, ?, ?,?,?)');
+
+              $stmt->execute([$name, $nic, $email, $contact, $address, $dob,  $gender]);
+
+
+
+              $custom_id=$this->db->prepare("SELECT id FROM staff WHERE nic=:nic");
+      $custom_id->execute(array(
+        ':nic' => $nic,
+      ));
+      $cid_result = $custom_id->fetchAll();
+      $count = $custom_id->rowCount();
+      if ($count > 0) {
+        foreach ($cid_result as $cidtmp) :
+          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+            $cid ="STFHB00".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+            $cid ="STFHB0".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])>0){
+            $cid ="STFHB".$cidtmp['id'];
+          };
+          
+        endforeach;
+
+      $cidstmt = $this->db->prepare('UPDATE `staff` SET staff_id=:cid WHERE nic=:nic');
+      $cidstmt->execute(array(
+        ':nic' => $nic,
+        ':cid'=>$cid,
+      ));
+    }
+              
+              $msg = "Request submitted successfully!";
+              header('location: ../index');
+          }
+          return ($msg);
+  }
 
   public function run_viewtoedit_profile(){
     $vid=Session::get('id');
