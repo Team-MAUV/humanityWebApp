@@ -19,13 +19,21 @@ class staff_Model extends Model
       $enddate=$_POST['bidding_end_date'];
       $starting_bid=$_POST['starting_bid'];
 
+      $cr_time = date("Y-m-d H:i:s");
+
+     
       $get_cat = $this->db->prepare("SELECT * From product Where type = :prdtype");
       $get_cat->execute(array(
         ':prdtype' => $type
       ));
       $prd_exist = $get_cat->fetchAll();
       $prd_count = $get_cat->rowCount();
-      if($prd_count == 0){
+     
+      foreach($prd_exist as $prd_exist) :
+        $end_time = $prd_exist['bid_end_time'];
+      endforeach;
+
+      if($prd_count == 0 || $end_time < $cr_time){
 
 
       
@@ -150,7 +158,7 @@ class staff_Model extends Model
         $msg = "Product category alredy exists";
       }
 
-
+    
       $pageData = [
 
         'msg' => $msg
