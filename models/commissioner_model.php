@@ -766,11 +766,61 @@ public function get_leaveRequests(){
 $pageData = [
 'contacts' => $contacts,
 'leaves' =>$leaves,
+
 ];
 return ($pageData);
 
 
 }
+
+
+public function run_search_leaverequest()
+  {
+
+    $st = $this->db->prepare("SELECT * FROM leave_request WHERE staff_id= :staff_id");
+
+    $st->execute(array(
+      ':staff_id' => $_POST['search']
+    ));
+    $page_no = 1;
+    $records_per_page = 1;
+    $num_contacts = 1;
+
+    $contacts = $st->fetchAll();
+    $pageData = [
+      'page_no' => $page_no,
+      'records_per_page' => $records_per_page,
+      'contacts' => $contacts,
+      'num_contacts' => $num_contacts
+    ];
+    return ($pageData);
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 public function projectReports(){
