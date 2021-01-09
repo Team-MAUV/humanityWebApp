@@ -44,9 +44,9 @@
   left: 300px;
   border: 3px solid #dfdcdc;
   z-index: 9;
-  background-color: 	 #004d99; 
-  border-radius: 8px;
-  border: #202122;
+  background-color: #004d99; 
+  
+
    
 }
 .form-popup h2{
@@ -62,6 +62,7 @@
   border-radius: 8px;
   border: #004883;
   overflow: scroll;
+  
 }
 .form-popup table tbody tr td{
   color:black;
@@ -100,6 +101,8 @@
 .content {
   width: 100%;
   margin: 0 auto;
+  
+ 
 }
 .content h2 {
   margin: 0;

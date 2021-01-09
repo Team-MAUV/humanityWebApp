@@ -162,7 +162,7 @@ include "com-dash-header.php"; ?>
 <div class="content read">
           <h1>Request Leaves </h1>
           <div class="search-container">
-            <form action="#" method="POST">
+            <form action="search_leaverequest" method="POST">
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -213,12 +213,17 @@ include "com-dash-header.php"; ?>
 <script>
 function openForm() {
   document.getElementById("myForm").style.display = "block";
+  changeColor(' #adad85'); 
 }
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+  changeColor(' white');
 }
-
+function changeColor(color) { 
+                document.body.style.background = color; 
+            } 
+                 
 </script>
 
 
