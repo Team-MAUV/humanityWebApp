@@ -761,11 +761,20 @@ public function get_leaveRequests(){
   $st2->execute();
   $leaves= $st2->fetchAll();
 
+  $st3 = $this->db->prepare('SELECT DISTINCT from_date,count(*) AS fromd FROM leave_request WHERE status="approved" GROUP BY from_date ORDER BY from_date' );
+  $st3->execute();
+  $approved = $st3->fetchAll();
   
-
+  $st4 = $this->db->prepare('SELECT DISTINCT to_date,count(*) AS tod FROM leave_request WHERE status="approved" GROUP BY to_date ORDER BY to_date' );
+  $st4->execute();
+  $approved2 = $st4->fetchAll();
+  
 $pageData = [
 'contacts' => $contacts,
 'leaves' =>$leaves,
+'approved'=>$approved,
+'approved2'=>$approved2,
+
 
 ];
 return ($pageData);

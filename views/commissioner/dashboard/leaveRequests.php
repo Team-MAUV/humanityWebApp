@@ -181,30 +181,21 @@ include "com-dash-header.php"; ?>
       </tr>
     </thead>
     <tbody>
+    <?php foreach ($approved as $approve) : ?>
       <tr>
-        <td> 02.02.2021 </td>
-        <td> 05</td>
+        <td> <?=$approve['from_date']?> </td>
+        <td> <?=$approve['fromd']?></td>
       </tr>
+      
+<?php endforeach; ?>
+<?php foreach ($approved2 as $approve2) : ?>
       <tr>
-        <td> 02.02.2021 </td>
-        <td> 05</td>
+        <td> <?=$approve2['to_date']?> </td>
+        <td> <?=$approve2['tod']?></td>
       </tr>
-      <tr>
-        <td> 02.02.2021 </td>
-        <td> 05</td>
-      </tr>
-      <tr>
-        <td> 02.02.2021 </td>
-        <td> 05</td>
-      </tr>
-      <tr>
-        <td> 02.02.2021 </td>
-        <td> 05</td>
-      </tr>
-      <tr>
-        <td> 02.02.2021 </td>
-        <td> 05</td>
-      </tr>
+      
+<?php endforeach; ?>
+
     </tbody>
   </table>
     <button type="submit" class="button" onclick="closeForm()">Close</button>
