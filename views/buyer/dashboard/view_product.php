@@ -63,11 +63,11 @@ include "buyer_header.php"; ?>
                        <p>Starting Bid(Rs) : <?= $product['starting_bid'] ?> </p>
                 </div>
                 <div class="size-my">
-                    <h3 class="title">current maximum bid</h3>
+                    <h3 class="title">current maximum bid :</h3>
                     <div class="sizes">
                       Rs.8600.00
                     </div>
-                    <h3 class="title">Your bid</h3>
+                    <h3 class="title">Your highest bid : /h3>
                     <div class="sizes">
                       Rs.8300.00
                     </div>
@@ -88,6 +88,7 @@ include "buyer_header.php"; ?>
             </div>
             <?php endforeach; ?> 
             <p><?= $msg ?></p>
+            <p><?= $cr ?></p>
         </div>
     </div>
 </body>

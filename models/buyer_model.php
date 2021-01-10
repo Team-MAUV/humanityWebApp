@@ -61,31 +61,35 @@ class buyer_model extends Model{
 
   public function view_product(){
     
+    $cr_time = date("Y-m-d H:i:s");
+    
+
     if($_GET['prd']=='Plastic'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Plastic"');   
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Plastic"');   
     }else if($_GET['prd']=='Glass'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Glass"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Glass"');
     }else if($_GET['prd']=='Paper'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Paper"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Paper"');
     }else if($_GET['prd']=='Electronic'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Electronic"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Electronic"');
     }else if($_GET['prd']=='Other'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Other"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Other"');
     }
     $st->execute();
       $product = $st->fetchAll();
       $count = $st->rowCount();
-      if($count == 0){
+    
+      if($count == 0 ){
         $msg = "Product not available!!! Product will be available soon ";
-      }
-
-      
-
-      $pagedata = [
-        'product' => $product,
-        'msg' => $msg,
         
-      ];
+        
+      }
+        $pagedata = [
+          'product' => $product,
+          'msg' => $msg,
+          'cr' => $cr_time,
+        ];
+    
       return ($pagedata);
     
   }
