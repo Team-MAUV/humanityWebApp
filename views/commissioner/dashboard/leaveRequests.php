@@ -6,38 +6,6 @@ include "com-dash-header.php"; ?>
 
 <div class="grid-container">
 
-<!--
-<div class="content_update">
-
-<h1>Leave Requests</h1></br>
-  <?php foreach ($leaves as $leave) : ?>
-  <button type="button" class="readmore">
-    <table><tr><td><?= $leave['name'] ?> </td>
-  <td><?= $leave['date'] ?> </td>
-  <td> Approved: </td>   </tr>
-</table></button>
-  <div class="content">
-    <p>
-
-
-      <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-        <button type="button" class="btn" onclick="viewprofile()">View Profile</button>
-        <button type="button" class="btn" onclick="viewform()">View Request Form</button>
-      
-
-    </p>
-   </div>
-   <?php endforeach; ?>
-</div>
-  
-   <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
-
-
-
-</div>
--->
-
 
 <div id="breadcrum">
 
@@ -51,113 +19,7 @@ include "com-dash-header.php"; ?>
 </head>
 
 <body>
-<!--
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<h1>Leave Requests </h1>
 
-<br>
-
-<div class="row">
-<?php foreach ($contacts as $contact) : ?>
-  
-
- <button type="button" class="readmore"><?= $contact['name'] ?> <span>&nbsp;&nbsp;</span>
- <?php if(strlen($contact['staff_id'])==1 && strlen($contact['staff_id'])>0){
-      $ccustomid ="STFHB00".$contact['staff_id'];
-    }else if(strlen($contact['staff_id'])==2 && strlen($contact['staff_id'])>0){
-      $ccustomid ="STFHB0".$contact['staff_id'];
-    }else if(strlen($$contact['staff_id'])>0){
-      $ccustomid ="STFHB".$contact['staff_id'];
-    };
-    ?>
- 
- <?= $ccustomid ?> <span>  &nbsp; &nbsp; &nbsp;</span> <?= $contact['from_date'] ?></button>
-  <div class="content">
-    <p>
-    <div class="confirm"> Accept <input type="radio" id="accept" name="confirmreq" value="accept"> &nbsp;Decline 
-      <input type="radio" id="decline" name="confirmreq" value="decline"><br>
-  
-  
-         
-     
-          <script>
-        $(document).ready(function() {
-            $("input[type='radio']").change(function() {
-                if ($(this).val() == "decline") {
-                    $("#reason").show();
-                } else {
-                    $("#reason").hide();
-                }
-            });
-        });
-    </script>
- <input style="display:none;" type="text" id="reason" placeholder="Reason to decline " name="reason">
-
-
-
-
-        <button type="button" class="btn" name="submit">Submit</button> </div>
-  <p style="color:white;font-family:sans-serif">
-
-  <?php foreach ($leaves as $leave) : ?>
-  <?php if($contact['staff_id']==$leave['id']){
-    $noleave=$leave['no_leave'];
-    
-  };
-  
-  ?>
-  <?php endforeach; ?>
-
-   Already taken=<?=$noleave?></p>
-
-        <button type="open-button" class="btn" id="<?$ccustomid?>" >View Request Form</button>
-   
-        </p>
-   
-   </div>
-
-   <?php endforeach; ?>
-   
-   </div>
-
-
-
-
-   <?php foreach ($contacts as $contact) : ?>
-
-   <div class="form-popup" id="myForm">
-  
-  <div class="form-container">
-  
-    <h2><?= $contact['name'] ?><span>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span>
-    
-    <?php if(strlen($contact['staff_id'])==1 && strlen($contact['staff_id'])>0){
-      $ccustomid ="STFHB00".$contact['staff_id'];
-    }else if(strlen($contact['staff_id'])==2 && strlen($contact['staff_id'])>0){
-      $ccustomid ="STFHB0".$contact['staff_id'];
-    }else if(strlen($$contact['staff_id'])>0){
-      $ccustomid ="STFHB".$contact['staff_id'];
-    };
-    ?>
-    <?= $ccustomid ?></h2>
-<hr style="color:blue"> </hr>
-    <h3>From: <?= $contact['from_date'] ?> </h3>
-    <h3>To : <?= $contact['to_date'] ?> </h3>
-    <h3>Reason : <?= $contact['reason'] ?></h3>
-
-
-    
-   
-  </div>
-</div>
-<?php endforeach; ?>
-
-
-
-
-
-</div>
--->
 
 <div class="content read">
           <h1>Request Leaves </h1>
@@ -188,6 +50,7 @@ include "com-dash-header.php"; ?>
       </tr>
       
 <?php endforeach; ?>
+
 <?php foreach ($approved2 as $approve2) : ?>
       <tr>
         <td> <?=$approve2['to_date']?> </td>
