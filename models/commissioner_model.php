@@ -774,8 +774,6 @@ $pageData = [
 'leaves' =>$leaves,
 'approved'=>$approved,
 'approved2'=>$approved2,
-
-
 ];
 return ($pageData);
 

@@ -188,6 +188,7 @@ include "com-dash-header.php"; ?>
       </tr>
       
 <?php endforeach; ?>
+
 <?php foreach ($approved2 as $approve2) : ?>
       <tr>
         <td> <?=$approve2['to_date']?> </td>
