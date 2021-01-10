@@ -18,67 +18,7 @@ include "com-dash-header.php"; ?>
 <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
-<style>
 
-* {box-sizing: border-box;}
-
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color:  #4d79ff;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-
-
-
-}
-
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  top:100px;
-right:100px;
-border: 4px solid blue;
-  border-radius: 12px;
-  z-index: 9;
-  text-align: left;
-  color:#000033;
-}
-
-/* Add styles to the form container */
-.form-container {
-  max-width: 500px;
-  padding: 10px;
-  background-color:#ccccff;
-  color:#000033;
-  
-}
-
-
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
-</style>
 </head>
 <body>
 
@@ -124,6 +64,7 @@ border: 4px solid blue;
               <td>Address</td>
               <td>Joined Date</td>
               <td>View Profile</td>
+              <td></td>
             </tr>
               </thead>
               <tbody>
@@ -136,52 +77,21 @@ border: 4px solid blue;
                     <td><?= $scontact['email'] ?></td>
                     <td><?= $scontact['address'] ?></td>
                     <td><?= $scontact['joined_year'] ?></td>
-                    <td class="actions">
-                     <!-- <a href="update.php?id=<?= $scontact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
-                   <!--  <a href="<?= URL?>commissioner/staff_viewprofile" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
+                   
+                 <td> 
                     
-                   <button class="open-button" onclick="openForm()">View</button>
-
-<div class="form-popup" id="myForm">
-
- <div class="form-container">
-    <h1><?= $scontact['staff_id'] ?> <span>&nbsp; | &nbsp; </span> <?= $scontact['name'] ?></h1>
-    <h2>15 Events  <span> &nbsp;|&nbsp; </span> 340 points  </h2> 
-    <h2>Joined: &nbsp; 25.06.2010</h2>
-    <h2>Permanent Volunteer: &nbsp; From 25.03.2018</h2>
-
-   <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                   <button type="button" class="readmore">view more</button>
+  <div class="view" id="view">
+               
+                <p>DOB : <?= $scontact['dob'] ?></p>
+                <p>Gender :<?= $scontact['gender'] ?></p>
+                <p>Leaves taken :<?= $scontact['no_leave'] ?></p>
+                
                 </div>
-</div>
+                </td>
+      
 
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                     
-
-
+                <td class="actions">
                       <a href="delete.php?id=<?= $scontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                     </td>
                   </tr>
@@ -247,6 +157,7 @@ function closeForm() {
 </div>
 </body>
 </div>
+<script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 </div>
 </html>
 
