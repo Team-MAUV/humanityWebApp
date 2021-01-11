@@ -65,9 +65,9 @@ class buyer_model extends Model{
     
 
     if($_GET['prd']=='Plastic'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Plastic"');   
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time >$cr_time && type="Plastic"');   
     }else if($_GET['prd']=='Glass'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Glass"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE type="Glass"');
     }else if($_GET['prd']=='Paper'){
       $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Paper"');
     }else if($_GET['prd']=='Electronic'){
@@ -79,15 +79,27 @@ class buyer_model extends Model{
       $product = $st->fetchAll();
       $count = $st->rowCount();
     
+      
       if($count == 0 ){
         $msg = "Product not available!!! Product will be available soon ";
         
         
       }
+      foreach($product as $prd) :
+        $end_time = $prd['bid_end_time'];
+        if($end_time > $cr_time) {
+          $prdlist = $prd;
+          
+        }
+      endforeach;  
+      $msg="";
+
+       
+      
         $pagedata = [
-          'product' => $product,
-          'msg' => $msg,
-          'cr' => $cr_time,
+          'product' => $prdlist,
+          'msg' => $msg
+          
         ];
     
       return ($pagedata);
