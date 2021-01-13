@@ -7,7 +7,7 @@ include "com-dash-header.php"; ?>
 <div class="grid-container">
 
 
-
+<!--
 <div class="row">
     <button class="tab" onclick="openpage('upcoming',this)" id="defaultOpen">Upcoming Cases</button>
     <button class="tab" onclick="openpage('current',this)">Current Cases</button>
@@ -91,12 +91,73 @@ include "com-dash-header.php"; ?>
   
 </div>
         
+    </div>
+  -->
+
+  <div class="grid-body">
+
+<div class="pageTitle">
+  <h1>Beneficiary Cases</h1>
+</div>
+
+<div class="tab-section">
+  <ul>
+    <li><a id="tab1" href="?upcoming" class="active">Upcoming Cases </a></li>
+    <li><a id="tab2" href="?current"> Current Cases </a></li>
+    <li><a id="tab3" href="?finished"> Finished Cases</a></li>
+      
+    
+  </ul>
+
+
+  <hr>
+</div>
+
+
+<div id="tab1C" class="tab-container">
+
+
+    <div class="content read">
+          
+          <div class="search-container">
+            <form action="search_volunteer" method="POST">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            </div>
+              <table>
+                <thead>
+                <tr>
+                <td></td>
+                <td>Beneficiary case ID</td>
+                <td>Download</td>
+                <td>Accept/Decline</td>
+                <td></td>
+                <td>Submit</td>
+                
+                <td></td>
+              </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($upcomings as $upcoming) : ?>
+                  <tr> 
+                <td></td>
+                <td><?= $upcoming['beneficiery_id'] ?></td>
+                <td> <button type="button"><i class="fa fa-download"></i> Download</button></td>
+                <td>Accept/Decline</td>
+                <td></td>
+                <td>Submit</td>
+                </tr>
+
+                <?php endforeach; ?>
 
 
 
 
+                </tbody>
+              </table>
 
-
+    </div>
     </div>
 
 
@@ -105,11 +166,6 @@ include "com-dash-header.php"; ?>
 
 
 
-
-
-
-
-    <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 
 </div>
 
