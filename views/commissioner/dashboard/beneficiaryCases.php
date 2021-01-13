@@ -2,6 +2,7 @@
 $title = 'Beneficiary Cases';
 $style = 'com-dash-beneficiaryCases.css';
 $jsFile = 'com-dash-beneficiaryCases.js';
+
 include "com-dash-header.php"; ?>
 
 <div class="grid-container">
@@ -143,10 +144,12 @@ include "com-dash-header.php"; ?>
                   <tr> 
                 <td></td>
                 <td><?= $upcoming['beneficiery_id'] ?></td>
-                <td> <button type="button"><i class="fa fa-download"></i> Download</button></td>
-                <td>Accept/Decline</td>
+                <td> <button type="button"> 
+                  <a href="<?= $upcoming['case_path'] ?>" download="<?= $upcoming['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</button>
+                </td>
+                <td><button type="button">Accept </button> <button type="button">Decline </button></td>
                 <td></td>
-                <td>Submit</td>
+                <td><button type="button">Submit </button></td>
                 </tr>
 
                 <?php endforeach; ?>
@@ -162,11 +165,49 @@ include "com-dash-header.php"; ?>
 
 
 
+    <div id="tab2C" class="tab-container">
+      <div class="content read">
+
+        <table>
+          <thead>
+            <tr>
+                <td>Beneficiary case ID</td>
+            
+              <td></td>
+              <td> submitted By</td>
+              <td></td>
+              <td>Download </td>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach ($currents as $current) : ?>
+            <tr>
+            <td><?= $current['beneficiery_id'] ?> </td>
+              <td></td>
+              <td> <?php if(strlen($current['vol_id'])==1 && strlen($current['vol_id'])>0){
+      $ccustomid ="VOLHB00".$current['vol_id'];
+    }else if(strlen($current['vol_id'])==2 && strlen($current['vol_id'])>0){
+      $ccustomid ="VOLHB0".$current['vol_id'];
+    }else if(strlen($current['vol_id'])>0){
+      $ccustomid ="VOLHB".$current['vol_id'];
+    };
+    ?> <?= $ccustomid ?></td>
+              <td></td>
+              <td>    <button type="button">     
+       <a href="<?= $current['case_path'] ?>" download="<?= $current['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download </button>
+      </td>
+
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+
+        </div>    
+    </div>
 
 
 
-
-
+    <script src="<?= URL ?>public/js/tab-changing.js"></script>
 </div>
 
 <?php include "com-dash-footer.php" ?>

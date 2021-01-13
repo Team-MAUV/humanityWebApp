@@ -297,7 +297,7 @@ input[type="text"] {
   }
   .read table tbody tr td button{
   
-    background-color: #004883; /* Green */
+    background-color: #004883; 
       border: none;
       color: white;
       padding: 8px 12px;
@@ -306,4 +306,14 @@ input[type="text"] {
       display: inline-block;
       font-size: 16px;
   }
+  .read table tbody tr td button a{
   
+    background-color: #004883; 
+      border: none;
+      color: white;
+    
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+  }
