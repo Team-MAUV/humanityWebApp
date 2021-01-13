@@ -27,7 +27,8 @@ include "buyer_header.php"; ?>
 <body>
     <div class="my">
         <div class="card">
-        <?php foreach ($product as $product) : ?>
+        
+        <?php foreach ($prdlist as $prd) : ?>
             <div class="shoeBackground">
                 <div class="gradients">
                  
@@ -39,35 +40,35 @@ include "buyer_header.php"; ?>
              
 
           
-    <img src="<?= URL ?>public/<?= $product['product_path'] ?>" alt="img"class="shoe show" />
+    <img src="<?= URL ?>public/<?= $prd['product_path'] ?>" alt="img"class="shoe show" />
 
             </div>
             <div class="info">
            
                 <div class="shoeName">
                     <div>
-                        <h1 class="big"><?= $product['name'] ?> </h1>
-                        <span class="new"><?= $product['product_id'] ?></span>
+                        <h1 class="big"><?= $prd['name'] ?> </h1>
+                        <span class="new"><?= $prd['product_id'] ?></span>
                     </div>
-                    <h3 class="small">Bidding Start Time: <?= $product['date'] ?></h3>
-                    <h3 class="small">Bidding End Time: <?= $product['bid_end_time'] ?></h3>
+                    <h3 class="small">Bidding Start Time: <?= $prd['date'] ?></h3>
+                    <h3 class="small">Bidding End Time: <?= $prd['bid_end_time'] ?></h3>
                 </div>
                 <div class="description">
                     <h3 class="title">Product Info</h3>
-                    <p class="text"><?= $product['description'] ?></p>
+                    <p class="text"><?= $prd['description'] ?></p>
                 </div>
                 <div class="color-my">
                     <h3 class="title">details</h3>
                     <div class="colors">
-                       <h4>Quantity(kg) : <?= $product['volume'] ?></h4> <span class="color" primary="#29b864" color="green"></span>
-                       <p>Starting Bid(Rs) : <?= $product['starting_bid'] ?> </p>
+                       <h4>Quantity(kg) : <?= $prd['volume'] ?></h4> <span class="color" primary="#29b864" color="green"></span>
+                       <p>Starting Bid(Rs) : <?= $prd['starting_bid'] ?> </p>
                 </div>
                 <div class="size-my">
-                    <h3 class="title">current maximum bid</h3>
+                    <h3 class="title">current maximum bid :</h3>
                     <div class="sizes">
                       Rs.8600.00
                     </div>
-                    <h3 class="title">Your bid</h3>
+                    <h3 class="title">Your highest bid : /h3>
                     <div class="sizes">
                       Rs.8300.00
                     </div>
@@ -88,6 +89,7 @@ include "buyer_header.php"; ?>
             </div>
             <?php endforeach; ?> 
             <p><?= $msg ?></p>
+            
         </div>
     </div>
 </body>

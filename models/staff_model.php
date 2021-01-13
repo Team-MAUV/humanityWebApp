@@ -94,14 +94,7 @@ class staff_Model extends Model
         $count2 = $custom_id->rowCount();
         if ($count2 > 0) {
           foreach ($cid_result as $cidtmp) :
-            $st = $this->db->prepare('INSERT INTO bid_session(start_date_time,end_date_time,starting_bid,product_id) VALUES (:start_date_time,:end_date_time,:starting_bid,:product_id)');
-              $st->execute(array(
-                ':start_date_time'=>$date,
-                ':end_date_time'=>$enddate,
-                ':starting_bid'=>$starting_bid,
-                ':product_id'=>$cidtmp['id'],
-
-              ));
+            
 
             if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
               $customid ="PROHB00".$cidtmp['id'];
@@ -117,32 +110,7 @@ class staff_Model extends Model
           ':product_path' => $image_path,
           ':customid'=>$customid,
         ));
-        $bscustom_id=$this->db->prepare("SELECT id FROM bid_session WHERE ((start_date_time=:start_date_time) AND (product_id=:product_id))");
-        $bscustom_id->execute(array(
-          ':start_date_time' => $date,
-          ':product_id'=>$cidtmp['id'],
-        ));
-        $bscid_result = $bscustom_id->fetchAll();
-        $bscount2 = $bscustom_id->rowCount();
-        if ($bscount2 > 0) {
-          foreach ($bscid_result as $bscidtmp) :
-            if(strlen($bscidtmp['id'])==1 && strlen($bscidtmp['id'])>0){
-              $bscustomid ="BSNHB00".$bscidtmp['id'];
-            }else if(strlen($bscidtmp['id'])==2 && strlen($bscidtmp['id'])>0){
-              $bscustomid ="BSNHB0".$bscidtmp['id'];
-            }else if(strlen($bscidtmp['id'])>0){
-              $bscustomid ="BSNHB".$bscidtmp['id'];
-            };
-          endforeach;
-
-
-        $bsidstmt = $this->db->prepare('UPDATE `bid_session` SET session_id=:bscustomid WHERE ((start_date_time=:start_date_time) AND (product_id=:product_id))');
-        $bsidstmt->execute(array(
-          ':bscustomid'=>$bscustomid,
-          ':start_date_time' => $date,
-          ':product_id'=>$cidtmp['id'],
-        ));
-      }
+        
               $msg = "Product added successfully!";
             } 
           else {

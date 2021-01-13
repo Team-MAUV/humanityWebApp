@@ -61,31 +61,47 @@ class buyer_model extends Model{
 
   public function view_product(){
     
+    $cr_time = date("Y-m-d H:i:s");
+    
+
     if($_GET['prd']=='Plastic'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Plastic"');   
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time >$cr_time && type="Plastic"');   
     }else if($_GET['prd']=='Glass'){
       $st = $this->db->prepare('SELECT * FROM product WHERE type="Glass"');
     }else if($_GET['prd']=='Paper'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Paper"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Paper"');
     }else if($_GET['prd']=='Electronic'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Electronic"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Electronic"');
     }else if($_GET['prd']=='Other'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Other"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Other"');
     }
     $st->execute();
       $product = $st->fetchAll();
       $count = $st->rowCount();
-      if($count == 0){
-        $msg = "Product not available!!! Product will be available soon ";
-      }
-
+    
       
-
-      $pagedata = [
-        'product' => $product,
-        'msg' => $msg,
+      if($count == 0 ){
+        $msg = "Product not available!!! Product will be available soon ";
         
-      ];
+        
+      }
+      foreach($product as $prd) :
+        $end_time = $prd['bid_end_time'];
+        if($end_time > $cr_time) {
+          $prdlist = $prd;
+          
+        }
+      endforeach;  
+      $msg="";
+
+       
+      
+        $pagedata = [
+          'product' => $prdlist,
+          'msg' => $msg
+          
+        ];
+    
       return ($pagedata);
     
   }
