@@ -723,7 +723,7 @@ public function get_view_com_list() {
   $bene = $this->db->query('SELECT COUNT(*) FROM beneficiery_case WHERE (status!="pending") ')->fetchColumn();
   $vact = $this->db->query('SELECT COUNT(*) FROM vol_activity')->fetchColumn();
   $damt = $this->db->query('SELECT SUM(contribution) FROM donor')->fetchColumn();
-  $bid = $this->db->query('SELECT SUM(highest_bid_amount) FROM bid_session')->fetchColumn();
+  $bid = $this->db->query('SELECT SUM(highest_bid_amount) FROM product')->fetchColumn();
   
           
           $stmt = $this->db->prepare('SELECT * FROM commissioner  ORDER BY id ');     
