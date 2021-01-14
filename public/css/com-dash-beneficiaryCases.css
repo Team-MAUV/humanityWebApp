@@ -149,7 +149,8 @@ h1 {
     font-size: 24px;
   }
   
- 
+  .tab-section {
+  }
   .tab-section ul {
     display: flex;
     justify-content: flex-start;

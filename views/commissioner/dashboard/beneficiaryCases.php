@@ -1,12 +1,3 @@
-<?php $page = 'beneficiaryCases';
-$title = 'Beneficiary Cases';
-$style = 'com-dash-beneficiaryCases.css';
-$jsFile = 'com-dash-beneficiaryCases.js';
-
-include "com-dash-header.php"; ?>
-
-<div class="grid-container">
-
 
 <!--
 <div class="row">
@@ -95,6 +86,34 @@ include "com-dash-header.php"; ?>
     </div>
   -->
 
+
+
+  <?php $page = 'beneficiaryCases';
+$title = 'Beneficiary Cases';
+$style = 'com-dash-beneficiaryCases.css';
+$jsFile = 'tab-changing';
+
+include "com-dash-header.php"; ?>
+
+<div class="grid-container">
+
+
+
+  
+<div id="breadcrum">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>volunteer Profile</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+<link rel="stylesheet" href="<?= URL?> public/css/com_dash_readmore.css" />
+</head>
+<body>
+
   <div class="grid-body">
 
 <div class="pageTitle">
@@ -105,7 +124,7 @@ include "com-dash-header.php"; ?>
   <ul>
     <li><a id="tab1" href="?upcoming" class="active">Upcoming Cases </a></li>
     <li><a id="tab2" href="?current"> Current Cases </a></li>
-    <li><a id="tab3" href="?finished"> Finished Cases</a></li>
+    <li><a id="tab3" href="?finish"> Finished Cases</a></li>
       
     
   </ul>
@@ -206,8 +225,56 @@ include "com-dash-header.php"; ?>
     </div>
 
 
+    <div id="tab3C" class="tab-container">
+      <div class="content read">
 
-    <script src="<?= URL ?>public/js/tab-changing.js"></script>
+        <table>
+          <thead>
+            <tr>
+                <td>Beneficiary case ID</td>
+            
+              <td></td>
+              <td> submitted By</td>
+              <td></td>
+              <td>Download </td>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach ($finishs as $finish) : ?>
+            <tr>
+            <td><?= $current['beneficiery_id'] ?> </td>
+              <td></td>
+              <td>  <?php if(strlen($finish['vol_id'])==1 && strlen($finish['vol_id'])>0){
+      $customid ="VOLHB00".$finish['vol_id'];
+    }else if(strlen($finish['vol_id'])==2 && strlen($finish['vol_id'])>0){
+      $customid ="VOLHB0".$finish['vol_id'];
+    }else if(strlen($finish['vol_id'])>0){
+      $customid ="VOLHB".$finish['vol_id'];
+    };
+    ?>
+                <?= $ccustomid ?></td>
+              <td></td>
+              <td>    <button type="button">     
+       <a href="<?= $finish['case_path'] ?>" download="<?= $finish['beneficiery_id'] ?>">     <i class="fa fa-download"></i> Download </button>
+      </td>
+
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+
+        </div>    
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 </div>
 
 <?php include "com-dash-footer.php" ?>
