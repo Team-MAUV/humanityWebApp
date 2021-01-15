@@ -28,7 +28,7 @@ include "buyer_header.php"; ?>
     <div class="my">
         <div class="card">
         
-        <?php foreach ($prdlist as $prd) : ?>
+        <?php foreach ($product as $prd) : ?>
             <div class="shoeBackground">
                 <div class="gradients">
                  
@@ -68,7 +68,7 @@ include "buyer_header.php"; ?>
                     <div class="sizes">
                       Rs.8600.00
                     </div>
-                    <h3 class="title">Your highest bid : /h3>
+                    <h3 class="title">Your highest bid : </h3>
                     <div class="sizes">
                       Rs.8300.00
                     </div>

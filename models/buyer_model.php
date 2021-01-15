@@ -7,7 +7,7 @@ class buyer_model extends Model{
 
   public function view_buyerdash(){
 
-    $st = $this->db->prepare('SELECT * FROM product');
+    $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1');
     $st->execute();
     $prd_list = $st->fetchAll();
     $count = $st->rowCount();
@@ -61,19 +61,19 @@ class buyer_model extends Model{
 
   public function view_product(){
     
-    $cr_time = date("Y-m-d H:i:s");
+    
     
 
     if($_GET['prd']=='Plastic'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time >$cr_time && type="Plastic"');   
+      $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Plastic"');   
     }else if($_GET['prd']=='Glass'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE type="Glass"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Glass"');
     }else if($_GET['prd']=='Paper'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Paper"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Paper"');
     }else if($_GET['prd']=='Electronic'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Electronic"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Electronic"');
     }else if($_GET['prd']=='Other'){
-      $st = $this->db->prepare('SELECT * FROM product WHERE bid_end_time > $cr_time && type="Other"');
+      $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Other"');
     }
     $st->execute();
       $product = $st->fetchAll();
@@ -84,20 +84,15 @@ class buyer_model extends Model{
         $msg = "Product not available!!! Product will be available soon ";
         
         
+      }else{
+        $msg = "";
       }
-      foreach($product as $prd) :
-        $end_time = $prd['bid_end_time'];
-        if($end_time > $cr_time) {
-          $prdlist = $prd;
-          
-        }
-      endforeach;  
-      $msg="";
+      
 
        
       
         $pagedata = [
-          'product' => $prdlist,
+          'product' => $product,
           'msg' => $msg
           
         ];
