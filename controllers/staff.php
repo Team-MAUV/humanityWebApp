@@ -47,8 +47,10 @@ function edit_profile()
 
     function access_product()
     {
-        $this->view->rendor('staff/dashboard/access_product');
+        $data = $this->model->access_product();
+        $this->view->rendor('staff/dashboard/access_product', $data , true);
     }
+
     function manage_bidsession()
     {
         $this->view->rendor('staff/dashboard/manage_bidsession');

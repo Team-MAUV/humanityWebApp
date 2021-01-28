@@ -144,6 +144,37 @@ class staff_Model extends Model
 }
 }
 
+public function access_product(){
+  $st1 = $this->db->prepare("SELECT * FROM product WHERE availability = 1");
+  $st1->execute();
+  $avbprdts = $st1->fetchAll();
+  $avbprdtscount = $st1->rowCount();
+  $st2 = $this->db->prepare("SELECT * FROM product WHERE availability = 0");
+  $st2->execute();
+  $notavbprdts = $st2->fetchAll();
+  $notavbprdtscount = $st2->rowCount();
+  if($avbprdtscount == 0){
+    $msgavb = "No Cruntly Available Products!!!";
+  }else{
+    $msgavb = "";
+  }
+  if($notavbprdtscount == 0){
+    $msgnavb = "No Records Available";
+  }else{
+    $msgnavb = "";
+  }
+
+  $pageData = [
+    'msgavb' => $msgavb,
+    'msgnavb' => $msgnavb,
+    'avbprdts' => $avbprdts,
+    'notavbprdts' => $notavbprdts
+  ];
+  return $pageData;
+
+
+}
+
 
 
 
