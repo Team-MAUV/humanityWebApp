@@ -4,6 +4,24 @@ $style = 'com-dash-projectReports.css';
 include "com-dash-header.php"; ?>
 
 
+
+
+
+
+<div id="breadcrum">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+<link rel="stylesheet" href="<?= URL?> public/css/com_dash_readmore.css" />
+</head>
+<body>
+
 <div class="grid-container">
 
 <div class="row">
@@ -25,8 +43,20 @@ include "com-dash-header.php"; ?>
                 </div>
                 <div class="flipbox-back">
                 <button class="dbtn"><a href="<?= $pending['report_path']  ?>" download="<?= $pending['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
-                    <div class="confirm"> <input type="radio" id="accept" name="confirmreq" value="accept"> Accept&nbsp; <input type="radio" id="reject" name="confirmreq" value="reject">Reject<br>
-                        <button type="button" class="btn">Submit</button> </div>
+                  <div class="confirm">
+                  <button type="button" class="acc" id="acc">Accept</button> 
+                  <button type="button" class="readmore" id="reject">Reject</button> 
+
+                  <div class="view" id="view">
+                  <input type="text" name="reason" id="reason" placeholder="Reason" >
+            
+               </div>
+                
+                     
+                    
+                    
+                    
+                    <button type="button" class="btn">Submit</button> </div>
                 </div>
             </div>
 
@@ -36,6 +66,16 @@ include "com-dash-header.php"; ?>
     </div>
     </form>
     </div>
+   
+
+
+
+
+
+
+
+
+
     <div id="current" class="tabcontent">
         
         <h1>Approved Project Reports</h1>
@@ -121,8 +161,10 @@ include "com-dash-header.php"; ?>
     ?>
     
         <li>Submitted By : <?= $scustomid ?></li>
-    <li>Rejected By : <?= $ccustomid ?></li></ul>
+    <li>Rejected By : <?= $ccustomid ?></li>
+   
     <button class="dbtn"><a href="<?= $reject['report_path']  ?>" download="<?= $reject['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+    <li>Reject reason:<?= $reject['reject_reason'] ?> </li> </ul>
                 </div>
             </div>
 
@@ -134,5 +176,6 @@ include "com-dash-header.php"; ?>
     </div>
 </div>
 
+<script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 <script src="<?= URL ?>public/js/vol-viewevents.js"></script>
 <?php include "com-dash-footer.php" ?>
