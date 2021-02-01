@@ -100,6 +100,20 @@ class buyer_model extends Model{
       return ($pagedata);
     
   }
+
+  public function add_bid(){
+    if (!empty($_POST)) {
+      $rs = $_POST['rs'];
+      $cts = $_POST['cts'];
+      $pid = $_GET['prd'];
+      $buy_id = $_SESSION['id'];
+      
+      $value = $rs + ($cts/100);
+      
+      
+    }
+  }
+
   
   
   

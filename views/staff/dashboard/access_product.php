@@ -100,14 +100,16 @@ include "staff_header.php"; ?>
                 navb.style.display = "none";  
             }
             avb.style.display = "block";
+           
         }
         function view_navb(){
             var avb = document.getElementById("avbPrdts");
             var navb = document.getElementById("navbPrdts");
             if(avb.style.display == "block"){
-                nvb.style.display = "none";  
+                avb.style.display = "none";  
             }
             navb.style.display = "block";
+          
         }
         
         </script>	

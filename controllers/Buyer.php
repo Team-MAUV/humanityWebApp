@@ -27,7 +27,9 @@ class Buyer extends Controller
         $this->view->rendor('buyer/dashboard/view_product', $data ,true);
     }
     
-
+    function add_bid(){
+        $msg = $this->model->add_bid();
+    }
 
     function logout()
     {

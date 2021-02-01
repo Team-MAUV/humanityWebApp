@@ -18,6 +18,7 @@ include "buyer_header.php"; ?>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= URL ?>public/css/buy-pages.css" />
     <link rel="stylesheet" href="<?= URL ?>public/css/buyer_dash_viewproduct.css" />
@@ -73,15 +74,21 @@ include "buyer_header.php"; ?>
                       Rs.8300.00
                     </div>
                 </div>
+
+
+
+                <form action="add_bid?prd=<?= $prd['product_id'] ?> " id="bidform" name="bidform" method="post" enctype="multipart/form-data">
                 <div class="buy-price">
                     
-                    <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Bid</a>
+                    
+                    <button class="buy" value="submit"><i class="fas fa-shopping-cart"></i>Bid</button>
+                    
                     <div class="price">
                        
-                        <label for="bid">Rs <input type="text" placeholder="Rupees"> . <input type="text" placeholder="cents"></label>
+                        <label for="bid">Rs <input type="text" id="rs" name ="rs" placeholder="Rupees"> . <input type="text" id="cts" name="cts" placeholder="cents"></label>
                     </div>
                 </div>
-             
+                </form>
                 <a href="<?= URL?>buyer/index"><button class="abc" type="button" >
           Back 
             </button></a> 
@@ -92,6 +99,9 @@ include "buyer_header.php"; ?>
             
         </div>
     </div>
+
+
+   
 </body>
 
 
