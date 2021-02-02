@@ -39,13 +39,41 @@ include "don_dash_header.php"; ?>
                                     <textarea class="donation-remark" type="text" ></textarea>
                                 </div>
                             </div>
+
                             <div class="payment-method">
                                 <a href="#"><img src="<?= URL ?>public/images/pay-here-logo.png"></a>
                             </div>
+
+                            <form method="post" action="https://sandbox.payhere.lk/pay/checkout">   
+                                <input type="hidden" name="merchant_id" value="1216578">    <!-- Replace your Merchant ID -->
+                                <input type="hidden" name="return_url" value="<?= URL ?>Donor?state=done">
+                                <input type="hidden" name="cancel_url" value="<?= URL ?>Donor?state=canceled">
+                                <input type="hidden" name="notify_url" value="<?= URL ?>Donor?state=notify">  
+                                <!-- <br><br>Item Details<br> -->
+                                <input type="hidden" name="order_id" value="ItemNo12346">
+                                <input type="hidden" name="items" value="Door bell wirdeless"><br>
+                                <input type="hidden" name="currency" value="LKR">
+                                <input type="hidden" name="amount" value="150">  
+                                <!-- <br><br>Customer Details<br> -->
+                                <input type="hidden" name="first_name" value="Saman">
+                                <input type="hidden" name="last_name" value="Perera"><br>
+                                <input type="hidden" name="email" value="samanp@gmail.com">
+                                <input type="hidden" name="phone" value="0771234567"><br>
+                                <input type="hidden" name="address" value="No.1, Galle Road">
+                                <input type="hidden" name="city" value="Colombo">
+                                <input type="hidden" name="country" value="Sri Lanka"><br><br> 
+                                <input class="paybtn" type="submit" value="Pay Now">   
+
+                            </form> 
+
                             <div class="donate">
                                 <button class="donate-btn">Donate</button>
                                 
                             </div>
+
+                        
+
+
                             
                             
                         </div>
