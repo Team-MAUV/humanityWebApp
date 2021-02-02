@@ -100,22 +100,40 @@ class buyer_model extends Model{
       return ($pagedata);
     
   }
-
-  public function add_bid(){
+  
+  function add_bid(){
     if (!empty($_POST)) {
       $rs = $_POST['rs'];
       $cts = $_POST['cts'];
       $pid = $_GET['prd'];
       $buy_id = $_SESSION['id'];
-      
+      $cr_time = date("Y-m-d H:i:s");
       $value = $rs + ($cts/100);
       
-      
-    }
-  }
+      $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount,time) VALUES (:prd_id,:buy_id,:bid_amount,:time)');
+      $st->execute(array(
+        ':prd_id'=>$pid,
+        ':buy_id'=>$buy_id,
+        ':bid_amount'=>$value,
+        ':time'=>$cr_time
+      ));
 
+      $count1 = $st->rowCount();
+      if($count1 == 0){
+        $bidmsg = "ERROR!!!";
+    }else{
+      $bidmsg = "Bid added succesfully!!!";
+    }
+  }else{
+    $bidmsg = "no data";
+  }
+  $pagedata = [
+    'bidmsg' => $bidmsg
+  ];
   
-  
+  return ($pagedata);
+  }
+ 
   
 
   

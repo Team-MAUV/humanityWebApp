@@ -97,6 +97,7 @@ include "buyer_header.php"; ?>
             <?php endforeach; ?> 
             <p><?= $msg ?></p>
             
+            
         </div>
     </div>
 
