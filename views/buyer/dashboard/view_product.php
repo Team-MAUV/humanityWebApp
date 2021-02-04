@@ -49,7 +49,7 @@ include "buyer_header.php"; ?>
                 <div class="shoeName">
                     <div>
                         <h1 class="big"><?= $prd['name'] ?> </h1>
-                        <span class="new"><?= $prd['product_id'] ?></span>
+                        <span class="new" id="prdid"><?= $prd['product_id'] ?></span>
                     </div>
                     <h3 class="small">Bidding Start Time: <?= $prd['date'] ?></h3>
                     <h3 class="small">Bidding End Time: <?= $prd['bid_end_time'] ?></h3>
@@ -69,7 +69,8 @@ include "buyer_header.php"; ?>
                     <div class="sizes">
                       Rs.8600.00
                     </div>
-                    <h3 class="title">Your highest bid : </h3>
+                    <spam id="uid"><?=$_SESSION['id']?></spam>
+                    <h3 class="title"> Your highest bid : </h3>
                     <div class="sizes">
                       Rs.8300.00
                     </div>
@@ -77,7 +78,7 @@ include "buyer_header.php"; ?>
 
 
 
-                <form action="add_bid?prd=<?= $prd['product_id'] ?> " id="bidform" name="bidform" method="post" enctype="multipart/form-data">
+                <form id="bidform" name="bidform" method="post">
                 <div class="buy-price">
                     
                     
@@ -88,6 +89,7 @@ include "buyer_header.php"; ?>
                         <label for="bid">Rs <input type="text" id="rs" name ="rs" placeholder="Rupees"> . <input type="text" id="cts" name="cts" placeholder="cents"></label>
                     </div>
                 </div>
+                <input type="button" name="save" class="buy" value="BID" id="butsave">
                 </form>
                 <a href="<?= URL?>buyer/index"><button class="abc" type="button" >
           Back 
@@ -101,7 +103,47 @@ include "buyer_header.php"; ?>
         </div>
     </div>
 
-
+    <script>
+$(document).ready(function() {
+	$('#butsave').on('click', function() {
+		$("#butsave").attr("disabled", "disabled");
+		var rs = $('#rs').val();
+		var cts = $('#cts').val();
+        var prd = document.getElementById("prdid").innerHTML;
+        var id = document.getElementById("uid").innerHTML;
+		if(rs!="" && cts!="" && prd!=""){
+            alert(uid);
+			$.ajax({
+				url: "buyer/add_bid",
+				type: "POST",
+				data: {
+					rs: rs,
+					cts: cts,
+								
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+						$("#butsave").removeAttr("disabled");
+						$('#fupForm').find('input:text').val('');
+						$("#success").show();
+						$('#success').html('Data added successfully !'); 						
+					}
+					else if(dataResult.statusCode==201){
+					   alert("Error occured !");
+					}
+					
+				}
+			});
+		}
+		else{
+            alert('Please fill all the field !');
+            
+		}
+	});
+});
+</script>
    
 </body>
 
