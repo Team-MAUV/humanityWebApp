@@ -23,10 +23,11 @@ include "buyer_header.php"; ?>
 <body>
 <div class="errordiv" style="margin: 300px;">
     <p><?= $bidmsg ?></p>
-</div>
-<a href="<?= URL?>buyer/index"><button type="button" >
+    <a href="<?= URL?>buyer/index"><button type="button" >
         Back to the market
             </button></a> 
+</div>
+
 </body> 
 <?php include "buyer_footer.php" ?>
 

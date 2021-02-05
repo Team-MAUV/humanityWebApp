@@ -110,7 +110,7 @@ class buyer_model extends Model{
       $cr_time = date("Y-m-d H:i:s");
       $value = $rs + ($cts/100);
       
-      $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount,time) VALUES (:prd_id,:buy_id,:bid_amount,:time)');
+      $st = $this->db->prepare("INSERT INTO bid(product_id,buy_id,bid_amount,time) VALUES (:prd_id,:buy_id,:bid_amount,:time)");
       $st->execute(array(
         ':prd_id'=>$pid,
         ':buy_id'=>$buy_id,
@@ -122,19 +122,20 @@ class buyer_model extends Model{
       if($count1 == 0){
         $bidmsg = "ERROR!!!";
     }else{
-      $bidmsg = "Bid added succesfully!!!";
+        $bidmsg = "bid added";
     }
   }else{
-    $bidmsg = "no data";
-  }
-  $pagedata = [
-    'bidmsg' => $bidmsg
-  ];
-  
-  return ($pagedata);
-  }
- 
+      $bidmsg = "no data";
+    }
+
+    $pagedata = [
+      'bidmsg' => $bidmsg
+    ];
+    
+    return ($pagedata);
+    }
+}
   
 
   
-}
+
