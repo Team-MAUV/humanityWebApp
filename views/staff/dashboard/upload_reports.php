@@ -130,8 +130,9 @@ $title = 'Project Reports'; ?>
     ?>
     
         <li>Submitted By : <?= $scustomid ?></li>
-    <li>Rejected By : <?= $ccustomid ?></li></ul>
+    <li>Rejected By : <?= $ccustomid ?></li>
     <button class="dbtn"><a href="<?= $reject['report_path']  ?>" download="<?= $reject['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+    <li> Reject Reason: <?= $reject['reject_reason'] ?></li>           </ul>
                 </div>
             </div>
 
