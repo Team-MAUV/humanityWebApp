@@ -30,13 +30,15 @@ class buyer_model extends Model{
       foreach ($winbid_list as $wlist) :
         $buyid = $wlist['won_buy_id'];
         $prdid = $wlist['product_id'];
-      endforeach;
-      
-      $st3 = $this->db->prepare('SELECT * FROM buyer WHERE id = :buyerid');
-      $st3->execute(array(
+        $st3 = $this->db->prepare('SELECT * FROM buyer WHERE id = :buyerid');
+        $st3->execute(array(
         ':buyerid' => $buyid
-      ));
-      $buydata = $st3->fetchAll();
+        ));
+        $buydata = $st3->fetchAll();
+      
+        
+
+      endforeach;
       
       $winbid_list['buy_id'] = $buydata['buy_id'];
       
