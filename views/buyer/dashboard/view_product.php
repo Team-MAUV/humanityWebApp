@@ -78,7 +78,7 @@ include "buyer_header.php"; ?>
 
 
 
-                <form action= "add_bid?prd=<?= $prd['product_id'] ?>" id="bidform" name="bidform" method="post">
+                <form action= "add_bid?prd<?= $prd['id'] ?>" id="bidform" name="bidform" method="post">
                 <div class="buy-price">
                     
                     

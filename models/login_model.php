@@ -154,6 +154,7 @@ class login_Model extends Model
                 foreach ($user as $usr) :
                     $id = $usr['buy_id'];
                     $name =  $usr['name'];
+                    $idp = $usr['id'];
                 endforeach;
               
                 //view total number of bids 
@@ -175,7 +176,7 @@ class login_Model extends Model
                     Session::set('id', $id);
                     Session::set('name', $name);
                     Session::set('totalbids', $ttl);
-                    
+                    Session::set('idp', $idp);
                     header('location: ../Buyer');
                 
                
