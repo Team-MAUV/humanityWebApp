@@ -150,7 +150,7 @@ include "buyer_header.php"; ?>
             
           </header>
           <ul class="project">
-          <?php foreach ($winlist as $lst) : ?>
+          <?php foreach ($winbid_list as $list) : ?>
             <li class="project__item">
               <a href="#" class="project__link focus--box-shadow">
                 <div class="project__wrapper">
@@ -165,13 +165,16 @@ include "buyer_header.php"; ?>
                   <div class="project__element project__photo">
                    <p> <?= $list['highest_bid_amount'] ?></p>
                   </div>
+                  <div class="project__element project__photo">
+                   <p> </p>
+                  </div>
                   <div class="project__element project__date">
                     <time class="date" datetime="2020-05-05T10:00:00"
-                      ><?= $list['end_date_time'] ?></time
+                      ><?= $list['bid_end_time'] ?></time
                     >
                   </div>
                   <div class="project__element project__status">
-                    <span class="status status--published"><?= $list['prd_type'] ?></span>
+                    <span class="status status--published"><?= $list['type'] ?></span>
                   </div>
                   <div class="project__element project__setting">
                     

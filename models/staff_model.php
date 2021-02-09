@@ -112,6 +112,15 @@ class staff_Model extends Model
         ));
         
               $msg = "Product added successfully!";
+
+              //sql event to set availability == 0 at the bid end time
+
+              $updatest = $this->db->prepare('CREATE EVENT update_avb ON SCHEDULE AT $enddate DO 
+                        UPDATE product SET availability = 0 WHERE product_id = $customid;
+                        ');
+
+              $updatest->execute();
+
             } 
           else {
               $msg = "Adding product  Failed!";
@@ -133,6 +142,37 @@ class staff_Model extends Model
       ];
       return $pageData;
 }
+}
+
+public function access_product(){
+  $st1 = $this->db->prepare("SELECT * FROM product WHERE availability = 1");
+  $st1->execute();
+  $avbprdts = $st1->fetchAll();
+  $avbprdtscount = $st1->rowCount();
+  $st2 = $this->db->prepare("SELECT * FROM product WHERE availability = 0");
+  $st2->execute();
+  $notavbprdts = $st2->fetchAll();
+  $notavbprdtscount = $st2->rowCount();
+  if($avbprdtscount == 0){
+    $msgavb = "No Cruntly Available Products!!!";
+  }else{
+    $msgavb = "";
+  }
+  if($notavbprdtscount == 0){
+    $msgnavb = "No Records Available";
+  }else{
+    $msgnavb = "";
+  }
+
+  $pageData = [
+    'msgavb' => $msgavb,
+    'msgnavb' => $msgnavb,
+    'avbprdts' => $avbprdts,
+    'notavbprdts' => $notavbprdts
+  ];
+  return $pageData;
+
+
 }
 
 

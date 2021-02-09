@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/<?php echo $style ?>" />
+  <script src="<?= URL ?>public/js/staffpages.js"></script>
 
 </head>
 

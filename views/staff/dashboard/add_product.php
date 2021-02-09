@@ -89,6 +89,7 @@ input[type=reset]:hover {
   }
 }
 </style>
+
 </head>
 <body>
 
@@ -97,7 +98,7 @@ input[type=reset]:hover {
 
 
 <div class="container">
-  <form action="run_add_product" method="POST" enctype="multipart/form-data" >
+  <form name="addprd" action="run_add_product" method="POST" enctype="multipart/form-data" >
     <div class="row">
       <div class="col-25">
         <label for="name">Product Name:</label>
@@ -142,7 +143,7 @@ input[type=reset]:hover {
         <label for="Bidding Date">Bidding Start Time:</label>
       </div>
       <div class="col-75">
-        <input type="datetime-local" id="Bidding Date" name="bidding_start_date">
+        <input type="datetime-local" id="BiddingStartDate" name="bidding_start_date">
 
       </div>
     </div>
@@ -151,7 +152,7 @@ input[type=reset]:hover {
         <label for="Bidding Date">Bidding End Time:</label>
       </div>
       <div class="col-75">
-        <input type="datetime-local" id="Bidding Date" name="bidding_end_date">
+        <input type="datetime-local" id="BiddingEndDate" name="bidding_end_date">
 
       </div>
     </div>
@@ -179,11 +180,73 @@ input[type=reset]:hover {
     
     </div>
     <div class="row">
-  <br>  <input type="submit" value="Submit"> </div>
+  <br>   </div>
+    <button class="submit" value="Submit" onclick="return addvalidprd();">
+    <p style="font-weight: 800;"> Submit</p>
+            </button>
   </form>
   <p><?= $msg ?></p>
 
 </div>
+<script>
+function addvalidprd(){
+    
+    var prdname = document.getElementById("name").value; 
+    var sttme = document.getElementById("BiddingStartDate").value;
+    var edtme = document.getElementById("BiddingEndDate").value;
+    var stbid = document.getElementById("startingbid").value;
+    var qtty = document.getElementById("volume").value;
+    var dsp = document.getElementById("subject").value;
+    var d = new Date();
+    var dsec = d.getTime();
+    var stsec = Date.parse(sttme);
+    var edsec = Date.parse(edtme);
+    
+    
+    if(prdname == ""){
+     alert("Please enter product name.");
+     return false;
+    }else{
+      if(qtty <= 0){
+        alert("Invalid Quantty");
+        return false;
+      }else{
+        if(stbid <= 0){
+          alert("invalid starting bid");
+          return false;
+        }else{
+          if(dsp == ""){
+            alert("Add discription");
+            return false;
+          }else{
+            if(sttme == ""){
+              alert("Add Bid session start time");
+              return false;
+            }else{
+              if(edtme == ""){
+                alert("Add Bid session end time");
+                return false;
+              }else{
+                if(edsec < stsec){
+                  alert("Bid end time is invalid");
+                  return false;
+                }else{
+                  if(stsec < dsec){
+                    alert("Bid shoud start in future!!!");
+                    return false;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    
+   
+}
+</script>
 
 </body>
 </html>
