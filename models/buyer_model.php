@@ -18,7 +18,8 @@ class buyer_model extends Model{
     }
     $cr_time = date("Y-m-d H:i:s");
     // return last bid results
-    $st2 = $this->db->prepare('SELECT * FROM product WHERE won_buy_id IS NOT NULL AND availability = 0 ORDER BY bid_end_time DESC LIMIT 5');
+  //  $st2 = $this->db->prepare('SELECT * FROM product WHERE won_buy_id IS NOT NULL AND availability = 0 ORDER BY bid_end_time DESC LIMIT 5');
+    $st2 = $this->db->prepare('SELECT product.product_id, product.name, product.type, product.highest_bid_amount, product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product INNER JOIN buyer ON product.won_buy_id = buyer.id WHERE product.won_buy_id IS NOT NULL AND availability = 0 ORDER BY bid_end_time DESC LIMIT 5');
     $st2->execute();
     $winbid_list = $st2->fetchAll();
     $win_count = $st2->rowCount();
@@ -27,20 +28,21 @@ class buyer_model extends Model{
       
     }else{
       $msg2 = "";
-      foreach ($winbid_list as $wlist) :
-        $buyid = $wlist['won_buy_id'];
-        $prdid = $wlist['product_id'];
-        $st3 = $this->db->prepare('SELECT * FROM buyer WHERE id = :buyerid');
-        $st3->execute(array(
-        ':buyerid' => $buyid
-        ));
-        $buydata = $st3->fetchAll();
+    //  foreach ($winbid_list as $wlist) :
+      //  $buyid = $wlist['won_buy_id'];
+        
+      //  $st3 = $this->db->prepare('SELECT * FROM buyer WHERE id = :buyerid');
+       // $st3->execute(array(
+       // ':buyerid' => $buyid
+       // ));
+       // $buydata = $st3->fetchAll();
       
+      //  $wlist['buy_name'] = $buydata['name'];
         
 
-      endforeach;
+    //  endforeach;
       
-      $winbid_list['buy_id'] = $buydata['buy_id'];
+      
       
 
   
@@ -106,18 +108,18 @@ class buyer_model extends Model{
       $buy_id = $_SESSION['idp'];
       $cr_time = date("Y-m-d H:i:s");
       $value = $rs + ($cts/100);
+      $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount) VALUES (:prd_id, :buy_id, :bid_amount)');
       
-      $st = $this->db->prepare("INSERT INTO `bid` (`product_id`,`buy_id`,`bid_amount`,`time`) VALUES (:prd_id,:buy_id,:bid_amount,:time");
       $st->execute(array(
         ':prd_id'=>$pid,
         ':buy_id'=>$buy_id,
-        ':bid_amount'=>$value,
-        ':time'=>$cr_time
+        ':bid_amount'=>$value
+        
       ));
 
       $count1 = $st->rowCount();
       if($count1 == 0){
-        $bidmsg = $buy_id;
+        $bidmsg = "ERROR!!!!";
     }else{
         $bidmsg = "bid added";
     }

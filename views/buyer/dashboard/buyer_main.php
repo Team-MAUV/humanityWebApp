@@ -155,7 +155,7 @@ include "buyer_header.php"; ?>
               <a href="#" class="project__link focus--box-shadow">
                 <div class="project__wrapper">
                   <div class="project__element project__icon">
-                <img  src="<?= URL ?>public/images/3r2.png" alt="img"/>
+                <img  src="<?= URL ?>public/<?= $prd['product_path'] ?>" alt="img"/>
                   </div>
                   <div class="project__element project__inform">
                     <span class="project__inform-name"
@@ -166,7 +166,7 @@ include "buyer_header.php"; ?>
                    <p> <?= $list['highest_bid_amount'] ?></p>
                   </div>
                   <div class="project__element project__photo">
-                   <p> </p>
+                   <p> <?= $list['buy_name'] ?></p>
                   </div>
                   <div class="project__element project__date">
                     <time class="date" datetime="2020-05-05T10:00:00"
