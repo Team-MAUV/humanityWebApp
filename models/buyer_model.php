@@ -109,7 +109,6 @@ class buyer_model extends Model{
       $cr_time = date("Y-m-d H:i:s");
       $value = $rs + ($cts/100);
       $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount) VALUES (:prd_id, :buy_id, :bid_amount)');
-      
       $st->execute(array(
         ':prd_id'=>$pid,
         ':buy_id'=>$buy_id,
@@ -119,9 +118,30 @@ class buyer_model extends Model{
 
       $count1 = $st->rowCount();
       if($count1 == 0){
-        $bidmsg = "ERROR!!!!";
+        $bidmsg = "ERROR!! Your bid is not added!!!";
     }else{
-        $bidmsg = "bid added";
+        
+        $st2 = $this->db->prepare('UPDATE product SET won_buy_id=:won_buy, highest_bid_amount=:bid WHERE (id=:pid AND availability=:avb)');
+        $st2->execute(array(
+          ':won_buy'=>$buy_id,
+          ':bid'=>$value,
+          ':pid'=>$pid,
+          ':avb'=>1
+
+        ));
+        $count2 = $st2->rowCount();
+        if($count2 == 0){
+          
+          $st3 = $this->db->prepare('DELETE FROM bid WHERE (product_id=:prd_id AND buy_id=:buy_id AND bid_amount=:bid)');
+          $st3->execute(array(
+            'prd_id'=>$pid,
+            ':buy_id'=>$buy_id,
+            ':bid'=>$value
+          ));
+          $bidmsg = "ERROR!! Your bid is not added!!!";
+        }else{
+          $bidmsg = "bid added";
+        }
     }
   }else{
       $bidmsg = "no data";

@@ -49,7 +49,7 @@ include "buyer_header.php"; ?>
                 <div class="shoeName">
                     <div>
                         <h1 class="big"><?= $prd['name'] ?></h1>
-                        <span class="new" id="prdid"><?= $prd['product_id'] ?> </span>
+                        <span class="new" id="prdid"><?= $prd['id'] ?> </span>
                     </div>
                     <h3 class="small">Bidding Start Time: <?= $prd['date'] ?></h3>
                     <h3 class="small">Bidding End Time: <?= $prd['bid_end_time'] ?></h3>
@@ -78,7 +78,7 @@ include "buyer_header.php"; ?>
 
 
 
-                <form action= "add_bid?prd<?= $prd['id'] ?>" id="bidform" name="bidform" method="post">
+                <form action= "add_bid?prd=<?= $prd['id'] ?>" id="bidform" name="bidform" method="post">
                 <div class="buy-price">
                     
                     
