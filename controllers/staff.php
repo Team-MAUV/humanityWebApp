@@ -51,6 +51,15 @@ function edit_profile()
         $this->view->rendor('staff/dashboard/access_product', $data , true);
     }
 
+    function view_update_product(){
+        $data = $this->model->view_update_product();
+        $this->view->rendor('staff/dashboard/update_product', $data , true);
+    }
+    function delete_product(){
+        $this->model->delete_product();
+        $data = $this->model->access_product();
+        $this->view->rendor('staff/dashboard/access_product', $data , true);
+    }
     function manage_bidsession()
     {
         $this->view->rendor('staff/dashboard/manage_bidsession');

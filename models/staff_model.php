@@ -175,10 +175,35 @@ public function access_product(){
 
 }
 
+public function view_update_product(){
+  
+  $pid = $_GET['prdid'];
+  $st1 = $this->db->prepare("SELECT * FROM product WHERE id = :pid");
+  $st1 ->execute(array(
+    ':pid' => $pid
+  ));
+  $data = $st1->fetchAll();
+  $count = $st1->rowCount();
+  if($count != 1){
+    $msg = "error!!!!";
+  }
+  
+  $pageData = [
+    'msg' => $msg,
+    'data' => $data
+  ];
+  return $pageData;
+}
 
 
-
-
+public function delete_product(){
+  $pid = $_GET['prdid'];
+  $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
+  $st1 ->execute(array(
+    ':pid' => $pid
+  ));
+  
+}
 public function requestleave(){
   if (!empty($_POST)) {
     $get_staffid = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :staffid  ");

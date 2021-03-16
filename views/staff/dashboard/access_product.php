@@ -25,6 +25,7 @@ include "staff_header.php"; ?>
 
 
        <div class = "avb_prdts" id = "avbPrdts" style = "display: block;">
+       <div>
        <h1 style="background-color: black ;color:white" > Available Products </h1>
         <main class="main bd-grid">
 
@@ -36,24 +37,31 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/<?= $prd['product_path'] ?>" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p>bid session starts:<?= $prd['date'] ?></p>
-                <p>bid session ends:<?= $prd['bid_end_time'] ?></p>
+				<p id = "bidstart">Bid Session Starts:<?= $prd['date'] ?></p>
+                <p id = "bidend">Bid Session Ends:<?= $prd['bid_end_time'] ?></p>
                 </div>
                 <div class="card__precis">
                  
                    
                     <div>
 					<p><?= $prd['description'] ?></p>
-                        <span class="card__preci card__preci--before">Quantity: <?= $prd['volume'] ?></span>
+                         <span class="card__preci card__preci--now">Product Id: <?= $prd['product_id'] ?></span>
+                        <span class="card__preci card__preci--now">Quantity: <?= $prd['volume'] ?></span>
 						<span class="card__preci card__preci--now">Starting Bid: <?= $prd['starting_bid'] ?></span>
-                        <span class="card__preci card__preci--now">Crunt Highest Bid: 1749.00</span>
-						<p><button>Update bid</button></p>
+                       
+						
+                        <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
 					
                     </div>
-                    <a href="" class="card__icon"> <i class="fa fa-trash"></i></a>
+                    <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" class="card__icon"> <i class="fa fa-trash"></i></a>
                 </div>
             </article>
+           
             <?php endforeach; ?> 
+        </div>
+           
+        
+        
             <p><?= $msgavb ?></p>
        
        </div>
@@ -81,10 +89,11 @@ include "staff_header.php"; ?>
                         <span class="card__preci card__preci--before">Quantity: <?= $prd['volume'] ?></span>
 						<span class="card__preci card__preci--now">Starting Bid: <?= $prd['starting_bid'] ?></span>
                         <span class="card__preci card__preci--now">Crunt Highest Bid: 1749.00</span>
-						<p><button>Update bid</button></p>
-					
+						<p><button>Make Product Available</button></p>
+                        <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>Viexxw More</button></a></p>
+                        
                     </div>
-                    <a href="" class="card__icon"> <i class="fa fa-trash"></i></a>
+                    <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" class="card__icon"> <i class="fa fa-trash"></i>delete</a>
                 </div>
             </article>
             <?php endforeach; ?> 
@@ -111,6 +120,7 @@ include "staff_header.php"; ?>
             navb.style.display = "block";
           
         }
+        
         
         </script>	
        
