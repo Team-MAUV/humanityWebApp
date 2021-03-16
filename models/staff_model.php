@@ -187,17 +187,33 @@ public function view_update_product(){
   if($count != 1){
     $msg = "error!!!!";
   }
-  
+  $st2 = $this->db->prepare("SELECT bid.product_id, bid.buy_id, bid.bid_amount, bid.time, buyer.buy_id AS buyer_id, buyer.name FROM bid INNER JOIN buyer ON bid.buy_id = buyer.id WHERE bid.product_id = :pid");
+  $st2->execute(array(
+    ':pid' => $pid
+  ));
+  $bidlist = $st2->fetchAll();
+  $bidcount = $st2->rowCount();
+  if($bidcount == 0){
+    $bidlistmsg = "No records available!";
+  }else{
+    $bidlistmsg = "";
+  }
+
+
   $pageData = [
     'msg' => $msg,
-    'data' => $data
+    'data' => $data,
+    'bidlist' => $bidlist,
+    'bidlistmsg' => $bidlistmsg
   ];
+
   return $pageData;
 }
 
 
 public function delete_product(){
   $pid = $_GET['prdid'];
+  
   $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
   $st1 ->execute(array(
     ':pid' => $pid

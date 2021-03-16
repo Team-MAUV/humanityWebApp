@@ -20,7 +20,7 @@ include "staff_header.php"; ?>
 
     <div class = "top_btns" style = " margin: 20px">
         <button onclick="view_avb()" style = "padding:20px;">Available Products</button>
-        <button onclick="view_navb()" style = "padding:20px;">Older Products</button>
+        <button onclick="view_navb()" style = "padding:20px;">Not Available Products</button>
     </div>
 
 
@@ -53,7 +53,8 @@ include "staff_header.php"; ?>
                         <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
 					
                     </div>
-                    <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" class="card__icon"> <i class="fa fa-trash"></i></a>
+                    <button onclick = "return delete_prd()"> <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" id = "deletebtn" class="card__icon"> <i class="fa fa-trash"></i></a></button>
+                    
                 </div>
             </article>
            
@@ -67,7 +68,7 @@ include "staff_header.php"; ?>
        </div>
 
        <div class = "navb_prdts" id = "navbPrdts" style = "display: none;">
-       <h1 style="background-color: black ;color:white" > Older Products </h1>
+       <h1 style="background-color: black ;color:white" > Not Available Products </h1>
         <main class="main bd-grid">
 
         <?php foreach ($notavbprdts as $prd) : ?>
@@ -93,7 +94,7 @@ include "staff_header.php"; ?>
                         <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>Viexxw More</button></a></p>
                         
                     </div>
-                    <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" class="card__icon"> <i class="fa fa-trash"></i>delete</a>
+                   <button onclick = "return delete_prd()"> <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" id = "deletebtn" class="card__icon"> <i class="fa fa-trash"></i>delete</a></button>
                 </div>
             </article>
             <?php endforeach; ?> 
@@ -120,7 +121,25 @@ include "staff_header.php"; ?>
             navb.style.display = "block";
           
         }
-        
+        function delete_prd(){
+            
+            var biddate = document.getElementById("bidstart");
+            var d = new Date();
+            var dsec = d.getTime();
+            var stsec = Date.parse(biddate);
+            if(dsec > stsec){
+                alert("can not delete product while bid session is on!!!");
+                return false;
+            }else{
+                var conf = confirm("conformation");
+                if(conf == true){
+                    alert("Product deleted!!!");
+                }else{
+                    alert("aborted!!!");
+                    return false;
+                }
+            }
+            }
         
         </script>	
        

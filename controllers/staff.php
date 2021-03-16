@@ -53,8 +53,13 @@ function edit_profile()
 
     function view_update_product(){
         $data = $this->model->view_update_product();
-        $this->view->rendor('staff/dashboard/update_product', $data , true);
+        $this->view->rendor('staff/dashboard/viewmore_product', $data , true);
     }
+
+    function update_product(){
+
+    }
+    
     function delete_product(){
         $this->model->delete_product();
         $data = $this->model->access_product();
