@@ -25,6 +25,7 @@ include "staff_header.php"; ?>
 
 
        <div class = "avb_prdts" id = "avbPrdts" style = "display: block;">
+       <div>
        <h1 style="background-color: black ;color:white" > Available Products </h1>
         <main class="main bd-grid">
 
@@ -36,30 +37,38 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/<?= $prd['product_path'] ?>" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p>bid session starts:<?= $prd['date'] ?></p>
-                <p>bid session ends:<?= $prd['bid_end_time'] ?></p>
+				<p id = "bidstart">Bid Session Starts:<?= $prd['date'] ?></p>
+                <p id = "bidend">Bid Session Ends:<?= $prd['bid_end_time'] ?></p>
                 </div>
                 <div class="card__precis">
                  
                    
                     <div>
 					<p><?= $prd['description'] ?></p>
-                        <span class="card__preci card__preci--before">Quantity: <?= $prd['volume'] ?></span>
+                         <span class="card__preci card__preci--now">Product Id: <?= $prd['product_id'] ?></span>
+                        <span class="card__preci card__preci--now">Quantity: <?= $prd['volume'] ?></span>
 						<span class="card__preci card__preci--now">Starting Bid: <?= $prd['starting_bid'] ?></span>
-                        <span class="card__preci card__preci--now">Crunt Highest Bid: 1749.00</span>
-						<p><button>Update bid</button></p>
+                       
+						
+                        <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
 					
                     </div>
-                    <a href="" class="card__icon"> <i class="fa fa-trash"></i></a>
+                    <button onclick = "return delete_prd()"> <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" id = "deletebtn" class="card__icon"> <i class="fa fa-trash"></i></a></button>
+                    
                 </div>
             </article>
+           
             <?php endforeach; ?> 
+        </div>
+           
+        
+        
             <p><?= $msgavb ?></p>
        
        </div>
 
        <div class = "navb_prdts" id = "navbPrdts" style = "display: none;">
-       <h1 style="background-color: black ;color:white" > Older Products </h1>
+       <h1 style="background-color: black ;color:white" >Older Products </h1>
         <main class="main bd-grid">
 
         <?php foreach ($notavbprdts as $prd) : ?>
@@ -70,21 +79,24 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/<?= $prd['product_path'] ?>" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p>bid session starts:<?= $prd['date'] ?></p>
-                <p>bid session ends:<?= $prd['bid_end_time'] ?></p>
+				<p>bid session started:<?= $prd['date'] ?></p>
+                <p>bid session ended:<?= $prd['bid_end_time'] ?></p>
                 </div>
                 <div class="card__precis">
                  
                    
                     <div>
-					<p><?= $prd['description'] ?></p>
-                        <span class="card__preci card__preci--before">Quantity: <?= $prd['volume'] ?></span>
-						<span class="card__preci card__preci--now">Starting Bid: <?= $prd['starting_bid'] ?></span>
-                        <span class="card__preci card__preci--now">Crunt Highest Bid: 1749.00</span>
-						<p><button>Update bid</button></p>
 					
-                    </div>
-                    <a href="" class="card__icon"> <i class="fa fa-trash"></i></a>
+                    <span class="card__preci card__preci--now">Product Id: <?= $prd['product_id'] ?></span>	
+                    <p><?= $prd['description'] ?></p>
+                    <span class="card__preci card__preci--now">Highest Bid: <?= $prd['highest_bid_amount'] ?></span>
+					<span class="card__preci card__preci--now">Bid Won By: <?= $prd['buy_name'] ?></span>	
+                    <span class="card__preci card__preci--now">Collected Status: <p  id = "collectedprd"><?= $prd['collected_status'] ?></p></span>
+                    <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
+                    <p><a href = "<?= URL?>staff/collected_product?prdid=<?= $prd['id'] ?>"><button>Collected</button></a></p>    
+                    <button onclick = "return collect_prd()"> <a href="<?= URL?>staff/collected_product?prdid=<?= $prd['id'] ?>" id = "collectbtn" class="card__icon">Collected</a></button>
+             </div>
+                 
                 </div>
             </article>
             <?php endforeach; ?> 
@@ -110,6 +122,42 @@ include "staff_header.php"; ?>
             }
             navb.style.display = "block";
           
+        }
+        function delete_prd(){
+            
+            var biddate = document.getElementById("bidstart");
+            var d = new Date();
+            var dsec = d.getTime();
+            var stsec = Date.parse(biddate);
+            if(dsec > stsec){
+                alert("can not delete product while bid session is on!!!");
+                return false;
+            }else{
+                var conf = confirm("conformation");
+                if(conf == true){
+                    alert("Product deleted!!!");
+                }else{
+                    alert("aborted!!!");
+                    return false;
+                }
+            }
+        }
+        function collect_prd(){
+            var stts = document.getElementById("collectedprd").innerHTML;
+            if(stts == 1){
+                alert("product alredy collected!");
+                return false;
+            }else{
+                var conf = confirm("conformation");
+                if(conf == true){
+                    alert("Product collection status updated!");
+                }else{
+                    alert("aborted!!!");
+                    return false;
+                }
+                
+            }
+            
         }
         
         </script>	

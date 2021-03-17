@@ -149,7 +149,9 @@ public function access_product(){
   $st1->execute();
   $avbprdts = $st1->fetchAll();
   $avbprdtscount = $st1->rowCount();
-  $st2 = $this->db->prepare("SELECT * FROM product WHERE availability = 0");
+  $st2 = $this->db->prepare("SELECT product.id, product.product_id, product.name, product.type, product.highest_bid_amount, product.collected_status, product.description, product.date,
+                       product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product LEFT JOIN buyer ON product.won_buy_id = buyer.id
+                       WHERE product.availability = 0 ORDER BY product.bid_end_time DESC");
   $st2->execute();
   $notavbprdts = $st2->fetchAll();
   $notavbprdtscount = $st2->rowCount();
@@ -175,10 +177,59 @@ public function access_product(){
 
 }
 
+public function view_update_product(){
+  
+  $pid = $_GET['prdid'];
+  $st1 = $this->db->prepare("SELECT * FROM product WHERE id = :pid");
+  $st1 ->execute(array(
+    ':pid' => $pid
+  ));
+  $data = $st1->fetchAll();
+  $count = $st1->rowCount();
+  if($count != 1){
+    $msg = "error!!!!";
+  }
+  $st2 = $this->db->prepare("SELECT bid.product_id, bid.buy_id, bid.bid_amount, bid.time, buyer.buy_id AS buyer_id, buyer.name FROM bid INNER JOIN buyer ON bid.buy_id = buyer.id WHERE bid.product_id = :pid");
+  $st2->execute(array(
+    ':pid' => $pid
+  ));
+  $bidlist = $st2->fetchAll();
+  $bidcount = $st2->rowCount();
+  if($bidcount == 0){
+    $bidlistmsg = "No records available!";
+  }else{
+    $bidlistmsg = "";
+  }
 
 
+  $pageData = [
+    'msg' => $msg,
+    'data' => $data,
+    'bidlist' => $bidlist,
+    'bidlistmsg' => $bidlistmsg
+  ];
 
+  return $pageData;
+}
 
+public function collected_product(){
+  $pid = $_GET['prdid'];
+  $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid ");
+  $st1->execute(array(
+    ':pid' => $pid
+  ));
+
+}
+
+public function delete_product(){
+  $pid = $_GET['prdid'];
+  
+  $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
+  $st1 ->execute(array(
+    ':pid' => $pid
+  ));
+  
+}
 public function requestleave(){
   if (!empty($_POST)) {
     $get_staffid = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :staffid  ");
