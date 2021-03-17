@@ -149,7 +149,9 @@ public function access_product(){
   $st1->execute();
   $avbprdts = $st1->fetchAll();
   $avbprdtscount = $st1->rowCount();
-  $st2 = $this->db->prepare("SELECT * FROM product WHERE availability = 0");
+  $st2 = $this->db->prepare("SELECT product.id, product.product_id, product.name, product.type, product.highest_bid_amount, product.collected_status, product.description, product.date,
+                       product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product LEFT JOIN buyer ON product.won_buy_id = buyer.id
+                       WHERE product.availability = 0 ORDER BY product.bid_end_time DESC");
   $st2->execute();
   $notavbprdts = $st2->fetchAll();
   $notavbprdtscount = $st2->rowCount();
@@ -210,6 +212,14 @@ public function view_update_product(){
   return $pageData;
 }
 
+public function collected_product(){
+  $pid = $_GET['prdid'];
+  $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid ");
+  $st1->execute(array(
+    ':pid' => $pid
+  ));
+
+}
 
 public function delete_product(){
   $pid = $_GET['prdid'];

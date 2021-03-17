@@ -242,3 +242,13 @@ INFO: Unsupported notification method: $/setTraceNotification
 [0m2021.03.16 08:17:11 WARN  Build server is not auto-connectable.[0m
 [0m2021.03.16 08:17:11 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 [0m2021.03.16 08:35:22 INFO  shutting down Metals[0m
+[0m2021.03.16 23:15:24 INFO  Started: Metals version 0.10.0 in workspace 'C:\xampp\htdocs\humanity' for client vscode 1.54.3.[0m
+[0m2021.03.16 23:15:26 INFO  time: initialize in 1.75s[0m
+[0m2021.03.16 23:15:29 WARN  Build server is not auto-connectable.[0m
+[0m2021.03.16 23:15:29 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.03.17 00:56:02 INFO  shutting down Metals[0m
+[0m2021.03.17 08:19:23 INFO  Started: Metals version 0.10.0 in workspace 'C:\xampp\htdocs\humanity' for client vscode 1.54.3.[0m
+[0m2021.03.17 08:19:25 INFO  time: initialize in 1.9s[0m
+[0m2021.03.17 08:19:25 WARN  Build server is not auto-connectable.[0m
+[0m2021.03.17 08:19:25 WARN  no build tool detected in workspace 'C:\xampp\htdocs\humanity'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.03.17 09:20:22 INFO  shutting down Metals[0m

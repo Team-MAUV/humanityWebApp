@@ -60,6 +60,12 @@ function edit_profile()
 
     }
     
+    function collected_product(){
+        $this->model->collected_product();
+        $data = $this->model->access_product();
+        $this->view->rendor('staff/dashboard/access_product', $data , true);
+    }
+
     function delete_product(){
         $this->model->delete_product();
         $data = $this->model->access_product();

@@ -71,9 +71,9 @@ include "staff_header.php"; ?>
                         <h3 class="small">Bidding End Time: <?= $prd['bid_end_time'] ?></h3>
                         <h3 class="title">current maximum bid :</h3>
                         <div class="sizes">
-                            Rs.8600.00
+                        <?= $prd['highest_bid_amount'] ?>
                         </div>
-                        <button onclick="view_bidlist()"class="abc" type="button"  >View All Bids</button>
+                        
                     
                     </div>
 
