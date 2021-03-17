@@ -67,7 +67,7 @@ include "buyer_header.php"; ?>
                 <div class="size-my">
                     <h3 class="title">current maximum bid :</h3>
                     <div class="sizes">
-                      Rs.8600.00
+                    <?= $prd['highest_bid_amount'] ?>
                     </div>
                     <spam id="uid"><?=$_SESSION['id']?></spam>
                     <h3 class="title">Your highest bid : </h3>

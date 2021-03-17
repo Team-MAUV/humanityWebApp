@@ -108,6 +108,22 @@ class buyer_model extends Model{
       $buy_id = $_SESSION['idp'];
       $cr_time = date("Y-m-d H:i:s");
       $value = $rs + ($cts/100);
+     
+      $st0 = $this->db->prepare("SELECT highest_bid_amount, starting_bid FROM product WHERE id = :pid");
+      $st0->execute(array(
+        ':pid' => $pid
+      ));
+      $data = $st0->fetchAll();
+
+      foreach ($data as $dt) :
+        $hbid = $dt['highest_bid_amount'];
+        $sbid = $dt['starting_bid'];
+
+      endforeach;
+      
+      if(($sbid < $value) && ($hbid < $value)){
+
+       
       $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount) VALUES (:prd_id, :buy_id, :bid_amount)');
       $st->execute(array(
         ':prd_id'=>$pid,
@@ -143,6 +159,9 @@ class buyer_model extends Model{
           $bidmsg = "bid added";
         }
     }
+  }else{
+    $bidmsg = "invalid bid amount";
+  }
   }else{
       $bidmsg = "no data";
     }
