@@ -83,89 +83,21 @@ include "vol_dash_header.php"; ?>
         </section>
         <section class="section">
           <header class="section__header">
-            <h2 class="section__title">Recent Participated  Activities </h2>
+            <h2 class="section__title"> Badges earned  </h2>
             <div class="section__control">
           
             </div>
           </header>
-          <ul class="project">
-            <li class="project__item">
-              <a href="#" class="project__link focus--box-shadow">
-                <div class="project__wrapper">
-                  <div class="project__element project__icon">
-                  <img src="<?= URL ?>public/images/blood.jpg" alt="img"/>
-                  </div>
-                  <div class="project__element project__inform">
-                    <span class="project__inform-name"
-                      >Blood Donation </span
-                    >
-                  </div>
-                
-                  <div class="project__element project__date">
-                    <time class="date" datetime="2020-05-05T10:00:00"
-                      >05 May, 2020</time
-                    >
-                  </div>
-                  <div class="project__element project__status">
-                    <span class="status status--published">aaa</span>
-                  </div>
-                  <div class="project__element project__setting">
-               
-               <p>25</p>
-                  </div>
-                </div>
-              </a>
-            </li>
-  
-            <li class="project__item">
-              <a href="#" class="project__link focus--box-shadow">
-                <div class="project__wrapper">
-                  <div class="project__element project__icon">
-                  <img src="<?= URL ?>public/images/plant.jpg" alt="img"/>
-                  </div>
-                  <div class="project__element project__inform">
-                    <span class="project__inform-name">Tree planting Campaign</span>
-                  </div>
-                 
-                  <div class="project__element project__date">
-                    <time class="date" datetime="2020-05-05T10:00:00"
-                      >13 February, 2020</time
-                    >
-                  </div>
-                  <div class="project__element project__status">
-                    <span class="status status--published">aaa</span>
-                  </div>
-                  <div class="project__element project__setting">
-                  <p>30</p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="project__item">
-              <a href="#" class="project__link focus--box-shadow">
-                <div class="project__wrapper">
-                  <div class="project__element project__icon">
-                  <img src="<?= URL ?>public/images/recy1.jpg" alt="img"/>
-                  </div>
-                  <div class="project__element project__inform">
-                    <span class="project__inform-name">Collect Recycle products</span>
-                  </div>
-                 
-                  <div class="project__element project__date">
-                    <time class="date" datetime="2020-05-05T10:00:00"
-                      >01 February, 2020</time
-                    >
-                  </div>
-                  <div class="project__element project__status">
-                    <span class="status status--published">aaa</span>
-                  </div>
-                  <div class="project__element project__setting">
-                  <p>35</p>
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
+        
+          <div class="banner">
+            <h3 class="banner__title">Your Badges</h3>
+            <img src="<?= URL ?>public/images/badge1.jpg" alt="img"/ width=70px height=70px>
+            <p class="banner__description">Earn More!</p>
+        
+          </div>
+
+
+        
         </section>
       </main>
       <aside class="aside">
@@ -251,12 +183,7 @@ include "vol_dash_header.php"; ?>
               ><span class="statistics__entry-quantity">12</span>
             </li>
           </ul>
-          <div class="banner">
-            <h3 class="banner__title">Your Badges</h3>
-            <img src="<?= URL ?>public/images/badge1.jpg" alt="img"/ width=70px height=70px>
-            <p class="banner__description">Earn More!</p>
         
-          </div>
         </section>
       </aside>
     </div>

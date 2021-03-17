@@ -67,7 +67,8 @@ include "com-dash-header.php"; ?>
               <td>Email</td>
               <td>Points</td>
               <td>Joined Date</td>
-              <td></td>
+              <td>Gender</td>
+              <td> Events </td>
               <td></td>
             </tr>
               </thead>
@@ -83,15 +84,11 @@ include "com-dash-header.php"; ?>
                     <td><?= $contact['email'] ?></td>
                     <td><?= $contact['vol_points'] ?></td>
                     <td><?= $contact['join_date'] ?></td>
+                    <td><?= $contact['gender'] ?></td>
                 <td>
-                <button type="button" class="readmore">view more</button>
-  <div class="view" id="view">
-               
-                <p>DOB: <?= $contact['dob'] ?></p>
-                <p>Gender:<?= $contact['gender'] ?></p>
-                <p>Prev.Experience:<?= $contact['prev_vol_exp'] ?></p>
-                
-                </div>
+                <a href="<?= URL?>commissioner/vol_activities">   <button type="button" class="readmore"> <i class="fa fa-external-link"></i>
+                    </button> </a>
+  
                 </td>
      
                 <td class="actions">
