@@ -55,6 +55,14 @@ class Commissioner extends Controller
         $this->model->run_accept_vol_request();
     }
 
+    function vol_activities(){
+        $this->view->rendor('commissioner/dashboard/vol_activities');  
+    }
+
+
+
+
+
     function staff()
     {
         $data = $this->model->get_reg_staff_profiles();
