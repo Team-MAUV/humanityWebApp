@@ -114,12 +114,19 @@ class staff_Model extends Model
               $msg = "Product added successfully!";
 
               //sql event to set availability == 0 at the bid end time
+              $event = $this->db->prepare('SET GLOBAL event_scheduler = ON');
+              $event->execute();
 
-              $updatest = $this->db->prepare('CREATE EVENT update_avb ON SCHEDULE AT $enddate DO 
-                        UPDATE product SET availability = 0 WHERE product_id = $customid;
-                        ');
+              $updatest = $this->db->prepare('CREATE EVENT :customid 
+                                            ON SCHEDULE AT :enddate
+                                            DO 
+                                            UPDATE product SET availability = 0 WHERE product_id = :customid;
+                                            ');
 
-              $updatest->execute();
+              $updatest->execute(array(
+                ':enddate' => $enddate,
+                ':customid' => $customid
+              ));
 
             } 
           else {
