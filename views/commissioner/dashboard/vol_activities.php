@@ -3,7 +3,7 @@ $title = 'Volunteer Participated activities';
 include "com-dash-header.php"; ?>
 
 
-<link rel="stylesheet" href="<?= URL ?>public/css/vol_dash_participate.css" />
+<link rel="stylesheet" href="<?= URL ?>public/css/com_dash_volactiv.css" />
 
 <div class="grid-container">
  <div id="breadcrum">
