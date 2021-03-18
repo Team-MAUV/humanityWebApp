@@ -76,7 +76,8 @@ include "com-dash-header.php"; ?>
               <td>Starting Date</td>
               <td>Ending Date</td>
               <td>Expecting Participant Count</td>
-              <td>confirmed Participant Count</td>
+              <td>Confirmed Participant</td>
+              <td>Add Session In charge </td>
               
               <td></td>
             </tr>
@@ -93,6 +94,8 @@ include "com-dash-header.php"; ?>
                     <td><?= $contact['end_date_time'] ?></td>
                     <td><?= $contact['participant_count'] ?></td>
                     <td><?= $contact['confirm_participant_count'] ?></td>
+                    <td>  <a href="<?= URL?>commissioner/sessionIncharge">   <button type="button" class="readmore"> <i class="fa fa-external-link-square"></i>
+                    </button> </a> </td>
                     <td class="actions">
                     <a href="update.php?id=<?= $contact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
 <a href="delete.php?id=<?= $contact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>

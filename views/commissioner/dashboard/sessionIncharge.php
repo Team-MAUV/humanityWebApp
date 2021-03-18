@@ -17,6 +17,8 @@ include "com-dash-header.php"; ?>
     <div class="message"><?php echo $msg; ?>
     
     <form action="sessionIncharge?gen=1" method="post">
+    <label for="venue">Event Id</label>
+    
       <label for="venue">Select Staff ID</label>
       <div class="select"> 
         <select name="staff-id" id="staff-id" required>
