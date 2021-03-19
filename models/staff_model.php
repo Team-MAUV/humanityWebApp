@@ -117,7 +117,7 @@ class staff_Model extends Model
               $event = $this->db->prepare('SET GLOBAL event_scheduler = ON');
               $event->execute();
 
-              $updatest = $this->db->prepare('CREATE EVENT :customid 
+              $updatest = $this->db->prepare('CREATE EVENT customid 
                                             ON SCHEDULE AT :enddate
                                             DO 
                                             UPDATE product SET availability = 0 WHERE product_id = :customid;
