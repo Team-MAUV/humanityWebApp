@@ -92,14 +92,40 @@ include "staff_header.php"; ?>
     </div>    
     <div id = "bidlist" style = "display: block;">
         <h3> bidlist area </h3>
-        <?php foreach ($bidlist as $list) : ?>
-            <p><?= $list['product_id'] ?>  </p>
-            <p><?= $list['bid_amount'] ?>  </p>
-            <p><?= $list['time'] ?>  </p>
-            <p><?= $list['buyer_id'] ?>  </p>
-            <p><?= $list['name'] ?>  </p>
+
+        <table id="bidlist">
+  <tr>
+   
+    <th>Product Id </th>
+    <th>Bid Amount</th>
+    <th>Time</th>
+    <th>Buyer Id</th>
+    <th>Name </th>
+  </tr>
+ 
+  <tr>
+  <?php foreach ($bidlist as $list) : ?>
+            <td><?= $list['product_id'] ?>  </td>
+            <td><?= $list['bid_amount'] ?>  </td>
+            <td><?= $list['time'] ?>  </td>
+            <td><?= $list['buyer_id'] ?>  </td>
+            <td><?= $list['name'] ?>  </td>
         </br>
         <?php endforeach; ?>
+  </tr>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+      
         <p><?= $bidlistmsg ?></p>   
     </div>
 <script>
