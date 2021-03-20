@@ -1,6 +1,4 @@
 
-
-
 <?php $page = 'sessionIncharge';
 $title = 'Session Incharge';
 $style = 'com-dash-sessionIncharge.css';
@@ -17,7 +15,7 @@ include "com-dash-header.php"; ?>
     <div class="message"><?php echo $msg; ?>
     
     <form action="sessionIncharge?gen=1" method="post">
-    <label for="venue">Event Id</label>
+    <label for="venue">Volunteer Activity Id</label>
     <div class="select"> 
         <select name="Event-id" id="event-id" required>
           <option selected="selected" placeholder="Select event Id"></option>
@@ -25,12 +23,14 @@ include "com-dash-header.php"; ?>
 
 
           // Iterating through the product array
-          foreach ($staff_info as $item) {
+          foreach ($volactivity_info as $item) {
             echo '<option value="' . strtolower($item['activity_id']) . '">' . $item['activity_id'] . '</option>';
           }
           ?>
         </select>
+        
       </div>
+    
       <label for="venue">Select Staff ID</label>
       <div class="select"> 
         <select name="staff-id" id="staff-id" required>
@@ -44,6 +44,9 @@ include "com-dash-header.php"; ?>
           }
           ?>
         </select>
+
+       
+
       </div>
       <br>
       <h3>Generate Session Incharge Credentials </h3>

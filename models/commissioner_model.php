@@ -578,10 +578,16 @@ return ($pageData);
    
 
           //Fetch staff ids for drop down list
-          $query = "SELECT * FROM staff";
+          $query = "SELECT * FROM staff WHERE availability=1";
           $statement = $this->db->prepare($query);
           $statement->execute();
           $staff_info = $statement->fetchAll();
+
+          //Fetch Volunteer Activity IDs for drop down list
+            $query = "SELECT * FROM vol_activity WHERE status=1";
+            $st = $this->db->prepare($query);
+            $st->execute();
+            $volactivity_info = $st->fetchAll();
 
 
 
@@ -648,6 +654,16 @@ return ($pageData);
         $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,name,id_in_stf_tbl,username, passcode) VALUES(?,?,?,?,?)");
         $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd]);
 
+
+        $st= $this->db->prepare("UPDATE staff SET availability=0  WHERE  staff_id=:id" );
+
+     
+
+        $st->execute(array(
+            ':id' => $staff_id
+          
+        ));
+
         
         if($result1){
 
@@ -699,6 +715,7 @@ return ($pageData);
             $pageData = [
               'result' => $result,
               'staff_info'=>$staff_info,
+              'volactivity_info'=>$volactivity_info,
               'msg'=>$msg,
               'tempUsername'=>$tempUsername,
               'pwd'=>$pwd
