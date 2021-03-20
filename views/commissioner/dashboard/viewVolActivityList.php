@@ -17,22 +17,6 @@ include "com-dash-header.php"; ?>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
 <style>
-.button {
-  border-radius: 4px;
-  background-color:  #4d79ff;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 12px;
-  padding: 16px;
-  width: 80px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-.button:hover  {
- background-color: #000000;
-}
 
 
 

@@ -64,22 +64,8 @@ include "com-dash-header.php"; ?>
     <button type="submit" class="button" onclick="closeForm()">Close</button>
   
 </div>
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-  changeColor(' #adad85'); 
-}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-  changeColor(' white');
-}
-function changeColor(color) { 
-                document.body.style.background = color; 
-            } 
-                 
-</script>
-
+<script src="<?= URL ?>public/js/leaverequest.js" type="text/javascript"></script>
 
               <table>
                 <thead>

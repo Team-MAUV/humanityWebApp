@@ -24,27 +24,7 @@ include "com-dash-header.php"; ?>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   
-  
-  <style>
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-</style>
-	
-
-
-
-	
+  	
 </head>
 <body class="overlay-scrollbar">
 <script src="<?= URL ?>public/js/com-index.js" type="text/javascript"></script>
