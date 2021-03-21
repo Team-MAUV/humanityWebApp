@@ -175,17 +175,36 @@ class buyer_model extends Model{
 
     function edit_profile(){
       $bid = $_GET['id'];
-      $st1 = $this->db->prepare('SELECT * FROM buyer WHERE id = :id');
+      $st1 = $this->db->prepare("SELECT name, address, contact, email FROM buyer WHERE id = :id");
       $st1->execute(array(
-        ':id' => $bid
+        ':id'=>$bid
       ));
-      $buyerdata = $st1->fetchAll();
-
+      $data = $st1->fetchAll();
+      $count = $st1->rowCount();
+      if($count == 0){
+        $msg = "error!";
+      }else{
+        $msg = "";
+      }
       $pagedata = [
-        'buyerdata' => $buyerdata
+        'data' => $data,
+        'msg' => $msg
       ];
       
       return ($pagedata);
+    }
+    function save_new_profile_details(){
+      if (!empty($_POST)) {
+
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $contact=$_POST['contact'];
+        $address=$_POST['address'];
+
+        $id=$_SESSION['idp'];
+
+        
+      
     }
 
 }

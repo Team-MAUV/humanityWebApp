@@ -82,7 +82,7 @@ include "buyer_header.php"; ?>
                   </button>
                 </div>
                 <div class="team__inform">
-                  <p class="team__name"> Total bids: <?=$_SESSION['totalbids']?></p>
+                  <p class="team__name"> Total bids:</p>
                   <p class="team__name"> Products Bid : 2</p>
                   <p class="team__name"> Bids won : 2</p>
                   

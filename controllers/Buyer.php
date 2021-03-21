@@ -22,8 +22,14 @@ class Buyer extends Controller
     function edit_profile()
     {
         $data = $this->model->edit_profile();
-        $this->view->rendor('buyer/dashboard/buy_edit_profile');
+        $this->view->rendor('buyer/dashboard/buy_edit_profile', $data ,true);
     }
+
+    function save_new_profile_details()
+    {
+        $this->model->save_new_profile_details();
+        
+    } 
     
     
     function view_product(){

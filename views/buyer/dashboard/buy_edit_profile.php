@@ -22,18 +22,26 @@ include "buyer_header.php"; ?>
 <body>
 	<div class="container">
 		<div class="contact-box">
-      <div class="left" > </div>  
-      			<div class="right">
+      		<div class="left" > </div>  
+      		<div class="right">
 				<h2>Edit Profile </h2>
-                <label for="name">Name: <?= $buyerdata['name'] ?></label>
-				<input type="text" class="field" placeholder="Your Name" name="name" value="<?= $buyerdata['name'] ?>">
-				<input type="email" class="field" placeholder="Your Email" name="email">
-        <input type="text" class="field" placeholder="Phone" name="contact">
-       
-				<textarea placeholder="Address" class="field" name="address"></textarea>
-				<button class="btn">Update</button>
-                <button class="btn">Change Username / Password</button>
+				<?php foreach ($data as $dt) : ?>
+				<form name="upddata" action="save_new_profile_details" method="POST" enctype="multipart/form-data" >	
+					<label for="name">Name:</label>
+					<input type="text" class="field" placeholder="Your Name" name="name" value="<?= $dt['name'] ?>">
+					<label for="name">E-Mail:</label>
+					<input type="email" class="field" placeholder="Your Email" name="email" value="<?= $dt['email'] ?>">
+					<label for="name">Contact Number:</label>
+					<input type="text" class="field" placeholder="Phone" name="contact" value="<?= $dt['contact'] ?>">
+					<label for="name">Address:</label>
+					<textarea placeholder="Address" class="field" name="address" ><?= $dt['address'] ?></textarea>
+					<button class="submit" value="Submit"><a href = "<?= URL ?>Buyer/edit_profile?id=<?= $_SESSION['idp'] ?>"></a>Update</button>
+					<button class="btn">Change Username / Password</button>
+				</form>
+				<?php endforeach; ?> 
+				<p><?= $msg ?></p>
 			</div>
+			
 		</div>
 	</div>
 </body>
