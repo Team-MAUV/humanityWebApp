@@ -33,7 +33,7 @@
           </button>
           <div class="dropdown-content">
          
-            <a href="<?= URL ?>Session_incharge/logout">Logout</a>
+            <a href="<?= URL ?>sessionIncharge/logout">Logout</a>
 
           </div>
         </div>
@@ -56,12 +56,12 @@
           <li class="<?php if ($page == 'home') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/index"><i class="fas fa-home"></i> Home</a>
+            <a href="<?= URL ?>sessionIncharge/index"><i class="fas fa-home"></i> Home</a>
           </li>
           <li class="<?php if ($page == 'media_upload') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/media_upload"><i class="fas fa-file-contract"></i> Media upload</a>
+            <a href="<?= URL ?>sessionIncharge/media_upload"><i class="fas fa-file-contract"></i> Media upload</a>
           </li>
 
          
@@ -69,19 +69,25 @@
           <li class="<?php if ($page == 'media_gallary') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/media_gallary"><i class="fas fa-file-contract"></i> Gallery</a>
+            <a href="<?= URL ?>sessionIncharge/media_gallary"><i class="fas fa-file-contract"></i> Gallery</a>
           </li>
           
           <li class="<?php if ($page == 'marking_attendance') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/marking_attendance"><i class="fas fa-id-card-alt"></i> Marking attendance</a>
+            <a href="<?= URL ?>sessionIncharge/marking_attendance"><i class="fas fa-id-card-alt"></i> Marking attendance</a>
           </li>
 
           <li class="<?php if ($page == 'unconfirm_attendance') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>session_incharge/unconfirm_attendance"><i class="fas fa-id-card-alt"></i> unconfirm attendance</a>
+            <a href="<?= URL ?>sessionIncharge/unconfirm_attendance"><i class="fas fa-id-card-alt"></i> unconfirm attendance</a>
+          </li>
+
+          <li class="<?php if ($page == 'end_session') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>sessionIncharge/end_session"><i class="fas fa-id-card-alt"></i> End Session</a>
           </li>
           
         

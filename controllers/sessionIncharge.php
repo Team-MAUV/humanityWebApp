@@ -1,6 +1,6 @@
 <?php
 
-class Session_incharge extends Controller
+class sessionIncharge extends Controller
 {
 
     function __construct()
@@ -37,6 +37,16 @@ class Session_incharge extends Controller
     function unconfirm_attendance()
     {
         $this->view->rendor('session_incharge/dashboard/unconfirm_attendance');
+    }
+
+    function end_session()
+    {
+        $this->view->rendor('session_incharge/dashboard/end_session');
+    }
+
+    function close_session()
+    {
+        $this->model->closeSession();
     }
 
 
