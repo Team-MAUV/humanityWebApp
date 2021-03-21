@@ -19,7 +19,11 @@ class Buyer extends Controller
         $this->view->rendor('buyer/dashboard/buyer_main', $data ,true);
     }
 
-    
+    function edit_profile()
+    {
+        $data = $this->model->edit_profile();
+        $this->view->rendor('buyer/dashboard/buy_edit_profile');
+    }
     
     
     function view_product(){

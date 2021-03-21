@@ -172,6 +172,22 @@ class buyer_model extends Model{
     
     return ($pagedata);
     }
+
+    function edit_profile(){
+      $bid = $_GET['id'];
+      $st1 = $this->db->prepare('SELECT * FROM buyer WHERE id = :id');
+      $st1->execute(array(
+        ':id' => $bid
+      ));
+      $buyerdata = $st1->fetchAll();
+
+      $pagedata = [
+        'buyerdata' => $buyerdata
+      ];
+      
+      return ($pagedata);
+    }
+
 }
   
 
