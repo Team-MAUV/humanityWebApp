@@ -16,7 +16,7 @@ include "sess_header.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>uncinfirm attendance</title>
+	<title>unconfirm attendance</title>
 
   <link rel="stylesheet" href="<?= URL ?>public/css/sess_dash_attendance.css" />
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
