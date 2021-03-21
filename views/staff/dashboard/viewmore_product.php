@@ -102,17 +102,18 @@ include "staff_header.php"; ?>
     <th>Buyer Id</th>
     <th>Name </th>
   </tr>
- 
-  <tr>
   <?php foreach ($bidlist as $list) : ?>
+  <tr>
+ 
             <td><?= $list['product_id'] ?>  </td>
             <td><?= $list['bid_amount'] ?>  </td>
             <td><?= $list['time'] ?>  </td>
             <td><?= $list['buyer_id'] ?>  </td>
             <td><?= $list['name'] ?>  </td>
         </br>
-        <?php endforeach; ?>
+   
   </tr>
+  <?php endforeach; ?>
   </table>
 
 
