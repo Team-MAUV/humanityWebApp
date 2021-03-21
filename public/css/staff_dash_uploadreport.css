@@ -1,80 +1,216 @@
-* {
-    box-sizing: border-box;
+body {
+    background-color: white;
+    overflow-x: hidden;
 }
 
-body {
-    background-color: rgb(68, 68, 160);
+ul {
+    list-style: none;
+}
+
+h1 {
+    margin-top: 10vh;
+    color: rgb(6, 15, 92);
+    text-align: center;
+    font-weight: 1000;
+    font-size: 2rem;
+    font-family: 'Roboto';
 }
 
 .column {
+    margin-top: 10vh;
+    margin-left: 1.5vw;
+    margin-right: 1vw;
     float: left;
-    width: 50%;
-    padding: 5px;
-    background-color: rgba(223, 66, 79, 0.897);
-    border-color: black;
+    width: 20vw;
+    height: 45vh;
     border-style: solid;
+    border-color: rgb(14, 17, 13);
+    background-color: rgb(125, 134, 127);
+    overflow-x: hidden;
+}
+
+h2 {
+    font-size: 114px;
+    position: absolute;
+    opacity: 0.2;
+    margin-top: 14vh;
+    margin-left: 7vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.column:hover h2 {
+    top: 0px;
+    opacity: 0.6;
+    color: black;
+}
+
+.head1 {
+    font-size: 2vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    position: absolute;
+    color: yellow;
+    margin-top: 3vh;
+}
+
+.column:hover h3 {
+    top: 0px;
+    opacity: 0.6;
+    color: rgb(68, 63, 63);
 }
 
 .row {
-    width: 70vw;
-    margin-right: 2vw;
+    margin: 0 0px;
 }
 
-.row::after {
+.row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.grid {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    border-color: black;
-    border-style: solid;
-    padding: 12px 16px;
+.flipbox-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.column:hover .flipbox-inner {
+    transform: rotateY(180deg);
     cursor: pointer;
 }
 
-.grid:hover {
-    background-color: rgb(12, 12, 12);
-    color: white;
+.flipbox-front,
+.flipbox-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flipbox-front {
+    background-color: rgb(15, 104, 194);
+    color: rgb(252, 249, 249);
+}
+
+.flipbox-back {
+    background-color: rgb(15, 104, 194);
+    color: yellow;
+    transform: rotateY(180deg);
 }
 
 .btn {
-    float: right;
-    margin-right: 2vw;
-    background-color: rgb(12, 55, 247);
+    background-color: rgb(17, 19, 117);
     color: rgb(253, 253, 253);
-    padding: 8px 10px;
+    padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
     font-size: medium;
-    border-color: black;
+    margin-left: 0vw;
+    margin-bottom: 1vh;
+    margin-top: 4vh;
+}
+
+.dbtn {
+    background-color: rgb(120, 181, 241);
+    color: rgb(19, 12, 12);
+    padding: 1px 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: medium;
+    margin-left: 0vw;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
 }
 
 .btn:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     background-color: rgb(12, 12, 12);
+    color: white;
 }
 
-h4 {
+.dbtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(13, 20, 109);
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+.confirm {
+    margin-top: 6vh;
+    margin-left: 0vw;
+    margin-right: 3vw;
+    float: right;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.tab {
+    margin-top: 0.2vh;
+    background-color: rgb(99, 114, 243);
+    color: white;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 16px;
+    font-size: 17px;
+    width: 25%;
+    font-weight: 600;
+    border: none;
+}
+
+.tabcontent {
+    margin-top: 0vh;
+    color: white;
+    display: none;
+    padding: 2vh 20px;
+    height: 100%;
+    width: 81%;
+    border: none;
+    /* margin-bottom: 5vh; */
+}
+
+.subby {
+    margin-top: 3vh;
+}
+
+.subby li {
     margin-left: 1vw;
-}
-
-h1 {
-    margin-top: 20px;
-    color: rgb(10, 10, 10);
-    text-align: center;
+    float: left;
     font-weight: 1000;
-    font-size: 2rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-top: 1vh;
+    color: yellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-@media screen and (max-width: 750px) {
-    h2 {
-        font-size: small;
+@media screen and (max-width: 900px) {
+    .column {
+        width: 80vw;
+        display: block;
+        margin-bottom: 5px;
     }
     .btn {
         font-size: smaller;
+        margin-right: 30vw;
+        margin-left: 30vw;
+    }
+    h2 {
+        font-size: 5rem;
+        margin-top: 15vh;
+        margin-left: 28vw;
+    }
+    h3 {
+        font-size: 2rem;
+        margin-top: 5vh;
+        margin-left: 18vw;
     }
 }

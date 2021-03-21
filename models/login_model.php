@@ -13,8 +13,7 @@ class login_Model extends Model
         $pwd = $_POST['password'];
         $hashPw = password_hash($pwd, PASSWORD_DEFAULT);
 
-        echo $pwd;
-        echo $hashPw;
+        
         $st = $this->db->prepare("SELECT * FROM user WHERE username= :login ");
         $st->execute(array(
             ':login' => $_POST['username']
@@ -40,10 +39,6 @@ class login_Model extends Model
        
         if (password_verify($_POST['password'],  $stored_pw))
         {
-          /* The password is correct. */
-      
-           
-          
 
             //Redirecting User Based on Role
             if ($role == 'commissioner') {
@@ -65,7 +60,7 @@ class login_Model extends Model
                     Session::set('id', $id);
                     Session::set('name', $name);
                     Session::set('address', $address);
-                    header('location: ../Commissioner');
+                    header('location: ../Commissioner/index');
                 }
                 
             }
@@ -82,12 +77,16 @@ class login_Model extends Model
                 foreach ($user as $usr) :
                     $id = $usr['vol_id'];
                     $name =  $usr['name'];
+                    $level = $usr['level'];
+                    $vol_points =$usr['vol_points'];
                 endforeach;
 
                 if($id==$_POST['username']){
                     Session::set('loggedIn-vol', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
+                    Session::set('level', $level);
+                    Session::set('vol_points', $vol_points);
                     header('location: ../Volunteer');
               
                 }
@@ -97,47 +96,89 @@ class login_Model extends Model
 
             if ($role == 'donor') {
 
-                $st = $this->db->prepare("SELECT * FROM donor WHERE don_id= :id ");
-                $st->execute(array(
-                    ':id' => $_POST['username']
+                $st1 = $this->db->prepare("SELECT * FROM user WHERE username= :un ");
+                $st1->execute(array(
+                    ':un' => $_POST['username']
                 ));
-                $user = $st->fetchAll();
+                $user1 = $st1->fetchAll();
+
+                foreach ($user1 as $usr) :
+        
+                    $uid=$usr['id'];
+                endforeach;
+
+                
+
+                $st2 = $this->db->prepare("SELECT * FROM donor WHERE userlogin_id= :id ");
+                $st2->execute(array(
+                    ':id' => $uid,
+                ));
+                $user = $st2->fetchAll();
+
                 foreach ($user as $usr) :
                     $id = $usr['don_id'];
                     $name =  $usr['name'];
                 endforeach;
-
-                if($id==$_POST['username']){
+              
+              
                     Session::set('loggedIn-don', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
                     header('location: ../Donor');
               
-                }
 
             }
 
             if ($role == 'buyer') {
 
 
-                $st = $this->db->prepare("SELECT * FROM buyer WHERE buy_id= :id ");
-                $st->execute(array(
-                    ':id' => $_POST['username']
+                $st1 = $this->db->prepare("SELECT * FROM user WHERE username= :un ");
+                $st1->execute(array(
+                    ':un' => $_POST['username']
                 ));
-                $user = $st->fetchAll();
+                $user1 = $st1->fetchAll();
+
+                foreach ($user1 as $usr) :
+        
+                    $uid=$usr['id'];
+                endforeach;
+
+                
+
+                $st2 = $this->db->prepare("SELECT * FROM buyer WHERE userlogin_id= :id ");
+                $st2->execute(array(
+                    ':id' => $uid,
+                ));
+                $user = $st2->fetchAll();
+
                 foreach ($user as $usr) :
                     $id = $usr['buy_id'];
                     $name =  $usr['name'];
+                    $idp = $usr['id'];
                 endforeach;
-
-                if($id==$_POST['username']){
+              
+                //view total number of bids 
+                
+               // $st3 = $this->db->prepare("SELECT COUNT AS total FROM bid WHERE buy_id= :id ");
+               // $st3->execute(array(
+                //    ':id' => $id,
+              //  ));
+               // $totalbids = $st3->fetchAll();
+                
+                //foreach ($totalbids as $ttlbds) :
+                 //   $ttl = $ttlbds['total'];
+                //endforeach;
+                
+                
+                
+                
                     Session::set('loggedIn-buy', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
-                    header('location: ../Buyer/home');
-              
-                }
-
+                  //  Session::set('totalbids', $ttl);
+                    Session::set('idp', $idp);
+                    header('location: ../Buyer');
+                
                
                
 
@@ -164,10 +205,7 @@ class login_Model extends Model
                 }
   
             }
-            if ($role == 'session_incharge') {
-                Session::set('loggedIn-sin', true);
-                header('location: ../Session_incharge');
-            }
+           
 
         } else {
             // show error
@@ -177,14 +215,11 @@ class login_Model extends Model
     }
 
     public function run_check_email(){
-        echo "In login model";
-   
-        if (!isset($_POST["reset"])){
 
-        
-
-          
-
+        $baseUrl = URL;
+        $msg="";
+  
+    if(!empty($_POST["email"])){
            $st = $this->db->prepare("SELECT email,name,userlogin_id FROM volunteer WHERE email= :entered_email");
 
            $st->execute(array(
@@ -194,29 +229,20 @@ class login_Model extends Model
            $row_count = $st->rowCount();
            $user_details =$st->fetchAll();
 
-        
-
-       
-
-           if($row_count >0){
+        if($row_count >0){
 
                
-        foreach ($user_details as $usr) :
-            $userlogin_id = $usr['userlogin_id'];
-            $email = $usr['email'];
-            $name =  $usr['name'];
-        endforeach;
+            foreach ($user_details as $usr) :
+                $userlogin_id = $usr['userlogin_id'];
+                $email = $usr['email'];
+                $name =  $usr['name'];
+            endforeach;
 
-        echo $name;
-        
             $selector = bin2hex(random_bytes(8));
             $token = random_bytes(32);
             $hashedToken = password_hash($token, PASSWORD_DEFAULT);
 
-
-            $url = URL."login/resetPassword?selector=".$selector."&validator=".bin2hex($token);
-
-       
+            $url = $baseUrl."login/resetPassword?selector=".$selector."&validator=".bin2hex($token);
 
             $expires = date("U") + 1800;
 
@@ -257,20 +283,23 @@ class login_Model extends Model
             $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
             $headers .= "Content-type: text/html\r\n";
 
+    
             Email::email_send($to,$rec_name, $subject, $message, $headers);
 
-
-
-           }else{
-               echo "Email address doesn't exist!";
-           }
-
+            $msg =  "An email with a password reset link has been sent to your email! Check your inbox!";
+            
+                
         }else{
-            echo "Enter a valid Email!";
+            $msg =  "Email address doesn't exist!";
         }
-
-    
+            
     }
+
+  
+
+       echo $msg;
+       
+}
 
 
     public function run_resetPassword(){
@@ -281,7 +310,7 @@ class login_Model extends Model
                 $selector = $_POST["selector"];
                 $validator = $_POST["validator"];
                 $password = $_POST["pwd"];
-                $passwordRepeat = $_POST["pwd-repeat"];
+                $passwordRepeat = $_POST["pwdrepeat"];
               
               
                 if(empty($password) || empty($passwordRepeat)){

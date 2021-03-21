@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'requestleave';
 include "staff_header.php"; ?>
 
 
@@ -40,21 +40,25 @@ width: fit-content;
     <h1>Request Leave Application</h1>
   </div>
   <div class="form">
-  <form action="leave_request" method="post"  onsubmit="return confirm('Do you really want to submit the form?');">
+  <form action="run_requestleave" method="post"  onsubmit="return confirm('Do you really want to submit the form?');">
     <div class="input-fields">
       <input type="text" class="input" placeholder="Name" name="name" id="name">
       <input type="text" class="input" placeholder="Staff-ID" name="staff_id" id="staff_id">
-      <input type="date" class="input" placeholder="Date" name="date" id="date">
-      <input type="number" class="input" placeholder="Number of Days" name="day_no" id="day_no">
+    <input type="date" class="input" placeholder="From Date" name="fdate" id="fdate">
+      <input type="date" class="input" placeholder="To Date" name="tdate" id="tdate">
       
     </div>
     <div class="message">
       <textarea placeholder="Reason for the leave" name="reason" id="reason"></textarea>
       <input type="submit" value="submit" name="submit" name="submit"> 
     </div>
+  </form>
+
+ 
   </div>
+  <p><?= $msg ?></p>
 </div>
-	
+
 </body>
 </html>
 

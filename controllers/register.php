@@ -10,7 +10,12 @@ class Register extends Controller
 
   function index()
   {
-    $this->view->rendor('register/volRegForm');
+    $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+    $this->view->rendor('register/volRegForm', $pageData , true);
   }
 
   function run_vol_register()
@@ -25,7 +30,12 @@ class Register extends Controller
 
   function donRegForm()
   {
-    $this->view->rendor('register/donRegForm');
+     $msg="";
+      $pageData = [
+
+         'msg' => $msg
+          ];
+    $this->view->rendor('register/donRegForm', $pageData , true);
   }
 
   function run_don_register()
@@ -37,8 +47,13 @@ class Register extends Controller
   }
   function buyRegForm()
   {
+    $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
     
-    $this->view->rendor('register/buyRegForm');
+    $this->view->rendor('register/buyRegForm', $pageData , true);
   }
 
   function run_buy_register()

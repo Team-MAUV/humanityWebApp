@@ -1,131 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-*{
-	font-family: 'Montserrat', sans-serif;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+h1 {
+    margin-top: 7vh;
+    color: rgb(46, 96, 235);
+    text-align: center;
+    font-weight: 1000;
+    font-size: 2rem;
+    font-family: roboto;
 }
 
-body{
-	background: #8178d3;
-	color: #181a1b;
-}
-.row_{
-	position: absolute;
-	top:50%;
-}
-.wrapper{
-	position: absolute;
-	top: 50%;
-	left: 60%;
-	transform: translate(-50%,-50%);
-width:500px;
-	background: #fff;
+.voldata {
+    margin-left: 2vw;
+    list-style: none;
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: black;
+    display: inline-block;
+    font-family: verdana;
 }
 
-.title{
-	background: #a2a3a7;
-	padding: 15px;
-	font-size: 18px;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-}
-.file_upload_list li .file_item{
-	display: flex;
-	border-bottom: 1px solid #f3f4f8;
-    padding: 15px 20px;
-}
-.file_item .format{
-	background: #2e20b1;	border-radius: 10px;
-	width: 45px;
-	height: 40px;
-	line-height: 40px;
-	color: #fff;
-	text-align: center;
-	font-size: 12px;
-	margin-right: 15px;
+.floatRight {
+    float: right;
+    width: 35vw;
+    height: 55vh;
+    margin-right: 2rem;
 }
 
-.file_item .file_progress{
-	width: calc(100% - 60px);
-	font-size: 14px;
+.line {
+    display: inline-block;
 }
 
-.file_item .file_info,
-.file_item .file_size_wrap{
-	display: flex;
-	align-items: center;
-}
-.file_item .file_info{
-	justify-content: space-between;
-}
-.file_item .file_progress .progress{
-	width: 100%;
-	height: 4px;
-	background: #efefef;
-	overflow: hidden;
-	border-radius: 5px;
-	margin-top: 8px;
-	position: relative;
+input {
+    border-radius: 5px;
+    padding: 4px 10px;
+    resize: vertical;
 }
 
-.file_item .file_progress .progress .inner_progress{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #0e6b28;
-}
-.file_item .file_size_wrap .file_size{
-	margin-right: 15px;
-}
-.file_item .file_size_wrap .file_close{
-	border: 1px solid #0c016e;
-	color: #5046a8;
-	width: 20px;
-	height: 20px;
-	line-height: 18px;
-	text-align: center;
-	border-radius: 50%;
-	font-size: 10px;
-	font-weight: bold;
-	cursor: pointer;
+.btn {
+    background-color: #4454ec;
+    color: rgb(253, 253, 253);
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: 500;
 }
 
-.file_item .file_size_wrap .file_close:hover{
-	background: #e02909;
-	color: #fff;
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: red;
+    color: black;
 }
 
-.choose_file label{
-	display: block;
-	border: 2px dashed #1a182b;
-	padding: 15px;
-	width: calc(100% - 20px);
-	margin: 10px;
-	text-align: center;
-	cursor: pointer;
-}
-.choose_file #choose_file{
-	outline: none;
-	opacity: 0;
-    width: 0;
-}
-.choose_file span{
-	font-size: 14px;
-	color: #362f6d;
+.formcss {
+    line-height: 10vh;
 }
 
-.choose_file label:hover span{
-	text-decoration: underline;
+ul {
+    line-height: 10vh;
+    list-style: none;
+    display: inline-block;
 }
-@media only screen and (max-width:500px) {
-	/* For mobile phones: */
-	.row, .column,.wrapper  {
-	  width: 100%;
-	}
-  }
+
+.file {
+    background-color: rgb(12, 79, 202);
+    padding-left: 2vw;
+    padding-right: 0.5vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.file:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+    form {
+        font-size: 1rem;
+    }
+    img {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    .floatRight {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    .btn {
+        padding: 1px 1px;
+    }
+    .file {
+        float: left;
+    }
+    ul {
+        font-size: 1rem;
+        display: inline-block;
+        line-height: 12vh;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}

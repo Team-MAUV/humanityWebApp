@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="<?= URL ?>public/css/userLogin.css" />
     <link rel="stylesheet" href="<?= URL ?>public/css/<?php echo $style ?>.css" />
 
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+    
 </head>
 
 <body>

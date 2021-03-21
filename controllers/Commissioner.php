@@ -18,9 +18,27 @@ class Commissioner extends Controller
 
     function index()
     {
-        $this->view->rendor('commissioner/dashboard/index');
+        
+          $data2 = $this->model->get_view_com_list();
+        $this->view->rendor('commissioner/dashboard/index', $data2, true);
+       
+    }
+    function run_add_com(){
+        $data = $this->model->run_add_com();
+        $this->view->rendor('commissioner/dashboard/index', $data, true);
     }
 
+    function view_com_list()
+    {
+        $data2 = $this->model->get_view_com_list();
+        $this->view->rendor('commissioner/dashboard/index', $data2, true);
+    }
+    function edit_profile()
+    {
+        
+        $this->view->rendor('commissioner/dashboard/edit_profile'); 
+       
+    }
     function volunteer()
     {
         $data = $this->model->get_reg_vol_profiles();
@@ -37,21 +55,37 @@ class Commissioner extends Controller
         $this->model->run_accept_vol_request();
     }
 
-    function staff()
-    {
-        $this->view->rendor('commissioner/dashboard/staff');
+    function vol_activities(){
+        $this->view->rendor('commissioner/dashboard/vol_activities');  
     }
 
+
+
+
+
+    function staff()
+    {
+        $data = $this->model->get_reg_staff_profiles();
+        $this->view->rendor('commissioner/dashboard/staff', $data, true);
+    }
+    function staff_viewprofile()
+    {
+     
+        $this->view->rendor('commissioner/dashboard/staff_viewprofile');
+    }
     function buyer()
     {
-        $this->view->rendor('commissioner/dashboard/buyer');
+        $data = $this->model->get_reg_buyer_profiles();
+        $this->view->rendor('commissioner/dashboard/buyer', $data, true);
     }
 
     function donor()
     {
-        $this->view->rendor('commissioner/dashboard/donor');
+        $data = $this->model->get_reg_donor_profiles();
+        $this->view->rendor('commissioner/dashboard/donor', $data, true);
     }
 
+    
 
     function newVolActivity()
     {
@@ -72,18 +106,33 @@ class Commissioner extends Controller
 
     function projectReports()
     {
-        $this->view->rendor('commissioner/dashboard/projectReports');
+        $data = $this->model->projectReports();
+        $this->view->rendor('commissioner/dashboard/projectReports', $data, true);
+        
     }
-
     function leaveRequests()
     {
-        $this->view->rendor('commissioner/dashboard/leaveRequests');
+      $data = $this->model->get_leaveRequests();
+        $this->view->rendor('commissioner/dashboard/leaveRequests', $data, true);
     }
+
+    function search_leaverequest()
+    {
+        $data = $this->model->run_search_leaverequest();
+        $this->view->rendor('commissioner/dashboard/leaveRequest', $data, true);
+    }
+
 
     function sessionincharge()
     {
-        $this->view->rendor('commissioner/dashboard/sessionincharge');
+        $data = $this->model->fetch_sessionIncharge_details();
+        $this->view->rendor('commissioner/dashboard/sessionincharge',$data, true);
     }
+
+
+
+
+  
 
     function beneficiaryCases()
     {

@@ -22,6 +22,16 @@
 }
 
 /*------------------------------*/
+body {
+  display: grid;
+  grid-template-rows: 3rem auto 3rem;
+  grid-template-areas:
+    "nav-bar"
+    "body "
+    "footer ";
+
+  overflow-x: hidden;
+}
 
 .body {
   grid-area: body;
@@ -44,15 +54,6 @@
   background-color: #004883;
   height: 3rem;
   z-index: 10;
-}
-
-body {
-  display: grid;
-  grid-template-rows: 3rem 40rem 3rem;
-  grid-template-areas:
-    "nav-bar"
-    "body"
-    "footer ";
 }
 
 .logo-container {
@@ -118,6 +119,7 @@ body {
 
 .dropdown {
   display: flex;
+  width: auto;
   justify-content: center;
   align-items: left;
   margin-right: 2rem;
@@ -128,6 +130,7 @@ body {
 
 .dropdown .dropbtn {
   font-size: 17px;
+  width: auto;
   border: none;
   outline: none;
   color: white;
@@ -179,7 +182,7 @@ body {
   overflow: auto;
   background: #1b1b1b;
   transition: left 0.4s ease;
-  z-index: 1;
+  z-index: 3;
 }
 
 .sidebar .text {
@@ -267,13 +270,14 @@ body {
 }
 
 .grid-container {
-  grid-area: grid-container;
   position: relative;
+  grid-area: grid-container;
+  display: flex;
+  left: 5rem;
   width: 85.5%;
+  height: 36 rem;
   display: grid;
   z-index: 1;
-
-  left: 5rem;
 }
 
 .grid-body {
@@ -292,13 +296,16 @@ a {
 }
 
 .footer {
+  position: fixed;
   grid-area: footer;
-  position: relative;
   height: 3rem;
   background-color: #004883;
   color: white;
   text-align: center;
   width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
 @media screen and (max-width: 900px) {

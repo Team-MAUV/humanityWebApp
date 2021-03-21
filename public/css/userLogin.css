@@ -19,6 +19,8 @@ body {
   left: 0;
   bottom: 0;
   z-index: -1;
+  background-size: cover;
+  filter: blur(10px);
 }
 
 .nav-bar {
@@ -28,8 +30,8 @@ body {
   justify-content: space-between;
   top: 0;
   width: 100vw;
-  background-color: #004883;
-  height: 6vh;
+  background-color: #02a95c;
+  height: 3rem;
   z-index: 10;
 }
 
@@ -100,13 +102,10 @@ body {
   width: 4vw;
   height: auto;
   margin: 2rem;
-  background: #004883;
-  padding: 0.4rem 0.7rem;
-  font-size: 1.2rem;
-  border: 2px solid #fff;
-  border-radius: 2rem;
-  line-height: 1;
-
+  background: #02a95c;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  margin-top: 2.5rem;
   transition: 0.3s;
 }
 
@@ -133,13 +132,13 @@ a:hover {
   font-size: 1.2rem;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #004883, #1777af, #030e64);
+  background-image: linear-gradient(to right, #02a95c, #4ae09a, #65ce03);
   cursor: pointer;
+  transition: 0.5s;
   color: #fff;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   background-size: 300%;
-  transition: 0.5s;
 }
 
 .btn:hover {
@@ -152,7 +151,7 @@ a:hover {
   bottom: 0;
   width: 100vw;
   height: 6vh;
-  background-color: #004883;
+  background-color: #02a95c;
   color: white;
   text-align: center;
   z-index: 1000;
@@ -168,7 +167,7 @@ a:hover {
     width: 100%;
     grid-template-columns: 5fr 1fr;
     grid-template-areas: " title-name logo-container ";
-    background-color: #004883;
+
     height: 50px;
     z-index: 10;
   }
@@ -199,7 +198,7 @@ a:hover {
   }
   .logo-name {
     display: flex;
-    color: #fff;
+
     font-size: 0.6rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -224,7 +223,7 @@ a:hover {
     position: relative;
     right: 1rem;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+
     font-size: 1.5rem;
     transition: 0.3s;
   }
@@ -233,10 +232,10 @@ a:hover {
     display: inline-block;
     width: 60px;
     height: 40px;
-    background: #004883;
+
     padding: 0.5rem 0.8rem;
     font-size: 5rem;
-    border: 2px solid #fff;
+
     border-radius: 2rem;
     line-height: 1;
 

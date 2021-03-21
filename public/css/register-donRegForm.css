@@ -271,6 +271,7 @@ a:hover {
 }
 
 .btnreg {
+    margin-top: 3vh;
     background-image: linear-gradient(to right, #f3d991, #dd830e, #d30808);
 }
 

@@ -1,0 +1,714 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bgimage {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/*====================nav bar================*/
+
+.nav-bar {
+  position: fixed;
+  grid-area: nav-bar;
+  display: grid;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  grid-template-columns: 250px 60% 40%;
+  grid-template-areas: "logo-container title-name dropdown";
+  background-color:#e82563;
+  height: 6vh;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  grid-area: logo-container;
+}
+
+.logo {
+  height: 50px;
+  width: 98px;
+  margin-left: 70px;
+  z-index: 10;
+  background-image: url("../images/hlogoxs.png");
+}
+
+.title-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:35px;
+  grid-area: title-name;
+}
+
+.tzu-logo {
+  width: 82px;
+
+  background: url(../images/tzuChiLogo.png);
+}
+
+.logo-name {
+  display: flex;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.logo-name span {
+  font-weight: 200;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  grid-area: dropdown;
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropbtn {
+  background-color:#e82563;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color:#e82563;
+  color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/*=========scroll bar=========================*/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+
+}
+
+/*===================================*/
+/*-------------body-----------*/
+.container {
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+  grid-template-rows: 6vh 88vh 10vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+  overflow-y: scroll;
+}
+
+.container > div {
+}
+
+
+
+.hd {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  padding: 3px;
+}
+
+a {
+  text-decoration: none;
+}
+/*=============stats page -==============*/
+.close-btn {
+  margin-left: 60vw;
+  color:black;
+ 
+  font-weight: bolder;
+  cursor: pointer;
+  z-index: 2;
+  align-items: center;
+
+}
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: 5px;
+}
+.my-donations , .don-stats{
+  background-color: white;
+  height: 30vh;
+  width: 30vw;
+  border-radius: 10px;
+  padding: 5px;
+}
+.my-donations h2 , 
+.latest-donations h2{
+  color: red;
+}
+.don-stats{
+  
+}
+.don-stats h2{
+  color: green;
+}
+.my-donations ul , 
+.don-stats ul{
+  margin-left: 20px;
+}
+.my-donations ul li , 
+.don-stats ul li{
+  padding: 5px;
+}
+.latest-donations p{
+
+}
+.view-last-donation{
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: lightpink;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.view-last-donation:hover{
+  background-color: pink;
+}
+@media screen and (max-width: 900px) {
+  .close-btn{
+    margin-left: 45vw;
+  }
+  .stats{
+    flex-direction: column;
+    justify-content: left;
+  }
+  .my-donations h2 , 
+  .latest-donations h2,
+  .don-stats h2{
+    font-size: 20px;
+  }
+  .my-donations, .don-stats{
+    margin-left: 0;
+    width: 50vw;
+    height: 20vh;
+  }
+  .view-last-donation{
+    padding: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+
+/*------------------------donation - container-----------------*/
+
+.donation-container {
+  grid-column: 2;
+  grid-row: 2;
+  
+}
+.background-img {
+  z-index: -1;
+  height: 94vh;
+  width: 80vw;
+}
+.donate-here{
+  padding: 10px;
+  margin-left: 15px;
+}
+.add-donation {
+  font-size: 26px;
+  font-family: "Mukta", sans-serif;
+  color: black;
+  background-color: white;
+  padding: 50px;
+  margin: auto;
+  height: 84vh;
+  border-radius: 10px;
+}
+
+.select-value li {
+  display: inline;
+  outline: none;
+}
+.don-value {
+  font-size: 20px;
+  background-color:red;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.don-value:hover {
+  background-color: darkred;
+}
+
+.add-donation h4 {
+  
+  
+  margin-bottom: 10px;
+  margin-left: 5px;
+  
+  
+}
+.cust-amount,
+.donate-for,
+.dedicate-donation,
+.payment,
+.donate,
+.prv-d {
+  padding: 5px;
+  margin-top: 30px;
+}
+.donate{
+  margin-left: 45vw;
+}
+.dedicate-donation{
+  margin-left: 20px;
+}
+
+.add-donation label {
+  
+  font-weight: bold;
+  margin-left: 5px;
+  font-family: "Mukta", sans-serif;
+}
+.cust-amount input[type="text"] {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 70px;
+  font-size: 20px;
+ background-color:lightgray;
+  border: none;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+  background-color:lightgray;
+}
+.dedicate-donation{
+  cursor: pointer;
+}
+.donate-for select {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 500px;
+  font-size: 20px;
+  background-color:lightgray;
+}
+.remark {
+  display: flex;
+  justify-content: center;
+  display: inline;
+  padding: 5px;
+}
+.remark label {
+  font-size: 16px;
+  font-weight: normal;
+}
+.remark textarea {
+  margin-left: 30px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 500px;
+  height: 50px;
+  border-radius: 5px;
+  background-color:lightgray;
+  
+}
+.payment-method img {
+  margin-top: 30px;
+
+  max-width: 200px;
+  max-height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+.donate-btn {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  height: 70px;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: red;
+  font-weight: bold;
+  font-size: 32px;
+}
+.donate-btn:hover {
+  background-color: darkred;
+  color: white;
+}
+
+/*======side-pannel=*/
+
+.side-panal {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100vh;
+  z-index: 1;
+  text-align: center;
+  justify-content: space-around;
+  
+  padding: 10px;
+  margin: auto;
+  background-color:lightgray;
+ 
+}
+
+.view-more-btns{
+  width: 28vw;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 1vw;
+  background-color: white;
+  
+}
+.view-more-btns button{
+  width: 10vw;
+  margin-left: 10px;
+  padding: 15px;
+  font-size: 18px;
+  text-align: left;
+  background: darkgray;
+  border-radius: 5px;
+  outline: none;
+  color: red;
+  font-weight: bold;
+  ont-family: "Mukta", sans-serif;
+  cursor: pointer;
+}
+.view-more-btns button:hover{
+  background-color: red;
+  color: white;
+}
+
+/*----------------profile - container------------*/
+
+.profile {
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 28vw;
+  height: 70vh;
+  padding: 10px;
+  margin-left: 1vw;
+  align-items: center;
+  background-color: white;
+}
+.more-details {
+  margin-top: 20px;
+}
+.more-details a {
+  cursor: pointer;
+  transition: 0.5ms;
+  padding: 15px;
+}
+.more-details a:hover {
+  color: red;
+}
+.pro-pic img {
+  height: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  margin: 10px;
+}
+
+.pro-details ul{
+  
+  
+}
+.pro-details ul li{
+  font-size: 30px;
+  padding: 5px;
+  font-family: "Mukta", sans-serif;
+  font-weight: bold;
+}
+
+.pro-btns{
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.pro-btns a{
+  padding: 10px;
+  width: 10vw;
+  background-color: white;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .profile{
+    width: 40vw;
+   
+    padding: 0;
+    
+  }
+  
+   .view-more-btns{
+     width: 40vw;
+   } 
+  
+  .view-more-btns button{
+    width: 30vw;
+    font-size: 16px;
+    
+  }
+  .pro-details ul li{
+    font-size: 18px;
+   
+  }
+  
+  .pro-btns a{
+    font-size: 16px;
+  }
+
+
+}
+
+/*-------footer-------------*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 6vh;
+  background-color: #e82563;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-bar {
+    position: fixed;
+    grid-area: nav-bar;
+    display: grid;
+    left: 0;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 5fr 1fr;
+    grid-template-areas: " title-name logo-container ";
+    background-color: #e82563;
+    height: 50px;
+    z-index: 10;
+  }
+  .logo-container {
+    display: none;
+  }
+
+  .title-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+
+    grid-area: title-name;
+  }
+
+  .tzu-logo {
+    width: 82px;
+    background: url(../images/tzuChiLogo.png);
+  }
+  .logo-name {
+    display: flex;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .logo-name span {
+    font-weight: 200;
+  }
+  .log-sign {
+    width: 25px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .log-sign a {
+    display: block;
+    position: relative;
+    right: 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    transition: 0.3s;
+  }
+
+  .back-btn {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    background: #e82563;
+    padding: 0.5rem 0.8rem;
+    font-size: 5rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    line-height: 1;
+
+    transition: 0.3s;
+    text-transform: uppercase;
+  }
+  .container {
+    grid-template-columns: 40vw 60vw;
+    
+  }
+  
+  
+
+  
+  .donation-container {
+    flex-direction: column;
+  }
+
+  
+  .add-donation h4 {
+    color: black;
+    padding: 2px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
+  .add-donation {
+    color: black;
+    font-size: 20px;
+    padding: 15px;
+    height: 90vh;
+  }
+  .don-value {
+    margin-bottom: 2px;
+    width: 100px;
+    font-size: 14px;
+  }
+  .cust-amount input[type="text"] {
+   width: 200px;
+   font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  .cust-amount,
+  .donate-for,
+  .dedicate-donation,
+  .payment,
+  .donate {
+    margin-top: 10px;
+  }
+  .donate{
+    margin-left: 0;
+  }
+  .donate-for{
+    margin-left: 5px;
+  }
+  .donate-for select {
+    width: 200px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  .payment-method img {
+    max-width: 100px;
+    max-height: 50px;
+    margin-top: 20px;
+  }
+  
+  .remark textarea {
+    width: 300px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}

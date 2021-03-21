@@ -35,7 +35,7 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="#">Edit Profile</a>
+          <a href="<?= URL ?>Commissioner/edit_profile">Edit Profile</a>
           <a href="<?= URL ?>Commissioner/logout">Logout</a>
 
         </div>
@@ -103,7 +103,7 @@
         <li class="<?php if ($page == 'sessionIncharge') {
                       echo 'active';
                     } ?>">
-          <a href="<?= URL ?>Commissioner/sessionIncharge"><i class="fas fa-street-view"></i> Session In-charge</a>
+          <a href="<?= URL ?>Commissioner/sessionIncharge?gen=0"><i class="fas fa-street-view"></i> Session In-charge</a>
         </li>
         <li class="<?php if ($page == 'beneficiaryCases') {
                       echo 'active';

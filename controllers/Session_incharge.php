@@ -10,7 +10,7 @@ class Session_incharge extends Controller
         $logged = Session::get('loggedIn-sin');
         if ($logged == false) {
             Session::destroy();
-            header('location: ../login');
+            header('location: ../staff/sessionInchargeLogin');
             exit;
         }
     }
@@ -21,19 +21,22 @@ class Session_incharge extends Controller
         $this->view->rendor('session_incharge/dashboard/index');
     }
 
-    
+    function media_upload()
+    {
+        $this->view->rendor('session_incharge/dashboard/media_upload');
+    }
     function media_gallary()
     {
         $this->view->rendor('session_incharge/dashboard/media_gallary');
     }
-    function confirm_participants()
+    function marking_attendance()
     {
-        $this->view->rendor('session_incharge/dashboard/confirm_participants');
+        $this->view->rendor('session_incharge/dashboard/marking_attendance');
     }
 
-    function attendance_marking ()
+    function unconfirm_attendance()
     {
-        $this->view->rendor('session_incharge/dashboard/attendance_marking');
+        $this->view->rendor('session_incharge/dashboard/unconfirm_attendance');
     }
 
 
@@ -43,7 +46,7 @@ class Session_incharge extends Controller
     function logout()
     {
         Session::destroy();
-        header('location: ../login');
+        header('location: ../staff/sessionInchargeLogin');
         exit;
     }
 }

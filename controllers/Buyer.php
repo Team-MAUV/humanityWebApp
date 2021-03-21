@@ -15,14 +15,35 @@ class Buyer extends Controller
 
     function index()
     {
-        $this->view->rendor('buyer/dashboard/buyer_home');
+        $data = $this->model->view_buyerdash();
+        $this->view->rendor('buyer/dashboard/buyer_main', $data ,true);
     }
 
+    function edit_profile()
+    {
+        $data = $this->model->edit_profile();
+        $this->view->rendor('buyer/dashboard/buy_edit_profile');
+    }
     
     
     function view_product(){
-        $this->view->rendor('buyer/dashboard/product');
+      
+        $data = $this->model->view_product();
+        $this->view->rendor('buyer/dashboard/view_product', $data ,true);
     }
     
+    function add_bid(){
+      
+        $data = $this->model->add_bid();
+        $this->view->rendor('buyer/dashboard/bid_msg', $data, true);
+          
+    }
+
+    function logout()
+    {
+        Session::destroy();
+        header('location: ../login');
+        exit;
+    }
     
 }

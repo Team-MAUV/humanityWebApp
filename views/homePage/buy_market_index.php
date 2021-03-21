@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
     </head>
 
     <body>
@@ -41,51 +42,194 @@
 
 
         <div class="container">
+            
             <div class="hd"></div>
+            
+            
             <div class="page-body">
-                <div class="img-container">
-                    <img class="background" src="<?= URL ?>public/images/foodcrp.jpg">
-                    <div class="sssss id="test">
-                        <div class="pg-name" id="pg"><h2>Tzu-Chi Market</h2></div>
+                <div class="head-container">
+                    
+                    
+                    <div class="pg-name">
+                        <h2>Welcome to Tzu-Chi Market Module</h2>
                         <div class="btns">
-                            <a class="log" href="#">Log-In</a>
-                            <a class="reg" href="#">Register</a>
+                            <a class="log" href="<?= URL ?>login?pf=buy">Log-In</a>
+                            <a class="reg" href="<?= URL ?>register/buyRegForm">Register</a>
                         </div>
                     </div>
+                    <div class="home-img">
+                        <img src="<?= URL ?>public/images/online-auction.jpg">
+                    </div>
                 </div>
-                <div class="body-container">
+
+                <div class="about">
+                    <div class="img-slider">
+                        <div class="slide active">
+                            <img src="<?= URL ?>public/images/recy1.jpg" alt="">
+                            <div class="info">
+                                <h2>Reuse</h2>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?= URL ?>public/images/recy2.jpg" alt="">
+                            <div class="info">
+                                <h2 style="color:black">Recycle </h2>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?= URL ?>public/images/recy3.jpg" alt="">
+                            <div class="info">
+                                <h2>Reduce </h2>
+                            </div>
+                        </div>
+                        <div class="slide">
+                        <img src="<?= URL ?>public/images/recycling-temp.jpg" alt="">
+                            <div class="info">
+                                <h2>Poster </h2>
+                            </div>
+                        </div>
+                     
+                        <div class="navigation">
+                            <div class="btn active"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                           
+                        </div>
+                    </div>
+
+            <script type="text/javascript">
+                var slides = document.querySelectorAll('.slide');
+                var btns = document.querySelectorAll('.btn');
+                let currentSlide = 1;
+
+                // Javascript for image slider manual navigation
+                var manualNav = function(manual){
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+
+                    btns.forEach((btn) => {
+                    btn.classList.remove('active');
+                    });
+                });
+
+                slides[manual].classList.add('active');
+                btns[manual].classList.add('active');
+                }
+
+                btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    manualNav(i);
+                    currentSlide = i;
+                });
+                });
+
+                // Javascript for image slider autoplay navigation
+                var repeat = function(activeClass){
+                let active = document.getElementsByClassName('active');
+                let i = 1;
+
+                var repeater = () => {
+                    setTimeout(function(){
+                    [...active].forEach((activeSlide) => {
+                        activeSlide.classList.remove('active');
+                    });
+
+                    slides[i].classList.add('active');
+                    btns[i].classList.add('active');
+                    i++;
+
+                    if(slides.length == i){
+                    i = 0;
+                    }
+                    if(i >= slides.length){
+                    return;
+                    }
+                    repeater();
+                }, 10000);
+                }
+                repeater();
+                }
+                repeat();
+            </script>
+
+                </div>
+
+
+
+
+                <div class="media-container">
                     <div class="selection-panal">
                         <button onclick="showAboutProducts()">Products</button>
                         <button onclick="showAboutBids()">Bidding Process</button>
                     </div>
                     <div class="about-products" id="about-products" style="display: block;">
                         
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, a eos 
-                        repudiandae voluptates praesentium inventore exercitationem consequuntur, quod ea consectetur del
-                        ectus vel illum dicta earum distinctio, quos tempora ab. Velit?</p>
+                       <div class="about-img-text">
+                            <p>Tzu-Chi volunteers collects recyclable items and sort them in to four catagorys. </p>
+                       </div>
                         
                         <h4>product categories</h4>
-                        <ul>
-                            <li>Plastic</li>
-                            <li>Paper</li>
-                            <li>Glass</li>
-                            <li>Electronic Waste</li>
-                        </ul>
+                        <div class="images">
+                            <div class="row">
+                                
+                                <div class="column">
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-glass.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Glass</h3></div>  
+                                            <p>These are the recyclable glass items Tzu-Chi volunteers collected. 
+                                            They are cleaned and sorted to get most value for them. These includes glass bottles, 
+                                            plain glases. Log in to your Tzu-Chi Market profile to see more about them.</p>                                         
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="column">
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-paper.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Paper</h3></div> 
+                                            <p>These are recyclable paper items Tzu-Chi volunteers collected. They are cleaned and sorted. 
+                                            they are collected as bundles of papers.  Log in to your Tzu-Chi Market profile to see more about them. </p>                                          
+                                            
+                                        </div>
+                                    </div>
+                                </div> 
+                                
+                                <div class="column">
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-plastic.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Plastic</h3></div>                                           
+                                            <p>These are recyclable plastic items collected by our Tzu-Chi volunteers. They are cleaned and sorted to get
+                                            more value. These includes mpstly plastic bottles, plastuc bags and cups.  Log in to your Tzu-Chi Market profile to see more about them. </p>
+                                        </div>
+                                    </div>
+                                </div>    
+
+                                <div class="column">
+                                    <div class="prd-cat-img">
+                                        <img src="<?= URL ?>public/images/recycled-tronic.jpg">
+                                        <div class="text-box">
+                                            <div class="prd-name"><h3>Recycled Electronics</h3></div>                                           
+                                            <p>These are recyclable plastic items collected by Tzu-Chi volunteers. They are cleaned and sorted to gain
+                                            more value. Log in to your Tzu-Chi Market profile to see more about them.  </p>
+                                        </div>
+                                    </div>
+                                </div>    
+                                
+                            </div>
+                        </div>
 
                         <h4>collecting & sorting process</h4>
                         
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic fugiat laboriosam consequuntur
-                        quasi, iure dicta at deleniti, aliquam exercitationem quidem corrupti in possimus illum expedita 
-                        error! Minus, alias quidem!</p>
+                        <p>Tzu-Volunteers collect recyclable items every week.</p>
+                        <p>After collecting they are washed abd cleaned. Then all the items will be sorted in to their 
+                        respective catagorys.  </p>
+                        <p>After some considerable amount of recyclable products colleted Tzu-Chi hambanthota will add 
+                        them to the Tzu-Chi market.</p>
                         
                        
                         

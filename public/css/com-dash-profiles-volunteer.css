@@ -38,6 +38,30 @@
   height: 3rem;
   background-color: rgb(7, 112, 199);
 }
+.button {
+  border-radius: 4px;
+  background-color:  #4d79ff;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 16px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button:hover  {
+ background-color: #000000;
+}
+
+
+
+
+
+
+
+
 
 input[type="text"] {
   padding: 6px;
@@ -151,6 +175,32 @@ input[type="text"] {
   color: #ffffff;
   padding: 10px 12px;
 }
+.read table tbody tr td button{
+
+  background-color: #004883; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#view{
+  padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: rgb(186, 189, 207);
+    width: 100%;
+    margin-left: 0vw;
+    margin-right: 10vh;
+    color: black;
+}
+
+
+
+
 .read table tbody tr td.actions .trash {
   background-color: #b73737;
 }
@@ -163,6 +213,13 @@ input[type="text"] {
 .read table tbody tr td.actions .edit:hover {
   background-color: #319ca3;
 }
+
+
+
+
+
+
+
 .update form {
   padding: 15px 0;
   display: flex;
@@ -210,6 +267,21 @@ input[type="text"] {
 .delete .yesno a:hover {
   background-color: #32a367;
 }
+
+#more {display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 900px) {
   .grid-body {
@@ -278,3 +350,5 @@ input[type="text"] {
     padding: 2px 4px;
   }
 }
+
+

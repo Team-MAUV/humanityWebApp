@@ -40,7 +40,7 @@ include "userLogin-header.php"; ?>
     </div>
 
    
-    <?php include "userLogin-footer.php" ?>
+    <?php include "userLogin-footer.php"; ?>
 
     <?php
 unset($_SESSION["error"]);

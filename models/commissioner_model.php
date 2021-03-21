@@ -64,6 +64,92 @@ class commissioner_Model extends Model
         return ($pageData);
   }
 
+  public function get_reg_staff_profiles() {
+    //Volunteer Profiles
+    $st = $this->db->prepare('SELECT * FROM staff WHERE status="accepted" ORDER BY id LIMIT :current_page, :record_per_page');
+    // Get the page via GET request (URL param: page), if non exists default the page to 1
+    $spage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+
+    // Number of records to show on each page
+    $records_per_page = 5;
+
+    $st->bindValue(':current_page', ($spage_no - 1) * $records_per_page, PDO::PARAM_INT);
+    $st->bindValue(':record_per_page', $records_per_page, PDO::PARAM_INT);
+    $st->execute();
+    $snum_contacts = $this->db->query('SELECT COUNT(*) FROM staff')->fetchColumn();
+    $scontacts = $st->fetchAll();
+
+    //Volunteer Requests
+    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status="pending" ORDER BY joined_year ');        
+    $stmt->execute();
+    $snewReq = $stmt->fetchAll();
+    $snewReq_Count = $stmt->rowCount();
+
+    //All the data that has to be return from this functon is added to an associative array
+    $pageData = [
+      'spage_no' => $spage_no,
+      'records_per_page' => $records_per_page,
+      'scontacts' => $scontacts,
+      'snum_contacts' => $snum_contacts,
+      'snewReq'=> $snewReq,
+      'snewReq_Count' => $snewReq_Count
+    ];
+    return ($pageData);
+}
+public function get_reg_buyer_profiles() {
+  //Volunteer Profiles
+  $st = $this->db->prepare('SELECT * FROM buyer ORDER BY id LIMIT :current_page, :record_per_page');
+  // Get the page via GET request (URL param: page), if non exists default the page to 1
+  $bpage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+
+  // Number of records to show on each page
+  $records_per_page = 5;
+
+  $st->bindValue(':current_page', ($bpage_no - 1) * $records_per_page, PDO::PARAM_INT);
+  $st->bindValue(':record_per_page', $records_per_page, PDO::PARAM_INT);
+  $st->execute();
+  $bnum_contacts = $this->db->query('SELECT COUNT(*) FROM buyer')->fetchColumn();
+  $bcontacts = $st->fetchAll();
+
+  
+
+  //All the data that has to be return from this functon is added to an associative array
+  $pageData = [
+    'bpage_no' => $bpage_no,
+    'records_per_page' => $records_per_page,
+    'bcontacts' => $bcontacts,
+    'bnum_contacts' => $bnum_contacts,
+    
+  ];
+  return ($pageData);
+}
+public function get_reg_donor_profiles() {
+  //Volunteer Profiles
+  $st = $this->db->prepare('SELECT * FROM donor  ORDER BY id LIMIT :current_page, :record_per_page');
+  // Get the page via GET request (URL param: page), if non exists default the page to 1
+  $dpage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+
+  // Number of records to show on each page
+  $records_per_page = 5;
+
+  $st->bindValue(':current_page', ($dpage_no - 1) * $records_per_page, PDO::PARAM_INT);
+  $st->bindValue(':record_per_page', $records_per_page, PDO::PARAM_INT);
+  $st->execute();
+  $dnum_contacts = $this->db->query('SELECT COUNT(*) FROM donor')->fetchColumn();
+  $dcontacts = $st->fetchAll();
+
+  
+
+  //All the data that has to be return from this functon is added to an associative array
+  $pageData = [
+    'dpage_no' => $dpage_no,
+    'records_per_page' => $records_per_page,
+    'dcontacts' => $dcontacts,
+    'dnum_contacts' => $dnum_contacts,
+    
+  ];
+  return ($pageData);
+}
 
   public function run_accept_vol_request(){
           
@@ -163,15 +249,7 @@ class commissioner_Model extends Model
       
                   Email::email_send($to,$rec_name, $subject, $message, $headers);
 
-
-
-
-
-
-
   }
-
-
 
 
 
@@ -386,4 +464,419 @@ return ($pageData);
     ];
     return ($pageData);
   }
+
+  
+  
+
+
+  public function run_add_com()
+  {
+   // echo "starting";
+
+   if (!empty($_POST)) {
+                                                               
+      $name = $_POST['name'];
+      $nic = $_POST['nic'];
+      $email = $_POST['email'];
+      $address =$_POST['address'];
+      $password = $_POST['password'];
+      $contact = $_POST['contact'];
+      $role="commissioner";
+      $gender =$_POST['gender'];
+      $pw = password_hash($password, PASSWORD_DEFAULT);
+      
+      $stmt = $this->db->prepare('INSERT INTO `commissioner` (`name`,`com_nic`, `email`,`contact`, `address`,`gender`) VALUES ( :name, :nic,:email,:contact, :address, :gender)');
+      $stmt->execute(array(
+        ':name'=>$name,
+        ':nic'=>$nic,
+        ':email'=>$email,
+        ':contact'=>$contact,
+        ':address'=>$address,
+        ':gender'=>$gender,
+       
+      ));
+      
+      $custom_id=$this->db->prepare("SELECT id FROM commissioner WHERE com_nic=:nic");
+      $custom_id->execute(array(
+        ':nic' => $_POST['nic'],
+      ));
+      $cid_result = $custom_id->fetchAll();
+      $count = $custom_id->rowCount();
+      if ($count > 0) {
+        foreach ($cid_result as $cidtmp) :
+          if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+            $cid ="COMHB00".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+            $cid ="COMHB0".$cidtmp['id'];
+          }else if(strlen($cidtmp['id'])>0){
+            $cid ="COMHB".$cidtmp['id'];
+          };
+          
+        endforeach;
+
+        $username=$cid;
+        $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
+      $stmt2->execute([$username, $pw, $role]);
+
+      $get_comid = $this->db->prepare("SELECT id FROM user WHERE username= :uname  ");
+      $get_comid->execute(array(
+        ':uname' => $username
+      ));
+
+      $result = $get_comid->fetchAll();
+      $count2 = $get_comid->rowCount();
+
+
+      if ($count2 > 0) {
+        foreach ($result as $tmp) :
+          $id = $tmp['id'];
+        endforeach;
+
+      $cidstmt = $this->db->prepare('UPDATE `commissioner` SET com_id =:cid, userlogin_id=:id WHERE com_nic=:nic');
+      $cidstmt->execute(array(
+        ':nic' => $_POST['nic'],
+        ':cid'=>$cid,
+        ':id'=>$id,
+      ));
+    }
+      
+      
+
+     
+      $msg = "Form data submitted successfully!";
+                   
+                }
+    
+  }
+  else{
+      $msg = "Data fields are empty";
+    }
+    $stmtc = $this->db->prepare('SELECT * FROM commissioner  ORDER BY id ');     
+    $stmtc->execute();
+    $contacts = $stmtc->fetchAll();
+    
+
+   //data that has to be return from this functon is added to an associative array
+    $pageData = [
+      'contacts' => $contacts,
+      'msg' => $msg
+    ];
+    return ($pageData);
+    
+}
+
+
+
+  public function fetch_sessionIncharge_details()
+  {
+    Session::init();
+   
+     $getParam = $_GET['gen'];
+     $msg="";
+     $tempUsername="";
+     $pwd="";
+   
+
+          //Fetch staff ids for drop down list
+          $query = "SELECT * FROM staff WHERE availability=1";
+          $statement = $this->db->prepare($query);
+          $statement->execute();
+          $staff_info = $statement->fetchAll();
+
+          //Fetch Volunteer Activity IDs for drop down list
+            $query = "SELECT * FROM vol_activity WHERE status=1";
+            $st = $this->db->prepare($query);
+            $st->execute();
+            $volactivity_info = $st->fetchAll();
+
+
+
+
+    if($getParam ==1){
+  
+      if(isset($_POST['generateName']) && !empty($_POST['staff-id'])){
+
+        $stf_id=strtoupper($_POST['staff-id']);
+
+        foreach ($staff_info as $tmp) :
+
+          if($tmp['staff_id'] == $stf_id ){
+            $stf_id = $tmp['staff_id'];
+            $id_in_stf_tbl = $tmp['id'];
+            $name = $tmp['name'];
+            $email = $tmp['email'];
+          }
+         
+        endforeach;
+        Session::set('stf_tbl_id', $id_in_stf_tbl);
+        Session::set('staff_id', $stf_id);
+        Session::set('stf_name', $name);
+        Session::set('email', $email);
+        
+
+            $tempUsername= 'TMP'.$stf_id;
+         
+            //Generate a random string for the Password
+            function generateRandomString($length = 6) {
+              return substr(str_shuffle(str_repeat($x='0123456789', ceil($length/strlen($x)) )),1,$length);
+            }
+
+            //Insert Data into User table
+            $pwd  = generateRandomString();
+
+          
+        
+      }else{
+          $msg="Please select a Staff ID!";
+      }
+      
+    }
+
+   
+
+    if($getParam ==2){
+ 
+      //Insert temp username & passcode to usertable
+    
+        
+        $tmpUser = $_POST['tmp_username'];
+        $pwd  = $_POST['pcode'];
+        $staff_id =Session::get('staff_id');
+        $stf_tbl_id = intval(Session::get('stf_tbl_id'));
+        $stf_name = Session::get('stf_name');
+        $email = Session::get('email');
+       
+        // $role = "session_incharge";
+     
+         
+
+ 
+        $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,name,id_in_stf_tbl,username, passcode) VALUES(?,?,?,?,?)");
+        $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd]);
+
+
+        $st= $this->db->prepare("UPDATE staff SET availability=0  WHERE  staff_id=:id" );
+
+     
+
+        $st->execute(array(
+            ':id' => $staff_id
+          
+        ));
+
+        
+        if($result1){
+
+
+        
+          $msg ="Session Incharge appointed Successfully!";
+
+          $to = $email;
+          $subject = 'Activate Your User Profile!';
+          $rec_name =  $stf_name;
+
+         
+
+          $message = '<h5> Hello '.$rec_name.', </h5>
+          <p> You have been appointed as a Session Incharge! </p>';
+
+          $message .='<br>Here is your Credentials for the Session Incharge Login: </br>';
+          $message .='<br>Username : '.$tmpUser.' </br>';
+          $message .='<br>Password : '.$pwd.' </br>';
+     
+
+          $message .= '<h4>***Humanity Web App - Powered by Team MAUV***</h4>';
+
+          $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+          $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+          $headers .= "Content-type: text/html\r\n";
+
+          Email::email_send($to,$rec_name, $subject, $message, $headers);
+    
+          
+        }else{
+         
+          $msg ="Error in data insertion to User table!";
+       
+        }
+ 
+    }
+
+      //Fetch Session Incharge details
+        $query = "SELECT * FROM session_incharge";
+        $statement = $this->db->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        $total_row = $statement->rowCount();
+
+
+        if($total_row > 0)
+        {
+            $pageData = [
+              'result' => $result,
+              'staff_info'=>$staff_info,
+              'volactivity_info'=>$volactivity_info,
+              'msg'=>$msg,
+              'tempUsername'=>$tempUsername,
+              'pwd'=>$pwd
+              
+            ];
+            return ($pageData);
+
+        }
+  }
+
+
+ 
+
+
+
+
+public function get_view_com_list() {
+  $vol = $this->db->query('SELECT COUNT(*) FROM volunteer')->fetchColumn();
+  $stf = $this->db->query('SELECT COUNT(*) FROM staff')->fetchColumn();
+  $don = $this->db->query('SELECT COUNT(*) FROM donor')->fetchColumn();
+  $buy = $this->db->query('SELECT COUNT(*) FROM buyer')->fetchColumn();
+  $bene = $this->db->query('SELECT COUNT(*) FROM beneficiery_case WHERE (status!="pending") ')->fetchColumn();
+  $vact = $this->db->query('SELECT COUNT(*) FROM vol_activity')->fetchColumn();
+  $damt = $this->db->query('SELECT SUM(contribution) FROM donor')->fetchColumn();
+  $bid = $this->db->query('SELECT SUM(highest_bid_amount) FROM product')->fetchColumn();
+  
+          
+          $stmt = $this->db->prepare('SELECT * FROM commissioner  ORDER BY id ');     
+          $stmt->execute();
+          $contacts = $stmt->fetchAll();
+          $msg="";
+  
+         //data that has to be return from this functon is added to an associative array
+          $pageData = [
+            'contacts' => $contacts,
+            'msg' => $msg,
+            'vol'=>$vol,
+            'stf'=>$stf,
+            'don'=>$don,
+            'buy'=>$buy,
+            'bene'=>$bene,
+            'vact'=>$vact,
+            'damt'=>$damt,
+            'bid'=>$bid,
+          ];
+          return ($pageData);
+}
+
+
+
+public function get_leaveRequests(){
+
+
+
+  $st = $this->db->prepare('SELECT * FROM leave_request WHERE status="pending" ORDER BY from_date');
+  $st->execute();
+  $contacts = $st->fetchAll();
+
+  $st2=$this->db->prepare("SELECT * FROM staff");
+  $st2->execute();
+  $leaves= $st2->fetchAll();
+
+  $st3 = $this->db->prepare('SELECT DISTINCT from_date,count(*) AS fromd FROM leave_request WHERE status="approved" GROUP BY from_date ORDER BY from_date' );
+  $st3->execute();
+  $approved = $st3->fetchAll();
+  
+  $st4 = $this->db->prepare('SELECT DISTINCT to_date,count(*) AS tod FROM leave_request WHERE status="approved" GROUP BY to_date ORDER BY to_date' );
+  $st4->execute();
+  $approved2 = $st4->fetchAll();
+  
+$pageData = [
+'contacts' => $contacts,
+'leaves' =>$leaves,
+'approved'=>$approved,
+'approved2'=>$approved2,
+];
+return ($pageData);
+
+
+}
+
+
+public function run_search_leaverequest()
+  {
+
+    $st = $this->db->prepare("SELECT * FROM leave_request WHERE staff_id= :staff_id");
+
+    $st->execute(array(
+      ':staff_id' => $_POST['search']
+    ));
+    $page_no = 1;
+    $records_per_page = 1;
+    $num_contacts = 1;
+
+    $contacts = $st->fetchAll();
+    $pageData = [
+      'page_no' => $page_no,
+      'records_per_page' => $records_per_page,
+      'contacts' => $contacts,
+      'num_contacts' => $num_contacts
+    ];
+    return ($pageData);
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function projectReports(){
+
+
+  //Pending reports
+  $st = $this->db->prepare('SELECT * FROM project_report WHERE status="pending" ORDER BY id ');
+  $st->execute();
+  $pendings = $st->fetchAll();
+
+//Approved reports
+$stmt2 = $this->db->prepare('SELECT * FROM project_report WHERE status="approved" ORDER BY id ');        
+$stmt2->execute();
+$approved = $stmt2->fetchAll();
+
+
+ //rejected reports
+$stmt3 = $this->db->prepare('SELECT * FROM project_report WHERE status="rejected" ORDER BY id ');
+$stmt3->execute();
+$rejects = $stmt3->fetchAll();
+
+  
+//All the data that has to be return from this functon is added to an associative array
+$pageData = [
+'approved' => $approved,
+'pendings' => $pendings,
+'rejects'=>$rejects,
+
+];
+return ($pageData);
+
+
+}
+
 }

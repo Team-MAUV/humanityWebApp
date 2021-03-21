@@ -7,7 +7,8 @@
   padding: 25px 0;
   font-size: 22px;
   border-bottom: 1px solid #ebebeb;
-  color: #666666;
+  color: #19077e;
+  font-family: "Roboto";
 }
 .image-popup {
   display: none;
@@ -60,7 +61,7 @@
 .home .upload-image {
   display: inline-block;
   text-decoration: none;
-  background-color: #38b673;
+  background-color: #1f70eb;
   font-weight: bold;
   font-size: 14px;
   border-radius: 5px;
@@ -69,7 +70,7 @@
   margin: 15px 0;
 }
 .home .upload-image:hover {
-  background-color: #32a367;
+  background-color: #1512cf;
 }
 .home .images {
   display: flex;
@@ -87,6 +88,10 @@
 .home .images a:hover span {
   opacity: 1;
   transition: opacity 1s;
+}
+
+span {
+  color: rgba(114, 111, 111, 0.651);
 }
 .home .images span {
   display: flex;
@@ -115,6 +120,7 @@
   width: 100%;
   padding: 10px 0;
   margin-right: 25px;
+  color: rgb(5, 4, 73);
 }
 .upload form input,
 .upload form textarea {
@@ -122,14 +128,14 @@
   width: 100%;
   margin-right: 25px;
   margin-bottom: 15px;
-  border: 1px solid #cccccc;
+  border: 1px solid #070c4d;
 }
 .upload form textarea {
   height: 200px;
 }
 .upload form input[type="submit"] {
   display: block;
-  background-color: #38b673;
+  background-color: #10649c;
   border: 0;
   font-weight: bold;
   font-size: 14px;
@@ -140,7 +146,7 @@
   border-radius: 5px;
 }
 .upload form input[type="submit"]:hover {
-  background-color: #32a367;
+  background-color: #0c1886;
 }
 .delete .yesno {
   display: flex;

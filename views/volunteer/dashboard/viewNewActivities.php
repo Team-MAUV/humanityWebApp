@@ -25,21 +25,24 @@ include "vol_dash_header.php"; ?>
         <form action="#">
             <h1>Upcoming events</h1>
             <div class="row">
+            <?php foreach ($upcoming as $coming) : ?>
                 <div class="column">
 
 
                     <div class="flipbox-inner">
                         <div class="flipbox-front">
-                            <h2>01</h2>
-                            <h3> Blood Donation Campaign </h3>
+                            <h2><?= $coming['id'] ?></h2>
+                            <h3 class="head1"> <?= $coming['name'] ?> </h3>
                         </div>
                         <div class="flipbox-back">
                             <ul class="event">
-                                <li>Date : 07/12/2020 </li>
+                                <li>Started : <?= $coming['start_date_time'] ?> </li>
 
-                                <li>Venue: Community Hall </li>
+                                <li>Ended   : <?= $coming['end_date_time'] ?> </li>
 
-                                <li>Time : 8.00 a.m. - 3.00 p.m.</li>
+                                <li>Venue   : <?= $coming['venue'] ?></li>
+
+                                <li>Activity Points   : <?= $coming['point'] ?></li>
                             </ul>
                             <button type="button" class="btn">View Invitation</button>
 
@@ -51,74 +54,8 @@ include "vol_dash_header.php"; ?>
                     </div>
 
                 </div>
-
-                <div class="column">
-
-                    <div class="flipbox-inner">
-                        <div class="flipbox-front">
-                            <h2>02</h2>
-                            <h3>Tree plantation campaign</h3>
-
-                        </div>
-                        <div class="flipbox-back">
-
-                            <ul class="event">
-
-                                <li>Date : 05/11/2020</li>
-                                <li> Venue: Rathnapura</li>
-                                <li> Time : 8.00 a.m. - 3.00 p.m.</li>
-
-                            </ul>
-                            <button type="button" class="btn">View Invitation</button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="column">
-
-                    <div class="flipbox-inner">
-                        <div class="flipbox-front">
-                            <h2>03</h2>
-                            <h3>Beneficiery home visit 1 </h3>
-                        </div>
-                        <div class="flipbox-back">
-
-                            <ul  class="event">
-                                <li>Date : 05/11/2020</li>
-                                <li> Venue: Rathnapura</li>
-                                <li> Time : 8.00 a.m. - 3.00 p.m.</li>
-
-                            </ul>
-                            <button type="button" class="btn">View Invitation</button>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="column">
-
-                    <div class="flipbox-inner">
-                        <div class="flipbox-front">
-                            <h2>04</h2>
-                            <h3>Beneficiery home visit 2</h3>
-                        </div>
-                        <div class="flipbox-back">
-
-                            <ul class="event">
-
-                                <li>Date : 30/10/2020</li>
-                                <li>Venue: Hambantota </li>
-                                <li>Time : 9.00 a.m.</li>
-                            </ul>
-                            <button type="button" class="btn">View Invitation</button>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <?php endforeach; ?>
+                
             </div>
         </form>
     </div>
@@ -126,83 +63,35 @@ include "vol_dash_header.php"; ?>
         <form action="#">
             <h1>Finished events</h1>
             <div class="row">
+            <?php foreach ($finished as $finish) : ?>
                 <div class="column">
 
 
                     <div class="flipbox-inner">
                         <div class="flipbox-front">
-                            <h2>01</h2>
-                            <h3> Blood Donation Campaign </h3>
+                            <h2><?= $finish['id'] ?></h2>
+                            <h3 class="head1"> <?= $finish['name'] ?> </h3>
                         </div>
                         <div class="flipbox-back">
                             <ul class="event">
-                                <li>Date : 07/12/2020 </li>
+                                <li>Start : <?= $finish['start_date_time'] ?> </li>
 
-                                <li>Venue: Community Hall </li>
+                                <li>End   : <?= $finish['end_date_time'] ?> </li>
 
-                                <li>Time : 8.00 a.m. - 3.00 p.m.</li>
+                                <li>Venue : <?= $finish['venue'] ?></li>
+
+                                <li>Activity Points   : <?= $finish['point'] ?></li>
                             </ul>
-                            <button type="button" class="btn">View Details Form</button>
+                            <button type="button" class="btn">View Invitation</button>
 
-                            <button type="button" class="btn">View Media</button> </div>
-
-
+                        </div>
 
                     </div>
 
                 </div>
-
-                <div class="column">
-
-                    <div class="flipbox-inner">
-                        <div class="flipbox-front">
-                            <h2>02</h2>
-                            <h3>Tree plantation campaign</h3>
-
-                        </div>
-                        <div class="flipbox-back">
-
-                            <ul class="event">
-
-                                <li>Date : 05/11/2020</li>
-                                <li> Venue: Rathnapura</li>
-                                <li> Time : 8.00 a.m. - 3.00 p.m.</li>
-
-                            </ul>
-                            <button type="button" class="btn">View Details Form</button>
-
-                            <button type="button" class="btn">View Media</button> </div>
-
-
-                    </div>
-
-                </div>
-                <div class="column">
-
-                    <div class="flipbox-inner">
-                        <div class="flipbox-front">
-                            <h2>03</h2>
-                            <h3>Beneficiery home visit 1 </h3>
-                        </div>
-                        <div class="flipbox-back">
-
-                            <ul class="event">
-                                <li>Date : 05/11/2020</li>
-                                <li> Venue: Rathnapura</li>
-                                <li> Time : 8.00 a.m. - 3.00 p.m.</li>
-
-                            </ul>
-                            <button type="button" class="btn">View Details Form</button>
-
-                            <button type="button" class="btn">View Media</button> </div>
-
-
-                    </div>
-                </div>
-                </div>
+                <?php endforeach; ?>
                 
-            
-
+            </div>
         </form>
     </div>
 

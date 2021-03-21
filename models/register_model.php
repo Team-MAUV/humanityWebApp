@@ -42,7 +42,7 @@ public function run_vol_register(){
 
                     $stmt->execute([$name, $nic, $email, $contact, $address, $dob, $prev_vol_exp, $gender]);
                     
-                    $msg = "Form data submitter successfully!";
+                    $msg = "Form data submitted successfully!";
                     header('location: ../register');
                 }
     }else{
@@ -86,7 +86,7 @@ public function run_vol_register(){
       $password = $_POST['password'];
       $contact = $_POST['contact'];
       $role="donor";
-      $gender =$_POST['gender'];
+      
       $pw = password_hash($password, PASSWORD_DEFAULT);
 
 
@@ -107,14 +107,13 @@ public function run_vol_register(){
           $id = $tmp['id'];
         endforeach;
 
-      $stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :gender,:id)');
+      $stmt = $this->db->prepare('INSERT INTO `donor` (`name`,`nic`, `email`,`contact`, `address`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :id)');
       $stmt->execute(array(
         ':name'=>$name,
         ':nic'=>$nic,
         ':email'=>$email,
         ':contact'=>$contact,
         ':address'=>$address,
-        ':gender'=>$gender,
         ':id' => $id,
        
       ));
@@ -145,8 +144,7 @@ public function run_vol_register(){
     }
 
      
-      $msg = "Form data submitter successfully!";
-                    header('location: ../register/donRegForm');
+      $msg = "Form data submitted successfully!";
                 }
     }
   }
@@ -192,7 +190,6 @@ public function run_vol_register(){
       $password =$_POST['password'];
       $contact = $_POST['contact'];
       $role="buyer";
-      $gender =$_POST['gender'];
       $pw = password_hash($password, PASSWORD_DEFAULT);
       $stmt2=$this->db->prepare('INSERT INTO `user` (`username`,`password`,`role`) VALUES ( ?,?,?)');
       $stmt2->execute([$username, $pw, $role]);
@@ -211,14 +208,13 @@ public function run_vol_register(){
           $id = $tmp['id'];
         endforeach;
 
-      $stmt = $this->db->prepare('INSERT INTO `buyer` (`name`,`nic`, `email`,`contact`, `address`,`gender`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :gender,:id)');
+      $stmt = $this->db->prepare('INSERT INTO `buyer` (`name`,`nic`, `email`,`contact`, `address`,`userlogin_id`) VALUES ( :name, :nic,:email,:contact, :address, :id)');
       $stmt->execute(array(
         ':name'=>$name,
         ':nic'=>$nic,
         ':email'=>$email,
         ':contact'=>$contact,
         ':address'=>$address,
-        ':gender'=>$gender,
         ':id' => $id,
        
       ));
@@ -245,7 +241,7 @@ public function run_vol_register(){
         ':cid'=>$cid,
       ));
     }
-      $msg = "Form data submitter successfully!";
+      $msg = "Form data submitted successfully!";
                     header('location: ../register/buyRegForm');
                 }
     }
@@ -261,5 +257,9 @@ public function run_vol_register(){
   
     return ($pageData);
 }
+
+
+
+
 
 }

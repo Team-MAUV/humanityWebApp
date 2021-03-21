@@ -21,38 +21,99 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/index');
     }
 
-    /*function Market_module()
-    {
-        $this->view->rendor('staff/dashboard/Market_module');
-    }
-*/
+function edit_profile()
+{
+    
+    $this->view->rendor('staff/dashboard/edit_profile'); 
+   
+}
+
     function add_product()
     {
-        $this->view->rendor('staff/dashboard/add_product');
-        $this->model->add_product();
+        $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+        $this->view->rendor('staff/dashboard/add_product', $pageData , true);
     }
+    function run_add_product()
+    {
+        $msg_data=$this->model->add_product();
+        $this->view->rendor('staff/dashboard/add_product', $msg_data , true);
+    }
+
+
+
     function access_product()
     {
-        $this->view->rendor('staff/dashboard/access_product');
+        $data = $this->model->access_product();
+        $this->view->rendor('staff/dashboard/access_product', $data , true);
     }
 
+    function view_update_product(){
+        $data = $this->model->view_update_product();
+        $this->view->rendor('staff/dashboard/viewmore_product', $data , true);
+    }
 
+    function update_product(){
 
+    }
+    
+    function collected_product(){
+        $this->model->collected_product();
+        $data = $this->model->access_product();
+        $this->view->rendor('staff/dashboard/access_product', $data , true);
+    }
+
+    function delete_product(){
+        $this->model->delete_product();
+        $data = $this->model->access_product();
+        $this->view->rendor('staff/dashboard/access_product', $data , true);
+    }
+    function manage_bidsession()
+    {
+        $this->view->rendor('staff/dashboard/manage_bidsession');
+    }
+
+  
 
     function staff_report()
-    {
-        $this->view->rendor('staff/dashboard/staff_report');
+    {$msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+          $this->view->rendor('staff/dashboard/staff_report', $pageData , true);
     }
+    
+    function addreport(){
+        $msg_data=$this->model->addreport();
+        $this->view->rendor('staff/dashboard/staff_report', $msg_data , true);
+    }
+
     function upload_reports()
     {
-        $this->view->rendor('staff/dashboard/upload_reports');
+        $msg_data=$this->model->upload_reports();
+        $this->view->rendor('staff/dashboard/upload_reports', $msg_data , true);
     }
     function requestleave()
     {
-      
-        $this->view->rendor('staff/dashboard/requestleave');
-        $this->model->requestleave();
+        $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+        $this->view->rendor('staff/dashboard/requestleave', $pageData , true);
+        
     }
+    
+    function run_requestleave()
+    {
+        $msg_data=$this->model->requestleave();
+        $this->view->rendor('staff/dashboard/requestleave',$msg_data , true);
+    }
+
     
     function staff_gallery()
     {
@@ -64,10 +125,25 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/staff_notification');
     }
 
+
+    
+    function sessionInchargeLogin()
+    {
+        $this->view->rendor('staff/dashboard/siclogin');
+    }
+
+   
+    function run_sic_login()
+    {
+        $this->model->run_sic_login();
+    }
+
     function logout()
     {
         Session::destroy();
         header('location: ../login');
         exit;
     }
+
+
 }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Layouts</title>
+  <title>Volunteer</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/vol-layout_style.css" />
 
 
@@ -34,7 +34,7 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">Edit Profile</a>
+            <a href="<?= URL ?>Volunteer/edit_profile">Edit Profile</a>
             <a href="<?= URL ?>Volunteer/logout">Logout</a>
 
           </div>
@@ -76,8 +76,16 @@
             <a href="<?= URL ?>Volunteer/voladdbene"><i class="fas fa-file-contract"></i> Add New Beneficiary</a>
           </li>
 
-
-
+          <li class="<?php if ($page == 'volleaderboard') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>Volunteer/volleaderboard"><i class="fa fa-trophy" ></i>Leaderboard</a>
+          </li>
+          <li class="<?php if ($page == 'volpartcipate') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>Volunteer/volpartcipate"><i class="fa fa-star-half-o"></i>Partcipated Activities</a>
+          </li>
         </ul>
       </div>
     </div>

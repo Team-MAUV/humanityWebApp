@@ -5,10 +5,10 @@ include "regForm-header.php"; ?>
 
 
 
-<div class="login" style="background-image: url('<?= URL ?>public/images/bgreg1.svg') ;">
+<div class="login" >
   <h1>Welcome to Volunteer Registration</h1>
   <div id="error"></div>
-  <form action="register/run_vol_register" method="POST" id="form">
+  <form action="run_vol_register" method="POST" id="form">
 
     <label for="fullname">
       <i class="fas fa-user"></i>
@@ -60,23 +60,22 @@ include "regForm-header.php"; ?>
     </label>
     <select name="gender" id="gender">
 
-      <option value="male ">Male</option>
-      <option value="female ">Female</option>
-      <option value="other ">Other</option>
+      <option value="male " name="gender">Male</option>
+      <option value="female " name="gender">Female</option>
+      <option value="other " name="gender">Other</option>
     </select>
     <div class="validation-error ">
     </div>
 
     <button class="btn btnreg " type="submit " name="register " onclick="validation();">
-      <p style="font-weight: 800;"> Submit</p>
-    </button>
+    <p style="font-weight: 800;"> Submit</p>
+            </button>
 
-  </form>
+        </form>
+        <div class="messages"> <?= $msg ?></div> 
+    </div>
 
-  <div class="messages">Error Message : <?php echo $msg ?></div>
-
-
-<script>
+    <script>
 function validation() {
     var nic = document.getElementById("nic").value;
     var email = document.getElementById("email").value;
@@ -85,7 +84,6 @@ function validation() {
     var dob= document.getElementById("dob").value;
     var gender = document.getElementById("gender").value;
     var contact = document.getElementById("contact").value;
- 
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
     if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(dob==null ||dob=="")||(gender==null ||gender=="")){
@@ -97,7 +95,7 @@ function validation() {
 
         });
     }
-else{
+    else{
     if ((contact.length != 10) || (isNaN(contact))) {
         swal({
             title: "Registration Failed!",
@@ -117,17 +115,27 @@ else{
 
             });
         } else {
-
-            swal({
+          
+            if(nic.match(/^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$/)){
+                swal({
                 title: "Registration Successful!",
-                text: "Please wait for the confirmation email, Thank you!",
+                text: "Thank you for joining us!",
                 icon: "success",
 
             });
+            }
+          else {
+            swal({
+                title: "Registration Failed",
+                text: "Invalid format in NIC",
+                icon: "error",
 
+            });
         }
+    
     }
   }
+}
 }
 </script>
 <?php include "regForm-footer.php"; ?>

@@ -1,9 +1,16 @@
+body {
+    background: url("../images/") no-repeat center;
+    z-index: -1;
+}
+
 .login {
     width: 1000px;
     height: 29rem;
     background-color: #ffffff;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
+    border-radius: 15px;
+    border-color: #2caa0c;
 }
 
 .swal-overlay {
@@ -12,10 +19,11 @@
 
 .login h1 {
     text-align: center;
-    color: #ffffff;
+    color: #110909;
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
+    font-family: 'roboto';
 }
 
 .login form {
@@ -43,7 +51,8 @@
     position: relative;
     width: 400px;
     height: 50px;
-    border: 1px solid #dee0e4;
+    border: 1px solid #036814;
+    border-radius: 2px;
     margin-bottom: 20px;
     padding: 0 15px;
     margin-right: 2vw;
@@ -119,7 +128,7 @@ a:hover {
 }
 
 .btnreg {
-    background-image: linear-gradient(to right, #0dddb0, #1d8b6a, #0d91dd);
+    background-image: linear-gradient(to right, #0cf31f, #1d8b2c, #0e5700);
 }
 
 .btn:hover {

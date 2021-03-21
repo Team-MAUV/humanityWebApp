@@ -6,9 +6,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>header</title>
+  <title><?php echo $page?></title>
   <link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/com-dash-vol.css" />
+  <link rel="stylesheet" href="<?= URL ?>public/css/<?php echo $style ?>" />
+  <script src="<?= URL ?>public/js/staffpages.js"></script>
 
 </head>
 
@@ -35,7 +37,7 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">Edit Profile</a>
+            <a href="<?= URL ?>staff/edit_profile">Edit Profile</a>
             <a href="<?= URL ?>Staff/logout">Logout</a>
 
           </div>
@@ -75,7 +77,9 @@
               <li class="<?php if ($page == 'access_product') {
                             echo 'active';
                           } ?>"><a href="<?= URL ?>staff/access_product">Access product</a></li>
-              
+                 <li class="<?php if ($page == 'manage_bidsession') {
+                            echo 'active';
+                          } ?>"><a href="<?= URL ?>staff/manage_bidsession">Manage Bidsession </a></li>
             </ul>
           </li>
           
@@ -88,7 +92,7 @@
           <li class="<?php if ($page == 'upload_reports') {
                         echo 'active';
                       } ?>">
-            <a href="<?= URL ?>staff/upload_reports"><i class="fas fa-file-contract"></i> Uploaded Reports</a>
+            <a href="<?= URL ?>staff/upload_reports"><i class="fa fa-upload"></i> Uploaded Reports</a>
           </li>
           <li class="<?php if ($page == 'requestleave') {
                         echo 'active';
@@ -105,7 +109,13 @@
                         echo 'active';
                       } ?>">
             <a href="<?= URL ?>staff/staff_notification"><i class="fa fa-bell" aria-hidden="true"></i> Notification</a>
-                    </li>
+          </li>
+
+          <li class="<?php if ($page == 'Session Incharge Login') {
+                        echo 'active';
+                      } ?>">
+            <a href="<?= URL ?>staff/sessionInchargeLogin"><i class="fa fa-tasks" aria-hidden="true"></i> Session Incharge </a>
+          </li>
         
 
         </ul>

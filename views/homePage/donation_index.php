@@ -89,52 +89,58 @@
             <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
                 <h1>Welcome to Tzuchi Donation Module <span style="color:#e0501b;font-size: 4vw">Spread Love & hope.</span> </h1>
                 <h3> Your donations will make another person's life a miracle. <br>  Donate today and ignite the fire within!</h3>
-                <div class="btn">
+              <!-- <div class="btn">
                     <a href="#">Register</a>
+                </div> -->
+                <div class="btns">
+                    <a class="log" href="<?= URL ?>login?pf=buy">Log-In</a>
+                    <a class="reg" href="<?= URL ?>register/donRegForm">Register</a>
                 </div>
+                
             </div>
             <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
                 <img src="<?= URL ?>public/images/bg.png" alt="">
             </div>
         </div>
 
+      
         <!-- ABOUT SECTION -->
 
         <div class="about">
         <div class="img-slider">
       <div class="slide active">
-        <img src="<?= URL ?>public/images/don1.jpg" alt="">
+        <img src="<?= URL ?>public/images/volac5.jpeg" alt="">
         <div class="info">
-          <h2>Slide 01</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Spread Love</h2>
+          <p>Volunteers & Staff working for the donation</p>
         </div>
       </div>
       <div class="slide">
-        <img src="<?= URL ?>public/images/d.jpg" alt="">
+        <img src="<?= URL ?>public/images/donateSri.jpg" alt="">
         <div class="info">
-          <h2>Slide 02</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Be Kind </h2>
+          <p>Donate a patient</p>
         </div>
       </div>
       <div class="slide">
-        <img src="<?= URL ?>public/images/don3.jpg" alt="">
+        <img src="<?= URL ?>public/images/volac7.jpeg" alt="">
         <div class="info">
-          <h2>Slide 03</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Be Happy!</h2>
+          <p>All work friendly</p>
         </div>
       </div>
       <div class="slide">
-        <img src="4.jpg" alt="">
+      <img src="<?= URL ?>public/images/volac8.jpeg" alt="">
         <div class="info">
-          <h2>Slide 04</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Give atleast small !</h2>
+          <p>Donate the school children</p>
         </div>
       </div>
       <div class="slide">
-        <img src="5.jpg" alt="">
+      <img src="<?= URL ?>public/images/volac3.jpeg" alt="">
         <div class="info">
-          <h2>Slide 05</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2>Donate!</h2>
+          <p>Work in pandemic situation too</p>
         </div>
       </div>
       <div class="navigation">
@@ -209,9 +215,9 @@
         <div class="row">
   <div class="column">
     <div class="card">
-      <h3>Blood Donation</h3>
-      <p style="color: #B22222;">Give Blood </p>
-      <p style="color: #B22222;">Save life </p>
+      <h3>Donors of our organization</h3>
+      <p > 120 </p>
+      <p >From 6 various countries </p>
     </div>
   </div>
 
@@ -225,17 +231,17 @@
   
   <div class="column">
     <div class="card">
-      <h3>Donate Recycle Products</h3>
-      <p style="color:#2E8B57;">Be a part of the solution! </p>
-      <p style="color:#2E8B57;">Not a part of the pollution!</p>
+      <h3>Donations Amount : </h3>
+      <p > We received RS, 846 985.00 until !</p>
+      <p style="color:#2E8B57;">Be a part of solution!</p>
     </div>
   </div>
   
   <div class="column">
     <div class="card">
-      <h3>Donate basic needs</h3>
-      <p>Share your extras! </p>
-      <p>Spread equality!</p>
+      <h3>Donation Count:</h3>
+      <p>We helped 2260 families </p>
+      <p>4 Orphanages </p>
     </div>
   </div>
 </div>
@@ -256,19 +262,7 @@ Together they are called the “Eight Dharma Seals”.</span>
 <div class="main">
  <center><h1>Recent Donation projects</h1></center> 
   <ul class="cards">
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="<?= URL ?>public/images/blood.jpg" alt="img></div>
-        <div class="card_content">
-          <h2 class="card_title">Blood Donation</h2>
-          <p class="card_text">Visit Organiation and Donate on 20.12.2020 </p>
-        
-        </div>
-      </div>
-    </li>
-
-   
-   
+  
     <li class="cards_item">
       <div class="card">
         <div class="card_image"><img src="<?= URL ?>public/images/covid.jfif" alt="img""></div>
@@ -282,14 +276,8 @@ Together they are called the “Eight Dharma Seals”.</span>
   </ul>
 </div>
 
-
-
-     
-
-
-        <!-- BANNER AND FOOTER -->
-
-        <div class="banner">
+    <div class="banner">
+       <h1>Thank you for being a part of us!</h1>
        
         </div>
 

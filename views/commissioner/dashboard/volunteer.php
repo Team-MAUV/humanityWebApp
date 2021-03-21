@@ -1,8 +1,26 @@
 <?php $page = 'home';
 $title = 'Volunteer Profiles';
 $style = 'com-dash-profiles-volunteer.css';
+
 $jsFile = 'tab-changing';
 include "com-dash-header.php"; ?>
+
+
+<div id="breadcrum">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>volunteer Profile</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+</head>
+<body>
+
+
+
 
 <div class="grid-container">
 
@@ -45,8 +63,12 @@ include "com-dash-header.php"; ?>
               <td>Volunteer ID</td>
               <td>Name</td>
               <td>Volunteer Level</td>
+              <td>Conact</td>
+              <td>Email</td>
               <td>Points</td>
               <td>Joined Date</td>
+              <td>Gender</td>
+              <td> Events </td>
               <td></td>
             </tr>
               </thead>
@@ -58,17 +80,26 @@ include "com-dash-header.php"; ?>
                     <td><?= $contact['vol_id'] ?></td>
                     <td><?= $contact['name'] ?></td>
                     <td><?= $contact['level'] ?></td>
+                    <td><?= $contact['contact'] ?></td>
+                    <td><?= $contact['email'] ?></td>
                     <td><?= $contact['vol_points'] ?></td>
                     <td><?= $contact['join_date'] ?></td>
-                    <td class="actions">
-                      <a href="update.php?id=<?= $contact['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                    <td><?= $contact['gender'] ?></td>
+                <td>
+                <a href="<?= URL?>commissioner/vol_activities">   <button type="button" class="readmore"> <i class="fa fa-external-link"></i>
+                    </button> </a>
+  
+                </td>
+     
+                <td class="actions">
                       <a href="delete.php?id=<?= $contact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
+  
               </tbody>
             </table>
-
+           
 
             <div class="pagination">
               <?php if ($page_no > 1) : ?>
@@ -107,8 +138,9 @@ include "com-dash-header.php"; ?>
                 <td><?= $req['email'] ?></td>
              
                 <td class="actions">
+                <a href="update.php?id=<?= $req['id'] ?>" class="edit" download="#"><i class="fa fa-download"></i>View Application</i></a>
                   <a href="run_accept_vol_request?id=<?= $req['id'] ?>" class="edit">Accept</i></a>
-                  <a href="update.php?id=<?= $req['id'] ?>" class="edit">View Profile</i></a>
+                  
                   <a href="update.php?id=<?= $req['id'] ?>" class="edit">Decline</i></a>
                  
                 </td>
@@ -120,7 +152,7 @@ include "com-dash-header.php"; ?>
        
       </div>    
     </div>
-
+    <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
   </div>
 
   <?php include "com-dash-footer.php" ?>

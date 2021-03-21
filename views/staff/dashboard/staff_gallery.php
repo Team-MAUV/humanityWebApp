@@ -9,99 +9,108 @@ include "staff_header.php"; ?>
   <div id="breadcrum">
 
 
+  
   <!DOCTYPE html>
-<html>
-<style>
-* {
-  box-sizing: border-box;
-}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Media</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= URL ?>public/css/sess_dash_media.css" />
+  </head>
+  <body>
 
-body {
-  margin: 0;
-  font-family: Arial;
-}
+    <div class="gallery-section">
+      <div class="inner-width">
+        <h1> Gallery</h1>
+        <div class="border"></div>
+        <div class="gallery">
 
-.header {
-  text-align: center;
-  padding: 32px;
-}
+          <a href="<?= URL ?>public/images/plant.jpg"  class="image">
+           
+            <img src="<?= URL ?>public/images/plant.jpg" alt="img"/>
+          </a>
 
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
+          <a href="<?= URL ?>public/images/dengue.jpg"  class="image">
+            <img src="<?= URL ?>public/images/dengue.jpg" alt="img"/>
+          </a>
 
-/* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
+          <a href="<?= URL ?>public/images/discuss.jpg"  class="image">
+            <img src="<?= URL ?>public/images/discuss.jpg" alt="img"/>
+          </a>
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
+          <a href="<?= URL ?>public/images/dengue.jpg"  class="image">
+            <img src="<?= URL ?>public/images/dengue.jpg" alt="img"/>
+          </a>
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
+          <a href="<?= URL ?>public/images/plant.jpg"  class="image">
+            <img src="<?= URL ?>public/images/plant.jpg" alt="img"/>
+          </a>
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-</style>
-<body>
+          <a href="<?= URL ?>public/images/clean.jpg"  class="image">
+            <img src="<?= URL ?>public/images/clean.jpg" alt="img"/>
+          </a>
 
-<!-- Header -->
-<div class="header">
-  <h1> Image Grid</h1>
-  <p> Tzu chi Organization Event image Gallary </p>
-</div>
+          <a href="<?= URL ?>public/images/plant.jpg"  class="image">
+          
+            <img src="<?= URL ?>public/images/plant.jpg" alt="img"/>
+          </a>
 
-<!-- Photo Grid -->
-<div class="row"> 
-  <div class="column">
-   
-    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
-    <a href="<?= URL ?>public/images/discuss.jpg"> <img src="<?= URL ?>public/images/discuss.jpg" style="width:100%" /> </a>
-    <a href="<?= URL ?>public/images/dengue.jpg"> <img src="<?= URL ?>public/images/dengue.jpg" style="width:100%" /> </a>
-  </div>
-  <div class="column">
-  <a href="<?= URL ?>public/images/plant.jpg"> <img src="<?= URL ?>public/images/plant.jpg" style="width:100%" /> </a>
-  <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
-  <a href="<?= URL ?>public/images/discuss.jpg"> <img src="<?= URL ?>public/images/discuss.jpg" style="width:100%" /> </a>
-  </div>  
-  <div class="column">
-  <a href="<?= URL ?>public/images/plant.jpg"> <img src="<?= URL ?>public/images/plant.jpg" style="width:100%" /> </a>
-    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
-    <a href="<?= URL ?>public/images/dengue.jpg"> <img src="<?= URL ?>public/images/dengue.jpg" style="width:100%" /> </a>
-  </div>
-  <div class="column">
-  <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
-    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
-    <a href="<?= URL ?>public/images/clean.jpg"> <img src="<?= URL ?>public/images/clean.jpg" style="width:100%" /> </a>
-  </div>
-</div>
+          <a href="<?= URL ?>public/images/collect plastic.jpg" class="image">
+            <img src="<?= URL ?>public/images/collect plastic.jpg" alt="img"/>
+          </a>
 
-</body>
-</html>
+        </div>
+      </div>
+    </div>
+
+
+  <script>
+    $(".gallery").magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      gallery:{
+        enabled: true
+      }
+    });
+  </script>
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 </div>
 <?php include "staff_footer.php" ?>
+</html>

@@ -1,4 +1,4 @@
-<?php $page = 'home';
+<?php $page = 'add_product';
 include "staff_header.php"; ?>
 
 
@@ -17,6 +17,7 @@ include "staff_header.php"; ?>
 }
 body{
   overflow: hidden;
+  
 }
 input[type=text], select, textarea ,input[type=number],input[type=datetime-local]{
   width: 100%;
@@ -56,8 +57,9 @@ input[type=reset]:hover {
 } 
 .container {
   border-radius: 5px;
-  background-color: #4d5bd8;
+  background-color: #6495ED;
   padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .col-25 {
@@ -87,6 +89,7 @@ input[type=reset]:hover {
   }
 }
 </style>
+
 </head>
 <body>
 
@@ -95,7 +98,7 @@ input[type=reset]:hover {
 
 
 <div class="container">
-  <form action="add_product" method="post" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to submit the form?')";>
+  <form name="addprd" action="run_add_product" method="POST" enctype="multipart/form-data" >
     <div class="row">
       <div class="col-25">
         <label for="name">Product Name:</label>
@@ -109,7 +112,14 @@ input[type=reset]:hover {
         <label for="Category">Category:</label>
       </div>
       <div class="col-75">
-        <input type="text" id="Category" name="Category">
+        
+        <select name="category" id="category">
+          <option value="Plastic">Plastic</option>
+          <option value="Glass">Glass</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Paper">Paper</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
     </div>
     <div class="row">
@@ -125,15 +135,24 @@ input[type=reset]:hover {
         <label for="volume">Starting Bid (Rs):</label>
       </div>
       <div class="col-75">
-        <input type="number" id="startingbid" name="startingbid">
+        <input type="number" id="startingbid" name="starting_bid">
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="Bidding Date">Bidding Date:</label>
+        <label for="Bidding Date">Bidding Start Time:</label>
       </div>
       <div class="col-75">
-        <input type="datetime-local" id="Bidding Date" name="Bidding_Date">
+        <input type="datetime-local" id="BiddingStartDate" name="bidding_start_date">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Bidding Date">Bidding End Time:</label>
+      </div>
+      <div class="col-75">
+        <input type="datetime-local" id="BiddingEndDate" name="bidding_end_date">
 
       </div>
     </div>
@@ -143,12 +162,13 @@ input[type=reset]:hover {
         <label for="subject">Description:</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something about product..." style="height:150px"></textarea>
+        <textarea id="subject" name="description" placeholder="Write something about product..." style="height:150px"></textarea>
       </div>
     </div>
     <div class="row">
         <div class="col-25"> 
-        <input type="file" id="myFile" name="filename">
+        <label for="image">Choose Image</label>
+      <input type="file" name="product_image" accept="image/*" id="proimage">
         
         </div>
     </div>
@@ -160,9 +180,73 @@ input[type=reset]:hover {
     
     </div>
     <div class="row">
-  <br>  <input type="submit" value="Submit"> </div>
+  <br>   </div>
+    <button class="submit" value="Submit" onclick="return addvalidprd();">
+    <p style="font-weight: 800;"> Submit</p>
+            </button>
   </form>
+  <p><?= $msg ?></p>
+
 </div>
+<script>
+function addvalidprd(){
+    
+    var prdname = document.getElementById("name").value; 
+    var sttme = document.getElementById("BiddingStartDate").value;
+    var edtme = document.getElementById("BiddingEndDate").value;
+    var stbid = document.getElementById("startingbid").value;
+    var qtty = document.getElementById("volume").value;
+    var dsp = document.getElementById("subject").value;
+    var d = new Date();
+    var dsec = d.getTime();
+    var stsec = Date.parse(sttme);
+    var edsec = Date.parse(edtme);
+    
+    
+    if(prdname == ""){
+     alert("Please enter product name.");
+     return false;
+    }else{
+      if(qtty <= 0){
+        alert("Invalid Quantty");
+        return false;
+      }else{
+        if(stbid <= 0){
+          alert("invalid starting bid");
+          return false;
+        }else{
+          if(dsp == ""){
+            alert("Add discription");
+            return false;
+          }else{
+            if(sttme == ""){
+              alert("Add Bid session start time");
+              return false;
+            }else{
+              if(edtme == ""){
+                alert("Add Bid session end time");
+                return false;
+              }else{
+                if(edsec < stsec){
+                  alert("Bid end time is invalid");
+                  return false;
+                }else{
+                  if(stsec < dsec){
+                    alert("Bid shoud start in future!!!");
+                    return false;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    
+   
+}
+</script>
 
 </body>
 </html>
