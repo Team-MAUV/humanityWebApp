@@ -28,7 +28,8 @@ class Buyer extends Controller
     function save_new_profile_details()
     {
         $this->model->save_new_profile_details();
-        
+        $data = $this->model->view_buyerdash();
+        $this->view->rendor('buyer/dashboard/buyer_main', $data ,true);
     } 
     
     
