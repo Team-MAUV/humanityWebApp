@@ -57,6 +57,8 @@ class Volunteer extends Controller
         $this->view->rendor('volunteer/dashboard/viewNewActivities', $data, true);
         
     }
+
+
     function volleaderboard()
     {
         $data = $this->model->vol_leaderboard();

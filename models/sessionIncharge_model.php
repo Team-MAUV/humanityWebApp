@@ -65,4 +65,33 @@ class SessionIncharge_Model extends Model
     
 
   }
+
+  public function index()
+  {
+
+    $un = $_SESSION['name'];
+    echo $un;
+    $st = $this->db->prepare("SELECT `name`,`vol_activity`,`session_start_time` FROM `session_incharge` WHERE `username`='$un' ");
+    $st->execute();
+    $sessprofile = $st->fetchAll();
+    print_r($sessprofile);
+    $sessdata = [
+      'sessprofile' => $sessprofile
+    ];
+    return ($sessdata);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
