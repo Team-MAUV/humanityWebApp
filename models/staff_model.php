@@ -36,21 +36,19 @@ class staff_Model extends Model
       if($prd_count == 0 || $end_time < $cr_time){
 
 
-      
-
         $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/product_images/';
         $save_path = 'product_images/';
 
         $dest_path = $target_dir . basename($_FILES['product_image']['name']);
 
-      $image_path = $save_path . basename($_FILES['product_image']['name']);
+        $image_path = $save_path . basename($_FILES['product_image']['name']);
       // Check to make sure the image is valid
-      if (!empty($_FILES['product_image']['tmp_name']) && getimagesize($_FILES['product_image']['tmp_name'])) {
-        if (file_exists($dest_path)) {
-          $msg = "Image already exists, please choose another or rename that image.";
-        } else if ($_FILES['product_image']['size'] > 500000) {
-          $msg = "Image file size too large, please choose an image less than 500kb.";
-        } else {
+        if (!empty($_FILES['product_image']['tmp_name']) && getimagesize($_FILES['product_image']['tmp_name'])) {
+          if (file_exists($dest_path)) {
+            $msg = "Image already exists, please choose another or rename that image.";
+          } else if ($_FILES['product_image']['size'] > 500000) {
+            $msg = "Image file size too large, please choose an image less than 500kb.";
+          } else {
 
 
             $get_staffid = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :staffid  ");
@@ -83,33 +81,33 @@ class staff_Model extends Model
               ));
 
   // Everything checks out now we can move the uploaded image
-  move_uploaded_file($_FILES['product_image']['tmp_name'], $dest_path);
+              move_uploaded_file($_FILES['product_image']['tmp_name'], $dest_path);
             }
               //Generating custom id
-        $custom_id=$this->db->prepare("SELECT id FROM product WHERE product_path=:product_path");
-        $custom_id->execute(array(
-          ':product_path' => $image_path,
-        ));
-        $cid_result = $custom_id->fetchAll();
-        $count2 = $custom_id->rowCount();
-        if ($count2 > 0) {
-          foreach ($cid_result as $cidtmp) :
+            $custom_id=$this->db->prepare("SELECT id FROM product WHERE product_path=:product_path");
+            $custom_id->execute(array(
+              ':product_path' => $image_path,
+            ));
+            $cid_result = $custom_id->fetchAll();
+            $count2 = $custom_id->rowCount();
+            if ($count2 > 0) {
+              foreach ($cid_result as $cidtmp) :
             
 
-            if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
-              $customid ="PROHB00".$cidtmp['id'];
-            }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
-              $customid ="PROHB0".$cidtmp['id'];
-            }else if(strlen($cidtmp['id'])>0){
-              $customid ="PROHB".$cidtmp['id'];
-            };
-          endforeach;
+                if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+                  $customid ="PROHB00".$cidtmp['id'];
+                }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+                  $customid ="PROHB0".$cidtmp['id'];
+                }else if(strlen($cidtmp['id'])>0){
+                  $customid ="PROHB".$cidtmp['id'];
+                };
+              endforeach;
 
-        $cidstmt = $this->db->prepare('UPDATE `product` SET product_id=:customid WHERE product_path=:product_path');
-        $cidstmt->execute(array(
-          ':product_path' => $image_path,
-          ':customid'=>$customid,
-        ));
+              $cidstmt = $this->db->prepare('UPDATE `product` SET product_id=:customid WHERE product_path=:product_path');
+              $cidstmt->execute(array(
+                ':product_path' => $image_path,
+                ':customid'=>$customid,
+              ));
         
               $msg = "Product added successfully!";
 
@@ -129,7 +127,7 @@ class staff_Model extends Model
               ));
 
             } 
-          else {
+            else {
               $msg = "Adding product  Failed!";
             }
           }
@@ -148,95 +146,95 @@ class staff_Model extends Model
         'msg' => $msg
       ];
       return $pageData;
-}
-}
-
-public function access_product(){
-  $st1 = $this->db->prepare("SELECT * FROM product WHERE availability = 1");
-  $st1->execute();
-  $avbprdts = $st1->fetchAll();
-  $avbprdtscount = $st1->rowCount();
-  $st2 = $this->db->prepare("SELECT product.id, product.product_id, product.name, product.type, product.highest_bid_amount, product.collected_status, product.description, product.date,
-                       product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product LEFT JOIN buyer ON product.won_buy_id = buyer.id
-                       WHERE product.availability = 0 ORDER BY product.bid_end_time DESC");
-  $st2->execute();
-  $notavbprdts = $st2->fetchAll();
-  $notavbprdtscount = $st2->rowCount();
-  if($avbprdtscount == 0){
-    $msgavb = "No Cruntly Available Products!!!";
-  }else{
-    $msgavb = "";
-  }
-  if($notavbprdtscount == 0){
-    $msgnavb = "No Records Available";
-  }else{
-    $msgnavb = "";
+    }
   }
 
-  $pageData = [
-    'msgavb' => $msgavb,
-    'msgnavb' => $msgnavb,
-    'avbprdts' => $avbprdts,
-    'notavbprdts' => $notavbprdts
-  ];
-  return $pageData;
+  public function access_product(){
+    $st1 = $this->db->prepare("SELECT * FROM product WHERE availability = 1");
+    $st1->execute();
+    $avbprdts = $st1->fetchAll();
+    $avbprdtscount = $st1->rowCount();
+    $st2 = $this->db->prepare("SELECT product.id, product.product_id, product.name, product.type, product.highest_bid_amount, product.collected_status, product.description, product.date,
+                        product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product LEFT JOIN buyer ON product.won_buy_id = buyer.id
+                        WHERE product.availability = 0 ORDER BY product.bid_end_time DESC");
+    $st2->execute();
+    $notavbprdts = $st2->fetchAll();
+    $notavbprdtscount = $st2->rowCount();
+    if($avbprdtscount == 0){
+      $msgavb = "No Cruntly Available Products!!!";
+    }else{
+      $msgavb = "";
+    }
+    if($notavbprdtscount == 0){
+      $msgnavb = "No Records Available";
+    }else{
+      $msgnavb = "";
+    }
+
+    $pageData = [
+      'msgavb' => $msgavb,
+      'msgnavb' => $msgnavb,
+      'avbprdts' => $avbprdts,
+      'notavbprdts' => $notavbprdts
+    ];
+    return $pageData;
 
 
-}
-
-public function view_update_product(){
-  
-  $pid = $_GET['prdid'];
-  $st1 = $this->db->prepare("SELECT * FROM product WHERE id = :pid");
-  $st1 ->execute(array(
-    ':pid' => $pid
-  ));
-  $data = $st1->fetchAll();
-  $count = $st1->rowCount();
-  if($count != 1){
-    $msg = "error!!!!";
-  }
-  $st2 = $this->db->prepare("SELECT bid.product_id, bid.buy_id, bid.bid_amount, bid.time, buyer.buy_id AS buyer_id, buyer.name FROM bid INNER JOIN buyer ON bid.buy_id = buyer.id WHERE bid.product_id = :pid");
-  $st2->execute(array(
-    ':pid' => $pid
-  ));
-  $bidlist = $st2->fetchAll();
-  $bidcount = $st2->rowCount();
-  if($bidcount == 0){
-    $bidlistmsg = "No records available!";
-  }else{
-    $bidlistmsg = "";
   }
 
+  public function view_update_product(){
+    
+    $pid = $_GET['prdid'];
+    $st1 = $this->db->prepare("SELECT * FROM product WHERE id = :pid");
+    $st1 ->execute(array(
+      ':pid' => $pid
+    ));
+    $data = $st1->fetchAll();
+    $count = $st1->rowCount();
+    if($count != 1){
+      $msg = "error!!!!";
+    }
+    $st2 = $this->db->prepare("SELECT bid.product_id, bid.buy_id, bid.bid_amount, bid.time, buyer.buy_id AS buyer_id, buyer.name FROM bid INNER JOIN buyer ON bid.buy_id = buyer.id WHERE bid.product_id = :pid");
+    $st2->execute(array(
+      ':pid' => $pid
+    ));
+    $bidlist = $st2->fetchAll();
+    $bidcount = $st2->rowCount();
+    if($bidcount == 0){
+      $bidlistmsg = "No records available!";
+    }else{
+      $bidlistmsg = "";
+    }
 
-  $pageData = [
-    'msg' => $msg,
-    'data' => $data,
-    'bidlist' => $bidlist,
-    'bidlistmsg' => $bidlistmsg
-  ];
 
-  return $pageData;
-}
+    $pageData = [
+      'msg' => $msg,
+      'data' => $data,
+      'bidlist' => $bidlist,
+      'bidlistmsg' => $bidlistmsg
+    ];
 
-public function collected_product(){
-  $pid = $_GET['prdid'];
-  $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid ");
-  $st1->execute(array(
-    ':pid' => $pid
-  ));
+    return $pageData;
+  }
 
-}
+  public function collected_product(){
+    $pid = $_GET['prdid'];
+    $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid ");
+    $st1->execute(array(
+      ':pid' => $pid
+    ));
 
-public function delete_product(){
-  $pid = $_GET['prdid'];
-  
-  $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
-  $st1 ->execute(array(
-    ':pid' => $pid
-  ));
-  
-}
+  }
+
+  public function delete_product(){
+    $pid = $_GET['prdid'];
+    
+    $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
+    $st1 ->execute(array(
+      ':pid' => $pid
+    ));
+    
+  }
 public function requestleave(){
   if (!empty($_POST)) {
     $get_staffid = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :staffid  ");
