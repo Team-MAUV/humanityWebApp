@@ -310,12 +310,14 @@ echo "In staff Model";
           foreach ($user as $usr) :
             $id = $usr['username'];
             $name =  $usr['name'];
+            $inchargeId = $usr['incharge_id'];
           endforeach;
            
               Session::set('loggedIn-sin', true);
               Session::set('id', $id);
               Session::set('name', $name);
-              header('location: ../Session_incharge');
+              Session::set('inchargeId', $inchargeId);
+              header('location: ../sessionIncharge');
             
            
 
@@ -419,7 +421,6 @@ public function addreport()
 public function upload_reports(){
 
 
-  
   $st = $this->db->prepare('SELECT * FROM project_report WHERE status="pending" ORDER BY id ');
   $st->execute();
   $pendings = $st->fetchAll();
@@ -447,5 +448,5 @@ return ($pageData);
 
 }
 
-  
- }
+}
+

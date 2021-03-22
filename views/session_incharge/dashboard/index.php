@@ -24,8 +24,8 @@ include "sess_header.php"; ?>
         <img src="<?= URL ?>public/images/eve.png"
         alt="user" width="100">
         <h2>WELCOME!</h2>
-        <h3>Alex William</h3>
-        
+        <h3><?= $_SESSION['name'] ?></h3>
+       <h3> <?= $_SESSION['id'] ?></h3>
         <hr>
         <hr/>
         <h4 style="color:black">Your Past-Lists </h4>
@@ -40,11 +40,11 @@ include "sess_header.php"; ?>
             <div class="info_data">
                  <div class="data">
                     <h4>Session</h4>
-                    <p>Blood Donation </p>
+                    <p>  </p>
                  </div>
                  <div class="data">
                    <h4>date</h4>
-                    <p>02.04.2021</p>
+                    <p></p>
               </div>
             </div>
         </div>
