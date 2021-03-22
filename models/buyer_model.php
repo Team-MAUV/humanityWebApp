@@ -55,14 +55,11 @@ class buyer_model extends Model{
       'msgwinlist' => $msg2
     ];
     return ($pageData);
-}
+  }
   
 
   public function view_product(){
     
-    
-    
-
     if($_GET['prd']=='Plastic'){
       $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Plastic"');   
     }else if($_GET['prd']=='Glass'){
@@ -75,28 +72,25 @@ class buyer_model extends Model{
       $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Other"');
     }
     $st->execute();
-      $product = $st->fetchAll();
-      $count = $st->rowCount();
+    $product = $st->fetchAll();
+    $count = $st->rowCount();
     
       
-      if($count == 0 ){
-        $msg = "Product not available!!! Product will be available soon ";
-        
-        
-      }else{
-        $msg = "";
-      }
+    if($count == 0 ){
+      $msg = "Product not available!!! Product will be available soon ";    
+    }else{
+      $msg = "";
+    }
       
 
        
       
-        $pagedata = [
-          'product' => $product,
-          'msg' => $msg
-          
-        ];
+    $pagedata = [
+      'product' => $product,
+      'msg' => $msg    
+    ];
     
-      return ($pagedata);
+    return ($pagedata);
     
   }
   
@@ -120,49 +114,49 @@ class buyer_model extends Model{
         $sbid = $dt['starting_bid'];
 
       endforeach;
-      
+      //checking conditions for the bid
       if(($sbid < $value) && ($hbid < $value)){
 
        
-      $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount) VALUES (:prd_id, :buy_id, :bid_amount)');
-      $st->execute(array(
-        ':prd_id'=>$pid,
-        ':buy_id'=>$buy_id,
-        ':bid_amount'=>$value
+        $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount) VALUES (:prd_id, :buy_id, :bid_amount)');
+        $st->execute(array(
+          ':prd_id'=>$pid,
+          ':buy_id'=>$buy_id,
+          ':bid_amount'=>$value
         
-      ));
-
-      $count1 = $st->rowCount();
-      if($count1 == 0){
-        $bidmsg = "ERROR!! Your bid is not added!!!";
-    }else{
-        
-        $st2 = $this->db->prepare('UPDATE product SET won_buy_id=:won_buy, highest_bid_amount=:bid WHERE (id=:pid AND availability=:avb)');
-        $st2->execute(array(
-          ':won_buy'=>$buy_id,
-          ':bid'=>$value,
-          ':pid'=>$pid,
-          ':avb'=>1
-
         ));
-        $count2 = $st2->rowCount();
-        if($count2 == 0){
-          
-          $st3 = $this->db->prepare('DELETE FROM bid WHERE (product_id=:prd_id AND buy_id=:buy_id AND bid_amount=:bid)');
-          $st3->execute(array(
-            'prd_id'=>$pid,
-            ':buy_id'=>$buy_id,
-            ':bid'=>$value
-          ));
+
+        $count1 = $st->rowCount();
+        if($count1 == 0){
           $bidmsg = "ERROR!! Your bid is not added!!!";
         }else{
-          $bidmsg = "bid added";
+        //when bid added update product table
+          $st2 = $this->db->prepare('UPDATE product SET won_buy_id=:won_buy, highest_bid_amount=:bid WHERE (id=:pid AND availability=:avb)');
+          $st2->execute(array(
+            ':won_buy'=>$buy_id,
+            ':bid'=>$value,
+            ':pid'=>$pid,
+            ':avb'=>1
+
+          ));
+          $count2 = $st2->rowCount();
+          if($count2 == 0){
+          //if an error -> then delete the rfecord from bid
+            $st3 = $this->db->prepare('DELETE FROM bid WHERE (product_id=:prd_id AND buy_id=:buy_id AND bid_amount=:bid)');
+            $st3->execute(array(
+              'prd_id'=>$pid,
+              ':buy_id'=>$buy_id,
+              ':bid'=>$value
+            ));
+            $bidmsg = "ERROR!! Your bid is not added!!!";
+          }else{
+            $bidmsg = "bid added";
+          }
         }
-    }
-  }else{
-    $bidmsg = "invalid bid amount";
-  }
-  }else{
+      }else{
+        $bidmsg = "invalid bid amount";
+      }
+    }else{
       $bidmsg = "no data";
     }
 
@@ -171,9 +165,52 @@ class buyer_model extends Model{
     ];
     
     return ($pagedata);
+  }
+
+    function edit_profile(){
+      $bid = $_GET['id'];
+      $st1 = $this->db->prepare("SELECT name, address, contact, email FROM buyer WHERE id = :id");
+      $st1->execute(array(
+        ':id'=>$bid
+      ));
+      $data = $st1->fetchAll();
+      $count = $st1->rowCount();
+      if($count == 0){
+        $msg = "error!";
+      }else{
+        $msg = "";
+      }
+      $pagedata = [
+        'data' => $data,
+        'msg' => $msg
+      ];
+      
+      return ($pagedata);
     }
-}
-  
+
+  function save_new_profile_details(){
+      if (!empty($_POST)) {
+
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $contact=$_POST['contact'];
+        $address=$_POST['address'];
+
+        $id=$_SESSION['idp'];
+
+        $st = $this->db->prepare("UPDATE buyer SET name = :name, address = :address, contact = :contact, email = :email WHERE id = :id");
+        $st->execute(array(
+          ':name'=>$name,
+          ':address'=>$address,
+          ':contact'=>$contact,
+          ':email'=>$email,
+          ':id'=>$id
+        ));
+
+    }
+
+  }
+}  
 
   
 

@@ -159,15 +159,15 @@ class login_Model extends Model
               
                 //view total number of bids 
                 
-                $st3 = $this->db->prepare("SELECT COUNT AS total FROM bid WHERE buy_id= :id ");
-                $st3->execute(array(
-                    ':id' => $id,
-                ));
-                $totalbids = $st3->fetchAll();
+               // $st3 = $this->db->prepare("SELECT COUNT AS total FROM bid WHERE buy_id= :id ");
+               // $st3->execute(array(
+                //    ':id' => $id,
+              //  ));
+               // $totalbids = $st3->fetchAll();
                 
-                foreach ($totalbids as $ttlbds) :
-                    $ttl = $ttlbds['total'];
-                endforeach;
+                //foreach ($totalbids as $ttlbds) :
+                 //   $ttl = $ttlbds['total'];
+                //endforeach;
                 
                 
                 
@@ -175,7 +175,7 @@ class login_Model extends Model
                     Session::set('loggedIn-buy', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
-                    Session::set('totalbids', $ttl);
+                  //  Session::set('totalbids', $ttl);
                     Session::set('idp', $idp);
                     header('location: ../Buyer');
                 
