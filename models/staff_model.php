@@ -253,6 +253,96 @@ class staff_Model extends Model
     return $pageData;
 
   }
+
+  public function save_update_product(){
+    $pid = $_GET['pid'];
+    if (!empty($_POST)) {
+
+      $name=$_POST['name'];
+      $volume=$_POST['volume'];
+      $description=$_POST['description'];
+      $date=$_POST['bidding_start_date'];
+      $enddate=$_POST['bidding_end_date'];
+      $starting_bid=$_POST['starting_bid'];
+    
+      $get_staffid = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :staffid  ");
+      $get_staffid->execute(array(
+        ':staffid' => $_SESSION['id']
+      ));
+
+      $result =  $get_staffid->fetchAll();
+      $count =  $get_staffid->rowCount();
+
+
+      if ($count > 0) {
+        foreach ($result as $tmp) :
+          $sid = $tmp['id'];
+        endforeach;
+      }
+
+
+      $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/product_images/';
+      $save_path = 'product_images/';
+
+      $dest_path = $target_dir . basename($_FILES['product_image']['name']);
+
+      $image_path = $save_path . basename($_FILES['product_image']['name']);
+      // Check to make sure the image is valid
+      if (!empty($_FILES['product_image']['tmp_name']) && getimagesize($_FILES['product_image']['tmp_name'])) {
+        if ($_FILES['product_image']['size'] > 500000) {
+          $msg = "Image file size too large, please choose an image less than 500kb.";
+        } else {
+          $updatepd = $this->db->prepare('UPDATE product SET name = :name, date = :date, 
+                                        bid_end_time = :enddate, description = :description, starting_bid = :startbid,
+                                        product_path = :prdpath, volume = :volume, staff_id = :sid WHERE id = :pid');
+          $updatepd->execute(array(
+            ':name' => $name,
+            ':sid'=>$sid,
+            ':date'=>$date,
+            ':enddate'=>$enddate,
+            ':description'=>$description,
+            ':startbid'=>$starting_bid,
+            ':prdpath'=>$image_path,
+            ':volume'=>$volume,
+            ':pid'=>$pid
+          )); 
+          move_uploaded_file($_FILES['product_image']['tmp_name'], $dest_path); 
+          $msg = "Product Updated Succesfully";                            
+        }
+      }else{
+        
+        $updatepd = $this->db->prepare('UPDATE product SET name = :name, date = :date, 
+                                        bid_end_time = :enddate, description = :description, starting_bid = :startbid,
+                                        volume = :volume, staff_id = :sid WHERE id = :pid');
+          $updatepd->execute(array(
+            ':name' => $name,
+            ':sid'=>$sid,
+            ':date'=>$date,
+            ':enddate'=>$enddate,
+            ':description'=>$description,
+            ':startbid'=>$starting_bid,
+            ':volume'=>$volume,
+            ':pid'=>$pid
+          )); 
+          $msg = "Product Updated Succesfully";                            
+      }
+
+    }else{
+      $msg = "ERROR!!!";
+    }
+    $st1 = $this->db->prepare('SELECT * FROM product WHERE id = :pid');
+    $st1->execute(array(
+      ':pid' => $pid
+    ));
+    $data = $st1->fetchAll();
+
+    $pageData = [
+      'msg' => $msg,
+      'data' => $data
+    ];
+    return $pageData;
+
+  }
   public function collected_product(){
     $pid = $_GET['prdid'];
     $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid AND won_buy_id IS NOT NULL");
