@@ -301,7 +301,7 @@ public function vol_participate(){
               ON 
               marking_attendance.vol_id = volunteer.id 
             WHERE 
-            volunteer.id=1  '
+            volunteer.vol_id=:vid  '
             );     
 
         $stmt->execute(array(
