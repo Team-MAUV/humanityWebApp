@@ -51,7 +51,8 @@ include "staff_header.php"; ?>
                         
                             
                         <p><a href = "<?= URL?>staff/view_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
-					
+                        <p><a href = "<?= URL?>staff/update_product?prdid=<?= $prd['id'] ?>"><button>Update Product</button></a></p>
+                      
                     </div>
                     <button onclick = "return delete_prd()"> <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" id = "deletebtn" class="card__icon"> <i class="fa fa-trash"></i></a></button>
                     
