@@ -78,7 +78,7 @@ include "staff_header.php"; ?>
                     </div>
 
 
-                    <button class="abc" type="button" > <a href="<?= URL?>staff/update_product"></a>Update Product</button>
+                    
                 
                     <a href="<?= URL?>staff/access_product"><button class="abc" type="button" >Back</button></a> 
            
@@ -91,7 +91,7 @@ include "staff_header.php"; ?>
         </div>
     </div>    
     <div id = "bidlist" style = "display: block;">
-        <h3> bidlist area </h3>
+        <h3>Bid Details </h3>
 
         <table id="bidlist">
   <tr>

@@ -18,15 +18,15 @@ include "staff_header.php"; ?>
     </head>
     <body>
 
-    <div class = "top_btns" style = " margin: 20px">
-        <button onclick="view_avb()" style = "padding:20px;">Available Products</button>
-        <button onclick="view_navb()" style = "padding:20px;">Older Products</button>
-    </div>
+        <div class = "top_btns" style = " margin: 20px">
+            <button onclick="view_avb()" style = "padding:20px;">Available Products</button>
+            <button onclick="view_navb()" style = "padding:20px;">Older Products</button>
+        </div>
 
 
-       <div class = "avb_prdts" id = "avbPrdts" style = "display: block;">
-       <div>
-       <h1 style="background-color: black ;color:white" > Available Products </h1>
+        <div class = "avb_prdts" id = "avbPrdts" style = "display: block;">
+        <div>
+        <h1 style="background-color: black ;color:white" > Available Products </h1>
         <main class="main bd-grid">
 
         <?php foreach ($avbprdts as $prd) : ?>
@@ -37,20 +37,20 @@ include "staff_header.php"; ?>
 					<img src="<?= URL ?>public/<?= $prd['product_path'] ?>" alt="img"/>
                 </div>
                 <div class="card__name">
-				<p id = "bidstart">Bid Session Starts:<?= $prd['date'] ?></p>
-                <p id = "bidend">Bid Session Ends:<?= $prd['bid_end_time'] ?></p>
+                    <p id = "bidstart">Bid Session Starts:<?= $prd['date'] ?></p>
+                    <p id = "bidend">Bid Session Ends:<?= $prd['bid_end_time'] ?></p>
                 </div>
                 <div class="card__precis">
                  
                    
                     <div>
-					<p><?= $prd['description'] ?></p>
-                         <span class="card__preci card__preci--now">Product Id: <?= $prd['product_id'] ?></span>
+                        <p><?= $prd['description'] ?></p>
+                        <span class="card__preci card__preci--now">Product Id: <?= $prd['product_id'] ?></span>
                         <span class="card__preci card__preci--now">Quantity: <?= $prd['volume'] ?></span>
-						<span class="card__preci card__preci--now">Starting Bid: <?= $prd['starting_bid'] ?></span>
-                       
-						
-                        <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
+                        <span class="card__preci card__preci--now">Starting Bid: <?= $prd['starting_bid'] ?></span>
+                        
+                            
+                        <p><a href = "<?= URL?>staff/view_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
 					
                     </div>
                     <button onclick = "return delete_prd()"> <a href="<?= URL?>staff/delete_product?prdid=<?= $prd['id'] ?>" id = "deletebtn" class="card__icon"> <i class="fa fa-trash"></i></a></button>
@@ -68,10 +68,41 @@ include "staff_header.php"; ?>
        </div>
 
        <div class = "navb_prdts" id = "navbPrdts" style = "display: none;">
-       <h1 style="background-color: black ;color:white" >Older Products </h1>
+       <h1 style="background-color: black ;color:white" >Unsold Products </h1>
         <main class="main bd-grid">
 
         <?php foreach ($notavbprdts as $prd) : ?>
+            <article class="card">
+				<h4><?= $prd['type'] ?></h4>
+                <div class="card__img">
+				
+					<img src="<?= URL ?>public/<?= $prd['product_path'] ?>" alt="img"/>
+                </div>
+                <div class="card__name">
+				<p>bid session started:<?= $prd['date'] ?></p>
+                <p>bid session ended:<?= $prd['bid_end_time'] ?></p>
+                </div>
+                <div class="card__precis">
+                 
+                   
+                    <div>
+					
+                    <span class="card__preci card__preci--now">Product Id: <?= $prd['product_id'] ?></span>	
+                    <span class="card__preci card__preci--now"><?= $prd['type'] ?></span>
+                    <p><?= $prd['description'] ?></p>
+                    <span class="card__preci card__preci--now">Starting Bid: <?= $prd['starting_bid'] ?></span>
+                    <span class="card__preci card__preci--now">Quantity: <?= $prd['volume'] ?></span>
+              
+             </div>
+                 
+                </div>
+            </article>
+            <?php endforeach; ?> 
+            <p><?= $msgnavb ?></p>
+        </main>
+        <h1 style="background-color: black ;color:white" >Sold Products </h1>
+        <main class="main bd-grid">   
+            <?php foreach ($soldprdts as $prd) : ?>
             <article class="card">
 				<h4><?= $prd['type'] ?></h4>
                 <div class="card__img">
@@ -92,18 +123,18 @@ include "staff_header.php"; ?>
                     <span class="card__preci card__preci--now">Highest Bid: <?= $prd['highest_bid_amount'] ?></span>
 					<span class="card__preci card__preci--now">Bid Won By: <?= $prd['buy_name'] ?></span>	
                     <span class="card__preci card__preci--now">Collected Status: <p  id = "collectedprd"><?= $prd['collected_status'] ?></p></span>
-                    <p><a href = "<?= URL?>staff/view_update_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
+                    <p><a href = "<?= URL?>staff/view_product?prdid=<?= $prd['id'] ?>"><button>View More</button></a></p>
                     <p><a href = "<?= URL?>staff/collected_product?prdid=<?= $prd['id'] ?>"><button>Collected</button></a></p>    
-                    <button onclick = "return collect_prd()"> <a href="<?= URL?>staff/collected_product?prdid=<?= $prd['id'] ?>" id = "collectbtn" class="card__icon">Collected</a></button>
+                  <!--  <button onclick = "return collect_prd()"> <a href="<?= URL?>staff/collected_product?prdid=<?= $prd['id'] ?>" id = "collectbtn" class="card__icon">Collected</a></button> -->
              </div>
                  
                 </div>
             </article>
             <?php endforeach; ?> 
-            <p><?= $msgnavb ?></p>
+            <p><?= $msgsld ?></p>
        
        </div>
-           
+       </main>  
 		<script>
          function view_avb(){
             var avb = document.getElementById("avbPrdts");
@@ -163,7 +194,7 @@ include "staff_header.php"; ?>
         </script>	
        
          
-        </main>
+        
 
         <!-- ICONS -->
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
