@@ -233,7 +233,26 @@ class staff_Model extends Model
 
     return $pageData;
   }
+  public function update_product(){
+    $pid = $_GET['prdid'];
+    $st1 = $this->db->prepare('SELECT * FROM product WHERE id = :pid');
+    $st1->execute(array(
+      ':pid' => $pid
+    ));
+    $data = $st1->fetchAll();
+    $count = $st1->rowCount();
+    if($count == 0){
+      $msg = "ERROR!!!";
+    }else{
+      $msg = "";
+    }
+    $pageData = [
+      'msg' => $msg,
+      'data' => $data
+    ];
+    return $pageData;
 
+  }
   public function collected_product(){
     $pid = $_GET['prdid'];
     $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid AND won_buy_id IS NOT NULL");

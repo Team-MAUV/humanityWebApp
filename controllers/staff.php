@@ -57,7 +57,9 @@ function edit_profile()
     }
 
     function update_product(){
-
+       // $data = $this->model->update_product();
+       $data = $this->model->update_product();
+        $this->view->rendor('staff/dashboard/update_product', $data , true);
     }
     
     function collected_product(){

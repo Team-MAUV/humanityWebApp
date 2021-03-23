@@ -259,8 +259,24 @@ class buyer_model extends Model{
           ':email'=>$email,
           ':id'=>$id
         ));
-
+        
+        $msg = "Updated Succesfully!";
+    }else{
+      $msg = "ERROR !!!";
+      
     }
+
+    $st1 = $this->db->prepare("SELECT name, address, contact, email FROM buyer WHERE id = :id");
+    $st1->execute(array(
+      ':id'=>$id
+    ));
+    $data = $st1->fetchAll();
+    $pagedata = [
+      'msg' => $msg,
+      'data' => $data
+    ];
+    
+    return ($pagedata);
 
   }
 }  
