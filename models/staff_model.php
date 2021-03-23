@@ -150,16 +150,26 @@ class staff_Model extends Model
   }
 
   public function access_product(){
+    //select all available products
     $st1 = $this->db->prepare("SELECT * FROM product WHERE availability = 1");
     $st1->execute();
     $avbprdts = $st1->fetchAll();
     $avbprdtscount = $st1->rowCount();
-    $st2 = $this->db->prepare("SELECT product.id, product.product_id, product.name, product.type, product.highest_bid_amount, product.collected_status, product.description, product.date,
-                        product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product LEFT JOIN buyer ON product.won_buy_id = buyer.id
-                        WHERE product.availability = 0 ORDER BY product.bid_end_time DESC");
+    
+    
+    $st2 = $this->db->prepare('SELECT * FROM product WHERE availability = 0 AND won_buy_id IS NULL');
     $st2->execute();
     $notavbprdts = $st2->fetchAll();
     $notavbprdtscount = $st2->rowCount();
+   
+    //select all the products sold at the bid session
+    $st3 = $this->db->prepare("SELECT product.id, product.product_id, product.name, product.type, product.highest_bid_amount, product.collected_status, product.description, product.date,
+                        product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product LEFT JOIN buyer ON product.won_buy_id = buyer.id
+                        WHERE product.availability = 0 AND product.won_buy_id IS NOT NULL ORDER BY product.bid_end_time DESC");
+    $st3->execute();
+    $soldprdts = $st3->fetchAll();
+    $soldprdtscount = $st3->rowCount();
+    
     if($avbprdtscount == 0){
       $msgavb = "No Cruntly Available Products!!!";
     }else{
@@ -170,19 +180,26 @@ class staff_Model extends Model
     }else{
       $msgnavb = "";
     }
+    if($soldprdtscount == 0){
+      $msgsld = "No Sold Product Records Available"; 
+    }else{
+      $msgsld = "";
+    }
 
     $pageData = [
       'msgavb' => $msgavb,
       'msgnavb' => $msgnavb,
       'avbprdts' => $avbprdts,
-      'notavbprdts' => $notavbprdts
+      'notavbprdts' => $notavbprdts,
+      'soldprdts' => $soldprdts,
+      'msgsld' => $msgsld
     ];
     return $pageData;
 
 
   }
 
-  public function view_update_product(){
+  public function view_product(){
     
     $pid = $_GET['prdid'];
     $st1 = $this->db->prepare("SELECT * FROM product WHERE id = :pid");
@@ -216,10 +233,29 @@ class staff_Model extends Model
 
     return $pageData;
   }
+  public function update_product(){
+    $pid = $_GET['prdid'];
+    $st1 = $this->db->prepare('SELECT * FROM product WHERE id = :pid');
+    $st1->execute(array(
+      ':pid' => $pid
+    ));
+    $data = $st1->fetchAll();
+    $count = $st1->rowCount();
+    if($count == 0){
+      $msg = "ERROR!!!";
+    }else{
+      $msg = "";
+    }
+    $pageData = [
+      'msg' => $msg,
+      'data' => $data
+    ];
+    return $pageData;
 
+  }
   public function collected_product(){
     $pid = $_GET['prdid'];
-    $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid ");
+    $st1 = $this->db->prepare("UPDATE product SET collected_status = 1 WHERE id = :pid AND won_buy_id IS NOT NULL");
     $st1->execute(array(
       ':pid' => $pid
     ));
@@ -228,12 +264,24 @@ class staff_Model extends Model
 
   public function delete_product(){
     $pid = $_GET['prdid'];
-    
-    $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
-    $st1 ->execute(array(
+    $check = $this->db->prepare('SELECT * FROM product WHERE id = :pid');
+    $check ->execute(array(
       ':pid' => $pid
     ));
-    
+    $data = $check->fetchAll();
+    foreach ($data as $dt) :
+      $bidstart = $dt['date'];
+    endforeach;
+
+    $cr_time = date("Y-m-d H:i:s");
+    $bidstint=strtotime($bidstart);
+    $crtimeint=strtotime($cr_time);
+    if($bidstint > $crtimeint){
+      $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
+      $st1 ->execute(array(
+        ':pid' => $pid
+      ));
+    }  
   }
 public function requestleave(){
   if (!empty($_POST)) {
