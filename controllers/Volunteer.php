@@ -19,7 +19,7 @@ class Volunteer extends Controller
     
     function index()
     {
-        $msg="hii";
+        $msg="";
         $msg_data = [
 
             'msg' => $msg
