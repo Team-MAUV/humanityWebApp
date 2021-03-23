@@ -1,4 +1,4 @@
-<?php $page = 'add_product';
+<?php $page = 'update_product';
 include "staff_header.php"; ?>
 
 
@@ -11,6 +11,7 @@ include "staff_header.php"; ?>
 <html>
 <head> <title> Add Product </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 * {
   box-sizing: border-box;
@@ -94,11 +95,12 @@ input[type=reset]:hover {
 <body>
 
 
-<h2>Add Product</h2>
-
 <?php foreach ($data as $dt) : ?>
+<h2>Update Product : <?= $dt['product_id'] ?></h2>
+
 <div class="container">
-  <form name="addprd" action="run_add_product" method="POST" enctype="multipart/form-data" >
+  <form name="addprd" action="save_update_product?pid=<?= $dt['id'] ?>" method="POST" enctype="multipart/form-data" >
+  <h3>Change details of the product</h3>
     <div class="row">
       <div class="col-25">
         <label for="name">Product Name:</label>
@@ -109,17 +111,19 @@ input[type=reset]:hover {
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="Category">Category:</label>
+        <label for="Category">Category: <?= $dt['type'] ?></label>
       </div>
       <div class="col-75">
         
-        <select name="category" id="category">
-          <option value="Plastic">Plastic</option>
-          <option value="Glass">Glass</option>
-          <option value="Electronic">Electronic</option>
-          <option value="Paper">Paper</option>
-          <option value="Other">Other</option>
-        </select>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Description:</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="description" placeholder="Write something about product..." style="height:150px"><?= $dt['description'] ?></textarea>
       </div>
     </div>
     <div class="row">
@@ -130,55 +134,51 @@ input[type=reset]:hover {
         <input type="number" id="volume" name="volume" value = "<?= $dt['volume'] ?>">
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="volume">Starting Bid (Rs):</label>
-      </div>
-      <div class="col-75">
-        <input type="number" id="startingbid" name="starting_bid" value = <?= $dt['starting_bid'] ?>">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="Bidding Date">Bidding Start Time:</label>
-      </div>
-      <div class="col-75">
-        <input type="datetime-local" id="BiddingStartDate" name="bidding_start_date" value = "<?= $dt['date'] ?>">
 
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="Bidding Date">Bidding End Time:</label>
-      </div>
-      <div class="col-75">
-        <input type="datetime-local" id="BiddingEndDate" name="bidding_end_date" value ="<?= $dt['bid_end_time'] ?>">
+    <h3>Change product Image</h3>
+    <img src="<?= URL ?>public/<?= $dt['product_path'] ?>" alt="img"class="shoe show" />
 
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Description:</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="description" placeholder="Write something about product..." style="height:150px"><?= $dt['description'] ?></textarea>
-      </div>
-    </div>
     <div class="row">
         <div class="col-25"> 
-        <label for="image">Choose Image</label>
+        <label for="image">Choose new Image</label>
       <input type="file" name="product_image" accept="image/*" id="proimage">
         
         </div>
     </div>
+    <h3>Change bidding details of the product</h3>
+    <div class="row">
+      <div class="col-25">
+        <label for="volume">Set New Starting Bid (Rs):</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="startingbid" name="starting_bid" value = "<?= $dt['starting_bid'] ?>">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Bidding Date">Set New Bidding Start Time:</label>
+      </div>
+      <div class="col-75">
+        <input type="datetime-local" id="BiddingStartDate" name="bidding_start_date" value = "<?= str_replace(' ', 'T', $dt['date']) ?>" REQUIRED>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Bidding Date">Set New Bidding End Time:</label>
+      </div>
+      <div class="col-75">
+        <input type="datetime-local" id="BiddingEndDate" name="bidding_end_date" value ="<?= str_replace(' ', 'T', $dt['bid_end_time']) ?>" REQUIRED>
+
+      </div>
+    </div>
+    
+    
+    
 
    
 
-    <div class="row">
-        <input type="reset" value="Reset">
     
-    </div>
     <div class="row">
   <br>   </div>
     <button class="submit" value="Submit" onclick="return addvalidprd();">
