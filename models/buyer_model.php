@@ -7,6 +7,7 @@ class buyer_model extends Model{
 
   public function view_buyerdash(){
     //return available products
+    $id=$_SESSION['idp'];
     $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1');
     $st->execute();
     $prd_list = $st->fetchAll();
@@ -41,18 +42,33 @@ class buyer_model extends Model{
         
 
     //  endforeach;
-      
-      
-      
-
-  
     }
+    $st3 = $this->db->prepare('SELECT * FROM bid WHERE buy_id = :bid');
+    $st3->execute(array(
+      ':bid'=>$id
+    ));
+    $bidcount = $st3->rowCount();
     
+    $st4 = $this->db->prepare('SELECT DISTINCT product_id FROM bid WHERE buy_id = :bid');
+    $st4->execute(array(
+      ':bid'=>$id
+    ));
+    $prdcount = $st4->rowCount();
+    $st5 = $this->db->prepare('SELECT * FROM product WHERE won_buy_id = :bid AND availability = 0');
+    $st5->execute(array(
+      ':bid'=>$id
+    ));
+    $wonprds = $st5->fetchAll();
+    $woncount = $st5->rowCount();
     $pageData = [
       'prdlist' => $prd_list,
       'msg' => $msg,
       'winbid_list' => $winbid_list,
-      'msgwinlist' => $msg2
+      'msgwinlist' => $msg2,
+      'bidcount' => $bidcount,
+      'prdcount' => $prdcount,
+      'woncount' => $woncount,
+      'wonprds' => $wonprds
     ];
     return ($pageData);
   }

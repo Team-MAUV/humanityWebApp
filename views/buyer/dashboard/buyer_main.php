@@ -82,9 +82,9 @@ include "buyer_header.php"; ?>
                   </button>
                 </div>
                 <div class="team__inform">
-                  <p class="team__name"> Total bids:</p>
-                  <p class="team__name"> Products Bid : 2</p>
-                  <p class="team__name"> Bids won : 2</p>
+                  <p class="team__name"> Total bids: <?= $bidcount ?></p>
+                  <p class="team__name"> Products Bid : <?= $prdcount ?></p>
+                  <p class="team__name"> Bids won : <?= $woncount ?></p>
                   
                 </div>
               </a>
@@ -164,7 +164,7 @@ include "buyer_header.php"; ?>
                     >
                   </div>
                   <div class="project__element project__photo">
-                   <p>Highest Bid: <?= $list['highest_bid_amount'] ?></p>
+                   <p>Highest Bid: (Rs) <?= $list['highest_bid_amount'] ?></p>
                   </div>
                   <div class="project__element project__photo">
                    <p>Won By: <?= $list['buy_name'] ?></p>
@@ -213,6 +213,7 @@ include "buyer_header.php"; ?>
             <h1 class="profile-main__name"><?=$_SESSION['id']?></h1>
 <h4> Next session : 15.12.2020 10.00 </h4>
           </div>
+          <?php foreach ($wonprds as $prd) : ?>
           <ul class="statistics">
            
           <li class="statistics__entry">
@@ -221,13 +222,14 @@ include "buyer_header.php"; ?>
             </li>
             <li class="statistics__entry">
               <a class="statistics__entry-description" >Won bid</a
-              ><span class="statistics__entry-quantity">2</span>
+              ><span class="statistics__entry-quantity">Id:<?= $prd['product_id'] ?> |Name: <?= $prd['name'] ?> |Type: <?= $prd['type'] ?> | Collected <?= $prd['collected_status'] ?></span>
             </li>
             <li class="statistics__entry">
               <a class="statistics__entry-description" href="#">You pay</a
-              ><span class="statistics__entry-quantity">Rs 4800.00 </span>
+              ><span class="statistics__entry-quantity">(Rs)<?= $prd['highest_bid_amount'] ?> </span>
             </li>
           </ul>
+          <?php endforeach; ?> 
           <div class="banner">
             <h3 class="banner__title">Go Green!</h3>
             <p class="banner__description">Thank you for your contribution!</p>
