@@ -51,8 +51,8 @@ function edit_profile()
         $this->view->rendor('staff/dashboard/access_product', $data , true);
     }
 
-    function view_update_product(){
-        $data = $this->model->view_update_product();
+    function view_product(){
+        $data = $this->model->view_product();
         $this->view->rendor('staff/dashboard/viewmore_product', $data , true);
     }
 
