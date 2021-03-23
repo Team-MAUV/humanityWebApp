@@ -19,7 +19,7 @@ include "staff_header.php"; ?>
 </head>
 <body>
 <div>
-<p>sacf : <?= $msg ?></p>
+<p><?= $msg ?></p>
 </div> 
 
 
