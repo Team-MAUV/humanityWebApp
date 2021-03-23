@@ -16,55 +16,9 @@ include "staff_header.php"; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staff Home</title>
     <link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_calendar.css" />
+    <link rel="stylesheet" href="<?= URL ?>public/css/staff_dash_index.css" />
     <style>
-      body {
-        font-family:serif;
-        color: white;
-      }
-      
-      .split {
-        height: 100%;
-        width: 50%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        overflow-x: hidden;
-        padding-top: 20px;
-      }
-      
-      .left {
-        left: 0;
-        background-color:white;
-        color:blue
-      }
-      
-      .right {
-        right: 0;
-       
-      }
-      
-      .centered {
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-      .centered1 {
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        width:500;
-         height:500 ;
-        overflow: scroll;
-      }
-      
-      .centered img {
-        width: 150px;
-        border-radius: 50%;
-      }
+     
       </style>
        
          </head>

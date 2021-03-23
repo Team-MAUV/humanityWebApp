@@ -123,15 +123,6 @@ class Commissioner extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
     function sessionincharge()
     {
         $data = $this->model->fetch_sessionIncharge_details();

@@ -578,10 +578,16 @@ return ($pageData);
    
 
           //Fetch staff ids for drop down list
-          $query = "SELECT * FROM staff";
+          $query = "SELECT * FROM staff WHERE availability=1";
           $statement = $this->db->prepare($query);
           $statement->execute();
           $staff_info = $statement->fetchAll();
+
+          //Fetch Volunteer Activity IDs for drop down list
+            $query = "SELECT * FROM vol_activity WHERE status=1";
+            $st = $this->db->prepare($query);
+            $st->execute();
+            $volactivity_info = $st->fetchAll();
 
 
 
@@ -592,9 +598,12 @@ return ($pageData);
 
         $stf_id=strtoupper($_POST['staff-id']);
 
+        $volactivity_id=strtoupper($_POST['vol-id']);
+        
+
         foreach ($staff_info as $tmp) :
 
-          if($tmp['staff_id'] == $stf_id ){
+          if($tmp['staff_id']  == $stf_id ){
             $stf_id = $tmp['staff_id'];
             $id_in_stf_tbl = $tmp['id'];
             $name = $tmp['name'];
@@ -602,10 +611,28 @@ return ($pageData);
           }
          
         endforeach;
+
+
+        foreach ($volactivity_info as $tmp) :
+
+          if($tmp['activity_id'] == $volactivity_id ){
+            $volact_id = $tmp['activity_id'];
+            $volact_name = $tmp['name'];
+           
+          }
+         
+        endforeach;
+
+
+
+
+        
         Session::set('stf_tbl_id', $id_in_stf_tbl);
         Session::set('staff_id', $stf_id);
         Session::set('stf_name', $name);
         Session::set('email', $email);
+        Session::set('volactivity',  $volact_id);
+        Session::set('volactname',  $volact_name);
         
 
             $tempUsername= 'TMP'.$stf_id;
@@ -639,14 +666,25 @@ return ($pageData);
         $stf_tbl_id = intval(Session::get('stf_tbl_id'));
         $stf_name = Session::get('stf_name');
         $email = Session::get('email');
+        $vol_activity = Session::get('volactivity');
+        $vol_act_name = Session::get('volactname');
        
         // $role = "session_incharge";
      
          
 
  
-        $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,name,id_in_stf_tbl,username, passcode) VALUES(?,?,?,?,?)");
-        $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd]);
+        $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,name,id_in_stf_tbl,username, passcode, vol_activity) VALUES(?,?,?,?,?,?)");
+        $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd,$vol_act_name]);
+
+
+        $st= $this->db->prepare("UPDATE staff SET availability=0  WHERE  staff_id=:id" );
+
+
+        $st->execute(array(
+            ':id' => $staff_id
+          
+        ));
 
         
         if($result1){
@@ -699,6 +737,7 @@ return ($pageData);
             $pageData = [
               'result' => $result,
               'staff_info'=>$staff_info,
+              'volactivity_info'=>$volactivity_info,
               'msg'=>$msg,
               'tempUsername'=>$tempUsername,
               'pwd'=>$pwd

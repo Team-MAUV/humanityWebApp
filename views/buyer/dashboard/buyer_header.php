@@ -36,7 +36,7 @@
           <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">Edit Profile</a>
+            <a href="<?= URL ?>Buyer/edit_profile?id=<?= $_SESSION['idp'] ?>">Edit Profile</a>
             <a href="<?= URL ?>Buyer/logout">Logout</a>
 
           </div>
