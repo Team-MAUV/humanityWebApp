@@ -15,7 +15,8 @@ class Donor extends Controller
 
     function index()
     {
-        $this->view->rendor('donor/dashboard/donor_home');
+        $data = $this->model->donor_stat();
+        $this->view->rendor('donor/dashboard/donor_home', $data, true);
     }
 
     function logout()
