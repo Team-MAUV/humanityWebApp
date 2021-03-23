@@ -76,18 +76,71 @@ class buyer_model extends Model{
     $count = $st->rowCount();
     
       
-    if($count == 0 ){
-      $msg = "Product not available!!! Product will be available soon ";    
-    }else{
-      $msg = "";
-    }
+    if($count == 1 ){
+     // $msg = "Product not available!!! Product will be available soon ";    
       
+      foreach ($product as $pd) :
+        $prdid = $pd['id'];
+        $bidstart = $pd['date'];
+        $bidend = $pd['bid_end_time'];
+      endforeach; 
+      $cr_time = date("Y-m-d H:i:s");
 
-       
+      $bidendint=strtotime($bidend);
+      $crtimeint=strtotime($cr_time);
+      if($bidendint < $crtimeint){
+        $productdata = [];
+        $highestbid = [];
+        $msg = "Product not available!!! Product will be available soon";
+        $setavb = $this->db->prepare('UPDATE product SET availability = 0 WHERE id = :id');
+        $setavb->execute(array(
+          ':id'=>$prdid
+        ));
+      }else{
+        $msg="";
+        $st0 = $this->db->prepare('SELECT * FROM product WHERE id = :id');
+        $st0->execute(array(
+          ':id'=>$prdid
+        ));
+        $productdata = $st0->fetchAll();
+        $buy_id = $_SESSION['idp'];
+        $st1 = $this->db->prepare('SELECT MAX(bid_amount) AS max_bid FROM bid WHERE buy_id = :bid && product_id = :pid');
+        $st1->execute(array(
+          ':bid'=>$buy_id,
+          ':pid'=>$prdid
+        ));
+        $highestbid = $st1->fetchAll();
+        $bidcount = $st1->rowCount();
+        if($bidcount == 0){
+          $bidmsg = "You haven't bid for this product! ";
+        }else{
+          $bidmsg = "";
+        }
+
+      }
+    
+    
+    
+    }else{
+      $msg = "Product not available!!! Product will be available soon";
+      $productdata = [];
+      $highestbid = [];
+    }
+    
+
+     
+
+    
+
+    
+
       
     $pagedata = [
-      'product' => $product,
-      'msg' => $msg    
+      'productdata' => $productdata,
+      'msg' => $msg,
+      'bidmsg' => $bidmsg,
+      'highestbid' => $highestbid
+      
     ];
     
     return ($pagedata);

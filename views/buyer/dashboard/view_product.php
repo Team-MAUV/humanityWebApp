@@ -28,8 +28,8 @@ include "buyer_header.php"; ?>
 <body>
     <div class="my">
         <div class="card">
-        
-        <?php foreach ($product as $prd) : ?>
+      
+        <?php foreach ($productdata as $prd) : ?>   
             <div class="shoeBackground">
                 <div class="gradients">
                  
@@ -70,15 +70,22 @@ include "buyer_header.php"; ?>
                     <?= $prd['highest_bid_amount'] ?>
                     </div>
                     <spam id="uid"><?=$_SESSION['id']?></spam>
-                    <h3 class="title">Your highest bid : </h3>
-                    <div class="sizes">
-                      Rs.8300.00
-                    </div>
+                    
+
                 </div>
 
 
 
                 <form action= "add_bid?prd=<?= $prd['id'] ?>" id="bidform" name="bidform" method="post">
+                <?php endforeach; ?> 
+                <?php foreach ($highestbid as $hbid) : ?> 
+                <h3 class="title">Your highest bid : </h3>
+                    <div class="sizes">
+                    <p><?= $bidmsg ?></p>
+                      
+                     <?= $hbid['max_bid'] ?>   
+                    
+                    </div>
                 <div class="buy-price">
                     
                     
@@ -96,7 +103,7 @@ include "buyer_header.php"; ?>
             </button></a> 
            
             </div>
-            <?php endforeach; ?> 
+            <?php endforeach; ?>  
             <p><?= $msg ?></p>
             
             

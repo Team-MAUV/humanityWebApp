@@ -674,8 +674,8 @@ return ($pageData);
          
 
  
-        $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,name,id_in_stf_tbl,username, passcode, vol_activity) VALUES(?,?,?,?,?,?)");
-        $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd,$vol_act_name]);
+        $stmt = $this->db->prepare("INSERT INTO session_Incharge(incharge_id,name,id_in_stf_tbl,username, passcode, vol_activityId, vol_activity) VALUES(?,?,?,?,?,?,?)");
+        $result1 = $stmt->execute([$staff_id,$stf_name,$stf_tbl_id,$tmpUser, $pwd, $vol_activity, $vol_act_name]);
 
 
         $st= $this->db->prepare("UPDATE staff SET availability=0  WHERE  staff_id=:id" );
@@ -683,6 +683,14 @@ return ($pageData);
 
         $st->execute(array(
             ':id' => $staff_id
+          
+        ));
+
+        $st= $this->db->prepare("UPDATE vol_activity SET status=0  WHERE  activity_id=:id" );
+
+
+        $st->execute(array(
+            ':id' => $vol_activity
           
         ));
 

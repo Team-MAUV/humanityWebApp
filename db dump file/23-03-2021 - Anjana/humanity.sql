@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2021 at 06:43 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Generation Time: Mar 23, 2021 at 08:18 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -359,14 +359,6 @@ CREATE TABLE `marking_attendance` (
   `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `marking_attendance`
---
-
-INSERT INTO `marking_attendance` (`incharge_id`, `staff_id`, `activity_id`, `vol_id`, `date`, `time`) VALUES
-(1, 1, 1, 1, '2020-12-19', '11:30:20'),
-(4, 4, 5, 1, '2021-03-10', '12:22:22');
-
 -- --------------------------------------------------------
 
 --
@@ -487,6 +479,7 @@ CREATE TABLE `session_incharge` (
   `id_in_stf_tbl` int(11) DEFAULT NULL,
   `username` varchar(100) NOT NULL,
   `passcode` varchar(50) DEFAULT NULL,
+  `vol_activityId` varchar(20) NOT NULL,
   `vol_activity` varchar(100) NOT NULL,
   `session_start_time` timestamp NULL DEFAULT current_timestamp(),
   `status` varchar(6) DEFAULT 'active',
@@ -497,9 +490,12 @@ CREATE TABLE `session_incharge` (
 -- Dumping data for table `session_incharge`
 --
 
-INSERT INTO `session_incharge` (`id`, `incharge_id`, `name`, `id_in_stf_tbl`, `username`, `passcode`, `vol_activity`, `session_start_time`, `status`, `session_closed_time`) VALUES
-(2, 'STFHB002', 'F.R. Wijenayaka', 2, 'TMPSTFHB002', '635798', '', '2020-11-24 20:25:28', 'active', NULL),
-(15, 'STFHB004', 'S.E. Perera', 4, 'TMPSTFHB004', '490263', 'Blood Donation Campaign', '2021-03-21 12:24:59', 'closed', '2021-03-21 17:47:54');
+INSERT INTO `session_incharge` (`id`, `incharge_id`, `name`, `id_in_stf_tbl`, `username`, `passcode`, `vol_activityId`, `vol_activity`, `session_start_time`, `status`, `session_closed_time`) VALUES
+(2, 'STFHB002', 'F.R. Wijenayaka', 2, 'TMPSTFHB002', '635798', '', '', '2020-11-24 20:25:28', 'active', NULL),
+(15, 'STFHB004', 'S.E. Perera', 4, 'TMPSTFHB004', '490263', '', 'Blood Donation Campaign', '2021-03-21 12:24:59', 'closed', '2021-03-21 17:47:54'),
+(16, 'STFHB006', 'F.R. Wijenayaka', 6, 'TMPSTFHB006', '342178', '', 'Tree planting campaign', '2021-03-21 18:49:09', 'closed', '2021-03-21 18:54:53'),
+(17, 'STFHB007', 'S.K. Ranasinghe', 7, 'TMPSTFHB007', '873690', '', 'Tree planting campaign', '2021-03-21 18:56:07', 'closed', '2021-03-21 18:56:57'),
+(18, 'STFHB003', 'D.R. Amasha', 3, 'TMPSTFHB003', '264971', 'VACTHB002', 'Blood Donation Campaign', '2021-03-23 07:07:23', 'active', NULL);
 
 -- --------------------------------------------------------
 
@@ -532,10 +528,10 @@ CREATE TABLE `staff` (
 INSERT INTO `staff` (`id`, `staff_id`, `userlogin_id`, `name`, `nic`, `address`, `dob`, `email`, `gender`, `joined_year`, `contact`, `com_id`, `status`, `no_leave`, `availability`) VALUES
 (1, 'STFHB001', 5, 'A.S. Nimali', '916289470V', 'Hambantota', '1991-02-12', 'manuli1998@gmail.com', 'female ', '2016-10-13', '0112333211', 1, 'accepted', 5, 0),
 (2, 'STFHB002', 6, 'H.J. Amal', '832345786V', 'Hambantota', '1983-11-04', 'thavinu2003@gmail.com', 'male', '2017-11-03', '0712894523', 3, 'accepted', 2, 0),
-(3, 'STFHB003', 7, 'D.R. Amasha', '667223621V', 'Hambantota', '1966-06-22', 'vigaucsc2019@gmail.com', 'female ', '2017-12-15', '0112333456', 2, 'accepted', 1, 1),
+(3, 'STFHB003', 7, 'D.R. Amasha', '667223621V', 'Hambantota', '1966-06-22', 'vigaucsc2019@gmail.com', 'female ', '2017-12-15', '0112333456', 2, 'accepted', 1, 0),
 (4, 'STFHB004', 8, 'S.E. Perera', '792345786V', 'Hambantota', '1979-11-03', 'ahmdodampe@hotmail.com', 'male', '2018-10-13', '0712894451', 4, 'accepted', 0, 0),
 (5, 'STFHB005', 9, 'T.P. Fernando', '787223621V', 'Hambanotota', '1978-11-10', 'anjana.malitha@gmail.com', 'male ', '2018-11-03', '0112333221', 2, 'accepted', 0, 0),
-(6, 'STFHB006', 10, 'F.R. Wijenayaka', '892345786V', 'Hambantota', '1989-07-20', 'vigaravi98@gmail.com', 'female', '2019-10-13', '0712894451', 1, 'accepted', 4, 1),
+(6, 'STFHB006', 10, 'F.R. Wijenayaka', '892345786V', 'Hambantota', '1989-07-20', 'vigaravi98@gmail.com', 'female', '2019-10-13', '0712894451', 1, 'accepted', 4, 0),
 (7, 'STFHB007', NULL, 'S.K. Ranasinghe', '637223621V', 'Hambanota', '1963-11-25', 'merce177x@gmail.com', 'female ', '2020-11-30', '0112333228', NULL, 'pending', 0, 1);
 
 -- --------------------------------------------------------
@@ -649,7 +645,7 @@ CREATE TABLE `vol_activity` (
 
 INSERT INTO `vol_activity` (`id`, `activity_id`, `name`, `point`, `venue`, `start_date_time`, `end_date_time`, `participant_count`, `confirm_participant_count`, `com_id`, `status`) VALUES
 (1, 'VACTHB001', 'Tree Planting Campaign', 10, 'Kandy Town', '2020-12-19 11:30:00', '2020-11-19 13:30:00', 200, 195, 1, 0),
-(2, 'VACTHB002', 'Blood Donation Campaign', 10, 'Community Hall', '2020-08-10 10:00:00', '2020-08-10 16:00:34', 300, 231, 3, 1),
+(2, 'VACTHB002', 'Blood Donation Campaign', 10, 'Community Hall', '2020-08-10 10:00:00', '2020-08-10 16:00:34', 300, 231, 3, 0),
 (3, 'VACTHB003', 'Beach Cleaning Campaign', 10, 'Galle Town', '2019-10-15 14:03:34', '2019-10-15 18:03:34', 400, 320, 2, 0),
 (4, 'VACTHB004', 'Blood Donation Campaign', 10, 'Main branch', '2021-01-19 10:30:00', '2021-01-19 16:30:00', 350, 0, 2, 0),
 (5, 'VACTHB005', 'Book Donation Campaign', 10, 'Community Hall', '2021-03-10 11:37:00', '2021-03-10 03:37:00', 300, 0, 4, 0),
@@ -954,7 +950,7 @@ ALTER TABLE `pwdreset`
 -- AUTO_INCREMENT for table `session_incharge`
 --
 ALTER TABLE `session_incharge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -1063,6 +1059,17 @@ ALTER TABLE `incharge_appoints`
 ALTER TABLE `leave_request`
   ADD CONSTRAINT `leave_request_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `leave_request_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `marking_attendance`
+--
+ALTER TABLE `marking_attendance`
+  ADD CONSTRAINT `marking_attendance_ibfk_1` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `marking_attendance_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `marking_attendance_ibfk_4` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `marking_attendance_ibfk_5` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `marking_attendance_ibfk_7` FOREIGN KEY (`incharge_id`) REFERENCES `session_incharge` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `marking_attendance_ibfk_8` FOREIGN KEY (`activity_id`) REFERENCES `vol_activity` (`id`);
 
 --
 -- Constraints for table `media`
