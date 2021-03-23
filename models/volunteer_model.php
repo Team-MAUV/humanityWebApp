@@ -290,48 +290,24 @@ class volunteer_Model extends Model
 
     }
 
-    public function vol_participate(){
+public function vol_participate(){
+        $vid=Session::get('id');
+        $stmt = $this->db->prepare('SELECT vol_activity.name ,  vol_activity.start_date_time , vol_activity.point  
+        From vol_activity
+            INNER JOIN marking_attendance 
+              ON 
+              vol_activity.id  = marking_attendance.activity_id
+            INNER JOIN  volunteer 
+              ON 
+              marking_attendance.vol_id = volunteer.id 
+            WHERE 
+            volunteer.vol_id=:vid  '
+            );     
 
-      $activities= []; 
-    $vid=Session::get('id');
-    //Getting id from Volunteer table that is corresponding to entered volunteer ID
-    $get_volid = $this->db->prepare("SELECT id FROM volunteer WHERE vol_id= :volid  ");
-    $get_volid->execute(array(
-      ':volid' => $vid,
-    ));
-
-    $result = $get_volid->fetchAll();
-    $count = $get_volid->rowCount();
-
-
-    if ($count > 0) {
-      foreach ($result as $tmp) :
-        $id = $tmp['id'];
-      endforeach;
-    
-    $st1 = $this->db->prepare('SELECT activity_id FROM marking_attendance WHERE vol_id=:vid ');
-    $st1->execute(array(
-      ':vid'=>$id,
-    ));
-    $mark = $st1->fetchAll();
-    $count1 = $st1->rowCount();
-  }
-
-    if ($count1 > 0) {
-      foreach ($mark as $tmp2) :
-        $aid = $tmp2['activity_id'];
-      
-  
-      $stmt = $this->db->prepare('SELECT * FROM vol_activity WHERE id=:aid  ');        
-      $stmt->execute(array(
-        ':aid'=>$aid,
-        
-      ));
-      $list = $stmt->fetchAll();
-      $activities=$activities+$list;
-    endforeach;
-  }
-  //All the data that has to be return from this functon is added to an associative array
+        $stmt->execute(array(
+          ':vid'=> $vid,
+        ));
+        $activities = $stmt->fetchAll();
   $pageData = [
     'activities'=> $activities,
   ];
