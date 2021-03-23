@@ -119,6 +119,8 @@ h2 {
     margin-top: 2vh;
     margin-bottom: 3vh;
     margin-right: 1vw;
+    user-select: none;
+    transform: translate(-50%, -50%);
 }
 
 .btn:hover {
@@ -126,6 +128,19 @@ h2 {
     background-color: rgb(12, 12, 12);
     color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .cp {
     margin-top: 0;

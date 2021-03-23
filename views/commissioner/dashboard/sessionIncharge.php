@@ -17,7 +17,7 @@ include "com-dash-header.php"; ?>
     <form action="sessionIncharge?gen=1" method="post">
     <label for="venue">Volunteer Activity Id</label>
     <div class="select"> 
-        <select name="Event-id" id="event-id" required>
+        <select name="vol-id" id="vol-id" required>
           <option selected="selected" placeholder="Select event Id"></option>
           <?php
 
@@ -73,6 +73,7 @@ include "com-dash-header.php"; ?>
                         <td>#</td>
                         <td>Session Incharge ID</td>
                         <td>Name</td>
+                        <td>Volunteer Activity</td>
                         <td>Session Start Time</td>
                         <td>Status</td>
                         <td>Session Closed Time</td>
@@ -86,6 +87,7 @@ include "com-dash-header.php"; ?>
                               <td><?= $tmp['id'] ?></td>
                               <td><?= $tmp['incharge_id'] ?></td>
                               <td><?= $tmp['name'] ?></td>
+                              <td><?= $tmp['vol_activity'] ?></td>
                               <td><?= $tmp['session_start_time'] ?></td>
                               <td><?= $tmp['status'] ?></td>
                               <td><?= $tmp['session_closed_time'] ?></td>

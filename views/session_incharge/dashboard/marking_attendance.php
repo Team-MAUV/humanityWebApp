@@ -16,12 +16,13 @@ $style = 'sess_dash_markattendance.css';?>
 <html lang="en">
 
 <head>
+<title>Table</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
-    <title>Table</title>
-
+ 
     <link rel="stylesheet" href="<?= URL?> public/css/sess_dash_markattendance.css" />
 </head>
 
@@ -31,13 +32,16 @@ $style = 'sess_dash_markattendance.css';?>
     <h1>Confirmed Participants attendance marking</h1>
     <hr>
 
-    <table id="att">
-        <tr id="header">
+   
+    <table class="table">
+     <thead>
             <th>Vol_id</th>
             <th>Volunteer  name</th>
             <th>Present</th>
-        
-        </tr>
+     </thead>
+
+
+        <tbody>
         <tr>
             <td>VOLHB001 </td>
             <td>Perera</td>
@@ -80,7 +84,7 @@ $style = 'sess_dash_markattendance.css';?>
         
 
         </tr>
-
+        </tbody>
     </table>
 
 </body>
