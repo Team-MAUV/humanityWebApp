@@ -40,14 +40,7 @@ include "vol_dash_header.php"; ?>
 		</div>
 	</div>
 
-<script type="text/javascript">
 
-function validation() {
-  Swal.fire('Any fool can use a computer')
-}
-
-
-</script>
 
 
 
