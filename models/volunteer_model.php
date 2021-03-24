@@ -11,16 +11,16 @@ class volunteer_Model extends Model
 
       public function vol_profile()
       {
-            $un = $_SESSION['name'];
-            // echo $un;
-            $st = $this->db->prepare("SELECT `name`,`level`,`vol_points`,`prev_vol_exp` FROM `volunteer` WHERE `username`='$un' ");
-            $st->execute();
-            $volprofile = $st->fetchAll();
-            // print_r($volprofile);
-            $voldata = [
-              'volprofile' => $volprofile
-            ];
-            return ($voldata);
+                $un = $_SESSION['name'];
+                // echo $un;
+                $st = $this->db->prepare("SELECT `name`,`level`,`vol_points`,`prev_vol_exp` FROM `volunteer` WHERE `username`='$un' ");
+                $st->execute();
+                $volprofile = $st->fetchAll();
+                // print_r($volprofile);
+                $voldata = [
+                  'volprofile' => $volprofile
+                ];
+                return ($voldata);
       }
 
 
@@ -197,69 +197,69 @@ class volunteer_Model extends Model
       }
 
       public function run_viewtoedit_profile(){
-            $vid=Session::get('id');
-            $st = $this->db->prepare('SELECT * FROM volunteer WHERE vol_id=:vid ');
-            $st->execute(array(
-              ':vid'=>$vid,
-            ));
-            $data = $st->fetchAll();
-            $st2 = $this->db->prepare('SELECT * FROM user WHERE username=:vid ');
-            $st2->execute(array(
-              ':vid'=>$vid,
-            ));
-            $data2 = $st2->fetchAll();
-            $msg="hi";
-            $pageData = [
-              'data' => $data,
-              'data2'=>$data2,
-              'msg'=>$msg,
-              'vid'=>$vid,
-              
-            ];
-            return ($pageData);
+                $vid=Session::get('id');
+                $st = $this->db->prepare('SELECT * FROM volunteer WHERE vol_id=:vid ');
+                $st->execute(array(
+                  ':vid'=>$vid,
+                ));
+                $data = $st->fetchAll();
+                $st2 = $this->db->prepare('SELECT * FROM user WHERE username=:vid ');
+                $st2->execute(array(
+                  ':vid'=>$vid,
+                ));
+                $data2 = $st2->fetchAll();
+                $msg="hi";
+                $pageData = [
+                  'data' => $data,
+                  'data2'=>$data2,
+                  'msg'=>$msg,
+                  'vid'=>$vid,
+                  
+                ];
+                return ($pageData);
         }
 
 
       public function run_edit_profile(){
 
-            $email = $_POST['email'];
-            $address = $_POST['address'];
-            $contact = $_POST['contact'];
-            $password=$_POST['password'];
-            $pw = password_hash($password, PASSWORD_DEFAULT);
-            $vid=Session::get('id');
-            $stmt =$this->db->prepare('UPDATE `volunteer` SET email=:email,address:address,contact:contact WHERE vol_id=:vid');
-            $stmt->execute(array(
-                ':email' => $email,
-                ':address' => $address,
-                ':contact' => $contact,
-                ':vid'=> $vid,
-            ));
-            $stmt2 =$this->db->prepare('UPDATE `user` SET password:password WHERE username=:username');
-            $stmt2->execute(array(
-                ':password' => $pw,
-                ':username'=> $vid,
-            ));                       
-            $msg = "Form data updated successfully!";
-            header('location: ../volunteer/edit_profile');            
-            $pageData = [
-              'msg' => $msg
-              
-            ];
-            return ($pageData);
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $contact = $_POST['contact'];
+                $password=$_POST['password'];
+                $pw = password_hash($password, PASSWORD_DEFAULT);
+                $vid=Session::get('id');
+                $stmt =$this->db->prepare('UPDATE `volunteer` SET email=:email,address:address,contact:contact WHERE vol_id=:vid');
+                $stmt->execute(array(
+                    ':email' => $email,
+                    ':address' => $address,
+                    ':contact' => $contact,
+                    ':vid'=> $vid,
+                ));
+                $stmt2 =$this->db->prepare('UPDATE `user` SET password:password WHERE username=:username');
+                $stmt2->execute(array(
+                    ':password' => $pw,
+                    ':username'=> $vid,
+                ));                       
+                $msg = "Form data updated successfully!";
+                header('location: ../volunteer/edit_profile');            
+                $pageData = [
+                  'msg' => $msg
+                  
+                ];
+                return ($pageData);
       }
 
 
       public function vol_leaderboard(){ 
 
-            $stmt = $this->db->prepare('SELECT * FROM volunteer WHERE status="1"  ORDER BY vol_points DESC');        
-            $stmt->execute();
-            $contacts = $stmt->fetchAll();
-            //All the data that has to be return from this functon is added to an associative array
-            $pageData = [
-              'contacts'=> $contacts,
-            ];
-            return ($pageData);
+                $stmt = $this->db->prepare('SELECT * FROM volunteer WHERE status="1"  ORDER BY vol_points DESC');        
+                $stmt->execute();
+                $contacts = $stmt->fetchAll();
+                //All the data that has to be return from this functon is added to an associative array
+                $pageData = [
+                  'contacts'=> $contacts,
+                ];
+                return ($pageData);
       }
 
 
