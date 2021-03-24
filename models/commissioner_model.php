@@ -42,7 +42,29 @@ class commissioner_Model extends Model
         ];
         return ($pageData);
   }
+  public function delete_volunteer(){
+    $vol_id =$_GET['id'];
+    $st = $this->db->prepare("SELECT * FROM volunteer WHERE id= :vol_id");
 
+        $st->execute(array(
+          ':vol_id' => $vol_id
+        ));
+        $contacts = $st->fetchAll();
+        $count = $st->rowCount();
+        if ($count > 0) {
+            foreach ($contacts as $contact) :
+                    $user_id=$contact['userlogin_id'];
+            endforeach;
+            $stmt = $this->db->prepare("DELETE FROM user WHERE id= :user_id");
+            $stmt->execute(array(
+              ':user_id' => $user_id
+             ));
+        
+          }
+
+
+
+  }
   public function run_search_volunteer(){
 
         $st = $this->db->prepare("SELECT * FROM volunteer WHERE vol_id= :vol_id");
