@@ -32,7 +32,7 @@ class volunteer_Model extends Model
       $msg = "Please Upload a file";
       $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/beneficiery_case/';
       $save_path = 'beneficiery_case/';
-
+        
       $dest_path = $target_dir . basename($_FILES['file']['name']);
       $file_path = $save_path . basename($_FILES['file']['name']);
 
