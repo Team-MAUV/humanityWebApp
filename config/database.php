@@ -1,7 +1,7 @@
 <?php
 
 define('DB_TYPE', 'mysql');
-define('DB_HOST', 'remotemysql.com');
-define('DB_NAME', 'QfK5Zr7gtz');
-define('DB_USER', 'QfK5Zr7gtz');
-define('DB_PASS', 'KcE2A5Oe5b');
+define('DB_HOST', 'mysql-24781-0.cloudclusters.net');
+define('DB_NAME', 'humanity');
+define('DB_USER', 'tzuchihumanity');
+define('DB_PASS', 'humanity123');
