@@ -1,3 +1,3 @@
 <?php
 
-define('URL', '/');
+define('URL', 'https://humanity-web-app.herokuapp.com/');
