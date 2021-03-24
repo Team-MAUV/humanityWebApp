@@ -66,22 +66,85 @@ class SessionIncharge_Model extends Model
 
   }
 
-  public function index()
-  {
+  public function index(){
+    //session incharge details
+  $un = $_SESSION['name'];
+    
+    $st = $this->db->prepare("SELECT * FROM session_incharge WHERE name = :un");
+    $st->execute( array(
+       ':un'=> $un,)
+    );
+    $sinprofile = $st->fetchAll();
+   
+    $sindata = [
+    'sinprofile' => $sinprofile,
+     ];
+    return ($sindata);
+//vol activity details 
+    /*$act= $_GET['actid'];
+    $st1 = $this->db->prepare("SELECT * FROM session_incharge WHERE vol_activityId = :act");
+    $st1 ->execute(array(
+      ':act' => $act
+    ));
+    $data = $st1->fetchAll();
+    $count = $st1->rowCount();
+    if($count != 1){
+      $msg = "error!!!!";
+    }
+$st2=$this->db->prepare("SELECT * FROM vol_activity 
+INNER JOIN session_incharge on vol_activity.activity_id=session_incharge.vol_activtyId WHERE vol_activity.activity_id=:act");
+ $st2->execute(array(
+  ':act' => $act
+));
+$actlist = $st2->fetchAll();
+  $pageData = [
+    'msg' => $msg,
+    'data' => $data,
+    'actlist' => $actlist
+  ];
 
-    $un = $_SESSION['name'];
-    echo $un;
-    $st = $this->db->prepare("SELECT `name`,`vol_activity`,`session_start_time` FROM `session_incharge` WHERE `username`='$un' ");
-    $st->execute();
-    $sessprofile = $st->fetchAll();
-    print_r($sessprofile);
-    $sessdata = [
-      'sessprofile' => $sessprofile
-    ];
-    return ($sessdata);
+  return $pageData;
+*/
+
+   $act=$_GET['actid'];
+   $st1 = $this->db->prepare("SELECT session_incharge.name,session_incharge.username, session_incharge.vol_activityId,session_incharge.vol_activity,session_incharge.session_start_time,
+   vol_activity.venue,vol_activity.start_date_time,vol_activity.end_date_time,vol_activity.participant_count FROM vol_activity 
+   INNER JOIN session_incharge ON vol_activity.activity_id=session_incharge.vol_activtyId WHERE vol_activity.activity_id=:act");
+$st1 ->execute(array(
+  ':act' => $act
+));
+$actprofile = $st1->fetchAll();
+   
+$actdata = [
+'actprofile' => $actprofile
+ ];
+return ($actdata);
+
+
+
+
+
+
   }
+ public function media_upload(){
+  $un = $_SESSION['name'];
+    
+  $st = $this->db->prepare("SELECT * FROM session_incharge WHERE name = :un");
+  $st->execute( array(
+     ':un'=> $un,)
+  );
+  $sinprofile = $st->fetchAll();
+ 
+  $sindata = [
+  'sinprofile' => $sinprofile,
+   ];
+  return ($sindata);
 
 
+  
+
+
+ }
 
 
 

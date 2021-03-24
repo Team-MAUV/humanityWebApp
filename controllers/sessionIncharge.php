@@ -8,6 +8,10 @@ class sessionIncharge extends Controller
         parent::__construct();
         Session::init();
         $logged = Session::get('loggedIn-sin');
+        Session::get('vol_activityId');
+        Session::get('vol_activity');
+        Session::get('session_start_time');
+   
         if ($logged == false) {
             Session::destroy();
             header('location: ../staff/sessionInchargeLogin');
@@ -18,16 +22,18 @@ class sessionIncharge extends Controller
 
     function index()
    {
-    $msg_data=$this->model->index();
     
-        $this->view->rendor('session_incharge/dashboard/index', $msg_data , true);
+    $msg_data=$this->model->index();
+
+        $this->view->rendor('session_incharge/dashboard/index',$msg_data , true);
     }
 
     
 
     function media_upload()
     {
-        $this->view->rendor('session_incharge/dashboard/media_upload');
+        $msg_data=$this->model->media_upload();
+        $this->view->rendor('session_incharge/dashboard/media_upload',$msg_data , true);
     }
     function media_gallary()
     {

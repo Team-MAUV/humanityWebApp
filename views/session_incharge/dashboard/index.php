@@ -28,41 +28,46 @@ include "sess_header.php"; ?>
        <h3> <?= $_SESSION['id'] ?></h3>
         <hr>
         <hr/>
-        <h4 style="color:black">Your Past-Lists </h4>
-         <p>Tree planting campaign</p>
-         <p>Beneficiary Home visit 05</p>
-         <p>Blood Donation</p>
+        <?php foreach ($sinprofile as $sin) : ?>
+        <h4 style="color:black">Your Activity </h4>
+         <p><?= $sin['vol_activityId'] ?> </p>
+         <p><?= $sin['vol_activity'] ?></p>
+     
          
     </div>
     <div class="right">
         <div class="info">
+    
             <h3>You are incharge of </h3>
-            <div class="info_data">
+          
+            <div class="info_data"> 
                  <div class="data">
                     <h4>Session</h4>
-                    <p>  </p>
+                    <p>  <?= $sin['vol_activity'] ?></p>
                  </div>
                  <div class="data">
-                   <h4>date</h4>
-                    <p></p>
+                   <h4>Your session start</h4>
+                    <p><?= $sin['session_start_time'] ?></p>
               </div>
             </div>
+        
         </div>
-      
+        <?php endforeach; ?>  
+        <?php foreach ($actprofile as $act) : ?>      
       <div class="projects">
             <h3>Details</h3>
             <div class="projects_data">
                  <div class="data">
                     <h4>Venue</h4>
-                    <p>Public Library </p>
+                    <p> <?= $act['venue'] ?> </p>
                  </div>
                  <div class="data">
                    <h4>Duration</h4>
-                    <p>8.00am to 5.00pm </p>
+                    <p></p>
               </div>
             </div>
         </div>
-      
+           
         <div class="social_media">
         <h3>Session will close </h3>
         
@@ -87,7 +92,7 @@ include "sess_header.php"; ?>
             SEC
           </div>
         </div>
-
+        <?php endforeach; ?>  
 </div>   
  
 <script src="<?= URL ?>public/js/session_time.js" type="text/javascript"></script>

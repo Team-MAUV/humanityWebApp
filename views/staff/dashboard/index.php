@@ -31,6 +31,8 @@ include "staff_header.php"; ?>
           <img src="<?= URL ?>public/images/img_avatar.png" alt="staff"/>
           <h1><?= $_SESSION['name'] ?></h1>
           <h5> <?= $_SESSION['id'] ?></h5>
+     
+           
       
         </div> 
       </div>

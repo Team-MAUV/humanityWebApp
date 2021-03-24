@@ -23,16 +23,47 @@ include "sess_header.php"; ?>
 			<div class="left" > <img src="<?= URL ?>public/images/form.png" alt="img" width="500" height="500"/> </div>
 			<div class="right">
 				<h2>Upload Image </h2>
-				<input type="text" class="field" placeholder="Event ID:">
-				<input type="text" class="field" placeholder="Event Name:">
-        <input type="text" class="field" placeholder="Date:">
-        <input type="file" id="myFile" name="filename">
+				<form method="post" action="multi_file_upload" enctype="#">
+				<label for="id">Event-ID</label>
+				<?php foreach ($sinprofile as $sin) : ?>
+				<input type="text" class="field" placeholder="<?= $sin['vol_activityId'] ?> " id="actID">
+				<?php endforeach; ?>  
+        <input type="text" class="field" placeholder="Date:" id="date">
+        <input type="file" id="myFile" name="filename" multiple>
 			
-				<button class="btn">Submit</button>
+				<button class="btn" value="submit" onclick="return addvalidact();" >Submit</button>
+				</form>
 			</div>
 		</div>
 	</div>
+	<script>
+function addvalidact(){
+	var actId = document.getElementById("actID").value; 
+    var date= document.getElementById("date").value;
 
+	if(actId == "")
+	{
+     alert("Please enter Activity ID.");
+     return false;
+	}
+	else{
+		if(date== ""){
+			  alert("Please enter Date");
+              return false;
+		      }
+
+	    else{
+			  if(actId!==<?= $sin['vol_activityId'] ?>)
+		   {
+            alert("Please enter correct Activity ID.");
+			return false;
+		   }
+	        }
+}
+
+}
+</script>
+    
 
 
 </body>
