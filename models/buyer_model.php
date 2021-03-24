@@ -20,7 +20,11 @@ class buyer_model extends Model{
     $cr_time = date("Y-m-d H:i:s");
     // return last bid results
   //  $st2 = $this->db->prepare('SELECT * FROM product WHERE won_buy_id IS NOT NULL AND availability = 0 ORDER BY bid_end_time DESC LIMIT 5');
-    $st2 = $this->db->prepare('SELECT product.product_id, product.name, product.type, product.highest_bid_amount, product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name FROM product INNER JOIN buyer ON product.won_buy_id = buyer.id WHERE product.won_buy_id IS NOT NULL AND availability = 0 ORDER BY bid_end_time DESC LIMIT 5');
+    $st2 = $this->db->prepare('SELECT product.product_id, product.name, product.type, product.highest_bid_amount, 
+                    product.bid_end_time, product.product_path, buyer.buy_id, buyer.name AS buy_name 
+                    FROM product INNER JOIN buyer ON product.won_buy_id = buyer.id
+                     WHERE product.won_buy_id IS NOT NULL AND availability = 0 
+                     ORDER BY bid_end_time DESC LIMIT 5');
     $st2->execute();
     $winbid_list = $st2->fetchAll();
     $win_count = $st2->rowCount();
@@ -60,14 +64,19 @@ class buyer_model extends Model{
     ));
     $wonprds = $st5->fetchAll();
     $woncount = $st5->rowCount();
-    $st6 = $this->db->prepare('SELECT name FROM buyer WHERE id = :id');
-    $st6->execute(array(
-      ':id'=>$id
-    ));
-    $buydata = $st6->fetchAll();
-    foreach($buydata as $dt) :
-      $bname = $dt['name'];
-    endforeach;
+    $st6 = $this->db->prepare('SELECT * FROM product WHERE availability = 1 AND won_buy_id IS NULL 
+                            ORDER BY date DESC LIMIT 5');
+    $st6->execute();
+    $session = $st6->fetchAll();
+    $bdss = $st6->rowcount();
+    if($bdss == 0){
+      $bidssnmsg = "No Upcomming Bid Sessions! Stay in touch wih us! ";
+
+    }else{
+      $bidssnmsg ="";
+    }
+    
+  
     $pageData = [
       'prdlist' => $prd_list,
       'msg' => $msg,
@@ -77,7 +86,8 @@ class buyer_model extends Model{
       'prdcount' => $prdcount,
       'woncount' => $woncount,
       'wonprds' => $wonprds,
-      'bname' => $bname
+      'session' => $session,
+      'bidssnmsg' => $bidssnmsg
     ];
     return ($pageData);
   }
