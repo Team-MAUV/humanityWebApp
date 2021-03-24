@@ -51,8 +51,8 @@ include "buyer_header.php"; ?>
                             <h1 class="big"><?= $prd['name'] ?></h1>
                             <span class="new" id="prdid"><?= $prd['product_id'] ?> </span>
                         </div>
-                        <h3 class="small">Bidding Start Time: <?= $prd['date'] ?></h3>
-                        <h3 class="small">Bidding End Time: <?= $prd['bid_end_time'] ?></h3>
+                        <h3 class="small">Bidding Start Time:<h3 id = "sttime"> <?= $prd['date'] ?></h3></h3>
+                        <h3 class="small">Bidding End Time: <h3 id = "edtime"><?= $prd['bid_end_time'] ?></h3></h3>
                     </div>
                     <div class="description">
                         <h3 class="title">Product Info</h3>
@@ -89,7 +89,7 @@ include "buyer_header.php"; ?>
                     <div class="buy-price">
                         
                         
-                        <button class="buy" value="submit"><i class="fas fa-shopping-cart"></i>Bid</button>
+                        <button onclick="return checktime();" class="buy" value="submit"><i class="fas fa-shopping-cart"></i>Bid</button>
                         
                         <div class="price">
                         
@@ -115,7 +115,25 @@ include "buyer_header.php"; ?>
 
 
 
-
+<script>
+    function checktime(){
+        var starttime = document.getElementById("sttime").innerHTML;
+        var endtime = document.getElementById("edtime").innerHTML; 
+        var d = new Date();
+        var dsec = d.getTime();
+        var stsec = Date.parse(starttime);
+        var edsec = Date.parse(endtime);
+        if(dsec<stsec){
+            alert("Bid session is not started yet!");
+            return false;
+        }else{
+            if(dsec>edsec){
+                alert("Bid session ended!");
+                return false;
+            }
+        } 
+    }
+</script>
 
 
 
