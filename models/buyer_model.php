@@ -60,6 +60,14 @@ class buyer_model extends Model{
     ));
     $wonprds = $st5->fetchAll();
     $woncount = $st5->rowCount();
+    $st6 = $this->db->prepare('SELECT name FROM buyer WHERE id = :id');
+    $st6->execute(array(
+      ':id'=>$id
+    ));
+    $buydata = $st6->fetchAll();
+    foreach($buydata as $dt) :
+      $bname = $dt['name'];
+    endforeach;
     $pageData = [
       'prdlist' => $prd_list,
       'msg' => $msg,
@@ -68,7 +76,8 @@ class buyer_model extends Model{
       'bidcount' => $bidcount,
       'prdcount' => $prdcount,
       'woncount' => $woncount,
-      'wonprds' => $wonprds
+      'wonprds' => $wonprds,
+      'bname' => $bname
     ];
     return ($pageData);
   }
@@ -238,17 +247,19 @@ class buyer_model extends Model{
 
     function edit_profile(){
       $bid = $_GET['id'];
-      $st1 = $this->db->prepare("SELECT name, address, contact, email FROM buyer WHERE id = :id");
+      $st1 = $this->db->prepare("SELECT buyer.name, buyer.address, buyer.contact, buyer.email, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
       $st1->execute(array(
         ':id'=>$bid
       ));
       $data = $st1->fetchAll();
       $count = $st1->rowCount();
-      if($count == 0){
-        $msg = "error!";
-      }else{
+      if($count == 1){
         $msg = "";
+      }else{
+        $msg = "TRY AGAIN LATER!!!";
+        $data = [];
       }
+      
       $pagedata = [
         'data' => $data,
         'msg' => $msg
@@ -264,36 +275,139 @@ class buyer_model extends Model{
         $email=$_POST['email'];
         $contact=$_POST['contact'];
         $address=$_POST['address'];
-
+        $username=$_POST['username'];
+        $pwd=$_POST['pwd'];
         $id=$_SESSION['idp'];
-
-        $st = $this->db->prepare("UPDATE buyer SET name = :name, address = :address, contact = :contact, email = :email WHERE id = :id");
-        $st->execute(array(
-          ':name'=>$name,
-          ':address'=>$address,
-          ':contact'=>$contact,
-          ':email'=>$email,
+        
+        $getdata = $this->db->prepare("SELECT userlogin_id FROM buyer WHERE id = :id");
+        $getdata->execute(array(
           ':id'=>$id
         ));
-        
-        $msg = "Updated Succesfully!";
-    }else{
-      $msg = "ERROR !!!";
-      
-    }
+        $login_data = $getdata->fetchAll();
+        foreach($login_data as $logdt) :
+          $userlogin_id = $logdt['userlogin_id'];
+        endforeach;
 
-    $st1 = $this->db->prepare("SELECT name, address, contact, email FROM buyer WHERE id = :id");
+        $get_userdata = $this->db->prepare("SELECT password FROM user WHERE id = :id");
+        $get_userdata->execute(array(
+          ':id'=>$userlogin_id
+        ));
+        $userdata = $get_userdata->fetchAll();
+        foreach($userdata as $udt) :
+          $cr_pwd = $udt['password'];
+        endforeach;
+        
+        if (password_verify($_POST['pwd'],  $cr_pwd)){
+          $updatebuyer = $this->db->prepare("UPDATE buyer SET name = :name, address = :address, contact = :contact, email = :email WHERE id = :id");
+          $updatebuyer->execute(array(
+            ':name'=>$name,
+            ':address'=>$address,
+            ':contact'=>$contact,
+            ':email'=>$email,
+            ':id'=>$id
+          ));
+      
+          $updateuser = $this->db->prepare("UPDATE user SET username = :username WHERE id = :id");
+          $updateuser->execute(array(
+            ':username'=>$username,
+            ':id'=>$userlogin_id
+          ));
+          $msg = "Updated Succesfully!";
+
+        }else{
+          $msg = "INCORRECT PASSWORD!!!";
+        }
+      }else{
+       $msg = "ERROR !!!";
+      
+      }
+//return new data to the ui
+      $st1 = $this->db->prepare("SELECT buyer.name, buyer.address, buyer.contact, buyer.email, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
+      $st1->execute(array(
+        ':id'=>$id
+      ));
+      $data = $st1->fetchAll();
+     
+
+      $pagedata = [
+        'data' => $data,
+        'msg' => $msg,
+       
+      ];
+
+      return ($pagedata);
+  }
+  function save_new_pw_details(){
+    if (!empty($_POST)){
+     
+      $oldpwd=$_POST['oldpwd'];
+      $newpwd=$_POST['newpwd'];
+      $rnewpwd=$_POST['rnewpwd'];
+      $id=$_SESSION['idp'];
+
+      $hasholdpw =  password_hash($oldpw, PASSWORD_DEFAULT);
+
+      $getdata = $this->db->prepare("SELECT userlogin_id FROM buyer WHERE id = :id");
+      $getdata->execute(array(
+        ':id'=>$id
+      ));
+      $login_data = $getdata->fetchAll();
+      foreach($login_data as $logdt) :
+        $userlogin_id = $logdt['userlogin_id'];
+      endforeach;
+
+      $get_userdata = $this->db->prepare("SELECT password FROM user WHERE id = :id");
+      $get_userdata->execute(array(
+        ':id'=>$userlogin_id
+      ));
+      $userdata = $get_userdata->fetchAll();
+      foreach($userdata as $udt) :
+        $cr_pwd = $udt['password'];
+      endforeach;
+      if (password_verify($_POST['oldpwd'],  $cr_pwd)){
+        if($newpwd == $rnewpwd){
+          $hashnewpw =  password_hash($newpwd, PASSWORD_DEFAULT);
+          $updatepwd = $this->db->prepare("UPDATE user SET password = :password WHERE id = :id");
+          $updatepwd->execute(array(
+            ':password' => $hashnewpw,
+            ':id' => $userlogin_id
+          ));
+          $count = $updatepwd->rowCount();
+          if($count == 1){
+            $msg = "PASSWORD UPDATED SUCCESSFULLY!!!";
+          }else{
+            $msg = "ERROR!!!";
+          }
+            
+
+        }else{
+          $msg = "PASSWORD DOES NOT MATCH!!!";
+        }
+      }else{
+        $msg="INCORRECT OLD PASSWORD!!!";
+      }
+
+
+    }else{
+      $msg = "TRY AGAIN LATER!!!";
+    }
+//return new data to the ui
+    $st1 = $this->db->prepare("SELECT buyer.name, buyer.address, buyer.contact, buyer.email, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
     $st1->execute(array(
       ':id'=>$id
     ));
     $data = $st1->fetchAll();
+
+
     $pagedata = [
+      'data' => $data,
       'msg' => $msg,
-      'data' => $data
-    ];
     
+    ];
+
     return ($pagedata);
 
+  
   }
 }  
 

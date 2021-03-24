@@ -30,6 +30,11 @@ class Buyer extends Controller
        $data = $this->model->save_new_profile_details();
       $this->view->rendor('buyer/dashboard/buy_edit_profile', $data ,true);
     } 
+    function save_new_pw_details()
+    {
+       $data = $this->model->save_new_pw_details();
+      $this->view->rendor('buyer/dashboard/buy_edit_profile', $data ,true);
+    } 
     
     
     function view_product(){
