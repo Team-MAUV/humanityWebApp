@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2021 at 06:44 PM
+-- Generation Time: Mar 24, 2021 at 07:48 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -434,6 +434,7 @@ CREATE TABLE `project_report` (
   `created_date` date NOT NULL DEFAULT current_timestamp(),
   `approved_date` date DEFAULT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'pending',
+  `remark` varchar(500) NOT NULL,
   `com_id` int(11) DEFAULT NULL,
   `report_path` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -442,14 +443,14 @@ CREATE TABLE `project_report` (
 -- Dumping data for table `project_report`
 --
 
-INSERT INTO `project_report` (`id`, `report_id`, `title`, `staff_id`, `created_date`, `approved_date`, `status`, `com_id`, `report_path`) VALUES
-(1, 'RPTHB001', 'Donation Report', 6, '2019-10-14', '2020-04-06', 'approved', 1, 'project_report/SCS 2210 - Tutorial 1.pdf'),
-(2, 'RPTHB002', 'Annual Market Report', 1, '2020-06-08', '2020-07-15', 'approved', 3, 'project_report/Database II Transaction (Tutorial 03).pdf'),
-(3, 'RPTHB003', 'Volunteer Activity Report', 3, '2020-11-28', NULL, 'pending', NULL, 'project_report/Tute4 18001841.pdf'),
-(4, 'RPTHB004', 'Products Report', 1, '2020-11-28', NULL, 'pending', NULL, 'project_report/18001841-quiz.pdf'),
-(5, 'RPTHB005', 'Donation Report', 4, '2020-11-28', '2020-11-30', 'rejected', 4, 'project_report/Lab sheet -1.pdf'),
-(6, 'RPTHB006', 'Annual Donation Report', 2, '2020-11-29', '2020-11-30', 'rejected', 6, 'project_report/L1 Automata Theory.pdf'),
-(7, 'RPTHB007', 'Annual Report', 1, '2020-12-02', NULL, 'pending', NULL, 'project_report/Annual Report.html');
+INSERT INTO `project_report` (`id`, `report_id`, `title`, `staff_id`, `created_date`, `approved_date`, `status`, `remark`, `com_id`, `report_path`) VALUES
+(1, 'RPTHB001', 'Donation Report', 6, '2019-10-14', '2020-04-06', 'approved', '', 1, 'project_report/SCS 2210 - Tutorial 1.pdf'),
+(2, 'RPTHB002', 'Annual Market Report', 1, '2020-06-08', '2020-07-15', 'approved', '', 3, 'project_report/Database II Transaction (Tutorial 03).pdf'),
+(3, 'RPTHB003', 'Volunteer Activity Report', 3, '2020-11-28', NULL, 'pending', '', NULL, 'project_report/Tute4 18001841.pdf'),
+(4, 'RPTHB004', 'Products Report', 1, '2020-11-28', NULL, 'pending', '', NULL, 'project_report/18001841-quiz.pdf'),
+(5, 'RPTHB005', 'Donation Report', 4, '2020-11-28', '2020-11-30', 'rejected', 'Insufficient details', 4, 'project_report/Lab sheet -1.pdf'),
+(6, 'RPTHB006', 'Annual Donation Report', 2, '2020-11-29', '2020-11-30', 'rejected', 'Not good', 6, 'project_report/L1 Automata Theory.pdf'),
+(7, 'RPTHB007', 'Annual Report', 1, '2020-12-02', NULL, 'pending', '', NULL, 'project_report/Annual Report.html');
 
 -- --------------------------------------------------------
 
@@ -994,14 +995,14 @@ ALTER TABLE `vol_activity`
 -- Constraints for table `beneficiery_case`
 --
 ALTER TABLE `beneficiery_case`
-  ADD CONSTRAINT `beneficiery_case_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `beneficiery_case_ibfk_2` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `beneficiery_case_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `beneficiery_case_ibfk_2` FOREIGN KEY (`vol_id`) REFERENCES `volunteer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `bid`
 --
 ALTER TABLE `bid`
-  ADD CONSTRAINT `bid_ibfk_2` FOREIGN KEY (`buy_id`) REFERENCES `buyer` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `bid_ibfk_2` FOREIGN KEY (`buy_id`) REFERENCES `buyer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `prod` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -1033,7 +1034,7 @@ ALTER TABLE `com_handle_buyer`
 -- Constraints for table `donation`
 --
 ALTER TABLE `donation`
-  ADD CONSTRAINT `fk_don_id` FOREIGN KEY (`don_id`) REFERENCES `donor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_don_id` FOREIGN KEY (`don_id`) REFERENCES `donor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `donor`
@@ -1067,8 +1068,8 @@ ALTER TABLE `incharge_appoints`
 -- Constraints for table `leave_request`
 --
 ALTER TABLE `leave_request`
-  ADD CONSTRAINT `leave_request_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `leave_request_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `leave_request_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `leave_request_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `marking_attendance`
@@ -1099,8 +1100,8 @@ ALTER TABLE `product`
 -- Constraints for table `project_report`
 --
 ALTER TABLE `project_report`
-  ADD CONSTRAINT `project_report_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `project_report_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `project_report_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `project_report_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `session_incharge`
@@ -1119,13 +1120,13 @@ ALTER TABLE `staff`
 -- Constraints for table `volunteer`
 --
 ALTER TABLE `volunteer`
-  ADD CONSTRAINT `volunteer_ibfk_1` FOREIGN KEY (`userlogin_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `volunteer_ibfk_1` FOREIGN KEY (`userlogin_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `vol_activity`
 --
 ALTER TABLE `vol_activity`
-  ADD CONSTRAINT `vol_activity_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `vol_activity_ibfk_1` FOREIGN KEY (`com_id`) REFERENCES `commissioner` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

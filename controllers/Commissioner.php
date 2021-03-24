@@ -44,6 +44,9 @@ class Commissioner extends Controller
         $data = $this->model->get_reg_vol_profiles();
         $this->view->rendor('commissioner/dashboard/volunteer', $data, true);
     }
+    function delete_volunteer(){
+        $this->model->delete_volunteer();
+    }
 
     function search_volunteer()
     {
