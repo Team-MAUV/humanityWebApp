@@ -211,7 +211,9 @@ class staff_Model extends Model
     if($count != 1){
       $msg = "error!!!!";
     }
-    $st2 = $this->db->prepare("SELECT bid.product_id, bid.buy_id, bid.bid_amount, bid.time, buyer.buy_id AS buyer_id, buyer.name FROM bid INNER JOIN buyer ON bid.buy_id = buyer.id WHERE bid.product_id = :pid");
+    $st2 = $this->db->prepare("SELECT bid.product_id, bid.buy_id, bid.bid_amount, bid.time,
+                          buyer.buy_id AS buyer_id, buyer.name FROM bid INNER JOIN buyer 
+                          ON bid.buy_id = buyer.id WHERE bid.product_id = :pid ORDER BY bid.time DESC");
     $st2->execute(array(
       ':pid' => $pid
     ));

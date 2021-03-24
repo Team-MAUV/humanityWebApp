@@ -204,7 +204,12 @@ include "buyer_header.php"; ?>
             </button>
             <h1 class="profile-main__name"><?=$_SESSION['name']?></h1>
             <h1 class="profile-main__name"><?=$_SESSION['id']?></h1>
-            <h4> Next session : 15.12.2020 10.00 </h4>
+            <h4> Upcoming Bid Sessions :</h4>
+            <?php foreach ($session as $ssn) : ?>
+            
+            <h3><?= $ssn['type'] ?>|<?= $ssn['date'] ?></h3>
+            <?php endforeach; ?>
+            <p><?= $bidssnmsg ?></p>
           </div>
           <?php foreach ($wonprds as $prd) : ?>
             <ul class="statistics">
