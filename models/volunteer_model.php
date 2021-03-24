@@ -116,13 +116,13 @@ class volunteer_Model extends Model
   {
 
         //Upcoming ACtivities
-        $st = $this->db->prepare('SELECT * FROM vol_activity WHERE status="upcoming" ORDER BY id ');
+        $st = $this->db->prepare('SELECT * FROM vol_activity WHERE status="1" ORDER BY id ');
         $st->execute();
         $upcoming = $st->fetchAll();
 
 
         //Finished Activities
-        $stmt = $this->db->prepare('SELECT * FROM vol_activity WHERE status="finished" ORDER BY id ');        
+        $stmt = $this->db->prepare('SELECT * FROM vol_activity WHERE status="0" ORDER BY id ');        
         $stmt->execute();
         $finished = $stmt->fetchAll();
 
