@@ -37,9 +37,9 @@ include "vol_dash_header.php"; ?>
                         <div class="flipbox-back">
                             <ul class="event">
                                 <li style="font-size:larger"><?= $coming['name'] ?></li>
-                                <li>Started : <?= $coming['start_date_time'] ?> </li>
+                                <li>Start : <?= $coming['start_date_time'] ?> </li>
 
-                                <li>Ended   : <?= $coming['end_date_time'] ?> </li>
+                                <li>End   : <?= $coming['end_date_time'] ?> </li>
 
                                 <li>Venue   : <?= $coming['venue'] ?></li>
 
@@ -76,9 +76,9 @@ include "vol_dash_header.php"; ?>
                         <div class="flipbox-back">
                             <ul class="event">
                                 <li style="font-size:larger"><?= $finish['name'] ?></li>
-                                <li>Start : <?= $finish['start_date_time'] ?> </li>
+                                <li>Started : <?= $finish['start_date_time'] ?> </li>
 
-                                <li>End   : <?= $finish['end_date_time'] ?> </li>
+                                <li>Ended   : <?= $finish['end_date_time'] ?> </li>
 
                                 <li>Venue : <?= $finish['venue'] ?></li>
 
