@@ -7,6 +7,13 @@
   <title>Volunteer</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/vol-layout_style.css" />
 
+  <link rel="stylesheet" href="<?= URL ?>public/css/vol-notification.css" />
+
+   <!-- Notification -->
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- End Notification -->
+
 
 
 </head>
@@ -44,6 +51,27 @@
 
 
     <div class="body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <input type="checkbox" id="check">
       <label for="check">
         <i class="fas fa-bars" id="btn"></i>
@@ -85,7 +113,25 @@
                         echo 'active';
                       } ?>">
             <a href="<?= URL ?>Volunteer/volpartcipate"><i class="fa fa-star-half-o"></i>Partcipated Activities</a>
+
+           
           </li>
+
+          <li class="<?php if ($page == 'vol_apply_pos') {
+                        echo 'active';
+                      } ?>">
+         
+
+            <a href="<?= URL ?>Volunteer/loadApplyStaffPosition"><i class="fa fa-user"> </i>Apply for a Staff Position</a>
+           
+          </li>
+
+
+         
+
+
+
+
         </ul>
       </div>
     </div>
