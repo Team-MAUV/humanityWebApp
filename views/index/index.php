@@ -27,7 +27,7 @@
 
       <h3 class="logo-name">
         <div class="tzu-logo"></div>
-        Tzu Chi Foundation | <span> Colombo</span>
+        Tzu Chi Foundation | <span>Hambantota</span>
       </h3>
     </div>
     <div class="dropdown">
