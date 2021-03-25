@@ -19,6 +19,22 @@ class Donor extends Controller
         $this->view->rendor('donor/dashboard/donor_home', $data, true);
     }
 
+
+
+    function Donationpayment()
+    {
+        $data = $this->model->Donationpayment();
+        // $this->view->rendor('donor/dashboard/donor_donationSuccess', $data, true);
+    }
+
+
+
+
+
+
+
+
+
     function logout()
     {
         Session::destroy();

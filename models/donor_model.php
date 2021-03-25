@@ -21,6 +21,9 @@ class donor_Model extends Model
             if ($count > 0) {
               foreach ($donation as $tmp) :
                 $donorid = $tmp['id'];
+                $donorEmail = $tmp['email'];
+                $donorAddress = $tmp['address'];
+                $donorContact = $tmp['contact'];
               endforeach;
             }
 
@@ -45,6 +48,7 @@ class donor_Model extends Model
         ':doid'=> $donorid,
       ));
       $latedon = $stmt4->fetchAll();
+      
  
   //All the data that has to be return from this functon is added to an associative array
   $pageData = [
@@ -53,9 +57,39 @@ class donor_Model extends Model
     'latestcon'=>$latestcon,
     'donnum'=>$donnum,
     'latedon'=>$latedon,
+    'donorEmail'=>$donorEmail ,
+    'donorAddress' => $donorAddress,
+    'donorContact' => $donorContact,
+    'donorid' => $donorid
     
   ];
   return ($pageData);
+
+  }
+
+  public function Donationpayment(){
+
+    echo $amount = $_POST['amount'];
+    echo $_POST['dedication'];
+    echo $_POST['paymentStatus'];
+    echo $donTableId = $_POST['donorTableId'];
+    echo $type =  $_POST['select-donation'];
+    echo $_SESSION['id'];
+
+    if($_POST['paymentStatus'] == "done"){
+      echo "payment Success!";
+
+      $stmt = $this->db->prepare("INSERT INTO donation(amount, type, don_id) VALUES (?, ?, ?)");
+
+      $stmt->execute([$amount, $type, $donTableId]);
+
+
+    }else{
+      echo "payment Unsuccess!";
+
+    }
+
+  
 
   }
 
