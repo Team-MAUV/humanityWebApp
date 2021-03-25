@@ -17,6 +17,8 @@ class buyer_model extends Model{
     }else{
       $msg = "";
     }
+    date_default_timezone_set('Asia/Colombo');
+
     $cr_time = date("Y-m-d H:i:s");
     // return last bid results
   //  $st2 = $this->db->prepare('SELECT * FROM product WHERE won_buy_id IS NOT NULL AND availability = 0 ORDER BY bid_end_time DESC LIMIT 5');
@@ -109,7 +111,8 @@ class buyer_model extends Model{
     $st->execute();
     $product = $st->fetchAll();
     $count = $st->rowCount();
-    
+    date_default_timezone_set('Asia/Colombo');
+
       
     if($count == 1 ){
      // $msg = "Product not available!!! Product will be available soon ";    
@@ -175,7 +178,7 @@ class buyer_model extends Model{
       'msg' => $msg,
       'bidmsg' => $bidmsg,
       'highestbid' => $highestbid
-      
+     
     ];
     
     return ($pagedata);
@@ -318,16 +321,18 @@ class buyer_model extends Model{
             ':username'=>$username,
             ':id'=>$userlogin_id
           ));
-          $msg = "Updated Succesfully!";
+         // $msg = "Updated Succesfully!";
 
-        }else{
-          $msg = "INCORRECT PASSWORD!!!";
+        //}else{
+         // $msg = "INCORRECT PASSWORD!!!";
         }
-      }else{
-       $msg = "ERROR !!!";
+      //}else{
+       //$msg = "ERROR !!!";
       
       }
+      header('location: ../Buyer/Index');
 //return new data to the ui
+/*
       $st1 = $this->db->prepare("SELECT buyer.address, buyer.contact, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
       $st1->execute(array(
         ':id'=>$id
@@ -341,8 +346,8 @@ class buyer_model extends Model{
        
       ];
 
-      return ($pagedata);
-  }
+      return ($pagedata);*/
+  } 
   function save_new_pw_details(){
     if (!empty($_POST)){
      
@@ -378,7 +383,7 @@ class buyer_model extends Model{
             ':password' => $hashnewpw,
             ':id' => $userlogin_id
           ));
-          $count = $updatepwd->rowCount();
+        /*  $count = $updatepwd->rowCount();
           if($count == 1){
             $msg = "PASSWORD UPDATED SUCCESSFULLY!!!";
           }else{
@@ -412,10 +417,12 @@ class buyer_model extends Model{
     ];
 
     return ($pagedata);
-
-  
+*/      header('location: ../Buyer/Index');
+      }
+    }
   }
 }  
+}
 
   
 
