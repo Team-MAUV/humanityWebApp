@@ -64,7 +64,7 @@ class buyer_model extends Model{
     ));
     $wonprds = $st5->fetchAll();
     $woncount = $st5->rowCount();
-    $st6 = $this->db->prepare('SELECT * FROM product WHERE availability = 1 AND won_buy_id IS NULL 
+    $st6 = $this->db->prepare('SELECT * FROM product WHERE availability = 1 AND date > CURRENT_TIMESTAMP() 
                             ORDER BY date DESC LIMIT 5');
     $st6->execute();
     $session = $st6->fetchAll();

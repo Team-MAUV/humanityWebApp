@@ -36,7 +36,7 @@ include "buyer_header.php"; ?>
 					<label for="name">Address:</label>
 					<textarea placeholder="Address" class="field" name="address" ><?= $dt['address'] ?></textarea>
 					<label for="password">Password:</label>
-					<input type="password" class="field" placeholder="old password" name="pwd" id = "pwd">
+					<input type="password" class="field" placeholder="old password" name="pwd" id = "pwd" required>
 					<button onclick = "return checkpw();" class="submit" value="Submit">Update</button>
 					
 				</form>
@@ -48,11 +48,11 @@ include "buyer_header.php"; ?>
 				
 				<form name="updpwdata" action="save_new_pw_details" method="POST" enctype="multipart/form-data" >	
 					<label for="password">Old Password:</label>
-					<input type="password" class="field" placeholder="old password" name="oldpwd" id="oldpwd" >
+					<input type="password" class="field" placeholder="old password" name="oldpwd" id="oldpwd" required>
 					<label for="newpw">New Password:</label>
-					<input type="password" class="field" placeholder="new password" name="newpwd" id="newpwd" >
+					<input type="password" class="field" placeholder="new password" name="newpwd" id="newpwd" required>
 					<label for="newpw">Re Enter New Password:</label>
-					<input type="password" class="field" placeholder="new password" name="rnewpwd" id="rnewpwd" >
+					<input type="password" class="field" placeholder="new password" name="rnewpwd" id="rnewpwd" required>
 					<button onclick = "return checkdata();" class="submit" value="Submit">Submit</button>
 				
 				</form>
@@ -66,47 +66,33 @@ include "buyer_header.php"; ?>
 	<script>
 	function checkpw(){
 		var password = document.getElementById("pwd").value; 
-		if(password == ""){
-			alert("Please enter your password!");
-			return false;
-		}else{
+		if( password != ""){
 			var conf = confirm("conformation");
-            if(conf == false){
-                alert("aborted!!!");
-				return false;
-            }
+			if(conf == false){
+			alert("aborted!!!");
+			return false;
+				
+			}
 		}
+		
 	}
 	function checkdata(){
 		var oldpwd = document.getElementById("oldpwd").value;
 		var newpwd = document.getElementById("newpwd").value; 
 		var rnewpwd = document.getElementById("rnewpwd").value;
-		if(oldpwd == ""){
-			alert("Enter Your Password!");
-			return false;
-		}else{
-			if(newpwd == ""){
-				alert("Enter Your New Password!");
-				return false;
-			}else{
-				if(rnewpwd == ""){
-					alert("Re-Enter Your New Password!");
+		if(oldpwd != "" && newpwd != "" && rnewpwd != ""){
+			if(rnewpwd == newpwd){
+				var conf = confirm("conformation");
+            	if(conf == false){
+               		alert("aborted!!!");
 					return false;
-				}else{
-					if(rnewpwd == newpwd){
-						var conf = confirm("conformation");
-            			if(conf == false){
-               				 alert("aborted!!!");
-							return false;
-            			}
-					}else{
-						alert("New Passwords Does Not Match! Please Check Again");
-						return false;
-					}
-				}
+            	}
+			}else{
+				alert("New Passwords Does Not Match! Please Check Again");
+				return false;
 			}
-
-		}  
+			
+		}
 	}		
 		
 	</script>
