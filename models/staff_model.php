@@ -21,9 +21,10 @@ class staff_Model extends Model
       date_default_timezone_set('Asia/Colombo');
 
       $cr_time = date("Y-m-d H:i:s");
-
+      $bidendint=strtotime($enddate);
+      $crtimeint=strtotime($cr_time);
      
-      $get_cat = $this->db->prepare("SELECT * From product Where type = :prdtype");
+      $get_cat = $this->db->prepare("SELECT * From product Where type = :prdtype AND availability = 1");
       $get_cat->execute(array(
         ':prdtype' => $type
       ));
@@ -33,8 +34,8 @@ class staff_Model extends Model
       foreach($prd_exist as $prd_exist) :
         $end_time = $prd_exist['bid_end_time'];
       endforeach;
-
-      if($prd_count == 0 || $end_time < $cr_time){
+      
+      if($prd_count == 0 || $bidendint < $crtimeint){
 
 
         $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/product_images/';
