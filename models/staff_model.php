@@ -18,6 +18,7 @@ class staff_Model extends Model
       $date=$_POST['bidding_start_date'];
       $enddate=$_POST['bidding_end_date'];
       $starting_bid=$_POST['starting_bid'];
+      date_default_timezone_set('Asia/Colombo');
 
       $cr_time = date("Y-m-d H:i:s");
 
@@ -364,6 +365,7 @@ class staff_Model extends Model
     foreach ($data as $dt) :
       $bidstart = $dt['date'];
     endforeach;
+    date_default_timezone_set('Asia/Colombo');
 
     $cr_time = date("Y-m-d H:i:s");
     $bidstint=strtotime($bidstart);
