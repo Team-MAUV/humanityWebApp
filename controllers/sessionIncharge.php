@@ -23,15 +23,19 @@ class sessionIncharge extends Controller
     function index()
    {
     
-    $msg_data=$this->model->index();
 
-        $this->view->rendor('session_incharge/dashboard/index',$msg_data , true);
+
+  $msg_data=$this->model->index();
+
+      $this->view->rendor('session_incharge/dashboard/index',$msg_data , true);
     }
 
     
 
     function media_upload()
     {
+
+        
         $msg_data=$this->model->media_upload();
         $this->view->rendor('session_incharge/dashboard/media_upload',$msg_data , true);
     }

@@ -68,68 +68,51 @@ class SessionIncharge_Model extends Model
 
   public function index(){
     //session incharge details
-  $un = $_SESSION['name'];
+  $un = $_SESSION['id'];
     
-    $st = $this->db->prepare("SELECT * FROM session_incharge WHERE name = :un");
+    $st = $this->db->prepare("SELECT * FROM session_incharge WHERE username = :un");
     $st->execute( array(
        ':un'=> $un,)
     );
-    $sinprofile = $st->fetchAll();
-   
-    $sindata = [
-    'sinprofile' => $sinprofile,
-     ];
-    return ($sindata);
-//vol activity details 
-    /*$act= $_GET['actid'];
-    $st1 = $this->db->prepare("SELECT * FROM session_incharge WHERE vol_activityId = :act");
-    $st1 ->execute(array(
-      ':act' => $act
-    ));
-    $data = $st1->fetchAll();
-    $count = $st1->rowCount();
-    if($count != 1){
-      $msg = "error!!!!";
+    
+    
+$user = $st->fetchAll();
+$count = $st->rowCount();
+
+
+if($count>0){
+
+  foreach ($user as $usr) :
+
+    if($usr['username']  == $_SESSION['id'] ){
+      $actid = $usr['vol_activityId']; //session in charge 
     }
-$st2=$this->db->prepare("SELECT * FROM vol_activity 
-INNER JOIN session_incharge on vol_activity.activity_id=session_incharge.vol_activtyId WHERE vol_activity.activity_id=:act");
- $st2->execute(array(
-  ':act' => $act
-));
-$actlist = $st2->fetchAll();
-  $pageData = [
-    'msg' => $msg,
-    'data' => $data,
-    'actlist' => $actlist
-  ];
 
-  return $pageData;
-*/
-
-   $act=$_GET['actid'];
-   $st1 = $this->db->prepare("SELECT session_incharge.name,session_incharge.username, session_incharge.vol_activityId,session_incharge.vol_activity,session_incharge.session_start_time,
-   vol_activity.venue,vol_activity.start_date_time,vol_activity.end_date_time,vol_activity.participant_count FROM vol_activity 
-   INNER JOIN session_incharge ON vol_activity.activity_id=session_incharge.vol_activtyId WHERE vol_activity.activity_id=:act");
+   
+  endforeach;
+}
+   $st1 = $this->db->prepare("SELECT * FROM vol_activity  WHERE activity_id=:act");
 $st1 ->execute(array(
-  ':act' => $act
+  ':act' => $actid
 ));
 $actprofile = $st1->fetchAll();
    
 $actdata = [
-'actprofile' => $actprofile
+'actprofile' => $actprofile,
+'user' => $user
  ];
 return ($actdata);
 
 
 
+}
 
 
 
-  }
  public function media_upload(){
-  $un = $_SESSION['name'];
+  $un = $_SESSION['id'];
     
-  $st = $this->db->prepare("SELECT * FROM session_incharge WHERE name = :un");
+  $st = $this->db->prepare("SELECT * FROM session_incharge WHERE username = :un");
   $st->execute( array(
      ':un'=> $un,)
   );
@@ -142,8 +125,68 @@ return ($actdata);
 
 
   
+    if (!empty($_POST)) {
+
+      $actID=$_POST['actID'];
+    
+     
+
+      $get_cat = $this->db->prepare("SELECT * From vol_activity Where activity_id = :id");
+      $get_cat->execute(array(
+        ':id' => $actID
+      ));
+      $act_exist = $get_cat->fetchAll();
+      $act_count = $get_cat->rowCount();
+
+    
+      if($act_count>0)
+      {
+      
+        $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/act_img/'.$actID;
+    
+
+        $dest_path = $target_dir . basename($_FILES['myFile']['name']);
+
+        if (!file_exists('$target_dir')) {
+          mkdir('$target_dir', 0777, true);
+      }
+
+       
+
+      
+        if (!empty($_FILES['myFile']['tmp_name']) && getimagesize($_FILES['myFile']['tmp_name']))
+         {
+          if (file_exists($dest_path)) {
+            $msg = "Image already exists, please choose another or rename that image.";
+          } else if ($_FILES['myFile']['size'] > 500000) {
+            $msg = "Image file size too large, please choose an image less than 500kb.";
+          } 
+          else
+           {
+            move_uploaded_file($_FILES['myFile']['tmp_name'], $dest_path);
+            $msg="File uploaded.";
+          }
+             
+
+          }
+       }
 
 
+
+
+
+
+
+
+
+       $pageData = [
+
+        'msg' => $msg
+      ];
+      return $pageData;
+
+
+}
  }
 
 
@@ -157,4 +200,26 @@ return ($actdata);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
