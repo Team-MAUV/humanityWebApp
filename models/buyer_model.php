@@ -257,7 +257,7 @@ class buyer_model extends Model{
 
     function edit_profile(){
       $bid = $_GET['id'];
-      $st1 = $this->db->prepare("SELECT buyer.name, buyer.address, buyer.contact, buyer.email, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
+      $st1 = $this->db->prepare("SELECT buyer.address, buyer.contact, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
       $st1->execute(array(
         ':id'=>$bid
       ));
@@ -281,8 +281,6 @@ class buyer_model extends Model{
   function save_new_profile_details(){
       if (!empty($_POST)) {
 
-        $name=$_POST['name'];
-        $email=$_POST['email'];
         $contact=$_POST['contact'];
         $address=$_POST['address'];
         $username=$_POST['username'];
@@ -308,12 +306,10 @@ class buyer_model extends Model{
         endforeach;
         
         if (password_verify($_POST['pwd'],  $cr_pwd)){
-          $updatebuyer = $this->db->prepare("UPDATE buyer SET name = :name, address = :address, contact = :contact, email = :email WHERE id = :id");
+          $updatebuyer = $this->db->prepare("UPDATE buyer SET address = :address, contact = :contact WHERE id = :id");
           $updatebuyer->execute(array(
-            ':name'=>$name,
             ':address'=>$address,
             ':contact'=>$contact,
-            ':email'=>$email,
             ':id'=>$id
           ));
       
@@ -332,7 +328,7 @@ class buyer_model extends Model{
       
       }
 //return new data to the ui
-      $st1 = $this->db->prepare("SELECT buyer.name, buyer.address, buyer.contact, buyer.email, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
+      $st1 = $this->db->prepare("SELECT buyer.address, buyer.contact, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
       $st1->execute(array(
         ':id'=>$id
       ));
@@ -402,7 +398,7 @@ class buyer_model extends Model{
       $msg = "TRY AGAIN LATER!!!";
     }
 //return new data to the ui
-    $st1 = $this->db->prepare("SELECT buyer.name, buyer.address, buyer.contact, buyer.email, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
+    $st1 = $this->db->prepare("SELECT buyer.address, buyer.contact, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
     $st1->execute(array(
       ':id'=>$id
     ));

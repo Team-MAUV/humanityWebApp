@@ -28,12 +28,9 @@ include "buyer_header.php"; ?>
 				<?php foreach ($data as $dt) : ?>
 			
 				<form name="updusrdata" action="save_new_profile_details" method="POST" enctype="multipart/form-data" >	
-					<label for="name">Name:</label>
-					<input type="text" class="field" placeholder="Your Name" name="name" value="<?= $dt['name'] ?>">
+					
 					<label for="name">Username:</label>
 					<input type="text" class="field" placeholder="User Name" name="username" value="<?= $dt['username'] ?>">
-					<label for="name">E-Mail:</label>
-					<input type="email" class="field" placeholder="Your Email" name="email" value="<?= $dt['email'] ?>">
 					<label for="name">Contact Number:</label>
 					<input type="text" class="field" placeholder="Phone" name="contact" value="<?= $dt['contact'] ?>">
 					<label for="name">Address:</label>
