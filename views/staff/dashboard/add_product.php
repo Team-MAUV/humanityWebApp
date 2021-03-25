@@ -169,7 +169,7 @@ input[type=reset]:hover {
         <div class="col-25"> 
         <label for="image">Choose Image</label>
       <input type="file" name="product_image" accept="image/*" id="proimage">
-        
+      <div class="result" id = "result"></div>
         </div>
     </div>
 
@@ -189,6 +189,7 @@ input[type=reset]:hover {
 
 </div>
 <script>
+
 function addvalidprd(){
     
     var prdname = document.getElementById("name").value; 

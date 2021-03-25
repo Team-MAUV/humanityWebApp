@@ -28,10 +28,16 @@ include "sess_header.php"; ?>
        <h3> <?= $_SESSION['id'] ?></h3>
         <hr>
         <hr/>
-        <?php foreach ($sinprofile as $sin) : ?>
+        <?php foreach ($user as $sin) : ?>
         <h4 style="color:black">Your Activity </h4>
-         <p><?= $sin['vol_activityId'] ?> </p>
+         <p><?= $sin['vol_activityId'] ?> </pe=>
          <p><?= $sin['vol_activity'] ?></p>
+         <br> <br>
+         <?php foreach ($actprofile as $act) : ?>     
+          <p> From: <?= $act['start_date_time'] ?> </p>
+         <p> To: <?= $act['end_date_time'] ?></p>
+
+          <?php endforeach; ?>  
      
          
     </div>
@@ -53,23 +59,29 @@ include "sess_header.php"; ?>
         
         </div>
         <?php endforeach; ?>  
+
+
         <?php foreach ($actprofile as $act) : ?>      
       <div class="projects">
-            <h3>Details</h3>
+            <h3> Activity Details</h3>
             <div class="projects_data">
                  <div class="data">
                     <h4>Venue</h4>
+
                     <p> <?= $act['venue'] ?> </p>
+
                  </div>
                  <div class="data">
-                   <h4>Duration</h4>
-                    <p></p>
+                   <h4>Expected participants:</h4>
+                    <p> <?= $act['participant_count'] ?></p>
+                    <h4>Confirmed participants:</h4>
+                    <p> <?= $act['confirm_participant_count'] ?></p>
               </div>
             </div>
         </div>
            
         <div class="social_media">
-        <h3>Session will close </h3>
+        <h3> To activity start </h3>
         
         <div class="count">
           <div class="countd">
@@ -91,14 +103,36 @@ include "sess_header.php"; ?>
             <span id="seconds">00</span>
             SEC
           </div>
+    
         </div>
-        <?php endforeach; ?>  
+        
 </div>   
  
-<script src="<?= URL ?>public/js/session_time.js" type="text/javascript"></script>
 
+<script>
 
- 
+ var count = new Date("<?= $act['start_date_time'] ?> ").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var d = count - now;
+
+    var days = Math.floor(d/(1000*60*60*24));
+    var hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    var minutes = Math.floor((d%(1000*60*60))/(1000*60));
+    var seconds = Math.floor((d%(1000*60))/1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if(d <= 0){
+      clearInterval(x);
+    }
+  },1000);
+</script>
+
+<?php endforeach; ?>  
         </div>
       </div>
     </div>
