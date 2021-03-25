@@ -19,8 +19,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 750px;
-    height: 60vh;
+    width: 65vw;
+    height: 80vh;
     display: flex;
     box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
   
@@ -53,10 +53,12 @@
   .wrapper .left h3{
     margin-bottom: 15px;
     margin-top: 15px;
+   
   }
   
   .wrapper .left p{
     font-size: 18px;
+    color: yellow;
   }
   
   .wrapper .right{
@@ -128,6 +130,7 @@
     display: block;
     font-size: 18px;
   }
+  
   .count{
     margin: 10px 0;
     color: rgb(235, 8, 38);
@@ -149,4 +152,4 @@
     color: black;
     align-items: center;
   }
-  
+ 
