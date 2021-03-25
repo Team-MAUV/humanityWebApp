@@ -53,14 +53,17 @@ class commissioner_Model extends Model
         $count = $st->rowCount();
         if ($count > 0) {
             foreach ($contacts as $contact) :
-                    $user_id=$contact['userlogin_id'];
+                    $usr=$contact['userlogin_id'];
             endforeach;
-            $stmt = $this->db->prepare("DELETE FROM user WHERE id= :user_id");
-            $stmt->execute(array(
-              ':user_id' => $user_id
-             ));
-        
           }
+            $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
+            $stmt->execute(array(
+              ':usr' => $usr
+             ));
+            //  echo "Updated successfully!";
+             header('location: ../Commissioner/volunteer');
+        
+          
 
 
 
