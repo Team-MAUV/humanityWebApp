@@ -545,7 +545,7 @@ public function addreport()
     } else {
       $msg = 'Please upload a file!';
     }
-  }
+    }
   else{
     $msg = "Staff ID does not match!";
   }
