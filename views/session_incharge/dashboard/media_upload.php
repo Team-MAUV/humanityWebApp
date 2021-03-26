@@ -28,11 +28,14 @@ include "sess_header.php"; ?>
 
 				<form method="post" action="media_upload" enctype="multipart/form-data">
 				<label for="id">Event-ID</label>
-				<?php foreach ($sinprofile as $sin) : ?>
-				<input type="text" class="field" placeholder="<?= $sin['vol_activityId'] ?> " id="actID" name="actID">
-				<?php endforeach; ?>  
+			
+				<input type="text" class="field" placeholder="a " id="actID" name="actID">
+				<label for="id">Session incharge ID</label>
+			
+				<input type="text" class="field" placeholder="a " id="incharge_id" name="incharge_id">
+		
                 <input type="text" class="field" placeholder="Date:" id="date" name="date">
-                <input type="file" id="myFile" name="myFile" multiple>
+                <input type="file" id="image" name="image" multiple>
 			
 				<button class="btn" value="submit" onclick="return addvalidact();" >Submit</button>
 				</form>
