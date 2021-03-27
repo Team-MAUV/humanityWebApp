@@ -42,7 +42,7 @@ include "com-dash-header.php"; ?>
                     <h3 class="head1"><?= $pending['title'] ?> </h3>
                 </div>
                 <div class="flipbox-back">
-                <button class="dbtn"><a href="<?= $pending['report_path']  ?>" download="<?= $pending['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+                
                 <button class="dbtn"><a href="view_reports?file=public\<?= $pending['report_path']  ?>"><i class="fa fa-download"></i> View & Download </a></button>
                   <div class="confirm">
                   <button type="button" class="acc" id="acc">Accept</button> 
@@ -116,7 +116,7 @@ include "com-dash-header.php"; ?>
     ?>
     <li>Approved By : <?= $ccustomid ?></li>
 </ul>
-                <button class="dbtn"><a href="<?= $report['report_path'] ?>" download="<?= $report['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+               
                 <button class="dbtn"><a href="view_reports?file=public\<?= $report['report_path']  ?>"><i class="fa fa-download"></i> View & Download </a></button>   
                 </div>
             </div>
@@ -164,7 +164,7 @@ include "com-dash-header.php"; ?>
         <li>Submitted By : <?= $scustomid ?></li>
     <li>Rejected By : <?= $ccustomid ?></li>
    
-    <button class="dbtn"><a href="<?= $reject['report_path']  ?>" download="<?= $reject['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+    
     <button class="dbtn"><a href="view_reports?file=public\<?= $reject['report_path']  ?>"><i class="fa fa-download"></i> View & Download </a></button>
     <li>Reject reason:<?= $reject['reject_reason'] ?> </li> </ul>
                 </div>
