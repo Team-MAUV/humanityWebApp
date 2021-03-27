@@ -1,16 +1,16 @@
 body {
-    background: url("../images/") no-repeat center;
+    background: url("../images/reg_vol.jfif") no-repeat right;
     z-index: -1;
 }
 
 .login {
     width: 1000px;
     height: 29rem;
-    background-color: #ffffff;
+    background-color:  #2caa0c;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
     border-radius: 15px;
-    border-color: #2caa0c;
+    border-color: #087511;
 }
 
 .swal-overlay {
@@ -118,7 +118,7 @@ a:hover {
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #17e74b, #04c6f7, #32be8f);
+    background-image: linear-gradient(to right, #0d531e, #67d6f1, #32be8f);
     color: rgb(22, 22, 22);
     text-transform: uppercase;
     text-align: center;
@@ -128,7 +128,7 @@ a:hover {
 }
 
 .btnreg {
-    background-image: linear-gradient(to right, #0cf31f, #1d8b2c, #0e5700);
+    background-image: linear-gradient(to right, #0cf31f, #1d8b2c, #084e88);
 }
 
 .btn:hover {
@@ -151,7 +151,7 @@ a:hover {
         position: relative;
         width: 250px;
         height: 55rem;
-        background-color: #ffffff;
+        background-color: #2caa0c;
         box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     }
     .login h1 {

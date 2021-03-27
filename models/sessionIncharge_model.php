@@ -109,75 +109,98 @@ return ($actdata);
 
 
 
- public function media_upload(){
+ public function media_upload()
+ {
+  $msg = '';
+  $actID=$_POST['actID'];
+
   $un = $_SESSION['id'];
-    
-  $st = $this->db->prepare("SELECT * FROM session_incharge WHERE username = :un");
-  $st->execute( array(
-     ':un'=> $un,)
-  );
-  $sinprofile = $st->fetchAll();
- 
-  $sindata = [
-  'sinprofile' => $sinprofile,
-   ];
-  return ($sindata);
+  //fetch sess details
+ /* $get_cat = $this->db->prepare("SELECT * From session_incharge Where  username = :un");
+  $get_cat->execute(array(
+    ':un' => $un
+  ));*/
 
-
+    // Check if user has uploaded new image
+    if (isset($_POST['actID'],$_POST['incharge_id'], $_POST['date'],$_FILES['image'])){
+    if($_POST['incharge_id']==$_SESSION['id']){
   
-    if (!empty($_POST)) {
-
-      $actID=$_POST['actID'];
-    
+      // The folder where the images will be stored
+      $target_dir =  $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/act_img/'.$actID;
+    /*  if (!file_exists('$target_dir')) {
+     mkdir('$target_dir', 0777, true);
+    }*/
      
+      $save_path = 'act_img/'.$actID;
+      // The path of the new uploaded image
+      $dest_path = $target_dir . basename($_FILES['image']['name']);
 
-      $get_cat = $this->db->prepare("SELECT * From vol_activity Where activity_id = :id");
-      $get_cat->execute(array(
-        ':id' => $actID
-      ));
-      $act_exist = $get_cat->fetchAll();
-      $act_count = $get_cat->rowCount();
+      $image_path = $save_path . basename($_FILES['image']['name']);
+      // Check to make sure the image is valid
 
+   
     
-      if($act_count>0)
-      {
+      if (!empty($_FILES['image']['tmp_name']) && getimagesize($_FILES['image']['tmp_name']))
+       {
+        if (file_exists($dest_path)) {
+          $msg = "Image already exists, please choose another or rename that image.";
+        } else if ($_FILES['image']['size'] > 500000) {
+          $msg = "Image file size too large, please choose an image less than 500kb.";
+        } 
+        else {
+          $stmt = $this->db->prepare('INSERT INTO media (incharge_id,date,activity_id,media_path) VALUES ( :incharge_id, :date,:activity_id,:path)');
+          $stmt->execute(array(
+            ':incharge_id'=>$_POST['incharge_id'],
+            ':date'=>$_POST['date'],
+            'activity_id'=>$actID,
+            ':path'=>$image_path
+          ));
+
+          
+          // Everything checks out now we can move the uploaded image
+          move_uploaded_file($_FILES['image']['tmp_name'], $dest_path);
+
       
-        $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/act_img/'.$actID;
-    
+        //id create
 
-        $dest_path = $target_dir . basename($_FILES['myFile']['name']);
-
-        if (!file_exists('$target_dir')) {
-          mkdir('$target_dir', 0777, true);
-      }
-
+          $custom_id=$this->db->prepare("SELECT id FROM media WHERE media_path=:path");
+          $custom_id->execute(array(
+            ':path' => $image_path,
+          ));
+          $cid_result = $custom_id->fetchAll();
+          $count2 = $custom_id->rowCount();
+          if ($count2 > 0) {
+            foreach ($cid_result as $cidtmp) :
+              if(strlen($cidtmp['id'])==1 && strlen($cidtmp['id'])>0){
+                $customid ="AIMG00".$cidtmp['id'];
+              }else if(strlen($cidtmp['id'])==2 && strlen($cidtmp['id'])>0){
+                $customid ="AIMG0".$cidtmp['id'];
+              }else if(strlen($cidtmp['id'])>0){
+                $customid ="AIMG".$cidtmp['id'];
+              };
+            endforeach;
+      
+          $cidstmt = $this->db->prepare('UPDATE media SET media_id=:customid WHERE media_path=:path');
+          $cidstmt->execute(array(
+            ':path' => $image_path,
+            ':customid'=>$customid,
+          ));
+        }
+    // Insert image info into the database 
        
 
-      
-        if (!empty($_FILES['myFile']['tmp_name']) && getimagesize($_FILES['myFile']['tmp_name']))
-         {
-          if (file_exists($dest_path)) {
-            $msg = "Image already exists, please choose another or rename that image.";
-          } else if ($_FILES['myFile']['size'] > 500000) {
-            $msg = "Image file size too large, please choose an image less than 500kb.";
-          } 
-          else
-           {
-            move_uploaded_file($_FILES['myFile']['tmp_name'], $dest_path);
-            $msg="File uploaded.";
-          }
-             
 
-          }
-       }
-
-
-
-
-
-
-
-
+          $msg = "Image uploaded successfully!";
+        }
+      } 
+      else {
+        $msg = 'Please upload an image!';
+      }
+    }
+    else{
+      $msg = "session ID does not match!";
+    }
+   
 
        $pageData = [
 
@@ -188,38 +211,41 @@ return ($actdata);
 
 }
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
