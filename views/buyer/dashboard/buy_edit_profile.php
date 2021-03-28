@@ -30,11 +30,12 @@ include "buyer_header.php"; ?>
 				<form name="updusrdata" action="save_new_profile_details" method="POST" enctype="multipart/form-data" >	
 					
 					<label for="name">Username:</label>
-					<input type="text" class="field" placeholder="User Name" name="username" value="<?= $dt['username'] ?>">
+					<input type="text" class="field" placeholder="User Name" name="username" id="username" value="<?= $dt['username'] ?>" required>
 					<label for="name">Contact Number:</label>
-					<input type="text" class="field" placeholder="Phone" name="contact" value="<?= $dt['contact'] ?>">
+					<input type="text" class="field" placeholder="Phone" name="contact" id="contact" value="<?= $dt['contact'] ?>"
+					pattern ="(?=.*\d).{10}" title = "Contact number must contain ten digits" required>
 					<label for="name">Address:</label>
-					<textarea placeholder="Address" class="field" name="address" ><?= $dt['address'] ?></textarea>
+					<textarea placeholder="Address" class="field" name="address" id="address" required><?= $dt['address'] ?></textarea>
 					<label for="password">Password:</label>
 					<input type="password" class="field" placeholder="old password" name="pwd" id = "pwd" required>
 					<button onclick = "return checkpw();" class="submit" value="Submit">Update</button>
@@ -70,7 +71,14 @@ include "buyer_header.php"; ?>
 	<script>
 	function checkpw(){
 		var password = document.getElementById("pwd").value; 
-		if( password != ""){
+		var username = document.getElementById("username").value; 
+		var contact = document.getElementById("contact").value; 
+		var address = document.getElementById("address").value; 
+		
+		if( password == "" || username == "" || contact == "" ||address == ""){
+			alert("Fields cannot be empty!!!");
+			return false;
+		}else{
 			var conf = confirm("conformation");
 			if(conf == false){
 			alert("aborted!!!");
