@@ -30,7 +30,7 @@
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
+                        <a href="Donor/edit_profile">Edit Profile</a>
                         <a href="<?= URL ?>Donor/logout">Logout</a>
                     </div>
                 </div>    

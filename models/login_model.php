@@ -119,12 +119,14 @@ class login_Model extends Model
 
                 foreach ($user as $usr) :
                     $id = $usr['don_id'];
+                    $idp = $usr['id'];
                     $name =  $usr['name'];
                 endforeach;
               
               
                     Session::set('loggedIn-don', true);
                     Session::set('id', $id);
+                    Session::set('idp', $idp);
                     Session::set('name', $name);
                     header('location: ../Donor');
               

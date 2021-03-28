@@ -259,7 +259,8 @@ class buyer_model extends Model{
   }
 
     function edit_profile(){
-      $bid = $_GET['id'];
+     // $bid = $_GET['id'];
+     $bid=$_SESSION['idp'];
       $st1 = $this->db->prepare("SELECT buyer.address, buyer.contact, user.username FROM buyer INNER JOIN user ON buyer.userlogin_id = user.id WHERE buyer.id = :id");
       $st1->execute(array(
         ':id'=>$bid
@@ -421,6 +422,7 @@ class buyer_model extends Model{
       }
     }
   }
+  header('location: ../Buyer/edit_profile');
 }  
 }
 

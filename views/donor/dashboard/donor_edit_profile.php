@@ -1,9 +1,7 @@
 
-<?php $page = 'product';
-$title = 'Product';
-$style = 'buy-pages.css';
-$jsFile = 'buyer.js';
-include "buyer_header.php"; ?>
+<?php $page = 'edit_profile';
+$title = 'edit_profile';
+?>
 
 <div class="grid-container">
 
@@ -118,4 +116,4 @@ include "buyer_header.php"; ?>
 
 
 </div>
-<?php include "buyer_footer.php" ?>
+<?php include "don_dash_footer.php" ?>
