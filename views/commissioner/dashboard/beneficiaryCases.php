@@ -75,8 +75,8 @@ include "com-dash-header.php"; ?>
                 <td></td>
                 <td><?= $upcoming['beneficiery_id'] ?></td>
                 <td> <button type="button"> 
-                  <a href="<?= $upcoming['case_path'] ?>" download="<?= $upcoming['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download</button>
-                  <button class="dbtn"><a href="view_reports?file=public\<?= $upcoming['case_path'] ?>"><i class="fa fa-download"></i> View & Download </a></button>
+                
+                <a href="view_reports?file=public\<?= $upcoming['case_path'] ?>"><i class="fa fa-download"></i> Download </a></button>
                 </td>
                 <td><button type="button">Accept </button> <button type="button">Decline </button></td>
                 <td></td>
@@ -125,8 +125,8 @@ include "com-dash-header.php"; ?>
     ?> <?= $ccustomid ?></td>
               <td></td>
               <td>    <button type="button">     
-              <button class="dbtn"><a href="view_reports?file=public\<?= $upcoming['case_path'] ?>"><i class="fa fa-download"></i> View & Download </a></button>
-       <a href="<?= $current['case_path'] ?>" download="<?= $current['beneficiery_id'] ?>"><i class="fa fa-download"></i> Download </button>
+              <a href="view_reports?file=public\<?= $current['case_path'] ?>"><i class="fa fa-download">Download </a>
+      </button>
       </td>
 
             </tr>
@@ -168,8 +168,8 @@ include "com-dash-header.php"; ?>
                 <?= $ccustomid ?></td>
               <td></td>
               <td>    <button type="button">  
-              <button class="dbtn"><a href="view_reports?file=public\<?= $upcoming['case_path'] ?>"><i class="fa fa-download"></i> View & Download </a></button>   
-       <a href="<?= $finish['case_path'] ?>" download="<?= $finish['beneficiery_id'] ?>">     <i class="fa fa-download"></i> Download </button>
+          <a href="view_reports?file=public\<?= $finish['case_path'] ?>"><i class="fa fa-download"></i>  Download </a>   
+      </button>
       </td>
 
             </tr>
