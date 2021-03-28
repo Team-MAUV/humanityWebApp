@@ -52,12 +52,14 @@ class login_Model extends Model
                 foreach ($user as $usr) :
                     $id = $usr['com_id'];
                     $name =  $usr['name'];
+                    $idp = $usr['id'];
                     $address =  $usr['address'];
                 endforeach;
 
                 if($id==$_POST['username']){
                     Session::set('loggedIn-com', true);
                     Session::set('id', $id);
+                    Session::set('idp', $idp);
                     Session::set('name', $name);
                     Session::set('address', $address);
                     header('location: ../Commissioner/index');

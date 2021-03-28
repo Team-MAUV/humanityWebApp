@@ -91,7 +91,7 @@ class donor_Model extends Model
        $pwd=$_POST['pwd'];
        $id=$_SESSION['idp'];
        
-       $getdata = $this->db->prepare("SELECT userlogin_id FROM buyer WHERE id = :id");
+       $getdata = $this->db->prepare("SELECT userlogin_id FROM donor WHERE id = :id");
        $getdata->execute(array(
          ':id'=>$id
        ));
@@ -110,7 +110,7 @@ class donor_Model extends Model
        endforeach;
        
        if (password_verify($_POST['pwd'],  $cr_pwd)){
-         $updatebuyer = $this->db->prepare("UPDATE buyer SET address = :address, contact = :contact WHERE id = :id");
+         $updatebuyer = $this->db->prepare("UPDATE donor SET address = :address, contact = :contact WHERE id = :id");
          $updatebuyer->execute(array(
            ':address'=>$address,
            ':contact'=>$contact,
@@ -140,7 +140,7 @@ class donor_Model extends Model
 
      $hasholdpw =  password_hash($oldpw, PASSWORD_DEFAULT);
 
-     $getdata = $this->db->prepare("SELECT userlogin_id FROM buyer WHERE id = :id");
+     $getdata = $this->db->prepare("SELECT userlogin_id FROM donor WHERE id = :id");
      $getdata->execute(array(
        ':id'=>$id
      ));
