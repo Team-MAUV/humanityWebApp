@@ -48,11 +48,15 @@ include "buyer_header.php"; ?>
 				
 				<form name="updpwdata" action="save_new_pw_details" method="POST" enctype="multipart/form-data" >	
 					<label for="password">Old Password:</label>
-					<input type="password" class="field" placeholder="old password" name="oldpwd" id="oldpwd" required>
+					<input type="password" class="field" placeholder="old password" name="oldpwd" id="oldpwd" title="Type your password here" required>
 					<label for="newpw">New Password:</label>
-					<input type="password" class="field" placeholder="new password" name="newpwd" id="newpwd" required>
+					<input type="password" class="field" placeholder="new password" name="newpwd" id="newpwd" 
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+              		title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 					<label for="newpw">Re Enter New Password:</label>
-					<input type="password" class="field" placeholder="new password" name="rnewpwd" id="rnewpwd" required>
+					<input type="password" class="field" placeholder="new password" name="rnewpwd" id="rnewpwd" 
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                  	title="Re - Type your password here"  required>
 					<button onclick = "return checkdata();" class="submit" value="Submit">Submit</button>
 				
 				</form>
@@ -81,15 +85,14 @@ include "buyer_header.php"; ?>
 		var newpwd = document.getElementById("newpwd").value; 
 		var rnewpwd = document.getElementById("rnewpwd").value;
 		if(oldpwd != "" && newpwd != "" && rnewpwd != ""){
-			if(rnewpwd == newpwd){
-				var conf = confirm("conformation");
-            	if(conf == false){
-               		alert("aborted!!!");
-					return false;
-            	}
-			}else{
-				alert("New Passwords Does Not Match! Please Check Again");
+			if(oldpwd == newpwd){
+				alert("New Passwords cannot be the same! Please Check Again");
 				return false;
+			}else{
+				if(newpwd != rnewpwd){
+					alert("New Passwords Does Not Match! Please Check Again");
+					return false;
+				}
 			}
 			
 		}
