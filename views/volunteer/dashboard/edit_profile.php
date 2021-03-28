@@ -1,5 +1,5 @@
 <?php $page = 'edit_profile';
-?>
+include "vol_dash_header.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +10,7 @@
       <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
-  <!--  <link rel="stylesheet" href="<?= URL ?>public/css/com_dash_editprofile.css" /> -->
+   <link rel="stylesheet" href="<?= URL ?>public/css/com_dash_editprofile.css" /> 
     </head>
 
 
@@ -21,7 +21,7 @@
         <div class="contact-box">
           <div class="left" > </div>  
                 <div class="right">
-                    <h2>Edit Profile </h2>
+                    <h2>Edit Profile Details</h2>
                     <form action="run_edit_profile" method="POST" id="form">
                         <?php foreach ($data as $voldata) : ?>
                                 <label for="name">Contact Number:</label>
@@ -35,8 +35,9 @@
                               
 					            
                         <?php endforeach; ?>
-                    </form>    
-                    <form name="updpwdata" action="save_new_pw" method="POST" enctype="multipart/form-data" >	
+                    </form>  
+                    <h2>Change Password</h2>  
+                    <form name="updpwdata" action="change_password" method="POST" enctype="multipart/form-data" >	
                         <label for="password">Old Password:</label>
                         <input type="password" class="field" placeholder="old password" name="oldpwd" id="oldpwd" title="Type your password here" required>
                         <label for="newpw">New Password:</label>
@@ -74,6 +75,23 @@
 			}
 		}
 		
-	} 
+	}
+  function checkdata(){
+		var oldpwd = document.getElementById("oldpwd").value;
+		var newpwd = document.getElementById("newpwd").value; 
+		var rnewpwd = document.getElementById("rnewpwd").value;
+		if(oldpwd != "" && newpwd != "" && rnewpwd != ""){
+			if(oldpwd == newpwd){
+				alert("New Passwords cannot be the same! Please Check Again");
+				return false;
+			}else{
+				if(newpwd != rnewpwd){
+					alert("New Passwords Does Not Match! Please Check Again");
+					return false;
+				}
+			}
+			
+		}
+	}		 
     </script>
 <?php include "vol_dash_footer.php" ?>
