@@ -30,11 +30,12 @@ include "buyer_header.php"; ?>
 				<form name="updusrdata" action="save_new_profile_details" method="POST" enctype="multipart/form-data" >	
 					
 					<label for="name">Username:</label>
-					<input type="text" class="field" placeholder="User Name" name="username" value="<?= $dt['username'] ?>">
+					<input type="text" class="field" placeholder="User Name" name="username" id="username" value="<?= $dt['username'] ?>" required>
 					<label for="name">Contact Number:</label>
-					<input type="text" class="field" placeholder="Phone" name="contact" value="<?= $dt['contact'] ?>">
+					<input type="text" class="field" placeholder="Phone" name="contact" id="contact" value="<?= $dt['contact'] ?>"
+					pattern ="(?=.*\d).{10}" title = "Contact number must contain ten digits" required>
 					<label for="name">Address:</label>
-					<textarea placeholder="Address" class="field" name="address" ><?= $dt['address'] ?></textarea>
+					<textarea placeholder="Address" class="field" name="address" id="address" required><?= $dt['address'] ?></textarea>
 					<label for="password">Password:</label>
 					<input type="password" class="field" placeholder="old password" name="pwd" id = "pwd" required>
 					<button onclick = "return checkpw();" class="submit" value="Submit">Update</button>
@@ -48,11 +49,15 @@ include "buyer_header.php"; ?>
 				
 				<form name="updpwdata" action="save_new_pw_details" method="POST" enctype="multipart/form-data" >	
 					<label for="password">Old Password:</label>
-					<input type="password" class="field" placeholder="old password" name="oldpwd" id="oldpwd" required>
+					<input type="password" class="field" placeholder="old password" name="oldpwd" id="oldpwd" title="Type your password here" required>
 					<label for="newpw">New Password:</label>
-					<input type="password" class="field" placeholder="new password" name="newpwd" id="newpwd" required>
+					<input type="password" class="field" placeholder="new password" name="newpwd" id="newpwd" 
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+              		title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 					<label for="newpw">Re Enter New Password:</label>
-					<input type="password" class="field" placeholder="new password" name="rnewpwd" id="rnewpwd" required>
+					<input type="password" class="field" placeholder="new password" name="rnewpwd" id="rnewpwd" 
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                  	title="Re - Type your password here"  required>
 					<button onclick = "return checkdata();" class="submit" value="Submit">Submit</button>
 				
 				</form>
@@ -66,7 +71,14 @@ include "buyer_header.php"; ?>
 	<script>
 	function checkpw(){
 		var password = document.getElementById("pwd").value; 
-		if( password != ""){
+		var username = document.getElementById("username").value; 
+		var contact = document.getElementById("contact").value; 
+		var address = document.getElementById("address").value; 
+		
+		if( password == "" || username == "" || contact == "" ||address == ""){
+			alert("Fields cannot be empty!!!");
+			return false;
+		}else{
 			var conf = confirm("conformation");
 			if(conf == false){
 			alert("aborted!!!");
@@ -81,15 +93,14 @@ include "buyer_header.php"; ?>
 		var newpwd = document.getElementById("newpwd").value; 
 		var rnewpwd = document.getElementById("rnewpwd").value;
 		if(oldpwd != "" && newpwd != "" && rnewpwd != ""){
-			if(rnewpwd == newpwd){
-				var conf = confirm("conformation");
-            	if(conf == false){
-               		alert("aborted!!!");
-					return false;
-            	}
-			}else{
-				alert("New Passwords Does Not Match! Please Check Again");
+			if(oldpwd == newpwd){
+				alert("New Passwords cannot be the same! Please Check Again");
 				return false;
+			}else{
+				if(newpwd != rnewpwd){
+					alert("New Passwords Does Not Match! Please Check Again");
+					return false;
+				}
 			}
 			
 		}

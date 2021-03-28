@@ -57,29 +57,37 @@ include "regForm-header.php"; ?>
       <label for="password">
         <i class="fa fa-address-book  "></i>
       </label>
-      <input type="password" name="password" placeholder="Password" id="password" required>
+      <input type="password" name="password" placeholder="Password" id="password" 
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              required>
       <div class="validation-error">
+      
       </div>
       <label for="repassword">
                 <i class="fa fa-address-book  "></i>
             </label>
-            <input type="password" name="repassword" placeholder="Retype your Password" id="repassword" required>
+            <input type="password" name="repassword" placeholder="Retype your Password" id="repassword" 
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                  title="Re - Type your password here" 
+                  required>
             <div class="validation-error">
             </div>
       
 
-      <button class="btn btnreg " type="submit " name="register " onclick="validation();">
+      <button class="btn btnreg " type="submit " name="register " onclick="return validation();">
         <p style="font-weight: 800;"> Submit</p>
       </button>
 
 
 
-
-
     </form>
+    
     <div class="messages"><?php echo $msg ?></div>
   </div>
     <script>
+
+
 function validation() {
     var name = document.getElementById("name").value;
     var nic = document.getElementById("nic").value;
@@ -91,8 +99,8 @@ function validation() {
     var contact = document.getElementById("contact").value;
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
-
-
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+   
     if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(repassword==null ||repassword=="")){
       swal({
             title: "Registration Failed!",
@@ -102,8 +110,8 @@ function validation() {
 
         });
     }
-else{
-    if ((contact.length != 10) || (isNaN(contact))) {
+    else{
+      if ((contact.length != 10) || (isNaN(contact))) {
         swal({
             title: "Registration Failed!",
             text: "Please enter a valid Phone Number!",
@@ -111,8 +119,8 @@ else{
             icon: "error",
 
         });
-
-    } else {
+        return false;
+      } else {
         if (at < 1 || dot < at + 2 || dot + 2 > email.length) {
             swal({
                 title: "Registration Failed",
@@ -121,39 +129,61 @@ else{
                 icon: "error",
 
             });
+            return false;
         } else {
-          if (password!=repassword){
-            swal({
-              
-              title: "Registration Failed",
-              text: "Passwords do not match",
+          
+           
+              if(nic.match(/^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$/)){
+                  
+                if(password.match(passw)){
+                  if(password != repassword){
+                      swal({
+                      
+                      title: "Registration Failed",
+                      text: "Passwords do not match",
 
-              icon: "error",
+                      icon: "error",
 
-          });
-          }
-          else {
-            if(nic.match(/^(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])$/)){
+                    });
+                    return false;
+                  }else{
+                    swal({
+                    title: "Registration Successful!",
+                    text: "Thank you for joining us!",
+                    icon: "success",
+
+                    });
+                    
+                  }
+                }else{
+                  swal({
+                    title: "Registration Failed",
+                    text: "Invalid password pattern",
+                    icon: "error",
+
+                  });
+                  return false;
+                }
+                
+              }
+              else {
                 swal({
-                title: "Registration Successful!",
-                text: "Thank you for joining us!",
-                icon: "success",
+                    title: "Registration Failed",
+                    text: "Invalid format in NIC",
+                    icon: "error",
 
-            });
-            }
-          else {
-            swal({
-                title: "Registration Failed",
-                text: "Invalid format in NIC",
-                icon: "error",
+                });
+                return false;
+              }
+            
 
-            });
-        }
-    }
+          
+        } 
     }
   }
 }
-}
+
+
 </script>
     <?php include "regForm-footer.php"; ?>
   <?php include "regForm-footer.php"; ?>
