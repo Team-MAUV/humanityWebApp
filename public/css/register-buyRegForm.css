@@ -302,25 +302,7 @@ a:hover {
     text-align: center;
     z-index: 1000;
 }
-/*password validation massage*/
-.invalidInput{
-    color: red;
-}
-.invalidInput:before {
-    position: relative;
-    left: -35px;
-    content: &#10006;
-  }
-.validInput{
-    color: green;
-}
-.validInput:before {
-    position: relative;
-    left: -35px;
-    content: "&#10004s";
-  }
 
-/*=======================*/
 
 @media screen and (max-width: 900px) {
     .nav-bar {

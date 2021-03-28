@@ -75,7 +75,7 @@ include "regForm-header.php"; ?>
             </div>
       
 
-      <button class="btn btnreg " type="submit " name="register " onclick="validation();">
+      <button class="btn btnreg " type="submit " name="register " onclick="return validation();">
         <p style="font-weight: 800;"> Submit</p>
       </button>
 
@@ -86,6 +86,7 @@ include "regForm-header.php"; ?>
     <div class="messages"><?php echo $msg ?></div>
   </div>
     <script>
+
 
 function validation() {
     var name = document.getElementById("name").value;
@@ -117,7 +118,7 @@ function validation() {
             icon: "error",
 
         });
-
+        return false;
       } else {
         if (at < 1 || dot < at + 2 || dot + 2 > email.length) {
             swal({
@@ -127,6 +128,7 @@ function validation() {
                 icon: "error",
 
             });
+            return false;
         } else {
           
            
@@ -142,7 +144,7 @@ function validation() {
                       icon: "error",
 
                     });
-                    
+                    return false;
                   }else{
                     swal({
                     title: "Registration Successful!",
@@ -159,6 +161,7 @@ function validation() {
                     icon: "error",
 
                   });
+                  return false;
                 }
                 
               }
@@ -169,6 +172,7 @@ function validation() {
                     icon: "error",
 
                 });
+                return false;
               }
             
 
@@ -177,6 +181,7 @@ function validation() {
     }
   }
 }
+
 
 </script>
     <?php include "regForm-footer.php"; ?>
