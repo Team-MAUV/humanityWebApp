@@ -86,7 +86,7 @@ function validation() {
     var contact = document.getElementById("contact").value;
     var at = email.indexOf("@");
     var dot = email.lastIndexOf(".");
-    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if((name==null ||name=="")||(nic==null ||nic=="")||(email==null ||email=="")||(address==null ||address=="")||(contact==null ||contact=="")||(username==null ||username=="")||(password==null ||password=="")||(repassword==null ||repassword=="")){
       swal({
             title: "Registration Failed!",
