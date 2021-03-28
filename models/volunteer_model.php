@@ -197,7 +197,7 @@ class volunteer_Model extends Model
       }
 
       public function run_viewtoedit_profile(){
-                $vid=Session::get('id');
+            /*    $vid=Session::get('id');
                 $st = $this->db->prepare('SELECT * FROM volunteer WHERE vol_id=:vid ');
                 $st->execute(array(
                   ':vid'=>$vid,
@@ -216,17 +216,71 @@ class volunteer_Model extends Model
                   'vid'=>$vid,
                   
                 ];
-                return ($pageData);
+                return ($pageData);*/
+              
+                $vol_id=$_SESSION['idp'];
+          $st1 = $this->db->prepare("SELECT volunteer.address, volunteer.contact FROM volunteer WHERE volunteer.id = :id");
+          $st1->execute(array(
+            ':id'=>$vol_id
+          ));
+          $data = $st1->fetchAll();
+          $count = $st1->rowCount();
+          if($count == 1){
+            $msg = "";
+          }else{
+            $msg = "TRY AGAIN LATER!!!";
+            $data = [];
+          }
+          
+          $pagedata = [
+            'data' => $data,
+            'msg' => $msg
+          ];
+          
+          return ($pagedata);
+    
+
         }
 
 
       public function run_edit_profile(){
 
-                $email = $_POST['email'];
+                
                 $address = $_POST['address'];
                 $contact = $_POST['contact'];
-                $password=$_POST['password'];
-                $pw = password_hash($password, PASSWORD_DEFAULT);
+                $password=$_POST['pwd'];
+                $id=$_SESSION['idp'];
+                $getdata = $this->db->prepare("SELECT userlogin_id FROM volunteer WHERE id = :id");
+                $getdata->execute(array(
+                  ':id'=>$id
+                ));
+                $login_data = $getdata->fetchAll();
+                foreach($login_data as $logdt) :
+                  $userlogin_id = $logdt['userlogin_id'];
+                endforeach;
+
+                $get_userdata = $this->db->prepare("SELECT password FROM user WHERE id = :id");
+                $get_userdata->execute(array(
+                  ':id'=>$userlogin_id
+                ));
+                $userdata = $get_userdata->fetchAll();
+                foreach($userdata as $udt) :
+                  $cr_pwd = $udt['password'];
+                endforeach;
+                
+                if (password_verify($_POST['pwd'],  $password)){
+                  $updatebuyer = $this->db->prepare("UPDATE buyer SET address = :address, contact = :contact WHERE id = :id");
+                  $updatebuyer->execute(array(
+                    ':address'=>$address,
+                    ':contact'=>$contact,
+                    ':id'=>$id
+                  ));
+                  header('location: ../Volunteer/index');
+                }
+                header('location: ../Volunteer/edit_profile');
+      }
+
+            /*    $pw = password_hash($password, PASSWORD_DEFAULT);
                 $vid=Session::get('id');
                 $stmt =$this->db->prepare('UPDATE `volunteer` SET email=:email,address:address,contact:contact WHERE vol_id=:vid');
                 $stmt->execute(array(
@@ -247,7 +301,8 @@ class volunteer_Model extends Model
                   
                 ];
                 return ($pageData);
-      }
+              }*/
+      
 
 
       public function vol_leaderboard(){ 
