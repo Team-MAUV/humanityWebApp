@@ -90,11 +90,7 @@ class Staff extends Controller
         $data = $this->model->access_product();
         $this->view->rendor('staff/dashboard/access_product', $data , true);
     }
-    function manage_bidsession()
-    {
-        $this->view->rendor('staff/dashboard/manage_bidsession');
-    }
-
+    
   
 
     function staff_report()
