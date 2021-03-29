@@ -586,7 +586,8 @@ return ($pageData);
       'contacts' => $contacts,
       'msg' => $msg
     ];
-    return ($pageData);
+  //  return ($pageData);
+  header('location: ../commissioner/index');
     
 }
 
