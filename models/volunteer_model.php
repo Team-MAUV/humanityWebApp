@@ -303,7 +303,48 @@ class volunteer_Model extends Model
                 return ($pageData);
               }*/
       
+      public function change_password(){
+        if (!empty($_POST)){
+     
+          $oldpwd=$_POST['oldpwd'];
+          $newpwd=$_POST['newpwd'];
+          $rnewpwd=$_POST['rnewpwd'];
+          $id=$_SESSION['idp'];
+    
+          $hasholdpw =  password_hash($oldpw, PASSWORD_DEFAULT);
+    
+          $getdata = $this->db->prepare("SELECT userlogin_id FROM volunteer WHERE id = :id");
+          $getdata->execute(array(
+            ':id'=>$id
+          ));
+          $login_data = $getdata->fetchAll();
+          foreach($login_data as $logdt) :
+            $userlogin_id = $logdt['userlogin_id'];
+          endforeach;
+    
+          $get_userdata = $this->db->prepare("SELECT password FROM user WHERE id = :id");
+          $get_userdata->execute(array(
+            ':id'=>$userlogin_id
+          ));
+          $userdata = $get_userdata->fetchAll();
+          foreach($userdata as $udt) :
+            $cr_pwd = $udt['password'];
+          endforeach;
+          if (password_verify($_POST['oldpwd'],  $cr_pwd)){
+            if($newpwd == $rnewpwd){
+              $hashnewpw =  password_hash($newpwd, PASSWORD_DEFAULT);
+              $updatepwd = $this->db->prepare("UPDATE user SET password = :password WHERE id = :id");
+              $updatepwd->execute(array(
+                ':password' => $hashnewpw,
+                ':id' => $userlogin_id
+              ));
+              header('location: ../volunteer/Index');
+            }
+          }
+        }
+        header('location: ../volunteer/edit_profile');
 
+      }
 
       public function vol_leaderboard(){ 
 

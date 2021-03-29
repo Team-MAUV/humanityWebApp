@@ -52,12 +52,14 @@ class login_Model extends Model
                 foreach ($user as $usr) :
                     $id = $usr['com_id'];
                     $name =  $usr['name'];
+                    $idp = $usr['id'];
                     $address =  $usr['address'];
                 endforeach;
 
                 if($id==$_POST['username']){
                     Session::set('loggedIn-com', true);
                     Session::set('id', $id);
+                    Session::set('idp', $idp);
                     Session::set('name', $name);
                     Session::set('address', $address);
                     header('location: ../Commissioner/index');
@@ -119,12 +121,14 @@ class login_Model extends Model
 
                 foreach ($user as $usr) :
                     $id = $usr['don_id'];
+                    $idp = $usr['id'];
                     $name =  $usr['name'];
                 endforeach;
               
               
                     Session::set('loggedIn-don', true);
                     Session::set('id', $id);
+                    Session::set('idp', $idp);
                     Session::set('name', $name);
                     header('location: ../Donor');
               
@@ -159,17 +163,7 @@ class login_Model extends Model
                     $idp = $usr['id'];
                 endforeach;
               
-                //view total number of bids 
-                
-               // $st3 = $this->db->prepare("SELECT COUNT AS total FROM bid WHERE buy_id= :id ");
-               // $st3->execute(array(
-                //    ':id' => $id,
-              //  ));
-               // $totalbids = $st3->fetchAll();
-                
-                //foreach ($totalbids as $ttlbds) :
-                 //   $ttl = $ttlbds['total'];
-                //endforeach;
+               
                 
                 
                 
@@ -177,7 +171,6 @@ class login_Model extends Model
                     Session::set('loggedIn-buy', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
-                  //  Session::set('totalbids', $ttl);
                     Session::set('idp', $idp);
                     header('location: ../Buyer');
                 
@@ -196,12 +189,14 @@ class login_Model extends Model
                 foreach ($user as $usr) :
                     $id = $usr['staff_id'];
                     $name =  $usr['name'];
+                    $idp = $usr['id'];
                 endforeach;
 
                 if($id==$_POST['username']){
                     Session::set('loggedIn-stf', true);
                     Session::set('id', $id);
                     Session::set('name', $name);
+                    Session::set('idp', $idp);
                     header('location: ../Staff');
               
                 }

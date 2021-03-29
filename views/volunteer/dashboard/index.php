@@ -53,7 +53,7 @@ include "vol_dash_header.php"; ?>
                       </div>
                       <div class="team__inform">
                         <p class="team__name"> <?= $_SESSION['level'] ?></p>
-                        <input type="submit" class="btn" value="Apply for Staff">
+                        
                       </div>
                     </a>
                   </li>

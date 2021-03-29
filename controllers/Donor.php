@@ -18,6 +18,20 @@ class Donor extends Controller
         $data = $this->model->donor_stat();
         $this->view->rendor('donor/dashboard/donor_home', $data, true);
     }
+    function edit_profile(){
+        $data = $this->model->edit_profile();
+        $this->view->rendor('donor/dashboard/donor_edit_profile', $data ,true);
+    }
+
+    function save_new_profile_details()
+    {
+       $this->model->save_new_profile_details();
+    }
+    function save_new_pw_details()
+    {
+      $this->model->save_new_pw_details();
+      
+    } 
 
 
 

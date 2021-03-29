@@ -95,7 +95,9 @@ class Volunteer extends Controller
     }
 
 
-
+    function change_password(){
+        $this->model->change_password();
+    }
 
     function logout()
     {

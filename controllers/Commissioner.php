@@ -35,9 +35,19 @@ class Commissioner extends Controller
     }
     function edit_profile()
     {
-        
-        $this->view->rendor('commissioner/dashboard/edit_profile'); 
+        $data=$this->model->run_viewtoedit_profile();
+        $this->view->rendor('commissioner/dashboard/edit_profile' ,$data, true); 
        
+    }
+    function run_edit_profile()
+    {
+        $this->model->run_edit_profile();
+        
+    }
+
+
+    function change_password(){
+        $this->model->change_password();
     }
     function volunteer()
     {
