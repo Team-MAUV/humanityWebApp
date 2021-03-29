@@ -183,19 +183,45 @@ class donor_Model extends Model
 
   public function Donationpayment(){
 
-    echo $amount = $_POST['amount'];
-    echo $_POST['dedication'];
-    echo $_POST['paymentStatus'];
-    echo $donTableId = $_POST['donorTableId'];
-    echo $type =  $_POST['select-donation'];
-    echo $_SESSION['id'];
+    echo $_POST['amount'];
+    // echo $_POST['dedication'];
+    // echo $_POST['paymentStatus'];
+    // echo $donTableId = $_POST['donorTableId'];
+    // echo $type =  $_POST['select-donation'];
+    // echo $_SESSION['id'];
+
+    $donTableId = $_POST['donorTableId'];
+    $type =  $_POST['select-donation'];
+    $amount = $_POST['amount'];
 
     if($_POST['paymentStatus'] == "done"){
       echo "payment Success!";
 
       $stmt = $this->db->prepare("INSERT INTO donation(amount, type, don_id) VALUES (?, ?, ?)");
-
       $stmt->execute([$amount, $type, $donTableId]);
+
+      $stmt = $this->db->prepare("SELECT * FROM donor WHERE id=:id");
+      $stmt->execute(array(
+        ':id' => $donTableId
+      ));
+
+      $fdata = $stmt->fetchAll();
+      $count = $stmt->rowCount();
+      if ($count > 0) {
+          foreach ($fdata as $dt) :
+                  $contribution=$dt['contribution'];
+          endforeach;
+        }
+
+        $total = $contribution + $amount;
+
+        $st= $this->db->prepare("UPDATE donor SET contribution=:amount  WHERE  id=:id" );
+
+
+        $st->execute(array(
+            ':id' => $donTableId,
+            ':amount' => $total
+        ));
 
 
     }else{

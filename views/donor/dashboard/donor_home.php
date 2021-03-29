@@ -15,7 +15,7 @@ include "don_dash_header.php"; ?>
 
 
 
-                            <!-- <form method="post" action="Donor/Donationpayment"> -->
+                <form method="post" action="Donor/Donationpayment">  
 
                                    <!-- Recording the Status of the Transactio through the Payment Gateway -->
                               <input type="hidden" name="paymentStatus" value="<?= $_GET['state'];?>">
@@ -91,12 +91,15 @@ include "don_dash_header.php"; ?>
 
                                     </form> 
 
-                                    <div class="donate">
-                                        <button type="submit" class="donate-btn">Donate</button>
-                                        
-                                    </div>
 
-                            <!-- </form>  -->
+                                   
+                                        <div class="donate">
+                                           <button type="submit" class="donate-btn">Donate</button>
+                                        
+                                         </div>
+                                    </form>
+
+                     
 
 
                             
