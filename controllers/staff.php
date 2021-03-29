@@ -21,12 +21,23 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/index');
     }
 
-function edit_profile()
-{
-    
-    $this->view->rendor('staff/dashboard/edit_profile'); 
-   
-}
+
+    function edit_profile()
+    {
+        $data=$this->model->run_viewtoedit_profile();
+        $this->view->rendor('commissioner/dashboard/edit_profile' ,$data, true); 
+       
+    }
+    function run_edit_profile()
+    {
+        $this->model->run_edit_profile();
+        
+    }
+
+
+    function change_password(){
+        $this->model->change_password();
+    }
 
     function add_product()
     {
@@ -79,11 +90,7 @@ function edit_profile()
         $data = $this->model->access_product();
         $this->view->rendor('staff/dashboard/access_product', $data , true);
     }
-    function manage_bidsession()
-    {
-        $this->view->rendor('staff/dashboard/manage_bidsession');
-    }
-
+    
   
 
     function staff_report()
