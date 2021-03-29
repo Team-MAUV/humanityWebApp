@@ -1,6 +1,7 @@
 <?php $page = 'access_product';
-include "staff_header.php"; ?>
-<link rel="stylesheet" href="<?= URL ?>public/css/staff-layout_style.css" />
+include "staff_header.php"; 
+$style = 'staff-layout_style.css'?>
+
 
 <div class="grid-container">
 

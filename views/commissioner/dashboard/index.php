@@ -133,38 +133,39 @@ Commissioner Registration Form</h2>
             <form action="run_add_com" method="POST" id="formcom">
                 <div class="input-name">
                     <i class="fa fa-user lock"></i>
-                    <input type="text" placeholder=" Name" class="name" name="name">
+                    <input type="text" placeholder=" Name" class="name" name="name" required>
                     <span class="last">
                     <i class="fa fa-user lock"></i>
-                    <input type="text" placeholder="NIC" class="name" name="nic">
+                    <input type="text" placeholder="NIC" class="name" name="nic" 
+                      pattern="(?:19|20)?\d{2}(?:[0-35-8]\d\d(?<!(?:000|500|36[7-9]|3[7-9]\d|86[7-9]|8[7-9]\d)))\d{4}(?:[vVxX])" required>
                     </span>
                 </div>
                      <div class="input-name">
                         <i class="fa fa-envelope email"></i>
-                        <input type="email" placeholder="Email" required class="text-name" name="email">
+                        <input type="email" placeholder="Email" required class="text-name" name="email" required>
                 </div>
  <div class="input-name">
  <i class="fa fa-user lock"></i>
-                        <input type="text" placeholder="contact no" required class="text-name" name="contact">
+                        <input type="text" placeholder="contact no" required class="text-name" name="contact" pattern ="(?=.*\d).{10}" required>
                 </div>
 <div class="input-name">
                     <i class="fa fa-home lock"></i>
-                    <input type="text" placeholder="address" class="text-name" name="address">
+                    <input type="text" placeholder="address" class="text-name" name="address" required>
                 </div>
 <div class="input-name">
                     <i class="fa fa-lock lock"></i>
-                    <input type="password" placeholder="Assign Password" class="text-name" name="password">
+                    <input type="password" placeholder="Assign Password" class="text-name" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                 </div>
 <div class="input-name">
                     <input type="radio"  id="gen" class="radio-button" name="gender" value="male">
                     <label for="gen" class="gender">Male</label>
-                    <input type="radio" id="gen1" class="radio-button" name="gender" value="female"> 
+                    <input type="radio" id="gen1" class="radio-button" name="gender" value="female" required> 
                     <label for="gen1" class="gender">Female</label>
                 </div>
 
 </div>
 <div class="input-name">
-                        <input type="checkbox" id="cb1" class="chack-button" name="check">
+                        <input type="checkbox" id="cb1" class="chack-button" name="check" required>
                       <label for="cb1" class="chack">I confirm that above details are true</label>
                     </div>
 
