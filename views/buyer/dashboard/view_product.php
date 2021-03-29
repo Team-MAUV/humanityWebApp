@@ -69,7 +69,7 @@ include "buyer_header.php"; ?>
                         <div class="sizes">
                         <?= $prd['highest_bid_amount'] ?>
                         </div>
-                        <spam id="uid"><?=$_SESSION['id']?></spam>
+                        
                         
 
                     </div>
