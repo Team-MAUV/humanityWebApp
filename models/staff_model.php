@@ -655,7 +655,7 @@ public function change_password(){
     $rnewpwd=$_POST['rnewpwd'];
     $id=$_SESSION['idp'];
 
-    $hasholdpw =  password_hash($oldpw, PASSWORD_DEFAULT);
+    $hasholdpw =  password_hash($oldpwd, PASSWORD_DEFAULT);
 
     $getdata = $this->db->prepare("SELECT userlogin_id FROM staff WHERE id = :id");
     $getdata->execute(array(
