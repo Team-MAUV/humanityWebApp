@@ -78,7 +78,12 @@ include "com-dash-header.php"; ?>
                 
                 <a href="view_reports?file=public\<?= $upcoming['case_path'] ?>"><i class="fa fa-download"></i> Download </a></button>
                 </td>
-                <td><button type="button">Accept </button> <button type="button">Decline </button></td>
+                <td><a href="run_accept_beneficiaryCases?id=<?= $upcoming['beneficiery_id'] ?>" >Accept</i></a>
+                  <a href="update.php?id=<?= $upcoming['beneficiery_id'] ?>" class="readmore">Decline</i></a>
+                  <div class="view" id="view">
+                  <input type="text" name="reason" id="reason" placeholder="Reason" >
+               </div></td>
+                  
                 <td></td>
                 <td><button type="button">Submit </button></td>
                 </tr>
@@ -125,7 +130,7 @@ include "com-dash-header.php"; ?>
     ?> <?= $ccustomid ?></td>
               <td></td>
               <td>    <button type="button">     
-              <a href="view_reports?file=public\<?= $current['case_path'] ?>"><i class="fa fa-download">Download </a>
+              <a href="view_reports?file=public\<?= $current['case_path'] ?>"><i class="fa fa-download"> Download</i> </a>
       </button>
       </td>
 
@@ -179,12 +184,6 @@ include "com-dash-header.php"; ?>
 
         </div>    
     </div>
-
-
-
-
-
-
 
 
 

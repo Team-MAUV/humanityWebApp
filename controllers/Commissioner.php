@@ -153,6 +153,10 @@ class Commissioner extends Controller
         $this->view->rendor('commissioner/dashboard/beneficiaryCases', $data, true);
     }
 
+    function run_accept_beneficiaryCases(){
+        $this->model->run_accept_beneficiaryCases();
+    }
+
     function media()
     {
         $data = $this->model->get_images_display();
