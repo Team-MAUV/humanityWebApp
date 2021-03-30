@@ -34,6 +34,7 @@ include "vol_dash_header.php"; ?>
                                                 <li>End   : <?= $coming['end_date_time'] ?> </li>
                                                 <li>Venue   : <?= $coming['venue'] ?></li>
                                                 <li>Activity Points   : <?= $coming['point'] ?></li>
+                                                <li> <button class= "btn">   </button></li>
                                             </ul>
                                     </div>
                                 </div>

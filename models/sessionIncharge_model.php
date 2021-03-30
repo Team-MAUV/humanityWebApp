@@ -43,7 +43,12 @@ class SessionIncharge_Model extends Model
           $id = $usr['incharge_id'];
         }
   
-       
+        $st= $this->db->prepare("UPDATE staff SET availability=1 WHERE  staff_id=:id");
+
+        $st->execute(array(
+            ':id' => $id
+        
+        ));
       endforeach;
 
       
@@ -53,12 +58,7 @@ class SessionIncharge_Model extends Model
     echo $id ;
 
 
-    $st= $this->db->prepare("UPDATE staff SET availability=1 WHERE  staff_id=:id");
-
-    $st->execute(array(
-        ':id' => $id
     
-    ));
 
     header('location: ../Staff');
 
@@ -108,8 +108,7 @@ return ($actdata);
 }
 
 
-
-public function media_upload()
+public function run_media_upload()
 {
   $msg = '';
 $actID=$_POST['actID'];
@@ -128,7 +127,7 @@ $actID=$_POST['actID'];
 
     $target_dir =  $_SERVER['DOCUMENT_ROOT'] . '/humanity/public/act_img/' .$actID. '/';
   
-    $save_path = 'images/';
+    $save_path = 'act_img/' .$actID. '/';
     // The path of the new uploaded image
     $dest_path = $target_dir . basename($_FILES['image']['name']);
 
@@ -207,7 +206,52 @@ $actID=$_POST['actID'];
 
 }
 
+public function media_display()
+{
+  
+  $un = $_SESSION['id'];
+    
+  $st = $this->db->prepare("SELECT * FROM session_incharge WHERE username = :un");
+  $st->execute( array(
+     ':un'=> $un,)
+  );
+  
+  
+$user = $st->fetchAll();
+$count = $st->rowCount();
 
+
+if($count>0){
+
+foreach ($user as $usr) :
+
+  if($usr['username']  == $_SESSION['id'] ){
+    $actid = $usr['vol_activityId']; //session in charge 
+  }
+
+ 
+endforeach;
+}
+ $st1 = $this->db->prepare("SELECT * FROM actimage  WHERE act_id=:act");
+$st1 ->execute(array(
+':act' => $actid
+));
+$images = $st1->fetchAll();
+
+
+  $pageData = [
+
+    'images' => $images
+  ];
+
+  return ($pageData);
+
+
+
+
+
+
+}
 
 
 
