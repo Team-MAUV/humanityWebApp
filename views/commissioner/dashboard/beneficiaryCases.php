@@ -79,7 +79,7 @@ include "com-dash-header.php"; ?>
                 <a href="view_reports?file=public\<?= $upcoming['case_path'] ?>"><i class="fa fa-download"></i> Download </a></button>
                 </td>
                 <td><a href="run_accept_beneficiaryCases?id=<?= $upcoming['beneficiery_id'] ?>" >Accept</i></a>
-                  <a href="update.php?id=<?= $upcoming['beneficiery_id'] ?>" class="readmore">Decline</i></a>
+                  <a href="run_reject_beneficiaryCases?id=<?= $upcoming['beneficiery_id'] ?>" class="readmore">Decline</i></a>
                   <div class="view" id="view">
                   <input type="text" name="reason" id="reason" placeholder="Reason" >
                </div></td>
