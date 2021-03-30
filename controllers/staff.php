@@ -21,7 +21,10 @@ class Staff extends Controller
         $this->view->rendor('staff/dashboard/index');
     }
 
-
+    function view_reports(){
+        $this->model->view_reports();
+    }
+    
     function edit_profile()
     {
         $data=$this->model->run_viewtoedit_profile();
