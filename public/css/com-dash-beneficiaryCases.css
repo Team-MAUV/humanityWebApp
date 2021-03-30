@@ -144,23 +144,24 @@ h1 {
 .grid-body {
     position: relative;
     top: 0;
-  }
-  .pageTitle h1 {
+}
+
+.pageTitle h1 {
     font-size: 24px;
-  }
-  
-  .tab-section {
-  }
-  .tab-section ul {
+}
+
+.tab-section {}
+
+.tab-section ul {
     display: flex;
     justify-content: flex-start;
     list-style: none;
     text-decoration: none;
     margin: 0;
     padding: 0;
-  }
-  
-  .tab-section ul li a {
+}
+
+.tab-section ul li a {
     display: flex;
     justify-content: center;
     background-color: #7d8286;
@@ -171,57 +172,58 @@ h1 {
     padding-top: 0.6rem;
     padding-bottom: 1rem;
     border-radius: 3px;
-  }
-  .tab-section .active {
+}
+
+.tab-section .active {
     position: relative;
-    
-  }
-  
-  .tab-section .active a {
+}
+
+.tab-section .active a {
     width: 10rem;
     height: 3rem;
     background-color: rgb(7, 112, 199);
-  }
-  
-  
+}
+
 input[type="text"] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
     border: 4px solid #004883;
-  }
-  
-  .search-container {
+}
+
+.search-container {
     position: relative;
     left: 25%;
-  }
-  .search-container button {
+}
+
+.search-container button {
     position: relative;
     padding: 6px 10px;
-  
     margin-right: 16px;
     background: #ddd;
     font-size: 17px;
     border: none;
     cursor: pointer;
-  }
-  
-  .search-container button:hover {
+}
+
+.search-container button:hover {
     background: #ccc;
-  }
+}
 
 .content {
     width: 100%;
     margin: 0 auto;
-  }
-  .content h2 {
+}
+
+.content h2 {
     margin: 0;
     padding: 15px 0;
     font-size: 22px;
     border-bottom: 1px solid #ebebeb;
     color: #666666;
-  }
-  .read .create-contact {
+}
+
+.read .create-contact {
     display: inline-block;
     text-decoration: none;
     background-color: #38b673;
@@ -230,13 +232,14 @@ input[type="text"] {
     color: #ffffff;
     padding: 10px 15px;
     margin: 15px 0;
-  }
-  
-  .read .pagination {
+}
+
+.read .pagination {
     display: flex;
     justify-content: flex-end;
-  }
-  .read .pagination a {
+}
+
+.read .pagination a {
     display: inline-block;
     text-decoration: none;
     background-color: #004883;
@@ -244,77 +247,102 @@ input[type="text"] {
     color: #ffffff;
     padding: 5px 10px;
     margin: 15px 0 15px 5px;
-  }
-  .read .pagination a:hover {
+}
+
+.read .pagination a:hover {
     background-color: rgb(7, 112, 199);
-  }
-  .read table {
+}
+
+.read table {
     width: 100%;
     padding-top: 30px;
     border-collapse: collapse;
-  }
-  .read table thead {
+}
+
+.read table thead {
     background-color: #004883;
     border-bottom: 1px solid #d3dae0;
-  }
-  .read table thead td {
+}
+
+.read table thead td {
     padding: 10px;
     font-weight: bold;
     color: #ffffff;
     font-size: 14px;
-  }
-  .read table tbody tr {
+}
+
+.read table tbody tr {
     border-bottom: 1px solid #d3dae0;
-  }
-  .read table tbody tr:nth-child(even) {
+}
+
+.read table tbody tr:nth-child(even) {
     background-color: #00488311;
-  }
-  .read table tbody tr:hover {
+}
+
+.read table tbody tr:hover {
     background-color: rgb(7, 112, 199);
-  }
-  .read table tbody tr:hover td {
+}
+
+.read table tbody tr:hover td {
     color: #ffffff;
-  }
-  .read table tbody tr:hover td:nth-child(1) {
+}
+
+.read table tbody tr:hover td:nth-child(1) {
     color: #ffffff;
-  }
-  .read table tbody tr td {
+}
+
+.read table tbody tr td {
     padding: 10px;
-  }
-  .read table tbody tr td:nth-child(1) {
+}
+
+.read table tbody tr td:nth-child(1) {
     color: #a5a7a9;
-  }
-  .read table tbody tr td.actions {
+}
+
+.read table tbody tr td.actions {
     padding: 8px;
     text-align: right;
-  }
-  .read table tbody tr td.actions .edit,
-  .read table tbody tr td.actions .trash {
+}
+
+.read table tbody tr td.actions .edit,
+.read table tbody tr td.actions .trash {
     display: inline-flex;
     text-align: right;
     text-decoration: none;
     color: #ffffff;
     padding: 10px 12px;
-  }
-  .read table tbody tr td button{
-  
-    background-color: #004883; 
-      border: none;
-      color: white;
-      padding: 8px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-  }
-  .read table tbody tr td button a{
-  
-    background-color: #004883; 
-      border: none;
-      color: white;
-    
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 12px;
-  }
+}
+
+.read table tbody tr td button {
+    background-color: #004883;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.read table tbody tr td button a {
+    background-color: #004883;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.read table tbody tr td a {
+    display: inline-flex;
+    text-align: right;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px 12px;
+    background-color: #004883;
+}
+
+#view {
+    display: none;
+}
