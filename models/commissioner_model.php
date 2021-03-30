@@ -230,6 +230,10 @@ class commissioner_Model extends Model
     ];
     return ($pageData);
 }
+
+
+
+
 public function get_reg_buyer_profiles() {
   //buyer Profiles
   $st = $this->db->prepare('SELECT * FROM buyer WHERE userlogin_id IS NOT NULL ORDER BY id LIMIT :current_page, :record_per_page');
