@@ -70,7 +70,10 @@ class commissioner_Model extends Model
   }
 
   public function delete_staff(){
-    $stf_id =$_GET['id'];
+    
+    $stf_id =$_POST['id'];
+    $remark = $_POST['remark'];
+    $com_id=$_SESSION['idp'];
     $st = $this->db->prepare("SELECT * FROM staff WHERE id= :stf_id");
 
         $st->execute(array(
@@ -86,6 +89,12 @@ class commissioner_Model extends Model
             $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
             $stmt->execute(array(
               ':usr' => $usr
+             ));
+             $st2 = $this->db->prepare("UPDATE staff SET remove_reson = :reson, com_id = :comid, status = 'deleted' WHERE id= :stf_id");
+             $st2->execute(array(
+              ':reson' => $remark,
+              'stf_id' =>$stf_id,
+              'comid' => $com_id
              ));
             //  echo "Updated successfully!";
              header('location: ../Commissioner/staff');
@@ -117,7 +126,7 @@ class commissioner_Model extends Model
   }
 
   public function get_reg_staff_profiles() {
-    //Volunteer Profiles
+    //staff Profiles
     $st = $this->db->prepare('SELECT * FROM staff WHERE status="accepted" ORDER BY id LIMIT :current_page, :record_per_page');
     // Get the page via GET request (URL param: page), if non exists default the page to 1
     $spage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -131,11 +140,20 @@ class commissioner_Model extends Model
     $snum_contacts = $this->db->query('SELECT COUNT(*) FROM staff')->fetchColumn();
     $scontacts = $st->fetchAll();
 
-    //Volunteer Requests
-    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status="pending" ORDER BY joined_year ');        
+    //staff Requests
+    $stmt = $this->db->prepare('SELECT * FROM staff WHERE status="pending" ORDER BY joined_year '); 
     $stmt->execute();
-    $snewReq = $stmt->fetchAll();
+    $snewReq = $stmt->fetchAll();         
+    
     $snewReq_Count = $stmt->rowCount();
+
+    //removed staff
+    $stmt2 = $this->db->prepare('SELECT * FROM staff WHERE status="deleted" ORDER BY joined_year ');
+    $stmt2->execute();
+    $rstff = $stmt2->fetchAll();        
+    
+    $rstff_count = $stmt2->rowCount();
+
 
     //All the data that has to be return from this functon is added to an associative array
     $pageData = [
@@ -144,7 +162,8 @@ class commissioner_Model extends Model
       'scontacts' => $scontacts,
       'snum_contacts' => $snum_contacts,
       'snewReq'=> $snewReq,
-      'snewReq_Count' => $snewReq_Count
+      'snewReq_Count' => $snewReq_Count,
+      'rstff' => $rstff
     ];
     return ($pageData);
 }
