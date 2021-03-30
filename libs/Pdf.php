@@ -6,7 +6,7 @@ class Pdf {
 
 
   /* Include the main TCPDF library (search for installation path). */
-require_once('TCPDF/tcpdf_autoconfig.php');
+require_once('tcpdf/tcpdf_autoconfig.php');
 
 /* create new PDF document */
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
