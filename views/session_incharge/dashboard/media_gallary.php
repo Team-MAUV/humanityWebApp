@@ -29,39 +29,18 @@ include "sess_header.php"; ?>
         <div class="border"></div>
         <div class="gallery">
 
-          <a href="<?= URL ?>public/images/plant.jpg"  class="image">
-           
-            <img src="<?= URL ?>public/images/plant.jpg" alt="img"/>
-          </a>
 
-          <a href="<?= URL ?>public/images/dengue.jpg"  class="image">
-            <img src="<?= URL ?>public/images/dengue.jpg" alt="img"/>
-          </a>
+          <?php foreach ($images as $image) : ?>
 
-          <a href="<?= URL ?>public/images/discuss.jpg"  class="image">
-            <img src="<?= URL ?>public/images/discuss.jpg" alt="img"/>
-          </a>
 
-          <a href="<?= URL ?>public/images/dengue.jpg"  class="image">
-            <img src="<?= URL ?>public/images/dengue.jpg" alt="img"/>
-          </a>
+<a href="<?= URL ?>public/<?= $image['image_path'] ?>" class="image">
+  <img src="<?= URL ?>public/<?= $image['image_path'] ?>" >
+  
+  <!--alt="<?= $actimage['date'] ?>" data-id="<?= $actimage['image_id'] ?>"  width="300" height="200"> -->
 
-          <a href="<?= URL ?>public/images/plant.jpg"  class="image">
-            <img src="<?= URL ?>public/images/plant.jpg" alt="img"/>
-          </a>
+</a>
 
-          <a href="<?= URL ?>public/images/clean.jpg"  class="image">
-            <img src="<?= URL ?>public/images/clean.jpg" alt="img"/>
-          </a>
-
-          <a href="<?= URL ?>public/images/plant.jpg"  class="image">
-          
-            <img src="<?= URL ?>public/images/plant.jpg" alt="img"/>
-          </a>
-
-          <a href="<?= URL ?>public/images/collect plastic.jpg" class="image">
-            <img src="<?= URL ?>public/images/collect plastic.jpg" alt="img"/>
-          </a>
+<?php endforeach; ?>
 
         </div>
       </div>

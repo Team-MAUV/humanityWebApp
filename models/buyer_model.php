@@ -291,13 +291,14 @@ class buyer_model extends Model{
         $pwd=$_POST['pwd'];
         $id=$_SESSION['idp'];
         
-        $getdata = $this->db->prepare("SELECT userlogin_id FROM buyer WHERE id = :id");
+        $getdata = $this->db->prepare("SELECT userlogin_id,email FROM buyer WHERE id = :id");
         $getdata->execute(array(
           ':id'=>$id
         ));
         $login_data = $getdata->fetchAll();
         foreach($login_data as $logdt) :
           $userlogin_id = $logdt['userlogin_id'];
+          $email = $logdt['email'];
         endforeach;
 
         $get_userdata = $this->db->prepare("SELECT password FROM user WHERE id = :id");
@@ -322,6 +323,25 @@ class buyer_model extends Model{
             ':username'=>$username,
             ':id'=>$userlogin_id
           ));
+          
+            $to = $email;
+            $subject = 'Reset your password for Humanity';
+            $rec_name =  $userlogin_id;
+
+           
+
+            $message = '<h5> Hello '. $userlogin_id.', </h5>
+            <p> Update User Data </p>';
+
+
+            $message .= '<h4>***Humanity Web App - Powered by Team MAUV***</h4>';
+
+            $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+            $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+            $headers .= "Content-type: text/html\r\n";
+
+    
+            Email::email_send($to,$rec_name, $subject, $message, $headers);
          // $msg = "Updated Succesfully!";
 
         //}else{
@@ -359,13 +379,14 @@ class buyer_model extends Model{
 
       $hasholdpw =  password_hash($oldpw, PASSWORD_DEFAULT);
 
-      $getdata = $this->db->prepare("SELECT userlogin_id FROM buyer WHERE id = :id");
+      $getdata = $this->db->prepare("SELECT userlogin_id,email FROM buyer WHERE id = :id");
       $getdata->execute(array(
         ':id'=>$id
       ));
       $login_data = $getdata->fetchAll();
       foreach($login_data as $logdt) :
         $userlogin_id = $logdt['userlogin_id'];
+        $email = $logdt['email'];
       endforeach;
 
       $get_userdata = $this->db->prepare("SELECT password FROM user WHERE id = :id");
@@ -418,7 +439,26 @@ class buyer_model extends Model{
     ];
 
     return ($pagedata);
-*/      header('location: ../Buyer/Index');
+
+*/  
+      $to = $email;
+      $subject = "Email Subject";
+
+      $message = 'Dear '.$userlogin_id.',<br>';
+      $message .= "We welcome you to be part of family<br><br>";
+      $message .= "Regards,<br>";
+
+      // Always set content-type when sending HTML email
+     // $headers = "MIME-Version: 1.0" . "\r\n";
+     // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+      // More headers
+     // $headers .= 'From: <enquiry@example.com>' . "\r\n";
+      //$headers .= 'Cc: myboss@example.com' . "\r\n";
+
+      mail($to,$subject,$message);
+
+    header('location: ../Buyer/Index');
       }
     }
   }

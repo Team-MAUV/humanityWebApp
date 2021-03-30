@@ -26,23 +26,27 @@ include "sess_header.php"; ?>
 
 
 
-				<form method="post" action="media_upload" enctype="multipart/form-data">
+				<form method="post" action="run_media_upload" enctype="multipart/form-data">
 				<label for="id">Event-ID</label>
 			
 				<input type="text" class="field" placeholder="a " id="actID" name="actID">
 				<label for="id">Session incharge ID</label>
 			
 				<input type="text" class="field" placeholder="a " id="incharge_id" name="incharge_id">
-		
+				<label for="id">Date </label>
                 <input type="text" class="field" placeholder="Date:" id="date" name="date">
                 <input type="file" id="image" name="image" multiple>
 			
+
+			<!--multiple-->
 				<button class="btn" value="submit" onclick="return addvalidact();" >Submit</button>
 				</form>
 
-
+			
 			</div>
+			<p><?= $msg ?></p>
 		</div>
+		
 	</div>
 	<script>
 function addvalidact(){
@@ -52,27 +56,32 @@ function addvalidact(){
 	var filePath = fileInput.value;
 	var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 
-	if(actId == "")
+	if(actID == "")
 	{
      alert("Please enter Activity ID.");
      return false;
 	}
+	else{
+		if(incharge_id== ""){
+			  alert("Please enter inchargeid");
+              return false;
+		      }
 	else{
 		if(date== ""){
 			  alert("Please enter Date");
               return false;
 		      }
 		else{
-			if(myFile==NULL){
+			if(image==NULL){
 				alert("Please choose files");
               return false;
 			}
 
 	
 	    else{
-			  if(actId!==<?= $sin['vol_activityId'] ?>)
+			  if(actID==NULL)
 		   {
-            alert("Please enter correct Activity ID.");
+            alert("Please enter  Activity ID.");
 			return false;
 		   }
 		   else{
@@ -101,8 +110,10 @@ function addvalidact(){
 	        }
 }
 }	  
+	}
+	
+	}
 
-}
 </script>
     
 

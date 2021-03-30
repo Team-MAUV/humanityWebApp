@@ -237,6 +237,21 @@ class staff_Model extends Model
 
     return $pageData;
   }
+
+  public function view_reports(){
+    // The location of the PDF file
+  // on the server
+    $file = $_GET["file"];
+  
+      
+    // Header content type
+    header("Content-type: application/pdf");
+      
+    header("Content-Length: " . filesize($file));
+      
+    // Send the file to the browser.
+    readfile($file);
+  }
   public function update_product(){
     $pid = $_GET['prdid'];
     $st1 = $this->db->prepare('SELECT * FROM product WHERE id = :pid');
@@ -358,6 +373,7 @@ class staff_Model extends Model
 
   public function delete_product(){
     $pid = $_GET['prdid'];
+    $sid = $_SESSION['idp'];
     $check = $this->db->prepare('SELECT * FROM product WHERE id = :pid');
     $check ->execute(array(
       ':pid' => $pid
@@ -372,12 +388,15 @@ class staff_Model extends Model
     $bidstint=strtotime($bidstart);
     $crtimeint=strtotime($cr_time);
     if($bidstint > $crtimeint){
-      $st1 = $this->db->prepare("DELETE FROM product WHERE id = :pid");
+      $st1 = $this->db->prepare("UPDATE product SET availability = 0, staff_id = :sid WHERE id = :pid");
       $st1 ->execute(array(
-        ':pid' => $pid
+        ':pid' => $pid,
+        ':sid' => $sid
       ));
     }  
   }
+
+  
 public function requestleave(){
   if (!empty($_POST)) {
     $get_staffid = $this->db->prepare("SELECT id FROM staff WHERE staff_id= :staffid  ");

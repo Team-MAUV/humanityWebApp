@@ -34,14 +34,22 @@ class sessionIncharge extends Controller
 
     function media_upload()
     {
+        $msg="";
+        $pageData = [
 
-        
-       $msg_data=$this->model->media_upload();
+            'msg' => $msg
+          ];
+          $this->view->rendor('session_incharge/dashboard/media_upload',$pageData , true);
+        }
+
+function run_media_upload(){
+       $msg_data=$this->model->run_media_upload();
        $this->view->rendor('session_incharge/dashboard/media_upload',$msg_data , true);
     }
     function media_gallary()
     {
-        $this->view->rendor('session_incharge/dashboard/media_gallary');
+        $msg_data=$this->model->media_display();
+        $this->view->rendor('session_incharge/dashboard/media_gallary',$msg_data,true);
     }
     function marking_attendance()
     {
