@@ -24,7 +24,7 @@ include "staff_header.php"; ?>
 
 
 		<li>
-			Staff ID: <input type="text" name="staff_id" id="sid" value="<?= $_SESSION['id']?>" required>
+			 <input type="hidden" name="staff_id" id="sid" value="<?= $_SESSION['id']?>" required>
 		</li>
 		<li> Title: <input type="text" name="title" id="tid" required>
 		<li>

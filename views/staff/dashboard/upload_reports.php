@@ -45,7 +45,7 @@ $title = 'Project Reports'; ?>
     
         <li>Submitted By : <?= $scustomid ?></li>
                       <li> Submitted on: <?= $pending['created_date']  ?></li> </ul></div>
-                      <button class="dbtn"><a href="<?= $pending['report_path']  ?>" download="<?= $pending['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+                      <button class="dbtn"><a href="view_reports?file=public\<?= $pending['report_path']  ?>"><i class="fa fa-download"></i>View</a></button>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@ $title = 'Project Reports'; ?>
     <li>Approved By : <?= $ccustomid ?></li>
     <li>Approved By : <?= $report['approved_date']  ?></li>
 </ul>
-                <button class="dbtn"><a href="<?= $report['report_path'] ?>" download="<?= $report['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+                <button class="dbtn"><a href="view_reports?file=public\<?= $report['report_path']  ?>"><i class="fa fa-download"></i>View</a></button>
                     
                 </div>
             </div>
@@ -131,7 +131,7 @@ $title = 'Project Reports'; ?>
     
         <li>Submitted By : <?= $scustomid ?></li>
     <li>Rejected By : <?= $ccustomid ?></li>
-    <button class="dbtn"><a href="<?= $reject['report_path']  ?>" download="<?= $reject['report_id'] ?>"><i class="fa fa-download"></i> Download</a></button>
+    <button class="dbtn"><a href="view_reports?file=public\<?= $reject['report_path']  ?>"><i class="fa fa-download"></i> View</a></button>
     <li> Reject Reason: <?= $reject['remark'] ?></li>           </ul>
                 </div>
             </div>
