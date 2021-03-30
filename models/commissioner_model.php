@@ -68,6 +68,33 @@ class commissioner_Model extends Model
 
 
   }
+
+  public function delete_staff(){
+    $stf_id =$_GET['id'];
+    $st = $this->db->prepare("SELECT * FROM staff WHERE id= :stf_id");
+
+        $st->execute(array(
+          ':stf_id' => $stf_id
+        ));
+        $contacts = $st->fetchAll();
+        $count = $st->rowCount();
+        if ($count > 0) {
+            foreach ($contacts as $contact) :
+                    $usr=$contact['userlogin_id'];
+            endforeach;
+          }
+            $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
+            $stmt->execute(array(
+              ':usr' => $usr
+             ));
+            //  echo "Updated successfully!";
+             header('location: ../Commissioner/staff');
+        
+          
+
+
+
+  }
   public function run_search_volunteer(){
 
         $st = $this->db->prepare("SELECT * FROM volunteer WHERE vol_id= :vol_id");

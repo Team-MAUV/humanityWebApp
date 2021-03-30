@@ -92,7 +92,7 @@ include "com-dash-header.php"; ?>
       
 
                 <td class="actions">
-                      <a href="delete.php?id=<?= $scontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                      <a href="delete_staff?id=<?= $csontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
