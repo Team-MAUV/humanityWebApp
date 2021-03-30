@@ -181,7 +181,7 @@ input[type=reset]:hover {
     </div>
     <div class="row">
   <br>   </div>
-    <button class="submit" value="Submit" onclick="return addvalidprd();">
+    <button class="Submit" value="Submit" onclick="return addvalidprd();">
     <p style="font-weight: 800;"> Submit</p>
             </button>
   </form>
