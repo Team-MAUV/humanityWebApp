@@ -40,9 +40,11 @@ include "sess_header.php"; ?>
 				<button class="btn" value="submit" onclick="return addvalidact();" >Submit</button>
 				</form>
 
-
+			
 			</div>
+			<p><?= $msg ?></p>
 		</div>
+		
 	</div>
 	<script>
 function addvalidact(){
@@ -52,27 +54,32 @@ function addvalidact(){
 	var filePath = fileInput.value;
 	var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 
-	if(actId == "")
+	if(actID == "")
 	{
      alert("Please enter Activity ID.");
      return false;
 	}
+	else{
+		if(incharge_id== ""){
+			  alert("Please enter inchargeid");
+              return false;
+		      }
 	else{
 		if(date== ""){
 			  alert("Please enter Date");
               return false;
 		      }
 		else{
-			if(myFile==NULL){
+			if(image==NULL){
 				alert("Please choose files");
               return false;
 			}
 
 	
 	    else{
-			  if(actId!==<?= $sin['vol_activityId'] ?>)
+			  if(actID==NULL)
 		   {
-            alert("Please enter correct Activity ID.");
+            alert("Please enter  Activity ID.");
 			return false;
 		   }
 		   else{
@@ -101,8 +108,10 @@ function addvalidact(){
 	        }
 }
 }	  
+	}
+	
+	}
 
-}
 </script>
     
 
