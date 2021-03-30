@@ -46,7 +46,7 @@ h2 {
     margin-left: 2vw;
     margin-right: 2vw;
     position: absolute;
-    color:yellow;
+    color: yellow;
     margin-top: 3vh;
 }
 
@@ -95,12 +95,13 @@ h2 {
 }
 
 .flipbox-back {
-    background-color:  rgb(6, 59, 112);
+    background-color: rgb(6, 59, 112);
     color: rgb(5, 5, 5);
     transform: rotateY(180deg);
 }
-.acc{
-    background-color: yellow; 
+
+.acc {
+    background-color: yellow;
     border: none;
     color: #004883;
     padding: 8px 12px;
@@ -109,8 +110,9 @@ h2 {
     display: inline-block;
     font-size: 16px;
 }
-.readmore{
-    background-color: yellow; 
+
+.readmore {
+    background-color: yellow;
     border: none;
     color: #004883;
     padding: 8px 12px;
@@ -119,17 +121,20 @@ h2 {
     display: inline-block;
     font-size: 16px;
 }
-#view{
-    padding: 0 18px;
+
+.flipbox-inner .flipbox-back .confirm .view {
+    padding: 10px 18px;
     display: none;
     overflow: hidden;
-   
     width: 100%;
     margin-left: 0vw;
     margin-right: 10vh;
     color: black;
 }
 
+#reason {
+    padding: 5px 10px;
+}
 
 .btn {
     background-color: rgb(86, 88, 233);
@@ -217,14 +222,7 @@ a:hover {
     font-weight: 800;
     font-size: 1.3rem;
     margin-top: 1vh;
-
 }
-
-    
-
-
-
-
 
 @media screen and (max-width: 900px) {
     .column {

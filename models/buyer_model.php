@@ -241,14 +241,14 @@ class buyer_model extends Model{
             ));
             $bidmsg = "ERROR!! Your bid is not added!!!";
           }else{
-            $bidmsg = "bid added";
+            $bidmsg = "Your Bid Is Added!! Keep In Touch!";
           }
         }
       }else{
-        $bidmsg = "invalid bid amount";
+        $bidmsg = "Invalid Bid Amount!! Please Check Again !!!";
       }
     }else{
-      $bidmsg = "no data";
+      $bidmsg = "Sorry!! Bidding is not cruntly available. Keep In Touch! ";
     }
 
     $pagedata = [
