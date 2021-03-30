@@ -1,5 +1,6 @@
 <?php $page = 'home';
-include "buyer_header.php"; ?>
+include "buyer_header.php"; 
+$style = 'buy-pages.css'?>
 <!Doctype html>
 <html>
 
@@ -19,15 +20,35 @@ include "buyer_header.php"; ?>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<style>
+.errormsg {
+    margin: 300px;
+    align-items:center;
+}
+p {
+    font-size: 40px;
+    font-color: green;
+}
+
+button {
+    background-color: #254d35;
+    color:white;
+    font-size:20px;
+}
+button :hover{
+    background-color: green;
+}
+
+</style>
 </head>
 <body>
-<div class="errordiv" style="margin: 300px;">
-    <p><?= $bidmsg ?></p>
-    <a href="<?= URL?>buyer/index"><button type="button" >
+<div class="errormsg"> 
+    <p class = "bidmsg"><?= $bidmsg ?></p>
+    <a href="<?= URL?>buyer/index"><button type="button" class = "btn">
         Back to the market
             </button></a> 
+   
 </div>
-
 </body> 
 <?php include "buyer_footer.php" ?>
 
