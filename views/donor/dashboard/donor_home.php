@@ -97,7 +97,10 @@ include "don_dash_header.php"; ?>
                                            <button type="submit" class="donate-btn">Donate</button>
                                         
                                          </div>
-                                    </form>
+                </form>
+
+                
+               <a href="Report/receipt">Gen Report</a>
 
                      
 
