@@ -92,7 +92,14 @@ include "com-dash-header.php"; ?>
       
 
                 <td class="actions">
-                      <a href="delete.php?id=<?= $scontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                <form action="delete_staff" method="POST">
+  
+                  <input type="hidden" id="id" name="id" value = "<?= $scontact['id'] ?>" required><br><br>
+                  <label for="lname">Remark:</label>
+                  <input type="text" id="remark" name="remark" required><br><br>
+                  <button type="submit" value="Submit"><i class="fas fa-trash fa-xs"></i></button>
+                </form>
+                      
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -143,6 +150,36 @@ include "com-dash-header.php"; ?>
                   <a href="update.php?id=<?= $sreq['id'] ?>" class="edit">Decline</i></a>
                  
                 </td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+<h2>Removed Staff Members</h2>
+        <table>
+          <thead>
+            <tr>
+              <td>Staff Id</td>
+              <td>Name</td>
+              <td>Email</td>
+              <td>Contact</td>
+              <td>Com Id</td>
+              <td>Remark</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+
+            <?php foreach ($rstff as $stf) : ?>
+              <tr>
+                 
+                <td><?= $stf['staff_id'] ?></td>
+                <td><?= $stf['name'] ?></td>
+                <td><?= $stf['email'] ?></td>
+                <td><?= $stf['contact'] ?></td>
+                <td><?= $stf['com_id'] ?></td>
+                <td><?= $stf['remove_reson'] ?></td>
+             
+                
               </tr>
             <?php endforeach; ?>
           </tbody>
