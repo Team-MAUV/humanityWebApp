@@ -26,17 +26,19 @@ include "sess_header.php"; ?>
 
 
 
-				<form method="post" action="media_upload" enctype="multipart/form-data">
+				<form method="post" action="run_media_upload" enctype="multipart/form-data">
 				<label for="id">Event-ID</label>
 			
 				<input type="text" class="field" placeholder="a " id="actID" name="actID">
 				<label for="id">Session incharge ID</label>
 			
 				<input type="text" class="field" placeholder="a " id="incharge_id" name="incharge_id">
-		
+				<label for="id">Date </label>
                 <input type="text" class="field" placeholder="Date:" id="date" name="date">
                 <input type="file" id="image" name="image" multiple>
 			
+
+			<!--multiple-->
 				<button class="btn" value="submit" onclick="return addvalidact();" >Submit</button>
 				</form>
 
