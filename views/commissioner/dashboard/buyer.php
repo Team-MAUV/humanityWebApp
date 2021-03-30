@@ -40,17 +40,17 @@ include "com-dash-header.php"; ?>
 
     <div id="tab1C" class="tab-container">
   
-          <div class="content read">
+      <div class="content read">
           
         <div class="search-container">
           <form action="search_buyer" method="POST">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
-          </div>
-            <table>
-              <thead>
-              <tr>
+        </div>
+        <table>
+          <thead>
+            <tr>
               <td>#</td>
               <td>Buyer ID</td>
               <td>Name</td>
@@ -60,8 +60,8 @@ include "com-dash-header.php"; ?>
               <td>Bids Won </td>
               <td></td>
             </tr>
-              </thead>
-              <tbody>
+          </thead>
+        <tbody>
 
                 <?php foreach ($bcontacts as $bcontact) : ?>
                   <tr>
@@ -72,7 +72,7 @@ include "com-dash-header.php"; ?>
                     <td><?= $bcontact['contact'] ?></td>
                     <td><?= $bcontact['nic'] ?></td>
                     <td>      <button type="button" class="readmore"> 5 </button>
-  <div class="view" id="view">
+                <div class="view" id="view">
                
                 <p> Plastic- 50kg-20.11.2020 </p>
                 <p>Papers-100kg-11.05.2020 </p>
@@ -80,7 +80,7 @@ include "com-dash-header.php"; ?>
                 
                 </div>  </td>
 
-</div>
+      </div>
 
 
 
@@ -89,8 +89,13 @@ include "com-dash-header.php"; ?>
 
 
                     <td class="actions">
-                     
-                      <a href="delete.php?id=<?= $bcontact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                    <form action="delete_buyer" method="POST">
+  
+                        <input type="hidden" id="id" name="id" value = "<?= $bcontact['id'] ?>" required><br><br>
+                        <label for="lname">Remark:</label>
+                        <input type="text" id="remark" name="remark" required><br><br>
+                        <button type="submit" value="Submit"><i class="fas fa-trash fa-xs"></i>Remove</button>
+                      </form>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -108,11 +113,42 @@ include "com-dash-header.php"; ?>
 
            
             </div>
-          </div>
+            <h2>Removed Buyers </h2>
+        <table>
+          <thead>
+            <tr>
+              <td>Buyer Id</td>
+              <td>Name</td>
+              <td>Email</td>
+              <td>Contact</td>
+              <td>Com Id</td>
+              <td>Remark</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
 
+            <?php foreach ($rbuy as $buy) : ?>
+              <tr>
+                 
+                <td><?= $buy['buy_id'] ?></td>
+                <td><?= $buy['name'] ?></td>
+                <td><?= $buy['email'] ?></td>
+                <td><?= $buy['contact'] ?></td>
+                <td><?= $buy['del_com'] ?></td>
+                <td><?= $buy['remove_reson'] ?></td>
+             
+                
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+          </div>
+          
 
     </div>
-
+    
+    
     
 
   </div>

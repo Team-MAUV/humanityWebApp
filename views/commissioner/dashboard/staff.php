@@ -97,7 +97,7 @@ include "com-dash-header.php"; ?>
                   <input type="hidden" id="id" name="id" value = "<?= $scontact['id'] ?>" required><br><br>
                   <label for="lname">Remark:</label>
                   <input type="text" id="remark" name="remark" required><br><br>
-                  <button type="submit" value="Submit"><i class="fas fa-trash fa-xs"></i></button>
+                  <button type="submit" value="Submit"><i class="fas fa-trash fa-xs"></i>Remove</button>
                 </form>
                       
                     </td>

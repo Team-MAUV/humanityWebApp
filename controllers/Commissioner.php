@@ -90,6 +90,9 @@ class Commissioner extends Controller
     function delete_staff(){
         $this->model->delete_staff();
     }
+    function delete_buyer(){
+        $this->model->delete_buyer();
+    }
     function buyer()
     {
         $data = $this->model->get_reg_buyer_profiles();
