@@ -136,6 +136,37 @@ class commissioner_Model extends Model
              header('location: ../Commissioner/buyer');
         
   }
+  public function delete_donor(){
+    
+    $don_id =$_POST['id'];
+    $remark = $_POST['remark'];
+    $com_id=$_SESSION['idp'];
+    $st = $this->db->prepare("SELECT * FROM donor WHERE id= :don_id");
+
+        $st->execute(array(
+          ':don_id' => $don_id
+        ));
+        $contacts = $st->fetchAll();
+        $count = $st->rowCount();
+        if ($count > 0) {
+            foreach ($contacts as $contact) :
+                    $usr=$contact['userlogin_id'];
+            endforeach;
+          }
+            $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
+            $stmt->execute(array(
+              ':usr' => $usr
+             ));
+             $st2 = $this->db->prepare("UPDATE donor SET remove_reson = :reson, del_com = :comid WHERE id= :don_id");
+             $st2->execute(array(
+              ':reson' => $remark,
+              'don_id' =>$don_id,
+              'comid' => $com_id
+             ));
+            //  echo "Updated successfully!";
+             header('location: ../Commissioner/donor');
+        
+  }
   public function run_search_volunteer(){
 
         $st = $this->db->prepare("SELECT * FROM volunteer WHERE vol_id= :vol_id");
@@ -200,7 +231,7 @@ class commissioner_Model extends Model
     return ($pageData);
 }
 public function get_reg_buyer_profiles() {
-  //Volunteer Profiles
+  //buyer Profiles
   $st = $this->db->prepare('SELECT * FROM buyer WHERE userlogin_id IS NOT NULL ORDER BY id LIMIT :current_page, :record_per_page');
   // Get the page via GET request (URL param: page), if non exists default the page to 1
   $bpage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -229,8 +260,8 @@ public function get_reg_buyer_profiles() {
   return ($pageData);
 }
 public function get_reg_donor_profiles() {
-  //Volunteer Profiles
-  $st = $this->db->prepare('SELECT * FROM donor  ORDER BY id LIMIT :current_page, :record_per_page');
+  //buyer Profiles
+  $st = $this->db->prepare('SELECT * FROM donor WHERE userlogin_id IS NOT NULL ORDER BY id LIMIT :current_page, :record_per_page');
   // Get the page via GET request (URL param: page), if non exists default the page to 1
   $dpage_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -244,6 +275,9 @@ public function get_reg_donor_profiles() {
   $dcontacts = $st->fetchAll();
 
   
+  $st2 = $this->db->prepare('SELECT * FROM donor WHERE userlogin_id IS NULL');
+  $st2->execute();
+  $rdon = $st2->fetchAll();
 
   //All the data that has to be return from this functon is added to an associative array
   $pageData = [
@@ -251,7 +285,7 @@ public function get_reg_donor_profiles() {
     'records_per_page' => $records_per_page,
     'dcontacts' => $dcontacts,
     'dnum_contacts' => $dnum_contacts,
-    
+    'rdon' => rdon
   ];
   return ($pageData);
 }

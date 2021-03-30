@@ -93,6 +93,9 @@ class Commissioner extends Controller
     function delete_buyer(){
         $this->model->delete_buyer();
     }
+    function delete_donor(){
+        $this->model->delete_donor();
+    }
     function buyer()
     {
         $data = $this->model->get_reg_buyer_profiles();
