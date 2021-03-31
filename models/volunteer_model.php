@@ -25,9 +25,10 @@ class volunteer_Model extends Model
   
       public function confirmparticipants()
       {
-          
-            $stat = "1";
-           ;
+          $msg='';
+          $msg='';
+            $stat = 1;
+           
             $id=$_GET['id'];
             $vid=Session::get('id');
             // echo $id;
@@ -40,19 +41,19 @@ class volunteer_Model extends Model
 
             foreach ($vol_details as $usr) :
             $v_id = $usr['id'];
-            
-            $st = $this->db->prepare("INSERT INTO  mark_attendance SET activity_id=:actid,vol_id=:vid, confirm=:stat " );
+            endforeach;
+            $st = $this->db->prepare("INSERT INTO  marking_attendance SET activity_id=:actid,vol_id=:vid, confirm=:stat" );
             $st->execute(array(
               ':actid'=>$id,
-              ':vid'=>$vid,
-              ':stat'=>  $stat
-              
+              ':vid'=>$v_id,
+              ':stat'=> $stat,
             ));
-          endforeach;
-            echo "Updated successfully!";
-          
-
+        
+        $msg = " submitted successfully!";
+          //  header('location: ../get_vol_activity_list');
+            return ($msg);
       }
+
 
 
 

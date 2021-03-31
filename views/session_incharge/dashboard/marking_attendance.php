@@ -132,9 +132,9 @@ background-color:gray;
         <?php foreach ($confirm as $confir) : ?>
         <tr>
       
-            <td><?= $confir['vol_id'] ?>  </td>
+            <td><?= $confir['volun_id'] ?>  </td>
            
-            <td>  <input type="checkbox" id="present" name="present" value="present" class="present"></td>
+            <td>     </td>
             
            
         </tr>
@@ -142,9 +142,8 @@ background-color:gray;
 	
         </tbody>
     </table>
-	<form action="add_mark_attendance" method="post" onsubmit="return confirm('Do you really want to submit the form?');">
-	<input class="button" type="submit"> </input>
-	</form>
+
+
 
 </body>
 
