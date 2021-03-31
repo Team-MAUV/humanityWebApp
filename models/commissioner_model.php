@@ -1151,6 +1151,195 @@ class commissioner_Model extends Model
       }
 
   
+      public function run_accept_leaverequest()
+      {
+        
+        
+              $approve="approved";
+              $id=$_GET['id'];
+              $cid=Session::get('id');
+              // echo $id;
+
+              $st1 = $this->db->prepare("SELECT id FROM commissioner WHERE com_id=:cid");
+              $st1->execute(array(
+                ':cid'=>$cid,
+              ));
+              $com_details = $st1->fetchAll();
+
+              foreach ($com_details as $usr) :
+              $c_id = $usr['id'];
+              
+              $st = $this->db->prepare("UPDATE leave_request SET com_id=:cid, status=:stat WHERE leave_id=:leav_id " );
+              $st->execute(array(
+                ':cid'=>$c_id,
+                ':stat'=>  $approve,
+                ':leav_id'=>$id
+              ));
+            endforeach;
+              echo "Updated successfully!";
+           
+
+
+             
+
+             
+          
+            
+
+            //Sending Email To the staff
+
+            $st2 = $this->db->prepare("SELECT staff_id FROM leave_request WHERE leave_id=:leav_id");
+              $st2->execute(array(
+                ':leav_id'=>$id,
+              ));
+              $stf_ids = $st2->fetchAll();
+
+              foreach ($stf_ids as $stf) :
+                $s_id = $stf['staff_id'];
+              endforeach;
+
+             
+
+              $st3 = $this->db->prepare("SELECT * FROM staff WHERE id=:s_id");
+              $st3->execute(array(
+                ':s_id' => $s_id
+              ));
+              $stf_details = $st3->fetchAll();
+
+              foreach ($stf_details as $susr) :
+                $stf_email = $susr['email'];
+                $stf_name = $susr['name'];
+              endforeach;
+
+              
+   
+
+              $to = $stf_email;
+                $subject = 'Your Leave approved!';
+                $rec_name = $stf_name;
+
+              
+
+                $message = '<h5> Hello '.$rec_name.', </h5>
+                <p> We are delighted to inform you that, your Leave Request '.$id.' has been approved by Tzu Chi Foundation. Thank you! </p>';
+
+
+                $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+                $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+                $headers .= "Content-type: text/html\r\n";
+
+                Email::email_send($to,$rec_name, $subject, $message, $headers);
+
+               
+      }
+
+
+      public function run_reject_leaverequest()
+      {
+          
+        
+          $status="rejected";
+          $id=$_POST['lea_id'];
+          $reason=$_POST['reason'];
+          // $reason=$_GET['reason'];
+          $cid=Session::get('id');
+          // echo $id;
+
+          $st1 = $this->db->prepare("SELECT id FROM commissioner WHERE com_id=:cid");
+          $st1->execute(array(
+            ':cid'=>$cid,
+          ));
+          $com_details = $st1->fetchAll();
+
+          foreach ($com_details as $usr) :
+          $c_id = $usr['id'];
+          
+          $st = $this->db->prepare("UPDATE leave_request SET com_id=:cid, status=:status, reject_reason=:reason WHERE leave_id=:leav_id " );
+          $st->execute(array(
+            ':cid'=>$c_id,
+            ':status'=>  $status,
+            ':leav_id'=>$id,
+            ':reason'=>$reason,
+          ));
+        endforeach;
+          echo "Updated successfully!";
+          // header('location: ../Commissioner/beneficiaryCases');
+
+
+         
+
+         
+      
+        
+
+        //Sending Email To the staff
+
+        $st2 = $this->db->prepare("SELECT staff_id FROM leave_request WHERE leave_id=:leav_id");
+          $st2->execute(array(
+            ':leav_id'=>$id
+          ));
+          $stf_ids = $st2->fetchAll();
+
+          foreach ($stf_ids as $stf) :
+            $s_id = $stf['staff_id'];
+          endforeach;
+
+         
+
+          $st3 = $this->db->prepare("SELECT * FROM staff WHERE id=:s_id");
+          $st3->execute(array(
+            ':s_id' => $s_id
+          ));
+          $stf_details = $st3->fetchAll();
+
+          foreach ($stf_details as $susr) :
+            $stf_email = $susr['email'];
+            $stf_name = $susr['name'];
+          endforeach;
+
+          
+
+
+          $to = $stf_email;
+            $subject = 'Your leave request was rejected!';
+            $rec_name = $stf_name;
+
+          
+
+            $message = '<h5> Hello '.$rec_name.', </h5>
+            <p> We are sorry to inform you that, your leave request '.$id.' has been rejected by Tzu Chi Foundation due to '.$reason.' Thank you and we are looking forward to help! </p>';
+
+
+            $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+            $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+            $headers .= "Content-type: text/html\r\n";
+
+            Email::email_send($to,$rec_name, $subject, $message, $headers);
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       public function projectReports(){
 
