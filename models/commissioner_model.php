@@ -310,6 +310,67 @@ class commissioner_Model extends Model
 
       }
 
+      public function run_reject_vol_request()
+      {
+          
+        
+          $status=2;
+          $id=$_POST['vol_id'];
+          $reason=$_POST['reason'];
+          
+          $st = $this->db->prepare("UPDATE volunteer SET status=:status, reject_reason=:reason WHERE id=:vol_id " );
+          $st->execute(array(
+            ':status'=>  $status,
+            ':vol_id'=>$id,
+            ':reason'=>$reason,
+          ));
+          echo "Updated successfully!";
+          // header('location: ../Commissioner/beneficiaryCases');
+
+
+         
+
+         
+      
+        
+
+        //Sending Email To the Volunteer
+
+         
+
+          $st3 = $this->db->prepare("SELECT * FROM volunteer WHERE id=:vol_id");
+          $st3->execute(array(
+            ':vol_id'=>$id,
+          ));
+          $vol_details = $st3->fetchAll();
+
+          foreach ($vol_details as $susr) :
+            $vol_email = $susr['email'];
+            $vol_name = $susr['name'];
+          endforeach;
+
+          
+
+
+          $to = $vol_email;
+            $subject = 'Your request to become a volunteer was rejected!';
+            $rec_name = $vol_name;
+
+          
+
+            $message = '<h5> Hello '.$rec_name.', </h5>
+            <p> We are sorry to inform you that, your request to become a volunteer has been rejected by Tzu Chi Foundation due to '.$reason.' Thank you for your effort and we are looking forward to help! </p>';
+
+
+            $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+            $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+            $headers .= "Content-type: text/html\r\n";
+
+            Email::email_send($to,$rec_name, $subject, $message, $headers);
+
+
+      }
+
 
 
       public function get_images_display()

@@ -70,6 +70,9 @@ class Commissioner extends Controller
     function run_accept_vol_request(){
         $this->model->run_accept_vol_request();
     }
+    function run_reject_vol_request(){
+        $this->model->run_reject_vol_request();
+    }
 
     function vol_activities(){
         $this->view->rendor('commissioner/dashboard/vol_activities');  
