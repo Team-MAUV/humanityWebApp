@@ -23,12 +23,7 @@ include "com-dash-header.php"; ?>
 
 <div class="content read">
           <h1>Request Leaves </h1>
-          <div class="search-container">
-            <form action="search_leaverequest" method="POST">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-            </div>
+      
 
 <div class="date-wise">
   <button type="button" class:"button" id:"approved" onclick="openForm()"> Approved Leaves </button>
@@ -151,19 +146,6 @@ include "com-dash-header.php"; ?>
 
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -50,12 +50,7 @@ include "com-dash-header.php"; ?>
 
     <div class="content read">
           
-          <div class="search-container">
-            <form action="search_volunteer" method="POST">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-            </div>
+        
               <table>
                 <thead>
                 <tr>
@@ -180,7 +175,7 @@ include "com-dash-header.php"; ?>
                 <?= $ccustomid ?></td>
               <td></td>
               <td>    <button type="button">  
-          <a href="view_reports?file=public\<?= $finish['case_path'] ?>"><i class="fa fa-download"></i>  Download </a>   
+          <a href="view_reports?file=public\<?= $finish['case_path'] ?>"><i class="fa fa-download" target="_blank"></i>  Download </a>   
       </button>
       </td>
 

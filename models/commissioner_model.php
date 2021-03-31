@@ -478,7 +478,8 @@ class commissioner_Model extends Model
 
                 foreach ($com_details as $usr) :
                 $c_id = $usr['id'];
-                
+                endforeach;
+
                 $st = $this->db->prepare("UPDATE beneficiery_case SET com_id=:cid, status=:stat, approval=:approve,start_date=CURRENT_TIMESTAMP WHERE beneficiery_id=:bene_id " );
                 $st->execute(array(
                   ':cid'=>$c_id,
@@ -486,9 +487,9 @@ class commissioner_Model extends Model
                   ':approve' => $approve,
                   ':bene_id'=>$id,
                 ));
-              endforeach;
+            
                 echo "Updated successfully!";
-                // header('location: ../Commissioner/beneficiaryCases');
+                header('location: ../Commissioner/beneficiaryCases');
 
 
                
@@ -575,7 +576,7 @@ class commissioner_Model extends Model
           ));
         endforeach;
           echo "Updated successfully!";
-          // header('location: ../Commissioner/beneficiaryCases');
+          header('location: ../Commissioner/beneficiaryCases');
 
 
          
@@ -1168,16 +1169,16 @@ class commissioner_Model extends Model
 
               foreach ($com_details as $usr) :
               $c_id = $usr['id'];
-              
+              endforeach;
               $st = $this->db->prepare("UPDATE leave_request SET com_id=:cid, status=:stat WHERE leave_id=:leav_id " );
               $st->execute(array(
                 ':cid'=>$c_id,
                 ':stat'=>  $approve,
                 ':leav_id'=>$id
               ));
-            endforeach;
+            
               echo "Updated successfully!";
-           
+              header('location: ../Commissioner/leaveRequests');
 
 
              
@@ -1221,7 +1222,7 @@ class commissioner_Model extends Model
               
 
                 $message = '<h5> Hello '.$rec_name.', </h5>
-                <p> We are delighted to inform you that, your Leave Request '.$id.' has been approved by Tzu Chi Foundation. Thank you! </p>';
+                <p> We are delighted to inform you that, your Leave Request has been approved by Tzu Chi Foundation. Thank you! </p>';
 
 
                 $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
@@ -1253,7 +1254,8 @@ class commissioner_Model extends Model
 
           foreach ($com_details as $usr) :
           $c_id = $usr['id'];
-          
+          endforeach;
+
           $st = $this->db->prepare("UPDATE leave_request SET com_id=:cid, status=:status, reject_reason=:reason WHERE leave_id=:leav_id " );
           $st->execute(array(
             ':cid'=>$c_id,
@@ -1261,9 +1263,9 @@ class commissioner_Model extends Model
             ':leav_id'=>$id,
             ':reason'=>$reason,
           ));
-        endforeach;
+       
           echo "Updated successfully!";
-          // header('location: ../Commissioner/beneficiaryCases');
+          header('location: ../Commissioner/leaveRequests');
 
 
          
