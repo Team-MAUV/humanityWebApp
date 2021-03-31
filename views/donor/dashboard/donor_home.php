@@ -100,7 +100,7 @@ include "don_dash_header.php"; ?>
                 </form>
 
                 
-               <a href="Report/receipt">Gen Report</a>
+               <a href="Report/receipt" target="_blank">Gen Report</a>
 
                      
 
