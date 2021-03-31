@@ -72,8 +72,8 @@ class commissioner_Model extends Model
                   $st2 = $this->db->prepare("UPDATE volunteer SET remove_reson = :reson WHERE id= :vol_id");
                   $st2->execute(array(
                    ':reson' => $remark,
-                   'vol_id' =>$vol_id,
-                   'comid' => $com_id
+                   'vol_id' =>$vol_id
+                   
                   ));
                   //  echo "Updated successfully!";
                   header('location: ../Commissioner/volunteer');
@@ -1417,4 +1417,100 @@ class commissioner_Model extends Model
       }
 
     }
+
+    public function delete_donor(){
+
+      $don_id =$_POST['id'];
+      $remark = $_POST['remark'];
+      $com_id=$_SESSION['idp'];
+      $st = $this->db->prepare("SELECT * FROM donor WHERE id= :don_id");
+
+          $st->execute(array(
+            ':don_id' => $don_id
+          ));
+          $contacts = $st->fetchAll();
+          $count = $st->rowCount();
+          if ($count > 0) {
+              foreach ($contacts as $contact) :
+                      $usr=$contact['userlogin_id'];
+              endforeach;
+            }
+              $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
+              $stmt->execute(array(
+                ':usr' => $usr
+               ));
+               $st2 = $this->db->prepare("UPDATE donor SET remove_reson = :reson, del_com = :comid WHERE id= :don_id");
+               $st2->execute(array(
+                ':reson' => $remark,
+                'don_id' =>$don_id,
+                'comid' => $com_id
+               ));
+              //  echo "Updated successfully!";
+               header('location: ../Commissioner/donor');
+
+    }
+    public function delete_staff(){
+      $stf_id =$_POST['id'];
+      $remark = $_POST['remark'];
+      $com_id=$_SESSION['idp'];
+
+      $st = $this->db->prepare("SELECT * FROM staff WHERE id= :stf_id");
+
+          $st->execute(array(
+            ':stf_id' => $stf_id
+          ));
+          $contacts = $st->fetchAll();
+          $count = $st->rowCount();
+          if ($count > 0) {
+              foreach ($contacts as $contact) :
+                      $usr=$contact['userlogin_id'];
+              endforeach;
+            }
+              $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
+              $stmt->execute(array(
+                ':usr' => $usr
+               ));
+               $st2 = $this->db->prepare("UPDATE staff SET remove_reson = :reson, com_id = :comid, status = 'deleted' WHERE id= :stf_id");
+               $st2->execute(array(
+                ':reson' => $remark,
+                'stf_id' =>$stf_id,
+                'comid' => $com_id
+               ));
+              //  echo "Updated successfully!";
+               header('location: ../Commissioner/staff');
+    }
+
+    public function delete_buyer(){
+
+      $buy_id =$_POST['id'];
+      $remark = $_POST['remark'];
+      $com_id=$_SESSION['idp'];
+      $st = $this->db->prepare("SELECT * FROM buyer WHERE id= :buy_id");
+
+          $st->execute(array(
+            ':buy_id' => $buy_id
+          ));
+          $contacts = $st->fetchAll();
+          $count = $st->rowCount();
+          if ($count > 0) {
+              foreach ($contacts as $contact) :
+                      $usr=$contact['userlogin_id'];
+              endforeach;
+            }
+              $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
+              $stmt->execute(array(
+                ':usr' => $usr
+               ));
+               $st2 = $this->db->prepare("UPDATE buyer SET remove_reson = :reson, del_com = :comid WHERE id= :buy_id");
+               $st2->execute(array(
+                ':reson' => $remark,
+                'buy_id' =>$buy_id,
+                'comid' => $com_id
+               ));
+              //  echo "Updated successfully!";
+               header('location: ../Commissioner/buyer');
+
+    }
+
+
   }
