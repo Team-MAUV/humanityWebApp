@@ -63,12 +63,11 @@ include "com-dash-header.php"; ?>
               <td>Volunteer ID</td>
               <td>Name</td>
               <td>Volunteer Level</td>
-              <td>Conact</td>
+    
               <td>Email</td>
               <td>Points</td>
-              <td>Joined Date</td>
-              <td>Gender</td>
-              <td> Events </td>
+          
+             
               <td></td>
             </tr>
               </thead>
@@ -80,16 +79,11 @@ include "com-dash-header.php"; ?>
                     <td><?= $contact['vol_id'] ?></td>
                     <td><?= $contact['name'] ?></td>
                     <td><?= $contact['level'] ?></td>
-                    <td><?= $contact['contact'] ?></td>
                     <td><?= $contact['email'] ?></td>
                     <td><?= $contact['vol_points'] ?></td>
-                    <td><?= $contact['join_date'] ?></td>
-                    <td><?= $contact['gender'] ?></td>
-                <td>
-                <a href="<?= URL?>commissioner/vol_activities">   <button type="button" class="readmore"> <i class="fa fa-external-link"></i>
-                    </button> </a>
-  
-                </td>
+                   
+                 
+               
      
                 <td class="actions">
                 <form action="delete_volunteer" method="POST">
@@ -162,8 +156,7 @@ include "com-dash-header.php"; ?>
               <td>Volunteer Id</td>
               <td>Name</td>
               <td>Email</td>
-              <td>Contact</td>
-              <td>NIC</td>
+             
               <td>Address</td>
               <td>Remark</td>
               <td></td>
@@ -177,8 +170,7 @@ include "com-dash-header.php"; ?>
                 <td><?= $vol['vol_id'] ?></td>
                 <td><?= $vol['name'] ?></td>
                 <td><?= $vol['email'] ?></td>
-                <td><?= $vol['contact'] ?></td>
-                <td><?= $vol['nic'] ?></td>
+               
                 <td><?= $vol['address'] ?></td>
                 <td><?= $vol['remove_reson'] ?></td>
              

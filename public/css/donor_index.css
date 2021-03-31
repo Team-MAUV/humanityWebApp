@@ -24,68 +24,84 @@ body {
 /*====================nav bar================*/
 
 .nav-bar {
-  position: fixed;
   grid-area: nav-bar;
-  display: grid;
-  left: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
   top: 0;
-  width: 100vw;
-  grid-template-columns: 250px 60% 40%;
-  grid-template-areas: "logo-container title-name dropdown";
+  width: 100%;
   background-color: #e82563;
-  height: 6vh;
+  height: 3rem;
   z-index: 10;
 }
 
 .logo-container {
   display: flex;
-  width: 100%;
-  height: 50px;
-  grid-area: logo-container;
+  height: 3rem;
 }
 
 .logo {
-  height: 50px;
-  width: 98px;
-  margin-left: 70px;
-  z-index: 10;
+  height: 3rem;
+  width: 6rem;
+  z-index: 1;
+  margin-left: 2rem;
   background-image: url("../images/hlogoxs.png");
 }
 
 .title-name {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 35px;
-  grid-area: title-name;
+  width: auto;
+  height: 3rem;
 }
 
 .tzu-logo {
-  width: 82px;
-
-  background: url(../images/tzuChiLogo.png);
+  position: relative;
+  right: 2rem;
+  width: 5rem;
+  background: url("../images/tzuChiLogo.png");
+  z-index: 11;
 }
-
 .logo-name {
   display: flex;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.2vw;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.4rem;
   text-transform: uppercase;
   line-height: 3rem;
   text-align: center;
+  z-index: 1;
 }
 
 .logo-name span {
   font-weight: 200;
 }
 
+.log-sign {
+  width: auto;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.log-sign a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.7rem;
+  margin-left: 1rem;
+  transition: 0.3s;
+}
+
 .dropdown {
   display: flex;
+  width: auto;
   justify-content: center;
-  align-items: right;
+  align-items: left;
+  margin-right: 2rem;
   grid-area: dropdown;
   float: right;
   overflow: hidden;
@@ -93,6 +109,7 @@ body {
 
 .dropdown .dropbtn {
   font-size: 17px;
+  width: auto;
   border: none;
   outline: none;
   color: white;
@@ -109,7 +126,7 @@ body {
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: 1;
 }
 
 .dropdown-content a {
@@ -122,12 +139,12 @@ body {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #e82563;
+  background-color: rgb(7, 112, 199);
   color: white;
 }
 
 .dropdown-content a:hover {
-  background-color: #e82563;
+  background-color: #004883;
   color: rgb(255, 255, 255);
 }
 

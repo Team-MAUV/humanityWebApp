@@ -7,20 +7,12 @@ include "don_dash_header.php"; ?>
             <div class="donation-container" style="display:bloclk">
                 <div class="donate-here">
 
-                
-
-                    
-
-
-
-
-
                 <form method="post" action="Donor/Donationpayment">  
 
                                    <!-- Recording the Status of the Transactio through the Payment Gateway -->
                               <input type="hidden" name="paymentStatus" value="<?= $_GET['state'];?>">
                               <input type="hidden" name="donorTableId" value="<?= $donorid;?>">
-                               <?php echo $donorid;?>
+                          
 
                                 <div class="add-donation">
                                   <div class="view1" id="donateView" style="display: block;">
@@ -87,7 +79,7 @@ include "don_dash_header.php"; ?>
                                         <input type="hidden" id="address" name="address" value="<?= $donorAddress ?>">
                                         <input type="hidden" id="city" name="city" value="Colombo">
                                         <input type="hidden" id="country" name="country" value="Sri Lanka"><br><br> 
-                                        <input  class="don-value" type="submit" value="Pay Now">   
+                                        <input onclick="return confirm('Do you want to proceed?')" id="payNow" class="don-value" type="submit" value="Pay Now">   
 
                                     </form> 
 
@@ -105,8 +97,6 @@ include "don_dash_header.php"; ?>
                      
 
 
-                            
-                            
                         </div>
                             <div class="view2" id="viewDonations" style="display: none;">
                                  <span onclick="closeMyDonations()" class="close-btn">&times;</span>

@@ -190,17 +190,17 @@ class donor_Model extends Model
     public function Donationpayment(){
 
                   echo $_POST['amount'];
-                  // echo $_POST['dedication'];
-                  // echo $_POST['paymentStatus'];
-                  // echo $donTableId = $_POST['donorTableId'];
-                  // echo $type =  $_POST['select-donation'];
-                  // echo $_SESSION['id'];
+                  echo $_POST['dedication'];
+                  echo $_POST['paymentStatus'];
+                  echo $donTableId = $_POST['donorTableId'];
+                  echo $type =  $_POST['select-donation'];
+                  echo $_SESSION['id'];
 
                   $donTableId = $_POST['donorTableId'];
                   $type =  $_POST['select-donation'];
                   $amount = $_POST['amount'];
 
-                  if($_POST['paymentStatus'] == "done"){
+                  
                     echo "payment Success!";
 
                     $stmt = $this->db->prepare("INSERT INTO donation(amount, type, don_id) VALUES (?, ?, ?)");
@@ -229,17 +229,27 @@ class donor_Model extends Model
                           ':amount' => $total
                       ));
 
+                      header('location: ../Donor/donationProceed');
 
-                  }else{
-                    echo "payment Unsuccess!";
 
-                  }
+                  
     }
 
 
     public function donationReport(){
           echo "Hello report";
     }
+
+    public function donationProceed(){
+      echo "Donation Proceed !";
+    }
+
+    public function receipt()
+    {
+      echo "Report Model Model";
+      Pdf::report();
+    }
+
 
 
 }

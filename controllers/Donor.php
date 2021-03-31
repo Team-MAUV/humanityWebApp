@@ -41,10 +41,18 @@ class Donor extends Controller
         // $this->view->rendor('donor/dashboard/donor_donationSuccess', $data, true);
     }
 
+    function donationProceed()
+    {
+        $data = $this->model->donationProceed();
+        $this->view->rendor('donor/dashboard/don_home_2', $data, true);
+    }
 
 
-
-
+    function receipt() {
+        
+        $this->model->receipt();
+        // $this->view->rendor('report/receipt');
+    }
 
 
 
