@@ -297,6 +297,27 @@ return ($pageData);
 
 
 }
+/*
+public function add_mark_attendance(){
+
+
+    if(!empty($_POST['present'])){
+      // Loop to store and display values of individual checked checkbox.
+      foreach($_POST['present'] as $selected){
+      
+
+
+
+
+}
+
+
+}
+*/
+
+
+
+
 
 
 

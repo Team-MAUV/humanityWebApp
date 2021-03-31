@@ -57,7 +57,7 @@ $style = 'sess_dash_markattendance.css';?>
 	background-color: #f5f5f5;
 }
 .button {
-  background-color: #4CAF50;
+  background-color: #008CBA;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -134,7 +134,7 @@ background-color:gray;
       
             <td><?= $confir['vol_id'] ?>  </td>
            
-            <td>  <input type="checkbox" id="present" name="present" value="present"></td>
+            <td>  <input type="checkbox" id="present" name="present" value="present" class="present"></td>
             
            
         </tr>
@@ -142,9 +142,10 @@ background-color:gray;
 	
         </tbody>
     </table>
-	<form action="#">
-	<buttton> Submit</buttton>
+	<form action="add_mark_attendance" method="post" onsubmit="return confirm('Do you really want to submit the form?');">
+	<input class="button" type="submit"> </input>
 	</form>
+
 </body>
 
 </html>

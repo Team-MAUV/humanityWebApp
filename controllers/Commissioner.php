@@ -44,7 +44,10 @@ class Commissioner extends Controller
         $this->model->run_edit_profile();
         
     }
-
+    function viewmedia(){
+        $data = $this->model->viewmedia();
+        $this->view->rendor('commissioner/dashboard/view_media',$data, true);  
+    }
 
     function change_password(){
         $this->model->change_password();

@@ -56,6 +56,11 @@ function run_media_upload(){
         $msg_data=$this->model->marking_attendance();
         $this->view->rendor('session_incharge/dashboard/marking_attendance',$msg_data,true);
     }
+    function add_mark_attendance()
+    {
+        $this->model->marking_attendance();
+     
+    }
 
     function unconfirm_attendance()
     {
