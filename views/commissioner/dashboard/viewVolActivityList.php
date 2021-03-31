@@ -90,14 +90,7 @@ include "com-dash-header.php"; ?>
             </table>
 
 
-            <div class="pagination">
-              <?php if ($page_no > 1) : ?>
-                <a href="volunteer?page=<?= $page_no - 1 ?>"><i class="fas fa-angle-double-left fa-sm"></i></a>
-              <?php endif; ?>
-              <?php if ($page_no * $records_per_page < $num_contacts) : ?>
-                <a href="volunteer?page=<?= $page_no + 1 ?>"><i class="fas fa-angle-double-right fa-sm"></i></a>
-              <?php endif; ?>
-            </div>
+            
           </div>
 
     </div>

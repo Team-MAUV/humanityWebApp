@@ -700,7 +700,7 @@ class commissioner_Model extends Model
         {
 
               //Upcoming ACtivities
-              $st = $this->db->prepare('SELECT * FROM vol_activity WHERE status="upcoming" ORDER BY id LIMIT :current_page, :record_per_page');
+              $st = $this->db->prepare('SELECT * FROM vol_activity WHERE status=1 ORDER BY id LIMIT :current_page, :record_per_page');
               // Get the page via GET request (URL param: page), if non exists default the page to 1
               $page_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -716,7 +716,7 @@ class commissioner_Model extends Model
 
 
               //Finished Activities
-              $stmt = $this->db->prepare('SELECT * FROM vol_activity WHERE status="finished" ORDER BY id ');        
+              $stmt = $this->db->prepare('SELECT * FROM vol_activity WHERE status=0 ORDER BY id ');        
               $stmt->execute();
               $finished = $stmt->fetchAll();
 
