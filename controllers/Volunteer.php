@@ -51,6 +51,10 @@ class Volunteer extends Controller
         $msg_data=$this->model->addbeneficiery();
         $this->view->rendor('volunteer/dashboard/addNewBeneficiary', $msg_data , true);
     }
+    function confirmparticipants(){
+      $this->model->confirmparticipants();
+       
+    }
     function volviewevent()
     {
         $data = $this->model->get_vol_activity_list();

@@ -254,7 +254,49 @@ $images = $st1->fetchAll();
 }
 
 
+public function marking_attendance(){
+  $un = $_SESSION['id'];
+  $stat = "1";
+  $st = $this->db->prepare("SELECT * FROM session_incharge WHERE username = :un");
+  $st->execute( array(
+     ':un'=> $un,)
+  );
+  
+  
+$user = $st->fetchAll();
+$count = $st->rowCount();
 
+
+if($count>0){
+
+foreach ($user as $usr) :
+
+  if($usr['username']  == $_SESSION['id'] ){
+    $actid = $usr['vol_activityId']; //session in charge 
+  }
+
+ 
+endforeach;
+}
+  $stmt = $this->db->prepare("SELECT * FROM mark_attendance WHERE activity_id=:actid AND confirm= :stat");        
+  $stmt->execute(array(
+      'stat'=> $stat,
+      ':actid'=> $actid
+      ) );
+  $confirm = $stmt->fetchAll();
+
+  
+//All the data that has to be return from this functon is added to an associative array
+$pageData = [
+'confirm' => $confirm
+
+];
+return ($pageData);
+
+
+
+
+}
 
 
 
