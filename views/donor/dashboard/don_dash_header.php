@@ -11,6 +11,7 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="<?= URL ?>public/css/<?php echo $style ?>" />
     </head>
 
     <body>
@@ -45,7 +46,7 @@
             <div class="side-panal">
                 <div class="view-more-btns">
                     <button onclick="viewPriviousDonations()">View Donations</button>
-                    <button>View Invitation</button>
+                   
                     
                 </div>             
                 <div class="profile">

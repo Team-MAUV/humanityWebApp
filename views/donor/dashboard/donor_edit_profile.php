@@ -1,6 +1,9 @@
 
 <?php $page = 'edit_profile';
 $title = 'edit_profile';
+$style = 'don_dash_editprofile.css';
+include "don_dash_header.php";
+ ?>
 ?>
 
 <div class="grid-container">
@@ -20,7 +23,7 @@ $title = 'edit_profile';
 <body>
 	<div class="container">
 		<div class="contact-box">
-      		<div class="left" > </div>  
+      		  
       		<div class="right">
 				<h2>Edit Profile Details</h2>
 				<?php foreach ($data as $dt) : ?>
