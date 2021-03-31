@@ -50,17 +50,13 @@ include "com-dash-header.php"; ?>
                   <div class="view" id="view">
                   <form action="run_reject_projectreport" method="POST" id="form">
                   
-                  <input type="hidden" id="proj_id" name="proj_id" value="<?= $upcoming['project_id'] ?>">
+                  <input type="hidden" id="proj_id" name="proj_id" value="<?= $pending['id'] ?>">
                   <input type="text" name="reason" id="reason" placeholder="Reason" >
                   <button type="submit">Submit </button>
+                  </form>
                </div>
-               </form>
-                
-                     
-                    
-                    
-                    
-                    <button type="button" class="btn">Submit</button> </div>
+               </div>
+               
                 </div>
             </div>
 
