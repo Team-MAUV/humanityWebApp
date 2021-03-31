@@ -45,9 +45,8 @@ include "com-dash-header.php"; ?>
                 
                 <button class="dbtn"><a href="view_reports?file=public\<?= $pending['report_path']  ?>"><i class="fa fa-download"></i> View & Download </a></button>
                   <div class="confirm">
-                  <button type="button" class="acc" id="acc">Accept</button> 
-                  <button type="button" class="readmore" id="reject">Reject</button> 
-
+                  <a href="run_accept_projectreport?id=<?= $pending['id'] ?>" >Accept</i></a>
+                  <a href="run_reject_projectreport?id=<?= $pending['id'] ?>" class="readmore">Decline</i></a>
                   <div class="view" id="view">
                   <input type="text" name="reason" id="reason" placeholder="Reason" >
             

@@ -166,6 +166,9 @@ class Commissioner extends Controller
     function run_accept_beneficiaryCases(){
         $this->model->run_accept_beneficiaryCases();
     }
+    function run_reject_beneficiaryCases(){
+        $this->model->run_reject_beneficiaryCases();
+    }
 
     function media()
     {
@@ -187,6 +190,12 @@ class Commissioner extends Controller
     }
     function view_reports(){
         $this->model->view_reports();
+    }
+    function run_accept_projectreport(){
+        $this->model->run_accept_projectreport();
+    }
+    function run_reject_projectreport(){
+        $this->model->run_reject_projectreport();
     }
 
 

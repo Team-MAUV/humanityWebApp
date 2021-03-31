@@ -79,13 +79,20 @@ include "com-dash-header.php"; ?>
                 <a href="view_reports?file=public\<?= $upcoming['case_path'] ?>"><i class="fa fa-download"></i> Download </a></button>
                 </td>
                 <td><a href="run_accept_beneficiaryCases?id=<?= $upcoming['beneficiery_id'] ?>" >Accept</i></a>
-                  <a href="update.php?id=<?= $upcoming['beneficiery_id'] ?>" class="readmore">Decline</i></a>
+        
+                  <!-- <a href="run_reject_beneficiaryCases?id=<?= $upcoming['beneficiery_id'] ?>" class="readmore">Decline</i></a> -->
+                  <button type="button" class="readmore">Decline</button>
                   <div class="view" id="view">
+                  <form action="run_reject_beneficiaryCases" method="POST" id="form">
+                  
+                  <input type="hidden" id="bene_id" name="bene_id" value="<?= $upcoming['beneficiery_id'] ?>">
                   <input type="text" name="reason" id="reason" placeholder="Reason" >
-               </div></td>
+                  <button type="submit">Submit </button>
+               </div>
+               </form></td>
                   
                 <td></td>
-                <td><button type="button">Submit </button></td>
+                <td></td>
                 </tr>
 
                 <?php endforeach; ?>
