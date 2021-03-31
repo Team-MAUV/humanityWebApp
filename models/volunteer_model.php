@@ -412,7 +412,7 @@ class volunteer_Model extends Model
                       ON 
                       marking_attendance.vol_id = volunteer.id 
                     WHERE 
-                    volunteer.vol_id=:vid  '
+                    volunteer.vol_id=:vid  AND marking_attendance.attendance=1'
                 );     
                 $stmt->execute(array(
                   ':vid'=> $vid,
