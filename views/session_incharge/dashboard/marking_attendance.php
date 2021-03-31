@@ -56,7 +56,17 @@ $style = 'sess_dash_markattendance.css';?>
 .table tbody tr:nth-child(even){
 	background-color: #f5f5f5;
 }
-
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
+}
 /*responsive*/
 
 @media(max-width: 500px){
@@ -129,9 +139,12 @@ background-color:gray;
            
         </tr>
         <?php endforeach; ?> 
+	
         </tbody>
     </table>
-
+	<form action="#">
+	<buttton> Submit</buttton>
+	</form>
 </body>
 
 </html>

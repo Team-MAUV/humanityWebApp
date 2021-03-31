@@ -133,8 +133,8 @@ include "com-dash-header.php"; ?>
              
                 <td class="actions">
                  <!-- <a href="update.php?id=<?= $req['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>-->
-                  <a href="#" ><button class="button">View Media</button></a>
-
+              
+                 <a href="viewmedia?id=<?= $req['activity_id'] ?>" class="edit"> View media</a>
 
                   <a href="delete.php?id=<?= $req['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                 </td>
