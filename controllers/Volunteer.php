@@ -76,7 +76,16 @@ class Volunteer extends Controller
 
     function loadApplyStaffPosition()
     {
-        $data = $this->model->vol_participate();
+        $msg="";
+        $pageData = [
+
+            'msg' => $msg
+          ];
+        $this->view->rendor('volunteer/dashboard/vol_apply_staff_pos', $pageData, true);
+    }
+    function run_loadApplyStaffPosition()
+    {
+        $data = $this->model->run_loadApplyStaffPosition();
         $this->view->rendor('volunteer/dashboard/vol_apply_staff_pos', $data, true);
     }
 
