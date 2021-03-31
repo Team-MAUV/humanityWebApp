@@ -10,7 +10,7 @@ class report_Model extends Model
     public function receipt()
     {
       echo "Report Model Model";
-      Pdf::pdf_gen();
+      Pdf::report();
     }
 
   }

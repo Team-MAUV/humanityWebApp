@@ -29,10 +29,10 @@ include "sess_header.php"; ?>
 			<div class="right">
 				<h2> Unconfirmed Attendance Marking</h2>
 				<input type="text" class="field" placeholder="Event ID:">
-				<input type="text" class="field" placeholder="Event Name:">
+				
         <input type="text" class="field" placeholder="Date:">
         <input type="text" class="field" placeholder="Volunteer ID:">
-				<input type="text" class="field" placeholder="Volunteer Name:">
+			
 			
 				<button class="btn">Send</button>
 			</div>

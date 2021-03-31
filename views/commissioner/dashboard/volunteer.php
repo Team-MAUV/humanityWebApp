@@ -92,7 +92,13 @@ include "com-dash-header.php"; ?>
                 </td>
      
                 <td class="actions">
-                      <a href="delete_volunteer?id=<?= $contact['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                <form action="delete_volunteer" method="POST">
+  
+                  <input type="hidden" id="id" name="id" value = "<?= $contact['id'] ?>" required><br><br>
+                  <label for="lname">Remark:</label>
+                  <input type="text" id="remark" name="remark" required><br><br>
+                  <button type="submit" value="Submit"><i class="fas fa-trash fa-xs"></i>Remove</button>
+                </form>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -149,7 +155,39 @@ include "com-dash-header.php"; ?>
           </tbody>
         </table>
 
-       
+        <h2>Removed Volunteers</h2>
+        <table>
+          <thead>
+            <tr>
+              <td>Volunteer Id</td>
+              <td>Name</td>
+              <td>Email</td>
+              <td>Contact</td>
+              <td>NIC</td>
+              <td>Address</td>
+              <td>Remark</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+
+            <?php foreach ($exvol as $vol) : ?>
+              <tr>
+                 
+                <td><?= $vol['vol_id'] ?></td>
+                <td><?= $vol['name'] ?></td>
+                <td><?= $vol['email'] ?></td>
+                <td><?= $vol['contact'] ?></td>
+                <td><?= $vol['nic'] ?></td>
+                <td><?= $vol['address'] ?></td>
+                <td><?= $vol['remove_reson'] ?></td>
+             
+                
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+
       </div>    
     </div>
     <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>

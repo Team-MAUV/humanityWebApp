@@ -108,18 +108,20 @@ h2 {
 }
 
 .btn {
-    background-color: rgb(98, 15, 206);
+    background-color: rgb(103, 22, 209);
     color: rgb(255, 255, 255);
-    padding: 8px 10px;
+    padding: 5px 10px;
     border-radius: 10px;
     cursor: pointer;
     font-size: medium;
     font-weight: 800;
     border-color: rgb(0, 0, 0);
+    margin: auto;
     margin-top: 2vh;
     margin-bottom: 3vh;
-    margin-right: 1vw;
+    display:flex ;
     user-select: none;
+ 
     transform: translate(-50%, -50%);
 }
 
@@ -128,6 +130,8 @@ h2 {
     background-color: rgb(12, 12, 12);
     color: white;
 }
+
+
 
 
 
