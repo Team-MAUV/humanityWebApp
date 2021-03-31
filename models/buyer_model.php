@@ -96,6 +96,8 @@ class buyer_model extends Model{
   
 
   public function view_product(){
+    $ssmsg = "";
+    $ssmsg = $_GET['msg'];
     
     if($_GET['prd']=='Plastic'){
       $st = $this->db->prepare('SELECT * FROM product WHERE availability = 1 && type="Plastic"');   
@@ -177,8 +179,8 @@ class buyer_model extends Model{
       'productdata' => $productdata,
       'msg' => $msg,
       'bidmsg' => $bidmsg,
-      'highestbid' => $highestbid
-     
+      'highestbid' => $highestbid,
+      'ssmsg' => $ssmsg
     ];
     
     return ($pagedata);
@@ -186,6 +188,7 @@ class buyer_model extends Model{
   }
   
   function add_bid(){
+    $bidmsg = "";
     if (!empty($_POST)) {
       $rs = $_POST['rs'];
       $cts = $_POST['cts'];
@@ -194,7 +197,7 @@ class buyer_model extends Model{
       $cr_time = date("Y-m-d H:i:s");
       $value = $rs + ($cts/100);
      
-      $st0 = $this->db->prepare("SELECT highest_bid_amount, starting_bid FROM product WHERE id = :pid");
+      $st0 = $this->db->prepare("SELECT highest_bid_amount, starting_bid,type FROM product WHERE id = :pid");
       $st0->execute(array(
         ':pid' => $pid
       ));
@@ -203,54 +206,56 @@ class buyer_model extends Model{
       foreach ($data as $dt) :
         $hbid = $dt['highest_bid_amount'];
         $sbid = $dt['starting_bid'];
-
+        $type = $dt['type'];
       endforeach;
       //checking conditions for the bid
       if(($sbid < $value) && ($hbid < $value)){
 
        
-        $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount) VALUES (:prd_id, :buy_id, :bid_amount)');
-        $st->execute(array(
-          ':prd_id'=>$pid,
-          ':buy_id'=>$buy_id,
-          ':bid_amount'=>$value
-        
-        ));
-
-        $count1 = $st->rowCount();
-        if($count1 == 0){
-          $bidmsg = "ERROR!! Your bid is not added!!!";
-        }else{
-        //when bid added update product table
-          $st2 = $this->db->prepare('UPDATE product SET won_buy_id=:won_buy, highest_bid_amount=:bid WHERE (id=:pid AND availability=:avb)');
-          $st2->execute(array(
-            ':won_buy'=>$buy_id,
-            ':bid'=>$value,
-            ':pid'=>$pid,
-            ':avb'=>1
-
+          $st = $this->db->prepare('INSERT INTO bid(product_id,buy_id,bid_amount) VALUES (:prd_id, :buy_id, :bid_amount)');
+          $st->execute(array(
+            ':prd_id'=>$pid,
+            ':buy_id'=>$buy_id,
+            ':bid_amount'=>$value
+          
           ));
-          $count2 = $st2->rowCount();
-          if($count2 == 0){
-          //if an error -> then delete the rfecord from bid
-            $st3 = $this->db->prepare('DELETE FROM bid WHERE (product_id=:prd_id AND buy_id=:buy_id AND bid_amount=:bid)');
-            $st3->execute(array(
-              'prd_id'=>$pid,
-              ':buy_id'=>$buy_id,
-              ':bid'=>$value
-            ));
-            $bidmsg = "ERROR!! Your bid is not added!!!";
+
+          $count1 = $st->rowCount();
+
+          if($count1 == 0){
+              $bidmsg = "ERROR!! Your bid is not added!!!";
           }else{
-            $bidmsg = "Your Bid Is Added!! Keep In Touch!";
+              //when bid added update product table
+                $st2 = $this->db->prepare('UPDATE product SET won_buy_id=:won_buy, highest_bid_amount=:bid WHERE (id=:pid AND availability=:avb)');
+                $st2->execute(array(
+                  ':won_buy'=>$buy_id,
+                  ':bid'=>$value,
+                  ':pid'=>$pid,
+                  ':avb'=>1
+
+                ));
+                $count2 = $st2->rowCount();
+                if($count2 == 0){
+                //if an error -> then delete the rfecord from bid
+                        $st3 = $this->db->prepare('DELETE FROM bid WHERE (product_id=:prd_id AND buy_id=:buy_id AND bid_amount=:bid)');
+                        $st3->execute(array(
+                          'prd_id'=>$pid,
+                          ':buy_id'=>$buy_id,
+                          ':bid'=>$value
+                        ));
+                        $bidmsg = "ERROR!! Your bid is not added!!!";
+                }else{
+                        $bidmsg = "Your Bid Is Added!! Keep In Touch!";
+                }
           }
+        }else{
+              $bidmsg = "Invalid Bid Amount!! Please Check Again !!!";
         }
-      }else{
-        $bidmsg = "Invalid Bid Amount!! Please Check Again !!!";
-      }
+    
     }else{
       $bidmsg = "Sorry!! Bidding is not cruntly available. Keep In Touch! ";
     }
-
+    header("Location: ../buyer/view_product?prd=".$type."&msg=".$bidmsg );
     $pagedata = [
       'bidmsg' => $bidmsg
     ];

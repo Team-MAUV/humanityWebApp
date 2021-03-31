@@ -26,6 +26,7 @@ include "buyer_header.php"; ?>
         <title>Product Card</title>
     </head>
     <body>
+    <p><?= $ssmsg ?></p>
         <div class="my">
             <div class="card">
         
