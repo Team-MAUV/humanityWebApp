@@ -1222,81 +1222,85 @@ class commissioner_Model extends Model
       public function run_reject_projectreport()
       {
           
-        $approve="rejected";
-              $id=$_POST['proj_id'];
-              $reason=$_POST['reason'];
-              $cid=Session::get('id');
-              // echo $id;
+        
+          $status="rejected";
+          $id=$_POST['proj_id'];
+          $reason=$_POST['reason'];
+          // $reason=$_GET['reason'];
+          $cid=Session::get('id');
+          // echo $id;
 
-              $st1 = $this->db->prepare("SELECT id FROM commissioner WHERE com_id=:cid");
-              $st1->execute(array(
-                ':cid'=>$cid,
-              ));
-              $com_details = $st1->fetchAll();
+          $st1 = $this->db->prepare("SELECT id FROM commissioner WHERE com_id=:cid");
+          $st1->execute(array(
+            ':cid'=>$cid,
+          ));
+          $com_details = $st1->fetchAll();
 
-              foreach ($com_details as $usr) :
-              $c_id = $usr['id'];
-              
-              $st = $this->db->prepare("UPDATE project_report SET com_id=:cid, status=:stat WHERE id=:proj_id " );
-              $st->execute(array(
-                ':cid'=>$c_id,
-                ':stat'=>  $approve,
-                ':proj_id'=>$id,
-              ));
-            endforeach;
-              echo "Updated successfully!";
-              // header('location: ../Commissioner/beneficiaryCases');
-
-
-             
-
-             
+          foreach ($com_details as $usr) :
+          $c_id = $usr['id'];
           
-            
-
-            //Sending Email To the Volunteer
-
-            $st2 = $this->db->prepare("SELECT staff_id FROM project_report WHERE id=:proj_id");
-              $st2->execute(array(
-                ':proj_id'=>$id,
-              ));
-              $stf_ids = $st2->fetchAll();
-
-              foreach ($stf_ids as $stf) :
-                $s_id = $stf['staff_id'];
-              endforeach;
-
-             
-
-              $st3 = $this->db->prepare("SELECT * FROM staff WHERE id=:s_id");
-              $st3->execute(array(
-                ':s_id' => $s_id
-              ));
-              $stf_details = $st3->fetchAll();
-
-              foreach ($stf_details as $susr) :
-                $stf_email = $susr['email'];
-                $stf_name = $susr['name'];
-              endforeach;
-
-              
-   
-
-              $to = $stf_email;
-                $subject = 'Your Project Report Rejected!';
-                $rec_name = $stf_name;
-
-              
-
-                $message = '<h5> Hello '.$rec_name.', </h5>
-                <p> We are sorry to inform you that, your Project Report '.$id.' has been rejected by Tzu Chi Foundation. Please recorrect it and upload. thank you! </p>';
+          $st = $this->db->prepare("UPDATE project_report SET com_id=:cid, status=:status, remark=:reason WHERE id=:proj_id " );
+          $st->execute(array(
+            ':cid'=>$c_id,
+            ':status'=>  $status,
+            ':proj_id'=>$id,
+            ':reason'=>$reason,
+          ));
+        endforeach;
+          echo "Updated successfully!";
+          // header('location: ../Commissioner/beneficiaryCases');
 
 
-                $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
-                $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
-                $headers .= "Content-type: text/html\r\n";
+         
 
-                Email::email_send($to,$rec_name, $subject, $message, $headers);
+         
+      
+        
+
+        //Sending Email To the Volunteer
+
+        $st2 = $this->db->prepare("SELECT staff_id FROM project_report WHERE id=:proj_id");
+          $st2->execute(array(
+            ':proj_id'=>$id
+          ));
+          $stf_ids = $st2->fetchAll();
+
+          foreach ($stf_ids as $stf) :
+            $s_id = $stf['staff_id'];
+          endforeach;
+
+         
+
+          $st3 = $this->db->prepare("SELECT * FROM staff WHERE id=:s_id");
+          $st3->execute(array(
+            ':s_id' => $s_id
+          ));
+          $stf_details = $st3->fetchAll();
+
+          foreach ($stf_details as $susr) :
+            $stf_email = $susr['email'];
+            $stf_name = $susr['name'];
+          endforeach;
+
+          
+
+
+          $to = $stf_email;
+            $subject = 'Your Project Report was rejected!';
+            $rec_name = $stf_name;
+
+          
+
+            $message = '<h5> Hello '.$rec_name.', </h5>
+            <p> We are sorry to inform you that, your project report '.$id.' has been rejected by Tzu Chi Foundation due to '.$reason.' Thank you for your effort and we are looking forward to help! </p>';
+
+
+            $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+            $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+            $headers .= "Content-type: text/html\r\n";
+
+            Email::email_send($to,$rec_name, $subject, $message, $headers);
+
 
       }
 
