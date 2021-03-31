@@ -12,7 +12,7 @@ class commissioner_Model extends Model
 
       public function get_reg_vol_profiles() {
                     //Volunteer Profiles
-                    $st = $this->db->prepare('SELECT * FROM volunteer WHERE status=1 ORDER BY id LIMIT :current_page, :record_per_page');
+                    $st = $this->db->prepare('SELECT * FROM volunteer WHERE status=1 AND userlogin_id IS NOT NULL ORDER BY id LIMIT :current_page, :record_per_page');
                     // Get the page via GET request (URL param: page), if non exists default the page to 1
                     $page_no = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -31,6 +31,11 @@ class commissioner_Model extends Model
                     $newReq = $stmt->fetchAll();
                     $newReq_Count = $stmt->rowCount();
 
+
+                    $st2 = $this->db->prepare('SELECT * FROM volunteer WHERE status=1 AND userlogin_id IS NULL ORDER BY id');
+                    $st2->execute();
+                    $exvol = $st2->fetchAll();
+                    $exvol_Count = $st2->rowCount();
                     //All the data that has to be return from this functon is added to an associative array
                     $pageData = [
                       'page_no' => $page_no,
@@ -38,32 +43,42 @@ class commissioner_Model extends Model
                       'contacts' => $contacts,
                       'num_contacts' => $num_contacts,
                       'newReq'=> $newReq,
-                      'newReq_Count' => $newReq_Count
+                      'newReq_Count' => $newReq_Count,
+                      'exvol' => $exvol
                     ];
                     return ($pageData);
       }
 
 
       public function delete_volunteer(){
-          $vol_id =$_GET['id'];
-          $st = $this->db->prepare("SELECT * FROM volunteer WHERE id= :vol_id");
-
-              $st->execute(array(
-                ':vol_id' => $vol_id
-              ));
-              $contacts = $st->fetchAll();
-              $count = $st->rowCount();
-              if ($count > 0) {
-                  foreach ($contacts as $contact) :
-                          $usr=$contact['userlogin_id'];
-                  endforeach;
-                }
-                  $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
-                  $stmt->execute(array(
-                    ':usr' => $usr
-                  ));
-                  //  echo "Updated successfully!";
-                  header('location: ../Commissioner/volunteer');
+        $vol_id =$_POST['id'];
+        $remark = $_POST['remark'];
+        $com_id=$_SESSION['idp'];
+  
+        $st = $this->db->prepare("SELECT * FROM volunteer WHERE id= :vol_id");
+    
+            $st->execute(array(
+              ':vol_id' => $vol_id
+            ));
+            $contacts = $st->fetchAll();
+            $count = $st->rowCount();
+            if ($count > 0) {
+                foreach ($contacts as $contact) :
+                        $usr=$contact['userlogin_id'];
+                endforeach;
+              }
+                $stmt = $this->db->prepare("DELETE FROM user WHERE id= :usr");
+                $stmt->execute(array(
+                  ':usr' => $usr
+                 ));
+                 $st2 = $this->db->prepare("UPDATE volunteer SET remove_reson = :reson WHERE id= :vol_id");
+                 $st2->execute(array(
+                  ':reson' => $remark,
+                  'vol_id' =>$vol_id,
+                  'comid' => $com_id
+                 ));
+                //  echo "Updated successfully!";
+                 header('location: ../Commissioner/volunteer');
         }
 
 
