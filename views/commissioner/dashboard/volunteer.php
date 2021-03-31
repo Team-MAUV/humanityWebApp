@@ -147,7 +147,15 @@ include "com-dash-header.php"; ?>
                 <a href="update.php?id=<?= $req['id'] ?>" class="edit" download="#"><i class="fa fa-download"></i>View Application</i></a>
                   <a href="run_accept_vol_request?id=<?= $req['id'] ?>" class="edit">Accept</i></a>
                   
-                  <a href="update.php?id=<?= $req['id'] ?>" class="edit">Decline</i></a>
+                  <button type="button" class="readmore">Decline</button>
+                  <div class="view" id="view">
+                  <form action="run_reject_vol_request" method="POST" id="form">
+                  
+                  <input type="hidden" id="vol_id" name="vol_id" value="<?= $req['id'] ?>">
+                  <input type="text" name="reason" id="reason" placeholder="Reason" >
+                  <button type="submit">Submit </button>
+               </div>
+               </form>
                  
                 </td>
               </tr>
