@@ -150,8 +150,12 @@ class Commissioner extends Controller
         $data = $this->model->run_search_leaverequest();
         $this->view->rendor('commissioner/dashboard/leaveRequest', $data, true);
     }
-
-
+    function run_accept_leaverequest(){
+        $this->model->run_accept_leaverequest();
+    }
+    function run_reject_leaverequest(){
+        $this->model->run_reject_leaverequest();
+    }
     function sessionincharge()
     {
         $data = $this->model->fetch_sessionIncharge_details();

@@ -78,7 +78,7 @@ include "com-dash-header.php"; ?>
                 <td>To</td>
                 <td>Reason</td>
                 
-                <td>Remark</td>
+             <td></td>
                 <td>Accept/Reject</td>
             
               </tr>
@@ -108,8 +108,16 @@ include "com-dash-header.php"; ?>
                 <td><?= $contact['to_date'] ?></td>
                 <td><?= $contact['reason'] ?></td>
                
-                <td> <input type="text" id:"reason" name:"reason" value:"reason"> </td>
-                <td><button type:"button" class:"button" id:"accept">Accept</button> <button type:"button" class:"button" id:"reject">Reject</button></td>
+             
+                <td><a href="run_accept_leaverequest?id=<?= $contact['leave_id'] ?> class="button" >Accept</i></a>
+                  <button type="button" class="readmore">Decline</button>
+                  <div class="view" id="view">
+                  <form action="run_reject_leaverequest" method="POST" id="form">
+                  
+                  <input type="hidden" id="lea_id" name="lea_id" value="<?= $contact['leave_id'] ?>">
+                  <input type="text" name="reason" id="reason" placeholder="Reason" >
+                  <button type="submit">Submit </button>
+                  </form></td>
                 </tr>
 
                 <?php endforeach; ?>
@@ -169,7 +177,7 @@ include "com-dash-header.php"; ?>
 
 
 
-
+    <script src="<?= URL ?>public/js/com-dash-beneficiaryCases.js"></script>
 
 
 
