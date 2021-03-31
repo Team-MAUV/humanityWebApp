@@ -7,14 +7,16 @@ include "vol_dash_header.php"; ?>
       <div class="contact-box">
           <div class="left" > <img src="<?= URL ?>public/images/attend.png" alt="img" width="500" height="500"/> 
           </div>
+          <p><?= $msg ?></p>
           <div class="right">
             <h2> Applying to Join as a Staff Member</h2>
           </div>
           <button>Show Alert</button>
           <div class="alert hide">
               <span class="fas fa-exclamation-circle"></span>
-              <span class="msg">Disclaimer : I obey to the code of conduts of the organization!
-                <a href="<?= URL ?>Volunteer/volviewevent" class="serv-btn"  >Agree & Apply</a>
+              <span class="msg">Only permanent Volunteers will be selcetd for the staff positions.</br>
+                
+                <a href="<?= URL ?>Volunteer/run_loadApplyStaffPosition" class="serv-btn"  >Agree & Apply</a>
               </span>
               <div class="close-btn">
                 <span class="fas fa-times"></span>
