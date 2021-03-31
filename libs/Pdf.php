@@ -9,9 +9,9 @@ class PDF
 
 
   
-    $name = "Sepala";
+    $name = "A.P. Nishshanka";
     $r_Number = "DHM001";
-    $amount = "5000";
+    $amount = "250";
 
 
   $pdf = new FPDF('p','mm', 'A4');

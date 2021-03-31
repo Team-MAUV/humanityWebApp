@@ -7,7 +7,7 @@ include "don_dash_header.php"; ?>
             <div class="donation-container" style="display:bloclk">
                 <div class="donate-here">
 
-                <form method="post" action="Donor/Donationpayment">  
+                <form method="post" action="Donationpayment">  
 
                                    <!-- Recording the Status of the Transactio through the Payment Gateway -->
                               <input type="hidden" name="paymentStatus" value="<?= $_GET['state'];?>">
@@ -22,7 +22,7 @@ include "don_dash_header.php"; ?>
                                             <li><button type="button" id="btn2" class="don-value" onclick="insert100()">Rs:100.00</button> </li>
                                             <li><button type="button" id="btn3" class="don-value" onclick="insert500()">Rs:500.00</button> </li>
                                             <li><button type="button" id="btn4" class="don-value" onclick="insert1000()">Rs:1000.00</button> </li>
-                                            <li><button type="button" id="btn5"class="don-value" onclick="insert5000()">Rs:5000.00</button> </li>
+                                            
                                             <button onclick="showOther();" id="otherBtn" class="don-value">Other</button>
 
                                         </ul>
@@ -57,38 +57,13 @@ include "don_dash_header.php"; ?>
                                         </div>
                                     </div>
 
-                                    <div class="payment-method">
-                                        <a href="#"><img src="<?= URL ?>public/images/pay-here-logo.png"></a>
-                                    </div>
+                                 
 
-                                    <form method="post" action="https://sandbox.payhere.lk/pay/checkout">   
-                                        <input type="hidden" name="merchant_id" value="1216578">    <!-- Replace your Merchant ID -->
-                                        <input type="hidden" name="return_url" value="<?= URL ?>Donor?state=done">
-                                        <input type="hidden" name="cancel_url" value="<?= URL ?>Donor?state=canceled">
-                                        <input type="hidden" name="notify_url" value="<?= URL ?>Donor?state=notify">  
-                                        <!-- <br><br>Item Details<br> -->
-                                        <input type="hidden" id="order_id" name="order_id" value="<?= $donorId ?>">
-                                        <input type="hidden" id="items" name="items" value="Donation"><br>
-                                        <input type="hidden" id="currency"  name="currency" value="LKR">
-                                        <input type="hidden" id="amount"  name="amount" value="">  
-                                        <!-- <br><br>Customer Details<br> -->
-                                        <input type="hidden" id="first_name"  name="first_name" value="Saman">
-                                        <input type="hidden" id="last_name" name="last_name" value="Perera"><br>
-                                        <input type="hidden" id="email" name="email" value="<?= $donorEmail ?>">
-                                        <input type="hidden" id="phone" name="phone" value="<?= $donorContact ?>"><br>
-                                        <input type="hidden" id="address" name="address" value="<?= $donorAddress ?>">
-                                        <input type="hidden" id="city" name="city" value="Colombo">
-                                        <input type="hidden" id="country" name="country" value="Sri Lanka"><br><br> 
-                                        <input onclick="return confirm('Do you want to proceed?')" id="payNow" class="don-value" type="submit" value="Pay Now">   
+                                
+                                 
+                                        <input onclick="return confirm('Do you want to proceed?')" id="payNow" class="don-value" type="submit" value="Proceed">   
 
-                                    </form> 
-
-
-                                   
-                                        <div class="donate">
-                                           <button type="submit" class="donate-btn">Donate</button>
-                                        
-                                         </div>
+                                
                 </form>
 
                 

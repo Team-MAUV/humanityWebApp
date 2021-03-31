@@ -526,6 +526,23 @@ input[type="checkbox"] {
   font-size: 20px;
 }
 
+#Cancel {
+  position: relative;
+  background-color: blue;
+  top: 5rem;
+}
+
+#Complete {
+  position: relative;
+  background-color: blue;
+  top: 5rem;
+}
+
+#payNow {
+  position: relative;
+  bottom: -5rem;
+}
+
 @media screen and (max-width: 900px) {
   .profile {
     width: 40vw;

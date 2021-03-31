@@ -16,41 +16,19 @@ include "don_dash_header.php"; ?>
                                 <h2> Payment Method : </h2>
                                   <div class="view1" id="donateView" style="display: block;">
                                         
-                                    <div class="payment-method">
-                                        <a href="#"><img src="<?= URL ?>public/images/pay-here-logo.png"></a>
-                                    </div>
+                                 
 
-                                    <form method="post" action="https://sandbox.payhere.lk/pay/checkout">   
-                                        <input type="hidden" name="merchant_id" value="1216578">    <!-- Replace your Merchant ID -->
-                                        <input type="hidden" name="return_url" value="<?= URL ?>Donor?state=done">
-                                        <input type="hidden" name="cancel_url" value="<?= URL ?>Donor?state=canceled">
-                                        <input type="hidden" name="notify_url" value="<?= URL ?>Donor?state=notify">  
-                                        <!-- <br><br>Item Details<br> -->
-                                        <input type="hidden" id="order_id" name="order_id" value="<?= $donorId ?>">
-                                        <input type="hidden" id="items" name="items" value="Donation"><br>
-                                        <input type="hidden" id="currency"  name="currency" value="LKR">
-                                        <input type="hidden" id="amount"  name="amount" value="">  
-                                        <!-- <br><br>Customer Details<br> -->
-                                        <input type="hidden" id="first_name"  name="first_name" value="Saman">
-                                        <input type="hidden" id="last_name" name="last_name" value="Perera"><br>
-                                        <input type="hidden" id="email" name="email" value="<?= $donorEmail ?>">
-                                        <input type="hidden" id="phone" name="phone" value="<?= $donorContact ?>"><br>
-                                        <input type="hidden" id="address" name="address" value="<?= $donorAddress ?>">
-                                        <input type="hidden" id="city" name="city" value="Colombo">
-                                        <input type="hidden" id="country" name="country" value="Sri Lanka"><br><br> 
-                                        <button  class="don-value" type="submit" >Checkout</button> 
-
-                                    </form> 
-
-                                    <a class="don-value" id="Complete">Finish</a>
-                                    <a href="index" class="don-value" id="Cancel">Cancel</a>
+                                   
+                                    
+                                    <button type="submit" class="don-value" id="Complete">Finish</button>
+                                    <button type="submit" class="don-value" id="Cancel">Cancel</button>
                                     
                                         
                                         
               
 
                 
-               <a href="receipt" class="don-value" id="Cancel" target="_blank">Generate Receipt</a>
+               <a href="receipt" target="_blank">Gen Report</a>
 
                         </div>
                             <div class="view2" id="viewDonations" style="display: none;">
