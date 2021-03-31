@@ -25,7 +25,84 @@ $style = 'sess_dash_markattendance.css';?>
  
     <link rel="stylesheet" href="<?= URL?> public/css/sess_dash_markattendance.css" />
 </head>
+<style>
+  body{
+	margin:0;
+	padding:20px;
+	font-family: sans-serif;
+}
 
+*{
+	box-sizing: border-box;
+}
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid #ddd;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th{
+	background-color: darkblue;
+	color:#ffffff;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #f5f5f5;
+}
+
+/*responsive*/
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+.checkbox{
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;
+background-color:gray;
+}
+
+@media only screen and (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+}
+</style>
 
 <body>
 
@@ -36,54 +113,22 @@ $style = 'sess_dash_markattendance.css';?>
     <table class="table">
      <thead>
             <th>Vol_id</th>
-            <th>Volunteer  name</th>
+           
             <th>Present</th>
      </thead>
 
 
         <tbody>
+        <?php foreach ($confirm as $confir) : ?>
         <tr>
-            <td>VOLHB001 </td>
-            <td>Perera</td>
+      
+            <td><?= $confir['vol_id'] ?>  </td>
+           
             <td>  <input type="checkbox" id="present" name="present" value="present"></td>
             
-
-        </tr>
-        <tr>
-            <td>VOLHB010 </td>
-            <td>Doe </td>
-            <td><input type="checkbox" id="present" name="present" value="present"></td>
            
-
         </tr>
-        <tr>
-            <td>VOLHB035 </td>
-            <td>John </td>
-            <td><input type="checkbox" id="present" name="present" value="present"></td>
-           
-
-        </tr>
-        <tr>
-            <td>VOLHB006 </td>
-            <td>Jakadish</td>
-            <td><input type="checkbox" id="present" name="present" value="present"></td>
-         
-
-        </tr>
-        <tr>
-            <td>VOLHB040</td>
-            <td>Shakthi</td>
-            <td><input type="checkbox" id="present" name="present" value="present"></td>
-            
-
-        </tr>
-        <tr>
-            <td>VOLHB015</td>
-            <td>Michel </td>
-            <td><input type="checkbox" id="present" name="present" value="present"></td>
-        
-
-        </tr>
+        <?php endforeach; ?> 
         </tbody>
     </table>
 

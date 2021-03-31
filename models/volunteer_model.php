@@ -22,6 +22,47 @@ class volunteer_Model extends Model
                 ];
                 return ($voldata);
       }
+  
+      public function confirmparticipants()
+      {
+          
+            $stat = "1";
+           ;
+            $id=$_GET['id'];
+            $vid=Session::get('id');
+            // echo $id;
+
+            $st1 = $this->db->prepare("SELECT id FROM volunteer WHERE vol_id=:vid");
+            $st1->execute(array(
+              ':vid'=>$vid,
+            ));
+            $vol_details = $st1->fetchAll();
+
+            foreach ($vol_details as $usr) :
+            $v_id = $usr['id'];
+            
+            $st = $this->db->prepare("INSERT INTO  mark_attendance SET activity_id=:actid,vol_id=:vid, confirm=:stat " );
+            $st->execute(array(
+              ':actid'=>$id,
+              ':vid'=>$vid,
+              ':stat'=>  $stat
+              
+            ));
+          endforeach;
+            echo "Updated successfully!";
+          
+
+      }
+
+
+
+
+
+
+
+
+
+
 
 
       public function addbeneficiery()
