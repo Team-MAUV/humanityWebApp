@@ -49,13 +49,7 @@ include "com-dash-header.php"; ?>
     <div id="tab1C" class="tab-container">
   
           <div class="content read">
-          
-        <div class="search-container">
-          <form action="search_volunteer" method="POST">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-          </div>
+     
             <table>
               <thead>
               <tr>

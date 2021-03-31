@@ -325,7 +325,7 @@ class commissioner_Model extends Model
             ':reason'=>$reason,
           ));
           echo "Updated successfully!";
-          // header('location: ../Commissioner/beneficiaryCases');
+          header('location: ../Commissioner/volunteer');
 
 
          
@@ -1008,7 +1008,7 @@ class commissioner_Model extends Model
                     $msg ="Session Incharge appointed Successfully!";
 
                     $to = $email;
-                    $subject = 'Activate Your User Profile!';
+                    $subject = 'Session Incharge Credentials!';
                     $rec_name =  $stf_name;
 
                   

@@ -43,7 +43,36 @@ public function run_vol_register(){
                     $stmt->execute([$name, $nic, $email, $contact, $address, $dob, $prev_vol_exp, $gender]);
                     
                     $msg = "Form data submitted successfully!";
+
+                    //Email Notification for Successfully Registered & waiting for approval
+
+                    $to = $email;
+                    $subject = 'Wait for the Approval!';
+                    $rec_name =  $name;
+
+                  
+
+                    $message = '<h5> Hello '.$rec_name.', </h5>
+                    <p> Your registration application submitted Successfully! You will be notified regarding the status of your application soon!  </p>';
+
+
+                    $message .= '<h4>***Humanity Web App - Powered by Team MAUV***</h4>';
+
+                    $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
+                    $headers .="Reply-To: tzuchihumanity@gmail.com\r\n";
+                    $headers .= "Content-type: text/html\r\n";
+
+                    Email::email_send($to,$rec_name, $subject, $message, $headers);
+
+
                     header('location: ../register');
+
+
+
+
+
+
+
                 }
     }else{
       $msg = "Data fields are empty";
@@ -59,7 +88,7 @@ public function run_vol_register(){
 
   public function run_don_register()
   {
-   // echo "starting";
+
 
    if (!empty($_POST)) {
 
