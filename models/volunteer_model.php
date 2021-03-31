@@ -352,8 +352,8 @@ class volunteer_Model extends Model
           $rnewpwd=$_POST['rnewpwd'];
           $id=$_SESSION['idp'];
     
-          $hasholdpw =  password_hash($oldpw, PASSWORD_DEFAULT);
-    
+         
+
           $getdata = $this->db->prepare("SELECT userlogin_id FROM volunteer WHERE id = :id");
           $getdata->execute(array(
             ':id'=>$id
@@ -422,5 +422,33 @@ class volunteer_Model extends Model
                   'activities'=> $activities,
                 ];
                 return ($pageData);
+          }
+
+          public function run_loadApplyStaffPosition(){
+            $vid=Session::get('id');
+            $stmt = $this->db->prepare('SELECT * FROM volunteer WHERE vol_id=:vid');        
+            $stmt->execute(array(
+              ':vid'=> $vid,
+            ));
+            $vol_details = $stmt->fetchAll();
+            foreach ($vol_details as $tmp) :
+                    $name = $tmp['name'];
+                    $nic = $tmp['nic'];
+                    $email = $tmp['email'];
+                    $address = $tmp['address'];
+                    $contact = $tmp['contact'];
+                    $dob = $tmp['dob'];
+                    $gender = $tmp['gender'];
+
+
+                    $stmt2 = $this->db->prepare('INSERT INTO `staff` (`name`,`nic`, `email`,`contact`, `address`,`dob`,`gender`) VALUES ( ?, ?, ?, ?,?,?,?)');
+
+                    $stmt2->execute([$name, $nic, $email, $contact, $address, $dob, $gender]);
+            endforeach;
+                    $msg = "Form data submitted successfully!";
+            $pageData = [
+              'msg'=> $msg,
+            ];
+            return ($pageData);
           }
       }
