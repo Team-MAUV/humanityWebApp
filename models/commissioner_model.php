@@ -692,7 +692,25 @@ class commissioner_Model extends Model
               ];
               return ($pageData);
         }
-        
+        public function viewmedia(){
+          $id=$_GET['id'];
+          $st1 = $this->db->prepare("SELECT * FROM actimage  WHERE act_id=:act");
+          $st1 ->execute(array(
+          ':act' => $id
+          ));
+          $images = $st1->fetchAll();
+          
+          
+            $pageData = [
+          
+              'images' => $images
+            ];
+          
+            return ($pageData);
+
+
+
+        }
      
   
 
