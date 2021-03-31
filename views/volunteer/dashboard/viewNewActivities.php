@@ -34,7 +34,7 @@ include "vol_dash_header.php"; ?>
                                                 <li>End   : <?= $coming['end_date_time'] ?> </li>
                                                 <li>Venue   : <?= $coming['venue'] ?></li>
                                                 <li>Activity Points   : <?= $coming['point'] ?></li>
-                                                <li>   <a href="confirmparticipants?id=<?= $coming['activity_id'] ?>" class="edit">Confirm Participants</i></a> </li>
+                                                <li>   <a href="confirmparticipants?id=<?= $coming['id'] ?>" class="edit">Confirm Participants</i></a> </li>
                      
 
 
