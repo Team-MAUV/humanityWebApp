@@ -489,7 +489,8 @@ class commissioner_Model extends Model
             
           $stat = "reject";
           $approve="rejected";
-          $id=$_GET['id'];
+          $id=$_POST['bene_id'];
+          $reason=$_POST['reason'];
           // $reason=$_GET['reason'];
           $cid=Session::get('id');
           // echo $id;
@@ -503,12 +504,13 @@ class commissioner_Model extends Model
           foreach ($com_details as $usr) :
           $c_id = $usr['id'];
           
-          $st = $this->db->prepare("UPDATE beneficiery_case SET com_id=:cid, status=:stat, approval=:approve WHERE beneficiery_id=:bene_id " );
+          $st = $this->db->prepare("UPDATE beneficiery_case SET com_id=:cid, status=:stat, approval=:approve,reject_reason=:reason WHERE beneficiery_id=:bene_id " );
           $st->execute(array(
             ':cid'=>$c_id,
             ':stat'=>  $stat,
             ':approve' => $approve,
             ':bene_id'=>$id,
+            ':reason'=>$reason,
           ));
         endforeach;
           echo "Updated successfully!";
@@ -556,7 +558,7 @@ class commissioner_Model extends Model
           
 
             $message = '<h5> Hello '.$rec_name.', </h5>
-            <p> We are sorry to inform you that, your benificiary case '.$id.' has been rejected by Tzu Chi Foundation. Thank you for your effort and we are looking forward to help! </p>';
+            <p> We are sorry to inform you that, your benificiary case '.$id.' has been rejected by Tzu Chi Foundation due to '.$reason.' Thank you for your effort and we are looking forward to help! </p>';
 
 
             $headers ="From: Humanity<tzuchihumanity@gmail.com>\r\n";
@@ -1203,7 +1205,8 @@ class commissioner_Model extends Model
       {
           
         $approve="rejected";
-              $id=$_GET['id'];
+              $id=$_POST['proj_id'];
+              $reason=$_POST['reason'];
               $cid=Session::get('id');
               // echo $id;
 
