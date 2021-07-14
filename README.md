@@ -6,7 +6,8 @@ Projects
 Project Humanity
 Apr 2020 – Apr 2021
 
-Project descriptionHumanity - a web-based application that connects all the volunteers, donors, and other parties directly with the Hambantota Branch of Tzu Chi organization. Our solution mainly consists of 3 major modules named as Branch’s administration module, donation payment module, and Tzu Chi Market module. This system will be beneficial for our end users as follows.
+Project description:
+Humanity - a web-based application that connects all the volunteers, donors, and other parties directly with the Hambantota Branch of Tzu Chi organization. Our solution mainly consists of 3 major modules named as Branch’s administration module, donation payment module, and Tzu Chi Market module. This system will be beneficial for our end users as follows.
 
 • Administration Module
 
